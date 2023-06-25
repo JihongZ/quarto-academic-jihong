@@ -99,11 +99,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -123,6 +123,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
 
 
@@ -169,6 +190,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -201,7 +227,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title">
 <h1 class="title">Visualization for Process Data</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Tutorial</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">ggplot2</div>
+    <div class="quarto-category">tutorial</div>
   </div>
   </div>
 
@@ -230,18 +258,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>This tutorial aims to explore various types of tools of visualizing the process data.</p>
 <p>Before diving into the main text, I found one trick to <code>git pull</code> one repo but ignore the local changes is:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clean <span class="at">-f</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clean <span class="at">-f</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="load-packages" class="level2">
 <h2 class="anchored" data-anchor-id="load-packages">Load Packages</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ProcData)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">library</span>(RColorBrewer) <span class="co"># for color pallett</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProcData)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer) <span class="co"># for color pallett</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="a-little-about-the-toy-data" class="level2">
 <h2 class="anchored" data-anchor-id="a-little-about-the-toy-data">A little about the toy data</h2>
 <p>A dataset containing the response processes and binary response outcomes of 16763 respondents. <em>seqs</em> is an object of class “proc” containing the action sequences and the time sequences of the respondents and <em>responses</em> is binary responses of 16763 respondents. The order of the respondents matches that in <em>seqs</em>ß.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">str</span>(cc_data, <span class="at">max.level =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cc_data, <span class="at">max.level =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>## List of 2
 ##  $ seqs     :List of 2
 ##   ..$ action_seqs:List of 16763
@@ -249,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   ..- attr(*, "class")= chr "proc"
 ##  $ responses: Named int [1:16763] 0 1 1 1 0 0 0 0 0 0 ...
 ##   ..- attr(*, "names")= chr [1:16763] "ARE000000200039" "ARE000000200051" "ARE000000300079" "ARE000000400093" ...</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">head</span>(cc_data<span class="sc">$</span>seqs<span class="sc">$</span>action_seqs, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cc_data<span class="sc">$</span>seqs<span class="sc">$</span>action_seqs, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>## $ARE000000200039
 ##  [1] "start"    "0_0_0"    "1_2_-2"   "2_2_2"    "2_2_2"    "2_2_2"   
 ##  [7] "2_2_2"    "2_2_2"    "2_2_-2"   "2_2_-2"   "2_-2_-2"  "-2_-2_-2"
@@ -269,24 +297,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="data-transformation" class="level2">
 <h2 class="anchored" data-anchor-id="data-transformation">Data Transformation</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="do">## actions</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>dt1 <span class="ot">&lt;-</span> cc_data<span class="sc">$</span>seqs<span class="sc">$</span>action_seqs[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="do">## time stamps</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>dt2 <span class="ot">&lt;-</span> cc_data<span class="sc">$</span>seqs<span class="sc">$</span>time_seqs[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="do">## x轴为时间轴，y轴为不同的observations</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>dt1_long <span class="ot">&lt;-</span> <span class="fu">mapply</span>(<span class="cf">function</span>(x, y) <span class="fu">data.frame</span>(<span class="at">ID =</span> y, <span class="at">action =</span> x) , dt1, <span class="fu">names</span>(dt1), <span class="at">SIMPLIFY =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-8"><a href="#cb7-8"></a>dt1_long <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, dt1_long)</span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a>dt2_long <span class="ot">&lt;-</span> <span class="fu">mapply</span>(<span class="cf">function</span>(x, y) <span class="fu">data.frame</span>(<span class="at">ID =</span> y, <span class="at">time =</span> x) , dt2, <span class="fu">names</span>(dt2), <span class="at">SIMPLIFY =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-11"><a href="#cb7-11"></a>dt2_long <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, dt2_long)</span>
-<span id="cb7-12"><a href="#cb7-12"></a></span>
-<span id="cb7-13"><a href="#cb7-13"></a>dt_full <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dt1_long, <span class="at">time =</span> dt2_long[,<span class="dv">2</span>]) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">mutate</span>(<span class="at">time_upper =</span> <span class="fu">lead</span>(time)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">mutate</span>(<span class="at">time_upper =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(time_upper), time, time_upper), <span class="at">action =</span> <span class="fu">as.factor</span>(action))</span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="fu">head</span>(dt_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## actions</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dt1 <span class="ot">&lt;-</span> cc_data<span class="sc">$</span>seqs<span class="sc">$</span>action_seqs[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## time stamps</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dt2 <span class="ot">&lt;-</span> cc_data<span class="sc">$</span>seqs<span class="sc">$</span>time_seqs[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="do">## x轴为时间轴，y轴为不同的observations</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>dt1_long <span class="ot">&lt;-</span> <span class="fu">mapply</span>(<span class="cf">function</span>(x, y) <span class="fu">data.frame</span>(<span class="at">ID =</span> y, <span class="at">action =</span> x) , dt1, <span class="fu">names</span>(dt1), <span class="at">SIMPLIFY =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>dt1_long <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, dt1_long)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>dt2_long <span class="ot">&lt;-</span> <span class="fu">mapply</span>(<span class="cf">function</span>(x, y) <span class="fu">data.frame</span>(<span class="at">ID =</span> y, <span class="at">time =</span> x) , dt2, <span class="fu">names</span>(dt2), <span class="at">SIMPLIFY =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>dt2_long <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, dt2_long)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>dt_full <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dt1_long, <span class="at">time =</span> dt2_long[,<span class="dv">2</span>]) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">time_upper =</span> <span class="fu">lead</span>(time)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">time_upper =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(time_upper), time, time_upper), <span class="at">action =</span> <span class="fu">as.factor</span>(action))</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dt_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>## # A tibble: 6 x 4
 ##   ID              action  time time_upper
 ##   &lt;chr&gt;           &lt;fct&gt;  &lt;dbl&gt;      &lt;dbl&gt;
@@ -299,18 +327,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="data-visualization">Data Visualization</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="co"># 30 colors</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>qual_col_pals <span class="ot">=</span> brewer.pal.info[brewer.pal.info<span class="sc">$</span>category <span class="sc">==</span> <span class="st">'qual'</span>,]</span>
-<span id="cb9-4"><a href="#cb9-4"></a>col_vector <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">mapply</span>(brewer.pal, qual_col_pals<span class="sc">$</span>maxcolors, <span class="fu">rownames</span>(qual_col_pals)))</span>
-<span id="cb9-5"><a href="#cb9-5"></a>line_color <span class="ot">=</span> <span class="fu">sample</span>(col_vector, n)</span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> ID, <span class="at">col =</span> action), <span class="at">data =</span> dt_full) <span class="sc">+</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> time, <span class="at">xmax=</span> time_upper), <span class="at">linetype =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> col_vector, <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, <span class="at">x =</span> <span class="st">"Time Length"</span>) <span class="sc">+</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="co"># 30 colors</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>qual_col_pals <span class="ot">=</span> brewer.pal.info[brewer.pal.info<span class="sc">$</span>category <span class="sc">==</span> <span class="st">'qual'</span>,]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>col_vector <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">mapply</span>(brewer.pal, qual_col_pals<span class="sc">$</span>maxcolors, <span class="fu">rownames</span>(qual_col_pals)))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>line_color <span class="ot">=</span> <span class="fu">sample</span>(col_vector, n)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> ID, <span class="at">col =</span> action), <span class="at">data =</span> dt_full) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> time, <span class="at">xmax=</span> time_upper), <span class="at">linetype =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> col_vector, <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, <span class="at">x =</span> <span class="st">"Time Length"</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-5-1.png” width=“672” height=“50” /></p>
 <div id=" quarto-navigation-envelope"="" class="hidden">
 </p><p><span class="hidden" data-render-id="quarto-int-sidebar-title">Dr.&nbsp;Jihong Zhang</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Dr.&nbsp;Jihong Zhang</span> <span class="hidden" data-render-id="quarto-int-navbar:Home">Home</span> <span class="hidden" data-render-id="quarto-int-navbar:Blog">Blog</span> <span class="hidden" data-render-id="quarto-int-navbar:More">More</span> <span class="hidden" data-render-id="quarto-int-navbar:projects">projects</span> <span class="hidden" data-render-id="quarto-int-navbar:About">About</span></p>
@@ -428,7 +456,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -529,6 +557,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
  <!-- /content -->
 

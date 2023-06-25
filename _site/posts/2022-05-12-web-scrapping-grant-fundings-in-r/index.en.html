@@ -101,11 +101,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,6 +125,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -170,6 +191,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -235,40 +261,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>This is an example of how to web scrape grants of active research in college’s official website. Please follow the academia institute’s website robots rules.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(XML)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(rvest)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(XML)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="web-scrapping" class="level2">
 <h2 class="anchored" data-anchor-id="web-scrapping">Web Scrapping</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>topics <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">84</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>fundings <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">84</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>iter <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="cf">for</span> (page <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) {</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="do">## parent webpage</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>  scrape_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">'http://XXXXXXXXXXXXXXXXXXXXXX'</span>, page)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  </span>
-<span id="cb2-8"><a href="#cb2-8"></a>  html_form_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(scrape_url)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>  </span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="do">## find the child web page containing projects' name, total award, topic etc.</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  child_url <span class="ot">=</span> html_form_page <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"h3 a[href]"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>) </span>
-<span id="cb2-12"><a href="#cb2-12"></a>  </span>
-<span id="cb2-13"><a href="#cb2-13"></a>  <span class="cf">for</span> (item <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(child_url)) {</span>
-<span id="cb2-14"><a href="#cb2-14"></a>    iter <span class="ot">=</span> iter <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>    child_html_text <span class="ot">&lt;-</span> child_url[item] <span class="sc">|&gt;</span> <span class="fu">read_html</span>() <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"div[class='study_wrapper']"</span>) <span class="sc">|&gt;</span> <span class="fu">html_text</span>() </span>
-<span id="cb2-16"><a href="#cb2-16"></a>    topic <span class="ot">=</span> child_html_text <span class="sc">|&gt;</span> <span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">"Topic</span><span class="sc">\\</span><span class="st">(s</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">: [a-zA-Z]+</span><span class="sc">\\</span><span class="st">b"</span>) <span class="sc">|&gt;</span> <span class="fu">str_replace</span>(<span class="at">pattern =</span> <span class="st">"Topic</span><span class="sc">\\</span><span class="st">(s</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">: "</span>, <span class="st">""</span>)</span>
-<span id="cb2-17"><a href="#cb2-17"></a>    funding <span class="ot">=</span> child_html_text <span class="sc">|&gt;</span> <span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">$</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">,</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">|&gt;</span> <span class="fu">str_replace_all</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">$|</span><span class="sc">\\</span><span class="st">,"</span>, <span class="st">""</span>) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
-<span id="cb2-18"><a href="#cb2-18"></a>    topics[iter] <span class="ot">=</span> topic</span>
-<span id="cb2-19"><a href="#cb2-19"></a>    fundings[iter] <span class="ot">=</span> funding</span>
-<span id="cb2-20"><a href="#cb2-20"></a>  }</span>
-<span id="cb2-21"><a href="#cb2-21"></a>}</span>
-<span id="cb2-22"><a href="#cb2-22"></a></span>
-<span id="cb2-23"><a href="#cb2-23"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">topic =</span> topics, <span class="at">funding_amount =</span> fundings) <span class="sc">|&gt;</span> </span>
-<span id="cb2-24"><a href="#cb2-24"></a>  <span class="fu">add_row</span>(<span class="at">topic =</span> <span class="st">"Marijuana"</span>, <span class="at">funding_amount =</span> <span class="dv">3743</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-25"><a href="#cb2-25"></a>  <span class="fu">mutate</span>(<span class="at">topic =</span> <span class="fu">ifelse</span>(topic <span class="sc">==</span> <span class="st">"TobaccoMarijuana"</span>, <span class="st">"Tobacco"</span>, topic)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>topics <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">84</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fundings <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">84</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>iter <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (page <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## parent webpage</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  scrape_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">'http://XXXXXXXXXXXXXXXXXXXXXX'</span>, page)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  html_form_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(scrape_url)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## find the child web page containing projects' name, total award, topic etc.</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  child_url <span class="ot">=</span> html_form_page <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"h3 a[href]"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>) </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (item <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(child_url)) {</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    iter <span class="ot">=</span> iter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    child_html_text <span class="ot">&lt;-</span> child_url[item] <span class="sc">|&gt;</span> <span class="fu">read_html</span>() <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"div[class='study_wrapper']"</span>) <span class="sc">|&gt;</span> <span class="fu">html_text</span>() </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    topic <span class="ot">=</span> child_html_text <span class="sc">|&gt;</span> <span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">"Topic</span><span class="sc">\\</span><span class="st">(s</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">: [a-zA-Z]+</span><span class="sc">\\</span><span class="st">b"</span>) <span class="sc">|&gt;</span> <span class="fu">str_replace</span>(<span class="at">pattern =</span> <span class="st">"Topic</span><span class="sc">\\</span><span class="st">(s</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">: "</span>, <span class="st">""</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    funding <span class="ot">=</span> child_html_text <span class="sc">|&gt;</span> <span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">$</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">,</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">|&gt;</span> <span class="fu">str_replace_all</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">$|</span><span class="sc">\\</span><span class="st">,"</span>, <span class="st">""</span>) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    topics[iter] <span class="ot">=</span> topic</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    fundings[iter] <span class="ot">=</span> funding</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">topic =</span> topics, <span class="at">funding_amount =</span> fundings) <span class="sc">|&gt;</span> </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="at">topic =</span> <span class="st">"Marijuana"</span>, <span class="at">funding_amount =</span> <span class="dv">3743</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">topic =</span> <span class="fu">ifelse</span>(topic <span class="sc">==</span> <span class="st">"TobaccoMarijuana"</span>, <span class="st">"Tobacco"</span>, topic)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center" data-hash="index.en_cache/html/unnamed-chunk-3_48564122afc4a64ee126265dcb19845a">
 
@@ -333,18 +359,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="visualization-in-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="visualization-in-ggplot2">Visualization in ggplot2</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="do">## funding per project</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>dat1 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">group_by</span>(topic) <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">summarise</span>(<span class="at">funding_amount_mean =</span> <span class="fu">mean</span>(funding_amount, <span class="at">na.rm =</span> T)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">mutate</span>(<span class="at">topic =</span> <span class="fu">fct_reorder</span>(topic, <span class="fu">desc</span>(funding_amount_mean)))</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">ggplot</span>(dat1) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>  <span class="fu">aes</span>(<span class="at">x =</span> topic, <span class="at">y =</span> funding_amount_mean) <span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"funding per project"</span>, <span class="at">title =</span> <span class="st">"Funding for each project during 2019 to 2022"</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)) <span class="co"># remove lengend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## funding per project</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(topic) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">funding_amount_mean =</span> <span class="fu">mean</span>(funding_amount, <span class="at">na.rm =</span> T)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">topic =</span> <span class="fu">fct_reorder</span>(topic, <span class="fu">desc</span>(funding_amount_mean)))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat1) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> topic, <span class="at">y =</span> funding_amount_mean) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"funding per project"</span>, <span class="at">title =</span> <span class="st">"Funding for each project during 2019 to 2022"</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)) <span class="co"># remove lengend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -354,28 +380,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="do">## Total funding amount</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">group_by</span>(topic) <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="at">funding_amount_sum =</span> <span class="fu">sum</span>(funding_amount, <span class="at">na.rm =</span> T), </span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="at">topic =</span> <span class="fu">fct_reorder</span>(topic, <span class="fu">desc</span>(funding_amount_sum)),</span>
-<span id="cb4-9"><a href="#cb4-9"></a>    <span class="at">highlight =</span> <span class="fu">ifelse</span>(funding_amount_sum <span class="sc">==</span> <span class="fu">max</span>(funding_amount_sum), <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="fu">as.factor</span>())</span>
-<span id="cb4-10"><a href="#cb4-10"></a></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="fu">ggplot</span>(dat2) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">aes</span>(<span class="at">x =</span> topic, <span class="at">y =</span> funding_amount_sum, <span class="at">fill =</span> highlight) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(funding_amount_sum<span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="dv">3</span>)), <span class="at">vjust =</span> <span class="fl">0.001</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">vjust =</span> <span class="fl">0.999</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkblue"</span>, <span class="st">"red2"</span>)) <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"total amount of funding"</span>, </span>
-<span id="cb4-18"><a href="#cb4-18"></a>       <span class="at">title =</span> <span class="st">"Total Amount of Funding and Number of Grant Projects during 2019-2022"</span>, </span>
-<span id="cb4-19"><a href="#cb4-19"></a>       <span class="at">subtitle =</span> <span class="st">"Active research at Health Promotion Center from 2019 to 2022"</span>,</span>
-<span id="cb4-20"><a href="#cb4-20"></a>       <span class="at">caption =</span> <span class="st">"source: https://healthpromotionresearch.org/Active-Studies/"</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)) <span class="co"># remove lengend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Total funding amount</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(topic) <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">funding_amount_sum =</span> <span class="fu">sum</span>(funding_amount, <span class="at">na.rm =</span> T), </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">topic =</span> <span class="fu">fct_reorder</span>(topic, <span class="fu">desc</span>(funding_amount_sum)),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">highlight =</span> <span class="fu">ifelse</span>(funding_amount_sum <span class="sc">==</span> <span class="fu">max</span>(funding_amount_sum), <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="fu">as.factor</span>())</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat2) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> topic, <span class="at">y =</span> funding_amount_sum, <span class="at">fill =</span> highlight) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(funding_amount_sum<span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="dv">3</span>)), <span class="at">vjust =</span> <span class="fl">0.001</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">vjust =</span> <span class="fl">0.999</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkblue"</span>, <span class="st">"red2"</span>)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"total amount of funding"</span>, </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Amount of Funding and Number of Grant Projects during 2019-2022"</span>, </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Active research at Health Promotion Center from 2019 to 2022"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"source: https://healthpromotionresearch.org/Active-Studies/"</span>) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)) <span class="co"># remove lengend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -498,7 +524,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -599,6 +625,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

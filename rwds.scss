@@ -8,6 +8,7 @@
   font-family: 'JetBrains Mono', monospace;
   font-family: 'Nunito', sans-serif;
   color: black; 
+  font-size: 0.8em;
 }
 
 // Code blocks
@@ -16,5 +17,4 @@ $code-block-bg-alpha: -.8;
 /*-- scss:rules --*/
 p { // main font family of post content
   font-family: 'Maven Pro', sans-serif;
-  font-size: 0.9em;
 }

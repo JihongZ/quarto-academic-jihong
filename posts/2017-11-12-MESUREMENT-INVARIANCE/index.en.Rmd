@@ -5,7 +5,7 @@ date: '2017-11-12'
 categories:
   - R
   - SEM
-  - Lavaan
+  - lavaan
 toc: true
 ---
 
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 # What is Measurement Invariance (MI)?
 
-In my advisor Jonathan's lectures slide, MI is a testing tool investigating "whether indicators measure the same construct in the same way in different groups or over time/condition". If so, the indicator response should depend only on latent trait scores.
+In my advisor Jonathan's lectures slide, MI is a testing tool for investigating "whether indicators measure the same construct in the same way in different groups or over time/condition". If so, the indicator response should depend only on latent trait scores.
 
 It is a neat and clear definition of MI. In my opinion, we should first know different piles of variances of indicator responses. We know that in CFA, latent trait is identified by covariances among indicators. Imaging your items responses have significant group difference (male with female, international students with native speaker), there are at least three sources of distinct:
 

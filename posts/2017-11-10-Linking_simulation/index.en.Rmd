@@ -4,10 +4,8 @@ author: Jihong
 date: '2017-11-16'
 categories:
   - R
-  - Mirt
-  - Linking
-tags:
-  - R Markdown
+  - mirt
+  - linking
 output:
   blogdown::html_page:
     toc: true

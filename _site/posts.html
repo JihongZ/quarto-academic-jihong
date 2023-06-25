@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.1.189">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,11 +37,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,6 +91,20 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
 <script type="application/json" class="js-hypothesis-config">
 {
   "theme": "clean",
@@ -119,12 +133,16 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Blog">
 <meta property="og:description" content="Blogs about R, Python, machine learning, data science, and visualisation">
-<meta property="og:image" content="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png">
+<meta property="og:image" content="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
+<meta property="og:image:height" content="1926">
+<meta property="og:image:width" content="2326">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Blog">
 <meta name="twitter:description" content="Blogs about R, Python, machine learning, data science, and visualisation">
-<meta name="twitter:image" content="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png">
+<meta name="twitter:image" content="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png">
 <meta name="twitter:creator" content="@jihongzgamma">
+<meta name="twitter:image-height" content="1926">
+<meta name="twitter:image-width" content="2326">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -140,17 +158,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="./posts.html" aria-current="page">Blog</a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">More</span>
-    </a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
         <li>
     <a class="dropdown-item" href="./projects.html">
@@ -162,6 +176,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -177,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(34)</span></div><div class="category" data-category="DCM">DCM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Github">Github <span class="quarto-category-count">(1)</span></div><div class="category" data-category="LCM">LCM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Lavaan">Lavaan <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linking">Linking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Manual">Manual <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Mirt">Mirt <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Network">Network <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(13)</span></div><div class="category" data-category="Rshiny">Rshiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rstudio">Rstudio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SEM">SEM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shiny">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tutorial">Tutorial <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Web Scrapping">Web Scrapping <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Workshop">Workshop <span class="quarto-category-count">(1)</span></div><div class="category" data-category="algorithm">algorithm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(15)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="julia">julia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lavaan">lavaan <span class="quarto-category-count">(1)</span></div><div class="category" data-category="manual">manual <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tidyverse">tidyverse <span class="quarto-category-count">(1)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="webpower">webpower <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="DCM"><span class="quarto-category-count category-cloud-1">DCM</span></div><div class="category" data-category="Deep Learning"><span class="quarto-category-count category-cloud-1">Deep Learning</span></div><div class="category" data-category="Github"><span class="quarto-category-count category-cloud-1">Github</span></div><div class="category" data-category="LCM"><span class="quarto-category-count category-cloud-1">LCM</span></div><div class="category" data-category="Manual"><span class="quarto-category-count category-cloud-1">Manual</span></div><div class="category" data-category="Network"><span class="quarto-category-count category-cloud-1">Network</span></div><div class="category" data-category="PyTorch"><span class="quarto-category-count category-cloud-1">PyTorch</span></div><div class="category" data-category="R"><span class="quarto-category-count category-cloud-4">R</span></div><div class="category" data-category="Rstudio"><span class="quarto-category-count category-cloud-1">Rstudio</span></div><div class="category" data-category="SEM"><span class="quarto-category-count category-cloud-1">SEM</span></div><div class="category" data-category="Shiny"><span class="quarto-category-count category-cloud-1">Shiny</span></div><div class="category" data-category="Tutorial"><span class="quarto-category-count category-cloud-1">Tutorial</span></div><div class="category" data-category="Web Scrapping"><span class="quarto-category-count category-cloud-1">Web Scrapping</span></div><div class="category" data-category="Workshop"><span class="quarto-category-count category-cloud-1">Workshop</span></div><div class="category" data-category="algorithm"><span class="quarto-category-count category-cloud-1">algorithm</span></div><div class="category" data-category="blog"><span class="quarto-category-count category-cloud-5">blog</span></div><div class="category" data-category="ggplot2"><span class="quarto-category-count category-cloud-1">ggplot2</span></div><div class="category" data-category="julia"><span class="quarto-category-count category-cloud-1">julia</span></div><div class="category" data-category="lavaan"><span class="quarto-category-count category-cloud-1">lavaan</span></div><div class="category" data-category="linking"><span class="quarto-category-count category-cloud-1">linking</span></div><div class="category" data-category="manual"><span class="quarto-category-count category-cloud-1">manual</span></div><div class="category" data-category="mirt"><span class="quarto-category-count category-cloud-1">mirt</span></div><div class="category" data-category="rshiny"><span class="quarto-category-count category-cloud-1">rshiny</span></div><div class="category" data-category="tidyverse"><span class="quarto-category-count category-cloud-1">tidyverse</span></div><div class="category" data-category="tutorial"><span class="quarto-category-count category-cloud-1">tutorial</span></div><div class="category" data-category="visualization"><span class="quarto-category-count category-cloud-1">visualization</span></div><div class="category" data-category="webpower"><span class="quarto-category-count category-cloud-1">webpower</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -192,7 +211,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -205,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1687622400000" data-listing-file-modified-sort="1687703368194" data-listing-reading-time-sort="1.7">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1687622400000" data-listing-file-modified-sort="1687705219944" data-listing-reading-time-sort="2.085">
 <div class="thumbnail">
 <p><a href="./posts/2023-06-26-moving-to-quarto/index.html"> <img src="./posts/2023-06-26-moving-to-quarto/quarto.png" class="thumnail-image"> </a></p>
 </div>
@@ -218,7 +236,7 @@ Moving my website to Quarto
 
 </div>
 <div class="listing-description">
-Since June 25, 2023, I start to move my…
+Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps because some reasons same as other bloggers:
 </div>
 </a>
 </div>
@@ -233,14 +251,14 @@ Jihong Zhang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="blog,R,PyTorch,Deep Learning" data-listing-date-sort="1687190400000" data-listing-file-modified-sort="1687677874362" data-listing-reading-time-sort="7.545">
+<div class="quarto-post image-right" data-index="1" data-categories="blog,R,PyTorch,Deep Learning" data-listing-date-sort="1687190400000" data-listing-file-modified-sort="1687709989014" data-listing-reading-time-sort="7.68">
 <div class="thumbnail">
 <p><a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.en.html"> <img src="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" class="thumnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.en.html">
 <h3 class="no-anchor listing-title">
-A conversation between R and Python on data analysis and machine learning
+A Conversation between R and Python on Data Analysis and Machine Learning
 </h3>
 <div class="listing-subtitle">
 
@@ -262,7 +280,7 @@ Deep Learning
 </div>
 <a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.en.html">
 <div class="listing-description">
-When I play with machine learning using python and R, I keep wondering whether I can combine R and Python code in a better way, such as using R for data…
+When I play with machine learning using python and R, I keep wondering whether I can combine R and Python code in a better way, such as using R for data cleaning/visualization and Python for machine learning. Online resources for PyTorch are basically written using python code. However, I always struggle with pandas and numpy but prefer tidyverse for data cleaning, and data manipulation. That’s why I write this blog. I will start with the Pytorch tensor manipulation and import Pytorch tensor into R, then talk about mixing R/python data analysis with R/python visualization.
 </div>
 </a>
 </div>
@@ -303,7 +321,7 @@ R
 </div>
 <a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.en.html">
 <div class="listing-description">
-Mplus is a very popular program for varied latent varaible modeling: (1) Structural equation modeling (2) multilevel analysis (3) mixture modeling (latent class model). R, in the…
+Mplus is a very popular program for varied latent varaible modeling: (1) Structural equation modeling (2) multilevel analysis (3) mixture modeling (latent class model). R, in the other hand, is a general statistical programming language which not limits to certain statistical models. However, there are scarcely online resources illustrate how to run Mplus using R on Mac.
 </div>
 </a>
 </div>
@@ -368,7 +386,7 @@ Data visualization using ggplot2
 </div>
 <a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.en.html">
 <div class="listing-description">
-The NSF grant awards can be easily searched via NSF website. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really interested in: (1) Who as…
+The NSF grant awards can be easily searched via NSF website. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really interested in: (1) Who as Principal Investigator (PI) obtained most NSF awards? (2) Which institute obtained most NSF awards?
 </div>
 </a>
 </div>
@@ -425,7 +443,7 @@ Jihong Zhang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="R,Rshiny,webpower,lavaan" data-listing-date-sort="1651161600000" data-listing-file-modified-sort="1687668116228" data-listing-reading-time-sort="5.775">
+<div class="quarto-post image-right" data-index="6" data-categories="R,rshiny,webpower,lavaan,blog,tutorial" data-listing-date-sort="1651161600000" data-listing-file-modified-sort="1687709649839" data-listing-reading-time-sort="5.77">
 <div class="thumbnail">
 <a href="./posts/2022-04-29-power-analysis-for-sem/index.en.html">
 <div class="thumbnail-image">
@@ -446,8 +464,8 @@ Showcase current software used for power analysis of Structural Equation Modelin
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Rshiny'); return false;">
-Rshiny
+<div class="listing-category" onclick="window.quartoListingCategory('rshiny'); return false;">
+rshiny
 </div>
 <div class="listing-category" onclick="window.quartoListingCategory('webpower'); return false;">
 webpower
@@ -455,10 +473,16 @@ webpower
 <div class="listing-category" onclick="window.quartoListingCategory('lavaan'); return false;">
 lavaan
 </div>
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
 </div>
 <a href="./posts/2022-04-29-power-analysis-for-sem/index.en.html">
 <div class="listing-description">
-The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the…</strong>
+The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the conclusions drawn from the results</strong>, plays an important role of determining the minimum sample size (number of observation) required to detect an effect in an experiment. The power analysis of SEM is often ignored in application research partly because few guidelines exist for researchers to conduct power analysis in SEM framework. This tutorial introduces two web tools which can be used to conduct power analysis for Structural Equation Modeling (SEM). An empirical example of my own research on students’ time effect on academic motivations will also be presented for illustration. For privacy, only short name of the latent constructs are used.
 </div>
 </a>
 </div>
@@ -561,7 +585,7 @@ Jihong Zhang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Tutorial" data-listing-date-sort="1625328000000" data-listing-file-modified-sort="1687668197340" data-listing-reading-time-sort="3.3">
+<div class="quarto-post image-right" data-index="9" data-categories="R,ggplot2,tutorial" data-listing-date-sort="1625328000000" data-listing-file-modified-sort="1687709690089" data-listing-reading-time-sort="3.3">
 <div class="thumbnail">
 <a href="./posts/2021-07-04-visualization-for-process-data/index.en.html">
 <div class="thumbnail-image">
@@ -579,8 +603,14 @@ Visualization for Process Data
 </div>
 </a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tutorial'); return false;">
-Tutorial
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
 </div>
 </div>
 <a href="./posts/2021-07-04-visualization-for-process-data/index.en.html">
@@ -624,7 +654,7 @@ R
 </div>
 <a href="./posts/2021-01-31-ppmc-cfa/index.en.html">
 <div class="listing-description">
-Posterior Predictive Model Checking (PPMC) is frequently used for model fit evaluation in Bayesian Confirmatory Factor Analysis (BCFA). In standard PPMC procedures, model…
+Posterior Predictive Model Checking (PPMC) is frequently used for model fit evaluation in Bayesian Confirmatory Factor Analysis (BCFA). In standard PPMC procedures, model misfit is quantified by the location of a ML-based estimate to the predictive distribution of a statistic for a model. When the ML-based point estimate is far away from the center of the density of the posterior predictive distribution, model fit is poor. One main critique of such standard PPMC procedures is the strong link to the ML-based point estimates of the observed data. Not included in this approach, however, is how variable the ML-based point estimates are and their use in general as the reference point for Bayesian analyses. We propose a new method of PPMC based on the Posterior Predictive distribution of Bayesian saturated model for BCFA models. The method uses the predictive distribution from parameters of the posterior distribution of the saturated model as reference to detect the local misfit of hypothesized models. The results of the simulation study suggest that the saturated model PPMC approach was an accurate method of determining local model misfit and could be used for model comparison. A real example is also provided in this study.
 </div>
 </a>
 </div>
@@ -703,7 +733,7 @@ blog
 </div>
 <a href="./posts/2019–11-21-rethink-statistical-model/2019–11-21-rethink-statistical-model.html">
 <div class="listing-description">
-Last night, I read the 1st chapter of <em>Statistical Rethinking: A Bayesian Course with Examples in R and Stan</em> from Richard McElreath. I found this is nice book to share with my friends. The core idea of that chapter is the relationship between NULL hypothesis and statistical model.…
+Last night, I read the 1st chapter of <em>Statistical Rethinking: A Bayesian Course with Examples in R and Stan</em> from Richard McElreath. I found this is nice book to share with my friends. The core idea of that chapter is the relationship between NULL hypothesis and statistical model. That is, should we trust the statistical models to reject the NULL hypothesis?
 </div>
 </a>
 </div>
@@ -787,7 +817,7 @@ DCM
 </div>
 <a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.en.html">
 <div class="listing-description">
-Network analysis is a very useful tool.…
+Network analysis is a very useful tool. This post show how to visualize the latent attribute network in Diagnostic Classification Modeling(DCM). There are a ton of R package could be used to visualize network structure.
 </div>
 </a>
 </div>
@@ -869,7 +899,7 @@ ggplot2
 </div>
 <a href="./posts/2019-05-20-nobel-prizes-visualization/index.en.html">
 <div class="listing-description">
-It is of my interest to use <code>ggplot</code> package to visualize some fun data. In this post, I tried to play with a Nobel…
+It is of my interest to use <code>ggplot</code> package to visualize some fun data. In this post, I tried to play with a Nobel Prizes Data including countries, prize year, each prize. The goal is to plot a cumulative traceplot of Liberty Nobel Prizes for top 10 countries.
 </div>
 </a>
 </div>
@@ -908,7 +938,7 @@ blog
 </div>
 <a href="./posts/2019-04-19-make-a-game-in-r/index.html">
 <div class="listing-description">
-Recently I found a interesting R package call nessy which allows you to create a…
+Recently I found a interesting R package call nessy which allows you to create a simple game driven by shiny. Thus. I tried a little bit about this package. Making a interactive app in R is promising in the files like teaching, presentation and visualization.
 </div>
 </a>
 </div>
@@ -950,7 +980,7 @@ Tutorial
 </div>
 <a href="./posts/2019-02-22-Play-With-gganimate/2019-02-22-Play-With-gganimate.html">
 <div class="listing-description">
-A new R packge (<code>gganimate</code> ) provides some new features for animation in R. Its big advantage is it could make use of ggplot API and embeded into ggplot.…
+A new R packge (<code>gganimate</code> ) provides some new features for animation in R. Its big advantage is it could make use of ggplot API and embeded into ggplot. Next, I will use a sample data to show the example. Then I will use some real educational data to explore a little bit what we can do in psychometric area.
 </div>
 </a>
 </div>
@@ -1027,7 +1057,7 @@ blog
 </div>
 <a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html">
 <div class="listing-description">
-This blog is to show a new way to display item information curves using <code>ggridges</code> pa…
+<img src="../../img/information_curve.png" class="img-fluid figure-img">
 </div>
 </a>
 </div>
@@ -1066,7 +1096,7 @@ Manual
 </div>
 <a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html">
 <div class="listing-description">
-This post…
+This post is aimed to introduce the basics of using jags in R programming. Jags is a frequently used program for conducting Bayesian statistics.Most of information below is borrowed from Jeromy Anglim’s Blog. I will keep editing this post if I found more resources about jags.
 </div>
 </a>
 </div>
@@ -1105,7 +1135,7 @@ R
 </div>
 <a href="./posts/2018-09-11-model-checking-in-dcm/2018-09-11-model-checking-in-dcm.html">
 <div class="listing-description">
-This…
+This Blog is the notes for my recent project about reliability and model checking. Next I want to organize a little about one important concept in model checking - discrepancy measures.
 </div>
 </a>
 </div>
@@ -1150,7 +1180,7 @@ tidyverse
 </div>
 <a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.en.html">
 <div class="listing-description">
-This…
+This blog is trying to elaborate steps for cleaning the data. Since datasets varied, this blog could not cover all. Depedent on the data you’re using, different methods should be used.
 </div>
 </a>
 </div>
@@ -1306,7 +1336,7 @@ R
 </div>
 <a href="./posts/2017-11-23-Latent-Profile-Analysis/index.en.html">
 <div class="listing-description">
-Hi there! This is Jihong. This is a webpage folked from JOSHUA M. ROSENBERG.…
+Hi there! This is Jihong. This is a webpage folked from JOSHUA M. ROSENBERG. It aims to provid a very clear example about how to conduct Latent Profile Analysis using MCLUST in r.
 </div>
 </a>
 </div>
@@ -1341,7 +1371,7 @@ blog
 </div>
 <a href="./posts/2017-11-20-Longitudinal-Effect-of-Motivation/index.html">
 <div class="listing-description">
-One big problem in education study is the longitudinal effect of explanatory factor is always ignored. One of the reasons is the requirements of longitudinal data hardly be…
+<img src="../../img/Parent-Involvement.jpg" class="img-fluid figure-img">
 </div>
 </a>
 </div>
@@ -1380,7 +1410,7 @@ blog
 </div>
 <a href="./posts/2017-11-20-EFA-and-CFA/index.html">
 <div class="listing-description">
-I always found exploratory tools and confirmatory tools have distinct fans. The fans of exploratory tools believe the conclusion…
+I always found exploratory tools and confirmatory tools have distinct fans. The fans of exploratory tools believe the conclusion should be data-driven, nothing else beyond data is needed in order to keep object. On the other hand, some confirmatory fans believe that data could provide nothing without context.
 </div>
 </a>
 </div>
@@ -1395,7 +1425,7 @@ Jihong Zhang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-categories="R,Mirt,Linking" data-listing-date-sort="1510761600000" data-listing-file-modified-sort="1687667955213" data-listing-reading-time-sort="5.655">
+<div class="quarto-post image-right" data-index="30" data-categories="R,mirt,linking" data-listing-date-sort="1510761600000" data-listing-file-modified-sort="1687709756535" data-listing-reading-time-sort="5.655">
 <div class="thumbnail">
 <a href="./posts/2017-11-10-Linking_simulation/index.en.html">
 <div class="thumbnail-image">
@@ -1416,16 +1446,16 @@ Simulation Study of Linking using mirt
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Mirt'); return false;">
-Mirt
+<div class="listing-category" onclick="window.quartoListingCategory('mirt'); return false;">
+mirt
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Linking'); return false;">
-Linking
+<div class="listing-category" onclick="window.quartoListingCategory('linking'); return false;">
+linking
 </div>
 </div>
 <a href="./posts/2017-11-10-Linking_simulation/index.en.html">
 <div class="listing-description">
-This simulation study is to show how to do IRT Linking Process using mirt R Package. The simulation data…<!--more-->
+This simulation study is to show how to do IRT Linking Process using mirt R Package. The simulation data includes 2 forms - Form A and Form B. These 2 forms are simulated based on 2 groups of individual, one group has 0 mean trait, another has 0.25 mean trait. Both groups have same sd. <!--more-->
 </div>
 </a>
 </div>
@@ -1464,7 +1494,7 @@ blog
 </div>
 <a href="./posts/2017-11-11-lognormal-simulation/index.html">
 <div class="listing-description">
-This post is a try about how yo simulate lognormal distribution in R. Lognormal distribution is used a lot in cumulative data (e.x. counting), which is very similar with…
+This post is a try about how yo simulate lognormal distribution in R. Lognormal distribution is used a lot in cumulative data (e.x. counting), which is very similar with normal distribution except x should be larger than 0. For instance, the number of schools, the number of students. But I always have no idea about how to parameterized this distribution. I’ll update this post as I learn more about lognormal distribution…
 </div>
 </a>
 </div>
@@ -1479,7 +1509,7 @@ Jihong Zhang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-categories="R,SEM,Lavaan" data-listing-date-sort="1510416000000" data-listing-file-modified-sort="1687679656787" data-listing-reading-time-sort="12.02">
+<div class="quarto-post image-right" data-index="32" data-categories="R,SEM,lavaan" data-listing-date-sort="1510416000000" data-listing-file-modified-sort="1687709589066" data-listing-reading-time-sort="12.025">
 <div class="thumbnail">
 <p><a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.en.html"> <img data-src="./posts/2017-11-12-MESUREMENT-INVARIANCE/model_compare.png" class="thumnail-image"> </a></p>
 </div>
@@ -1499,13 +1529,13 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('SEM'); return false;">
 SEM
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Lavaan'); return false;">
-Lavaan
+<div class="listing-category" onclick="window.quartoListingCategory('lavaan'); return false;">
+lavaan
 </div>
 </div>
 <a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.en.html">
 <div class="listing-description">
-Recently, I was asked by my friend why should we use Measurement Invariance in real research. Why not just ignore this complex and tedious process? As far I’m concerned…<strong></strong>
+Recently, I was asked by my friend why should we use Measurement Invariance in real research. Why not just ignore this complex and tedious process? As far I’m concerned, measurement invariance should be widely used if you have large data scale and figure out what’s going on between groups difference. In this post, I want to elaborate some problems in <strong>Measurement Invariance</strong>: 1) What is measurement invariance 2) why should we care about measuremnet invariance 3) how to do measurement invariance using R Lavaan Package.
 </div>
 </a>
 </div>
@@ -1544,7 +1574,7 @@ Manual
 </div>
 <a href="./posts/2017-11-08-sem-homework/index.html">
 <div class="listing-description">
-T…<code></code>
+This is one of my homework in Structural Equation Modeling in Fall 2017. Dr.&nbsp;Templin provided a excelent example showing how to perform Confirmatory Factor Analysis (CFA) using <code>Lavaan</code> Package. I elaborated each step as following.
 </div>
 </a>
 </div>
@@ -1555,6 +1585,40 @@ Oct 19, 2017
 </div>
 <div class="listing-author">
 Jihong
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="34" data-listing-date-sort="1420041600000" data-listing-file-modified-sort="1687708604050" data-listing-reading-time-sort="0.01">
+<div class="thumbnail">
+<a href="./posts/index.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/index.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/index.html">
+<h3 class="no-anchor listing-title">
+Posts
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+
+<img src="../posts/2023-06-26-moving-to-quarto/quarto.png" class="thumbnail-image card-img" style="height: 150px;">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/index.html">
+<div class="listing-date">
+Jan 1, 2015
+</div>
+<div class="listing-author">
+Jihong Zhang
 </div>
 </a>
 </div>
@@ -1676,7 +1740,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -1699,9 +1763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1723,24 +1785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1776,44 +1821,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

@@ -4,11 +4,9 @@ author: []
 date: '2021-07-04'
 slug: visualization-for-process-data
 categories:
-  - Tutorial
-tags:
-  - Blog
-  - ggplot2
   - R
+  - ggplot2
+  - tutorial
 subtitle: ''
 summary: 'This tutorial aims to explore various types of tools of visualizing the process data.'
 authors: [Jihong Zhang]

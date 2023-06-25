@@ -100,11 +100,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,6 +124,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -182,6 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -278,27 +304,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>First, simulate the Data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(R2jags)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>n.sim <span class="ot">&lt;-</span> <span class="dv">100</span>; <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n.sim, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>e <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n.sim <span class="ot">&lt;-</span> <span class="dv">100</span>; <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n.sim, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we create the outcome y based on coefficients <span class="math inline">b_1</span> and <span class="math inline">b_2</span> for the respective predictors and an intercept a:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.1</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>a <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>y <span class="ot">&lt;-</span> b1<span class="sc">*</span>x1 <span class="sc">+</span> b2<span class="sc">*</span>x2 <span class="sc">+</span> e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b1<span class="sc">*</span>x1 <span class="sc">+</span> b2<span class="sc">*</span>x2 <span class="sc">+</span> e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we combine the variables into one dataframe for processing later:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>sim.dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim.dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And we create and summarize a (frequentist) linear model fit on these data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>freq.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> sim.dat)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">summary</span>(freq.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>freq.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> sim.dat)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(freq.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -324,51 +350,51 @@ F-statistic: 346.5 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="beyesian-model" class="level3">
 <h3 class="anchored" data-anchor-id="beyesian-model">Beyesian Model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>bayes.mod <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb6-2"><a href="#cb6-2"></a> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb6-3"><a href="#cb6-3"></a> y[i] <span class="sc">~</span> <span class="fu">dnorm</span>(mu[i], tau)</span>
-<span id="cb6-4"><a href="#cb6-4"></a> mu[i] <span class="ot">&lt;-</span> alpha <span class="sc">+</span> beta1 <span class="sc">*</span> x1[i] <span class="sc">+</span> beta2 <span class="sc">*</span> x2[i]</span>
-<span id="cb6-5"><a href="#cb6-5"></a> }</span>
-<span id="cb6-6"><a href="#cb6-6"></a> alpha <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, .<span class="dv">01</span>)</span>
-<span id="cb6-7"><a href="#cb6-7"></a> beta1 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
-<span id="cb6-8"><a href="#cb6-8"></a> beta2 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a> tau <span class="sc">~</span> <span class="fu">dgamma</span>(.<span class="dv">01</span>, .<span class="dv">01</span>)</span>
-<span id="cb6-10"><a href="#cb6-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bayes.mod <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> y[i] <span class="sc">~</span> <span class="fu">dnorm</span>(mu[i], tau)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> mu[i] <span class="ot">&lt;-</span> alpha <span class="sc">+</span> beta1 <span class="sc">*</span> x1[i] <span class="sc">+</span> beta2 <span class="sc">*</span> x2[i]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a> alpha <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, .<span class="dv">01</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a> beta1 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> beta2 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> tau <span class="sc">~</span> <span class="fu">dgamma</span>(.<span class="dv">01</span>, .<span class="dv">01</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now define the vectors of the data matrix for JAGS:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>y <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>y</span>
-<span id="cb7-2"><a href="#cb7-2"></a>x1 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x1</span>
-<span id="cb7-3"><a href="#cb7-3"></a>x2 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x2</span>
-<span id="cb7-4"><a href="#cb7-4"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sim.dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>y</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x1</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x2</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sim.dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Read in the data frame for JAGS</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>sim.dat.jags <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"y"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"N"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sim.dat.jags <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"y"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"N"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Define the parameters whose posterior distributions you are interested in summarizing later:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>bayes.mod.params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"alpha"</span>, <span class="st">"beta1"</span>, <span class="st">"beta2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bayes.mod.params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"alpha"</span>, <span class="st">"beta1"</span>, <span class="st">"beta2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Setting up starting values</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>bayes.mod.inits <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb10-2"><a href="#cb10-2"></a> <span class="fu">list</span>(<span class="st">"alpha"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta1"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta2"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>))</span>
-<span id="cb10-3"><a href="#cb10-3"></a>}</span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># inits1 &lt;- list("alpha" = 0, "beta1" = 0, "beta2" = 0)</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># inits2 &lt;- list("alpha" = 1, "beta1" = 1, "beta2" = 1)</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># inits3 &lt;- list("alpha" = -1, "beta1" = -1, "beta2" = -1)</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># bayes.mod.inits &lt;- list(inits1, inits2, inits3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bayes.mod.inits <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(<span class="st">"alpha"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta1"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta2"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># inits1 &lt;- list("alpha" = 0, "beta1" = 0, "beta2" = 0)</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># inits2 &lt;- list("alpha" = 1, "beta1" = 1, "beta2" = 1)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># inits3 &lt;- list("alpha" = -1, "beta1" = -1, "beta2" = -1)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># bayes.mod.inits &lt;- list(inits1, inits2, inits3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="fitting-the-model" class="level3">
 <h3 class="anchored" data-anchor-id="fitting-the-model">Fitting the model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>bayes.mod.fit <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> sim.dat.jags, <span class="at">inits =</span> bayes.mod.inits,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">parameters.to.save =</span> bayes.mod.params, <span class="at">n.chains =</span> <span class="dv">3</span>, <span class="at">n.iter =</span> <span class="dv">9000</span>,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">n.burnin =</span> <span class="dv">1000</span>, <span class="at">model.file =</span> bayes.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>bayes.mod.fit <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> sim.dat.jags, <span class="at">inits =</span> bayes.mod.inits,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters.to.save =</span> bayes.mod.params, <span class="at">n.chains =</span> <span class="dv">3</span>, <span class="at">n.iter =</span> <span class="dv">9000</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n.burnin =</span> <span class="dv">1000</span>, <span class="at">model.file =</span> bayes.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>module glm loaded</code></pre>
 </div>
@@ -388,7 +414,7 @@ Initializing model</code></pre>
 <section id="diagnostics" class="level3">
 <h3 class="anchored" data-anchor-id="diagnostics">Diagnostics</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">print</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Inference for Bugs model at "/var/folders/9t/ryz7lf_s7ts720p_lwdttfhm0000gn/T//RtmpaqCD4J/modelc9a07e55a3b4.txt", fit using jags,
  3 chains, each with 9000 iterations (first 1000 discarded), n.thin = 8
@@ -407,11 +433,11 @@ pD = 4.2 and DIC = 276.0
 DIC is an estimate of expected predictive error (lower deviance is better).</code></pre>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">plot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">traceplot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">traceplot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -539,7 +565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -640,6 +666,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

@@ -1,5 +1,5 @@
 ---
-title: 'A conversation between R and Python on data analysis and machine learning'
+title: 'A Conversation between R and Python on Data Analysis and Machine Learning'
 date: '2023-06-20'
 author: 'Jihong Zhang'
 slug: pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning
@@ -15,13 +15,15 @@ summary: ''
 lastmod: '2023-06-20T14:49:56+08:00'
 featured: no
 toc: true
+code-fold: show
 ---
 
 ```{r setup, echo=FALSE, include=FALSE}
 library(reticulate)
 library(vegawidget)
 knitr::opts_chunk$set(eval=TRUE, include=TRUE, message=FALSE, warning=FALSE, 
-                      comment=">>", external=TRUE, split = TRUE)
+                      comment=">>", external=TRUE, split = TRUE,
+                      echo = 'fenced')
 knitr::knit_engines$get('mermaid')
 #str(knitr::opts_chunk$get())
 use_python("~/venv-metal/bin/python")
@@ -37,7 +39,7 @@ Sys.setenv(TORCH_INSTALL=1)
 
 Let's first get familiar with data manipulation using *PyTorch*. First, `torch.zeors(R, C)` function can create a zero tensor with the size of R by C.
 
-```{python}
+```{python, echo = "fenced"}
 import torch
 
 z = torch.zeros(5, 3)

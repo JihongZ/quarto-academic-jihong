@@ -4,6 +4,7 @@ project:
 website:
   title: "Dr. Jihong Zhang"
   site-url: "https://www.jihongzhang.org/"
+  description: "Technical and Statistical but Fun"
   google-analytics:
     tracking-id: "UA-149871707-1"
   page-navigation: true
@@ -15,6 +16,7 @@ website:
       theme: clean
       openSidebar: false
   navbar:
+    background: dark
     collapse-below: lg
     pinned: true
     title: false
@@ -27,12 +29,17 @@ website:
         menu:
           - projects.qmd
           - links.qmd
+      - icon: rss
+        href: index.xml
   
 format:
   html:
+    comments:
+      utterances:
+        repo: JihongZ/quarto-academic-jihong
     theme: 
+      dark: [darkly, rwds-dark.scss]
       light: [litera, rwds.scss]
-      dark: [darkly, rwds-dark.scss]    
     toc: true
     grid:
       sidebar-width: 0px
@@ -46,12 +53,12 @@ format:
     monofont: 'JetBrains Mono'
     code-block-bg: true
     code-block-border-left: "#31BAE9"
-    code-line-numbers: true
+    code-line-numbers: false
     linestretch: 1.5
     # toc
     table-of-contents: true
     toc-location: right
-    fontsize: 0.9em
+    fontsize: 1em
     
       
 editor: visual

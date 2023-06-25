@@ -100,11 +100,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,6 +124,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -182,6 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -282,12 +308,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="look-at-the-data">Look at the data</h2>
 <p>First of all, have a look at the data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(mirt)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="do">### Read in Raw data from Form A:</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormA.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mirt)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Read in Raw data from Form A:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormA.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,000
 Columns: 64
@@ -362,8 +388,8 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 <h2 class="anchored" data-anchor-id="plot-the-density-of-true-theta-of-group-a">Plot the density of true <span class="math inline">\theta</span> of Group A</h2>
 <p>From the density function, <span class="math inline">mu_{\theta}</span> is 0, <span class="math inline">sd_{\theta}</span> is 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dat<span class="sc">$</span>V1), <span class="at">main =</span> <span class="st">"Group A True Trait Density"</span>, </span>
-<span id="cb3-2"><a href="#cb3-2"></a>     <span class="at">xlab=</span><span class="fu">expression</span>(theta) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dat<span class="sc">$</span>V1), <span class="at">main =</span> <span class="st">"Group A True Trait Density"</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="fu">expression</span>(theta) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/theta-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -376,29 +402,29 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 <h3 class="anchored" data-anchor-id="clean-data">Clean data</h3>
 <p>By cleaning, data has 60 items including 50 unique item (from item1 to item50) and 10 common items (from item51 to item60). The sample size is 5000.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>dat_cali <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">colnames</span>(dat_cali) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dat_cali <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="classical-test-theory" class="level3">
 <h3 class="anchored" data-anchor-id="classical-test-theory">Classical Test Theory</h3>
 <p>Then calculate the CTT table for Form A. The item discrimination and difficulty could be compared between Form A and Form B. Because the relationship between trait and total score is non-linear, so there is effect of shrinkage.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># item stats</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="do">## item discrimnation</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="do">## item difficulty</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali)</span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="do">## item response frequency</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali, table), bind_rows)</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>CTT <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb5-12"><a href="#cb5-12"></a></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="fu">kable</span>(CTT, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali, table), bind_rows)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>CTT <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>CTT Table for Form A</caption>
@@ -843,25 +869,25 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 <section id="model-specification" class="level3">
 <h3 class="anchored" data-anchor-id="model-specification">Model Specification</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>SPECS <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>mod_A3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>parms_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_A3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SPECS <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mod_A3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>parms_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_A3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>a_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">1</span>] </span>
-<span id="cb7-2"><a href="#cb7-2"></a>b_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">2</span>] </span>
-<span id="cb7-3"><a href="#cb7-3"></a>c_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">3</span>] </span>
-<span id="cb7-4"><a href="#cb7-4"></a>theta_A <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_A3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb7-6"><a href="#cb7-6"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">1</span>] </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">2</span>] </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>c_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">3</span>] </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>theta_A <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_A3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using 3-PL for irt model of form A. Extracting the cofficients (a, b, c) of IRT. The model-implied theta was outputed, whose mean is 0.1314938</p>
 <p>The plot below suggest that SE is low when theta is close to mean, but low theta and high theta has large SE.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">plot</span>(theta_A[,<span class="dv">1</span>],theta_A[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_A[,<span class="dv">1</span>],theta_A[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/SE-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -873,8 +899,8 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 <h1>Calibration of Form B</h1>
 <p>The structure of Form B is as same as Form A.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>dat_b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormB.csv"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">glimpse</span>(dat_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat_b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormB.csv"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,000
 Columns: 64
@@ -945,36 +971,36 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat_b) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">ggtitle</span>(<span class="st">"Group B True Trait Density"</span>) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> V1), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">xlab</span>(<span class="st">"True Latent Trait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat_b) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Group B True Trait Density"</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> V1), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"True Latent Trait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/theta_b-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>dat_cali2 <span class="ot">&lt;-</span> dat_b <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">colnames</span>(dat_cali2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali2)</span>
-<span id="cb12-4"><a href="#cb12-4"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali2)</span>
-<span id="cb12-5"><a href="#cb12-5"></a></span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># item stats</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="do">## item discrimnation</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali2, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb12-10"><a href="#cb12-10"></a></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="do">## item difficulty</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali2)</span>
-<span id="cb12-13"><a href="#cb12-13"></a></span>
-<span id="cb12-14"><a href="#cb12-14"></a><span class="do">## item response frequency</span></span>
-<span id="cb12-15"><a href="#cb12-15"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali2, table), bind_rows)</span>
-<span id="cb12-16"><a href="#cb12-16"></a></span>
-<span id="cb12-17"><a href="#cb12-17"></a>CTT2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb12-18"><a href="#cb12-18"></a></span>
-<span id="cb12-19"><a href="#cb12-19"></a><span class="fu">kable</span>(CTT2, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat_cali2 <span class="ot">&lt;-</span> dat_b <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali2)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali2)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali2, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali2)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali2, table), bind_rows)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>CTT2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT2, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>CTT Table for Form A</caption>
@@ -1417,21 +1443,21 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 <section id="model-specification-of-b" class="level3">
 <h3 class="anchored" data-anchor-id="model-specification-of-b">Model Specification of B</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>SPECS2 <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5"></a>mod_B3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali2, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb13-6"><a href="#cb13-6"></a>parms_b <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_B3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>SPECS2 <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>mod_B3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali2, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>parms_b <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_B3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>a_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">1</span>] </span>
-<span id="cb14-2"><a href="#cb14-2"></a>b_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">2</span>] </span>
-<span id="cb14-3"><a href="#cb14-3"></a>c_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">3</span>] </span>
-<span id="cb14-4"><a href="#cb14-4"></a>theta_B <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_B3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb14-6"><a href="#cb14-6"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="fu">head</span>(theta_B, <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"Model-implied Theta of B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">1</span>] </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">2</span>] </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>c_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">3</span>] </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>theta_B <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_B3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(theta_B, <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"Model-implied Theta of B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Model-implied Theta of B</caption>
@@ -1536,16 +1562,16 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 \sigma_A^2 = \sigma_B^2
 </span> thus, <span class="math inline">b_B -b_A</span> should also be -0.25. the estimated difference of b is calculate by the mean of b parametes of Form A’s common items and that of Form B’s common items, which is -0.2756443. Thus, it is very close to difference of true traits.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="do">### b-plot</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">plot</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb15-3"><a href="#cb15-3"></a>     <span class="at">main=</span><span class="fu">paste0</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)), </span>
-<span id="cb15-4"><a href="#cb15-4"></a>     <span class="at">xlab =</span> <span class="st">"b_A"</span>,</span>
-<span id="cb15-5"><a href="#cb15-5"></a>     <span class="at">ylab =</span> <span class="st">"b_B"</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">### b-plot</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste0</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)), </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"b_A"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"b_B"</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-plot" class="level2">
@@ -1555,96 +1581,96 @@ a_A / a_B = 1
 </span></p>
 <p>The true ratio of (means of) a parameters is 1.016284, which is very close to 1. SD of A and B are both close to 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="do">### a-plot</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">plot</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb17-3"><a href="#cb17-3"></a>     <span class="at">main=</span><span class="fu">round</span>(<span class="fu">cor</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)</span>
-<span id="cb17-4"><a href="#cb17-4"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">### a-plot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">round</span>(<span class="fu">cor</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="co">#SDs of b-values across forms</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>SD_bA <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-6"><a href="#cb18-6"></a>SD_bB <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-7"><a href="#cb18-7"></a></span>
-<span id="cb18-8"><a href="#cb18-8"></a>Mean_bA <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-9"><a href="#cb18-9"></a>Mean_bB <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SDs of b-values across forms</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>SD_bA <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>SD_bB <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>Mean_bA <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>Mean_bB <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="linking" class="level1">
 <h1>Linking</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="do">###</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="do">### Run one or the other, NOT BOTH!</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="do">###</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="do">### MS linking: place item parameters from</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a>slope <span class="ot">&lt;-</span> SD_bA <span class="sc">/</span> SD_bB</span>
-<span id="cb19-8"><a href="#cb19-8"></a>inter <span class="ot">&lt;-</span> Mean_bA <span class="sc">-</span> slope<span class="sc">*</span>Mean_bB</span>
-<span id="cb19-9"><a href="#cb19-9"></a></span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="do">### MM linking: place item parameters from</span></span>
-<span id="cb19-11"><a href="#cb19-11"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
-<span id="cb19-13"><a href="#cb19-13"></a><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
-<span id="cb19-14"><a href="#cb19-14"></a></span>
-<span id="cb19-15"><a href="#cb19-15"></a></span>
-<span id="cb19-16"><a href="#cb19-16"></a><span class="do">###</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a><span class="do">### Perform the Linking</span></span>
-<span id="cb19-18"><a href="#cb19-18"></a><span class="do">###</span></span>
-<span id="cb19-19"><a href="#cb19-19"></a></span>
-<span id="cb19-20"><a href="#cb19-20"></a>LINKED_items <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">3</span>)</span>
-<span id="cb19-21"><a href="#cb19-21"></a></span>
-<span id="cb19-22"><a href="#cb19-22"></a><span class="co">#Column 3 is c, it stays the same</span></span>
-<span id="cb19-23"><a href="#cb19-23"></a>LINKED_items[,<span class="dv">3</span>] <span class="ot">&lt;-</span> c_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]</span>
-<span id="cb19-24"><a href="#cb19-24"></a></span>
-<span id="cb19-25"><a href="#cb19-25"></a><span class="co">#Column 2 is b, it is linked:</span></span>
-<span id="cb19-26"><a href="#cb19-26"></a>LINKED_items[,<span class="dv">2</span>] <span class="ot">&lt;-</span> b_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb19-27"><a href="#cb19-27"></a></span>
-<span id="cb19-28"><a href="#cb19-28"></a><span class="co">#Column 1 is a, it is also linked:</span></span>
-<span id="cb19-29"><a href="#cb19-29"></a>LINKED_items[,<span class="dv">1</span>] <span class="ot">&lt;-</span> a_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">/</span> slope</span>
-<span id="cb19-30"><a href="#cb19-30"></a></span>
-<span id="cb19-31"><a href="#cb19-31"></a><span class="do">### Now the ITEM BANK has 110 items all</span></span>
-<span id="cb19-32"><a href="#cb19-32"></a><span class="do">### linked to a common metric!</span></span>
-<span id="cb19-33"><a href="#cb19-33"></a><span class="fu">rownames</span>(LINKED_items) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item_B"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
-<span id="cb19-34"><a href="#cb19-34"></a>ITEM.BANK <span class="ot">&lt;-</span> <span class="fu">rbind</span>(parms_a[,<span class="sc">-</span><span class="dv">4</span>], LINKED_items)</span>
-<span id="cb19-35"><a href="#cb19-35"></a><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
-<span id="cb19-36"><a href="#cb19-36"></a></span>
-<span id="cb19-37"><a href="#cb19-37"></a><span class="co">#Link the theta estimates</span></span>
-<span id="cb19-38"><a href="#cb19-38"></a>LINKED_theta <span class="ot">&lt;-</span> theta_B[,<span class="dv">1</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb19-39"><a href="#cb19-39"></a>LINKED_se <span class="ot">&lt;-</span> theta_B[,<span class="dv">2</span>]<span class="sc">/</span>slope</span>
-<span id="cb19-40"><a href="#cb19-40"></a></span>
-<span id="cb19-41"><a href="#cb19-41"></a><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
-<span id="cb19-42"><a href="#cb19-42"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Run one or the other, NOT BOTH!</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">### MS linking: place item parameters from</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> SD_bA <span class="sc">/</span> SD_bB</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> Mean_bA <span class="sc">-</span> slope<span class="sc">*</span>Mean_bB</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">### MM linking: place item parameters from</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="do">### Perform the Linking</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>LINKED_items <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">3</span>)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 3 is c, it stays the same</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">3</span>] <span class="ot">&lt;-</span> c_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 2 is b, it is linked:</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">2</span>] <span class="ot">&lt;-</span> b_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 1 is a, it is also linked:</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">1</span>] <span class="ot">&lt;-</span> a_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">/</span> slope</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="do">### Now the ITEM BANK has 110 items all</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="do">### linked to a common metric!</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(LINKED_items) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item_B"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>ITEM.BANK <span class="ot">&lt;-</span> <span class="fu">rbind</span>(parms_a[,<span class="sc">-</span><span class="dv">4</span>], LINKED_items)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co">#Link the theta estimates</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>LINKED_theta <span class="ot">&lt;-</span> theta_B[,<span class="dv">1</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>LINKED_se <span class="ot">&lt;-</span> theta_B[,<span class="dv">2</span>]<span class="sc">/</span>slope</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of B is -0.013"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>, <span class="fu">sd</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>, <span class="fu">sd</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of B is 0.97"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># after Linked</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">print</span>(<span class="st">"After Linking:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># after Linked</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"After Linking:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "After Linking:"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of B is 0.269"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>,<span class="fu">sd</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>,<span class="fu">sd</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of B is 0.935"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Theta of A is</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of A is "</span>,<span class="fu">mean</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Theta of A is</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of A is "</span>,<span class="fu">mean</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of A is -0.021"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of A is "</span>, <span class="fu">sd</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of A is "</span>, <span class="fu">sd</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of A is 0.965"</code></pre>
 </div>
@@ -1763,7 +1789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -1864,6 +1890,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

@@ -3,5 +3,12 @@
 # freeze computational output
 freeze: true
 author: "Jihong Zhang"
-comments: false
+
+# <script src="https://utteranc.es/client.js"
+#         repo="[ENTER REPO HERE]"
+#         issue-term="title"
+#         theme="photon-dark"
+#         crossorigin="anonymous"
+#         async>
+# </script>
 

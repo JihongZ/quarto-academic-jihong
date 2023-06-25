@@ -5,12 +5,11 @@ date: '2022-04-29'
 slug: power-analysis-for-sem
 categories:
   - R
-  - Rshiny
+  - rshiny
   - webpower
   - lavaan
-tags:
-  - Blog
-  - Tutorial
+  - blog
+  - tutorial
 subtitle: 'Showcase current software used for power analysis of Structural Equation Modeling'
 summary: ''
 lastmod: '2022-04-29T16:53:41-05:00'
@@ -19,8 +18,6 @@ bibliography: 'Power Analysis.bib'
 link-citations: true
 toc: true
 ---
-
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
@@ -39,7 +36,7 @@ These two ways of determining minimum sample sizes may not agree with each other
 
 As mentioned above, global power is a test quantifying the degree of confidence of the hypothesis test of model misspecification. There are many fit indices for power analysis for model misspecification including:
 
-1.  Satorra and Saris's (1985) \$\\chi^2\$ likelihood-ratio test
+1.  Satorra and Saris's (1985) \$\\chi\^2\$ likelihood-ratio test
 2.  MacCallum et al.'s (1996) root-mean-square error of approximation (RMSEA) tests
 
 For the first test, I recommend using [WebPower](https://webpower.psychstat.org/models/sem02/), a free web tool, to calculate global power based on Chi-square likelihood-ratio test (LRT). The test examines the misspecification by comparing the user model to the null model with the hypothesis that the hypothesized model is same as the null model. Most of cases will reject the hypothesis. WebPower tests the global power of SEM based on chi-square likelihood ratio test.
@@ -47,7 +44,6 @@ For the first test, I recommend using [WebPower](https://webpower.psychstat.org/
 ```{r, echo=FALSE, fig.cap="Chi-square LR test"}
 knitr::include_graphics("webpower.png")
 ```
-
 
 Input the chi-square test with 480.82 and vary the sample size from N=1 to N=300, we found N = 5 is enough sample size for power up to 1. Thus, normally SEM based on Chi-square LRT to null model has very low bar for misspecification. In this case, perhaps doubling the sample size (N \$\\times\$ 2 = 261 \$\\times\$ 2 = 522) is a more reasonable rule of thumb of minimum sample size.
 
@@ -86,7 +82,7 @@ knitr::include_graphics("local_power_300.png")
 knitr::include_graphics("local_power_500.png")
 ```
 
-As the figures shown, based on MCMC simulation, sample size N = 300 is expected to increase the power of time effect on InR (InR ~~ time) to value 0.81 while N = 500 will increase the power to value 0.9, which is enough power for single regression coefficient effect. However, with such moderately large sample size, other time effects on ER, IRT, IGR, IdR (i.e., ER ~~ time) still stay at a low level because of the lower estimated effect size.
+As the figures shown, based on MCMC simulation, sample size N = 300 is expected to increase the power of time effect on InR (InR \~\~ time) to value 0.81 while N = 500 will increase the power to value 0.9, which is enough power for single regression coefficient effect. However, with such moderately large sample size, other time effects on ER, IRT, IGR, IdR (i.e., ER \~\~ time) still stay at a low level because of the lower estimated effect size.
 
 Thus, from this experiment, we can conclude that to make the power of time effect on latent variable InR up to 0.9, at lease around 300\~500 samples are required.
 
@@ -98,6 +94,6 @@ Local power determines the minimum sample sizes for one specific effect in SEM. 
 
 # Discussion
 
-There are few guidelines about how and what to report local power and global power in SEM literature. Global power seems a common thing to report for all SEM paper since all SEM research need to deal with model misspecification before drawing any conclusion. Local power, on the other hand, is necessary when one effect within SEM model is of most interest and core of the study. Some may argue that power in SEM is not important as long as the model fit of SEM is acceptable. However, the acceptance of model-data fit cannot guarantee that the sample size meet the requirement of detecting specific effect. In other words, there may be some sort of false positive rate when reporting significance test in small sample setting. More research needed to investigate the relationship between power and local misfit indices to understand this problem. **Please let me know your thoughts in comments below. **
+There are few guidelines about how and what to report local power and global power in SEM literature. Global power seems a common thing to report for all SEM paper since all SEM research need to deal with model misspecification before drawing any conclusion. Local power, on the other hand, is necessary when one effect within SEM model is of most interest and core of the study. Some may argue that power in SEM is not important as long as the model fit of SEM is acceptable. However, the acceptance of model-data fit cannot guarantee that the sample size meet the requirement of detecting specific effect. In other words, there may be some sort of false positive rate when reporting significance test in small sample setting. More research needed to investigate the relationship between power and local misfit indices to understand this problem. **Please let me know your thoughts in comments below.**
 
 # Reference

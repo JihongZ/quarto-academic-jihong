@@ -100,11 +100,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,6 +124,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
 
 
@@ -166,6 +187,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -224,58 +250,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The NSF grant awards can be easily searched via <a href="https://nsf.gov/awardsearch">NSF website</a>. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really interested in: (1) Who as Principal Investigator (PI) obtained most NSF awards? (2) Which institute obtained most NSF awards?</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>awards <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Awards.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>awards <span class="ot">&lt;-</span> awards <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">filter</span>(NSFOrganization <span class="sc">==</span> <span class="st">"SES"</span>) <span class="co"># select social economic sciences</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>awards <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Awards.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>awards <span class="ot">&lt;-</span> awards <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NSFOrganization <span class="sc">==</span> <span class="st">"SES"</span>) <span class="co"># select social economic sciences</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="who-get-most-awards" class="level2">
 <h2 class="anchored" data-anchor-id="who-get-most-awards">Who get most awards</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>pi_amount <span class="ot">&lt;-</span> awards <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(<span class="at">PI =</span> PrincipalInvestigator, <span class="at">Org =</span> Organization, <span class="at">Amount =</span> AwardedAmountToDate, Title) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(PI<span class="sc">!=</span><span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">mutate</span>(<span class="at">Org =</span> <span class="fu">str_replace_all</span>(Org, <span class="at">pattern =</span> <span class="st">" -DO NOT USE"</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">mutate</span>(<span class="at">Amount =</span> <span class="fu">str_replace_all</span>(Amount, <span class="at">pattern =</span> <span class="st">"[</span><span class="sc">\\</span><span class="st">$</span><span class="sc">\\</span><span class="st">,]"</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">mutate</span>(<span class="at">Amount =</span> <span class="fu">as.numeric</span>(Amount)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"    "</span>, <span class="st">" "</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-8"><a href="#cb3-8"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"NCRN-MN: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"Collaborative Research: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"CAREER: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-11"><a href="#cb3-11"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">sub</span>(<span class="at">x =</span> Title, <span class="at">pattern =</span> <span class="st">'(?&lt;=.{85})'</span>, <span class="at">replacement =</span> <span class="st">'</span><span class="sc">\n</span><span class="st">'</span>, <span class="at">perl =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-12"><a href="#cb3-12"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"^ "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-13"><a href="#cb3-13"></a>  <span class="fu">mutate</span>(<span class="at">PI =</span> <span class="fu">paste0</span>(PI, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, Org))</span>
-<span id="cb3-14"><a href="#cb3-14"></a></span>
-<span id="cb3-15"><a href="#cb3-15"></a>pi_amount_p <span class="ot">&lt;-</span> pi_amount <span class="sc">|&gt;</span> </span>
-<span id="cb3-16"><a href="#cb3-16"></a>  <span class="fu">group_by</span>(PI) <span class="sc">|&gt;</span> </span>
-<span id="cb3-17"><a href="#cb3-17"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb3-18"><a href="#cb3-18"></a>    <span class="at">Amount_sum =</span> <span class="fu">sum</span>(Amount),</span>
-<span id="cb3-19"><a href="#cb3-19"></a>    <span class="at">Award_num =</span> <span class="fu">n</span>(),</span>
-<span id="cb3-20"><a href="#cb3-20"></a>    <span class="at">Title =</span> Title[<span class="dv">1</span>]</span>
-<span id="cb3-21"><a href="#cb3-21"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb3-22"><a href="#cb3-22"></a>  <span class="fu">mutate</span>(<span class="at">PI =</span> <span class="fu">fct_reorder</span>(PI, Amount_sum)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-23"><a href="#cb3-23"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PI)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-24"><a href="#cb3-24"></a>  <span class="fu">head</span>(<span class="dv">50</span>) <span class="sc">|&gt;</span>  <span class="co"># top 100 </span></span>
-<span id="cb3-25"><a href="#cb3-25"></a>  <span class="fu">mutate</span>(<span class="at">Highlight =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">40</span>)),</span>
-<span id="cb3-26"><a href="#cb3-26"></a>         <span class="at">rank =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb3-27"><a href="#cb3-27"></a>  <span class="fu">mutate</span>(<span class="at">labels =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(Amount_sum<span class="sc">/</span> <span class="fl">1e6</span>, <span class="dv">1</span>), <span class="st">" M"</span>))</span>
-<span id="cb3-28"><a href="#cb3-28"></a></span>
-<span id="cb3-29"><a href="#cb3-29"></a><span class="fu">ggplot</span>(pi_amount_p) <span class="sc">+</span></span>
-<span id="cb3-30"><a href="#cb3-30"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> PI, <span class="at">y =</span> Amount_sum, <span class="at">fill =</span> <span class="fu">factor</span>(Highlight))) <span class="sc">+</span></span>
-<span id="cb3-31"><a href="#cb3-31"></a>  <span class="co"># geom_text(aes(x = PI, y = 0, label = labels), hjust = 1, size = 3) +</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> PI, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> Title), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb3-33"><a href="#cb3-33"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">suffix =</span> <span class="st">" M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">4500000</span>)) <span class="sc">+</span></span>
-<span id="cb3-34"><a href="#cb3-34"></a>  <span class="co"># scale_x_discrete(labels = PI, breaks = PI) +</span></span>
-<span id="cb3-35"><a href="#cb3-35"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkblue"</span>, <span class="st">"red"</span>)) <span class="sc">+</span></span>
-<span id="cb3-36"><a href="#cb3-36"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"NSF Social Economic Sciences: Top 50 PIs most amount of awards</span><span class="sc">\n</span><span class="st">funded (2021-2022)"</span>, </span>
-<span id="cb3-37"><a href="#cb3-37"></a>       <span class="at">subtitle =</span> <span class="st">"Bayesian Cognitive Diagnosis"</span>,</span>
-<span id="cb3-38"><a href="#cb3-38"></a>       <span class="at">caption =</span> <span class="st">'SEARCH: "Bayesian Cognitive Diagnosis"</span><span class="sc">\n</span><span class="st">Source:https://nsf.gov/awardsearch'</span>,</span>
-<span id="cb3-39"><a href="#cb3-39"></a>       <span class="at">x =</span> <span class="st">"PI &amp; Orgnization"</span>, <span class="at">y =</span> <span class="st">"Total Amount of Awards"</span>) <span class="sc">+</span></span>
-<span id="cb3-40"><a href="#cb3-40"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb3-41"><a href="#cb3-41"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_gray</span>() <span class="sc">+</span></span>
-<span id="cb3-42"><a href="#cb3-42"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">""</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pi_amount <span class="ot">&lt;-</span> awards <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">PI =</span> PrincipalInvestigator, <span class="at">Org =</span> Organization, <span class="at">Amount =</span> AwardedAmountToDate, Title) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(PI<span class="sc">!=</span><span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Org =</span> <span class="fu">str_replace_all</span>(Org, <span class="at">pattern =</span> <span class="st">" -DO NOT USE"</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Amount =</span> <span class="fu">str_replace_all</span>(Amount, <span class="at">pattern =</span> <span class="st">"[</span><span class="sc">\\</span><span class="st">$</span><span class="sc">\\</span><span class="st">,]"</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Amount =</span> <span class="fu">as.numeric</span>(Amount)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"    "</span>, <span class="st">" "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"NCRN-MN: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"Collaborative Research: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"CAREER: "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">sub</span>(<span class="at">x =</span> Title, <span class="at">pattern =</span> <span class="st">'(?&lt;=.{85})'</span>, <span class="at">replacement =</span> <span class="st">'</span><span class="sc">\n</span><span class="st">'</span>, <span class="at">perl =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_replace</span>(Title, <span class="st">"^ "</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PI =</span> <span class="fu">paste0</span>(PI, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, Org))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>pi_amount_p <span class="ot">&lt;-</span> pi_amount <span class="sc">|&gt;</span> </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(PI) <span class="sc">|&gt;</span> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Amount_sum =</span> <span class="fu">sum</span>(Amount),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Award_num =</span> <span class="fu">n</span>(),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Title =</span> Title[<span class="dv">1</span>]</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PI =</span> <span class="fu">fct_reorder</span>(PI, Amount_sum)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PI)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">50</span>) <span class="sc">|&gt;</span>  <span class="co"># top 100 </span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Highlight =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">40</span>)),</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">rank =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">labels =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(Amount_sum<span class="sc">/</span> <span class="fl">1e6</span>, <span class="dv">1</span>), <span class="st">" M"</span>))</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pi_amount_p) <span class="sc">+</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> PI, <span class="at">y =</span> Amount_sum, <span class="at">fill =</span> <span class="fu">factor</span>(Highlight))) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_text(aes(x = PI, y = 0, label = labels), hjust = 1, size = 3) +</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> PI, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> Title), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">suffix =</span> <span class="st">" M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">4500000</span>)) <span class="sc">+</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_x_discrete(labels = PI, breaks = PI) +</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkblue"</span>, <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"NSF Social Economic Sciences: Top 50 PIs most amount of awards</span><span class="sc">\n</span><span class="st">funded (2021-2022)"</span>, </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Bayesian Cognitive Diagnosis"</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">'SEARCH: "Bayesian Cognitive Diagnosis"</span><span class="sc">\n</span><span class="st">Source:https://nsf.gov/awardsearch'</span>,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"PI &amp; Orgnization"</span>, <span class="at">y =</span> <span class="st">"Total Amount of Awards"</span>) <span class="sc">+</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_gray</span>() <span class="sc">+</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">""</span>, <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -398,7 +424,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -499,6 +525,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

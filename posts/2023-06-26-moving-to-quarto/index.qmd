@@ -30,9 +30,17 @@ format:
 
 [![](quarto.png){fig-align="center"}](https://quarto.org)
 
-2.  Nicola Rennie's blog inspires me a lot. I feel like [Hugo Apéro](https://github.com/hugo-apero/) is the best hugo theme in the market.
+2.  Nicola Rennie's blog is very inspiring. Nice font setting and background. I feel like [Hugo Apéro](https://github.com/hugo-apero/) is the best hugo theme in the market.
 
     [![](nrennie.png){width="320" height="200"}](https://nrennie.rbind.io)
+
+3.  Yihui's blog. As the creator of blogdown, Yihui talked about why not transfer to Quarto :P I am a old player of hugo/blogdown, but I am not good at customizing the website from the scratch. Thus, quarto suits my needs very well. For those who is very experienced at JS, hugo is still a better choice.
+
+    [![](yihui.png){width="320" height="200"}](https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch)
+
+4.  Frank Harrel's blog: R workflow.
+
+    [![](FrankHarrel.png){width="320" height="200"}](https://www.fharrell.com/post/rflow/)
 
 ## Tricks of Quarto
 

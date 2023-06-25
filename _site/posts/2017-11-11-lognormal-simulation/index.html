@@ -100,11 +100,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,6 +124,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
 
 
@@ -164,6 +185,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -232,31 +258,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="simulation-study-1" class="level3">
 <h3 class="anchored" data-anchor-id="simulation-study-1">Simulation Study 1</h3>
 <p>This study is to simulate lognormal density distribution based on mean and sd of depedent variable (Y). My simulated mean of y is 891, and sd is 490, N (sample size) is 200000. Then use the formular below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>mu  <span class="ot">=</span> <span class="fu">log</span>(m<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>phi) <span class="co"># log mean</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>sigma <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>v<span class="sc">/</span>m<span class="sc">^</span><span class="dv">2</span>)) <span class="co"># log sd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mu  <span class="ot">=</span> <span class="fu">log</span>(m<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>phi) <span class="co"># log mean</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>v<span class="sc">/</span>m<span class="sc">^</span><span class="dv">2</span>)) <span class="co"># log sd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It could calculate the log mean and log standard deviation for lognormal distribution.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">set.seed</span>(<span class="dv">20171108</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="do">#### Give Y mean and Y sd, simluate lognormal distribution data.</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>m <span class="ot">=</span> <span class="dv">891</span> <span class="co"># geometric mean</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>sd <span class="ot">=</span> <span class="dv">490</span> <span class="co"># geometric sd</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>v <span class="ot">=</span> sd <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>phi <span class="ot">=</span> <span class="fu">sqrt</span>(v <span class="sc">+</span> m<span class="sc">^</span><span class="dv">2</span>) </span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a>mu    <span class="ot">=</span> <span class="fu">log</span>(m<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>phi) <span class="co"># log mean</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>sigma <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>v<span class="sc">/</span>m<span class="sc">^</span><span class="dv">2</span>)) <span class="co"># log sd</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  </span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a>y <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="at">n =</span> <span class="dv">200000</span>, mu, sigma) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">0</span>)</span>
-<span id="cb2-14"><a href="#cb2-14"></a>m.sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="co"># should be close to 891</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>sd.sim <span class="ot">&lt;-</span> <span class="fu">sd</span>(y) <span class="co"># should be close to 490</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17"></a>row1 <span class="ot">&lt;-</span> <span class="fu">c</span>(m, mu,m.sim)</span>
-<span id="cb2-18"><a href="#cb2-18"></a>row2 <span class="ot">&lt;-</span> <span class="fu">c</span>(sd, sigma,sd.sim)</span>
-<span id="cb2-19"><a href="#cb2-19"></a>table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(row1, row2)</span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="fu">colnames</span>(table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Original"</span>, <span class="st">"Log"</span>, <span class="st">"Simulated"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="fu">rownames</span>(table)  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="st">"SD"</span>)</span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">kable</span>(table) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20171108</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Give Y mean and Y sd, simluate lognormal distribution data.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="dv">891</span> <span class="co"># geometric mean</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">=</span> <span class="dv">490</span> <span class="co"># geometric sd</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>v <span class="ot">=</span> sd <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>phi <span class="ot">=</span> <span class="fu">sqrt</span>(v <span class="sc">+</span> m<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>mu    <span class="ot">=</span> <span class="fu">log</span>(m<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>phi) <span class="co"># log mean</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>v<span class="sc">/</span>m<span class="sc">^</span><span class="dv">2</span>)) <span class="co"># log sd</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="at">n =</span> <span class="dv">200000</span>, mu, sigma) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">0</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>m.sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="co"># should be close to 891</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>sd.sim <span class="ot">&lt;-</span> <span class="fu">sd</span>(y) <span class="co"># should be close to 490</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>row1 <span class="ot">&lt;-</span> <span class="fu">c</span>(m, mu,m.sim)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>row2 <span class="ot">&lt;-</span> <span class="fu">c</span>(sd, sigma,sd.sim)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(row1, row2)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Original"</span>, <span class="st">"Log"</span>, <span class="st">"Simulated"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(table)  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="st">"SD"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(table) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is the original, log and simulated mean and sd. It could be easily found that simulated ones are very closed to original.</p>
 <table class="table">
 <thead>
@@ -282,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>From the density plot below, we can see the mean of X is also close to 891.</p>
 
 
@@ -399,7 +425,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -500,6 +526,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
