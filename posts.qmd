@@ -1,0 +1,9 @@
+---
+title: "Blog"
+subtitle: 'Blogs about R, Python, machine learning, data science, and visualisation'
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+---

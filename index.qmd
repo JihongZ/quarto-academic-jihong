@@ -1,0 +1,46 @@
+---
+title: "Jihong Zhang"
+subtitle: 'ACADEMIC DATA SCIENTIST'
+about:
+  template: trestles
+  image: profile.jpg
+  image-shape: round
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/jihongzgamma
+    - icon: github
+      text: Github
+      href: https://github.com/JihongZ
+    - icon: bi-bookmark-heart-fill
+      text: ORCID
+      href: https://orcid.org/0000-0003-2820-3734
+    - icon: bi-file-earmark-person
+      text: C.V.
+      href: Curriculum_Vitae.pdf
+---
+
+I am a postdoctoral research fellow in the school of social science, the Chinese University of Hong Kong. My main duty is data analysis using advanced statistical modeling such as machine learning, Bayesian network etc. My doctoral training was in the Educational Measurement and Statistics (EMS) program at University of Iowa mainly focusing on Bayesian latent variable modeling, Item response theory modeling.
+
+My research tries to help other practitioners understand their data and correctly interpret, and to wisely use the powerful tools of statistics.
+
+## Interests
+
+-   Bayesian Psychometric Modeling
+-   Machine Learning and data mining in Education
+-   Diagnostic Classification Models
+
+## Education
+
+-   **Ph.D.** \| Educational Measurement & Statistics \| [2019 - 2022]{style="color:darkgrey;"}
+-   **M.S.** \| Educational Psychology \| [2015 - 2019]{style="color:darkgrey;"}
+-   **B.S.** \| Applied Psychology \| [2009 - 2013]{#date style="color:darkgrey;"}
+
+## Experience
+
+-   **Postdoctoral Fellow**
+    -   The Chinese University of Hong Kong
+    -   [Dec 2022 - June 2023]{style="color:darkgrey;"}
+-   **Associate Researcher**
+    -   Stanford Research Institute (SRI)
+    -   [June 2021 - Jan 2022]{style="color:darkgrey;"}

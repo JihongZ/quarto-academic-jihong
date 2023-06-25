@@ -1,0 +1,60 @@
+project:
+  type: website
+
+website:
+  title: "Dr. Jihong Zhang"
+  site-url: "https://www.jihongzhang.org/"
+  google-analytics:
+    tracking-id: "UA-149871707-1"
+  page-navigation: true
+  twitter-card: 
+    creator: "@jihongzgamma"
+  open-graph: true
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: false
+  navbar:
+    collapse-below: lg
+    pinned: true
+    title: false
+    right:
+      - text: "Home"
+        file: index.qmd
+      - text: "Blog"     
+        file: posts.qmd  
+      - text: "More"
+        menu:
+          - projects.qmd
+          - links.qmd
+  
+format:
+  html:
+    theme: 
+      light: [litera, rwds.scss]
+      dark: [darkly, rwds-dark.scss]    
+    toc: true
+    grid:
+      sidebar-width: 0px
+      body-width: 1000px
+      margin-width: 250px
+    header-includes: |
+      <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&display=swap" rel="stylesheet">
+    mainfont: 'Maven Pro'
+    html-math-method: katex
+    # code settings
+    monofont: 'JetBrains Mono'
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+    code-line-numbers: true
+    linestretch: 1.5
+    # toc
+    table-of-contents: true
+    toc-location: right
+    fontsize: 0.9em
+    
+      
+editor: visual
+
+execute: 
+  freeze: auto

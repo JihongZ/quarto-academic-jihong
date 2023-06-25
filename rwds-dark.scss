@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+@import 'https://fonts.googleapis.com/css2?family=Maven+Pro:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:wght@300;400;500&family=JetBrains+Mono:ital@0;1';
+
+#quarto-content {
+  color: #f0eeeb;
+  background-color: black;
+  font-family: 'Maven Pro', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Nunito', sans-serif;
+}
+
+/*-- scss:defaults --*/
+
+// Code blocks
+$code-block-bg-alpha: -.8;
+
+/*-- scss:rules --*/
+p { // main font family of post content
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 1em;
+}

@@ -1,0 +1,72 @@
+---
+title: "Moving my website to Quarto"
+author: "Jihong Zhang"
+date: "06/25/2023"
+draft: false
+format:
+  html:
+    toc: true
+    code-fold: true # hide code by default
+    html-math-method: katex
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+> Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps because some reasons same as other bloggers:
+>
+> \(1\) Quarto is the next generation of rmarkdown.
+>
+> \(2\) Quarto is independent with R or Rstudio.
+>
+> \(3\) Quarto has a clean file tree for website building.
+>
+> \(4\) Quarto has cleaner command than hugo (i.e., \`quarto publish netlify\` for publishing website etc.).
+>
+> This blog serves as a note how I customize quarto website bit by bit. It will not be a comprehensive tutorial (much online resources exists) but contain be some tricks.
+
+## Useful links
+
+1.  Quarto official documentation is always the best place to starts with.
+
+[![](quarto.png){fig-align="center"}](https://quarto.org)
+
+2.  Nicola Rennie's blog inspires me a lot. I feel like [Hugo Apéro](https://github.com/hugo-apero/) is the best hugo theme in the market.
+
+    [![](nrennie.png){width="320" height="200"}](https://nrennie.rbind.io)
+
+## Tricks of Quarto
+
+### 1. Code highlighting
+
+The very first trick is using `format > html > code-fold: true` settings in YAML metadata in *\_quarto.yml* (global) or *.qmd* (local) to hide the code block as `|> Code`, like:
+
+```{r}
+kableExtra::kbl(head(iris)) |> 
+  kableExtra::kable_styling(
+    html_font = "Maven Pro",
+    bootstrap_options = c('striped', 'hover'),
+    font_size = 10, full_width = TRUE)
+```
+
+Note that the code block can be numbered and added with a left border using `code-block-bg: true` and `code-block-border-left: "#31BAE9"`
+
+Code block now also can be shown with language `#| echo: fenced`. As the code chunk shown below, `{r}` is explicitly presented. I don't hate `#|` as the new way of chuck option setup but when I test the code chuck, I found there is a space between `#|` and option keys. For example, it should be `#| echo: fenced` rather than `#|echo:fenced`. Otherwise, quarto will ignore chunk options.
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| code-fold: false
+kableExtra::kbl(head(iris)) |> 
+  kableExtra::kable_styling(
+    html_font = "Maven Pro",
+    bootstrap_options = c('striped', 'hover'),
+    font_size = 10, full_width = TRUE)
+```
+
+```{python}
+#| echo: fenced
+#| eval: false
+#| code-fold: show
+import numpy as np
+iris = np.array(iris)
+```
