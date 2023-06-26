@@ -11,21 +11,20 @@ website:
   twitter-card: 
     creator: "@jihongzgamma"
   open-graph: true
-  comments: 
-    hypothesis:
-      theme: clean
-      openSidebar: false
   navbar:
-    background: dark
+    background: '#008080'
     collapse-below: lg
     pinned: true
     title: false
     right:
       - text: "Home"
+        icon: 'bi-house' # https://icons.getbootstrap.com
         file: index.qmd
       - text: "Blog"     
+        icon: 'bi-file-post-fill'
         file: posts.qmd  
       - text: "More"
+        icon: 'bi-three-dots-vertical'
         menu:
           - projects.qmd
           - links.qmd
@@ -34,25 +33,30 @@ website:
   
 format:
   html:
-    comments:
-      utterances:
-        repo: JihongZ/quarto-academic-jihong
     theme: 
-      dark: [darkly, rwds-dark.scss]
       light: [litera, rwds.scss]
+      dark: [darkly, rwds-dark.scss]
     toc: true
     grid:
       sidebar-width: 0px
       body-width: 1000px
       margin-width: 250px
+    comments:
+      giscus:
+        repo: JihongZ/quarto-academic-jihong
+        theme: preferred_color_scheme
     header-includes: |
       <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&display=swap" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+      <link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
     mainfont: 'Maven Pro'
     html-math-method: katex
     # code settings
     monofont: 'JetBrains Mono'
     code-block-bg: true
-    code-block-border-left: "#31BAE9"
+    code-block-border-left: "#008080"
+    code-link: true
+    code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/
     code-line-numbers: false
     linestretch: 1.5
     # toc

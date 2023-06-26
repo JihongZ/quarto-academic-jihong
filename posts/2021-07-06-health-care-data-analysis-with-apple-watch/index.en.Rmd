@@ -1,17 +1,15 @@
 ---
 title: Health Care Data Analysis with Apple Watch
-author: Jihong
+author: 'Jihong Zhang'
 date: '2021-07-06'
-draft: true
+draft: false
 private: true
 slug: health-care-data-analysis-with-apple-watch
 categories:
   - blog
-tags:
   - R
-subtitle: ''
+  - health
 summary: "Analyze the health care data from Apple Watch's app"
-authors: []
 lastmod: '2021-07-06T14:02:09-05:00'
 featured: no
 projects: []
@@ -90,9 +88,10 @@ apple_watch_dt <- apple_watch %>%
 head(apple_watch_dt[,-1]) %>% 
   select(sourceName, unit, cdt, stm, etm, dst) %>% 
   kbl() %>% 
-  kable_classic(full_width = F, html_font = "Cambria")
+  kable_material_dark(full_width = F, html_font = "Maven Pro") |> 
+  kable_styling(font_size = 10)
 ```
 
 ## Other materials
 
-There a decent [blog](https://www.inpredictable.com/2021/06/analyzing-your-run-data-with-r.html) illustrating how to handel with apple watch export file.
+There a decent [blog](https://www.inpredictable.com/2021/06/analyzing-your-run-data-with-r.html) illustrating how to handle with apple watch export file.

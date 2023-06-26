@@ -16,13 +16,13 @@ about:
       href: https://twitter.com/jihongzgamma
     - icon: github
       text: Github
-      href: https://github.com/JihongZ
+      href: https://github.com/JihongZ/quarto-academic-jihong
     - icon: bi-bookmark-heart-fill
       text: ORCID
       href: https://orcid.org/0000-0003-2820-3734
     - icon: bi-file-earmark-person
       text: C.V.
-      href: ../Curriculum_Vitae.pdf
+      href: 'https://github.com/JihongZ/quarto-academic-jihong/blob/b1a0f9727cdcbf9bd1b2f7a95baa17c2bf49ebd8/Curriculum_Vitae.pdf'
 listing:
   - id: posts
     contents: posts/*/*.[Rq]md
@@ -61,7 +61,7 @@ Jihong Zhang is a postdoctoral fellow in the school of social science, the Chine
 ## Experience
 
 -   **Postdoctoral Fellow**
-    -   The Chinese University of Hong Kong
+    -   The Chinese University of Hong Kong 
     -   [Dec 2022 - June 2023]{style="color:darkgrey;"}
 -   **Associate Researcher**
     -   Stanford Research Institute (SRI)

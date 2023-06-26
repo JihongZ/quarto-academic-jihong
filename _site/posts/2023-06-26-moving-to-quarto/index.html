@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.189">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2023-06-25">
-
 <title>Dr.&nbsp;Jihong Zhang - Moving my website to Quarto</title>
 <style>
 code{white-space: pre-wrap;}
@@ -87,7 +84,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,12 +96,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -123,9 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-<script type="text/javascript">
+}</script><script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -137,39 +130,25 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script>
-<script type="application/json" class="js-hypothesis-config">
-{
-  "theme": "clean",
-  "openSidebar": false
-}
-</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+</script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
-
-
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Moving my website to Quarto">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Moving my website to Quarto">
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html">Home</a>
   </li>  
   <li class="nav-item">
@@ -177,8 +156,8 @@ ga('send', {
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
+<li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">projects</span></a>
   </li>  
@@ -187,43 +166,37 @@ ga('send', {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  </a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
+<div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link active" data-scroll-target="#useful-links">Useful links</a></li>
-  <li><a href="#tricks-of-quarto" id="toc-tricks-of-quarto" class="nav-link" data-scroll-target="#tricks-of-quarto">Tricks of Quarto</a>
+<li><a href="#useful-links" id="toc-useful-links" class="nav-link active" data-scroll-target="#useful-links">Useful links</a></li>
+  <li>
+<a href="#tricks-of-quarto" id="toc-tricks-of-quarto" class="nav-link" data-scroll-target="#tricks-of-quarto">Tricks of Quarto</a>
   <ul class="collapse">
-  <li><a href="#code-highlighting" id="toc-code-highlighting" class="nav-link" data-scroll-target="#code-highlighting">1. Code highlighting</a></li>
-  </ul></li>
+<li><a href="#code-highlighting" id="toc-code-highlighting" class="nav-link" data-scroll-target="#code-highlighting">1. Code highlighting</a></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Moving my website to Quarto</h1>
 </div>
 
@@ -248,9 +221,7 @@ ga('send', {
   </div>
   
 
-</header>
-
-<blockquote class="blockquote">
+</header><blockquote class="blockquote">
 <p>Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps because some reasons same as other bloggers:</p>
 <p>(1) Quarto is the next generation of rmarkdown.</p>
 <p>(2) Quarto is independent with R or Rstudio.</p>
@@ -258,101 +229,93 @@ ga('send', {
 <p>(4) Quarto has cleaner command than hugo (i.e., `quarto publish netlify` for publishing website etc.).</p>
 <p>This blog serves as a note how I customize quarto website bit by bit. It will not be a comprehensive tutorial (much online resources exists) but contain be some tricks.</p>
 </blockquote>
-<section id="useful-links" class="level2">
-<h2 class="anchored" data-anchor-id="useful-links">Useful links</h2>
+<section id="useful-links" class="level2"><h2 class="anchored" data-anchor-id="useful-links">Useful links</h2>
 <ol type="1">
 <li>Quarto official documentation is always the best place to starts with.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://quarto.org"><img src="quarto.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="https://quarto.org"><img src="quarto.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <ol start="2" type="1">
-<li><p>Nicola Rennie’s blog is very inspiring. Nice font setting and background. I feel like <a href="https://github.com/hugo-apero/">Hugo Apéro</a> is the best hugo theme in the market.</p>
+<li>
+<p>Nicola Rennie’s blog is very inspiring. Nice font setting and background. I feel like <a href="https://github.com/hugo-apero/">Hugo Apéro</a> is the best hugo theme in the market.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://nrennie.rbind.io"><img src="nrennie.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://nrennie.rbind.io"><img src="nrennie.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
-</div></li>
-<li><p>Yihui’s blog. As the creator of blogdown, Yihui talked about why not transfer to Quarto :P I am a old player of hugo/blogdown, but I am not good at customizing the website from the scratch. Thus, quarto suits my needs very well. For those who is very experienced at JS, hugo is still a better choice.</p>
+</div>
+</li>
+<li>
+<p>Yihui’s blog. As the creator of blogdown, Yihui talked about why not transfer to Quarto :P I am a old player of hugo/blogdown, but I am not good at customizing the website from the scratch. Thus, quarto suits my needs very well. For those who is very experienced at JS, hugo is still a better choice.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="yihui.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="yihui.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
-</div></li>
-<li><p>Frank Harrel’s blog: R workflow.</p>
+</div>
+</li>
+<li>
+<p>Frank Harrel’s blog: R workflow.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.fharrell.com/post/rflow/"><img src="FrankHarrel.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://www.fharrell.com/post/rflow/"><img src="FrankHarrel.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
-</div></li>
-</ol>
-</section>
-<section id="tricks-of-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="tricks-of-quarto">Tricks of Quarto</h2>
-<section id="code-highlighting" class="level3">
-<h3 class="anchored" data-anchor-id="code-highlighting">1. Code highlighting</h3>
+</div>
+</li>
+</ol></section><section id="tricks-of-quarto" class="level2"><h2 class="anchored" data-anchor-id="tricks-of-quarto">Tricks of Quarto</h2>
+<section id="code-highlighting" class="level3"><h3 class="anchored" data-anchor-id="code-highlighting">1. Code highlighting</h3>
 <p>The very first trick is using <code>format &gt; html &gt; code-fold: true</code> settings in YAML metadata in <em>_quarto.yml</em> (global) or <em>.qmd</em> (local) to hide the code block as <code>|&gt; Code</code>, like:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kbl</span>(<span class="fu">head</span>(iris)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">html_font =</span> <span class="st">"Maven Pro"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">'striped'</span>, <span class="st">'hover'</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">font_size =</span> <span class="dv">10</span>, <span class="at">full_width =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+<details><summary>⌘+C</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span></span>
+<span>    html_font <span class="op">=</span> <span class="st">"Maven Pro"</span>,</span>
+<span>    bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'striped'</span>, <span class="st">'hover'</span><span class="op">)</span>,</span>
+<span>    font_size <span class="op">=</span> <span class="fl">10</span>, full_width <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 
 <table class="table table-striped table-hover" style="font-size: 10px; font-family: Maven Pro; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:right;"> Sepal.Length </th>
+<thead><tr>
+<th style="text-align:right;"> Sepal.Length </th>
    <th style="text-align:right;"> Sepal.Width </th>
    <th style="text-align:right;"> Petal.Length </th>
    <th style="text-align:right;"> Petal.Width </th>
    <th style="text-align:left;"> Species </th>
-  </tr>
- </thead>
+  </tr></thead>
 <tbody>
-  <tr>
-   <td style="text-align:right;"> 5.1 </td>
+<tr>
+<td style="text-align:right;"> 5.1 </td>
    <td style="text-align:right;"> 3.5 </td>
    <td style="text-align:right;"> 1.4 </td>
    <td style="text-align:right;"> 0.2 </td>
    <td style="text-align:left;"> setosa </td>
   </tr>
-  <tr>
-   <td style="text-align:right;"> 4.9 </td>
+<tr>
+<td style="text-align:right;"> 4.9 </td>
    <td style="text-align:right;"> 3.0 </td>
    <td style="text-align:right;"> 1.4 </td>
    <td style="text-align:right;"> 0.2 </td>
    <td style="text-align:left;"> setosa </td>
   </tr>
-  <tr>
-   <td style="text-align:right;"> 4.7 </td>
+<tr>
+<td style="text-align:right;"> 4.7 </td>
    <td style="text-align:right;"> 3.2 </td>
    <td style="text-align:right;"> 1.3 </td>
    <td style="text-align:right;"> 0.2 </td>
    <td style="text-align:left;"> setosa </td>
   </tr>
-  <tr>
-   <td style="text-align:right;"> 4.6 </td>
+<tr>
+<td style="text-align:right;"> 4.6 </td>
    <td style="text-align:right;"> 3.1 </td>
    <td style="text-align:right;"> 1.5 </td>
    <td style="text-align:right;"> 0.2 </td>
    <td style="text-align:left;"> setosa </td>
   </tr>
-  <tr>
-   <td style="text-align:right;"> 5.0 </td>
+<tr>
+<td style="text-align:right;"> 5.0 </td>
    <td style="text-align:right;"> 3.6 </td>
    <td style="text-align:right;"> 1.4 </td>
    <td style="text-align:right;"> 0.2 </td>
    <td style="text-align:left;"> setosa </td>
   </tr>
-  <tr>
-   <td style="text-align:right;"> 5.4 </td>
+<tr>
+<td style="text-align:right;"> 5.4 </td>
    <td style="text-align:right;"> 3.9 </td>
    <td style="text-align:right;"> 1.7 </td>
    <td style="text-align:right;"> 0.4 </td>
@@ -360,7 +323,6 @@ ga('send', {
   </tr>
 </tbody>
 </table>
-
 </div>
 </div>
 <p>Note that the code block can be numbered and added with a left border using <code>code-block-bg: true</code> and <code>code-block-border-left: "#31BAE9"</code></p>
@@ -377,9 +339,7 @@ ga('send', {
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<details open=""><summary>⌘+C</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: show</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -389,11 +349,7 @@ ga('send', {
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -502,7 +458,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -603,8 +559,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.189">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2022-04-24">
-
 <title>Dr.&nbsp;Jihong Zhang - [Workshop] Creating Academic Blog via R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -87,7 +84,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,12 +96,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -123,9 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-<script type="text/javascript">
+}</script><script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -137,17 +130,8 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script>
-<script type="application/json" class="js-hypothesis-config">
-{
-  "theme": "clean",
-  "openSidebar": false
-}
-</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
-
-
+</script><link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - [Workshop] Creating Academic Blog via R">
 <meta property="og:description" content="This post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.">
 <meta property="og:image" content="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png">
@@ -162,19 +146,16 @@ ga('send', {
 <meta name="twitter:image-width" content="2326">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html">Home</a>
   </li>  
   <li class="nav-item">
@@ -182,8 +163,8 @@ ga('send', {
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
+<li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">projects</span></a>
   </li>  
@@ -192,46 +173,40 @@ ga('send', {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  </a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
+<div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resource" id="toc-resource" class="nav-link active" data-scroll-target="#resource">Resource</a></li>
+<li><a href="#resource" id="toc-resource" class="nav-link active" data-scroll-target="#resource">Resource</a></li>
   <li><a href="#requirement" id="toc-requirement" class="nav-link" data-scroll-target="#requirement">Requirement</a></li>
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
-  <li><a href="#new-post" id="toc-new-post" class="nav-link" data-scroll-target="#new-post">New Post</a>
+  <li>
+<a href="#new-post" id="toc-new-post" class="nav-link" data-scroll-target="#new-post">New Post</a>
   <ul class="collapse">
-  <li><a href="#settings-of-github-repo" id="toc-settings-of-github-repo" class="nav-link" data-scroll-target="#settings-of-github-repo">Settings of Github Repo</a></li>
-  </ul></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+<li><a href="#settings-of-github-repo" id="toc-settings-of-github-repo" class="nav-link" data-scroll-target="#settings-of-github-repo">Settings of Github Repo</a></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">[Workshop] Creating Academic Blog via R</h1>
 <p class="subtitle lead">This post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.</p>
   <div class="quarto-categories">
@@ -263,30 +238,23 @@ ga('send', {
   </div>
   
 
-</header>
-
-<section id="resource" class="level2">
-<h2 class="anchored" data-anchor-id="resource">Resource</h2>
+</header><section id="resource" class="level2"><h2 class="anchored" data-anchor-id="resource">Resource</h2>
 <p><a href="https://m-clark.github.io/distill-workshop">Michael Clark</a> has a great workshop in his blog introducing distill package. I suggest readers check it out first.</p>
-</section>
-<section id="requirement" class="level2">
-<h2 class="anchored" data-anchor-id="requirement">Requirement</h2>
+</section><section id="requirement" class="level2"><h2 class="anchored" data-anchor-id="requirement">Requirement</h2>
 <p>Following software is necessary to replicate the steps in this post:</p>
 <ul>
 <li>Github account</li>
 <li>Rstudio and R</li>
-<li><mark>distill</mark> R package</li>
+<li>
+<mark>distill</mark> R package</li>
 </ul>
 <p>To get started with Github, please refer to the <a href="https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account">official website</a>. To install <em>distill</em> package, run <code>install.packages("distill")</code> in your R console.</p>
-</section>
-<section id="procedure" class="level2">
-<h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
+</section><section id="procedure" class="level2"><h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
 <p>To create a website with the URL &lt;username.github.io&gt;, create the directory name with same name and same Github repo name. For example, my github repo name is “jihongz.github.io”, and it is published in <a href="http://jihongz.github.io" class="uri">http://jihongz.github.io</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/flowchart.png" class="img-fluid figure-img" width="306"></p>
+<figure class="figure"><p><img src="img/flowchart.png" class="img-fluid figure-img" width="306"></p>
 <p></p><figcaption class="figure-caption">Flowchart for creating website</figcaption><p></p>
 </figure>
 </div>
@@ -300,21 +268,17 @@ ga('send', {
 <li>_posts</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/file_structure.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/file_structure.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Example of file structure used in my github website</figcaption><p></p>
 </figure>
 </div>
-</section>
-<section id="new-post" class="level2">
-<h2 class="anchored" data-anchor-id="new-post">New Post</h2>
-<p>To create a new post, use <code>distill::create_post()</code> function with the name of the post. The function will create a new directory “2022-XX-XX-post-name” in the <em>_posts</em> folder in which there exists a Rmd file with same name. The Rmd file will be your content of the new post.</p>
+</section><section id="new-post" class="level2"><h2 class="anchored" data-anchor-id="new-post">New Post</h2>
+<p>To create a new post, use <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> function with the name of the post. The function will create a new directory “2022-XX-XX-post-name” in the <em>_posts</em> folder in which there exists a Rmd file with same name. The Rmd file will be your content of the new post.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>distill<span class="sc">::</span><span class="fu">create_post</span>(<span class="at">title =</span> <span class="st">"Tutorial of creating personal blog using distill package and Github Pages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">distill</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">create_post</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Tutorial of creating personal blog using distill package and Github Pages"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Rmd_file.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/Rmd_file.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Files in your post folder</figcaption><p></p>
 </figure>
 </div>
@@ -333,15 +297,13 @@ output:
 ---</code></pre>
 <p>After editting the Rmd file, knit the fill and then build website using <em>Build Website</em> button in the Build pane of Rstudio.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/build_website.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/build_website.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">The Build button in Rstudio</figcaption><p></p>
 </figure>
 </div>
 <p>It will then pop up your updated website in a window.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/website_preview.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/website_preview.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Preview of updated website</figcaption><p></p>
 </figure>
 </div>
@@ -351,33 +313,24 @@ output:
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"create a new post"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="settings-of-github-repo" class="level3">
-<h3 class="anchored" data-anchor-id="settings-of-github-repo">Settings of Github Repo</h3>
+<section id="settings-of-github-repo" class="level3"><h3 class="anchored" data-anchor-id="settings-of-github-repo">Settings of Github Repo</h3>
 <p>Go to the Github Repo &gt; Settings &gt; Pages</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Settings.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/Settings.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Github Settings</figcaption><p></p>
 </figure>
 </div>
 <p>In the webpage, choose <em>_docs</em> and you will see your website is published.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/docs.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="img/docs.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">change settings</figcaption><p></p>
 </figure>
 </div>
-</section>
-</section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+</section></section><section id="reference" class="level2"><h2 class="anchored" data-anchor-id="reference">Reference</h2>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -486,7 +439,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -587,8 +540,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

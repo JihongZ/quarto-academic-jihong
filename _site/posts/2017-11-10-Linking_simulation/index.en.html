@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.189">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Jihong">
 <meta name="dcterms.date" content="2017-11-16">
-
 <title>Dr.&nbsp;Jihong Zhang - Simulation Study of Linking using mirt</title>
 <style>
 code{white-space: pre-wrap;}
@@ -87,7 +84,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,12 +96,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -123,9 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-<script type="text/javascript">
+}</script><script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -137,18 +130,9 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script>
-<script type="application/json" class="js-hypothesis-config">
-{
-  "theme": "clean",
-  "openSidebar": false
-}
-</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
+</script><link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -161,9 +145,7 @@ ga('send', {
     fleqn: false
    });
 }}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
-
+  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Simulation Study of Linking using mirt">
 <meta property="og:description" content="The means and sds of simulated Form A and B are like:">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
@@ -172,19 +154,16 @@ ga('send', {
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html">Home</a>
   </li>  
   <li class="nav-item">
@@ -192,8 +171,8 @@ ga('send', {
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
+<li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">projects</span></a>
   </li>  
@@ -202,63 +181,65 @@ ga('send', {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  </a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
+<div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#calibration-of-form-a" id="toc-calibration-of-form-a" class="nav-link" data-scroll-target="#calibration-of-form-a">Calibration of Form A</a>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li>
+<a href="#calibration-of-form-a" id="toc-calibration-of-form-a" class="nav-link" data-scroll-target="#calibration-of-form-a">Calibration of Form A</a>
   <ul class="collapse">
-  <li><a href="#look-at-the-data" id="toc-look-at-the-data" class="nav-link" data-scroll-target="#look-at-the-data">Look at the data</a></li>
+<li><a href="#look-at-the-data" id="toc-look-at-the-data" class="nav-link" data-scroll-target="#look-at-the-data">Look at the data</a></li>
   <li><a href="#plot-the-density-of-true-theta-of-group-a" id="toc-plot-the-density-of-true-theta-of-group-a" class="nav-link" data-scroll-target="#plot-the-density-of-true-theta-of-group-a">Plot the density of true <span class="math inline">\theta</span> of Group A</a></li>
-  <li><a href="#ctt-table" id="toc-ctt-table" class="nav-link" data-scroll-target="#ctt-table">CTT Table</a>
+  <li>
+<a href="#ctt-table" id="toc-ctt-table" class="nav-link" data-scroll-target="#ctt-table">CTT Table</a>
   <ul class="collapse">
-  <li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data">Clean data</a></li>
+<li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data">Clean data</a></li>
   <li><a href="#classical-test-theory" id="toc-classical-test-theory" class="nav-link" data-scroll-target="#classical-test-theory">Classical Test Theory</a></li>
-  </ul></li>
-  <li><a href="#final-calibration-of-form-a" id="toc-final-calibration-of-form-a" class="nav-link" data-scroll-target="#final-calibration-of-form-a">Final Calibration of Form A</a>
+  </ul>
+</li>
+  <li>
+<a href="#final-calibration-of-form-a" id="toc-final-calibration-of-form-a" class="nav-link" data-scroll-target="#final-calibration-of-form-a">Final Calibration of Form A</a>
   <ul class="collapse">
-  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification">Model Specification</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#calibration-of-form-b" id="toc-calibration-of-form-b" class="nav-link" data-scroll-target="#calibration-of-form-b">Calibration of Form B</a>
+<li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification">Model Specification</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#calibration-of-form-b" id="toc-calibration-of-form-b" class="nav-link" data-scroll-target="#calibration-of-form-b">Calibration of Form B</a>
   <ul class="collapse">
-  <li><a href="#final-calibration-of-form-a-1" id="toc-final-calibration-of-form-a-1" class="nav-link" data-scroll-target="#final-calibration-of-form-a-1">Final Calibration of Form A</a>
+<li>
+<a href="#final-calibration-of-form-a-1" id="toc-final-calibration-of-form-a-1" class="nav-link" data-scroll-target="#final-calibration-of-form-a-1">Final Calibration of Form A</a>
   <ul class="collapse">
-  <li><a href="#model-specification-of-b" id="toc-model-specification-of-b" class="nav-link" data-scroll-target="#model-specification-of-b">Model Specification of B</a></li>
-  </ul></li>
+<li><a href="#model-specification-of-b" id="toc-model-specification-of-b" class="nav-link" data-scroll-target="#model-specification-of-b">Model Specification of B</a></li>
+  </ul>
+</li>
   <li><a href="#b-plot" id="toc-b-plot" class="nav-link" data-scroll-target="#b-plot">b-plot</a></li>
   <li><a href="#a-plot" id="toc-a-plot" class="nav-link" data-scroll-target="#a-plot">a-plot</a></li>
-  </ul></li>
-  <li><a href="#linking" id="toc-linking" class="nav-link" data-scroll-target="#linking">Linking</a></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#linking" id="toc-linking" class="nav-link" data-scroll-target="#linking">Linking</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Simulation Study of Linking using mirt</h1>
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
@@ -288,32 +269,26 @@ ga('send', {
   </div>
   
 
-</header>
-
-<blockquote class="blockquote">
+</header><blockquote class="blockquote">
 <p>This simulation study is to show how to do IRT Linking Process using mirt R Package. The simulation data includes 2 forms - Form A and Form B. These 2 forms are simulated based on 2 groups of individual, one group has 0 mean trait, another has 0.25 mean trait. Both groups have same sd. <!--more--></p>
 </blockquote>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level1"><h1>Introduction</h1>
 <p>The means and sds of simulated Form A and B are like:</p>
 <p><span class="math display">
 \theta_{A} = \theta_{B} - 0.25 \\
 \sigma_A^2 = \sigma_B^2
 </span></p>
-</section>
-<section id="calibration-of-form-a" class="level1">
-<h1>Calibration of Form A</h1>
+</section><section id="calibration-of-form-a" class="level1"><h1>Calibration of Form A</h1>
 <p>The mean of <span class="math inline">\theta</span> for individuals administrated with form A is 0, the standard deviation (SD=1). In the dataset, X is ID, V1 is true trait (<span class="math inline">\theta</span>), V3 to V52 is unique items, V54 to V63 are common items.</p>
-<section id="look-at-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="look-at-the-data">Look at the data</h2>
+<section id="look-at-the-data" class="level2"><h2 class="anchored" data-anchor-id="look-at-the-data">Look at the data</h2>
 <p>First of all, have a look at the data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mirt)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Read in Raw data from Form A:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormA.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt">mirt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
+<span><span class="co">### Read in Raw data from Form A:</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">"FormA.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,000
 Columns: 64
@@ -383,60 +358,51 @@ $ V62 &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0,
 $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, …</code></pre>
 </div>
 </div>
-</section>
-<section id="plot-the-density-of-true-theta-of-group-a" class="level2">
-<h2 class="anchored" data-anchor-id="plot-the-density-of-true-theta-of-group-a">Plot the density of true <span class="math inline">\theta</span> of Group A</h2>
+</section><section id="plot-the-density-of-true-theta-of-group-a" class="level2"><h2 class="anchored" data-anchor-id="plot-the-density-of-true-theta-of-group-a">Plot the density of true <span class="math inline">\theta</span> of Group A</h2>
 <p>From the density function, <span class="math inline">mu_{\theta}</span> is 0, <span class="math inline">sd_{\theta}</span> is 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dat<span class="sc">$</span>V1), <span class="at">main =</span> <span class="st">"Group A True Trait Density"</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="fu">expression</span>(theta) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/density.html">density</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">V1</span><span class="op">)</span>, main <span class="op">=</span> <span class="st">"Group A True Trait Density"</span>, </span>
+<span>     xlab<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">theta</span><span class="op">)</span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/theta-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-<section id="ctt-table" class="level2">
-<h2 class="anchored" data-anchor-id="ctt-table">CTT Table</h2>
+</section><section id="ctt-table" class="level2"><h2 class="anchored" data-anchor-id="ctt-table">CTT Table</h2>
 <p>CTT table could provide a brief description of table. 2 key valables in the table is item difficulty (<em>item.diff</em>) calculated by item means <span class="math inline">P(y=1)</span> and item discrimination (item.disc), which is item-total correlation.</p>
-<section id="clean-data" class="level3">
-<h3 class="anchored" data-anchor-id="clean-data">Clean data</h3>
+<section id="clean-data" class="level3"><h3 class="anchored" data-anchor-id="clean-data">Clean data</h3>
 <p>By cleaning, data has 60 items including 50 unique item (from item1 to item50) and 10 common items (from item51 to item60). The sample size is 5000.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dat_cali <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat_cali</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">V3</span><span class="op">:</span><span class="va">V52</span>, <span class="va">V54</span><span class="op">:</span><span class="va">V63</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dat_cali</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"item"</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">60</span><span class="op">)</span></span>
+<span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">dat_cali</span><span class="op">)</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">dat_cali</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="classical-test-theory" class="level3">
-<h3 class="anchored" data-anchor-id="classical-test-theory">Classical Test Theory</h3>
+</section><section id="classical-test-theory" class="level3"><h3 class="anchored" data-anchor-id="classical-test-theory">Classical Test Theory</h3>
 <p>Then calculate the CTT table for Form A. The item discrimination and difficulty could be compared between Form A and Form B. Because the relationship between trait and total score is non-linear, so there is effect of shrinkage.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali, table), bind_rows)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>CTT <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># item stats</span></span>
+<span><span class="co">## item discrimnation</span></span>
+<span><span class="va">item.disc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">dat_cali</span>, <span class="fl">2</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">x</span>, <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">dat_cali</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## item difficulty</span></span>
+<span><span class="va">item.diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">dat_cali</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## item response frequency</span></span>
+<span><span class="va">item.freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/reduce.html">reduce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">dat_cali</span>, <span class="va">table</span><span class="op">)</span>, <span class="va">bind_rows</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">CTT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">item.disc</span>, <span class="va">item.diff</span>, <span class="va">item.freq</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">CTT</span>, digits <span class="op">=</span> <span class="fl">3</span>, caption <span class="op">=</span> <span class="st">"CTT Table for Form A"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>CTT Table for Form A</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: right;">item.disc</th>
 <th style="text-align: right;">item.diff</th>
 <th style="text-align: right;">0</th>
 <th style="text-align: right;">1</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">item1</td>
@@ -862,45 +828,37 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 </table>
 </div>
 </div>
-</section>
-</section>
-<section id="final-calibration-of-form-a" class="level2">
-<h2 class="anchored" data-anchor-id="final-calibration-of-form-a">Final Calibration of Form A</h2>
-<section id="model-specification" class="level3">
-<h3 class="anchored" data-anchor-id="model-specification">Model Specification</h3>
+</section></section><section id="final-calibration-of-form-a" class="level2"><h2 class="anchored" data-anchor-id="final-calibration-of-form-a">Final Calibration of Form A</h2>
+<section id="model-specification" class="level3"><h3 class="anchored" data-anchor-id="model-specification">Model Specification</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SPECS <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mod_A3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>parms_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_A3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">SPECS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.model.html">mirt.model</a></span><span class="op">(</span><span class="st">'F = 1-60</span></span>
+<span><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span><span class="op">)</span></span>
+<span><span class="va">mod_A3PL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">dat_cali</span>, model<span class="op">=</span><span class="va">SPECS</span>, itemtype<span class="op">=</span><span class="st">'3PL'</span><span class="op">)</span></span>
+<span><span class="va">parms_a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod_A3PL</span>, simplify<span class="op">=</span><span class="cn">TRUE</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">$</span><span class="va">items</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">1</span>] </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">2</span>] </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>c_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">3</span>] </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>theta_A <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_A3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a_A</span> <span class="op">&lt;-</span> <span class="va">parms_a</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span> </span>
+<span><span class="va">b_A</span> <span class="op">&lt;-</span> <span class="va">parms_a</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> </span>
+<span><span class="va">c_A</span> <span class="op">&lt;-</span> <span class="va">parms_a</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span> </span>
+<span><span class="va">theta_A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/fscores.html">fscores</a></span><span class="op">(</span><span class="va">mod_A3PL</span>,method<span class="op">=</span><span class="st">"EAP"</span>,</span>
+<span>                   full.scores<span class="op">=</span><span class="cn">TRUE</span>, full.scores.SE<span class="op">=</span><span class="cn">TRUE</span>,</span>
+<span>                   scores.only<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using 3-PL for irt model of form A. Extracting the cofficients (a, b, c) of IRT. The model-implied theta was outputed, whose mean is 0.1314938</p>
 <p>The plot below suggest that SE is low when theta is close to mean, but low theta and high theta has large SE.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_A[,<span class="dv">1</span>],theta_A[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">theta_A</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>,<span class="va">theta_A</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/SE-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="calibration-of-form-b" class="level1">
-<h1>Calibration of Form B</h1>
+</section></section></section><section id="calibration-of-form-b" class="level1"><h1>Calibration of Form B</h1>
 <p>The structure of Form B is as same as Form A.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat_b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormB.csv"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat_b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">"FormB.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">dat_b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,000
 Columns: 64
@@ -971,48 +929,46 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat_b) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Group B True Trait Density"</span>) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> V1), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"True Latent Trait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dat_b</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Group B True Trait Density"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">V1</span><span class="op">)</span>, fill <span class="op">=</span> <span class="st">"skyblue"</span>, col <span class="op">=</span> <span class="st">"skyblue"</span>, alpha<span class="op">=</span><span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"True Latent Trait"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/theta_b-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat_cali2 <span class="ot">&lt;-</span> dat_b <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali2)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali2)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali2, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali2)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali2, table), bind_rows)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>CTT2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT2, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat_cali2</span> <span class="op">&lt;-</span> <span class="va">dat_b</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">V3</span><span class="op">:</span><span class="va">V52</span>, <span class="va">V54</span><span class="op">:</span><span class="va">V63</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dat_cali2</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"item"</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">60</span><span class="op">)</span></span>
+<span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">dat_cali2</span><span class="op">)</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">dat_cali2</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># item stats</span></span>
+<span><span class="co">## item discrimnation</span></span>
+<span><span class="va">item.disc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">dat_cali2</span>, <span class="fl">2</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">x</span>, <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">dat_cali</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## item difficulty</span></span>
+<span><span class="va">item.diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">dat_cali2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## item response frequency</span></span>
+<span><span class="va">item.freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/reduce.html">reduce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">dat_cali2</span>, <span class="va">table</span><span class="op">)</span>, <span class="va">bind_rows</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">CTT2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">item.disc</span>, <span class="va">item.diff</span>, <span class="va">item.freq</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">CTT2</span>, digits <span class="op">=</span> <span class="fl">3</span>, caption <span class="op">=</span> <span class="st">"CTT Table for Form A"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>CTT Table for Form A</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: right;">item.disc</th>
 <th style="text-align: right;">item.diff</th>
 <th style="text-align: right;">0</th>
 <th style="text-align: right;">1</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">item1</td>
@@ -1438,35 +1394,31 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </table>
 </div>
 </div>
-<section id="final-calibration-of-form-a-1" class="level2">
-<h2 class="anchored" data-anchor-id="final-calibration-of-form-a-1">Final Calibration of Form A</h2>
-<section id="model-specification-of-b" class="level3">
-<h3 class="anchored" data-anchor-id="model-specification-of-b">Model Specification of B</h3>
+<section id="final-calibration-of-form-a-1" class="level2"><h2 class="anchored" data-anchor-id="final-calibration-of-form-a-1">Final Calibration of Form A</h2>
+<section id="model-specification-of-b" class="level3"><h3 class="anchored" data-anchor-id="model-specification-of-b">Model Specification of B</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>SPECS2 <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>mod_B3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali2, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>parms_b <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_B3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">SPECS2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.model.html">mirt.model</a></span><span class="op">(</span><span class="st">'F = 1-60</span></span>
+<span><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span><span class="op">)</span></span>
+<span><span class="va">mod_B3PL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">dat_cali2</span>, model<span class="op">=</span><span class="va">SPECS</span>, itemtype<span class="op">=</span><span class="st">'3PL'</span><span class="op">)</span></span>
+<span><span class="va">parms_b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod_B3PL</span>, simplify<span class="op">=</span><span class="cn">TRUE</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">$</span><span class="va">items</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">1</span>] </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">2</span>] </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>c_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">3</span>] </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>theta_B <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_B3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(theta_B, <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"Model-implied Theta of B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a_B</span> <span class="op">&lt;-</span> <span class="va">parms_b</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span> </span>
+<span><span class="va">b_B</span> <span class="op">&lt;-</span> <span class="va">parms_b</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> </span>
+<span><span class="va">c_B</span> <span class="op">&lt;-</span> <span class="va">parms_b</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span> </span>
+<span><span class="va">theta_B</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/fscores.html">fscores</a></span><span class="op">(</span><span class="va">mod_B3PL</span>,method<span class="op">=</span><span class="st">"EAP"</span>,</span>
+<span>                   full.scores<span class="op">=</span><span class="cn">TRUE</span>, full.scores.SE<span class="op">=</span><span class="cn">TRUE</span>,</span>
+<span>                   scores.only<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">theta_B</span>, <span class="fl">20</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">3</span>, caption <span class="op">=</span> <span class="st">"Model-implied Theta of B"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Model-implied Theta of B</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: right;">F</th>
 <th style="text-align: right;">SE_F</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0.933</td>
@@ -1552,135 +1504,124 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </table>
 </div>
 </div>
-</section>
-</section>
-<section id="b-plot" class="level2">
-<h2 class="anchored" data-anchor-id="b-plot">b-plot</h2>
+</section></section><section id="b-plot" class="level2"><h2 class="anchored" data-anchor-id="b-plot">b-plot</h2>
 <p>The relationship between b parameters of A and B reflect the latent traits of A and B:</p>
 <p><span class="math display">
 \theta_{A} = \theta_{B} - 0.25 \\
 \sigma_A^2 = \sigma_B^2
 </span> thus, <span class="math inline">b_B -b_A</span> should also be -0.25. the estimated difference of b is calculate by the mean of b parametes of Form A’s common items and that of Form B’s common items, which is -0.2756443. Thus, it is very close to difference of true traits.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">### b-plot</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste0</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)), </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"b_A"</span>,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"b_B"</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### b-plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">b_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,<span class="va">b_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,</span>
+<span>     main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"r ="</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">b_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,<span class="va">b_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>     xlab <span class="op">=</span> <span class="st">"b_A"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"b_B"</span></span>
+<span>     <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="a-plot" class="level2">
-<h2 class="anchored" data-anchor-id="a-plot">a-plot</h2>
+</section><section id="a-plot" class="level2"><h2 class="anchored" data-anchor-id="a-plot">a-plot</h2>
 <p>Because <span class="math inline">\theta_B - \theta_A = 0.25</span>, so a parametes are: <span class="math display">
 a_A / a_B = 1
 </span></p>
 <p>The true ratio of (means of) a parameters is 1.016284, which is very close to 1. SD of A and B are both close to 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">### a-plot</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">round</span>(<span class="fu">cor</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### a-plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">a_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,<span class="va">a_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,</span>
+<span>     main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">a_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span>,<span class="va">a_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span>,<span class="fl">5</span><span class="op">)</span></span>
+<span>     <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index.en_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SDs of b-values across forms</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>SD_bA <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>SD_bB <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>Mean_bA <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>Mean_bB <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
+<span></span>
+<span></span>
+<span><span class="co">#SDs of b-values across forms</span></span>
+<span><span class="va">SD_bA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">b_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">SD_bB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">b_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Mean_bA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">b_A</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">Mean_bB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">b_B</span><span class="op">[</span><span class="fl">51</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="linking" class="level1">
-<h1>Linking</h1>
+</section></section><section id="linking" class="level1"><h1>Linking</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Run one or the other, NOT BOTH!</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">### MS linking: place item parameters from</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> SD_bA <span class="sc">/</span> SD_bB</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> Mean_bA <span class="sc">-</span> slope<span class="sc">*</span>Mean_bB</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">### MM linking: place item parameters from</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="do">### Perform the Linking</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>LINKED_items <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">3</span>)</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 3 is c, it stays the same</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">3</span>] <span class="ot">&lt;-</span> c_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 2 is b, it is linked:</span></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">2</span>] <span class="ot">&lt;-</span> b_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 1 is a, it is also linked:</span></span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">1</span>] <span class="ot">&lt;-</span> a_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">/</span> slope</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="do">### Now the ITEM BANK has 110 items all</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="do">### linked to a common metric!</span></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(LINKED_items) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item_B"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>ITEM.BANK <span class="ot">&lt;-</span> <span class="fu">rbind</span>(parms_a[,<span class="sc">-</span><span class="dv">4</span>], LINKED_items)</span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co">#Link the theta estimates</span></span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>LINKED_theta <span class="ot">&lt;-</span> theta_B[,<span class="dv">1</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>LINKED_se <span class="ot">&lt;-</span> theta_B[,<span class="dv">2</span>]<span class="sc">/</span>slope</span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">###</span></span>
+<span><span class="co">### Run one or the other, NOT BOTH!</span></span>
+<span><span class="co">###</span></span>
+<span></span>
+<span><span class="co">### MS linking: place item parameters from</span></span>
+<span><span class="co">### Form B on the scale of Form A</span></span>
+<span><span class="va">slope</span> <span class="op">&lt;-</span> <span class="va">SD_bA</span> <span class="op">/</span> <span class="va">SD_bB</span></span>
+<span><span class="va">inter</span> <span class="op">&lt;-</span> <span class="va">Mean_bA</span> <span class="op">-</span> <span class="va">slope</span><span class="op">*</span><span class="va">Mean_bB</span></span>
+<span></span>
+<span><span class="co">### MM linking: place item parameters from</span></span>
+<span><span class="co">### Form B on the scale of Form A</span></span>
+<span><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
+<span><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
+<span></span>
+<span></span>
+<span><span class="co">###</span></span>
+<span><span class="co">### Perform the Linking</span></span>
+<span><span class="co">###</span></span>
+<span></span>
+<span><span class="va">LINKED_items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">50</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Column 3 is c, it stays the same</span></span>
+<span><span class="va">LINKED_items</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">c_B</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co">#Column 2 is b, it is linked:</span></span>
+<span><span class="va">LINKED_items</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">b_B</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span><span class="op">]</span><span class="op">*</span><span class="va">slope</span> <span class="op">+</span> <span class="va">inter</span></span>
+<span></span>
+<span><span class="co">#Column 1 is a, it is also linked:</span></span>
+<span><span class="va">LINKED_items</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">a_B</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span><span class="op">]</span> <span class="op">/</span> <span class="va">slope</span></span>
+<span></span>
+<span><span class="co">### Now the ITEM BANK has 110 items all</span></span>
+<span><span class="co">### linked to a common metric!</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">LINKED_items</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"item_B"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">50</span><span class="op">)</span></span>
+<span><span class="va">ITEM.BANK</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">parms_a</span><span class="op">[</span>,<span class="op">-</span><span class="fl">4</span><span class="op">]</span>, <span class="va">LINKED_items</span><span class="op">)</span></span>
+<span><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
+<span></span>
+<span><span class="co">#Link the theta estimates</span></span>
+<span><span class="va">LINKED_theta</span> <span class="op">&lt;-</span> <span class="va">theta_B</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">*</span><span class="va">slope</span> <span class="op">+</span> <span class="va">inter</span></span>
+<span><span class="va">LINKED_se</span> <span class="op">&lt;-</span> <span class="va">theta_B</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">/</span><span class="va">slope</span></span>
+<span></span>
+<span><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Mean of Theta of B is "</span>,<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">theta_B</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of B is -0.013"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>, <span class="fu">sd</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"SD of Theta of B is "</span>, <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">theta_B</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of B is 0.97"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># after Linked</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"After Linking:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># after Linked</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"After Linking:"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "After Linking:"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Mean of Theta of B is "</span>,<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">LINKED_theta</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of B is 0.269"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>,<span class="fu">sd</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"SD of Theta of B is "</span>,<span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">LINKED_theta</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of B is 0.935"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Theta of A is</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of A is "</span>,<span class="fu">mean</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Theta of A is</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Mean of Theta of A is "</span>,<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">theta_A</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean of Theta of A is -0.021"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of A is "</span>, <span class="fu">sd</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"SD of Theta of A is "</span>, <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">theta_A</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SD of Theta of A is 0.965"</code></pre>
 </div>
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1789,7 +1730,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -1890,8 +1831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

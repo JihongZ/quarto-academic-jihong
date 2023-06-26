@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.189">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2022-04-29">
-
 <title>Dr.&nbsp;Jihong Zhang - Power Analysis for Structural Equation Modeling</title>
 <style>
 code{white-space: pre-wrap;}
@@ -43,7 +40,6 @@ div.csl-indent {
 }
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -56,12 +52,11 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -79,9 +74,7 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-<script type="text/javascript">
+}</script><script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -93,18 +86,9 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script>
-<script type="application/json" class="js-hypothesis-config">
-{
-  "theme": "clean",
-  "openSidebar": false
-}
-</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
+</script><link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -117,9 +101,7 @@ ga('send', {
     fleqn: false
    });
 }}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
-
+  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Power Analysis for Structural Equation Modeling">
 <meta property="og:description" content="Showcase current software used for power analysis of Structural Equation Modeling">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
@@ -128,19 +110,16 @@ ga('send', {
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html">Home</a>
   </li>  
   <li class="nav-item">
@@ -148,8 +127,8 @@ ga('send', {
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
+<li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">projects</span></a>
   </li>  
@@ -158,43 +137,35 @@ ga('send', {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  </a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
+<div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#global-power" id="toc-global-power" class="nav-link active" data-scroll-target="#global-power">Global Power</a></li>
+<li><a href="#global-power" id="toc-global-power" class="nav-link active" data-scroll-target="#global-power">Global Power</a></li>
   <li><a href="#local-power" id="toc-local-power" class="nav-link" data-scroll-target="#local-power">Local Power</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Power Analysis for Structural Equation Modeling</h1>
 <p class="subtitle lead">Showcase current software used for power analysis of Structural Equation Modeling</p>
   <div class="quarto-categories">
@@ -228,17 +199,14 @@ ga('send', {
   </div>
   
 
-</header>
-
-<p>The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the conclusions drawn from the results</strong>, plays an important role of determining the minimum sample size (number of observation) required to detect an effect in an experiment. The power analysis of SEM is often ignored in application research partly because few guidelines exist for researchers to conduct power analysis in SEM framework. This tutorial introduces two web tools which can be used to conduct power analysis for Structural Equation Modeling (SEM). An empirical example of my own research on students’ time effect on academic motivations will also be presented for illustration. For privacy, only short name of the latent constructs are used.</p>
+</header><p>The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the conclusions drawn from the results</strong>, plays an important role of determining the minimum sample size (number of observation) required to detect an effect in an experiment. The power analysis of SEM is often ignored in application research partly because few guidelines exist for researchers to conduct power analysis in SEM framework. This tutorial introduces two web tools which can be used to conduct power analysis for Structural Equation Modeling (SEM). An empirical example of my own research on students’ time effect on academic motivations will also be presented for illustration. For privacy, only short name of the latent constructs are used.</p>
 <p><span class="citation" data-cites="wang_power_2021">Wang and Rhemtulla (<a href="#ref-wang_power_2021" role="doc-biblioref">2021</a>)</span> argued that there’re two ways of determining sample size planning in SEM: (1) traditional rule of thumbs, (2) power analysis for SEM based on parameter effect size and model misspecification. To be more specific, two ways of determining sample size planning in SEM are:</p>
 <ol type="1">
 <li>Rules of thumbs based absolute minimum sample size: N = 100 or N = 200</li>
 <li>Model Complexities based relative sample size: N = 5-10 or N = 3-6 per estimated parameters</li>
 </ol>
 <p>These two ways of determining minimum sample sizes may not agree with each other and have few theoretical or empirical research support. According to the objective of hypothesis test in SEM, there are two distinct kinds of power: (1) the power of detecting model misspecification, (2) and the power of determining specific effects within the model (i.e., whether one latent variable predicts another). In this tutorial, I called the former one <mark>global power</mark> and latter one <mark>local power</mark> since the global power analyzes the model-level effect size of misfit while the local power tests the effect size of a particular model parameter.</p>
-<section id="global-power" class="level1">
-<h1>Global Power</h1>
+<section id="global-power" class="level1"><h1>Global Power</h1>
 <p>As mentioned above, global power is a test quantifying the degree of confidence of the hypothesis test of model misspecification. There are many fit indices for power analysis for model misspecification including:</p>
 <ol type="1">
 <li>Satorra and Saris’s (1985) $\chi^2$ likelihood-ratio test</li>
@@ -248,25 +216,21 @@ ga('send', {
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="webpower.png" class="img-fluid figure-img" width="1032"></p>
+<figure class="figure"><p><img src="webpower.png" class="img-fluid figure-img" width="1032"></p>
 <p></p><figcaption class="figure-caption">Chi-square LR test</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Input the chi-square test with 480.82 and vary the sample size from N=1 to N=300, we found N = 5 is enough sample size for power up to 1. Thus, normally SEM based on Chi-square LRT to null model has very low bar for misspecification. In this case, perhaps doubling the sample size (N $\times$ 2 = 261 $\times$ 2 = 522) is a more reasonable rule of thumb of minimum sample size.</p>
-</section>
-<section id="local-power" class="level1">
-<h1>Local Power</h1>
+</section><section id="local-power" class="level1"><h1>Local Power</h1>
 <p><span class="citation" data-cites="wang_power_2021">Wang and Rhemtulla (<a href="#ref-wang_power_2021" role="doc-biblioref">2021</a>)</span> recommend a Monte Carlo simulation approach to calculate power for detecting a target effect in SEM and introduced <a href="http://yilinandrewang.shinyapps.io/pwrSEM/"><span class="math inline">pwrSEM</span></a>, a Shiny web app to estimate the power of parameter in SEM.</p>
 <p>Let’s take one mixture Confirmatory factor analysis with known classes (time = 0, time = 1) for example. The goal is to estimate the power of time effects on five latent constructs with sample size (<span class="math inline">N = 256</span>).</p>
 <p>The model has been fitted to the data using <em>lavaan</em> package beforehand. After opening up the <a href="https://yilinandrewang.shinyapps.io/pwrSEM/">shiny app</a>, we can copy and paste the model syntax from lavaan to the app. Then the model specification will be visualized as following:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="model_vis.png" class="img-fluid figure-img" width="1243"></p>
+<figure class="figure"><p><img src="model_vis.png" class="img-fluid figure-img" width="1243"></p>
 <p></p><figcaption class="figure-caption">Model Specification</figcaption><p></p>
 </figure>
 </div>
@@ -277,8 +241,7 @@ ga('send', {
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="parameter_est.png" class="img-fluid figure-img" width="1110"></p>
+<figure class="figure"><p><img src="parameter_est.png" class="img-fluid figure-img" width="1110"></p>
 <p></p><figcaption class="figure-caption">Parameter estimates by lavaan</figcaption><p></p>
 </figure>
 </div>
@@ -289,8 +252,7 @@ ga('send', {
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="local_power_256.png" class="img-fluid figure-img" width="1158"></p>
+<figure class="figure"><p><img src="local_power_256.png" class="img-fluid figure-img" width="1158"></p>
 <p></p><figcaption class="figure-caption">Local Power with sample size 256</figcaption><p></p>
 </figure>
 </div>
@@ -301,16 +263,14 @@ ga('send', {
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.2%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="local_power_300.png" class="img-fluid figure-img" width="1142"></p>
+<figure class="figure"><p><img src="local_power_300.png" class="img-fluid figure-img" width="1142"></p>
 <p></p><figcaption class="figure-caption">Local power with N = 300</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 49.8%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="local_power_500.png" class="img-fluid figure-img" width="1131"></p>
+<figure class="figure"><p><img src="local_power_500.png" class="img-fluid figure-img" width="1131"></p>
 <p></p><figcaption class="figure-caption">Local power with N = 500</figcaption><p></p>
 </figure>
 </div>
@@ -319,32 +279,23 @@ ga('send', {
 </div>
 <p>As the figures shown, based on MCMC simulation, sample size N = 300 is expected to increase the power of time effect on InR (InR ~~ time) to value 0.81 while N = 500 will increase the power to value 0.9, which is enough power for single regression coefficient effect. However, with such moderately large sample size, other time effects on ER, IRT, IGR, IdR (i.e., ER ~~ time) still stay at a low level because of the lower estimated effect size.</p>
 <p>Thus, from this experiment, we can conclude that to make the power of time effect on latent variable InR up to 0.9, at lease around 300~500 samples are required.</p>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+</section><section id="conclusion" class="level1"><h1>Conclusion</h1>
 <p>To summarize, in this post, I illustrated two types of power: (1) local power (2) global power, and how they can be calculated using pwrSEM and WebPower correspondingly. It should be noted that, they are not the only software in the market. Another newly published software is <a href="https://cran.r-project.org/web/packages/semPower/vignettes/semPower.pdf">semPower</a> R package <span class="citation" data-cites="jobst_tutorial_2021">(see <a href="#ref-jobst_tutorial_2021" role="doc-biblioref">Jobst, Bader, and Moshagen 2021</a> for details)</span>, which can also be used to provide local power based on RMSEA.</p>
 <p>Local power determines the minimum sample sizes for one specific effect in SEM. Global power determines the minimum sample sizes needed for testing model misspecification. Global power will give rise to different results depending on the model misfit indices chosen. As for local power, it is important to decide on which effect needed to be examined in the model.</p>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
+</section><section id="discussion" class="level1"><h1>Discussion</h1>
 <p>There are few guidelines about how and what to report local power and global power in SEM literature. Global power seems a common thing to report for all SEM paper since all SEM research need to deal with model misspecification before drawing any conclusion. Local power, on the other hand, is necessary when one effect within SEM model is of most interest and core of the study. Some may argue that power in SEM is not important as long as the model fit of SEM is acceptable. However, the acceptance of model-data fit cannot guarantee that the sample size meet the requirement of detecting specific effect. In other words, there may be some sort of false positive rate when reporting significance test in small sample setting. More research needed to investigate the relationship between power and local misfit indices to understand this problem. <strong>Please let me know your thoughts in comments below.</strong></p>
-</section>
-<section id="reference" class="level1">
+</section><section id="reference" class="level1">
 
 
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-jobst_tutorial_2021" class="csl-entry" role="doc-biblioentry">
 Jobst, Lisa J., Martina Bader, and Morten Moshagen. 2021. <span>“A Tutorial on Assessing Statistical Power and Determining Sample Size for Structural Equation Models.”</span> <em>Psychological Methods</em>, No Pagination Specified–. <a href="https://doi.org/10.1037/met0000423">https://doi.org/10.1037/met0000423</a>.
 </div>
 <div id="ref-wang_power_2021" class="csl-entry" role="doc-biblioentry">
 Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter Estimation in Structural Equation Modeling: A Discussion and Tutorial.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 4 (1): 2515245920918253. <a href="https://doi.org/10.1177/2515245920918253">https://doi.org/10.1177/2515245920918253</a>.
 </div>
-</div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -453,7 +404,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -554,8 +505,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="JihongZ/quarto-academic-jihong" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
