@@ -3,6 +3,8 @@
 # freeze computational output
 freeze: true
 author: "Jihong Zhang"
+number-sections: true
+number-depth: 3
 
 # <script src="https://utteranc.es/client.js"
 #         repo="[ENTER REPO HERE]"

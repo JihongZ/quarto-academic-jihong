@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.3.427">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -31,6 +31,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../posts/2018-04-29-updateing-R/index.html" rel="next">
+<link href="../../posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" rel="prev">
+<link href="../../icon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,7 +61,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -75,79 +79,371 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;family=Oxygen+Mono&amp;family=Ysabeau+Office&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script>
 <link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
 
 
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Parental Involvement and Children Motivation">
-<meta property="og:description" content="Parent involvement is considered as one of the most influential factors in education researches.">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://www.jihongzhang.org/img/Parent-Involvement.jpg">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Parental Involvement and Children Motivation">
-<meta name="twitter:description" content="Parent involvement is considered as one of the most influential factors in education researches.">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.jihongzhang.org/img/Parent-Involvement.jpg">
 <meta name="twitter:creator" content="@jihongzgamma">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Home</a>
+    <a class="nav-link" href="../../index.html" rel="" target=""><i class="bi bi-bi bi-house" role="img">
+</i> 
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">Blog</a>
+    <a class="nav-link" href="../../posts.html" rel="" target=""><i class="bi bi-bi bi-file-post-fill" role="img">
+</i> 
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-bi bi-three-dots-vertical" role="img">
+</i> 
+ <span class="menu-text">More</span>
+    </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="../../projects.html">
+    <a class="dropdown-item" href="../../projects.html" rel="" target="">
  <span class="dropdown-text">projects</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../links.html">
+    <a class="dropdown-item" href="../../links.html" rel="" target="">
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/index.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/2017-11-20-Longitudinal-Effect-of-Motivation/index.html">Parental Involvement and Children Motivation</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../posts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Posts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-11-lognormal-simulation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation of Lognormal distribution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visuliaztion of Item Information Curves In R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019–11-21-rethink-statistical-model/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some Thoughts After Reading <statistical rethinking=""></statistical></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-10-Linking-simulation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation Study of Linking Using Mirt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-02-11-Academic-Writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Writing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-04-19-make-a-game-in-r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Make a Game in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">My New Shiny App Cut Score Consistency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-22-Multilevel-Mixed-Model/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multilevel Mixed Model (MLM)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Latent Attribute Network Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-04-29-power-analysis-for-sem/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis for Structural Equation Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">[Workshop] Creating Academic Blog via R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lasso Regression Example using glmnet package in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-08-sem-homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to use lavaan package to perform Confirmatory Factor Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Study Notes: gt package and format table</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NSF Grant on Bayesian Cognitive Diagnosis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-26-moving-to-quarto/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Moving My Website to Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-10-23-thesis-defense/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dissertation Defence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A Conversation between R and Python on Data Analysis and Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-05-20-nobel-prizes-visualization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Which Country own the most Liberty Nobel Prizes? France? Ireland?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-26-analyze-my-apple-health-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analyze Apple Health data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2021-07-04-visualization-for-process-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization for Process Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-27-one-template-for-quarto-report/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Template for Quarto Report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2021-01-31-ppmc-cfa/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-20-EFA-and-CFA/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EFA v.s. CFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-10-16-estimating-logistic-regression-coefficients/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estimating Logistic Regression Coefficients</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-09-11-model-checking-in-dcm/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduce Descrepancy Measures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Latent Class Model: Batch Mplus using R on Mac</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web Scraping Academia Institute’s Grant Fundings using R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-10-17-proposed-model-latent-network-diagnostic-classfication-model/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Latent Networking Diagnostic Classfication Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2022-05-10-useful-blog-resource-bayesian-analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful Blog Resource: Bayesian Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-23-Latent-Profile-Analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Latent Profile Analysis using MCLUST (in R)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-11-14-use-r-as-a-bash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use R as a bash language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to do Data Cleaning in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-20-Longitudinal-Effect-of-Motivation/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Parental Involvement and Children Motivation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-04-29-updateing-R/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Updating R Version Without missing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2018-09-12-manual-learn-jags-in-r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">[Manual]Using Jags and R2jags in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2021-08-30-gradient-descent-via-julia/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gradient Descent Algorithm via julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-10-08-handout-for-smep-poster/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SMEP 2019 Poster Session Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Example of Measurement Invariance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A tutorial for forester R package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health Care Data Analysis with Apple Watch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2019-02-22-Play-With-gganimate/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduce gganimate for Psychometric</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-parental-involvement" id="toc-what-is-parental-involvement" class="nav-link active" data-scroll-target="#what-is-parental-involvement">What is Parental Involvement?</a>
+  <li><a href="#what-is-parental-involvement" id="toc-what-is-parental-involvement" class="nav-link active" data-scroll-target="#what-is-parental-involvement"><span class="header-section-number">1</span> What is Parental Involvement?</a>
   <ul class="collapse">
-  <li><a href="#relationship-with-academic-achievement" id="toc-relationship-with-academic-achievement" class="nav-link" data-scroll-target="#relationship-with-academic-achievement">Relationship with Academic Achievement</a></li>
-  <li><a href="#relationship-with-academic-motivation" id="toc-relationship-with-academic-motivation" class="nav-link" data-scroll-target="#relationship-with-academic-motivation">Relationship with Academic Motivation</a></li>
+  <li><a href="#relationship-with-academic-achievement" id="toc-relationship-with-academic-achievement" class="nav-link" data-scroll-target="#relationship-with-academic-achievement"><span class="header-section-number">1.1</span> Relationship with Academic Achievement</a></li>
+  <li><a href="#relationship-with-academic-motivation" id="toc-relationship-with-academic-motivation" class="nav-link" data-scroll-target="#relationship-with-academic-motivation"><span class="header-section-number">1.2</span> Relationship with Academic Motivation</a></li>
   </ul></li>
-  <li><a href="#academic-motivation" id="toc-academic-motivation" class="nav-link" data-scroll-target="#academic-motivation">Academic Motivation</a></li>
+  <li><a href="#academic-motivation" id="toc-academic-motivation" class="nav-link" data-scroll-target="#academic-motivation"><span class="header-section-number">2</span> Academic Motivation</a></li>
   </ul>
 </nav>
     </div>
@@ -179,6 +475,7 @@ ga('send', {
       <p class="date">November 22, 2017</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -188,31 +485,31 @@ ga('send', {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../img/Parent-Involvement.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Parental Involvement</figcaption><p></p>
+<figcaption class="figure-caption">Parental Involvement</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
 <p>One big problem in education study is the longitudinal effect of explanatory factor is always ignored. One of the reasons is the requirements of longitudinal data hardly be met. As a large number of educational studies made used of cross-sectional data to make conclusion, there will be severe issue. For instance, the effect could be positive in one year, however, the effect become smaller and smaller and eventually becomes negative. This study investigated the longitudinal effect of parental supervision on students’ academic motivation for 3 years.</p>
 </blockquote>
-<section id="what-is-parental-involvement" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-parental-involvement">What is Parental Involvement?</h2>
+<section id="what-is-parental-involvement" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-is-parental-involvement"><span class="header-section-number">1</span> What is Parental Involvement?</h2>
 <p>Parent involvement is considered as one of the most influential factors in education researches. Parents choose specific forms of involvement in response to the specific requests for involvement from children and the school.</p>
 <p>The indicators of parent involvement in education vary considerably across studies, most of which treat parental involvement as a unidimensional construct. Some other study identified four dimensions of parental involvement (Sui-Chu, 1996). Some early studies conceived parental involvement as involving parents in school activities; More recent studies have emphasized parents’ actions at home, such as <strong>discussing their children’s experiences at school</strong> and <strong>helping children with their schoolwork</strong>.</p>
-<section id="relationship-with-academic-achievement" class="level3">
-<h3 class="anchored" data-anchor-id="relationship-with-academic-achievement">Relationship with Academic Achievement</h3>
+<section id="relationship-with-academic-achievement" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="relationship-with-academic-achievement"><span class="header-section-number">1.1</span> Relationship with Academic Achievement</h3>
 <p>One meta analysis of parental involvement and students’ academic achievement (Fan, 2001) suggest that the vast proportion of the literature in this area is qualitative and non-empirical. Among the empirical studies that have investigated the issue quantitatively, there appear to be considerable inconsistencies. The study indicates that a small to moderate, and piratically meaningful, relationship between parental involvement and academic achievement. Parental aspiration/expectation for children’s education achievement has the strongest relationship, whereas parental home supervision has the weakest relationship with students’ academic achievement. In addition, the relationship is stronger for global indicator (e.g.&nbsp;GPA) of academic achievement than a subject-specific indicator (e.g., math grade). Some other study also found that parents’ participation at school had a moderate effect on reading achievement, but a negligible effect on mathematics achievement.</p>
 </section>
-<section id="relationship-with-academic-motivation" class="level3">
-<h3 class="anchored" data-anchor-id="relationship-with-academic-motivation">Relationship with Academic Motivation</h3>
+<section id="relationship-with-academic-motivation" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="relationship-with-academic-motivation"><span class="header-section-number">1.2</span> Relationship with Academic Motivation</h3>
 </section>
 </section>
-<section id="academic-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="academic-motivation">Academic Motivation</h2>
+<section id="academic-motivation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="academic-motivation"><span class="header-section-number">2</span> Academic Motivation</h2>
 
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -345,7 +642,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -353,9 +652,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -367,7 +680,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -403,30 +733,157 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
 <script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">How to do Data Cleaning in R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../posts/2018-04-29-updateing-R/index.html" class="pagination-link">
+        <span class="nav-page-text">Updating R Version Without missing packages</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Copyright 2015-2023, <span class="citation" data-cites="JihongZ">@JihongZ</span></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

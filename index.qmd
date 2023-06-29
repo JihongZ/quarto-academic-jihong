@@ -3,6 +3,8 @@ title: "Jihong Zhang"
 subtitle: 'Learn harder, Play harder'
 comments: false
 page-layout: full
+toc: false
+sidebar: false
 about:
   template: solana
   image: profile-2.jpg
@@ -12,7 +14,7 @@ about:
       text: Email
       href: mailto:z.john92@gmail.com
     - icon: twitter
-      text: twitter
+      text: Twitter
       href: https://twitter.com/jihongzgamma
     - icon: github
       text: Github
@@ -33,12 +35,14 @@ listing:
     filter-ui: false
     page-size: 3
     feed: true
+footer: "Copyright 2015-2023 @Jihong"
 ---
 
 ## About me
 
 Jihong Zhang is a postdoctoral fellow in the school of social science, the Chinese University of Hong Kong. He likes to play with advanced statistical modeling such as machine learning, Bayesian network etc. His doctoral training was about Educational Measurement and Statistics (EMS) program at University of Iowa, where he mainly focused on Bayesian latent variable modeling, Item response theory modeling, and other psychometric modeling. His research (currently) tries to help with other social science researchers understanding their data and correctly interpret, and to wisely use the powerful tools of statistics.
 
+::: {.panel-tabset align="left"}
 ## Interests
 
 -   Bayesian Psychometric Modeling
@@ -51,18 +55,26 @@ Jihong Zhang is a postdoctoral fellow in the school of social science, the Chine
 -   **M.S.** \| Educational Psychology \| [2015 - 2019]{style="color:darkgrey;"}
 -   **B.S.** \| Applied Psychology \| [2009 - 2013]{#date style="color:darkgrey;"}
 
+## Experience
+
+-   **Postdoctoral Fellow**
+
+    The Chinese University of Hong Kong
+
+    [Dec 2022 - June 2023]{style="color:darkgrey;"}
+
+-   **Associate Researcher**
+
+    Stanford Research Institute (SRI)
+
+    [June 2021 - Jan 2022]{style="color:darkgrey;"}
+:::
+
+## 
+
 ## Recent posts
 
 ::: {#posts}
 :::
 
 <a href="../posts/index.html"><button type="button" class="btn btn-primary float-end btn-sm">See all</button></a>
-
-## Experience
-
--   **Postdoctoral Fellow**
-    -   The Chinese University of Hong Kong 
-    -   [Dec 2022 - June 2023]{style="color:darkgrey;"}
--   **Associate Researcher**
-    -   Stanford Research Institute (SRI)
-    -   [June 2021 - Jan 2022]{style="color:darkgrey;"}

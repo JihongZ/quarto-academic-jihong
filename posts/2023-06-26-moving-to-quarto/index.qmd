@@ -1,5 +1,5 @@
 ---
-title: "Moving my website to Quarto"
+title: "Moving My Website to Quarto"
 author: "Jihong Zhang"
 date: "06/25/2023"
 draft: false
@@ -44,16 +44,16 @@ format:
 
 ## Tricks of Quarto
 
-### 1. Code highlighting
+### Code highlighting
 
 The very first trick is using `format > html > code-fold: true` settings in YAML metadata in *\_quarto.yml* (global) or *.qmd* (local) to hide the code block as `|> Code`, like:
 
 ```{r}
-kableExtra::kbl(head(iris)) |> 
-  kableExtra::kable_styling(
-    html_font = "Maven Pro",
-    bootstrap_options = c('striped', 'hover'),
-    font_size = 10, full_width = TRUE)
+library(kableExtra)
+kbl(head(iris)) |> 
+  kable_styling(
+    html_font = "Ysabeau Office",
+    font_size = 11, full_width = TRUE)
 ```
 
 Note that the code block can be numbered and added with a left border using `code-block-bg: true` and `code-block-border-left: "#31BAE9"`
@@ -66,7 +66,7 @@ Code block now also can be shown with language `#| echo: fenced`. As the code ch
 #| code-fold: false
 kableExtra::kbl(head(iris)) |> 
   kableExtra::kable_styling(
-    html_font = "Maven Pro",
+    html_font = "Ysabeau Office",
     bootstrap_options = c('striped', 'hover'),
     font_size = 10, full_width = TRUE)
 ```
@@ -78,3 +78,29 @@ kableExtra::kbl(head(iris)) |>
 import numpy as np
 iris = np.array(iris)
 ```
+
+### Visual model
+
+Visual model is one of the most appealing feature for Quarto but I am far from a expert in that. It looks like a visual model version of markdown editor (so called WYSIWYM editing, What you see is What you mean) but slightly different. The shortcut of switching between source and visual model is `Cmd` + `Shift` + `F4` (Thanks to Yihui's [JS](https://yihui.org/en/2023/02/key-buttons/) for pretty keyboard styling).
+
+I list some most frequently used keyboard for visual mode editing:
+
+(a) Insert Hyperlink: `Cmd` + <kbd>K</kbd>
+
+(b) Add footnote[^1]: `Shift`+`Cmd`+`F7`
+
+(c) Insert picture: `Shift` +`Cmd` +<kbd>I</kbd>
+
+(d) Insert code chunk[^2]: `Alt` +`Cmd` +<kbd>I</kbd>
+
+(e) Edit attribute[^3]: `F4`
+
+[^1]: Like this.
+
+[^2]: By default, it will insert R code chunk. If another language is frequently, use `Tools > Modify keyboard shortcuts > filter 'Insert'`. There should be a place for setting shortcut for other language.
+
+[^3]: Click \`F4\` in any place in the div works.
+
+Please also refer to the [official document](https://quarto.org/docs/visual-editor/vscode/) for more shortcuts and features. One thing I found very interesting is single quote mark `` ` `` . First, I'm not sure how to escape this in visual model. Second, if you close quote before typing content, like \`\`, visual mode will escape both quote marks. However, if you type in left quote mark then content and then close quote (i.e., type in\``something` first, and type closing quote mark), it can quote content correctly.
+
+Last but not least, perhaps just type `/` in rstudio is a better choice as it will pop up a list of elements to choose.

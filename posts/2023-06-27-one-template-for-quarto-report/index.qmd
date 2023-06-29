@@ -1,0 +1,69 @@
+---
+title: "One Template for Quarto Report"
+author: "Jihong Zhang"
+description: "A template used for academic reporting"
+date: "2023-06-27"
+tags: 
+  - template
+format: 
+  html: 
+    code-fold: show
+    code-overflow: wrap
+    code-summary: ' R Code'
+    number-sections: false
+---
+
+``` yaml
+#| echo: fenced
+title: "NEET Analysis"
+author: "Jihong Zhang"
+format: 
+  html:
+    header-includes: |
+      <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap" rel="stylesheet">
+    mainfont: 'Ysabeau Infant'
+    self-contained: true
+    toc: true
+    code-fold: true
+    code-summary: ' R Code'
+    code-line-numbers: true
+    number-sections: true
+    number-offset: 1
+```
+
+```{r}
+#| label: setup
+#| eval: false
+#| message: false
+#| warning: false
+#| echo: fenced
+root_dir = "/Users/clap/OneDrive - The Chinese University of Hong Kong/01_CLAP@JC/LatentClassModel"
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warnings=FALSE, include = FALSE)
+knitr::opts_knit$set(root.dir = root_dir)
+library(here)
+library(glue)
+library(bruceR)
+library(xtable)
+library(formattable) # format styles of table 
+library(reshape2)
+library(tidyverse)
+library(ggtext) 
+library(kableExtra)
+library(MplusAutomation)
+library(fastDummies)
+options(knitr.kable.NA = '')
+mycolors = c("#4682B4", "#B4464B", "#B4AF46", 
+             "#1B9E77", "#D95F02", "#7570B3",
+             "#E7298A", "#66A61E", "#B4F60A")
+softcolors = c("#B4464B", "#F3DCD4", "#ECC9C7", 
+               "#D9E3DA", "#D1CFC0", "#C2C2B4")
+mykbl <- function(x, ...){
+  kbl(x, digits = 2, ...) |> kable_styling(bootstrap_options = c("striped", "condensed")) 
+}
+```
+
+### Output example
+
+```{=html}
+<iframe width="100%" height="1000" src="data_Preparation_NEET0626.html" title="Quarto Documentation" style="border:2px solid #F3DCD4;"></iframe>
+```

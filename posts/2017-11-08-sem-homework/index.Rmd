@@ -1,10 +1,9 @@
 ---
-title: 'How to use Lavaan for Confirmatory Factor Analysis'
+title: 'How to use lavaan package to perform Confirmatory Factor Analysis'
 author: 'Jihong'
 date: '2017-10-19'
 categories:
   - Manual
-tags:
   - R
   - Lavaan
 ---
@@ -30,7 +29,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-## 0. Background
+## Background
 
 ### CFA on Attitude towards Inclusive Education Survey (N = 507)
 
@@ -52,7 +51,7 @@ dat2 <- dat %>% select(X,Aff.1:Aff.6)
 colnames(dat2) <- c("PersonID", paste0("Aff",1:6))
 ```
 
-## 1. Descriptive Statistics
+## Descriptive Statistics
 
 The descriptive statistics for all items are provided below. It appears that item 4 is the least difficult item as it has the highest mean ($\mu = 4.189, sd = 1.317$); item 5 is the most difficult item as it has lowest mean score ($\mu = 3.604, sd = 1.423$). All responses for each item range from 1 to 6 (1 = Strongly agree, 6 = Strongly disagree). Thus, all categories are responded. In term of item discrimination, as item 3 has the largest standard deviation ($sd = 1.364$) and item 6 has the smallest, item 3 has highest discrimination whearas item 6 has lowest in CTT.
 
@@ -105,7 +104,7 @@ ggplot(dat2_melted, aes(value)) +
   facet_wrap(~ key)
 ```
 
-## 3. Estimation with CFA
+## Estimation with CFA
 
 ### One-factor Model
 
@@ -157,13 +156,13 @@ resid(model2)$cov %>% kable(caption = "Normalized Residual Variance-Covariance M
 modificationindices(model2, standardized = TRUE,sort. = TRUE) %>% slice(1:10) %>% kable(caption = "Modification Indices", digits = 3)
 ```
 
-## 4. Path Diagrams
+## Path Diagram
 
 ```{r plot2, results='asis'}
 #semPlot::semPaths(model2, what = "est")
 ```
 
-## 5. Reliability
+## Reliability in Factor Analysis
 
 To get the estimates of reliabilities, Omega coefficients were calculated for each factor($\Omega_{AAC} = 0.832, p < 0.01; \Omega_{AAE} = 0.830, p < 0.01$).
 
@@ -188,7 +187,7 @@ model03EstimatesOmega = sem(model = model03SyntaxOmega, data = dat2, estimator =
 summary(model03EstimatesOmega, fit.measures = FALSE, rsquare = FALSE, standardized = FALSE, header = FALSE)
 ```
 
-## 6. Factor Scores and Distributions
+## Factor Scores and Distributions
 
 The AAC factor scores have an estimated mean of 0 with a variance of 0.88 due to the effect of the prior distribution. The SE for each person's AAC factor score is 0.347; 95% confidence interval for AAC factor score is $Score \pm 2*0.347$ = $Score \pm 0.694$. The AAE factor scores have an estimated mean of 0 with a variance of 0.881 due to the effect of the prior distribution. The SE for each person's AAC factor score is 0.357; 95% confidence interval for AAC factor score is $Score \pm 2*0.357$ = $Score \pm 0.714$.
 
@@ -239,7 +238,7 @@ factorScoreReliability = function(lavObject){
 factorScoreReliability(model2)
 ```
 
-## 7. Figures
+## Figures
 
 ### Figure 1 : Factor Score Distribution
 
@@ -331,7 +330,7 @@ par(mfrow = c(1,2))
 cfaPlots(lavObject = model2)
 ```
 
-## 8. Tables
+## Tables
 
 ### Table 1: Model Fit Statistics Using MLR
 

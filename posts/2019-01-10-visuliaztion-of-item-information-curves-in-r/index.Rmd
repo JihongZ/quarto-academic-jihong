@@ -10,7 +10,7 @@ tags:
   - ggplot2
 ---
 
-![Item Information Curve](/img/information_curve.png)
+![Item Information Curve](information_curve.png)
 
 This blog is to show a new way to display item information curves using `ggridges` package. The ridge plot could show the IIF plots very clear when you have a large number of items.
 

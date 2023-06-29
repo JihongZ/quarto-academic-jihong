@@ -1,6 +1,6 @@
 ---
 title: "Simulation of Lognormal distribution"
-date: "2017-11-11T21:49:57-07:00"
+date: "2017-11-11"
 categories:
 - blog
 tags:
@@ -12,8 +12,7 @@ tags:
 
 <!--more-->
 
-Simulate lognomal distibution
------------------------------
+## Simulate lognomal distibution
 
 ### Simulation Study 1
 
@@ -54,7 +53,7 @@ kable(table)
 This is the original, log and simulated mean and sd. It could be easily found that simulated ones are very closed to original.
 
 |      | Original |      Log | Simulated |
-| ---- | -------: | -------: | --------: |
+|------|---------:|---------:|----------:|
 | Mean |      891 | 6.660225 |  891.1468 |
 | SD   |      490 | 0.514041 |  490.4396 |
 
@@ -63,4 +62,3 @@ plot(density(y))
 ```
 
 From the density plot below, we can see the mean of X is also close to 891.
-
