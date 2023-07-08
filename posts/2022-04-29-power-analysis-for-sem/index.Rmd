@@ -1,8 +1,8 @@
 ---
 title: Power Analysis for Structural Equation Modeling
+description: 'Showcase current software used for power analysis of Structural Equation Modeling'
 authors: ['Jihong Zhang']
 date: '2022-04-29'
-slug: power-analysis-for-sem
 categories:
   - R
   - rshiny
@@ -10,10 +10,7 @@ categories:
   - lavaan
   - blog
   - tutorial
-subtitle: 'Showcase current software used for power analysis of Structural Equation Modeling'
-summary: ''
 lastmod: '2022-04-29T16:53:41-05:00'
-featured: no
 bibliography: 'Power Analysis.bib'
 link-citations: true
 toc: true

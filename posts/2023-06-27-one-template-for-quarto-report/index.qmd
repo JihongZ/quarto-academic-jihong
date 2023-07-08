@@ -13,6 +13,23 @@ format:
     number-sections: false
 ---
 
+```{r}
+#| eval: true
+#| echo: true
+library(ggplot2)
+library(hexSticker)
+
+p <- ggplot(aes(x = Sepal.Length, y = Sepal.Width), data = iris) + 
+  geom_point(shape = 6, color = "white")
+p <- p + theme_void() + theme_transparent()
+
+sticker(p, package="quarto", p_size=20, s_x=1, s_y=.75, 
+        s_width=0.7, s_height = 0.7,
+        h_fill = "#B4464B", filename="ggplot2.png")
+
+knitr::include_graphics("ggplot2.png")
+```
+
 ``` yaml
 #| echo: fenced
 title: "NEET Analysis"
@@ -30,6 +47,7 @@ format:
     number-sections: true
     number-offset: 1
 ```
+
 
 ```{r}
 #| label: setup

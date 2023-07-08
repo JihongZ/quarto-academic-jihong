@@ -1,7 +1,6 @@
 # options apply to all posts in this folder
 
 # freeze computational output
-freeze: true
 author: "Jihong Zhang"
 number-sections: true
 number-depth: 3

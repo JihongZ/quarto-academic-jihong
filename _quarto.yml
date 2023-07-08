@@ -16,8 +16,11 @@ website:
   open-graph: true
   page-footer: "Copyright 2015-2023, @JihongZ" 
   sidebar:
-    style: floating
-    contents: posts
+    style: "floating"
+    contents:
+      - section: Contents
+        contents: 
+          - auto: '*.qmd'
   navbar:
     background: '#008080'
     collapse-below: lg
@@ -64,13 +67,13 @@ format:
     code-link: true
     code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/
     code-line-numbers: false
+    code-overflow: wrap
     linestretch: 1.5
     # toc
     table-of-contents: true
     toc-location: right
     fontsize: 1em
     
-      
 editor: visual
 
 execute: 

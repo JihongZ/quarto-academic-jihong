@@ -6,19 +6,15 @@ date: "2023-06-28"
 categories: 
   - tutorial
   - package
-format: 
-  html:
-    header-includes: |
-      <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap" rel="stylesheet">
-    mainfont: 'Ysabeau Infant'
-    self-contained: true
-    toc: true
-    code-fold: false
-    code-summary: ' R Code'
-    code-line-numbers: false
-    number-sections: true
-    number-offset: 1
+toc: true
+code-fold: show
+code-summary: ' R Code'
+code-line-numbers: false
+number-sections: true
+number-offset: 1
 ---
+
+![Workflow of forester](intro.png){fig-align="center" width="1000"}
 
 ```{r}
 #| label: setup
@@ -39,7 +35,7 @@ mykbl <- function(x, ...){
 }
 ```
 
-![Workflow of forester](intro.png){fig-align="center"}
+
 
 As contributors of the R package said in their [github website](https://github.com/ModelOriented/forester):
 
