@@ -1,0 +1,95 @@
+---
+title: "Lecture 1: Introduction to Course and Class Research Project(s)"
+subtitle: "ESRM 6553: _Advanced Multivariate Statistics: Bayesian Psychometric Modeling_"
+author: "JIHONG ZHANG"
+date: "Presentation Date"
+title-block-banner: true
+title-block-banner-color: "red"
+csl: apa.csl
+format: 
+  revealjs:
+    page-layout: custom
+    multiplex: true
+    logo: "UA_Logo_Horizontal.jpg"
+    preview-links: auto
+    footer: "Bayesian Psychometric Modeling 2024"
+    theme: [white, pp.scss]
+    slide-number: c/t
+    incremental: false # change to true for slides to incrementally appear
+    fig-align: center
+    fig-cap-location: top
+    author: Jihong Zhang, Dr.
+    date: January 19, 2024
+    institute: Department of Counseling, Leadership, and Research Methods (CLRM)
+# transition: slide
+---
+
+# Lecture Overview
+
+## Today's Lecture
+
+-   Course Overview and Structure
+
+-   Research Project
+
+# Course Overview and Structure
+
+## Course materials
+
+-   Course files on ICON
+    -   Lecture slides
+
+    -   Syllabus
+
+    -   Live course schedule
+
+    -   R codes
+
+## Lecture structure
+
+1.  Research methods and programming skills
+    - Research techniques that are useful for conducting research in education, psychology, or public health
+2.  Current research in Bayesian statistics and modeling
+    - Presentation of current research in Bayesian statistics and modeling
+3.  Ongoing research project
+    - research discussion (your projects, our course project, any other topics like machine learning, computerized adaptive testing, etc.)
+
+# Research Project
+
+## Prerequisite information
+
+- With all enrolled students, decide on one research project
+
+  - [ ] a summary report of multiple literatures on same topic
+  - [ ] a replication of a published study (contact the author(s) for the data)
+  - [ ] a new study (collect data by yourself)
+  - [ ] a secondary data analysis (use existing data)
+  - [ ] a simulation study (use simulated data)
+  - [ ] a combination of the above or others
+
+- Basic requirement: the project is about statistical inferences (e.g., hypothesis testing, parameter estimation, model comparison, etc.)
+
+- Recommendation: the project is about Bayesian inferences or machine learning
+
+- [A report with the length of 1-2 pages is enough for the class project]{.underline}
+
+## Summary Report: summarize multiple literatures on same topic
+
+- [Research motivation]{.underline}: Learn how machine learning methods differ from traditional statistical methods
+
+- [Research hypothesis]{.underline}: Some machine learning methods are more accurate when predicting student performance than traditional statistical methods
+
+- [Research question(s)]{.underline}: 
+    - Q1. What are the differences of accuracy between machine learning methods and traditional statistical methods when reliability is low/high?
+    - Q2. What are the differences of accuracy between machine learning methods and traditional statistical methods when the sample size is low/high?
+    
+## Summary Report: summarize multiple literatures on same topic (Cont.)
+-   [Why this matter (Background)]{.underline}: 
+    - Research community has no clear definition of machine learning. They call their research is "ML-based" because of the method is typically used by ML researchers? 
+    - In some cases, traditional statistical method can be considered as a special case of machine learning. For example, linear regression is a special case of neural network. Bayesian network is a special case of graphical model.
+    - Does machine learning have advantages over traditional statistical methods regarding prediction? 
+
+# Assignment for Next Week's Class
+## Assignment for Next Week's Class
+1. We have no weekly assignment.
+2. Google "Bayesian" or "Bayesian inferences". Let me know if you find something interesting.

@@ -2,6 +2,9 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html",
+      "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html",
       "/posts/2023-07-04-data-visualization-for-survey-data/index.html",
       "/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html",
       "/posts/2023-06-27-one-template-for-quarto-report/index.html",
@@ -40,12 +43,15 @@
       "/posts/2017-11-11-lognormal-simulation/index.html",
       "/posts/2017-11-10-Linking-simulation/index.html",
       "/posts/2017-11-08-sem-homework/index.html",
-      "/posts/index.html"
+      "/posts/index.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html",
       "/posts/2023-07-04-data-visualization-for-survey-data/index.html",
       "/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html",
       "/posts/2023-06-27-one-template-for-quarto-report/index.html",
@@ -79,6 +85,9 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html",
+      "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html",
       "/posts/2023-07-04-data-visualization-for-survey-data/index.html",
       "/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html",
       "/posts/2023-06-27-one-template-for-quarto-report/index.html",
@@ -106,7 +115,8 @@
       "/posts/2017-11-23-Latent-Profile-Analysis/index.html",
       "/posts/2017-11-12-MESUREMENT-INVARIANCE/index.html",
       "/posts/2017-11-10-Linking-simulation/index.html",
-      "/posts/2017-11-08-sem-homework/index.html"
+      "/posts/2017-11-08-sem-homework/index.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html"
     ]
   }
 ]

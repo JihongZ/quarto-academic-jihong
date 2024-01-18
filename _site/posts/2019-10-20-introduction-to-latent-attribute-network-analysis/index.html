@@ -238,6 +238,12 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-14-how-to-use-uark-hpc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to set up High Performance Computing of U of Ark</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../posts/2023-06-26-moving-to-quarto/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Moving My Website to Quarto</span></a>
   </div>
@@ -262,9 +268,49 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-07-07-communities-in-psychometric-networks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Communities in psychometric networks?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A tutorial for forester R package</span></a>
   </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ESRM 6553: Adv. Multivariate</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Lecture01</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth4 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Introduction to Course and Class Research Project(s)</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+      </ul>
 </li>
       </ul>
 </li>
@@ -365,8 +411,8 @@ C2  0  0  0  0  3  3</code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## igraph package </span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">package</span><span class="op">:</span><span class="va">network</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">routes_work</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://igraph.org">igraph</a></span><span class="op">)</span></span>
-<span><span class="va">routes_igraph</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/igraph/man/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span>d <span class="op">=</span> <span class="va">edge.list</span>, vertices <span class="op">=</span> <span class="va">node.list</span>, directed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r.igraph.org/">igraph</a></span><span class="op">)</span></span>
+<span><span class="va">routes_igraph</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r.igraph.org/reference/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span>d <span class="op">=</span> <span class="va">edge.list</span>, vertices <span class="op">=</span> <span class="va">node.list</span>, directed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">routes_igraph</span>, edge.arrow.size <span class="op">=</span> <span class="fl">0.5</span>, layout <span class="op">=</span> <span class="va">layout_with_graphopt</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
