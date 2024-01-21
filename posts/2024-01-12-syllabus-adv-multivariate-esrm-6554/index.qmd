@@ -3,7 +3,8 @@ title: "ESRM 6553: Adv. Multivariate"
 subtitle: "Spring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229"
 author: "Dr. Jihong Zhang"
 date: "Jan 13 2024" 
-format: html
+format: 
+  pdf: default
 ---
 
 ![](Images/UA_Logo_Horizontal.png)
@@ -27,7 +28,7 @@ format: html
 1.  **Introduction to Bayesian Statistics**
     -   Likelihoods;
     -   Probability distributions, such as priors and posteriors;
-    -   Theorectial foundations of Bayesian infernce;
+    -   Theoretical foundations of Bayesian inference;
 2.  **Bayesian Inference and Computational Methods**
     -   Markov Chain Monte Carlo (MCMC) estimation procedures;
 3.  **Bayesian Modeling Evaluation**

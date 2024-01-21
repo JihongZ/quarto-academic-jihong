@@ -9,7 +9,7 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.427">
+  <meta name="generator" content="quarto-1.4.547">
 
   <meta name="author" content="Jihong Zhang, Dr.">
   <meta name="dcterms.date" content="2024-01-19">
@@ -172,7 +172,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -337,7 +338,7 @@
   </style>
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Lecture 1: Introduction to Course and Class Research Project(s)">
 <meta property="og:description" content="ESRM 6553: Advanced Multivariate Statistics: Bayesian Psychometric Modeling">
-<meta property="og:site-name" content="Dr. Jihong Zhang">
+<meta property="og:site_name" content="Dr. Jihong Zhang">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Lecture 1: Introduction to Course and Class Research Project(s)">
 <meta name="twitter:description" content="ESRM 6553: Advanced Multivariate Statistics: Bayesian Psychometric Modeling">
 <meta name="twitter:creator" content="@jihongzgamma">
@@ -420,12 +421,12 @@ Jihong Zhang, Dr.
 <ul>
 <li><p>With all enrolled students, decide on one research project</p>
 <ul class="task-list">
-<li><input type="checkbox">a summary report of multiple literatures on same topic</li>
-<li><input type="checkbox">a replication of a published study (contact the author(s) for the data)</li>
-<li><input type="checkbox">a new study (collect data by yourself)</li>
-<li><input type="checkbox">a secondary data analysis (use existing data)</li>
-<li><input type="checkbox">a simulation study (use simulated data)</li>
-<li><input type="checkbox">a combination of the above or others</li>
+<li><label><input type="checkbox">a summary report of multiple literatures on same topic</label></li>
+<li><label><input type="checkbox">a replication of a published study (contact the author(s) for the data)</label></li>
+<li><label><input type="checkbox">a new study (collect data by yourself)</label></li>
+<li><label><input type="checkbox">a secondary data analysis (use existing data)</label></li>
+<li><label><input type="checkbox">a simulation study (use simulated data)</label></li>
+<li><label><input type="checkbox">a combination of the above or others</label></li>
 </ul></li>
 <li><p>Basic requirement: the project is about statistical inferences (e.g., hypothesis testing, parameter estimation, model comparison, etc.)</p></li>
 <li><p>Recommendation: the project is about Bayesian inferences or machine learning</p></li>
@@ -467,9 +468,11 @@ Jihong Zhang, Dr.
 <li>Google “Bayesian” or “Bayesian inferences”. Let me know if you find something interesting.</li>
 </ol>
 
-
-<img src="UA_Logo_Horizontal.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="UA_Logo_Horizontal.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
 <p>Bayesian Psychometric Modeling 2024</p>
+</div>
 </div>
 </section></section>
     </div>
@@ -500,7 +503,6 @@ Jihong Zhang, Dr.
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -762,10 +764,9 @@ Jihong Zhang, Dr.
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -775,8 +776,17 @@ Jihong Zhang, Dr.
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
