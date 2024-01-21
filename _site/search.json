@@ -52,8 +52,8 @@
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html#todays-lecture",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html#todays-lecture",
     "title": "Lecture 1: Introduction to Course and Class Research Project(s)",
-    "section": "1.1 Today’s Lecture",
-    "text": "1.1 Today’s Lecture\n\nCourse Overview and Structure\nResearch Project"
+    "section": "",
+    "text": "Course Overview and Structure\nResearch Project"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html#course-materials",
@@ -95,7 +95,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html#assignment-for-next-weeks-class-1",
     "title": "Lecture 1: Introduction to Course and Class Research Project(s)",
     "section": "4.1 Assignment for Next Week’s Class",
-    "text": "4.1 Assignment for Next Week’s Class\n\nWe have no weekly assignment.\nGoogle “Bayesian” or “Bayesian inferences”. Let me know if you find something interesting.\n\n\n\n\nBayesian Psychometric Modeling 2024"
+    "text": "4.1 Assignment for Next Week’s Class\n\nWe have no weekly assignment.\nGoogle “Bayesian” or “Bayesian inferences”. Let me know if you find something interesting."
   },
   {
     "objectID": "posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html",
@@ -332,15 +332,15 @@
     "objectID": "posts/2022-10-23-thesis-defense/index.html#outline",
     "href": "posts/2022-10-23-thesis-defense/index.html#outline",
     "title": "Dissertation Defence",
-    "section": "0.1 Outline",
-    "text": "0.1 Outline\n\n\nBackground (5 minutes)\nPerformance measures (5 minutes)\nSimulation study (15 minutes)\nEmpirical study (10 minutes)\nConclusion (5 minutes)\nDiscussion (5 minutes)"
+    "section": "",
+    "text": "Background (5 minutes)\nPerformance measures (5 minutes)\nSimulation study (15 minutes)\nEmpirical study (10 minutes)\nConclusion (5 minutes)\nDiscussion (5 minutes)"
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#research-motivation",
     "href": "posts/2022-10-23-thesis-defense/index.html#research-motivation",
     "title": "Dissertation Defence",
     "section": "1.1 Research Motivation",
-    "text": "1.1 Research Motivation\n\nQ-matrix is usually determined by expert judgement, so there can be uncertainty about some of its elements. Model selection methods are necessary to select the model with the “correct” Q-matrix.\nPrevious model selection methods such as information criterion and Bayes Factors are not flexible regarding checking specific aspects of data\n\n1.1.1 Posterior predictive checking (PPC)\nAdvantages of PPC\n\nPPC is a flexible tool and implemented in most Bayesian software.\n\nDrawbacks of PPC\n\nPPC is not fully Bayesian since it doesn’t take the uncertainty of observed data into account\nPPC uses data twice\n\n\nModel comparison approach for Bayesian psychometric models are not well investigated. Use global fit to evaluate fit and then use local misfit detect method to find local misfit. Then repeat it until model fits."
+    "text": "1.1 Research Motivation\n\nQ-matrix is usually determined by expert judgement, so there can be uncertainty about some of its elements. Model selection methods are necessary to select the model with the “correct” Q-matrix.\nPrevious model selection methods such as information criterion and Bayes Factors are not flexible regarding checking specific aspects of data\n\n\n1.1.1 Posterior predictive checking (PPC)\nAdvantages of PPC\n\nPPC is a flexible tool and implemented in most Bayesian software.\n\nDrawbacks of PPC\n\nPPC is not fully Bayesian since it doesn’t take the uncertainty of observed data into account\nPPC uses data twice\n\n\nModel comparison approach for Bayesian psychometric models are not well investigated. Use global fit to evaluate fit and then use local misfit detect method to find local misfit. Then repeat it until model fits."
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#research-objectives",
@@ -382,7 +382,7 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#analysis-models",
     "title": "Dissertation Defence",
     "section": "2.3 Analysis Models",
-    "text": "2.3 Analysis Models\n\n\n\nBayesian Network model\nData generation model - LCDM\nModel with 3 items (10%) underspecify attributes\nModel with 6 items (20%) underspecify attributes\nModel with 3 items (10%) misspecify attributes\nModel with 6 items (20%) misspecify attributes\n\n\nQ-matrix\n\n\n\n\n\nCorrect model\n\n\n\n\n\n\n\n10% underspecify\n\n\n\n\n\n\n\n20% underspecify\n\n\n\n\n\n\n\n10% misspecify\n\n\n\n\n\n\n\n20% misspecify"
+    "text": "2.3 Analysis Models\n\n\n\nBayesian Network model\nData generation model - LCDM\nModel with 3 items (10%) underspecify attributes\nModel with 6 items (20%) underspecify attributes\nModel with 3 items (10%) misspecify attributes\nModel with 6 items (20%) misspecify attributes\n\n\nQ-matrix\n\n\n\n\n\n\nCorrect model\n\n\n\n\n\n\n\n10% underspecify\n\n\n\n\n\n\n\n20% underspecify\n\n\n\n\n\n\n\n10% misspecify\n\n\n\n\n\n\n\n20% misspecify"
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#mcmc-settings",
@@ -403,7 +403,7 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#path-plot-for-pp-m2",
     "title": "Dissertation Defence",
     "section": "3.2 Path plot for PP-M2",
-    "text": "3.2 Path plot for PP-M2\n\nTitle: Path Plot for Average Posterior Predictive M2"
+    "text": "3.2 Path plot for PP-M2\n\n\n\nTitle: Path Plot for Average Posterior Predictive M2"
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#findings",
@@ -424,7 +424,7 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#true-positive-rate",
     "title": "Dissertation Defence",
     "section": "3.5 True Positive Rate:",
-    "text": "3.5 True Positive Rate:\n\nTrue Positive Rates of choosing correct model\n\nThis table represents the average TPR for KS-PP-M2 and four information criteria for each sample size and two levels of attribute correlation.\nAll approaches have 100% power choosing the correct model among five analysis models."
+    "text": "3.5 True Positive Rate:\n\n\n\nTrue Positive Rates of choosing correct model\n\n\n\n\nThis table represents the average TPR for KS-PP-M2 and four information criteria for each sample size and two levels of attribute correlation.\nAll approaches have 100% power choosing the correct model among five analysis models."
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#effects-of-cognitive-diagnostic-index",
@@ -473,14 +473,14 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#density-plot-of-posterior-predictive-m2",
     "title": "Dissertation Defence",
     "section": "5.1 Density Plot of Posterior predictive M2",
-    "text": "5.1 Density Plot of Posterior predictive M2\n\nNote: solid line (the BayesNet model); dotted model (the three-dimension model); dashed line (the two-dimension model)."
+    "text": "5.1 Density Plot of Posterior predictive M2\n\n\n\nNote: solid line (the BayesNet model); dotted model (the three-dimension model); dashed line (the two-dimension model)."
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#model-selection-indices",
     "href": "posts/2022-10-23-thesis-defense/index.html#model-selection-indices",
     "title": "Dissertation Defence",
     "section": "5.2 Model Selection Indices",
-    "text": "5.2 Model Selection Indices\n\nNote: Model 1 (three dimensional model); Model 2 (two dimensional model)."
+    "text": "5.2 Model Selection Indices\n\n\n\nNote: Model 1 (three dimensional model); Model 2 (two dimensional model)."
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#findings-emprical-study",
@@ -515,7 +515,7 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#supplement-information-criterion",
     "title": "Dissertation Defence",
     "section": "6.2 Supplement: Information Criterion",
-    "text": "6.2 Supplement: Information Criterion\n\nDIC / WAIC\n\nDIC is a somewhat Bayesian version of AIC that makes two changes, replacing the maximum likelihood estimate \\(\\theta\\) with the posterior mean and replacing k with a data-based bias correction.1\n\n\nWAIC is a more fully Bayesian approach for estimating the out-of-sample expectation, starting with the computed log pointwise posterior predictive density and then adding a correction for effective number of parameters to adjust for overfitting.\n\n\n\nDIC does not the whole posterior information and does not provide uncertainty of fit statistics.\nWAIC provides uncertainty (SE) and is popular but is not flexible to test certain aspects of data.\nPosterior predictive checking is flexible but not full Bayesian. It also has some theoretical issue.\n\nGelman, A., Hwang, J., & Vehtari, A. (2014). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24(6), 997–1016. https://doi.org/10.1007/s11222-013-9416-2"
+    "text": "6.2 Supplement: Information Criterion\n\nDIC / WAIC\n\nDIC is a somewhat Bayesian version of AIC that makes two changes, replacing the maximum likelihood estimate \\theta with the posterior mean and replacing k with a data-based bias correction.1\n\n\nWAIC is a more fully Bayesian approach for estimating the out-of-sample expectation, starting with the computed log pointwise posterior predictive density and then adding a correction for effective number of parameters to adjust for overfitting.\n\n\n\nDIC does not the whole posterior information and does not provide uncertainty of fit statistics.\nWAIC provides uncertainty (SE) and is popular but is not flexible to test certain aspects of data.\nPosterior predictive checking is flexible but not full Bayesian. It also has some theoretical issue."
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#supplement-ii-posterior-predictive-check",
@@ -550,14 +550,14 @@
     "href": "posts/2022-10-23-thesis-defense/index.html#supplement-vi-fit-measures",
     "title": "Dissertation Defence",
     "section": "6.7 Supplement VI: Fit Measures",
-    "text": "6.7 Supplement VI: Fit Measures\n6.7.1 Posterior Predictive M2\n\nM2 is a limited-information statistics which calculated up-to second probabilities of item responses.\n\nM2 more robust than full-information fit statistics in small sample sizes.\nPP-M2 is M2 values conditional on posterior information. Lower average values suggest better model fit.\n6.7.2 Cognitive diagnostic Index"
+    "text": "6.7 Supplement VI: Fit Measures\n\n6.7.1 Posterior Predictive M2\n\nM2 is a limited-information statistics which calculated up-to second probabilities of item responses.\n\nM2 more robust than full-information fit statistics in small sample sizes.\nPP-M2 is M2 values conditional on posterior information. Lower average values suggest better model fit.\n\n\n6.7.2 Cognitive diagnostic Index"
   },
   {
     "objectID": "posts/2022-10-23-thesis-defense/index.html#supplement-vii-ks-statistics",
     "href": "posts/2022-10-23-thesis-defense/index.html#supplement-vii-ks-statistics",
     "title": "Dissertation Defence",
     "section": "6.8 Supplement VII: KS Statistics",
-    "text": "6.8 Supplement VII: KS Statistics\n\n\n\n\nMean of reference distribution:\n\n\n\n\n\nMean of target distribution:\n\n\n\n\nAdd another model\n\n\n\n\n\n\n\n\n\n\n\n\n\nThesis Defence 2022"
+    "text": "6.8 Supplement VII: KS Statistics\n\n\n\n\nMean of reference distribution:\n\n\n\n\n\nMean of target distribution:\n\n\n\n\nAdd another model"
   },
   {
     "objectID": "posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html",
@@ -920,28 +920,28 @@
     "objectID": "posts/2024-01-14-how-to-use-uark-hpc/index.html#connect-to-hpc",
     "href": "posts/2024-01-14-how-to-use-uark-hpc/index.html#connect-to-hpc",
     "title": "How to set up High Performance Computing of U of Ark",
-    "section": "\n2 Connect to HPC",
-    "text": "2 Connect to HPC\nAs long as you have an AHPCC account, you can connect to HPC through SSH. For Windows users, you can use PuTTY to connect to HPC. For Mac and Linux users, you can use the terminal to connect to HPC. The command is:\nssh [loginname]@hpc-portal2.hpc.uark.edu\nIf your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.\n\n\nLogin Screenshot\n\nNote: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint."
+    "section": "2 Connect to HPC",
+    "text": "2 Connect to HPC\nAs long as you have an AHPCC account, you can connect to HPC through SSH. For Windows users, you can use PuTTY to connect to HPC. For Mac and Linux users, you can use the terminal to connect to HPC. The command is:\nssh [loginname]@hpc-portal2.hpc.uark.edu\nIf your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.\n\n\n\nLogin Screenshot\n\n\nNote: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint."
   },
   {
     "objectID": "posts/2024-01-14-how-to-use-uark-hpc/index.html#moving-data",
     "href": "posts/2024-01-14-how-to-use-uark-hpc/index.html#moving-data",
     "title": "How to set up High Performance Computing of U of Ark",
-    "section": "\n3 Moving data",
+    "section": "3 Moving data",
     "text": "3 Moving data\nFor moving data files from local machine to HPC, type in following codes on your local machine:\nscp program.c loginname@hpc-portal2.hpc.uark.edu:/home/loginname/\nTo copy an entire directory tree src using SCP, use -r for recursive:\nscp -r src loginname@hpc-portal2.hpc.uark.edu:/home/loginname/\nSimilarly, for moving data files from HPC to local machine, type in following codes on your local machine:\nscp -r loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./"
   },
   {
     "objectID": "posts/2024-01-14-how-to-use-uark-hpc/index.html#jobs-submission",
     "href": "posts/2024-01-14-how-to-use-uark-hpc/index.html#jobs-submission",
     "title": "How to set up High Performance Computing of U of Ark",
-    "section": "\n4 Jobs submission",
-    "text": "4 Jobs submission\nPlease refer to this link for detailed information about HPC equipment.\nqsub -q q06h32c -l walltime=1:00 -l nodes=1:ppn=32 example.sh\nThe command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node.\nHere’s a simple example of a job script:\n#!/bin/bash\n#SBATCH --job-name=mpi\n#SBATCH --output=zzz.slurm\n#SBATCH --partition comp06\n#SBATCH --nodes=2\n#SBATCH --tasks-per-node=32\n#SBATCH --time=6:00:00\nmodule load gcc/9.3.1 mkl/19.0.5 R/4.2.2\n\nRscript HelloWorld/example.R\nWhere gcc and mkl are required for R package installation. Please see here for more details. Rscript is the command to execute R file. HelloWorld/example.R is the path of your R script. For #SBATCH, those are options for SLURM scheduler. Please see following summary or view it online:\n\n\nDownload summary.pdf\n\n\nTo use R interactively, please start an interactive job using following command:\nsrun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash\nThis command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.\n\n\n\n\n\n\n\nslurm commands\ncompatibility commands\nMeaning\n\n\n\nsbatch\nqsub\nsubmit &lt;job file&gt;\n\n\nsrun\nqsub -I\nsubmit interactive job\n\n\nsqueue\nqstat\nlist all queued jobs\n\n\nsqueue -u -rfeynman\nqstat -u rfeynman\nlist queued jobs for user rfeynman\n\n\nscancel\nqdel\ncancel &lt;job#&gt;\n\n\nsinfo\nshownodes -l -n;qstat -q\nnode status;list of queues\n\n\n\nFor slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load R/4.2.2 module, those packages installed via an interactive job will be stored at $HOME$/R/x86_64-pc-linux-gnu/4.2/. See here for more details about interactive job.\nThe workflow of job submission is as follows:\nc1331:jzhang:~/HelloWorld$ cat exampleJob.sh\n#!/bin/bash\n#SBATCH --nodes=1\n#SBATCH --tasks-per-node=2\n#SBATCH --job-name=Exp0\nmodule purge\nmodule load os/el7 gcc/9.3.1 mkl/19.0.5 R/4.2.2\ncd $SLURM_SUBMIT_DIR\nRscript example.R\nc1331:jzhang:~/HelloWorld$ rm slurm-334001.out\nc1331:jzhang:~/HelloWorld$ sbatch exampleJob.sh\nSubmitted batch job 334002\nc1331:jzhang:~/HelloWorld$ ls\nexampleJob.sh  example.R  gene_up.txt  MS_entrez_id_alldata.txt  slurm-334002.out\nc1331:jzhang:~/HelloWorld$"
+    "section": "4 Jobs submission",
+    "text": "4 Jobs submission\nPlease refer to this link for detailed information about HPC equipment.\nqsub -q q06h32c -l walltime=1:00 -l nodes=1:ppn=32 example.sh\nThe command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node.\nHere’s a simple example of a job script:\n#!/bin/bash\n#SBATCH --job-name=mpi\n#SBATCH --output=zzz.slurm\n#SBATCH --partition comp06\n#SBATCH --nodes=2\n#SBATCH --tasks-per-node=32\n#SBATCH --time=6:00:00\nmodule load gcc/9.3.1 mkl/19.0.5 R/4.2.2\n\nRscript HelloWorld/example.R\nWhere gcc and mkl are required for R package installation. Please see here for more details. Rscript is the command to execute R file. HelloWorld/example.R is the path of your R script. For #SBATCH, those are options for SLURM scheduler. Please see following summary or view it online:\n\n\nDownload summary.pdf\n\n\nTo use R interactively, please start an interactive job using following command:\nsrun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash\nThis command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.\n\n\n\n\n\n\n\n\nslurm commands\ncompatibility commands\nMeaning\n\n\n\n\nsbatch\nqsub\nsubmit &lt;job file&gt;\n\n\nsrun\nqsub -I\nsubmit interactive job\n\n\nsqueue\nqstat\nlist all queued jobs\n\n\nsqueue -u -rfeynman\nqstat -u rfeynman\nlist queued jobs for user rfeynman\n\n\nscancel\nqdel\ncancel &lt;job#&gt;\n\n\nsinfo\nshownodes -l -n;qstat -q\nnode status;list of queues\n\n\n\nFor slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load R/4.2.2 module, those packages installed via an interactive job will be stored at $HOME$/R/x86_64-pc-linux-gnu/4.2/. See here for more details about interactive job.\nThe workflow of job submission is as follows:\nc1331:jzhang:~/HelloWorld$ cat exampleJob.sh\n#!/bin/bash\n#SBATCH --nodes=1\n#SBATCH --tasks-per-node=2\n#SBATCH --job-name=Exp0\nmodule purge\nmodule load os/el7 gcc/9.3.1 mkl/19.0.5 R/4.2.2\ncd $SLURM_SUBMIT_DIR\nRscript example.R\nc1331:jzhang:~/HelloWorld$ rm slurm-334001.out\nc1331:jzhang:~/HelloWorld$ sbatch exampleJob.sh\nSubmitted batch job 334002\nc1331:jzhang:~/HelloWorld$ ls\nexampleJob.sh  example.R  gene_up.txt  MS_entrez_id_alldata.txt  slurm-334002.out\nc1331:jzhang:~/HelloWorld$"
   },
   {
     "objectID": "posts/2024-01-14-how-to-use-uark-hpc/index.html#checking-job",
     "href": "posts/2024-01-14-how-to-use-uark-hpc/index.html#checking-job",
     "title": "How to set up High Performance Computing of U of Ark",
-    "section": "\n5 Checking job",
+    "section": "5 Checking job",
     "text": "5 Checking job\nsqueue -u loginname"
   },
   {
@@ -1186,36 +1186,36 @@
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-topics",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-topics",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "",
-    "text": "Introduction to Bayesian Statistics\n\nLikelihoods;\nProbability distributions, such as priors and posteriors;\nTheorectial foundations of Bayesian infernce;\n\nBayesian Inference and Computational Methods\n\nMarkov Chain Monte Carlo (MCMC) estimation procedures;\n\nBayesian Modeling Evaluation\n\nModel specification, estimation, and testing.\nModel fit and model comparison, such as convergence diagnostics, posterior predictive checks, information criteria\n\nBayesian Modeling\n\nEstimating and making inferences from psychometric models such as Confirmatory Factor Analysis (CFA) or Item Response Theory (IRT) models\n\nAdvanced Topics in Bayesian Multivariate Analysis\n\nBayesian networks.\nMultilevel/Hierarchical models, mixture models.\nMissing data, non-normal data."
+    "section": "1.1 Course Topics",
+    "text": "1.1 Course Topics\n\nIntroduction to Bayesian Statistics\n\nLikelihoods;\nProbability distributions, such as priors and posteriors;\nTheorectial foundations of Bayesian infernce;\n\nBayesian Inference and Computational Methods\n\nMarkov Chain Monte Carlo (MCMC) estimation procedures;\n\nBayesian Modeling Evaluation\n\nModel specification, estimation, and testing.\nModel fit and model comparison, such as convergence diagnostics, posterior predictive checks, information criteria\n\nBayesian Modeling\n\nEstimating and making inferences from psychometric models such as Confirmatory Factor Analysis (CFA) or Item Response Theory (IRT) models\n\nAdvanced Topics in Bayesian Multivariate Analysis\n\nBayesian networks.\nMultilevel/Hierarchical models, mixture models.\nMissing data, non-normal data."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-description",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-description",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "",
-    "text": "This course offers an in-depth exploration of multivariate statistics within the context of Bayesian inferences. Bayesian statistics have been widely used in public health, education, and psychology. Bayesian techniques are increasingly used in Artificial Intelligence and Brain models for decision-making under uncertainty. Designed for graduate students in educational statistics and research methods, it focuses on the theoretical underpinnings and practical applications of Bayesian approaches in psychometric modeling. Prerequisites include basic knowledge of multivariate statistics and psychometrics."
+    "section": "1.2 Course Description",
+    "text": "1.2 Course Description\nThis course offers an in-depth exploration of multivariate statistics within the context of Bayesian inferences. Bayesian statistics have been widely used in public health, education, and psychology. Bayesian techniques are increasingly used in Artificial Intelligence and Brain models for decision-making under uncertainty. Designed for graduate students in educational statistics and research methods, it focuses on the theoretical underpinnings and practical applications of Bayesian approaches in psychometric modeling. Prerequisites include basic knowledge of multivariate statistics and psychometrics."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-objectives",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#course-objectives",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "",
-    "text": "Upon completion of ESRM 6554 - Adv. Multivariate, students will:\n\nComprehend fundamental concepts and principles of Bayesian multivariate analysis;\nArticulate the rationale of Bayesian approaches to data analysis and statistical inference;\nCompare Bayesian inference to MLE;\nDevelop conceptual and mathematical Bayesian literacy, as well as computer software skills (e.g., R, Stan, or JAGS) required to conduct Bayesian data analyses in educational research;\nGain technical foundations necessary to be contributors to applied and methodological research that use Bayesian methods;\nConduct analyses on empirical data, interpret results, and communicate work in written and oral presentations."
+    "section": "1.3 Course Objectives",
+    "text": "1.3 Course Objectives\nUpon completion of ESRM 6554 - Adv. Multivariate, students will:\n\nComprehend fundamental concepts and principles of Bayesian multivariate analysis;\nArticulate the rationale of Bayesian approaches to data analysis and statistical inference;\nCompare Bayesian inference to MLE;\nDevelop conceptual and mathematical Bayesian literacy, as well as computer software skills (e.g., R, Stan, or JAGS) required to conduct Bayesian data analyses in educational research;\nGain technical foundations necessary to be contributors to applied and methodological research that use Bayesian methods;\nConduct analyses on empirical data, interpret results, and communicate work in written and oral presentations."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#prerequisite-knowledge",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#prerequisite-knowledge",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "",
-    "text": "It is assumed that students have has solid statistical training up to and including topics in multivariate statistics (ESRM 6413, 6423, and 6453). In addition, it is assumed you are familiar with R programming (python or SAS are fine). SPSS may not be sufficient for this course.\n\nLectures for theoretical understanding.\nHands-on sessions with statistical software.\nGroup discussions and presentations.\nResearch project guidance."
+    "section": "1.4 Prerequisite Knowledge",
+    "text": "1.4 Prerequisite Knowledge\nIt is assumed that students have has solid statistical training up to and including topics in multivariate statistics (ESRM 6413, 6423, and 6453). In addition, it is assumed you are familiar with R programming (python or SAS are fine). SPSS may not be sufficient for this course.\n\nLectures for theoretical understanding.\nHands-on sessions with statistical software.\nGroup discussions and presentations.\nResearch project guidance."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#how-to-be-successful-in-this-class",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#how-to-be-successful-in-this-class",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "",
-    "text": "Come to class ready to learn.\nComplete the out-of-class exercises prior to each class.\nIf you become confused or don’t fully grasp a concept, ask for help from your instructor\nKnow what is going on: keep up with email, course announcements, and the course schedule.\nTry to apply the information to your area of interest — if you have a cool research idea, come talk to me!"
+    "section": "1.5 How to Be Successful in This Class",
+    "text": "1.5 How to Be Successful in This Class\n\nCome to class ready to learn.\nComplete the out-of-class exercises prior to each class.\nIf you become confused or don’t fully grasp a concept, ask for help from your instructor\nKnow what is going on: keep up with email, course announcements, and the course schedule.\nTry to apply the information to your area of interest — if you have a cool research idea, come talk to me!"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#required-materials",
@@ -1312,106 +1312,106 @@
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#todays-lecture-objectives",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#todays-lecture-objectives",
     "title": "Lecture 01",
-    "section": "1 Today’s Lecture Objectives",
-    "text": "1 Today’s Lecture Objectives\n\nIntroduce myself\nSyllabus\nExtra Course Information\nIntroduce Bayesian Analysis\n\nbut, before we begin…"
+    "section": "Today’s Lecture Objectives",
+    "text": "Today’s Lecture Objectives\n\nIntroduce myself\nSyllabus\nExtra Course Information\nIntroduce Bayesian Analysis\n\nbut, before we begin…"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#introduce-myself",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#introduce-myself",
     "title": "Lecture 01",
-    "section": "2 Introduce myself",
-    "text": "2 Introduce myself\nLet me introduce myself first…\n\n\n\n\n\n\nUniversity if Iowa\n\n\n\n\n\n\n\nHong Kong: Victoria Harbour\n\n\n\n\n\n\n\nChinese University of Hong Kong"
+    "section": "Introduce myself",
+    "text": "Introduce myself\nLet me introduce myself first…\n\n\n\n\n\n\nUniversity if Iowa\n\n\n\n\n\n\n\nHong Kong: Victoria Harbour\n\n\n\n\n\n\n\nChinese University of Hong Kong"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#syllabus",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#syllabus",
     "title": "Lecture 01",
-    "section": "3 Syllabus",
-    "text": "3 Syllabus\nSyllabus of ESRM 6553"
+    "section": "Syllabus",
+    "text": "Syllabus\nSyllabus of ESRM 6553"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#course-time",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#course-time",
     "title": "Lecture 01",
-    "section": "4 Course Time",
-    "text": "4 Course Time\n\nMonday 5PM to 7:45PM:\n\n5PM to 6:15PM: First half class\n6:15PM:6:30PM: 15-min break\n6:30PM:7:45PM: Second half class"
+    "section": "Course Time",
+    "text": "Course Time\n\nMonday 5PM to 7:45PM:\n\n5PM to 6:15PM: First half class\n6:15PM to 6:30PM: 15-min break\n6:30PM to 7:45PM: Second half class"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#office-hours",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#office-hours",
     "title": "Lecture 01",
-    "section": "5 Office Hours",
-    "text": "5 Office Hours\n\nTuesday 1:30PM to 4:30PM\nYou should be able to find me in GRAD Room 109"
+    "section": "Office Hours",
+    "text": "Office Hours\n\nTuesday 1:30PM to 4:30PM\nYou should be able to find me in GRAD Room 109"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#materials",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#materials",
     "title": "Lecture 01",
-    "section": "6 Materials",
-    "text": "6 Materials\n\nI will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)"
+    "section": "Materials",
+    "text": "Materials\n\nI will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#quiz-what-is-bayesian",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#quiz-what-is-bayesian",
     "title": "Lecture 01",
-    "section": "7 Quiz: What is Bayesian?",
-    "text": "7 Quiz: What is Bayesian?\n\nHow to Pronounce Bayesian (Real Life Examples!)\n\n“B-Asian” or “Bayes-ian”?\n\nFrequentist vs Bayesian\n\nExample: In U.S., more Male Asian Faculty or Female Asian Faculty?\n\nFrequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?\nBayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?"
+    "section": "Quiz: What is Bayesian?",
+    "text": "Quiz: What is Bayesian?\n\nHow to Pronounce Bayesian (Real Life Examples!)\n\n“B-Asian” or “Bayes-ian”?\n\nFrequentist vs Bayesian\n\nExample: In U.S., more Male Asian Faculty or Female Asian Faculty?\n\nFrequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?\nBayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-model-components",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-model-components",
     "title": "Lecture 01",
-    "section": "8 Bayesian Model Components",
-    "text": "8 Bayesian Model Components\n\nWhat we see: Observed Data\nWhat we cannot see: Future Data, Data yet to be collected, Parameters"
+    "section": "Bayesian Model Components",
+    "text": "Bayesian Model Components\n\nWhat we see: Observed Data\nWhat we cannot see: Future Data, Data yet to be collected, Parameters"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-why-it-is-used",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-why-it-is-used",
     "title": "Lecture 01",
-    "section": "9 Bayesian Analysis: Why It Is Used?",
-    "text": "9 Bayesian Analysis: Why It Is Used?\nThere are at least four main reasons why people use Bayesian Analysis:\n\nMissing data\n\nMultiple imputation\nMore complicated model for certain types of missing data\n\nLack of software capable of handing large sized analyses\n\nHave a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!"
+    "section": "Bayesian Analysis: Why It Is Used?",
+    "text": "Bayesian Analysis: Why It Is Used?\nThere are at least four main reasons why people use Bayesian Analysis:\n\nMissing data\n\nMultiple imputation\nMore complicated model for certain types of missing data\n\nLack of software capable of handing large sized analyses\n\nHave a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-why-it-is-used-cont.",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-why-it-is-used-cont.",
     "title": "Lecture 01",
-    "section": "10 Bayesian Analysis: Why It Is Used? (Cont.)",
-    "text": "10 Bayesian Analysis: Why It Is Used? (Cont.)\n\nNew complex models not available in frequentist framework\n\nHave a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)\n\nEnjoy the Bayesian thinking process\n\nIt is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data."
+    "section": "Bayesian Analysis: Why It Is Used? (Cont.)",
+    "text": "Bayesian Analysis: Why It Is Used? (Cont.)\n\nNew complex models not available in frequentist framework\n\nHave a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)\n\nEnjoy the Bayesian thinking process\n\nIt is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-issues",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-issues",
     "title": "Lecture 01",
-    "section": "11 Bayesian Analysis: Issues",
-    "text": "11 Bayesian Analysis: Issues\n\nsubjective vs. objective\n\nPrior distribution is subjective. It is based on your prior knowledge.\nHowever, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.\n\nComputationally intensive\n\nIt is not a problem anymore. We have computers.\n\nDifficult to understand"
+    "section": "Bayesian Analysis: Issues",
+    "text": "Bayesian Analysis: Issues\n\nsubjective vs. objective\n\nPrior distribution is subjective. It is based on your prior knowledge.\nHowever, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.\n\nComputationally intensive\n\nIt is not a problem anymore. We have computers.\n\nDifficult to understand"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-is-popular",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#bayesian-analysis-is-popular",
     "title": "Lecture 01",
-    "section": "12 Bayesian Analysis is popular",
-    "text": "12 Bayesian Analysis is popular\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"
+    "section": "Bayesian Analysis is popular",
+    "text": "Bayesian Analysis is popular\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#what-topics-bayesian-analysis-can-cover",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#what-topics-bayesian-analysis-can-cover",
     "title": "Lecture 01",
-    "section": "13 What topics Bayesian Analysis can cover?",
-    "text": "13 What topics Bayesian Analysis can cover?\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"
+    "section": "What topics Bayesian Analysis can cover?",
+    "text": "What topics Bayesian Analysis can cover?\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#next-class",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#next-class",
     "title": "Lecture 01",
-    "section": "14 Next Class",
-    "text": "14 Next Class\nWe will talk about how Bayesian methods works in a little bit more technical way."
+    "section": "Next Class",
+    "text": "Next Class\nWe will talk about how Bayesian methods works in a little bit more technical way."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#suggestions",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html#suggestions",
     "title": "Lecture 01",
-    "section": "15 Suggestions",
-    "text": "15 Suggestions\nYour opinions are very important to me. Feel free to let me know if you have any suggestions on the course.\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554"
+    "section": "Suggestions",
+    "text": "Suggestions\nYour opinions are very important to me. Feel free to let me know if you have any suggestions on the course.\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554"
   },
   {
     "objectID": "projects.html",
@@ -1426,5 +1426,40 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Slides.html",
+    "title": "Lecture 1: Introduction to Course and Class Research Project(s)",
+    "section": "",
+    "text": "Course Overview and Structure\nResearch Project"
+  },
+  {
+    "objectID": "posts/2022-10-23-thesis-defense/index.html",
+    "href": "posts/2022-10-23-thesis-defense/index.html",
+    "title": "Dissertation Defence",
+    "section": "",
+    "text": "Background (5 minutes)\nPerformance measures (5 minutes)\nSimulation study (15 minutes)\nEmpirical study (10 minutes)\nConclusion (5 minutes)\nDiscussion (5 minutes)"
+  },
+  {
+    "objectID": "posts/2022-10-23-thesis-defense/index.html#footnotes",
+    "href": "posts/2022-10-23-thesis-defense/index.html#footnotes",
+    "title": "Dissertation Defence",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nGelman, A., Hwang, J., & Vehtari, A. (2014). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24(6), 997–1016. https://doi.org/10.1007/s11222-013-9416-2↩︎"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html",
+    "title": "Lecture 01",
+    "section": "",
+    "text": "Introduce myself\nSyllabus\nExtra Course Information\nIntroduce Bayesian Analysis\n\nbut, before we begin…"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#in-class-short-quiz",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html#in-class-short-quiz",
+    "title": "ESRM 6553: Adv. Multivariate",
+    "section": "3.2 In-Class Short Quiz",
+    "text": "3.2 In-Class Short Quiz\nAt the commencement of each class session, a brief quiz consisting of one to three questions will be administered. These quizzes are intended for formative assessment purposes only and will not contribute to your overall score. However, regular attendance is essential, as it will ensure full credit in the final grading process."
   }
 ]

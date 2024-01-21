@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.450">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2024-01-14">
+
 <title>Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of U of Ark</title>
 <style>
 code{white-space: pre-wrap;}
@@ -55,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -74,7 +78,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -93,7 +98,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script type="text/javascript">
+}</script>
+
+<script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -105,34 +112,41 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;family=Oxygen+Mono&amp;family=Ysabeau+Office&amp;display=swap" rel="stylesheet">
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;family=Oxygen+Mono&amp;family=Ysabeau+Office&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script>
+<link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+
+
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of U of Ark">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png">
+<meta property="og:image" content="https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png">
 <meta property="og:site-name" content="Dr. Jihong Zhang">
 <meta property="og:image:height" content="1316">
 <meta property="og:image:width" content="1844">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of U of Ark">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png">
+<meta name="twitter:image" content="https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png">
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:image-height" content="1316">
 <meta name="twitter:image-width" content="1844">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html" rel="" target=""><i class="bi bi-bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
@@ -148,8 +162,8 @@ ga('send', {
 </i> 
  <span class="menu-text">More</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
-<li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
+        <li>
     <a class="dropdown-item" href="../../projects.html" rel="" target="">
  <span class="dropdown-text">Projects</span></a>
   </li>  
@@ -158,19 +172,21 @@ ga('send', {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-</li>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-<div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -178,11 +194,15 @@ ga('send', {
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Contents</span></a>
@@ -190,8 +210,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
@@ -217,8 +237,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2023-07-04-data-visualization-for-survey-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualization for survey data</span></a>
@@ -274,8 +294,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">
-<li class="sidebar-item sidebar-item-section">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Lecture01</span></a>
@@ -283,8 +303,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
@@ -297,30 +317,36 @@ ga('send', {
   </div>
 </li>
       </ul>
-</li>
+  </li>
       </ul>
-</li>
+  </li>
       </ul>
-</li>
+  </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information"><span class="header-section-number">1</span> General Information</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information"><span class="header-section-number">1</span> General Information</a></li>
   <li><a href="#connect-to-hpc" id="toc-connect-to-hpc" class="nav-link" data-scroll-target="#connect-to-hpc"><span class="header-section-number">2</span> Connect to HPC</a></li>
   <li><a href="#moving-data" id="toc-moving-data" class="nav-link" data-scroll-target="#moving-data"><span class="header-section-number">3</span> Moving data</a></li>
   <li><a href="#jobs-submission" id="toc-jobs-submission" class="nav-link" data-scroll-target="#jobs-submission"><span class="header-section-number">4</span> Jobs submission</a></li>
   <li><a href="#checking-job" id="toc-checking-job" class="nav-link" data-scroll-target="#checking-job"><span class="header-section-number">5</span> Checking job</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">How to set up High Performance Computing of U of Ark</h1>
 </div>
 
@@ -346,30 +372,37 @@ ga('send', {
   </div>
   
 
-</header><section id="general-information" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="general-information">
-<span class="header-section-number">1</span> General Information</h2>
+</header>
+
+<section id="general-information" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="general-information"><span class="header-section-number">1</span> General Information</h2>
 <p>Arkansas High Performance Computing Center (AHPCC) is available for research and instructional use to faculty and students of any Arkansas university and their research collaborators. There is no charge for use of our computing resources.</p>
 <p>To use the HPC, an AHPCC account must be requested through <a href="http://hpc.uark.edu/hpc-support/user-account-requests/internal.php">Internal Account Request Form</a>. Please see <a href="https://dartproject.org/hpc/">here</a> for more information about AHPPC inventory.</p>
-</section><section id="connect-to-hpc" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="connect-to-hpc">
-<span class="header-section-number">2</span> Connect to HPC</h2>
+</section>
+<section id="connect-to-hpc" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="connect-to-hpc"><span class="header-section-number">2</span> Connect to HPC</h2>
 <p>As long as you have an AHPCC account, you can connect to HPC through SSH. For Windows users, you can use <a href="http://www.putty.org/">PuTTY</a> to connect to HPC. For Mac and Linux users, you can use the terminal to connect to HPC. The command is:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span>@hpc-portal2.hpc.uark.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="login.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Login Screenshot</figcaption></figure>
+<figure class="figure">
+<p><img src="login.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Login Screenshot</figcaption>
+</figure>
 </div>
 <p>Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.</p>
-</section><section id="moving-data" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="moving-data">
-<span class="header-section-number">3</span> Moving data</h2>
+</section>
+<section id="moving-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="moving-data"><span class="header-section-number">3</span> Moving data</h2>
 <p>For moving data files from local machine to HPC, type in following codes on your local machine:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> program.c loginname@hpc-portal2.hpc.uark.edu:/home/loginname/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To copy an entire directory tree <code>src</code> using SCP, use <code>-r</code> for recursive:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> src loginname@hpc-portal2.hpc.uark.edu:/home/loginname/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Similarly, for moving data files from HPC to local machine, type in following codes on your local machine:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="jobs-submission" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="jobs-submission">
-<span class="header-section-number">4</span> Jobs submission</h2>
+</section>
+<section id="jobs-submission" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="jobs-submission"><span class="header-section-number">4</span> Jobs submission</h2>
 <p>Please refer to this <a href="https://hpcwiki.uark.edu/doku.php?id=equipment">link</a> for detailed information about HPC equipment.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qsub</span> <span class="at">-q</span> q06h32c <span class="at">-l</span> walltime=1:00 <span class="at">-l</span> nodes=1:ppn=32 example.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node.</p>
@@ -399,11 +432,13 @@ ga('send', {
 <col style="width: 27%">
 <col style="width: 45%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>slurm commands</th>
 <th>compatibility commands</th>
 <th>Meaning</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>sbatch</td>
@@ -454,12 +489,16 @@ ga('send', {
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span> ls</span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="ex">exampleJob.sh</span>  example.R  gene_up.txt  MS_entrez_id_alldata.txt  slurm-334002.out</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="checking-job" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="checking-job">
-<span class="header-section-number">5</span> Checking job</h2>
+</section>
+<section id="checking-job" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="checking-job"><span class="header-section-number">5</span> Checking job</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> loginname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -806,8 +845,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="../../posts/2023-07-04-data-visualization-for-survey-data/index.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data visualization for survey data</span>
       </a>          
@@ -819,7 +861,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -829,6 +872,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 </body></html>

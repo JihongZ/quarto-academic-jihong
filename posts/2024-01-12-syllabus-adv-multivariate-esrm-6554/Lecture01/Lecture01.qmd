@@ -3,10 +3,22 @@ title: "Lecture 01"
 subtitle: "Course Introduction"
 author: "Jihong Zhang"
 affiliation: "Educational Statistics and Research Methods"
+title-slide-attributes:
+  data-background-image: ../Images/title_image.png
+  data-background-size: contain
+  data-background-opacity: "0.9"
 format: 
   revealjs:
+    logo: ../Images/UA_Logo_Horizontal.png
+    incremental: true  # choose "false "if want to show all together
+    theme: serif
     footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554>
-editor: visual
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    chalkboard: true
+    multiplex: true
+    number-sections: false
 ---
 
 ## Today's Lecture Objectives
@@ -23,16 +35,16 @@ but, before we begin...
 Let me introduce myself first...
 
 ::: {layout-nrow="1"}
-![University if Iowa](Images/UI.jpg){width="350"}
+![University if Iowa](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/UI.jpg){width="350"}
 
-![Hong Kong: Victoria Harbour](Images/HK.jpg){width="350"}
+![Hong Kong: Victoria Harbour](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/HK.jpg){width="350"}
 
-![Chinese University of Hong Kong](Images/CUHK.jpg){width="350"}
+![Chinese University of Hong Kong](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/CUHK.jpg){width="350"}
 :::
 
 ## Syllabus
 
-[Syllabus of ESRM 6553](https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.pdf)
+[Syllabus of ESRM 6553](https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Syllabus.pdf)
 
 ## Course Time
 
@@ -40,9 +52,9 @@ Let me introduce myself first...
 
     -   5PM to 6:15PM: First half class
 
-    -   6:15PM:6:30PM: 15-min break
+    -   6:15PM to 6:30PM: 15-min break
 
-    -   6:30PM:7:45PM: Second half class
+    -   6:30PM to 7:45PM: Second half class
 
 ## Office Hours
 
@@ -70,14 +82,14 @@ Let me introduce myself first...
 
 ------------------------------------------------------------------------
 
-**Takehome Note I: Everything is random in Bayesian!**
+**Take home Note I: Everything is random in Bayesian!**
 
 -   Observed Data: Some **random** information given a unknown generation process
 -   Parameter: The **random** components controlling the generation process
 
 ------------------------------------------------------------------------
 
-**Takehome Note II: Every random component can be expressed as probability!**
+**Take home Note II: Every random component can be expressed as probability!**
 
 -   The probability of observed data given parameters: $p(\text{Observed Data}|\text{Parameters})$ = **Likelihood**
 -   The probability of parameters: $p(\text{Parameters})$ = **Prior Distribution**
@@ -85,9 +97,11 @@ Let me introduce myself first...
 
 ------------------------------------------------------------------------
 
-### A Bayesian thinking process:
+### Bayesian Thinking Process
 
-I originally thought the ratio of male Asian faculty to female is about 1:2 (**Prior**). But the data we sampled from 1000 faculties says it is 1:1 (**Data; Likelihood give the true ratio we don't know**). Then I update my belief as the ratio is probably 1:1.5 (**Posterior**) after augmenting these two statements.
+#### A toy example:
+
+I originally thought the ratio of male Asian faculty to female is about 1:2 (**Prior**). But the data we sampled from 2000 doctoral students suggested gender ratio is 1:1 (**Data; Likelihood give the true ratio we don't know**). Based on Bayes's rule, estimate for the ratio is probably 1:1.5 (**Posterior**) after combining these two statements.
 
 ## Bayesian Analysis: Why It Is Used?
 

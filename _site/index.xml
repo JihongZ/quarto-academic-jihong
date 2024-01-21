@@ -6,21 +6,26 @@
       version="2.0">
 <channel>
 <title>Dr. Jihong Zhang</title>
-<link>https://jihongzhang.org/index.html</link>
-<atom:link href="https://jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.jihongzhang.org/index.html</link>
+<atom:link href="https://www.jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
 <description>Technical and Statistical but Fun</description>
-<generator>quarto-1.3.427</generator>
+<generator>quarto-1.3.450</generator>
 <lastBuildDate>Sun, 14 Jan 2024 06:00:00 GMT</lastBuildDate>
 <item>
   <title>How to set up High Performance Computing of U of Ark</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/index.html</link>
-  <description><![CDATA[ <section id="general-information" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="general-information">
-<span class="header-section-number">1</span> General Information</h2>
+  <link>https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="general-information" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="general-information"><span class="header-section-number">1</span> General Information</h2>
 <p>Arkansas High Performance Computing Center (AHPCC) is available for research and instructional use to faculty and students of any Arkansas university and their research collaborators. There is no charge for use of our computing resources.</p>
 <p>To use the HPC, an AHPCC account must be requested through <a href="http://hpc.uark.edu/hpc-support/user-account-requests/internal.php">Internal Account Request Form</a>. Please see <a href="https://dartproject.org/hpc/">here</a> for more information about AHPPC inventory.</p>
-</section><section id="connect-to-hpc" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="connect-to-hpc">
-<span class="header-section-number">2</span> Connect to HPC</h2>
+</section>
+<section id="connect-to-hpc" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="connect-to-hpc"><span class="header-section-number">2</span> Connect to HPC</h2>
 <p>As long as you have an AHPCC account, you can connect to HPC through SSH. For Windows users, you can use <a href="http://www.putty.org/">PuTTY</a> to connect to HPC. For Mac and Linux users, you can use the terminal to connect to HPC. The command is:</p>
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -33,12 +38,15 @@ background-color: null;
 font-style: inherit;">]</span>@hpc-portal2.hpc.uark.edu</span></code></pre></div>
 <p>If your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Login Screenshot</figcaption></figure>
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Login Screenshot</figcaption>
+</figure>
 </div>
 <p>Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.</p>
-</section><section id="moving-data" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="moving-data">
-<span class="header-section-number">3</span> Moving data</h2>
+</section>
+<section id="moving-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="moving-data"><span class="header-section-number">3</span> Moving data</h2>
 <p>For moving data files from local machine to HPC, type in following codes on your local machine:</p>
 <div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -55,8 +63,9 @@ background-color: null;
 font-style: inherit;">scp</span> <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">-r</span> loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./</span></code></pre></div>
-</section><section id="jobs-submission" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="jobs-submission">
-<span class="header-section-number">4</span> Jobs submission</h2>
+</section>
+<section id="jobs-submission" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="jobs-submission"><span class="header-section-number">4</span> Jobs submission</h2>
 <p>Please refer to this <a href="https://hpcwiki.uark.edu/doku.php?id=equipment">link</a> for detailed information about HPC equipment.</p>
 <div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="ex" style="color: null;
 background-color: null;
@@ -128,11 +137,13 @@ font-style: inherit;">--pty</span> /bin/bash</span></code></pre></div>
 <col style="width: 27%">
 <col style="width: 45%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>slurm commands</th>
 <th>compatibility commands</th>
 <th>Meaning</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>sbatch</td>
@@ -215,8 +226,9 @@ font-style: inherit;">exampleJob.sh</span>  example.R  gene_up.txt  MS_entrez_id
 <span id="cb8-15"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">c1331:jzhang:~/HelloWorld$</span></span></code></pre></div>
-</section><section id="checking-job" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="checking-job">
-<span class="header-section-number">5</span> Checking job</h2>
+</section>
+<section id="checking-job" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="checking-job"><span class="header-section-number">5</span> Checking job</h2>
 <div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">squeue</span> <span class="at" style="color: #657422;
@@ -224,338 +236,24 @@ background-color: null;
 font-style: inherit;">-u</span> loginname</span></code></pre></div>
 
 
-</section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/index.html</guid>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/index.html</guid>
   <pubDate>Sun, 14 Jan 2024 06:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>ESRM 6553: Adv. Multivariate</title>
+  <title></title>
   <dc:creator>Dr. Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<section id="general-information" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> General Information</h1>
-<ul>
-<li><strong>Course Code:</strong> ESRM 6553</li>
-<li><strong>Course ID:</strong> 026376</li>
-<li><strong>Course time and location:</strong> Mon 17:00-19:45; GRAD 229</li>
-<li><strong>Instructor:</strong> Jihong Zhang</li>
-<li><strong>Contact Information:</strong> jzhang@uark.edu</li>
-<li><strong>Office Location:</strong> GRAD 0109</li>
-<li><strong>Office Hours:</strong> Tu 1:30-4:30PM</li>
-<li><strong>Office Phone</strong> +1 479-575-5235</li>
-<li><strong>Classroom:</strong> GRAD 229</li>
-<li><strong>Semester:</strong> Spring 2024</li>
-<li><strong>Credits:</strong> 3 credit hours</li>
-</ul>
-<section id="course-topics" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="course-topics"><span class="header-section-number">1.1</span> Course Topics</h2>
-<ol type="1">
-<li><strong>Introduction to Bayesian Statistics</strong>
-<ul>
-<li>Likelihoods;</li>
-<li>Probability distributions, such as priors and posteriors;</li>
-<li>Theorectial foundations of Bayesian infernce;</li>
-</ul></li>
-<li><strong>Bayesian Inference and Computational Methods</strong>
-<ul>
-<li>Markov Chain Monte Carlo (MCMC) estimation procedures;</li>
-</ul></li>
-<li><strong>Bayesian Modeling Evaluation</strong>
-<ul>
-<li>Model specification, estimation, and testing.</li>
-<li>Model fit and model comparison, such as convergence diagnostics, posterior predictive checks, information criteria</li>
-</ul></li>
-<li><strong>Bayesian Modeling</strong>
-<ul>
-<li>Estimating and making inferences from psychometric models such as Confirmatory Factor Analysis (CFA) or Item Response Theory (IRT) models</li>
-</ul></li>
-<li><strong>Advanced Topics in Bayesian Multivariate Analysis</strong>
-<ul>
-<li>Bayesian networks.</li>
-<li>Multilevel/Hierarchical models, mixture models.</li>
-<li>Missing data, non-normal data.</li>
-</ul></li>
-</ol>
-</section>
-<section id="course-description" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="course-description"><span class="header-section-number">1.2</span> Course Description</h2>
-<p>This course offers an in-depth exploration of multivariate statistics within the context of Bayesian inferences. Bayesian statistics have been widely used in public health, education, and psychology. Bayesian techniques are increasingly used in Artificial Intelligence and Brain models for decision-making under uncertainty. Designed for graduate students in educational statistics and research methods, it focuses on the theoretical underpinnings and practical applications of Bayesian approaches in psychometric modeling. Prerequisites include basic knowledge of multivariate statistics and psychometrics.</p>
-</section>
-<section id="course-objectives" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="course-objectives"><span class="header-section-number">1.3</span> Course Objectives</h2>
-<p>Upon completion of ESRM 6554 - Adv. Multivariate, students will:</p>
-<ol type="1">
-<li>Comprehend fundamental concepts and principles of Bayesian multivariate analysis;</li>
-<li>Articulate the rationale of Bayesian approaches to data analysis and statistical inference;</li>
-<li>Compare Bayesian inference to MLE;</li>
-<li>Develop conceptual and mathematical Bayesian literacy, as well as computer software skills (e.g., R, Stan, or JAGS) required to conduct Bayesian data analyses in educational research;</li>
-<li>Gain technical foundations necessary to be contributors to applied and methodological research that use Bayesian methods;</li>
-<li>Conduct analyses on empirical data, interpret results, and communicate work in written and oral presentations.</li>
-</ol>
-</section>
-<section id="prerequisite-knowledge" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="prerequisite-knowledge"><span class="header-section-number">1.4</span> Prerequisite Knowledge</h2>
-<p>It is assumed that students have has solid statistical training up to and including topics in multivariate statistics (ESRM 6413, 6423, and 6453). In addition, it is assumed you are familiar with R programming (python or SAS are fine). SPSS may not be sufficient for this course.</p>
-<ul>
-<li>Lectures for theoretical understanding.</li>
-<li>Hands-on sessions with statistical software.</li>
-<li>Group discussions and presentations.</li>
-<li>Research project guidance.</li>
-</ul>
-</section>
-<section id="how-to-be-successful-in-this-class" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="how-to-be-successful-in-this-class"><span class="header-section-number">1.5</span> How to Be Successful in This Class</h2>
-<ul>
-<li>Come to class ready to learn.</li>
-<li>Complete the out-of-class exercises prior to each class.</li>
-<li>If you become confused or don’t fully grasp a concept, ask for help from your instructor</li>
-<li>Know what is going on: keep up with email, course announcements, and the course schedule.</li>
-<li>Try to apply the information to your area of interest — if you have a cool research idea, come talk to me!</li>
-</ul>
-</section>
-</section>
-<section id="course-materials" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Course Materials</h1>
-<section id="required-materials" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="required-materials"><span class="header-section-number">2.1</span> Required Materials</h2>
-<ul>
-<li><strong>Primary Text:</strong> Richard McElreath (2019), <a href="https://github.com/Booleans/statistical-rethinking/blob/master/Statistical%20Rethinking%202nd%20Edition.pdf"><em>Statistical Rethinking: A Bayesian Course with Examples in R and Stan</em></a>. Free to download it online.</li>
-<li><strong>Primary Text:</strong> Levy, Mislevy (2016), <a href="https://www.routledge.com/Bayesian-Psychometric-Modeling/Levy-Mislevy/p/book/9780367737092"><em>Bayesian Psychometric Modeling</em></a>. Chapters will be uploaded before class.</li>
-</ul>
-</section>
-<section id="optional-materials" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="optional-materials"><span class="header-section-number">2.2</span> Optional Materials</h2>
-<ul>
-<li>Kaplan, D. (2014), Bayesian Statistics for the Social Sciences. New York: Guilford Press.</li>
-<li>Gelman, A., Carlin, J. B., Stern, H. S., and Rubin, D. B. (2020), Bayesian Data Analysis 3rd edition. Chapman and Hall.</li>
-<li><a href="http://andrewgelman.com">Andrew Gelman’s Website</a> for an unfiltered, stream of consciousness Bayesian commentary</li>
-<li><strong>Supplementary Texts:</strong> <a href="https://mc-stan.org/docs/2_33/stan-users-guide-2_33.pdf">Stan User’s Guide</a></li>
-</ul>
-</section>
-<section id="software" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="software"><span class="header-section-number">2.3</span> Software</h2>
-<ul>
-<li>R and R packages (tidyverse)</li>
-<li>Stan is gaining in popularity and has an avid user community. To use Stan in R, you need to download RStan package. Here is the <a href="https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started">tutorial</a> of installing RStan.</li>
-<li>(Optional) Mplus, JAGS, <a href="http://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/">WinBUGS</a></li>
-</ul>
-</section>
-</section>
-<section id="assignments" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Assignments</h1>
-<section id="projects" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="projects"><span class="header-section-number">3.1</span> Projects</h2>
-<p>Students will complete a project utilizing your knowledge learnt from the class. You may work individually. I will provide data and questions for this project OR you can use data that is of interest to you in your GA position or dissertation research. The primary objective of the research project is to facilitate the application and understanding of concepts learned in this course.</p>
-<p>There will be a short project proposal due around week 15 - it can be sooner if you want to get started early. Required for this proposal is an NCME-type conference proposal (800 words maximum). Please see <a href="https://higherlogicdownload.s3.amazonaws.com/NCME/4b7590fc-3903-444d-b89d-c45b7fa3da3f/UploadedImages/2024_Annual_Meeting/NCME_2024_Call_for_Proposals_Final.pdf">Individual Paper Presentations</a> for more details</p>
-<p>Typical components of the research proposal include:</p>
-<ul>
-<li>Title (no more than 12 words)</li>
-<li>Summary of research (no more than 800 words)
-<ul>
-<li>Background of research</li>
-<li>Research questions/hypotheses</li>
-<li>Method (Data, Analysis Plan)</li>
-<li>Preliminary findings</li>
-<li>References/Table/Figure</li>
-</ul></li>
-</ul>
-</section>
-<section id="brief-quiz" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="brief-quiz"><span class="header-section-number">3.2</span> Brief quiz</h2>
-<p>At the commencement of each class session, a brief quiz consisting of one to three questions will be administered. These quizzes are intended for formative assessment purposes only and will not contribute to your overall score. However, regular attendance is essential, as it will ensure full credit in the final grading process.</p>
-</section>
-<section id="grading" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="grading"><span class="header-section-number">3.3</span> Grading</h2>
-<ol type="1">
-<li>Brief quiz: 60%</li>
-<li>Project Presentation: 20%</li>
-<li>Project Proposal: 20%</li>
-</ol>
-</section>
-</section>
-<section id="academic-policies" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Academic Policies</h1>
-<section id="ai-statement" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="ai-statement"><span class="header-section-number">4.1</span> AI Statement</h2>
-<p>Specific permissions will be provided to students regarding the use of generative artificial intelligence tools on certain graded activities in this course. In these instances, I will communicate explicit permission as well as expectations and any pertinent limitations for use and attribution. Without this permission, the use of generative artificial intelligence tools in any capacity while completing academic work submitted for credit, independently or collaboratively, will be considered academic dishonesty and reported to the Office of Academic Initiatives and Integrity.</p>
-</section>
-<section id="academic-integrity" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="academic-integrity"><span class="header-section-number">4.2</span> Academic Integrity</h2>
-<p>You are responsible for reading and understanding the University of Arkansas’ Academic Integrity Policy. You are expected to complete all assignments and exams with the highest level of integrity. Any form of academic dishonesty will result in a failing grade for the course and will be reported to the Office of Academic Integrity. If you have any questions about what constitutes academic dishonesty, please ask me.</p>
-</section>
-<section id="emergency-preparadness" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="emergency-preparadness"><span class="header-section-number">4.3</span> Emergency Preparadness</h2>
-<p>The University of Arkansas is committed to providing a safe and healthy environment for study and work. In that regard, the university has developed a campus safety plan and an emergency preparedness plan to respond to a variety of emergency situations. The emergency preparedness plan can be found at emergency.uark.edu. Additionally, the university uses a campus-wide emergency notification system, UARKAlert, to communicate important emergency information via email and text messaging. To learn more and to sign up: http://safety.uark.edu/emergency-preparedness/emergency-notification-system/</p>
-</section>
-<section id="inclement-weather" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="inclement-weather"><span class="header-section-number">4.4</span> Inclement Weather</h2>
-<p>Each faculty member is responsible for determining whether or not to cancel class due to inclement weather. If you have any questions about whether or not class will be held, please contact me. If I cancel class, I will notify you via email and/or Blackboard. In general, students need to know how and when they will be notified in the event that class is cancelled for weather-related reasons. Please see <a href="http://safety.uark.edu/inclement-weather/">here</a> for more information.</p>
-</section>
-<section id="academic-support" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="academic-support"><span class="header-section-number">4.5</span> Academic Support</h2>
-<p>A complete list and brief description of academic support programs can be found on the University’s Academic Support site, along with links to the specific services, hours, and locations. Faculty are encouraged to be familiar with these programs and to assist students with finding an using the support services that will help them be successful. Please see <a href="http://www.uark.edu/academics/academic-support.php">here</a> for more information.</p>
-</section>
-<section id="religious-holidays" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="religious-holidays"><span class="header-section-number">4.6</span> Religious Holidays</h2>
-<p>The university does not observe religious holidays; however Campus Council has passed the following resolution concerning individual observance of religious holidays and class attendance:</p>
-<blockquote class="blockquote">
-<p>When members of any religion seek to be excused from class for religious reasons, they are expected to provide their instructors with a schedule of religious holidays that they intend to observe, in writing, before the completion of the first week of classes.</p>
-</blockquote>
-</section>
-</section>
-<section id="schedule" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Schedule</h1>
-<p>Weekly breakdown of topics and readings：</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Reading</th>
-<th style="text-align: left;">Slides</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">01/15</td>
-<td style="text-align: left;">No Class</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">01/22</td>
-<td style="text-align: left;">Introduction to Bayesian Statistics Part I</td>
-<td style="text-align: left;">SR<sup>1</sup> Chapter 1; BDA<sup>2</sup> Chapter 1 (Optional)</td>
-<td style="text-align: left;"><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.html">Chapter01</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">01/29</td>
-<td style="text-align: left;">Introduction to Bayesian Statistics Part II</td>
-<td style="text-align: left;">SR Chapter 2</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">02/05</td>
-<td style="text-align: left;">Bayesian Inference and Computational Methods I</td>
-<td style="text-align: left;">SR Chapter 3</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">02/12</td>
-<td style="text-align: left;">Bayesian Inference and Computational Methods II</td>
-<td style="text-align: left;">SR Chapter 3</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">02/19</td>
-<td style="text-align: left;">Bayesian Inference and Computational Methods III</td>
-<td style="text-align: left;">SR Chapter 9.2 &amp; 9.3</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">02/26</td>
-<td style="text-align: left;">Bayesian Modeling Evaluation I: Model diagnosis</td>
-<td style="text-align: left;">SR Chapter 7.1 &amp; BPM<sup>3</sup> Chapter 10</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">03/04</td>
-<td style="text-align: left;">Bayesian Modeling Evaluation II</td>
-<td style="text-align: left;">SR Chapter 7.4 &amp; 7.5</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">03/11</td>
-<td style="text-align: left;">Bayesian Modeling I: CFA</td>
-<td style="text-align: left;">BPM Chapter 9</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">03/18</td>
-<td style="text-align: left;">Spring Break</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">03/25</td>
-<td style="text-align: left;">Bayesian Modeling II: IRT</td>
-<td style="text-align: left;">BPM Chapter 11</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">04/01</td>
-<td style="text-align: left;">Bayesian Modeling III: CDM</td>
-<td style="text-align: left;">BPM Chapter 13</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">04/08</td>
-<td style="text-align: left;">Advanced Topics I: Non-normal data</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">04/15</td>
-<td style="text-align: left;">Advanced Topics II: Multilevel</td>
-<td style="text-align: left;">SR Chapter 11</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">04/22</td>
-<td style="text-align: left;">Advanced Topics III: Missing Data, Measurement Error</td>
-<td style="text-align: left;">SR Chapter 15</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">04/29</td>
-<td style="text-align: left;">Student Presentations</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<p>Academic calendar for Spring 2024: <a href="https://registrar.uark.edu/academic-dates/academic-semester-calendar/spring-2024-january-intersession-2024.php">Here</a></p>
-
-
-</section>
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>SR: <em>Statistical Rethinking 2ed Edition</em> by Richard McElreath↩︎</p></li>
-<li id="fn2"><p>BDA: <em>Bayesian Data Analysis</em> by Gelman et al.&nbsp;(2021)↩︎</p></li>
-<li id="fn3"><p>BPM: <em>Bayesian Psychometric Modeling</em> by Levy, Mislevy (2016)↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <guid>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.html</guid>
+  <link>https://www.jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.pdf</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://www.jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.pdf</guid>
   <pubDate>Sat, 13 Jan 2024 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Data visualization for survey data</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index.html</link>
   <description><![CDATA[ <section id="r-package---survey" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="r-package---survey">
 <span class="header-section-number">1</span> R package - survey</h2>
 <section id="what-chatgpt-say-about-survey-package" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="what-chatgpt-say-about-survey-package">
@@ -1865,7 +1563,7 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">p</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can clearly identify item 7 has highest proportion of level 0, and needed to be theoretically justified.</p>
@@ -1874,15 +1572,15 @@ font-style: inherit;">p</span></span></code></pre></div>
 </section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
   <category>ggplot2</category>
-  <guid>https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index.html</guid>
   <pubDate>Tue, 04 Jul 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>A tutorial for forester R package</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html</link>
   <description><![CDATA[ <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png" class="img-fluid figure-img" width="1000"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png" class="img-fluid figure-img" width="1000"></p>
 <figcaption class="figure-caption">Workflow of forester</figcaption></figure>
 </div>
 <div class="cell">
@@ -2173,13 +1871,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>tutorial</category>
   <category>package</category>
-  <guid>https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html</guid>
   <pubDate>Wed, 28 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>One Template for Quarto Report</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/index.html</link>
   <description><![CDATA[ <div class="cell">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
@@ -2328,7 +2026,7 @@ font-style: inherit;">"ggplot2.png"</span><span class="op" style="color: #5E5E5E
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/ggplot2.png" class="img-fluid" width="259"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/ggplot2.png" class="img-fluid" width="259"></p>
 </div>
 </div>
 <div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
@@ -2635,13 +2333,13 @@ font-style: inherit;">```</span></span></code></pre></div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/index.html</guid>
   <pubDate>Tue, 27 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Moving My Website to Quarto</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps because some reasons same as other bloggers:</p>
 <p>(1) Quarto is the next generation of rmarkdown.</p>
@@ -2656,28 +2354,28 @@ font-style: inherit;">```</span></span></code></pre></div>
 <li>Quarto official documentation is always the best place to starts with.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/quarto.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="https://quarto.org"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/quarto.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <ol start="2" type="1">
 <li>
 <p>Nicola Rennie’s blog is very inspiring. Nice font setting and background. I feel like <a href="https://github.com/hugo-apero/">Hugo Apéro</a> is the best hugo theme in the market.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://nrennie.rbind.io"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/nrennie.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://nrennie.rbind.io"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/nrennie.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
 </div>
 </li>
 <li>
 <p>Yihui’s blog. As the creator of blogdown, Yihui talked about why not transfer to Quarto :P I am a old player of hugo/blogdown, but I am not good at customizing the website from the scratch. Thus, quarto suits my needs very well. For those who is very experienced at JS, hugo is still a better choice.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/yihui.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/yihui.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
 </div>
 </li>
 <li>
 <p>Frank Harrel’s blog: R workflow.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://www.fharrell.com/post/rflow/"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/FrankHarrel.png" width="320" height="200" class="figure-img"></a></p>
+<figure class="figure"><p><a href="https://www.fharrell.com/post/rflow/"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/FrankHarrel.png" width="320" height="200" class="figure-img"></a></p>
 </figure>
 </div>
 </li>
@@ -2887,18 +2585,18 @@ font-style: inherit;">```</span></span></code></pre></div>
 <li id="fn2"><p>By default, it will insert R code chunk. If another language is frequently, use <code>Tools &gt; Modify keyboard shortcuts &gt; filter 'Insert'</code>. There should be a place for setting shortcut for other language.↩︎</p></li>
 <li id="fn3"><p>Click `F4` in any place in the div works.↩︎</p></li>
 </ol></section></div> ]]></description>
-  <guid>https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/index.html</guid>
   <pubDate>Sun, 25 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>A Conversation between R and Python on Data Analysis and Machine Learning</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>When I play with machine learning using python and R, I keep wondering whether I can combine R and Python code in a better way, such as using R for data cleaning/visualization and Python for machine learning. Online resources for PyTorch are basically written using python code. However, I always struggle with pandas and numpy but prefer tidyverse for data cleaning, and data manipulation. That’s why I write this blog. I will start with the Pytorch tensor manipulation and import Pytorch tensor into R, then talk about mixing R/python data analysis with R/python visualization.</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">reticulate package logo</figcaption></figure>
 </div>
 <section id="pytorch-tensor" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="pytorch-tensor">
@@ -4097,10 +3795,10 @@ font-style: inherit;">'Petal'</span>)</span>
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-18-1.png" style="width:80.0%;height:100.0%"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-18-1.png" style="width:80.0%;height:100.0%"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-18-2.png" style="width:80.0%;height:100.0%"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-18-2.png" style="width:80.0%;height:100.0%"></p>
 </div>
 </div>
 <p>Alternatively, we can use python data and module <code>Vega-Altair</code> to compile a interactive graphical object to a json file (<code>.to_json()</code>). Then we can plot it in R using <code>as_vegaspec</code> function.</p>
@@ -5518,7 +5216,7 @@ font-style: inherit;">'Dark2'</span>)</span>
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -5589,7 +5287,7 @@ font-style: inherit;">'Dark2'</span>)</span>
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>It appears that its hard to differentiate versicolor with verginica in terms of sepal and petal but setosa is more smaller in petal width/length and sepal length but relative long sepal width.</p>
@@ -5624,20 +5322,20 @@ font-style: inherit;">```</span></span></code></pre></div>
   <category>R</category>
   <category>PyTorch</category>
   <category>Deep Learning</category>
-  <guid>https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html</guid>
   <pubDate>Tue, 20 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Latent Class Model: Batch Mplus using R on Mac</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p><a href="https://www.statmodel.com/glance.shtml">Mplus</a> is a very popular program for varied latent varaible modeling: (1) Structural equation modeling (2) multilevel analysis (3) mixture modeling (latent class model). R, in the other hand, is a general statistical programming language which not limits to certain statistical models. However, there are scarcely online resources illustrate how to run Mplus using R on Mac.</p>
 </blockquote>
 <section id="requirement" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="requirement">
 <span class="header-section-number">1</span> Requirement</h2>
 <p>To make sure Mplus can been successfully called in R, the very first thing is checking whether your MacOS can use command-line version of Mplus. Simply type <code>Mplus</code> command in your terminal app on Mac, if you see “Mplus VERSION (Mac)”, then Mplus on MacOS should work and can be called within R. Otherwise, you should check whether you install Mplus software successfully beforehand.</p>
-<p><img src="https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png" class="img-fluid"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png" class="img-fluid"></p>
 <p>Second, you should install R + Rstudio (Optional). Rstudio is optional but strongly recommended.</p>
 <p>Third, <code>MplusAutomation</code> package should also been installed in R:</p>
 <div class="cell">
@@ -7808,21 +7506,763 @@ font-style: inherit;">}</span></span></code></pre></div>
   <category>blog</category>
   <category>LCM</category>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html</guid>
   <pubDate>Sat, 10 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
-  <title></title>
+  <title>Dissertation Defence</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-10-23-thesis-defense/index.html</link>
-  <description><![CDATA[ undefined ]]></description>
-  <guid>https://jihongzhang.org/posts/2022-10-23-thesis-defense/index.html</guid>
+  <link>https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="outline" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="outline"><span class="header-section-number">0.1</span> Outline</h2>
+<div>
+<ol type="1">
+<li><p>Background (5 minutes)</p></li>
+<li><p>Performance measures (5 minutes)</p></li>
+<li><p>Simulation study (15 minutes)</p></li>
+<li><p>Empirical study (10 minutes)</p></li>
+<li><p>Conclusion (5 minutes)</p></li>
+<li><p>Discussion (5 minutes)</p></li>
+</ol>
+</div>
+</section>
+<section id="backgroud" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Backgroud</h1>
+<div class="nonincremental">
+<ol type="1">
+<li>Research motivation:</li>
+</ol>
+<ul>
+<li>Why Q-matrix misspecification is a problem?</li>
+<li>The advantages of the proposed method over previous approaches?</li>
+</ul>
+<ol start="2" type="1">
+<li>Research objectives</li>
+</ol>
+</div>
+<section id="research-motivation" class="level2 smaller" data-number="1.1">
+<h2 class="smaller anchored" data-number="1.1" data-anchor-id="research-motivation"><span class="header-section-number">1.1</span> Research Motivation</h2>
+<ul>
+<li><p>Q-matrix is usually determined by expert judgement, so there can be uncertainty about some of its elements. Model selection methods are necessary to select the model with the “correct” Q-matrix.</p></li>
+<li><p>Previous model selection methods such as information criterion and Bayes Factors are not flexible regarding checking specific aspects of data</p></li>
+</ul>
+<section id="posterior-predictive-checking-ppc" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="posterior-predictive-checking-ppc"><span class="header-section-number">1.1.1</span> Posterior predictive checking (PPC)</h3>
+<p><em>Advantages of PPC</em></p>
+<ul>
+<li>PPC is a flexible tool and implemented in most Bayesian software.</li>
+</ul>
+<p><em>Drawbacks of PPC</em></p>
+<ul>
+<li><p>PPC is not fully Bayesian since it doesn’t take the uncertainty of observed data into account</p></li>
+<li><p>PPC uses data twice</p></li>
+</ul>
+<div class="notes">
+<p>Model comparison approach for Bayesian psychometric models are not well investigated. Use global fit to evaluate fit and then use local misfit detect method to find local misfit. Then repeat it until model fits.</p>
+</div>
+</section>
+</section>
+<section id="research-objectives" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="research-objectives"><span class="header-section-number">1.2</span> Research Objectives</h2>
+<ol type="1">
+<li><p>To construct a novel PPMC method using limited-information model fit indices in Bayesian LCDM</p></li>
+<li><p>Simulation study: to determine the performance of the proposed method under different conditions and compare it to previous model checking methods</p></li>
+<li><p>Empirical study: to investigate the utility of PPMC with limited-information model fit indices in real settings</p></li>
+</ol>
+</section>
+<section id="overview-proposed-approach" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="overview-proposed-approach"><span class="header-section-number">1.3</span> Overview: Proposed Approach</h2>
+<div class="cell" data-fig-width="10">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  style C fill:#99ff99,stroke:#333,stroke-width:2px
+  style K fill:#99ff99,stroke:#333,stroke-width:2px
+  
+  style H fill:#ff99cc,stroke:#333,stroke-width:2px
+  style M fill:#ff99cc,stroke:#333,stroke-width:2px
+  
+  style E fill:#f9f,stroke:#333,stroke-width:2px
+  style F fill:#f9f,stroke:#333,stroke-width:2px
+  style G fill:#f9f,stroke:#333,stroke-width:2px
+  
+  Z[(Data)] --&gt; A &amp; E &amp; I
+
+  subgraph Model 1
+  A[LCDM 1] --&gt;|Bayesian \n estimate| B(Posterior\n Distribution)
+  B --&gt;|sample| C(Posterior \n Predictive \n M2 fa:fa-star)
+  C --&gt; D{{KS Test}}
+  D --&gt; H[KS-PP-M2 fa:fa-star]
+  end
+
+  subgraph Reference: BayesNet Model
+  E[BayesNet] --&gt; |Bayesian \n estimate| F(Posterior \n Distribution)
+  F --&gt;|sample| G(Posterior \n Predictive \n M2 fa:fa-star)
+  end
+  G --&gt; D &amp; L
+
+  subgraph Model 2
+  I[LCDM 2] --&gt;|Bayesian \n estimate| J(Posterior\n Distribution)
+  J --&gt;|sample| K(Posterior \n Predictive \n M2 fa:fa-star)
+  K --&gt; L{{KS Test}}
+  L --&gt; M[KS-PP-M2 fa:fa-star]
+  end
+
+  H &amp; M --&gt; N{Decision}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="performance-measures" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="performance-measures"><span class="header-section-number">1.4</span> Performance measures</h2>
+<ul>
+<li>Cognitive diagnostic index - item/test discrimination index</li>
+<li>Posterior predictive M2 - absolute fit</li>
+<li>KS-PP-M2 and InfoCrit (AIC/BIC/DIC/WAIC) - relative fit</li>
+</ul>
+<div class="notes">
+<p>How many information items contains to discriminate people with different attribute profiles?</p>
+</div>
+</section>
+</section>
+<section id="simulation-study" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Simulation Study</h1>
+<section id="research-questions" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="research-questions"><span class="header-section-number">2.1</span> Research Questions</h2>
+<ol type="1">
+<li><p>Is the proposed method appropriate for detecting model-data misfit with varied degree of Q-matrix misspecification</p></li>
+<li><p>Compared to information criteria, does the proposed approach have higher true positive rate (TPR) when selecting the correct model?</p></li>
+<li><p>How does the overall discrimination power indicated by <strong>Cognitive Diagnostic Index</strong> affects the performance of the proposed method in selecting the model with best Q-matrix?</p></li>
+</ol>
+</section>
+<section id="simulation-settings" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="simulation-settings"><span class="header-section-number">2.2</span> Simulation Settings</h2>
+<ol type="1">
+<li><p>Generate simulated data sets under the LCDM framework with two main factors:</p>
+<ul>
+<li>sample size: 200 draws from 1000 to 2000</li>
+<li>attribute correlation: {0.25, 0.5}</li>
+<li><strong>400 conditions</strong> in total</li>
+</ul></li>
+<li><p>30 items and 5 attributes</p></li>
+<li><p>Latent attributes: mastery status of attributes for each individual are determined by cutting attribute scores. Item parameters are randomly sampled.</p>
+<ul>
+<li><p>Based on attribute correlation, continuous attribute scores are first generated for each sample.</p></li>
+<li><p>Then continuous attribute scores are dichonomized by cutting the scores with the cutting scores</p></li>
+<li><p>Finally. observed item responses are generated with attribute status and corresponding item parameters</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="analysis-models" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="analysis-models"><span class="header-section-number">2.3</span> Analysis Models</h2>
+<div class="columns">
+<div class="column">
+<ol type="1">
+<li>Bayesian Network model</li>
+<li>Data generation model - LCDM</li>
+<li>Model with 3 items (10%) underspecify attributes</li>
+<li>Model with 6 items (20%) underspecify attributes</li>
+<li>Model with 3 items (10%) misspecify attributes</li>
+<li>Model with 6 items (20%) misspecify attributes</li>
+</ol>
+</div><div class="column">
+<p><strong>Q-matrix</strong></p>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
+<figcaption class="figure-caption">Correct model</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index_files/figure-revealjs/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="960"></p>
+<figcaption class="figure-caption">10% underspecify</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index_files/figure-revealjs/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="960"></p>
+<figcaption class="figure-caption">20% underspecify</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index_files/figure-revealjs/unnamed-chunk-2-4.png" class="img-fluid figure-img" width="960"></p>
+<figcaption class="figure-caption">10% misspecify</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index_files/figure-revealjs/unnamed-chunk-2-5.png" class="img-fluid figure-img" width="960"></p>
+<figcaption class="figure-caption">20% misspecify</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mcmc-settings" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="mcmc-settings"><span class="header-section-number">2.4</span> MCMC settings</h2>
+<ul>
+<li>All Bayesian models are estimated using <em>blatent</em> R package in R version 3.6</li>
+<li>4 MCMC with 4000 iterations with first 1000 discarded</li>
+<li>Prior distribution are set up by default of <em>blatent</em>.</li>
+<li>All parameters estimation converged with PSRF &lt; 1.1</li>
+</ul>
+</section>
+</section>
+<section id="result-simulation-study" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Result (Simulation study)</h1>
+<section id="summary-of-posterior-predictive-m2-500-draws" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="summary-of-posterior-predictive-m2-500-draws"><span class="header-section-number">3.1</span> Summary of Posterior Predictive M2 (500 draws)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-table-1" class="anchored">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across conditions</caption>
+<thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+<tr class="header">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: left; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;"></th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">BayesNet</th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">Correct<sup>1</sup></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px;"><span style="border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%;">Underspecified Qmatrix</span></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px;"><span style="border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%;">Incorrect specified Qmatrix</span></th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">10%</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">20%</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">10%</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; font-variant-numeric: tabular-nums;">20%</th>
+</tr>
+</thead>
+<tbody style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+<tr class="odd" style="">
+<td colspan="7" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; font-style: italic">Skill Correlation is .25</td>
+</tr>
+<tr class="even" style="">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1000,1250)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #D0E0ED; color: #000000;">23.23(1.94)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #D4E2EF;">21.49(2.08)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #C3D6E8; color: #000000;">28.92(3.19)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #B9CFE4; color: #000000;">33.51(3.97)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #C5D8E9; color: #000000;">27.92(3.36)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #C1D4E7; color: #000000;">30.02(3.49)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1250,1500)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #C0D3E6; color: #000000;">30.48(3.13)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #C3D6E8;">29.03(2.90)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #A9C3DE; color: #000000;">40.88(6.60)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #9AB4D6; color: #000000;">48.82(8.19)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #ABC5DF; color: #000000;">39.66(5.47)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #A5C0DC; color: #000000;">42.73(5.95)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1500,1750)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #ACC6DF; color: #000000;">39.36(3.82)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #AEC7E0;">38.30(4.15)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #909DCA; color: #000000;">57.56(8.70)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8D7CB9; color: #000000;">69.60(10.70)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #94A6CF; color: #000000;">53.99(8.13)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8F9BC9; color: #000000;">58.41(9.03)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1750,2000)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #9AB3D6;">48.96(3.09)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #99B2D5; color: #000000;">49.55(3.65)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8C6BB1; color: #000000;">75.40(10.02)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #883F9C; color: #FFFFFF;">90.90(11.19)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8D7FBB; color: #000000;">68.45(7.70)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8C6BB1; color: #000000;">75.26(9.15)</td>
+</tr>
+<tr class="even" style="">
+<td colspan="7" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; font-style: italic">Skill Correlation is .50</td>
+</tr>
+<tr class="odd" style="">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1000,1250)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #CCDDEC; color: #000000;">24.83(2.97)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #CEDEEC;">24.07(2.95)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #BCD1E5; color: #000000;">32.25(5.36)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #B2CAE1; color: #000000;">36.69(5.78)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #BBD0E5; color: #000000;">32.59(5.58)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #B7CDE3; color: #000000;">34.44(5.43)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1250,1500)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #B7CEE3; color: #000000;">34.24(3.70)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #B8CEE4;">33.72(3.58)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #9CB7D7; color: #000000;">47.70(6.60)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #93A4CE; color: #000000;">54.91(7.26)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #9CB8D8; color: #000000;">47.04(6.00)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #99B1D4; color: #000000;">49.96(5.94)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1500,1750)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #A3BFDC;">43.38(3.11)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #9EBCDA; color: #000000;">45.76(3.96)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8C8EC2; color: #000000;">63.14(7.27)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8C6DB2; color: #000000;">74.70(9.73)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8D89BF; color: #000000;">65.10(7.17)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8D7CB9; color: #000000;">69.42(8.05)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">[1750,2000)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; font-weight: bold; color: #000000; background-color: #92A3CD;">55.54(3.48)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #8C96C6; color: #000000;">60.55(4.74)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #873794; color: #FFFFFF;">94.06(10.59)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #6A0767; color: #FFFFFF;">111.40(12.80)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #88409C; color: #FFFFFF;">90.52(9.36)</td>
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-variant-numeric: tabular-nums; background-color: #852E8D; color: #FFFFFF;">97.18(10.01)</td>
+</tr>
+</tbody><tfoot style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;">
+<tr class="even">
+<td colspan="7" style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px"><sup>1</sup> Bold font: The model with smallest average values of PP-M2.</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>This table presents the posterior predictive M2 results for all six models across different conditions. Upper tables is for skill correlation equals to .25. Lower table is for .5</p>
+<p>For all condition, BayesNet model and Correct model have best average absolute model fit. As sample size goes above 1700, BayesNet model is best model. Higher level of Q-matrix misspecification will worsen model fit.</p>
+</div>
+</section>
+<section id="path-plot-for-pp-m2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="path-plot-for-pp-m2"><span class="header-section-number">3.2</span> Path plot for PP-M2</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/ppm2summary.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Title: Path Plot for Average Posterior Predictive M2</figcaption>
+</figure>
+</div>
+</section>
+<section id="findings" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="findings"><span class="header-section-number">3.3</span> Findings</h2>
+<ol type="1">
+<li><p>The correct model and the BayesNet model have lowest PP-M2 (best fit).</p>
+<ul>
+<li>When sample size is relatively small, the correct model slightly fit better than the BayesNet;</li>
+<li>When sample size is relatively large, the BayesNet fits better than the correct model</li>
+</ul></li>
+<li><p>As sample size increases, the difference of PP-M2 among models gets larger. In other words, the PP-M2 has asymptotically more power detecting misfit.</p></li>
+<li><p>The BayesNet model has least uncertainty of model predictive accuracy in term of variations of average PP-M2</p></li>
+<li><p>As more items misspecify/underspecify attributes in Q-matrix, the PP-M2 gets higher.</p></li>
+</ol>
+</section>
+<section id="compare-ks-pp-m2-to-other-methods" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="compare-ks-pp-m2-to-other-methods"><span class="header-section-number">3.4</span> Compare KS-PP-M2 to other methods</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-table-2" class="anchored">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;2: Mean and SD of Model Selection Indices By Models across conditions</caption>
+<thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+<tr class="header">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: left; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;"></th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: left; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">Models</th>
+<th colspan="4" data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px;"><span style="border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%;">Information Criterion<sup>1,2</sup></span></th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">KS-PP-M2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">DIC</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">WAIC</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">AIC</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;">BIC</th>
+</tr>
+</thead>
+<tbody style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+<tr class="odd" style="">
+<td colspan="7" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; font-style: italic">Skill Correlation is .25</td>
+</tr>
+<tr class="even" style="">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Correct</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 1</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #FDE5E1;">44,301(8,816)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #FDE4E1;">44,303(8,817)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #FDDFDC;">44,387(8,812)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #FEE5E2;">45,291(8,846)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #DBF1F1;">0.18(0.04)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Underspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 2: 10%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCB9BD; color: #000000;">44,869(8,931)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCB9BC; color: #000000;">44,872(8,932)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FBB0BA; color: #000000;">44,961(8,927)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCBABD; color: #000000;">45,865(8,961)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #38A367; color: #FFFFFF;">0.66(0.14)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Underspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 3: 20%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #F878A6; color: #000000;">45,400(9,028)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #F877A6; color: #000000;">45,406(9,030)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #F768A1; color: #000000;">45,500(9,024)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #F877A6; color: #000000;">46,404(9,058)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #0E7734; color: #FFFFFF;">0.83(0.10)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Misspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 4: 10%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCBCBD; color: #000000;">44,842(8,905)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCBCBD; color: #000000;">44,845(8,907)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FBB3BB; color: #000000;">44,932(8,902)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FCC0BE; color: #000000;">45,805(8,934)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #49B27E; color: #000000;">0.60(0.13)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Misspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 5: 20%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FAA1B5; color: #000000;">45,110(8,952)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FAA0B5; color: #000000;">45,113(8,953)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FA96B2; color: #000000;">45,188(8,949)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #FBACB9; color: #000000;">45,997(8,979)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #309858; color: #FFFFFF;">0.70(0.12)</td>
+</tr>
+<tr class="odd" style="">
+<td colspan="7" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; font-style: italic">Skill Correlation is .50</td>
+</tr>
+<tr class="even" style="">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Correct</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 1</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #F05B9E;">45,607(9,219)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #EF5A9E;">45,612(9,221)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #E94F9C;">45,699(9,215)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #EF5A9E;">46,614(9,250)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; font-weight: bold; color: #000000; background-color: #ADE0D4;">0.33(0.11)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Underspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 2: 10%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #BA1484; color: #FFFFFF;">46,152(9,341)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #B91384; color: #FFFFFF;">46,159(9,342)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #AE017E; color: #FFFFFF;">46,250(9,337)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #B91284; color: #FFFFFF;">47,165(9,372)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #228A44; color: #FFFFFF;">0.75(0.13)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Underspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 3: 20%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #760176; color: #FFFFFF;">46,659(9,448)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #740175; color: #FFFFFF;">46,668(9,450)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #680072; color: #FFFFFF;">46,763(9,444)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #730175; color: #FFFFFF;">47,677(9,479)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #067130; color: #FFFFFF;">0.86(0.10)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Misspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 4: 10%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #B81183; color: #FFFFFF;">46,172(9,326)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #B71083; color: #FFFFFF;">46,178(9,327)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #AC017E; color: #FFFFFF;">46,268(9,322)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #BA1485; color: #FFFFFF;">47,150(9,356)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #228A44; color: #FFFFFF;">0.75(0.13)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; font-variant-numeric: tabular-nums;">Misspecified</td>
+<td style="text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden;">Model 5: 20%</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #99017B; color: #FFFFFF;">46,403(9,373)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #98007B; color: #FFFFFF;">46,409(9,374)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #8E017A; color: #FFFFFF;">46,485(9,369)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #A7017D; color: #FFFFFF;">47,304(9,401)</td>
+<td style="text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; background-color: #167E3A; color: #FFFFFF;">0.80(0.10)</td>
+</tr>
+</tbody><tfoot style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;">
+<tr class="even">
+<td colspan="7" style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px"><sup>1</sup> <strong>Bold</strong>: The model with smallest average value of model selection indice.</td>
+</tr>
+<tr class="odd">
+<td colspan="7" style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px"><sup>2</sup> <span style="color:red">Information Criterion</span> &amp; <span style="color:green">KS-PP-M2</span>: lower values better model fit</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>This table shows the average values of fit indices across 200 conditions. All fit indices shows correct model has lowest values, which means best model fit.</p>
+</div>
+</section>
+<section id="true-positive-rate" class="level2 smaller" data-number="3.5">
+<h2 class="smaller anchored" data-number="3.5" data-anchor-id="true-positive-rate"><span class="header-section-number">3.5</span> True Positive Rate:</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/table2_TPR.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">True Positive Rates of choosing correct model</figcaption>
+</figure>
+</div>
+<div class="notes">
+<ol type="1">
+<li>This table represents the average TPR for KS-PP-M2 and four information criteria for each sample size and two levels of attribute correlation.</li>
+<li>All approaches have 100% power choosing the correct model among five analysis models.</li>
+</ol>
+</div>
+</section>
+<section id="effects-of-cognitive-diagnostic-index" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="effects-of-cognitive-diagnostic-index"><span class="header-section-number">3.6</span> Effects of Cognitive Diagnostic Index</h2>
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/figure4_CDI.png" class="img-fluid"></p>
+</section>
+<section id="effects-of-cognitive-diagnostic-index-cont." class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="effects-of-cognitive-diagnostic-index-cont."><span class="header-section-number">3.7</span> Effects of Cognitive Diagnostic Index (Cont.)</h2>
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/table7_RegressionResult.png" class="img-fluid"></p>
+<div class="notes">
+<p>The figure shows the relationship between KS-PP-M2 along with Cognitive Diagnostic Index. As cognitive diagnostic index of data sets increase, KS-PP-M2 for each analysis models are quite stable.</p>
+<p>The trend of KS-PP-M2 is also proven by regression model of CDI and models. Mean centered CDI has no signitifcant effect on KS-PP-M2 values.</p>
+</div>
+</section>
+<section id="conclusion-simulation-study" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="conclusion-simulation-study"><span class="header-section-number">3.8</span> Conclusion (Simulation study)</h2>
+<ol type="1">
+<li><p>Posterior predictive M2 statistics showed the Bayesian Network model and the correct model have best model fit.</p></li>
+<li><p>Similar to information criteria, KS-PP-M2 can select data generation model from models with Q-matrix misspecification</p></li>
+<li><p>Higher Q-matrix misspecification, KS-PP-M2 has higher values, which suggest worse model fit.</p></li>
+<li><p>Compared to other methods, KS-PP-M2 has same power of selecting the better model and detecting Q-matrix misspecification under all conditions.</p></li>
+<li><p>CDI (test-level discrimination power) has insignificant effect on the fit statistics of the proposed method.</p></li>
+</ol>
+</section>
+</section>
+<section id="emprical-study" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Emprical Study</h1>
+<section id="research-questions-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="research-questions-1"><span class="header-section-number">4.1</span> Research Questions</h2>
+<ol type="1">
+<li>How the proposed approach can be used for the model selection in real settings?</li>
+<li>Is the performance of the proposed approach comparable to other IC methods?</li>
+</ol>
+</section>
+<section id="design" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="design"><span class="header-section-number">4.2</span> Design</h2>
+<ol type="1">
+<li><p>The Examination for Certificate of Proficiency in English (ECPE) data was used as the example data.</p></li>
+<li><p>One reference model and two analysis models: (1) three-dimensional model (the best fitted model in Templin &amp; Hoffman, 2013); (2) two-dimensional model with randomly generated Q-matrix.</p></li>
+<li><p>Measures: (1) absolute fit: PP-M2, (2) relative fit: KS-PP-M2, DIC and WAIC</p></li>
+</ol>
+</section>
+<section id="data-and-settings" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="data-and-settings"><span class="header-section-number">4.3</span> Data and Settings</h2>
+<ol type="1">
+<li>ECPE data has 2,922 test takers and 28 items.</li>
+<li>Bayesian estimation were used with 2000 iterations and 1000 discarded burn-ins.</li>
+<li>Prior distribution setups are by default of <em>blatent</em> package</li>
+</ol>
+</section>
+</section>
+<section id="result-empirical-study" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Result (Empirical study)</h1>
+<section id="density-plot-of-posterior-predictive-m2" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="density-plot-of-posterior-predictive-m2"><span class="header-section-number">5.1</span> Density Plot of Posterior predictive M2</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/figure5_RealDataDist.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Note: solid line (the BayesNet model); dotted model (the three-dimension model); dashed line (the two-dimension model).</figcaption>
+</figure>
+</div>
+</section>
+<section id="model-selection-indices" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="model-selection-indices"><span class="header-section-number">5.2</span> Model Selection Indices</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/images/table8_RealDataModelSelection.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Note: Model 1 (three dimensional model); Model 2 (two dimensional model).</figcaption>
+</figure>
+</div>
+</section>
+<section id="findings-emprical-study" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="findings-emprical-study"><span class="header-section-number">5.3</span> Findings (Emprical study)</h2>
+<ol type="1">
+<li><p>According to the graphical checking of PP-M2, the BayesNet model is the best-fitting model, then followed by the three-dimensional model. The two-dimensioanl model has worst model fit.</p></li>
+<li><p>DIC, WAIC, KS-PP-M2 all suggested that the three-dimensional model is better than the two-dimensional model.</p></li>
+<li><p>KS-PP-M2 suggested that neither the three-dimensional model and the two-dimensional model have close model fit with BayesNet model.</p></li>
+</ol>
+</section>
+<section id="conclusion" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.4</span> Conclusion</h2>
+<ol type="1">
+<li>In both simulation and empirical study, posterior predictive M2 suggest BayesNet models and data generation model have close model fit statistics.</li>
+<li>KS statistics for posterior predictive M2 (KS-PP-M2) has same power detecting Q-matrix misspecification with other IC methods according TPR.</li>
+<li>Discrimination power of data has insignificant relationship with the proposed model checking indices</li>
+<li>KS-PP-M2 provides graphical checking for the variation of model fit indices.</li>
+</ol>
+</section>
+<section id="discussion" class="level2 smaller" data-number="5.5">
+<h2 class="smaller anchored" data-number="5.5" data-anchor-id="discussion"><span class="header-section-number">5.5</span> Discussion</h2>
+<ol type="1">
+<li>When comparing multiple models, varied model selection methods are recommended to report.</li>
+<li>In Bayesian analysis, AIC/BIC are not fully Bayesian. They are not recommended in Bayesian framework. DIC has problems such as it may produce negative estimates of the effective number of parameters in a model and it is not defined for model with discrete parameters.</li>
+<li>WAIC is fully Bayesian and asymptotically equal to Bayesian cross-validation. LOO is also based on cross-validation approach.</li>
+<li>KS-PP-M2 approach is full Bayesian and provide uncertainty of the observed data.</li>
+<li>KS-PP-M2 could be a relative fit and posterior predictive M2 is a absolute fit.</li>
+<li>KS-PP-M2 is based on the BayesNet model</li>
+<li>KS-PP-M2 does not relied on likelihood function.</li>
+<li>KS-PP-M2 takes advatages of limited-information and potentially works for data with missing data.</li>
+</ol>
+</section>
+</section>
+<section id="questions" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Questions</h1>
+<section id="reference" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="reference"><span class="header-section-number">6.1</span> Reference</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2">
+<div id="ref-gelman2006" class="csl-entry">
+Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge University Press.
+</div>
+</div>
+</section>
+<section id="supplement-information-criterion" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="supplement-information-criterion"><span class="header-section-number">6.2</span> Supplement: Information Criterion</h2>
+<div class="fragment fade-in">
+<p>DIC / WAIC</p>
+<blockquote class="blockquote">
+<p>DIC is a somewhat Bayesian version of AIC that makes two changes, replacing the maximum likelihood estimate <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> with the <span class="fragment highlight-red">posterior mean</span> and replacing k with a data-based <span class="fragment highlight-red">bias correction</span>.<sup>1</sup></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>WAIC is a more fully Bayesian approach for estimating the out-of-sample expectation, starting with the computed <span class="fragment highlight-red">log pointwise posterior predictive density</span> and then adding a correction for effective number of parameters to adjust for <span class="fragment highlight-red">overfitting</span>.</p>
+</blockquote>
+</div>
+<ul>
+<li>DIC does not the whole posterior information and does not provide uncertainty of fit statistics.</li>
+<li>WAIC provides uncertainty (SE) and is popular but is not flexible to test certain aspects of data.</li>
+<li>Posterior predictive checking is flexible but not full Bayesian. It also has some theoretical issue.</li>
+</ul>
+</section>
+<section id="supplement-ii-posterior-predictive-check" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="supplement-ii-posterior-predictive-check"><span class="header-section-number">6.3</span> Supplement II: Posterior predictive check</h2>
+<blockquote class="blockquote">
+<p>Simulating replicated data under the fitted model and then comparing these to the observed data <span class="citation" data-cites="gelman2006">(Gelman &amp; Hill, 2006, p. 158)</span></p>
+</blockquote>
+<p><strong>Aims:</strong></p>
+<ul>
+<li><p>check local and global model-fit for some aspects of data they’re interested in</p></li>
+<li><p>provide graphical evidence about model fit</p></li>
+</ul>
+</section>
+<section id="supplement-iii-using-the-data-twice" class="level2 emphasized" data-background-color="#69BEDB" data-number="6.4">
+<h2 class="emphasized anchored" data-background-color="#69BEDB" data-number="6.4" data-anchor-id="supplement-iii-using-the-data-twice"><span class="header-section-number">6.4</span> Supplement III: “using the data twice”</h2>
+<p>One critique of posterior predictive check is it <strong>uses the data twice</strong> (Blei, 2011), which means data is not only used for estimating the model but also for checking if the model fits to the data.</p>
+<ul>
+<li>This is a bad idea, because it violates <strong><em>the likelihood principle</em></strong>.</li>
+<li>A typical way in statistics and machine learning literature:</li>
+</ul>
+<p><strong>Validate the model on external data</strong></p>
+<div class="notes">
+<p>For first solution, methods include cross-validation approach,</p>
+</div>
+</section>
+<section id="supplement-iv-model-selection-problem-exist-when" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="supplement-iv-model-selection-problem-exist-when"><span class="header-section-number">6.5</span> Supplement IV: Model Selection Problem exist when</h2>
+<div class="nonincremental">
+<ul>
+<li><p>multiple alternative models existed</p></li>
+<li><p>uncertaity of dimensionality</p></li>
+<li><p>Q-matrix misspecification</p></li>
+</ul>
+</div>
+<div class="notes">
+<p>The proposed method aims to provide a fully Bayesian model selection approach or relative fit indice. This study will only focus on Q-matrix detection in model selection.</p>
+</div>
+</section>
+<section id="supplement-v-factors-of-model-selection-indices" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="supplement-v-factors-of-model-selection-indices"><span class="header-section-number">6.6</span> Supplement V: Factors of Model selection indices</h2>
+<div class="notes">
+<p>In fully Bayesian framework, the posterior inference is a comparison between prior information and data. When sample size is small, the posterior information is controlled by prior information which diminish the difference of models.</p>
+</div>
+<ul>
+<li><p>Sample size</p></li>
+<li><p>Discrimination information</p></li>
+<li><p>Q-matrix</p></li>
+<li><p>Model structure</p></li>
+</ul>
+</section>
+<section id="supplement-vi-fit-measures" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="supplement-vi-fit-measures"><span class="header-section-number">6.7</span> Supplement VI: Fit Measures</h2>
+<section id="posterior-predictive-m2" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="posterior-predictive-m2"><span class="header-section-number">6.7.1</span> Posterior Predictive M2</h3>
+<blockquote class="blockquote">
+<p>M2 is a limited-information statistics which calculated up-to second probabilities of item responses.</p>
+</blockquote>
+<p>M2 more robust than full-information fit statistics in small sample sizes.</p>
+<p>PP-M2 is M2 values conditional on posterior information. Lower average values suggest better model fit.</p>
+</section>
+<section id="cognitive-diagnostic-index" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="cognitive-diagnostic-index"><span class="header-section-number">6.7.2</span> Cognitive diagnostic Index</h3>
+</section>
+</section>
+<section id="supplement-vii-ks-statistics" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="supplement-vii-ks-statistics"><span class="header-section-number">6.8</span> Supplement VII: KS Statistics</h2>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="mu1-label" for="mu1">Mean of reference distribution:</label>
+<input class="js-range-slider" id="mu1" data-skin="shiny" data-min="0" data-max="5" data-from="0" data-step="0.1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
+</div>
+</div>
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="mu2-label" for="mu2">Mean of target distribution:</label>
+<input class="js-range-slider" id="mu2" data-skin="shiny" data-min="0" data-max="5" data-from="3" data-step="0.1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
+</div>
+</div>
+<div class="cell-output-display">
+<button id="addModel" type="button" class="btn btn-default action-button">Add another model</button>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="cell-output-display">
+<div id="kstext" class="shiny-html-output"></div>
+</div>
+<div class="cell-output-display">
+<div class="shiny-plot-output html-fill-item" id="distPlot" style="width:100%;height:400px;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Gelman, A., Hwang, J., &amp; Vehtari, A. (2014). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24(6), 997–1016. https://doi.org/10.1007/s11222-013-9416-2↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <guid>https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/index.html</guid>
   <pubDate>Sun, 23 Oct 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>NSF Grant on Bayesian Cognitive Diagnosis</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>The NSF grant awards can be easily searched via <a href="https://nsf.gov/awardsearch">NSF website</a>. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really interested in: (1) Who as Principal Investigator (PI) obtained most NSF awards? (2) Which institute obtained most NSF awards?</p>
 </blockquote>
@@ -8599,7 +9039,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -8607,13 +9047,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html</guid>
   <pubDate>Fri, 20 May 2022 17:30:38 GMT</pubDate>
 </item>
 <item>
   <title>Web Scraping Academia Institute’s Grant Fundings using R</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html</link>
   <description><![CDATA[ <p>This is an example of how to web scrape grants of active research in college’s official website. Please follow the academia institute’s website robots rules.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
@@ -9272,7 +9712,7 @@ background-color: null;
 font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -9618,7 +10058,7 @@ background-color: null;
 font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -9628,13 +10068,13 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
   <category>Web Scrapping</category>
-  <guid>https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html</guid>
   <pubDate>Thu, 12 May 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Power Analysis for Structural Equation Modeling</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/index.html</link>
   <description><![CDATA[ <p>The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the conclusions drawn from the results</strong>, plays an important role of determining the minimum sample size (number of observation) required to detect an effect in an experiment. The power analysis of SEM is often ignored in application research partly because few guidelines exist for researchers to conduct power analysis in SEM framework. This tutorial introduces two web tools which can be used to conduct power analysis for Structural Equation Modeling (SEM). An empirical example of my own research on students’ time effect on academic motivations will also be presented for illustration. For privacy, only short name of the latent constructs are used.</p>
 <p><span class="citation" data-cites="wang_power_2021">Wang and Rhemtulla (2021)</span> argued that there’re two ways of determining sample size planning in SEM: (1) traditional rule of thumbs, (2) power analysis for SEM based on parameter effect size and model misspecification. To be more specific, two ways of determining sample size planning in SEM are:</p>
 <ol type="1">
@@ -9653,7 +10093,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/webpower.png" class="img-fluid figure-img" width="1032"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/webpower.png" class="img-fluid figure-img" width="1032"></p>
 <figcaption class="figure-caption">Chi-square LR test</figcaption></figure>
 </div>
 </div>
@@ -9667,7 +10107,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/model_vis.png" class="img-fluid figure-img" width="1243"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/model_vis.png" class="img-fluid figure-img" width="1243"></p>
 <figcaption class="figure-caption">Model Specification</figcaption></figure>
 </div>
 </div>
@@ -9677,7 +10117,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/parameter_est.png" class="img-fluid figure-img" width="1110"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/parameter_est.png" class="img-fluid figure-img" width="1110"></p>
 <figcaption class="figure-caption">Parameter estimates by lavaan</figcaption></figure>
 </div>
 </div>
@@ -9687,7 +10127,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_256.png" class="img-fluid figure-img" width="1158"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_256.png" class="img-fluid figure-img" width="1158"></p>
 <figcaption class="figure-caption">Local Power with sample size 256</figcaption></figure>
 </div>
 </div>
@@ -9697,13 +10137,13 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.2%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_300.png" class="img-fluid figure-img" width="1142"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_300.png" class="img-fluid figure-img" width="1142"></p>
 <figcaption class="figure-caption">Local power with N = 300</figcaption></figure>
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 49.8%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_500.png" class="img-fluid figure-img" width="1131"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_500.png" class="img-fluid figure-img" width="1131"></p>
 <figcaption class="figure-caption">Local power with N = 500</figcaption></figure>
 </div>
 </div>
@@ -9737,13 +10177,13 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
   <category>lavaan</category>
   <category>blog</category>
   <category>tutorial</category>
-  <guid>https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/index.html</guid>
   <pubDate>Fri, 29 Apr 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Workshop] Creating Academic Blog via R</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html</link>
   <description><![CDATA[ <section id="resource" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="resource">
 <span class="header-section-number">1</span> Resource</h2>
 <p><a href="https://m-clark.github.io/distill-workshop">Michael Clark</a> has a great workshop in his blog introducing distill package. I suggest readers check it out first.</p>
@@ -9763,7 +10203,7 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/flowchart.png" class="img-fluid figure-img" width="306"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/flowchart.png" class="img-fluid figure-img" width="306"></p>
 <figcaption class="figure-caption">Flowchart for creating website</figcaption></figure>
 </div>
 </div>
@@ -9776,7 +10216,7 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
 <li>_posts</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/file_structure.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/file_structure.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Example of file structure used in my github website</figcaption></figure>
 </div>
 </section><section id="new-post" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="new-post">
@@ -9800,7 +10240,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Rmd_file.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Rmd_file.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Files in your post folder</figcaption></figure>
 </div>
 <p>Open the Rmd file and make sure the header of your Rmd file is like this:</p>
@@ -9818,12 +10258,12 @@ output:
 ---</code></pre>
 <p>After editting the Rmd file, knit the fill and then build website using <em>Build Website</em> button in the Build pane of Rstudio.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/build_website.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/build_website.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">The Build button in Rstudio</figcaption></figure>
 </div>
 <p>It will then pop up your updated website in a window.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Preview of updated website</figcaption></figure>
 </div>
 <p>However, the website is not published yet. To publish the website, upload the files to Github. Following is a example of pushing the local files to the Github server via command line.</p>
@@ -9848,12 +10288,12 @@ font-style: inherit;">git</span> push</span></code></pre></div>
 <span class="header-section-number">4.1</span> Settings of Github Repo</h3>
 <p>Go to the Github Repo &gt; Settings &gt; Pages</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Settings.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Settings.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Github Settings</figcaption></figure>
 </div>
 <p>In the webpage, choose <em>_docs</em> and you will see your website is published.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/docs.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/docs.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">change settings</figcaption></figure>
 </div>
 </section></section><section id="reference" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="reference">
@@ -9866,13 +10306,13 @@ font-style: inherit;">git</span> push</span></code></pre></div>
   <category>Github</category>
   <category>Rstudio</category>
   <category>Workshop</category>
-  <guid>https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html</guid>
   <pubDate>Sun, 24 Apr 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Health Care Data Analysis with Apple Watch</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html</link>
   <description><![CDATA[ <p></p>
 <blockquote class="blockquote">
 <p>The data contained within Health app on iPhone can be saved and exported for other uses. Perhaps you want to export Health app data to use in another health or fitness app, importing it to elsewhere, or maybe you want to use the raw Health data for your own purposes.</p>
@@ -10502,13 +10942,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>blog</category>
   <category>R</category>
   <category>health</category>
-  <guid>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html</guid>
   <pubDate>Tue, 06 Jul 2021 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2021-01-31-ppmc-cfa/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2021-01-31-ppmc-cfa/index.html</link>
   <description><![CDATA[ <section id="abstract" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="abstract">
 <span class="header-section-number">1</span> Abstract</h2>
 <p>Posterior Predictive Model Checking (PPMC) is frequently used for model fit evaluation in Bayesian Confirmatory Factor Analysis (BCFA). In standard PPMC procedures, model misfit is quantified by the location of a ML-based estimate to the predictive distribution of a statistic for a model. When the ML-based point estimate is far away from the center of the density of the posterior predictive distribution, model fit is poor. One main critique of such standard PPMC procedures is the strong link to the ML-based point estimates of the observed data. Not included in this approach, however, is how variable the ML-based point estimates are and their use in general as the reference point for Bayesian analyses. We propose a new method of PPMC based on the Posterior Predictive distribution of Bayesian saturated model for BCFA models. The method uses the predictive distribution from parameters of the posterior distribution of the saturated model as reference to detect the local misfit of hypothesized models. The results of the simulation study suggest that the saturated model PPMC approach was an accurate method of determining local model misfit and could be used for model comparison. A real example is also provided in this study.</p>
@@ -10522,13 +10962,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2021-01-31-ppmc-cfa/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2021-01-31-ppmc-cfa/index.html</guid>
   <pubDate>Sun, 31 Jan 2021 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Study Notes: gt package and format table</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/index.html</link>
   <description><![CDATA[ <p>A introduction about <code>gt</code> package is <a href="https://themockup.blog/posts/2020-05-16-gt-a-grammer-of-tables/">here</a></p>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
@@ -12617,13 +13057,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/index.html</guid>
   <pubDate>Mon, 25 May 2020 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Introduction to Latent Attribute Network Analysis</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Network analysis is a very useful tool. This post show how to visualize the latent attribute network in Diagnostic Classification Modeling(DCM). There are a ton of R package could be used to visualize network structure.</p>
 </blockquote>
@@ -12894,7 +13334,7 @@ font-style: inherit;">"circle"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="igraph-package" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="igraph-package">
@@ -12975,7 +13415,7 @@ font-style: inherit;">layout_with_graphopt</span><span class="op" style="color: 
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="tidygraph-and-ggraph" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="tidygraph-and-ggraph">
@@ -13137,7 +13577,7 @@ font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -13243,7 +13683,7 @@ font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -13252,13 +13692,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>blog</category>
   <category>Network</category>
   <category>DCM</category>
-  <guid>https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html</guid>
   <pubDate>Sun, 20 Oct 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Which Country own the most Liberty Nobel Prizes? France? Ireland?</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>It is of my interest to use <code>ggplot</code> package to visualize some fun data. In this post, I tried to play with a Nobel Prizes Data including countries, prize year, each prize. The goal is to plot a cumulative traceplot of Liberty Nobel Prizes for top 10 countries.</p>
 </blockquote>
@@ -14203,7 +14643,7 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">pp1</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -14237,7 +14677,7 @@ font-style: inherit;">prize_year</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-9-1.gif" class="img-fluid"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-9-1.gif" class="img-fluid"></p>
 </div>
 </div>
 
@@ -14246,13 +14686,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>visualization</category>
   <category>blog</category>
   <category>ggplot2</category>
-  <guid>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index.html</guid>
   <pubDate>Mon, 20 May 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Make a Game in R</title>
   <dc:creator>jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2019-04-19-make-a-game-in-r/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Recently I found a interesting R package call nessy which allows you to create a simple game driven by shiny. Thus. I tried a little bit about this package. Making a interactive app in R is promising in the files like teaching, presentation and visualization.</p>
 </blockquote>
@@ -14826,13 +15266,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
-  <guid>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-04-19-make-a-game-in-r/index.html</guid>
   <pubDate>Fri, 19 Apr 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Introduce gganimate for Psychometric</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</link>
+  <link>https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>A new R packge (<code>gganimate</code> ) provides some new features for animation in R. Its big advantage is it could make use of ggplot API and embeded into ggplot. Next, I will use a sample data to show the example. Then I will use some real educational data to explore a little bit what we can do in psychometric area.</p>
 </blockquote>
@@ -14984,7 +15424,7 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">p</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <section id="transition_reveal-gradually-reveal-the-data" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="transition_reveal-gradually-reveal-the-data">
@@ -15004,7 +15444,7 @@ font-style: inherit;">date</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-3-1.gif" class="img-fluid"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-3-1.gif" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell">
@@ -15105,7 +15545,7 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">p_bygroup</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -15123,7 +15563,7 @@ font-style: inherit;">date</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-6-1.gif" class="img-fluid"></p>
+<p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-6-1.gif" class="img-fluid"></p>
 </div>
 </div>
 </section><section id="section" class="level3" data-number="1.2.2"><h3 data-number="1.2.2" class="anchored" data-anchor-id="section">
@@ -15133,7 +15573,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 </section></section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
   <category>Tutorial</category>
-  <guid>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</guid>
   <pubDate>Fri, 22 Feb 2019 06:00:00 GMT</pubDate>
 </item>
 </channel>

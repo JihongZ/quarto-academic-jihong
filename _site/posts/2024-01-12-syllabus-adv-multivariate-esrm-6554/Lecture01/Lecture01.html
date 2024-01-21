@@ -9,10 +9,10 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.427">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Jihong Zhang">
-  <title>Dr.&nbsp;Jihong Zhang - Lecture 01</title>
+  <title>Dr. Jihong Zhang - Lecture 01</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -49,6 +49,8 @@
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -346,7 +348,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="../Images/title_image.png" data-background-opacity="0.9" data-background-size="contain" class="quarto-title-block center">
   <h1 class="title">Lecture 01</h1>
   <p class="subtitle">Course Introduction</p>
 
@@ -359,25 +361,25 @@ Jihong Zhang
 </div>
 
 </section>
-<section id="todays-lecture-objectives" class="slide level2" data-number="1">
-<h2><span class="header-section-number">1</span> Today’s Lecture Objectives</h2>
+<section id="todays-lecture-objectives" class="slide level2">
+<h2>Today’s Lecture Objectives</h2>
 <ol type="1">
-<li>Introduce myself</li>
-<li>Syllabus</li>
-<li>Extra Course Information</li>
-<li>Introduce Bayesian Analysis</li>
+<li class="fragment">Introduce myself</li>
+<li class="fragment">Syllabus</li>
+<li class="fragment">Extra Course Information</li>
+<li class="fragment">Introduce Bayesian Analysis</li>
 </ol>
 <p>but, before we begin…</p>
 </section>
-<section id="introduce-myself" class="slide level2" data-number="2">
-<h2><span class="header-section-number">2</span> Introduce myself</h2>
+<section id="introduce-myself" class="slide level2">
+<h2>Introduce myself</h2>
 <p>Let me introduce myself first…</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Images/UI.jpg" width="350"></p>
+<p><img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/UI.jpg" width="350"></p>
 <figcaption>University if Iowa</figcaption>
 </figure>
 </div>
@@ -385,7 +387,7 @@ Jihong Zhang
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Images/HK.jpg" width="350"></p>
+<p><img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/HK.jpg" width="350"></p>
 <figcaption>Hong Kong: Victoria Harbour</figcaption>
 </figure>
 </div>
@@ -393,7 +395,7 @@ Jihong Zhang
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Images/CUHK.jpg" width="350"></p>
+<p><img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/CUHK.jpg" width="350"></p>
 <figcaption>Chinese University of Hong Kong</figcaption>
 </figure>
 </div>
@@ -401,140 +403,142 @@ Jihong Zhang
 </div>
 </div>
 </section>
-<section id="syllabus" class="slide level2" data-number="3">
-<h2><span class="header-section-number">3</span> Syllabus</h2>
+<section id="syllabus" class="slide level2">
+<h2>Syllabus</h2>
 <p><a href="https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.pdf">Syllabus of ESRM 6553</a></p>
 </section>
-<section id="course-time" class="slide level2" data-number="4">
-<h2><span class="header-section-number">4</span> Course Time</h2>
+<section id="course-time" class="slide level2">
+<h2>Course Time</h2>
 <ul>
-<li><p>Monday 5PM to 7:45PM:</p>
+<li class="fragment"><p>Monday 5PM to 7:45PM:</p>
 <ul>
-<li><p>5PM to 6:15PM: First half class</p></li>
-<li><p>6:15PM:6:30PM: 15-min break</p></li>
-<li><p>6:30PM:7:45PM: Second half class</p></li>
+<li class="fragment"><p>5PM to 6:15PM: First half class</p></li>
+<li class="fragment"><p>6:15PM to 6:30PM: 15-min break</p></li>
+<li class="fragment"><p>6:30PM to 7:45PM: Second half class</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="office-hours" class="slide level2" data-number="5">
-<h2><span class="header-section-number">5</span> Office Hours</h2>
+<section id="office-hours" class="slide level2">
+<h2>Office Hours</h2>
 <ul>
-<li><p>Tuesday 1:30PM to 4:30PM</p></li>
-<li><p>You should be able to find me in GRAD Room 109</p></li>
+<li class="fragment"><p>Tuesday 1:30PM to 4:30PM</p></li>
+<li class="fragment"><p>You should be able to find me in GRAD Room 109</p></li>
 </ul>
 </section>
-<section id="materials" class="slide level2" data-number="6">
-<h2><span class="header-section-number">6</span> Materials</h2>
+<section id="materials" class="slide level2">
+<h2>Materials</h2>
 <ul>
-<li>I will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)</li>
+<li class="fragment">I will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)</li>
 </ul>
 </section>
-<section id="quiz-what-is-bayesian" class="slide level2" data-number="7">
-<h2><span class="header-section-number">7</span> Quiz: What is Bayesian?</h2>
+<section id="quiz-what-is-bayesian" class="slide level2">
+<h2>Quiz: What is Bayesian?</h2>
 <ol type="1">
-<li><a href="https://www.youtube.com/watch?v=0e38NuBFqaQ">How to Pronounce Bayesian (Real Life Examples!)</a>
+<li class="fragment"><a href="https://www.youtube.com/watch?v=0e38NuBFqaQ">How to Pronounce Bayesian (Real Life Examples!)</a>
 <ul>
-<li>“B-Asian” or “Bayes-ian”?</li>
+<li class="fragment">“B-Asian” or “Bayes-ian”?</li>
 </ul></li>
-<li><a href="https://www.youtube.com/watch?v=dNeo7FNlOyY">Frequentist vs Bayesian</a>
+<li class="fragment"><a href="https://www.youtube.com/watch?v=dNeo7FNlOyY">Frequentist vs Bayesian</a>
 <ul>
-<li>Example: In U.S., more Male Asian Faculty or Female Asian Faculty?
+<li class="fragment">Example: In U.S., more Male Asian Faculty or Female Asian Faculty?
 <ul>
-<li>Frequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?</li>
-<li>Bayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?</li>
+<li class="fragment">Frequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?</li>
+<li class="fragment">Bayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?</li>
 </ul></li>
 </ul></li>
 </ol>
 </section>
-<section id="bayesian-model-components" class="slide level2" data-number="8">
-<h2><span class="header-section-number">8</span> Bayesian Model Components</h2>
+<section id="bayesian-model-components" class="slide level2">
+<h2>Bayesian Model Components</h2>
 <ol type="1">
-<li>What we see: Observed Data</li>
-<li>What we cannot see: Future Data, Data yet to be collected, Parameters</li>
+<li class="fragment">What we see: Observed Data</li>
+<li class="fragment">What we cannot see: Future Data, Data yet to be collected, Parameters</li>
 </ol>
 </section>
 <section class="slide level2">
 
-<p><strong>Takehome Note I: Everything is random in Bayesian!</strong></p>
+<p><strong>Take home Note I: Everything is random in Bayesian!</strong></p>
 <ul>
-<li>Observed Data: Some <strong>random</strong> information given a unknown generation process</li>
-<li>Parameter: The <strong>random</strong> components controlling the generation process</li>
+<li class="fragment">Observed Data: Some <strong>random</strong> information given a unknown generation process</li>
+<li class="fragment">Parameter: The <strong>random</strong> components controlling the generation process</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p><strong>Takehome Note II: Every random component can be expressed as probability!</strong></p>
+<p><strong>Take home Note II: Every random component can be expressed as probability!</strong></p>
 <ul>
-<li>The probability of observed data given parameters: <span class="math inline">\(p(\text{Observed Data}|\text{Parameters})\)</span> = <strong>Likelihood</strong></li>
-<li>The probability of parameters: <span class="math inline">\(p(\text{Parameters})\)</span> = <strong>Prior Distribution</strong></li>
-<li>The probability of parameters given observed data: <span class="math inline">\(p(\text{Parameters}|\text{Observed Data})\)</span> = <strong>Posterior Distribution</strong>*</li>
+<li class="fragment">The probability of observed data given parameters: <span class="math inline">\(p(\text{Observed Data}|\text{Parameters})\)</span> = <strong>Likelihood</strong></li>
+<li class="fragment">The probability of parameters: <span class="math inline">\(p(\text{Parameters})\)</span> = <strong>Prior Distribution</strong></li>
+<li class="fragment">The probability of parameters given observed data: <span class="math inline">\(p(\text{Parameters}|\text{Observed Data})\)</span> = <strong>Posterior Distribution</strong>*</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 data-number="8.1" id="a-bayesian-thinking-process"><span class="header-section-number">8.1</span> A Bayesian thinking process:</h3>
-<p>I originally thought the ratio of male Asian faculty to female is about 1:2 (<strong>Prior</strong>). But the data we sampled from 1000 faculties says it is 1:1 (<strong>Data; Likelihood give the true ratio we don’t know</strong>). Then I update my belief as the ratio is probably 1:1.5 (<strong>Posterior</strong>) after augmenting these two statements.</p>
+<h3 id="bayesian-thinking-process">Bayesian Thinking Process</h3>
+<h4 id="a-toy-example">A toy example:</h4>
+<p>I originally thought the ratio of male Asian faculty to female is about 1:2 (<strong>Prior</strong>). But the data we sampled from 2000 doctoral students suggested gender ratio is 1:1 (<strong>Data; Likelihood give the true ratio we don’t know</strong>). Based on Bayes’s rule, estimate for the ratio is probably 1:1.5 (<strong>Posterior</strong>) after combining these two statements.</p>
 </section>
-<section id="bayesian-analysis-why-it-is-used" class="slide level2" data-number="9">
-<h2><span class="header-section-number">9</span> Bayesian Analysis: Why It Is Used?</h2>
+<section id="bayesian-analysis-why-it-is-used" class="slide level2">
+<h2>Bayesian Analysis: Why It Is Used?</h2>
 <p>There are at least four main reasons why people use Bayesian Analysis:</p>
 <ol type="1">
-<li>Missing data
+<li class="fragment">Missing data
 <ul>
-<li>Multiple imputation</li>
-<li>More complicated model for certain types of missing data</li>
+<li class="fragment">Multiple imputation</li>
+<li class="fragment">More complicated model for certain types of missing data</li>
 </ul></li>
-<li>Lack of software capable of handing large sized analyses
+<li class="fragment">Lack of software capable of handing large sized analyses
 <ul>
-<li>Have a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!</li>
+<li class="fragment">Have a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!</li>
 </ul></li>
 </ol>
 </section>
-<section id="bayesian-analysis-why-it-is-used-cont." class="slide level2" data-number="10">
-<h2><span class="header-section-number">10</span> Bayesian Analysis: Why It Is Used? (Cont.)</h2>
+<section id="bayesian-analysis-why-it-is-used-cont." class="slide level2">
+<h2>Bayesian Analysis: Why It Is Used? (Cont.)</h2>
 <ol start="3" type="1">
-<li>New complex models not available in frequentist framework
+<li class="fragment">New complex models not available in frequentist framework
 <ul>
-<li>Have a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)</li>
+<li class="fragment">Have a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)</li>
 </ul></li>
-<li>Enjoy the Bayesian thinking process
+<li class="fragment">Enjoy the Bayesian thinking process
 <ul>
-<li>It is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.</li>
+<li class="fragment">It is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.</li>
 </ul></li>
 </ol>
 </section>
-<section id="bayesian-analysis-issues" class="slide level2" data-number="11">
-<h2><span class="header-section-number">11</span> Bayesian Analysis: Issues</h2>
+<section id="bayesian-analysis-issues" class="slide level2">
+<h2>Bayesian Analysis: Issues</h2>
 <ol type="1">
-<li>subjective vs.&nbsp;objective
+<li class="fragment">subjective vs.&nbsp;objective
 <ul>
-<li>Prior distribution is subjective. It is based on your prior knowledge.</li>
-<li>However, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.</li>
+<li class="fragment">Prior distribution is subjective. It is based on your prior knowledge.</li>
+<li class="fragment">However, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.</li>
 </ul></li>
-<li>Computationally intensive
+<li class="fragment">Computationally intensive
 <ul>
-<li>It is not a problem anymore. We have computers.</li>
+<li class="fragment">It is not a problem anymore. We have computers.</li>
 </ul></li>
-<li>Difficult to understand</li>
+<li class="fragment">Difficult to understand</li>
 </ol>
 </section>
-<section id="bayesian-analysis-is-popular" class="slide level2" data-number="12">
-<h2><span class="header-section-number">12</span> Bayesian Analysis is popular</h2>
+<section id="bayesian-analysis-is-popular" class="slide level2">
+<h2>Bayesian Analysis is popular</h2>
 
 <img data-src="Images/histogram_fundingamount.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</p></section>
-<section id="what-topics-bayesian-analysis-can-cover" class="slide level2" data-number="13">
-<h2><span class="header-section-number">13</span> What topics Bayesian Analysis can cover?</h2>
+<section id="what-topics-bayesian-analysis-can-cover" class="slide level2">
+<h2>What topics Bayesian Analysis can cover?</h2>
 
 <img data-src="Images/circle_topics.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</p></section>
-<section id="next-class" class="slide level2" data-number="14">
-<h2><span class="header-section-number">14</span> Next Class</h2>
+<section id="next-class" class="slide level2">
+<h2>Next Class</h2>
 <p>We will talk about how Bayesian methods works in a little bit more technical way.</p>
 </section>
-<section id="suggestions" class="slide level2" data-number="15">
-<h2><span class="header-section-number">15</span> Suggestions</h2>
+<section id="suggestions" class="slide level2">
+<h2>Suggestions</h2>
 <p>Your opinions are very important to me. Feel free to let me know if you have any suggestions on the course.</p>
 
-<div class="footer footer-default">
+
+<img src="../Images/UA_Logo_Horizontal.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554" class="uri">https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554</a></p>
 </div>
 </section>
@@ -548,6 +552,9 @@ Jihong Zhang
   <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
   <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -569,7 +576,9 @@ Jihong Zhang
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'multiplex': {"secret":null,"id":"c8df9ccd2cdc883a","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -590,7 +599,7 @@ Jihong Zhang
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -695,14 +704,14 @@ Jihong Zhang
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -740,10 +749,10 @@ Jihong Zhang
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
-          RevealNotes,
+          
           RevealSearch,
           RevealZoom
         ]
