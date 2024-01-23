@@ -1,0 +1,75 @@
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
+
+/*-- scss:defaults --*/
+// Override theme settings (see ../template/settings.scss)
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+// see https://github.com/mcanouil/quarto-revealjs-storybook/blob/main/_extensions/storybook/storybook.scss for more details of SCSS variables
+// Background of the presentation
+$backgroundColor: #fcfbf9;
+
+// Primary/body text
+$mainFont: 'Jost', sans-serif;
+$mainFontSize: 30px;
+$mainColor: #333;
+
+// Vertical spacing between blocks of text
+$blockMargin: 13px;
+
+// Title
+#title-slide {
+  .title, .subtitle {
+    opacity: 0.80;
+    margin-top: 1.8em;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-family: "Tangerine";
+    text-shadow: 2px 2px 2px #b22222;
+    color: #EEB422 !important;
+  }
+}
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: 'Jost', Impact, sans-serif;
+$headingColor: #EEB422;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingTextShadow: 2px 2px 2px #b22222;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 2.00em;
+$heading2Size: 1.88em;
+$heading3Size: 1.55em;
+$heading4Size: 1.00em;
+
+$codeFont: monospace;
+
+// Links and actions
+$linkColor: #437597;
+$linkColorHover: darken( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: #FF5E99;
+$selectionColor: #fff;
+
+// start using css here
+// #title-slide > h1 {
+//   color: white;
+// }
+
+// #title-slide .author {
+//  color: white;
+//}
+
+
+#title-slide {
+  top: 0 !important;
+}
+
+#title-slide > .author:first-of-type {
+  margin-top: 320px;
+}
