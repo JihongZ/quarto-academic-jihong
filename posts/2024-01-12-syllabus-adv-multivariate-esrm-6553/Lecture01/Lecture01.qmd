@@ -102,9 +102,13 @@ Let me introduce myself first...
 
 #### A toy example:
 
+<<<<<<< HEAD:posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd
 I originally thought the ratio of male Asian faculty to female is about 1:2 (**Prior**). But the data we sampled from 2000 doctoral students suggested gender ratio is 1:1 (**Data; Likelihood that the true ratio we don't know**). Based on Bayes's rule, estimate for the ratio is probably 1:1.5 (**Posterior**) after combining these two statements.
+=======
+I originally thought the ratio of male Asian faculty to female is about 1:2 (**Prior**). We obtained the information from 2000 doctoral candidates suggested gender ratio is 1:1 (**Data; Likelihood give the true ratio we don't know**). Based on Bayes's rule, estimate for the ratio is probably 1:1.5 (**Posterior**) after combining these two statements.
+>>>>>>> 6e75efe (update 2024 CV):posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.qmd
 
-## Bayesian Analysis: Why It Is Used?
+## Bayesian Analysis: Why It Is Used? {.smaller}
 
 There are at least four main reasons why people use Bayesian Analysis:
 
@@ -114,7 +118,7 @@ There are at least four main reasons why people use Bayesian Analysis:
 2.  Lack of software capable of handing large sized analyses
     -   Have a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!
 
-## Bayesian Analysis: Why It Is Used? (Cont.)
+## Bayesian Analysis: Why It Is Used? (Cont.) {.smaller}
 
 3.  New complex models not available in frequentist framework
     -   Have a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)
@@ -137,11 +141,25 @@ There are at least four main reasons why people use Bayesian Analysis:
 
 ## Bayesian Analysis is popular
 
+<<<<<<< HEAD:posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd
 ![Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/](../Images/histogram_fundingamount.png){width="100%"}
 
 ## What topics Bayesian Analysis can cover?
 
 ![Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/](../Images/circle_topics.png){width="100%"}
+=======
+![Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/histogram_fundingamount.png)
+
+## What topics Bayesian Analysis can cover?
+
+![Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/circle_topics.png)
+
+## Wrapping Up
+
+1.  We know what is "Bayesian" and its components.
+2.  Why Bayesian Estimation is different from other estimation, say maximum likelihood
+3.  We also know that Bayesian analysis is popular in many fields, especially complex data
+>>>>>>> 6e75efe (update 2024 CV):posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.qmd
 
 ## Next Class
 
