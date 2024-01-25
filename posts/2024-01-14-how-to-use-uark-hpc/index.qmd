@@ -32,11 +32,12 @@ For moving data files from local machine to HPC, type in following codes on your
 scp program.c loginname@hpc-portal2.hpc.uark.edu:/home/loginname/
 ```
 
-To copy an entire directory tree `src` using SCP, use `-r` for recursive: 
+To copy an entire directory tree `src` using SCP, use `-r` for recursive:
 
 ``` bash
 scp -r src loginname@hpc-portal2.hpc.uark.edu:/home/loginname/
 ```
+
 Similarly, for moving data files from HPC to local machine, type in following codes on your local machine:
 
 ``` bash
@@ -47,15 +48,15 @@ scp -r loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./
 
 Please refer to this [link](https://hpcwiki.uark.edu/doku.php?id=equipment) for detailed information about HPC equipment.
 
-```bash
+``` bash
 qsub -q q06h32c -l walltime=1:00 -l nodes=1:ppn=32 example.sh
 ```
 
-The command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node. 
+The command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node.
 
 Here's a simple example of a job script:
 
-```bash
+``` bash
 #!/bin/bash
 #SBATCH --job-name=mpi
 #SBATCH --output=zzz.slurm
@@ -74,29 +75,28 @@ Where `gcc` and `mkl` are required for R package installation. Please see [here]
 xfun::embed_file("summary.pdf")
 ```
 
-
 To use R interactively, please start an interactive job using following command:
 
-```bash
+``` bash
 srun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash
 ```
 
 This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.
 
-| slurm commands | compatibility commands | Meaning |
-| ----------- | ----------- | ------------------ |
-|sbatch                      |qsub                        |submit \<job file\>|
-|srun                        |qsub -I                     |submit interactive job|
-|squeue                      |qstat                       |list all queued jobs|
-|squeue -u -rfeynman         |qstat -u rfeynman           |list queued jobs for user rfeynman|
-|scancel                     |qdel                        |cancel <job#>|
-|sinfo                       |shownodes -l -n;qstat -q    |node status;list of queues|
+| slurm commands      | compatibility commands   | Meaning                            |
+|---------------------|--------------------------|------------------------------------|
+| sbatch              | qsub                     | submit \<job file\>                |
+| srun                | qsub -I                  | submit interactive job             |
+| squeue              | qstat                    | list all queued jobs               |
+| squeue -u -rfeynman | qstat -u rfeynman        | list queued jobs for user rfeynman |
+| scancel             | qdel                     | cancel \<job#\>                    |
+| sinfo               | shownodes -l -n;qstat -q | node status;list of queues         |
 
 For slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load `R/4.2.2` module, those packages installed via an interactive job will be stored at `$HOME$/R/x86_64-pc-linux-gnu/4.2/`. See [here](https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage) for more details about interactive job.
 
 The workflow of job submission is as follows:
 
-```bash
+``` bash
 c1331:jzhang:~/HelloWorld$ cat exampleJob.sh
 #!/bin/bash
 #SBATCH --nodes=1
@@ -116,6 +116,6 @@ c1331:jzhang:~/HelloWorld$
 
 ## Checking job
 
-```bash
+``` bash
 squeue -u loginname
 ```
