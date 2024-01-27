@@ -4,7 +4,16 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
+<<<<<<< HEAD
     "text": "Lecture 01\n\n\nCourse and Bayesian Analysis Introduction\n\n\n\n\n\n\n\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nHow to set up High Performance Computing of U of Ark\n\n\n\n\n\n\n\n\n\n\n\n\nJan 14, 2024\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nESRM 6553: Adv. Multivariate\n\n\nSpring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229\n\n\n\n\n\n\n\n\n\nJan 13, 2024\n\n\nDr. Jihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nData visualization for survey data\n\n\n\n\n\n\n\nblog\n\n\nggplot2\n\n\n\n\nMany tutorials online are about general data visualization. This post aims to showcase some tricks for survey data\n\n\n\n\n\n\nJul 4, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nA tutorial for forester R package\n\n\n\n\n\n\n\ntutorial\n\n\npackage\n\n\n\n\n\n\n\n\n\n\n\nJun 28, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nOne Template for Quarto Report\n\n\n\n\n\nA template used for academic reporting\n\n\n\n\n\n\nJun 27, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nMoving My Website to Quarto\n\n\n\n\n\n\n\n\n\n\n\n\nJun 25, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nA Conversation between R and Python on Data Analysis and Machine Learning\n\n\n\n\n\n\n\nblog\n\n\nR\n\n\nPyTorch\n\n\nDeep Learning\n\n\n\n\n\n\n\n\n\n\n\nJun 20, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nLatent Class Model: Batch Mplus using R on Mac\n\n\n\n\n\n\n\nblog\n\n\nLCM\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJun 10, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nDissertation Defence\n\n\nTITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling\n\n\n\n\n\n\n\n\n\nOct 23, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nNSF Grant on Bayesian Cognitive Diagnosis\n\n\nData visualization using ggplot2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 20, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nWeb Scraping Academia Institute’s Grant Fundings using R\n\n\n\n\n\n\n\nblog\n\n\nWeb Scrapping\n\n\n\n\nHow to use R for web scrapping\n\n\n\n\n\n\nMay 12, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nPower Analysis for Structural Equation Modeling\n\n\n\n\n\n\n\nR\n\n\nrshiny\n\n\nwebpower\n\n\nlavaan\n\n\nblog\n\n\ntutorial\n\n\n\n\nShowcase current software used for power analysis of Structural Equation Modeling\n\n\n\n\n\n\nApr 29, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\n[Workshop] Creating Academic Blog via R\n\n\nThis post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.\n\n\n\n\nR\n\n\nGithub\n\n\nRstudio\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\n\n\nApr 24, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nGradient Descent Algorithm via julia\n\n\nThis tutorial illustrate how to use julia to conduct a gradient descent algorithm\n\n\n\n\njulia\n\n\nalgorithm\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nHealth Care Data Analysis with Apple Watch\n\n\n\n\n\n\n\nblog\n\n\nR\n\n\nhealth\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nVisualization for Process Data\n\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nJul 4, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\n[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis\n\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2021\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nStudy Notes: gt package and format table\n\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2020\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nSome Thoughts After Reading \n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nNov 21, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nUse R as a bash language\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nNov 14, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Latent Attribute Network Analysis\n\n\n\n\n\n\n\nblog\n\n\nNetwork\n\n\nDCM\n\n\n\n\n\n\n\n\n\n\n\nOct 20, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nSMEP 2019 Poster Session Materials\n\n\n\n\n\n\n\nPoster\n\n\n\n\n\n\n\n\n\n\n\nOct 8, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nWhich Country own the most Liberty Nobel Prizes? France? Ireland?\n\n\n\n\n\n\n\nvisualization\n\n\nblog\n\n\nggplot2\n\n\n\n\n\n\n\n\n\n\n\nMay 20, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nMake a Game in R\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nApr 19, 2019\n\n\njihong\n\n\n\n\n\n\n  \n\n\n\n\nIntroduce gganimate for Psychometric\n\n\n\n\n\n\n\nR\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2019\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nLasso Regression Example using glmnet package in R\n\n\n\n\n\n\n\nR\n\n\nmanual\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nVisuliaztion of Item Information Curves In R\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nJan 10, 2019\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\n[Manual]Using Jags and R2jags in R\n\n\n\n\n\n\n\nManual\n\n\n\n\n\n\n\n\n\n\n\nSep 12, 2018\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nIntroduce Descrepancy Measures\n\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nSep 11, 2018\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nHow to do Data Cleaning in R\n\n\n\n\n\n\n\nblog\n\n\nR\n\n\ntidyverse\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nUpdating R Version Without missing packages\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nApr 29, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nMy New Shiny App Cut Score Consistency\n\n\n\n\n\n\n\nR\n\n\nShiny\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nAcademic Writing\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nFeb 11, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nLatent Profile Analysis using MCLUST (in R)\n\n\n\n\n\n\n\nR\n\n\nclustering\n\n\nlatent class\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nParental Involvement and Children Motivation\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nNov 22, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nEFA v.s. CFA\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nNov 20, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nOne Example of Measurement Invariance\n\n\n\n\n\n\n\nR\n\n\nSEM\n\n\nlavaan\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nSimulation of Lognormal distribution\n\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\n\n\nNov 11, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n  \n\n\n\n\nSimulation Study of Linking Using Mirt\n\n\n\n\n\n\n\nR\n\n\nmirt\n\n\nlinking\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2017\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nHow to use lavaan package to perform Confirmatory Factor Analysis\n\n\n\n\n\n\n\nManual\n\n\nR\n\n\nLavaan\n\n\n\n\n\n\n\n\n\n\n\nOct 19, 2017\n\n\nJihong\n\n\n\n\n\n\n  \n\n\n\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2015\n\n\nJihong Zhang\n\n\n\n\n\n\nNo matching items\n\n\n  \n\n Back to top"
+=======
+    "text": "Lecture 02\n\n\nIntroduction to Bayesian Concepts\n\n\n\n\n\n\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nLecture 01\n\n\nCourse and Bayesian Analysis Introduction\n\n\n\n\n\n\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up High Performance Computing of U of Ark\n\n\n\n\n\n\n\n\n\n\n\nJan 14, 2024\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nESRM 6553: Adv. Multivariate\n\n\nSpring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229\n\n\n\n\n\n\n\n\nJan 13, 2024\n\n\nDr. Jihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization for survey data\n\n\n\n\n\n\nblog\n\n\nggplot2\n\n\n\nMany tutorials online are about general data visualization. This post aims to showcase some tricks for survey data\n\n\n\n\n\nJul 4, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nA tutorial for forester R package\n\n\n\n\n\n\ntutorial\n\n\npackage\n\n\n\n\n\n\n\n\n\nJun 28, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nOne Template for Quarto Report\n\n\n\n\n\nA template used for academic reporting\n\n\n\n\n\nJun 27, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nMoving My Website to Quarto\n\n\n\n\n\n\n\n\n\n\n\nJun 25, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nA Conversation between R and Python on Data Analysis and Machine Learning\n\n\n\n\n\n\nblog\n\n\nR\n\n\nPyTorch\n\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nJun 20, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Class Model: Batch Mplus using R on Mac\n\n\n\n\n\n\nblog\n\n\nLCM\n\n\nR\n\n\n\n\n\n\n\n\n\nJun 10, 2023\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nDissertation Defence\n\n\nTITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling\n\n\n\n\n\n\n\n\nOct 23, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nNSF Grant on Bayesian Cognitive Diagnosis\n\n\nData visualization using ggplot2\n\n\n\n\n\n\n\n\n\n\n\nMay 20, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Academia Institute’s Grant Fundings using R\n\n\n\n\n\n\nblog\n\n\nWeb Scrapping\n\n\n\nHow to use R for web scrapping\n\n\n\n\n\nMay 12, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nPower Analysis for Structural Equation Modeling\n\n\n\n\n\n\nR\n\n\nrshiny\n\n\nwebpower\n\n\nlavaan\n\n\nblog\n\n\ntutorial\n\n\n\nShowcase current software used for power analysis of Structural Equation Modeling\n\n\n\n\n\nApr 29, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n[Workshop] Creating Academic Blog via R\n\n\nThis post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.\n\n\n\nR\n\n\nGithub\n\n\nRstudio\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nApr 24, 2022\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nGradient Descent Algorithm via julia\n\n\nThis tutorial illustrate how to use julia to conduct a gradient descent algorithm\n\n\n\njulia\n\n\nalgorithm\n\n\n\n\n\n\n\n\n\nAug 30, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nHealth Care Data Analysis with Apple Watch\n\n\n\n\n\n\nblog\n\n\nR\n\n\nhealth\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nVisualization for Process Data\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\ntutorial\n\n\n\n\n\n\n\n\n\nJul 4, 2021\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\nJan 31, 2021\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nStudy Notes: gt package and format table\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\nMay 25, 2020\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nSome Thoughts After Reading \n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nNov 21, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nUse R as a bash language\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nNov 14, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Latent Attribute Network Analysis\n\n\n\n\n\n\nblog\n\n\nNetwork\n\n\nDCM\n\n\n\n\n\n\n\n\n\nOct 20, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nSMEP 2019 Poster Session Materials\n\n\n\n\n\n\nPoster\n\n\n\n\n\n\n\n\n\nOct 8, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Country own the most Liberty Nobel Prizes? France? Ireland?\n\n\n\n\n\n\nvisualization\n\n\nblog\n\n\nggplot2\n\n\n\n\n\n\n\n\n\nMay 20, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nMake a Game in R\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nApr 19, 2019\n\n\njihong\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce gganimate for Psychometric\n\n\n\n\n\n\nR\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 22, 2019\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nLasso Regression Example using glmnet package in R\n\n\n\n\n\n\nR\n\n\nmanual\n\n\n\n\n\n\n\n\n\nFeb 19, 2019\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nVisuliaztion of Item Information Curves In R\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nJan 10, 2019\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\n[Manual]Using Jags and R2jags in R\n\n\n\n\n\n\nManual\n\n\n\n\n\n\n\n\n\nSep 12, 2018\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce Descrepancy Measures\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\n\n\nSep 11, 2018\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nHow to do Data Cleaning in R\n\n\n\n\n\n\nblog\n\n\nR\n\n\ntidyverse\n\n\n\n\n\n\n\n\n\nSep 4, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nUpdating R Version Without missing packages\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nApr 29, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nMy New Shiny App Cut Score Consistency\n\n\n\n\n\n\nR\n\n\nShiny\n\n\n\n\n\n\n\n\n\nMar 10, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nAcademic Writing\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nFeb 11, 2018\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Profile Analysis using MCLUST (in R)\n\n\n\n\n\n\nR\n\n\nclustering\n\n\nlatent class\n\n\n\n\n\n\n\n\n\nNov 23, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nParental Involvement and Children Motivation\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nNov 22, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nEFA v.s. CFA\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nNov 20, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nOne Example of Measurement Invariance\n\n\n\n\n\n\nR\n\n\nSEM\n\n\nlavaan\n\n\n\n\n\n\n\n\n\nNov 12, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation of Lognormal distribution\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nNov 11, 2017\n\n\nJihong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Study of Linking Using Mirt\n\n\n\n\n\n\nR\n\n\nmirt\n\n\nlinking\n\n\n\n\n\n\n\n\n\nNov 10, 2017\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use lavaan package to perform Confirmatory Factor Analysis\n\n\n\n\n\n\nManual\n\n\nR\n\n\nLavaan\n\n\n\n\n\n\n\n\n\nOct 19, 2017\n\n\nJihong\n\n\n\n\n\n\n\n\n\n\n\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2015\n\n\nJihong Zhang\n\n\n\n\n\n\nNo matching items\n\n\n  \n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Blog"
+    ]
+>>>>>>> 7c5711d (update lecture 02)
   },
   {
     "objectID": "index.html",
@@ -361,7 +370,16 @@
     "href": "posts/index.html",
     "title": "Posts",
     "section": "",
+<<<<<<< HEAD
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nLecture 01\n\n\nCourse and Bayesian Analysis Introduction\n\n\n\n\n\n\n\n\n\n\n\nHow to set up High Performance Computing of U of Ark\n\n\n\nJan 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nESRM 6553: Adv. Multivariate\n\n\nSpring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229\n\n\n\nJan 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization for survey data\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA tutorial for forester R package\n\n\n\nJun 28, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOne Template for Quarto Report\n\n\n\nJun 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMoving My Website to Quarto\n\n\n\nJun 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA Conversation between R and Python on Data Analysis and Machine Learning\n\n\n\n\n\n\nJun 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Class Model: Batch Mplus using R on Mac\n\n\n\nJun 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nDissertation Defence\n\n\nTITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling\n\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nNSF Grant on Bayesian Cognitive Diagnosis\n\n\nData visualization using ggplot2\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Academia Institute’s Grant Fundings using R\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nPower Analysis for Structural Equation Modeling\n\n\n\nApr 29, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n[Workshop] Creating Academic Blog via R\n\n\nThis post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.\n\n\n\nApr 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nHealth Care Data Analysis with Apple Watch\n\n\n\nJul 6, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis\n\n\n\nJan 31, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\nStudy Notes: gt package and format table\n\n\n\nMay 25, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Latent Attribute Network Analysis\n\n\n\nOct 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Country own the most Liberty Nobel Prizes? France? Ireland?\n\n\n\nMay 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nMake a Game in R\n\n\n\nApr 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce gganimate for Psychometric\n\n\n\nFeb 22, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nLasso Regression Example using glmnet package in R\n\n\n\nFeb 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nVisuliaztion of Item Information Curves In R\n\n\n\nJan 10, 2019\n\n\n\n\n\n\n\n\n\n\n\n\n[Manual]Using Jags and R2jags in R\n\n\n\nSep 12, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce Descrepancy Measures\n\n\n\nSep 11, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHow to do Data Cleaning in R\n\n\n\nSep 4, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nMy New Shiny App Cut Score Consistency\n\n\n\nMar 10, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Profile Analysis using MCLUST (in R)\n\n\n\nNov 23, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nOne Example of Measurement Invariance\n\n\n\nNov 12, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Study of Linking Using Mirt\n\n\n\nNov 10, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use lavaan package to perform Confirmatory Factor Analysis\n\n\n\nOct 19, 2017\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n Back to top"
+=======
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nLecture 01\n\n\nCourse and Bayesian Analysis Introduction\n\n\n\n\n\n\n\n\n\n\n\nLecture 02\n\n\nIntroduction to Bayesian Concepts\n\n\n\n\n\n\n\n\n\n\n\nHow to set up High Performance Computing of U of Ark\n\n\n\nJan 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nESRM 6553: Adv. Multivariate\n\n\nSpring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229\n\n\n\nJan 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization for survey data\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA tutorial for forester R package\n\n\n\nJun 28, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOne Template for Quarto Report\n\n\n\nJun 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMoving My Website to Quarto\n\n\n\nJun 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA Conversation between R and Python on Data Analysis and Machine Learning\n\n\n\n\n\n\nJun 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Class Model: Batch Mplus using R on Mac\n\n\n\nJun 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nDissertation Defence\n\n\nTITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling\n\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nNSF Grant on Bayesian Cognitive Diagnosis\n\n\nData visualization using ggplot2\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Academia Institute’s Grant Fundings using R\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nPower Analysis for Structural Equation Modeling\n\n\n\nApr 29, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n[Workshop] Creating Academic Blog via R\n\n\nThis post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.\n\n\n\nApr 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nHealth Care Data Analysis with Apple Watch\n\n\n\nJul 6, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis\n\n\n\nJan 31, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nStudy Notes: gt package and format table\n\n\n\nMay 25, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Latent Attribute Network Analysis\n\n\n\nOct 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Country own the most Liberty Nobel Prizes? France? Ireland?\n\n\n\nMay 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nMake a Game in R\n\n\n\nApr 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce gganimate for Psychometric\n\n\n\nFeb 22, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nLasso Regression Example using glmnet package in R\n\n\n\nFeb 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nVisuliaztion of Item Information Curves In R\n\n\n\nJan 10, 2019\n\n\n\n\n\n\n\n\n\n\n\n\n[Manual]Using Jags and R2jags in R\n\n\n\nSep 12, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce Descrepancy Measures\n\n\n\nSep 11, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHow to do Data Cleaning in R\n\n\n\nSep 4, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nMy New Shiny App Cut Score Consistency\n\n\n\nMar 10, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Profile Analysis using MCLUST (in R)\n\n\n\nNov 23, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nOne Example of Measurement Invariance\n\n\n\nNov 12, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Study of Linking Using Mirt\n\n\n\nNov 10, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use lavaan package to perform Confirmatory Factor Analysis\n\n\n\nOct 19, 2017\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts"
+    ]
+>>>>>>> 7c5711d (update lecture 02)
   },
   {
     "objectID": "posts/2023-06-26-moving-to-quarto/index.html",
@@ -1390,6 +1408,180 @@
     "href": "links.html",
     "title": "About",
     "section": "",
+<<<<<<< HEAD
     "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+=======
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "About"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#todays-lecture-objectives",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#todays-lecture-objectives",
+    "title": "Lecture 02",
+    "section": "Today’s Lecture Objectives",
+    "text": "Today’s Lecture Objectives\n\nBayes’ Theorem\nLikelihood function, Posterior distribution\nHow to report posterior distribution of parameters\nBayesian update\n\nbut, before we begin…",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#quiz-what-is-bayesian",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#quiz-what-is-bayesian",
+    "title": "Lecture 02",
+    "section": "Quiz: What is Bayesian?",
+    "text": "Quiz: What is Bayesian?\n\nWhat are key components of Bayesian models?\n\nLikelihood function - data\nPrior distribution - belief / previous evidences of parameters\nPosterior distribution - information of parameters give our data\nPosterior predictive distribution - future / predicted data\n\nWhat are the differences between Bayesian with Frequentist analysis?\n\nprior distribution: Bayesian\nhypothesis of fixed parameters: frequentist\nestimation process: MCMC vs. MLE\nposterior distribution vs. point estimates of parameters\ncredibles interval (plausibility of the parameters having those values) vs. confidence interval (the proportion of infinite samples having the fixed parameters)",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayes-theorem-how-bayesian-statistics-work",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayes-theorem-how-bayesian-statistics-work",
+    "title": "Lecture 02",
+    "section": "Bayes’ Theorem: How Bayesian Statistics Work",
+    "text": "Bayes’ Theorem: How Bayesian Statistics Work\nBayesian methods rely on Bayes’ Theorem\n\\[\nP(\\theta | Data) = \\frac{P(Data|\\theta)P(\\theta)}{P(Data)} \\propto P(Data|\\theta) P(\\theta)\n\\]\nWhere:\n\nP: probability distribution function (PDF)\n\\(P(\\theta|Data)\\) : the posterior distribution of parameter \\(\\theta\\), given the observed data\n\\(P(Data|\\theta)\\): the likelihood function (conditional distributin) of the observed data, given the parameters\n\\(P(\\theta)\\): the prior distribution of parameter \\(\\theta\\)\n\\(P(Data)\\): the marginal distribution of the observed data",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used",
+    "title": "Lecture 02",
+    "section": "Bayesian Analysis: Why It Is Used?",
+    "text": "Bayesian Analysis: Why It Is Used?\nThere are at least four main reasons why people use Bayesian Analysis:\n\nMissing data\n\nMultiple imputation\nMore complicated model for certain types of missing data\n\nLack of software capable of handing large sized analyses\n\nHave a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used-cont.",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used-cont.",
+    "title": "Lecture 02",
+    "section": "Bayesian Analysis: Why It Is Used? (Cont.)",
+    "text": "Bayesian Analysis: Why It Is Used? (Cont.)\n\nNew complex models not available in frequentist framework\n\nHave a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)\n\nEnjoy the Bayesian thinking process\n\nIt is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used-cont.-1",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-why-it-is-used-cont.-1",
+    "title": "Lecture 02",
+    "section": "Bayesian Analysis: Why It Is Used? (Cont.)",
+    "text": "Bayesian Analysis: Why It Is Used? (Cont.)",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-issues",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-issues",
+    "title": "Lecture 02",
+    "section": "Bayesian Analysis: Issues",
+    "text": "Bayesian Analysis: Issues\n\nSubjective vs. Objective\n\nPrior distribution is subjective. It is based on your prior knowledge.\nHowever, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.\n\nComputationally Intensive\n\nIt is not a problem anymore. We have computers.\nBut we still need weeks or months to get results for some complated model and big data\n\nDifficult to understand",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-is-popular",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#bayesian-analysis-is-popular",
+    "title": "Lecture 02",
+    "section": "Bayesian Analysis is popular",
+    "text": "Bayesian Analysis is popular\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#what-topics-bayesian-analysis-can-cover",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#what-topics-bayesian-analysis-can-cover",
+    "title": "Lecture 02",
+    "section": "What topics Bayesian Analysis can cover?",
+    "text": "What topics Bayesian Analysis can cover?\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#next-class",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#next-class",
+    "title": "Lecture 02",
+    "section": "Next Class",
+    "text": "Next Class\nWe will talk about how Bayesian methods works in a little bit more technical way.",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#suggestions",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#suggestions",
+    "title": "Lecture 02",
+    "section": "Suggestions",
+    "text": "Suggestions\nYour opinions are very important to me. Feel free to let me know if you have any suggestions on the course.\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+>>>>>>> 7c5711d (update lecture 02)
   }
 ]

@@ -158,7 +158,7 @@ Weekly breakdown of topics and readings：
 |:-----|:------|:-----------------------------------------------------|:-----------------------------------------------|:---------------------------------------------|
 | 1    | 01/15 | No Class                                             |                                                |                                              |
 | 2    | 01/22 | Introduction to Bayesian Statistics Part I           | SR[^1] Chapter 1; BDA[^2] Chapter 1 (Optional) | [Lecture01_Jan22](./Lecture01/Lecture01.qmd) |
-| 3    | 01/29 | Introduction to Bayesian Statistics Part II          | SR Chapter 2                                   |                                              |
+| 3    | 01/29 | Introduction to Bayesian Statistics Part II          | SR Chapter 2                                   | [Lecture01_Jan29](./Lecture02/Lecture02.qmd) |
 | 4    | 02/05 | Bayesian Inference and Computational Methods I       | SR Chapter 3                                   |                                              |
 | 5    | 02/12 | Bayesian Inference and Computational Methods II      | SR Chapter 3                                   |                                              |
 | 6    | 02/19 | Bayesian Inference and Computational Methods III     | SR Chapter 9.2 & 9.3                           |                                              |
