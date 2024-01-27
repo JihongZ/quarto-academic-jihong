@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   
@@ -429,84 +494,489 @@ P(p_1|X) = \frac{P(X|p_1)P(p_1)}{P(X)} \propto P(X|p_1) P(p_1)
 \]</span></p></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="step-1-choose-the-likelihood-function-model" class="slide level2">
+<h2>Step 1: Choose the Likelihood function (Model)</h2>
 <ul>
-<li class="fragment"><p>The Likelihood function <span class="math inline">\(P(X|p_1)\)</span> follows Bernoulli distribution of N =5 samples:<br>
+<li class="fragment"><p>The Likelihood function <span class="math inline">\(P(X|p_1)\)</span> follows Binomial distribution of 3 succuess out of 5 samples:<br>
 <span class="math display">\[P(X|p_1) = \prod_{i =1}^{N=5} p_1^{X_i}(1-p_1)^{X_i}
 \\= (1-p_i) \cdot p_i \cdot (1-p_i) \cdot p_i \cdot p_i\]</span></p></li>
-<li class="fragment"><p>Question here: WHY USE BERNOULLI DISTRIBUTION?</p></li>
-<li class="fragment"><p>My answer: Bernoulli dist. has nice statistical probability. “Nice” means making sense in normal life– a common belief. For example, the <span class="math inline">\(p_1\)</span> value that maximizes the Bernoulli-based likelihood function is <span class="math inline">\(Mean(X)\)</span>, and the <span class="math inline">\(p_1\)</span> values that minimizes the Bernouli-based likelihood function is 0 or 1</p></li>
+<li class="fragment"><p>Question here: WHY USING BERNOULLI DISTRIBUTION (<em>Jacob Bernoulli, 1654-1705</em>)?</p></li>
+<li class="fragment"><p>My answer: Bernoulli dist. has nice statistical probability. “Nice” means making totally sense in normal life– a common belief. For example, the <span class="math inline">\(p_1\)</span> value that maximizes the Bernoulli-based likelihood function is <span class="math inline">\(Mean(X)\)</span>, and the <span class="math inline">\(p_1\)</span> values that minimizes the Bernoulli-based likelihood function is 0 or 1</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
+<h3 id="log-likelihood-function-along-parameter">Log-likelihood Function along “Parameter”</h3>
+<p><span class="math display">\[
+LL(p_1|\{0, 1, 0, 1, 1\})
+\]</span></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>p1 <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">21</span>)</span>
+<span id="cb1-2"><a></a>Likelihood <span class="ot">=</span> (p1)<span class="sc">^</span><span class="dv">3</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-3"><a></a><span class="fu">plot</span>(<span class="at">x =</span> p1, <span class="at">y =</span> <span class="fu">log</span>(Likelihood))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>p1[<span class="fu">which.max</span>(Likelihood)] <span class="co"># p1 = 0.6 = 2 / 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6</code></pre>
 </div>
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><h3 id="bayesian-thinking-process">Bayesian Thinking Process</h3>
-<h4 id="a-toy-example">A toy example:</h4>
-<p>I originally thought the ratio of male Asian faculty to female is about 1:2 (<strong>Prior</strong>). But the data we sampled from 2000 doctoral students suggested gender ratio is 1:1 (<strong>Data; Likelihood that the true ratio we don’t know</strong>). Based on Bayes’s rule, estimate for the ratio is probably 1:1.5 (<strong>Posterior</strong>) after combining these two statements.</p>
-</section>
-<section id="bayesian-analysis-why-it-is-used" class="slide level2">
-<h2>Bayesian Analysis: Why It Is Used?</h2>
-<p>There are at least four main reasons why people use Bayesian Analysis:</p>
-<ol type="1">
-<li class="fragment">Missing data
-<ul>
-<li class="fragment">Multiple imputation</li>
-<li class="fragment">More complicated model for certain types of missing data</li>
-</ul></li>
-<li class="fragment">Lack of software capable of handing large sized analyses
-<ul>
-<li class="fragment">Have a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!</li>
-</ul></li>
-</ol>
-</section>
-<section id="bayesian-analysis-why-it-is-used-cont." class="slide level2">
-<h2>Bayesian Analysis: Why It Is Used? (Cont.)</h2>
-<ol start="3" type="1">
-<li class="fragment">New complex models not available in frequentist framework
-<ul>
-<li class="fragment">Have a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)</li>
-</ul></li>
-<li class="fragment">Enjoy the Bayesian thinking process
-<ul>
-<li class="fragment">It is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.</li>
-</ul></li>
-</ol>
-</section>
-<section id="bayesian-analysis-why-it-is-used-cont.-1" class="slide level2">
-<h2>Bayesian Analysis: Why It Is Used? (Cont.)</h2>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
 
-<img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/DAG_BN.png" class="r-stretch"></section>
-<section id="bayesian-analysis-issues" class="slide level2">
-<h2>Bayesian Analysis: Issues</h2>
-<ol type="1">
-<li class="fragment">Subjective vs.&nbsp;Objective
+<h3 id="log-likelihood-function-along-data">Log-likelihood Function along “Data”</h3>
+<p><span class="math display">\[
+LL(Data|p_1 \in \{0, 0.2,0.4, 0.6, 0.8,1\})
+\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a>p1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb4-3"><a></a>nTrails <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb4-4"><a></a>nSuccess <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span>nTrails</span>
+<span id="cb4-5"><a></a>Likelihood <span class="ot">=</span> <span class="fu">sapply</span>(p1, \(x) <span class="fu">choose</span>(nTrails,nSuccess)<span class="sc">*</span>(x)<span class="sc">^</span>nSuccess<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span>(nTrails <span class="sc">-</span> nSuccess))</span>
+<span id="cb4-6"><a></a>Likelihood_forPlot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(Likelihood)</span>
+<span id="cb4-7"><a></a><span class="fu">colnames</span>(Likelihood_forPlot) <span class="ot">&lt;-</span> p1</span>
+<span id="cb4-8"><a></a>Likelihood_forPlot<span class="sc">$</span>Sample <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails), <span class="at">levels =</span> <span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails))</span>
+<span id="cb4-9"><a></a><span class="co"># plot</span></span>
+<span id="cb4-10"><a></a>Likelihood_forPlot <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Sample, <span class="at">names_to =</span> <span class="st">"p1"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-12"><a></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-13"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> <span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span>, <span class="at">color =</span> p1)) <span class="sc">+</span></span>
+<span id="cb4-14"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">group=</span>p1), <span class="at">size =</span> <span class="fl">1.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="step-2-choose-the-prior-distribution-for-p_1" class="slide level2">
+<h2>Step 2: Choose the Prior Distribution for <span class="math inline">\(p_1\)</span></h2>
+<p>We must now pick the prior distribution of <span class="math inline">\(p_1\)</span>:</p>
+<p><span class="math display">\[
+P(p_1)
+\]</span></p>
 <ul>
-<li class="fragment">Prior distribution is subjective. It is based on your prior knowledge.</li>
-<li class="fragment">However, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.</li>
-</ul></li>
-<li class="fragment">Computationally Intensive
+<li class="fragment"><p>Compared to likelihood function, we have much more choices. Many distributions to choose from</p></li>
+<li class="fragment"><p>To choose <u>prior distribution</u>, think about what we know about a “fair” die.</p>
 <ul>
-<li class="fragment">It is not a problem anymore. We have computers.</li>
-<li class="fragment">But we still need weeks or months to get results for some complated model and big data</li>
+<li class="fragment"><p>the probability of rolling a “1” is about <span class="math inline">\(\frac{1}{6}\)</span></p></li>
+<li class="fragment"><p>the probabilities much higher/lower than <span class="math inline">\(\frac{1}{6}\)</span> are very unlikely</p></li>
 </ul></li>
-<li class="fragment">Difficult to understand</li>
-</ol>
+<li class="fragment"><p>Let’s consider a Beta distribution:</p>
+<p><span class="math display">\[
+p_1 \sim Beta(\alpha, \beta)
+\]</span></p></li>
+</ul>
 </section>
-<section id="bayesian-analysis-is-popular" class="slide level2">
-<h2>Bayesian Analysis is popular</h2>
+<section class="slide level2">
 
-<img data-src="../Images/histogram_fundingamount.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</p></section>
-<section id="what-topics-bayesian-analysis-can-cover" class="slide level2">
-<h2>What topics Bayesian Analysis can cover?</h2>
+<h3 id="the-beta-distribution">The Beta Distribution</h3>
+<p>For parameters that range between 0 and 1, the beta distribution makes a good choice for prior distribution:</p>
+<p><span class="math display">\[
+P(p_1) = \frac{(p_1)^{a-1} (1-p_1)^{\beta-1}}{B(\alpha,\beta)}
+\]</span></p>
+<p>Where denominator <span class="math inline">\(B\)</span> is:</p>
+<p><span class="math display">\[
+B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+\]</span></p>
+<p>and (fun fact: derived by <em>Daniel Bernoulli (1700-1782)</em>),</p>
+<p><span class="math display">\[
+\Gamma(\alpha) = \int_0^{\infty}t^{\alpha-1}e^{-t}dt
+\]</span></p>
+</section>
+<section class="slide level2">
 
-<img data-src="../Images/circle_topics.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</p></section>
+<h3 id="more-beta-distribution">More Beta Distribution</h3>
+<ul>
+<li class="fragment"><p>The Beta distribution has a mean of <span class="math inline">\(\frac{\alpha}{\alpha+\beta}\)</span> and a mode of <span class="math inline">\(\frac{\alpha -1}{\alpha + \beta -2}\)</span> for <span class="math inline">\(\alpha &gt; 1\)</span> &amp; <span class="math inline">\(\beta &gt; 1\)</span>; (fun fact: when <span class="math inline">\(\alpha\ \&amp;\ \beta&lt; 1\)</span>, pdf is U-shape, what that mean?)</p></li>
+<li class="fragment"><p><span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are called <u>hyperparameters</u> of the parameter <span class="math inline">\(p_1\)</span>;</p></li>
+<li class="fragment"><p><u>Hyperparameters</u> are parameters of prior parameters ;</p></li>
+<li class="fragment"><p>When <span class="math inline">\(\alpha = \beta = 1\)</span>, the distribution is uniform distribution;</p></li>
+<li class="fragment"><p>To make sure <span class="math inline">\(P(p_1 = \frac{1}{6})\)</span> is the largest, we can:</p>
+<ul>
+<li class="fragment"><p>Many choices: <span class="math inline">\(\alpha =2\)</span> and <span class="math inline">\(\beta = 6\)</span> has the same mode as <span class="math inline">\(\alpha = 100\)</span> and <span class="math inline">\(\beta = 496\)</span>; (hint: <span class="math inline">\(\beta = 5\alpha - 4\)</span>)</p></li>
+<li class="fragment"><p>The differences between choices is how strongly we feel in our beliefs</p></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="how-strongly-we-believe-in-the-prior">How strongly we believe in the prior</h3>
+<ul>
+<li class="fragment"><p>The Beta distribution has a variance of <span class="math inline">\(\frac{\alpha\beta}{(\alpha+\beta)^2 (\alpha + \beta + 1)}\)</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Function for variance of Beta distribution</span></span>
+<span id="cb5-2"><a></a>varianceFun <span class="ot">=</span> <span class="cf">function</span>(alpha_beta){</span>
+<span id="cb5-3"><a></a>  alpha <span class="ot">=</span> alpha_beta[<span class="dv">1</span>]</span>
+<span id="cb5-4"><a></a>  beta <span class="ot">=</span> alpha_beta[<span class="dv">2</span>]</span>
+<span id="cb5-5"><a></a>  <span class="fu">return</span>((alpha <span class="sc">*</span> beta)<span class="sc">/</span>((alpha <span class="sc">+</span> beta)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(alpha <span class="sc">+</span> beta <span class="sc">+</span> <span class="dv">1</span>)))</span>
+<span id="cb5-6"><a></a>}</span>
+<span id="cb5-7"><a></a></span>
+<span id="cb5-8"><a></a><span class="co"># Multiple prior choices from uninformative to informative</span></span>
+<span id="cb5-9"><a></a>alpha_beta_choices <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb5-10"><a></a>  <span class="at">I_dont_trust =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>), </span>
+<span id="cb5-11"><a></a>  <span class="at">not_strong =</span>   <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">96</span>), </span>
+<span id="cb5-12"><a></a>  <span class="at">litte_strong =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">496</span>), </span>
+<span id="cb5-13"><a></a>  <span class="at">very_strong =</span>  <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">996</span>))</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a><span class="do">## Transform to data.frame for plot</span></span>
+<span id="cb5-16"><a></a>alpha_beta_variance_plot <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(alpha_beta_choices, varianceFun)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-17"><a></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-18"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Degree"</span>, <span class="at">values_to =</span> <span class="st">"Variance"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-19"><a></a>  <span class="fu">mutate</span>(<span class="at">Degree =</span> <span class="fu">factor</span>(Degree, <span class="at">levels =</span> <span class="fu">unique</span>(Degree))) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-20"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>(</span>
+<span id="cb5-21"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb5-22"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb5-23"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb5-24"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb5-25"><a></a>  ))</span>
+<span id="cb5-26"><a></a></span>
+<span id="cb5-27"><a></a>alpha_beta_variance_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb5-28"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Degree, <span class="at">y =</span> Variance)) <span class="sc">+</span></span>
+<span id="cb5-29"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Degree)) <span class="sc">+</span></span>
+<span id="cb5-30"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Alpha_Beta)) <span class="sc">+</span></span>
+<span id="cb5-31"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Variances along difference choices of alpha and beta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li class="fragment"><p>The smaller prior variance means the prior is more <u>informative</u></p>
+<ul>
+<li class="fragment"><p><u>Informative</u> priors are those that have relatively small variances</p></li>
+<li class="fragment"><p><u>UniInformative</u> priors are those that have relatively large variances</p></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="visualize-prior-distribution-pp_1">Visualize prior distribution <span class="math inline">\(P(p_1)\)</span></h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>dbeta <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta) {</span>
+<span id="cb6-2"><a></a>  <span class="co"># probability density function</span></span>
+<span id="cb6-3"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha, beta)</span>
+<span id="cb6-4"><a></a>  <span class="fu">return</span>(PDF)</span>
+<span id="cb6-5"><a></a>}</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-8"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
+<span id="cb6-9"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
+<span id="cb6-10"><a></a>)</span>
+<span id="cb6-11"><a></a>pdf_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
+<span id="cb6-12"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb6-14"><a></a>    <span class="fu">dbeta</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span>
+<span id="cb6-15"><a></a>  ))</span>
+<span id="cb6-16"><a></a></span>
+<span id="cb6-17"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
+<span id="cb6-18"><a></a>pdf_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-19"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-20"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
+<span id="cb6-21"><a></a><span class="fu">colnames</span>(pdf_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
+<span id="cb6-22"><a></a>pdf_forplot <span class="ot">&lt;-</span> pdf_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb6-23"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
+<span id="cb6-24"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb6-25"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb6-26"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb6-27"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb6-28"><a></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-29"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-30"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
+<span id="cb6-31"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
+<span id="cb6-32"><a></a></span>
+<span id="cb6-33"><a></a>pdf_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb6-34"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-35"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-36"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
+<span id="cb6-37"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
+<span id="cb6-38"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p><strong>Question: WHY NOT USE NORMAL DISTRIBUTION?</strong></p>
+</section>
+<section id="step-3-the-posterior-distribution" class="slide level2">
+<h2>Step 3: The Posterior Distribution</h2>
+<p>Choose a Beta distribution as the prior distribution of <span class="math inline">\(p_1\)</span> is very convenient:</p>
+<ul>
+<li class="fragment"><p>When combined with Bernoulli (Binomial) data likelihood, the <u>posterior distribution</u> (<span class="math inline">\(P(p_1|Data)\)</span>) can be derived analytically</p></li>
+<li class="fragment"><p>The posterior distribution is also a Beta distribution</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\alpha' = \alpha + \sum_{i=1}^{N}X_i\)</span> (<span class="math inline">\(\alpha'\)</span> is parameter of the posterior distribution)</p></li>
+<li class="fragment"><p><span class="math inline">\(\beta' = \beta + (N - \sum_{i=1}^{N}X_i)\)</span> (<span class="math inline">\(\beta'\)</span> is parameter of the posterior distribution)</p></li>
+</ul></li>
+<li class="fragment"><p>The Beta distribution is said to be a <u>conjugate prior</u> in Bayesian analysis: A prior distribution that leads to posterior distribution of the same family</p>
+<ul>
+<li class="fragment">Prior and Posterior distribution are all Beta distribution</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="visualize-the-posterior-distribution-pp_1data">Visualize the posterior distribution <span class="math inline">\(P(p_1|Data)\)</span></h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>dbeta_posterior <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta, data) {</span>
+<span id="cb7-2"><a></a>  alpha_new <span class="ot">=</span> alpha <span class="sc">+</span> <span class="fu">sum</span>(data) </span>
+<span id="cb7-3"><a></a>  beta_new <span class="ot">=</span> beta <span class="sc">+</span> (<span class="fu">length</span>(data) <span class="sc">-</span> <span class="fu">sum</span>(data) )</span>
+<span id="cb7-4"><a></a>  <span class="co"># probability density function</span></span>
+<span id="cb7-5"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha_new<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta_new<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha_new, beta_new)</span>
+<span id="cb7-6"><a></a>  <span class="fu">return</span>(PDF)</span>
+<span id="cb7-7"><a></a>}</span>
+<span id="cb7-8"><a></a><span class="co"># Observed data</span></span>
+<span id="cb7-9"><a></a>dat <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb7-10"><a></a></span>
+<span id="cb7-11"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-12"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
+<span id="cb7-13"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
+<span id="cb7-14"><a></a>)</span>
+<span id="cb7-15"><a></a></span>
+<span id="cb7-16"><a></a>pdf_posterior_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
+<span id="cb7-17"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-18"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb7-19"><a></a>    <span class="fu">dbeta_posterior</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta,</span>
+<span id="cb7-20"><a></a>                    <span class="at">data =</span> dat)</span>
+<span id="cb7-21"><a></a>  ))</span>
+<span id="cb7-22"><a></a></span>
+<span id="cb7-23"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
+<span id="cb7-24"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_posterior_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-25"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-26"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
+<span id="cb7-27"><a></a><span class="fu">colnames</span>(pdf_posterior_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
+<span id="cb7-28"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb7-29"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
+<span id="cb7-30"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb7-31"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb7-32"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb7-33"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb7-34"><a></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-35"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-36"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
+<span id="cb7-37"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
+<span id="cb7-38"><a></a></span>
+<span id="cb7-39"><a></a>pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb7-40"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-41"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
+<span id="cb7-43"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
+<span id="cb7-44"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>) <span class="sc">+</span></span>
+<span id="cb7-45"><a></a>  <span class="fu">labs</span>( <span class="at">y =</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="manually-calculate-summaries-of-the-posterior-distribution">Manually calculate summaries of the posterior distribution</h3>
+<p>To determine the estimate of <span class="math inline">\(p_1\)</span>, we need to summarize the posterior distribution:</p>
+<ul>
+<li class="fragment"><p>With prior hyperparameters <span class="math inline">\(\alpha = 2\)</span> and <span class="math inline">\(\beta = 6\)</span>:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\hat p_1 = \frac{2+3}{2+3+6+2}=\frac{5}{13} = .3846\)</span></p></li>
+<li class="fragment"><p>SD = 0.1300237</p></li>
+</ul></li>
+<li class="fragment"><p>With prior hyperparameters <span class="math inline">\(\alpha = 100\)</span> and <span class="math inline">\(\beta = 496\)</span>:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\hat p_1 = \frac{100+3}{100+3+496+2}=\frac{103}{601} = .1714\)</span></p></li>
+<li class="fragment"><p>SD = 0.0153589</p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>uninfo <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(2, 6)"</span>)</span>
+<span id="cb8-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo<span class="sc">$</span>p1 <span class="sc">*</span> uninfo<span class="sc">$</span>pdf)) <span class="co"># .3885</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sample Posterior Mean: 0.388500388484552"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>uninfo2 <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(100, 496)"</span>)</span>
+<span id="cb10-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo2<span class="sc">$</span>p1 <span class="sc">*</span> uninfo2<span class="sc">$</span>pdf)) <span class="co"># 0.1731</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sample Posterior Mean: 0.173112153145432"</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="stan-code-for-the-example-model">Stan Code for the example model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(cmdstanr)</span>
+<span id="cb12-2"><a></a><span class="fu">register_knitr_engine</span>(<span class="at">override =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-output.var="dice_model">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb13-1"><a></a><span class="kw">data</span> {</span>
+<span id="cb13-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N; <span class="co">// sample size</span></span>
+<span id="cb13-3"><a></a>  <span class="dt">array</span>[N] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt; y; <span class="co">// observed data</span></span>
+<span id="cb13-4"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; alpha; <span class="co">// hyperparameter alpha</span></span>
+<span id="cb13-5"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; beta; <span class="co">// hyperparameter beta</span></span>
+<span id="cb13-6"><a></a>}</span>
+<span id="cb13-7"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb13-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; p1; <span class="co">// parameters</span></span>
+<span id="cb13-9"><a></a>}</span>
+<span id="cb13-10"><a></a><span class="kw">model</span> {</span>
+<span id="cb13-11"><a></a>  p1 ~ beta(alpha, beta); <span class="co">// prior distribution</span></span>
+<span id="cb13-12"><a></a>  <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span>:N){</span>
+<span id="cb13-13"><a></a>    y[n] ~ bernoulli(p1); <span class="co">// model</span></span>
+<span id="cb13-14"><a></a>  }</span>
+<span id="cb13-15"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># mod &lt;- cmdstan_model('dice_model.stan')</span></span>
+<span id="cb14-2"><a></a>data_list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb14-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb14-4"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
+<span id="cb14-5"><a></a>  <span class="at">alpha =</span> <span class="dv">2</span>,</span>
+<span id="cb14-6"><a></a>  <span class="at">beta =</span> <span class="dv">6</span></span>
+<span id="cb14-7"><a></a>)</span>
+<span id="cb14-8"><a></a>data_list2 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb14-9"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb14-10"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
+<span id="cb14-11"><a></a>  <span class="at">alpha =</span> <span class="dv">100</span>,</span>
+<span id="cb14-12"><a></a>  <span class="at">beta =</span> <span class="dv">496</span></span>
+<span id="cb14-13"><a></a>)</span>
+<span id="cb14-14"><a></a>fit1 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb14-15"><a></a>  <span class="at">data =</span> data_list1,</span>
+<span id="cb14-16"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
+<span id="cb14-17"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb14-18"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb14-19"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
+<span id="cb14-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running MCMC with 4 parallel chains...
+
+Chain 1 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 2 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 3 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 4 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 1 finished in 0.0 seconds.
+Chain 2 finished in 0.0 seconds.
+Chain 3 finished in 0.0 seconds.
+Chain 4 finished in 0.0 seconds.
+
+All 4 chains finished successfully.
+Mean chain execution time: 0.0 seconds.
+Total execution time: 0.3 seconds.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>fit2 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb16-2"><a></a>  <span class="at">data =</span> data_list2,</span>
+<span id="cb16-3"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
+<span id="cb16-4"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb16-5"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb16-6"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
+<span id="cb16-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running MCMC with 4 parallel chains...
+
+Chain 1 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 2 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 3 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 4 Iteration:    1 / 2000 [  0%]  (Warmup) 
+Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) 
+Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) 
+Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) 
+Chain 1 finished in 0.0 seconds.
+Chain 2 finished in 0.0 seconds.
+Chain 3 finished in 0.0 seconds.
+Chain 4 finished in 0.0 seconds.
+
+All 4 chains finished successfully.
+Mean chain execution time: 0.0 seconds.
+Total execution time: 0.2 seconds.</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 id="uninformative-prior-distribution-2-6-and-posterior-distribution">Uninformative prior distribution (2, 6) and posterior distribution</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit1<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(2, 6)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using uninformative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>fit1<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 10
+  variable   mean median    sd   mad      q5    q95  rhat ess_bulk ess_tail
+  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 lp__     -9.18  -8.90  0.735 0.325 -10.6   -8.66   1.00    1736.    2219.
+2 p1        0.381  0.377 0.130 0.135   0.177  0.603  1.00    1499.    1691.</code></pre>
+</div>
+</div>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+<h4 id="informative-prior-distribution-100-496-and-posterior-distribution">Informative prior distribution (100, 496) and posterior distribution</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit2<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(100, 496)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using informative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>fit2<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 10
+  variable     mean   median     sd    mad       q5      q95  rhat ess_bulk
+  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1 lp__     -276.    -276.    0.764  0.310  -277.    -275.     1.00    1770.
+2 p1          0.171    0.170 0.0155 0.0153    0.146    0.196  1.00    1527.
+# ℹ 1 more variable: ess_tail &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="next-class" class="slide level2">
 <h2>Next Class</h2>
 <p>We will talk about how Bayesian methods works in a little bit more technical way.</p>

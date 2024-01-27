@@ -1582,6 +1582,84 @@
       "Lecture02",
       "Lecture 02"
     ]
+<<<<<<< HEAD
 >>>>>>> 7c5711d (update lecture 02)
+=======
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#log-likelihood-function-across-various-parameter",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#log-likelihood-function-across-various-parameter",
+    "title": "Lecture 02",
+    "section": "Log-likelihood Function Across Various “Parameter”",
+    "text": "Log-likelihood Function Across Various “Parameter”\n\np1 = seq(0, 1, length.out = 21)\nLikelihood = (p1)^3 * (1-p1)^2\nplot(x = p1, y = log(Likelihood))\n\np1[which.max(Likelihood)] # p1 = 0.6 = 2 / 5\n\n[1] 0.6",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#log-likelihood-function-across-various-data",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#log-likelihood-function-across-various-data",
+    "title": "Lecture 02",
+    "section": "Log-likelihood Function Across Various “Data”",
+    "text": "Log-likelihood Function Across Various “Data”\n\n\nCode\nlibrary(tidyverse)\np1 = c(0, 2, 4, 6, 8, 10) / 10\nnTrails = 5\nnSuccess = 0:nTrails\nLikelihood = sapply(p1, \\(x) choose(nTrails,nSuccess)*(x)^nSuccess*(1-x)^(nTrails - nSuccess))\nLikelihood_forPlot &lt;- as.data.frame(Likelihood)\ncolnames(Likelihood_forPlot) &lt;- p1\nLikelihood_forPlot$Sample = factor(paste0(nSuccess, \" out of \", nTrails), levels = paste0(nSuccess, \" out of \", nTrails))\n# plot\nLikelihood_forPlot %&gt;% \n  pivot_longer(-Sample, names_to = \"p1\") %&gt;% \n  mutate(`log(Likelihood)` = log(value)) %&gt;% \n  ggplot(aes(x = Sample, y = `log(Likelihood)`, color = p1)) +\n  geom_point(size = 2) +\n  geom_path(aes(group=p1), size = 1.3)",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-1-choose-the-likelihood-function-model",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-1-choose-the-likelihood-function-model",
+    "title": "Lecture 02",
+    "section": "Step 1: Choose the Likelihood function (Model)",
+    "text": "Step 1: Choose the Likelihood function (Model)\n\nThe Likelihood function \\(P(X|p_1)\\) follows Binomial distribution of 3 succuess out of 5 samples:\n\\[P(X|p_1) = \\prod_{i =1}^{N=5} p_1^{X_i}(1-p_1)^{X_i}\n\\\\= (1-p_i) \\cdot p_i \\cdot (1-p_i) \\cdot p_i \\cdot p_i\\]\nQuestion here: WHY USING BERNOULLI DISTRIBUTION (Jacob Bernoulli, 1654-1705)?\nMy answer: Bernoulli dist. has nice statistical probability. “Nice” means making totally sense in normal life– a common belief. For example, the \\(p_1\\) value that maximizes the Bernoulli-based likelihood function is \\(Mean(X)\\), and the \\(p_1\\) values that minimizes the Bernoulli-based likelihood function is 0 or 1",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-2-choose-the-prior-distribution-for-p_1",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-2-choose-the-prior-distribution-for-p_1",
+    "title": "Lecture 02",
+    "section": "Step 2: Choose the Prior Distribution for \\(p_1\\)",
+    "text": "Step 2: Choose the Prior Distribution for \\(p_1\\)\nWe must now pick the prior distribution of \\(p_1\\):\n\\[\nP(p_1)\n\\]\n\nCompared to likelihood function, we have much more choices. Many distributions to choose from\nTo choose prior distribution, think about what we know about a “fair” die.\n\nthe probability of rolling a “1” is about \\(\\frac{1}{6}\\)\nthe probabilities much higher/lower than \\(\\frac{1}{6}\\) are very unlikely\n\nLet’s consider a Beta distribution:\n\\[\np_1 \\sim Beta(\\alpha, \\beta)\n\\]",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-3-the-posterior-distribution",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html#step-3-the-posterior-distribution",
+    "title": "Lecture 02",
+    "section": "Step 3: The Posterior Distribution",
+    "text": "Step 3: The Posterior Distribution\nChoose a Beta distribution as the prior distribution of \\(p_1\\) is very convenient:\n\nWhen combined with Bernoulli (Binomial) data likelihood, the posterior distribution (\\(P(p_1|Data)\\)) can be derived analytically\nThe posterior distribution is also a Beta distribution\n\n\\(\\alpha' = \\alpha + \\sum_{i=1}^{N}X_i\\) (\\(\\alpha'\\) is parameter of the posterior distribution)\n\\(\\beta' = \\beta + (N - \\sum_{i=1}^{N}X_i)\\) (\\(\\beta'\\) is parameter of the posterior distribution)\n\nThe Beta distribution is said to be a conjugate prior in Bayesian analysis: A prior distribution that leads to posterior distribution of the same family\n\nPrior and Posterior distribution are all Beta distribution",
+    "crumbs": [
+      "Home",
+      "Contents",
+      "Posts",
+      "ESRM 6553: Adv. Multivariate",
+      "Lecture02",
+      "Lecture 02"
+    ]
+>>>>>>> 4e2808a (update lecture 02)
   }
 ]
