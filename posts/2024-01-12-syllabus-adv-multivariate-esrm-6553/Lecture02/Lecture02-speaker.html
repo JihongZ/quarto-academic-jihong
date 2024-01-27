@@ -602,8 +602,18 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <section class="slide level2">
 
 <h3 id="how-strongly-we-believe-in-the-prior">How strongly we believe in the prior</h3>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
-<li class="fragment"><p>The Beta distribution has a variance of <span class="math inline">\(\frac{\alpha\beta}{(\alpha+\beta)^2 (\alpha + \beta + 1)}\)</span></p>
+<li class="fragment">The Beta distribution has a variance of <span class="math inline">\(\frac{\alpha\beta}{(\alpha+\beta)^2 (\alpha + \beta + 1)}\)</span></li>
+<li class="fragment">The smaller prior variance means the prior is more <u>informative</u>
+<ul>
+<li class="fragment"><u>Informative</u> priors are those that have relatively small variances</li>
+<li class="fragment"><u>Uninformative</u> priors are those that have relatively large variances</li>
+</ul></li>
+<li class="fragment">Suppose we have four sets of hyperparameters choices: (2,6);(20,96);(100,496);(200,996)</li>
+</ul>
+</div><div class="column" style="width:50%;">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -636,8 +646,9 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <span id="cb5-27"><a></a>alpha_beta_variance_plot <span class="sc">%&gt;%</span> </span>
 <span id="cb5-28"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Degree, <span class="at">y =</span> Variance)) <span class="sc">+</span></span>
 <span id="cb5-29"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Degree)) <span class="sc">+</span></span>
-<span id="cb5-30"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Alpha_Beta)) <span class="sc">+</span></span>
-<span id="cb5-31"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Variances along difference choices of alpha and beta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-30"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Alpha_Beta), <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb5-31"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Variances along difference choices of alpha and beta"</span>) <span class="sc">+</span></span>
+<span id="cb5-32"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">21</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -646,13 +657,9 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 </figure>
 </div>
 </div>
-</div></li>
-<li class="fragment"><p>The smaller prior variance means the prior is more <u>informative</u></p>
-<ul>
-<li class="fragment"><p><u>Informative</u> priors are those that have relatively small variances</p></li>
-<li class="fragment"><p><u>UniInformative</u> priors are those that have relatively large variances</p></li>
-</ul></li>
-</ul>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 

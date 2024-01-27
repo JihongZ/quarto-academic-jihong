@@ -223,48 +223,56 @@ $$
 
 ### How strongly we believe in the prior
 
+::: columns
+::: {.column width="40%"}
 -   The Beta distribution has a variance of $\frac{\alpha\beta}{(\alpha+\beta)^2 (\alpha + \beta + 1)}$
-
-    ```{r}
-    #| code-fold: true
-    # Function for variance of Beta distribution
-    varianceFun = function(alpha_beta){
-      alpha = alpha_beta[1]
-      beta = alpha_beta[2]
-      return((alpha * beta)/((alpha + beta)^2*(alpha + beta + 1)))
-    }
-
-    # Multiple prior choices from uninformative to informative
-    alpha_beta_choices = list(
-      I_dont_trust = c(2, 6), 
-      not_strong =   c(20, 96), 
-      litte_strong = c(100, 496), 
-      very_strong =  c(200, 996))
-
-    ## Transform to data.frame for plot
-    alpha_beta_variance_plot <- t(sapply(alpha_beta_choices, varianceFun)) %>% 
-      as.data.frame() %>% 
-      pivot_longer(everything(), names_to = "Degree", values_to = "Variance") %>% 
-      mutate(Degree = factor(Degree, levels = unique(Degree))) %>% 
-      mutate(Alpha_Beta = c(
-        "(2, 6)",
-        "(20, 96)",
-        "(100, 496)",
-        "(200, 996)"
-      ))
-
-    alpha_beta_variance_plot %>% 
-      ggplot(aes(x = Degree, y = Variance)) +
-      geom_col(aes(fill = Degree)) +
-      geom_text(aes(label = Alpha_Beta)) +
-      labs(title = "Variances along difference choices of alpha and beta")
-    ```
-
 -   The smaller prior variance means the prior is more [informative]{.underline}
-
     -   [Informative]{.underline} priors are those that have relatively small variances
+    -   [Uninformative]{.underline} priors are those that have relatively large variances
+-   Suppose we have four sets of hyperparameters choices: (2,6);(20,96);(100,496);(200,996)
+:::
 
-    -   [UniInformative]{.underline} priors are those that have relatively large variances
+::: {.column width="50%"}
+  
+```{r, fig.width=10,fig.height=11}
+#| code-fold: true
+# Function for variance of Beta distribution
+varianceFun = function(alpha_beta){
+  alpha = alpha_beta[1]
+  beta = alpha_beta[2]
+  return((alpha * beta)/((alpha + beta)^2*(alpha + beta + 1)))
+}
+
+# Multiple prior choices from uninformative to informative
+alpha_beta_choices = list(
+  I_dont_trust = c(2, 6), 
+  not_strong =   c(20, 96), 
+  litte_strong = c(100, 496), 
+  very_strong =  c(200, 996))
+
+## Transform to data.frame for plot
+alpha_beta_variance_plot <- t(sapply(alpha_beta_choices, varianceFun)) %>% 
+  as.data.frame() %>% 
+  pivot_longer(everything(), names_to = "Degree", values_to = "Variance") %>% 
+  mutate(Degree = factor(Degree, levels = unique(Degree))) %>% 
+  mutate(Alpha_Beta = c(
+    "(2, 6)",
+    "(20, 96)",
+    "(100, 496)",
+    "(200, 996)"
+  ))
+
+alpha_beta_variance_plot %>% 
+  ggplot(aes(x = Degree, y = Variance)) +
+  geom_col(aes(fill = Degree)) +
+  geom_text(aes(label = Alpha_Beta), size = 6) +
+  labs(title = "Variances along difference choices of alpha and beta") +
+  theme(text = element_text(size = 21)) 
+```
+:::
+
+
+:::
 
 ------------------------------------------------------------------------
 
@@ -506,8 +514,6 @@ fit2$summary()
 
 ## Next Class
 
-We will talk about how Bayesian methods works in a little bit more technical way.
+We will talk more about how Bayesian model works .
 
-## Suggestions
 
-Your opinions are very important to me. Feel free to let me know if you have any suggestions on the course.
