@@ -127,7 +127,7 @@ $$
 p1 = seq(0, 1, length.out = 21)
 Likelihood = (p1)^3 * (1-p1)^2
 plot(x = p1, y = log(Likelihood))
-p1[which.max(Likelihood)] # p1 = 0.6 = 2 / 5
+p1[which.max(Likelihood)] # p1 = 0.6 = 3 / 5
 ```
 
 ------------------------------------------------------------------------
@@ -513,7 +513,6 @@ fit2$summary()
 
 ------------------------------------------------------------------------
 
-<<<<<<< HEAD
 ## Install CmdStan
 [cmdstanr Installation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan)
 [cmdstanr Users' Guide](https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation)
@@ -523,7 +522,6 @@ fit2$summary()
 We will talk more about how Bayesian model works. Thank you.
 
 
-=======
 ## Bonus: Conjugacy of Beta Distribution
 
 When the binomial likelihood is multiplied by the beta prior, the result is proportional to another beta distribution:
@@ -563,7 +561,3 @@ Today is a quick introduction to Bayesian Concept
     -   Likelihood is a sort of "scientific judgment" on the generation process of the data
 -   Posterior distribution: What we know about the parameter after seeing the data
 
-## Next Class
-
-We will talk about how psychometric model works .
->>>>>>> 00781310a6da9c119cf16b74e82d8c6d7c684129
