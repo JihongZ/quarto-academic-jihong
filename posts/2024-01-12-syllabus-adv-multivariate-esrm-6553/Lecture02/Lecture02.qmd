@@ -37,6 +37,7 @@ format:
 4.  Bayesian update
 
 but, before we begin...
+[Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
 
 ## Quiz: What is Bayesian?
 
@@ -44,7 +45,7 @@ but, before we begin...
 
     1.  Likelihood function - **data**
     2.  Prior distribution - belief / previous evidences of **parameters**
-    3.  Posterior distribution - information of parameters give our data
+    3.  Posterior distribution - updated information of parameters given our data and model
     4.  Posterior predictive distribution - future / predicted data
 
 2.  What are the differences between Bayesian with Frequentist analysis?
@@ -512,8 +513,12 @@ fit2$summary()
 
 ------------------------------------------------------------------------
 
+## Install CmdStan
+[cmdstanr Installation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan)
+[cmdstanr Users' Guide](https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation)
+
 ## Next Class
 
-We will talk more about how Bayesian model works .
+We will talk more about how Bayesian model works. Thank you.
 
 

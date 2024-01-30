@@ -384,8 +384,8 @@ ga('send', {
 </section><section id="jobs-submission" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="jobs-submission">
 <span class="header-section-number">4</span> Jobs submission</h2>
 <p>Please refer to this <a href="https://hpcwiki.uark.edu/doku.php?id=equipment">link</a> for detailed information about HPC equipment.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qsub</span> <span class="at">-q</span> q06h32c <span class="at">-l</span> walltime=1:00 <span class="at">-l</span> nodes=1:ppn=32 example.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The command above submitted the job to the q06h32c queue with a walltime of 1 minute requesting all 32 cores on 1 node.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">-q</span> q06h32c <span class="at">-l</span> walltime=1:00 <span class="at">-l</span> nodes=1:ppn=32 example.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>sbatch</code> command aims to submit a job with the job file <code>example.sh</code>. The command above submitted the job to the q06h32c queue with a wall-time of 1 minute requesting all 32 cores on 1 node.</p>
 <p>Here’s a simple example of a job script:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=mpi</span></span>
@@ -394,7 +394,7 @@ ga('send', {
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=2</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tasks-per-node=32</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=6:00:00</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load gcc/9.3.1 mkl/19.0.5 R/4.2.2</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load gcc/11.2.1 mkl/19.0.5 R/4.2.2</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> HelloWorld/example.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where <code>gcc</code> and <code>mkl</code> are required for R package installation. Please see <a href="https://hpcwiki.uark.edu/doku.php?id=r">here</a> for more details. <code>Rscript</code> is the command to execute R file. <code>HelloWorld/example.R</code> is the path of your R script. For <code>#SBATCH</code>, those are options for SLURM scheduler. Please see following summary or view <a href="https://slurm.schedmd.com/pdfs/summary.pdf">it</a> online:</p>
@@ -408,9 +408,9 @@ ga('send', {
 <p>This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
+<col style="width: 26%">
 <col style="width: 31%">
-<col style="width: 43%">
+<col style="width: 42%">
 </colgroup>
 <thead><tr class="header">
 <th>slurm commands</th>
