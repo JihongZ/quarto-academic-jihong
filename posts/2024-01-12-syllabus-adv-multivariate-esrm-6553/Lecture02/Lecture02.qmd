@@ -39,6 +39,10 @@ format:
 but, before we begin...
 [Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
 
+[Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
+
+[Anil Seth](https://www.anilseth.com/)
+
 ## Quiz: What is Bayesian?
 
 1.  What are key components of Bayesian models?
@@ -54,7 +58,7 @@ but, before we begin...
     2.  hypothesis of fixed parameters: frequentist
     3.  estimation process: MCMC vs. MLE
     4.  posterior distribution vs. point estimates of parameters
-    5.  credibles interval (plausibility of the parameters having those values) vs. confidence interval (the proportion of infinite samples having the fixed parameters)
+    5.  credible interval (plausibility of the parameters having those values) vs. confidence interval (the proportion of infinite samples having the fixed parameters)
 
 ## Bayes' Theorem: How Bayesian Statistics Work
 
@@ -105,9 +109,9 @@ Where:
     $$P(X|p_1) = \prod_{i =1}^{N=5} p_1^{X_i}(1-p_1)^{X_i} 
     \\= (1-p_i) \cdot p_i \cdot (1-p_i) \cdot p_i \cdot p_i$$
 
--   Question here: WHY USING BERNOULLI DISTRIBUTION (*Jacob Bernoulli, 1654-1705*)?
+-   Question here: WHY use Bernoulli (Binomial) Distribution (feat. *Jacob Bernoulli, 1654-1705*)?
 
--   My answer: Bernoulli dist. has nice statistical probability. "Nice" means making totally sense in normal life– a common belief. For example, the $p_1$ value that maximizes the Bernoulli-based likelihood function is $Mean(X)$, and the $p_1$ values that minimizes the Bernoulli-based likelihood function is 0 or 1
+-   My answer: Bernoulli dist. has nice statistical probability. "Nice" means making totally sense in normal life-- a common belief. For example, the $p_1$ value that maximizes the Bernoulli-based likelihood function is $Mean(X)$, and the $p_1$ values that minimizes the Bernoulli-based likelihood function is 0 or 1
 
 ------------------------------------------------------------------------
 
@@ -124,7 +128,6 @@ p1 = seq(0, 1, length.out = 21)
 Likelihood = (p1)^3 * (1-p1)^2
 plot(x = p1, y = log(Likelihood))
 p1[which.max(Likelihood)] # p1 = 0.6 = 2 / 5
-
 ```
 
 ------------------------------------------------------------------------
@@ -234,7 +237,6 @@ $$
 :::
 
 ::: {.column width="50%"}
-  
 ```{r, fig.width=10,fig.height=11}
 #| code-fold: true
 # Function for variance of Beta distribution
@@ -271,8 +273,6 @@ alpha_beta_variance_plot %>%
   theme(text = element_text(size = 21)) 
 ```
 :::
-
-
 :::
 
 ------------------------------------------------------------------------
@@ -513,6 +513,7 @@ fit2$summary()
 
 ------------------------------------------------------------------------
 
+<<<<<<< HEAD
 ## Install CmdStan
 [cmdstanr Installation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan)
 [cmdstanr Users' Guide](https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation)
@@ -522,3 +523,47 @@ fit2$summary()
 We will talk more about how Bayesian model works. Thank you.
 
 
+=======
+## Bonus: Conjugacy of Beta Distribution
+
+When the binomial likelihood is multiplied by the beta prior, the result is proportional to another beta distribution:
+
+-   $\text{Posterior} \propto \theta^x (1 - \theta)^{n-x} \times \theta^{\alpha - 1} (1 - \theta)^{\beta - 1}$
+-   Simplifies to: $\theta^{x + \alpha - 1} (1 - \theta)^{n - x + \beta - 1}$
+
+This is the kernel of a beta distribution with updated parameters $\alpha' = x + \alpha$ and $\beta' = n - x + \beta$. The fact that the posterior is still a beta distribution is what makes the beta distribution a conjugate prior for the binomial likelihood.
+
+> Human langauge: Both beta (prior) and binomial (likelihood) are so-called "exponetial family". The muliplication of them is still a "exponential family" distribution.
+
+------------------------------------------------------------------------
+
+## Bayesian updating
+
+We can use the posterior distribution as a prior!
+
+1\. data {0, 1, 0, 1, 1} with the prior hyperparameter {2, 6} -\> posterior parameter {5, 9}
+
+2\. new data {1, 1, 1, 1, 1} with the prior hyperparameter {5, 9} -\> posterior parameter {10, 9}
+
+3\. one more new data {0, 0, 0, 0, 0} with the prior hyperparameter {10, 9} -\> posterior parameter {10, 14}
+
+## Wrapping up
+
+Today is a quick introduction to Bayesian Concept
+
+-   Bayes' Theorem: Fundamental theorem of Bayesian Inference
+-   Prior distribution: What we know about the parameter before seeing the data
+    -   hyperparameter: parameter of the prior distribution
+    -   Uninformative prior: Prior distribution that does not convey any information about the parameter
+    -   Informative prior: Prior distribution that conveys information about the parameter
+    -   Conjugate prior: Prior distribution that makes the posterior distribution the same family as the prior distribution
+-   Likelihood: What the data tell us about the parameter
+    -   Likelihood function: Probability of the data given the parameter
+    -   Likelihood principle: All the information about the data is contained in the likelihood function
+    -   Likelihood is a sort of "scientific judgment" on the generation process of the data
+-   Posterior distribution: What we know about the parameter after seeing the data
+
+## Next Class
+
+We will talk about how psychometric model works .
+>>>>>>> 00781310a6da9c119cf16b74e82d8c6d7c684129
