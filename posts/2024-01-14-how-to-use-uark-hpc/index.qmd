@@ -1,5 +1,5 @@
 ---
-title: "How to set up High Performance Computing of U of Ark"
+title: "How to set up High Performance Computing of University of Arkansas"
 author: Jihong Zhang
 date: 2024-01-14
 ---
@@ -23,6 +23,32 @@ If your account was successfully setted up, passwords will be required. After yo
 ![Login Screenshot](login.png)
 
 Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.
+
+### SSH login without password
+1. Generate a pair of authentication keys in your local machine and do not enter a passphrase using the following codes:
+```bash
+ssh-keygen -t rsa   
+```
+
+Please note that make the passphrase empty:
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/[username]/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/[username]/.ssh/id_rsa
+Your public key has been saved in /Users/[username]/.ssh/id_rsa.pub
+```
+
+2. In your local machine, type in following commands to copy local public key to the hpc server.
+```bash
+scp ~/.ssh/id_rsa.pub [loginname]@hpc-portal2.hpc.uark.edu:/home/[loginname]/.ssh/authorized_keys
+```
+
+3. Now you should be able to login the hpc login node without password:
+```bash
+ssh [loginname]@hpc-portal2.hpc.uark.edu
+```
 
 ## Moving data
 
@@ -69,7 +95,7 @@ module load gcc/11.2.1 mkl/19.0.5 R/4.2.2
 Rscript HelloWorld/example.R
 ```
 
-Where `gcc` and `mkl` are required for R package installation. Please see [here](https://hpcwiki.uark.edu/doku.php?id=r) for more details. `Rscript` is the command to execute R file. `HelloWorld/example.R` is the path of your R script. For `#SBATCH`, those are options for SLURM scheduler. Please see following summary or view [it](https://slurm.schedmd.com/pdfs/summary.pdf) online:
+Where `gcc` and `mkl` are required for R package installation (Note: To the date, gcc/11.2.1 is the latest version which can compile the `cmdstan` successfully.). Please see [here](https://hpcwiki.uark.edu/doku.php?id=r) for more details. `Rscript` is the command to execute R file. `HelloWorld/example.R` is the path of your R script. For `#SBATCH`, those are options for SLURM scheduler. Please see following summary or view [it](https://slurm.schedmd.com/pdfs/summary.pdf) online:
 
 ```{r, echo=FALSE}
 xfun::embed_file("summary.pdf")
