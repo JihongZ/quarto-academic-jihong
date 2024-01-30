@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.547">
+  <meta name="generator" content="quarto-1.3.427">
 
   <meta name="author" content="Jihong Zhang">
   <meta name="dcterms.date" content="2022-10-24">
@@ -35,7 +35,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -192,8 +191,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -364,7 +362,7 @@
   <link href="../../site_libs/ionrangeslider-css-2.3.1/css/ion.rangeSlider.css" rel="stylesheet">
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Dissertation Defence">
 <meta property="og:description" content="TITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling">
-<meta property="og:site_name" content="Dr. Jihong Zhang">
+<meta property="og:site-name" content="Dr. Jihong Zhang">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Dissertation Defence">
 <meta name="twitter:description" content="TITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling">
 <meta name="twitter:creator" content="@jihongzgamma">
@@ -460,10 +458,9 @@ Jihong Zhang
 </section>
 <section id="overview-proposed-approach" class="slide level2" data-number="1.3">
 <h2><span class="header-section-number">1.3</span> Overview: Proposed Approach</h2>
-<div class="cell" data-reveal="true" data-fig-width="10" data-layout-align="center">
+<div class="cell" data-reveal="true" data-fig-width="10">
 <div class="cell-output-display">
 <div>
-<p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   style C fill:#99ff99,stroke:#333,stroke-width:2px
@@ -501,7 +498,6 @@ Jihong Zhang
   H &amp; M --&gt; N{Decision}
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -572,9 +568,9 @@ Jihong Zhang
 </ol>
 </div><div class="column">
 <p><strong>Q-matrix</strong></p>
-<div class="cell quarto-layout-panel" data-layout-ncol="5">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <figcaption>Correct model</figcaption>
@@ -582,7 +578,7 @@ Jihong Zhang
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <figcaption>10% underspecify</figcaption>
@@ -590,7 +586,7 @@ Jihong Zhang
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <figcaption>20% underspecify</figcaption>
@@ -598,7 +594,7 @@ Jihong Zhang
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <figcaption>10% misspecify</figcaption>
@@ -606,7 +602,7 @@ Jihong Zhang
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <figcaption>20% misspecify</figcaption>
@@ -636,14 +632,10 @@ Jihong Zhang
 <section id="summary-of-posterior-predictive-m2-500-draws" class="slide level2" data-number="3.1">
 <h2><span class="header-section-number">3.1</span> Summary of Posterior Predictive M2 (500 draws)</h2>
 <div class="cell">
-<div id="tbl-table-1" class="cell quarto-float">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across conditions
-</figcaption>
-<div aria-describedby="tbl-table-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell" data-quarto-postprocess="true" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
+<div id="tbl-table-1">
+<table data-quarto-postprocess="true" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
+<caption>Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across conditions</caption>
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
 <tr class="header">
 <th rowspan="2" data-quarto-table-cell-role="th" style="text-align: left; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;"></th>
@@ -747,8 +739,6 @@ Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across condition
 </table>
 </div>
 </div>
-</figure>
-</div>
 </div>
 <aside class="notes">
 <p>This table presents the posterior predictive M2 results for all six models across different conditions. Upper tables is for skill correlation equals to .25. Lower table is for .5</p>
@@ -768,7 +758,7 @@ Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across condition
 <section id="path-plot-for-pp-m2" class="slide level2" data-number="3.2">
 <h2><span class="header-section-number">3.2</span> Path plot for PP-M2</h2>
 
-<img data-src="images/ppm2summary.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Title: Path Plot for Average Posterior Predictive M2</p></section>
+<img data-src="images/ppm2summary.png" class="r-stretch quarto-figure-center"><p class="caption">Title: Path Plot for Average Posterior Predictive M2</p></section>
 <section id="findings" class="slide level2" data-number="3.3">
 <h2><span class="header-section-number">3.3</span> Findings</h2>
 <ol type="1">
@@ -785,14 +775,10 @@ Table&nbsp;1: Mean and SD of Posterior Predictive M2 for Models across condition
 <section id="compare-ks-pp-m2-to-other-methods" class="slide level2" data-number="3.4">
 <h2><span class="header-section-number">3.4</span> Compare KS-PP-M2 to other methods</h2>
 <div class="cell">
-<div id="tbl-table-2" class="cell quarto-float">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Mean and SD of Model Selection Indices By Models across conditions
-</figcaption>
-<div aria-describedby="tbl-table-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell" data-quarto-postprocess="true" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
+<div id="tbl-table-2">
+<table data-quarto-postprocess="true" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
+<caption>Table&nbsp;2: Mean and SD of Model Selection Indices By Models across conditions</caption>
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
 <tr class="header">
 <th rowspan="2" data-quarto-table-cell-role="th" style="text-align: left; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden;"></th>
@@ -915,8 +901,6 @@ Table&nbsp;2: Mean and SD of Model Selection Indices By Models across conditions
 
 </table>
 </div>
-</div>
-</figure>
 </div>
 </div>
 <aside class="notes">
@@ -1063,7 +1047,7 @@ Table&nbsp;2: Mean and SD of Model Selection Indices By Models across conditions
 </section>
 <section id="reference" class="slide level2 smaller scrollable" data-number="6.1">
 <h2><span class="header-section-number">6.1</span> Reference</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-gelman2006" class="csl-entry" role="listitem">
 Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge University Press.
 </div>
@@ -1195,7 +1179,7 @@ Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multil
 </div>
 </div>
 <div class="cell panel-fill">
-<div class="cell-output-display no-overflow-x">
+<div class="cell-output-display">
 <div id="kstext" class="shiny-html-output"></div>
 </div>
 <div class="cell-output-display">
@@ -1203,11 +1187,9 @@ Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multil
 </div>
 </div>
 </div>
-<div class="quarto-auto-generated-content">
-<p><img src="uiowa.png" class="slide-logo"></p>
-<div class="footer footer-default">
+
+<img src="uiowa.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Thesis Defence 2022</p>
-</div>
 </div>
 
 </section></section>
@@ -1240,6 +1222,7 @@ Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multil
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1539,9 +1522,10 @@ Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multil
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1551,17 +1535,8 @@ Gelman, A., &amp; Hill, J. (2006). <em>Data Analysis Using Regression and Multil
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
