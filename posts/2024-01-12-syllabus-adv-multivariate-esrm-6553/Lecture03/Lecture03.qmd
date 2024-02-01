@@ -36,6 +36,9 @@ format:
 
 but, before we begin...
 
+1.  Go through qmd file [Lecture03.qmd]{.underline};
+2.  Download R file [DietDataExample.R]{.underline} and data file [DietData.csv]{.underline}
+
 ## Quiz:
 
 1.  What is a conjugate prior?
@@ -53,7 +56,7 @@ but, before we begin...
 Today, we dive deeper into the estimation process.
 
 1.  Bayesian analysis is all about estimating the **posterior distribution**.
-2.  Up until now, we've worked with the posterior distribution that are well-know
+2.  Up until now, we've worked with the posterior distribution that are well-known
     -   Beta-Binomial conjugate pairs had a Beta posterior distribution
 
     -   In general, likelihood distributions from the exponential family have conjugate priors
@@ -162,5 +165,333 @@ Information about data:
     3.  HeightIN: The respondents' height in inches
     4.  WeightLB (*Dependent Variable*): The respondents' weight in pounds
 -   **Research Question**: [Are there differences in final weights between the three diet groups, and, if so, what the nature of the differences?]{.underline}
+-   Before we conduct the analysis, let's look at the data
+
+------------------------------------------------------------------------
+
+### Visualizing Data: *WeightLB* variable
+
+```{r}
+library(ggplot2) # R package for data visualization
+# read in data
+dat <- read.csv("Code/DietData.csv")
+dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
+head(dat)
+
+# Histplot for WeightLB - Dependent Variable
+ggplot(dat) +
+  geom_histogram(aes(x = WeightLB, y = ..density..), position = "identity", binwidth = 20, fill = 'grey', col = 'grey') +
+  geom_density(aes(x = WeightLB), alpha = .2, size = 1.2) +
+  theme_classic()
+```
+
+------------------------------------------------------------------------
+
+### Visualize Data: HeightIN Variable
+
+```{r}
+# Histgram for HeightIN - Independent Variable
+ggplot(dat) +
+  geom_histogram(aes(x = HeightIN, y = ..density..), position = "identity", binwidth = 2, fill = 'grey', col = 'grey') +
+  geom_density(aes(x = HeightIN), alpha = .2, size = 1.2) +
+  theme_classic()
+```
+
+------------------------------------------------------------------------
+
+### Visualize Data: WeightLB by DietGroup
+
+```{r}
+# Histgram for WeightLB x Group
+ggplot(dat, aes(x = WeightLB, fill = DietGroup, col = DietGroup)) +
+  geom_histogram(aes(y = ..density..), position = "identity", binwidth = 20, alpha = 0.3) +
+  geom_density(alpha = .2, size = 1.2) +
+  theme_classic()
+```
+
+------------------------------------------------------------------------
+
+### Visualizing Data: WeightLB by HeightIN by DietGroup
+
+```{r}
+# Histgram for WeightLB x HeightIN x Group
+ggplot(dat, aes(y = WeightLB, x = HeightIN, col = DietGroup, shape = DietGroup)) +
+  geom_smooth(method = 'lm', se = FALSE) +
+  geom_point() +
+  theme_classic()
+```
+
+------------------------------------------------------------------------
+
+### Class Discussion: What do we do?
+
+Now, your turn to answer (statistical) questions:
+
+1.  What type of analysis seems most appropriate for these data?
+2.  Is the dependent variable (**WeightLB**) is appropriate as-is for such analysis or does it need transformed?
+3.  Are the independent variables (**HeightIN, DietGroup**) is appropriate as-is for such analysis or does it need transformed?
+
+Scientific Judgement...
+
+------------------------------------------------------------------------
+
+### Linear Model with
+
+```{r}
+# Linear Model with Least Squares
+## Center independent variable - HeightIN for better interpretation
+dat$HeightIN <- dat$HeightIN - 60
+
+## an empty model suggested by data
+EmptyModel <- lm(WeightLB ~ 1, data = dat)
+
+## Examine assumptions and leverage of fit
+### Residual plot, Q-Q residuals, Scale-Location
+# plot(EmptyModel)
+
+## Look at ANOVA table
+### F-values, Sum/Mean of square of residuals
+# anova(EmptyModel)
+
+## look at parameter summary
+summary(EmptyModel)
+
+model.matrix(EmptyModel)
+```
+
+------------------------------------------------------------------------
+
+### Path Diagram of the Full Model
+
+```{mermaid}
+%%| echo: false
+flowchart LR
+  id1[(Empty Model)] == from simple to complex ==> id2[(Full Model)]
+```
+
+Full model includes all effects (main effects, interaction effect):
+
+1.  What each arrow means? how to interpret them?
+2.  Can the three interaction term be included in the model? why?
+
+```{mermaid}
+%%| echo: false
+graph LR;
+  HeightIN60 --> WeightLB;
+  DietGroup2 --> WeightLB;
+  DietGroup3 --> WeightLB;
+  HeightIN60xDietGroup2 --> WeightLB;
+  HeightIN60xDietGroup3 --> WeightLB;
+  HeightIN60xDietGroup2xDietGroup3 x-.-x WeightLB;
+```
+
+------------------------------------------------------------------------
+
+### Steps in an MCMC Analysis
+
+1.  Model Building:
+    -   Specify the model
+
+    -   Specify prior distribution for all parameters
+
+    -   Build model syntax as needed
+2.  Model Estimation:
+    -   Specify warmup/burnin and sampling period lengths
+
+    -   Run Markov chains
+3.  Model Evaluation:
+    -   Evaluate chain convergence
+
+    -   Interpret/report results
+
+------------------------------------------------------------------------
+
+### Specified the Model
+
+-   To begin, let's start with an empty model and build up from there
+
+-   Let's examine the linear model we seek to estimate:
+
+    $$
+    \text{WeightLB}_i = \beta_0 + e_i
+    $$
+
+    Where: $e_i \sim N(0, \sigma^2_{e})$
+
+-   Questions here:
+
+    -   What are the variables in this analysis?
+
+    -   What are the parameters in this analysis?
+
+------------------------------------------------------------------------
+
+## Introduction to Stan
+
+-   Stan is an MCMC estimation program
+
+    -   Most recent; has many convenient features
+
+    -   Actually does several methods of estimation (ML, Variational Bayes)
+
+-   You create a model using Stan's syntax
+
+    -   Stan translates your model to a custom-built C++ syntax
+
+    -   Stan then compiles your model into its own executable program
+
+-   You then run the program to estimate your model
+
+    -   If you use R, the interface can be seamless
+
+------------------------------------------------------------------------
+
+### Stan and Rstudio
+
+::: columns
+::: {.column width="50%"}
+-   Option 1: Stan has its own syntax which can be built in stand-alone text files (.stan)
+
+    -   Rstudio will let you create a stan file in the new `File` menu
+
+    -   Rstudio also has syntax highlighting in Stan files
+
+    -   Save `.stan` to the same path of your `.r`
+
+-   Option 2: You can also use Stan in a interactive way in **qmd** file
+
+    -   Which is helpful when you want to test multiple stan models and report your results at the same time
+:::
+
+::: {.column width="50%"}
+![Create a new Stan file in Rstudio](Fig2_CreateStanFile.png){width="200"}
+
+![Stan and R code blocks in qmd file](Fig2_StanCodeinQmd.png){width="450"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+### Stan Syntax
+
+```{r}
+#| echo: false
+library(cmdstanr)
+register_knitr_engine(override = FALSE) 
+```
+
+A Stan file saved as `EmptyModel.stan`
+
+-   Each line ends with a semi colon `;`
+-   Comments are put in with `//`
+-   Each block starts with `block type` and is surrounded by curly brakets `{}`
+
+```{cmdstan, output.var='EmptyModel'}
+
+data {  //#<1>
+  int<lower=0> N; //#<2>
+  vector[N] y; // #<3>
+}
+parameters { //#<4>
+  real beta0; //#<5> 
+  real<lower=0> sigma; //#<6> 
+}
+model { // #<7>
+  beta0 ~ normal(0, 1000); //#<8>
+  sigma ~ uniform(0, 100000); // #<9>
+  y ~ normal(beta0, sigma); // #<10>
+}
+```
+
+1.  the `data` block include the observed information
+2.  sample size (declared as a integer value)
+3.  dependent variable (declared as vector with the length as sample size)
+4.  the `parameter` block includes all parameters we want to estimate
+5.  intercept parameter
+6.  standard deviation of residuals
+7.  the `model` block includes the prior information and likelihood
+8.  prior distribution for `beta_0`
+9.  prior distribution for SD of residuals
+10. likelihood function for observed data
+
+------------------------------------------------------------------------
+
+### Stan Data and Parameter Delcaration
+
+```{r}
+#| eval: false
+data {
+  int<lower=0> N; 
+  vector[N] y; 
+}
+```
+
+Like many compiled languages (e.g., Java, C++), Stan expects you to declare what types of data/parameters you are defining:
+
+::: nonincremental
+-   `int`: Integer values (no decimals)
+-   `real`: Floating point numbers
+-   `vector`: A one-dimensional set of real valued numbers
+:::
+
+Sometimes, additional definitions are provided giving the range of the variable (or restricting the set of starting values):
+
+::: nonincremental
+-   `real<lower=0> signa` ;
+:::
+
+See [here](https://mc-stan.org/docs/reference-manual/data-types.html) for more information about data types in Stan.
+
+For `vector` or `matrix` or `array` , we may need to add size to tell Stan how many elements it has.
+
+::: nonincremental
+-   `vector[N]` has N elements
+:::
+
+------------------------------------------------------------------------
+
+### Stan Data and Prior Distributions
+
+```{r}
+#| eval: false
+model {
+  beta0 ~ normal(0, 1000);
+  sigma ~ uniform(0, 100000);
+  y ~ normal(beta0, sigma);
+}
+```
+
+-   In the model block, we need to define the prior distribution for the model and the priors
+
+    -   The left-hand side is either defined in data or parameters
+
+    -   The right-hand side is a distribution included in Stan
+
+        -   You can define your own distribution (see [here](https://mc-stan.org/docs/functions-reference/index.html) for more information)
+
+-   If you have hyperparameters, you can consider them as same as parameters
+
+```{r}
+#| eval: false
+data {
+  ...
+  real<lower=0> betaSigma; #<1>
+  real<lower=0> sigmaMax;  #<2>
+}
+model {
+  beta0 ~ normal(0, betaSigma);
+  sigma ~ uniform(0, sigmaMax);
+  ...
+}
+```
+
+1.  You provide Stan with the SD of intercept
+2.  You provide Stan with the maximum of sigma
+
+------------------------------------------------------------------------
+
+### From Stan Syntax to Compilation
+
+<https://jonathantemplin.github.io/Bayesian-Psychometric-Modeling-Course-Fall2022/lectures/lecture03/03_MCMC_and_Stan.html#/stan-data-and-parameter-delcaration/> <!--#  -->
 
 ## Wrapping up
