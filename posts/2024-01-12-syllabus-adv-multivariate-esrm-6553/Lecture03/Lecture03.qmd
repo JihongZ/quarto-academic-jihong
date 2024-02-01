@@ -55,10 +55,14 @@ Today, we dive deeper into the estimation process.
 1.  Bayesian analysis is all about estimating the **posterior distribution**.
 2.  Up until now, we've worked with the posterior distribution that are well-know
     -   Beta-Binomial conjugate pairs had a Beta posterior distribution
-    -   In general, likelihood distributions from the exponential family have conjugate priors 
-    - > Conjugate prior: the family of the prior is equivalent to the family of posterior.
 
------------------------------------------------------------------------- 
+    -   In general, likelihood distributions from the exponential family have conjugate priors
+
+    -   
+
+        > Conjugate prior: the family of the prior is equivalent to the family of posterior.
+
+------------------------------------------------------------------------
 
 ### Why not keep using conjugate priors for all scenarios?
 
@@ -72,40 +76,91 @@ Today, we dive deeper into the estimation process.
 ------------------------------------------------------------------------
 
 ### MCMC algorithm
-::::{.columns}
-:::{.column width='50%'}
-1. MCMC algorithm interactively draws samples from the posterior distribution
-    - For fairly simplistic models, each iteration has independent samples
-    - Most models have some layers of dependency included
-        - which can slow down the sample process from the posterior distribution
-    - One problem of slowness of MCMC is high-dimensional problems
-2. This plot shows one variant of MCMC - Metropolis sampling draws for two highly correlated parameters
+
+::: columns
+::: {.column width="50%"}
+1.  MCMC algorithm interactively draws samples from the posterior distribution
+    -   For fairly simplistic models, each iteration has independent samples
+    -   Most models have some layers of dependency included
+        -   which can slow down the sample process from the posterior distribution
+    -   One problem of slowness of MCMC is high-dimensional problems
+2.  This plot shows one variant of MCMC - Metropolis sampling draws for two highly correlated parameters
 :::
 
-:::{.column width='50%'}
+::: {.column width="50%"}
 ![Metropolis chains under high correlations](./Fig1_MCMCContour.png)
 :::
-
-::::
+:::
 
 ------------------------------------------------------------------------
 
 ### Variations of MCMC algorithms
 
-- Most of these specific algorithms use one of two types sampling:
-    1. Direct sampling from the posterior distribution (i.e., *Gibbs sampling*)
-        - Often used when conjugate priors are specified
-        - Popular software: BUGS, JAGS, Mplus
-    2. Indirect (rejection-based) sampling from the posterior distribution (e.g, Metropolis-hastings, Hamiltonian Monte Carlo)
-        - Popular software: Stan
+-   Most of these specific algorithms use one of two types sampling:
+    1.  Direct sampling from the posterior distribution (i.e., *Gibbs sampling*)
+        -   Often used when conjugate priors are specified
+        -   Popular software: BUGS, JAGS, Mplus
+    2.  Indirect (rejection-based) sampling from the posterior distribution (e.g, Metropolis-Hastings, Hamiltonian Monte Carlo)
+        -   Popular software: Stan
 
 ------------------------------------------------------------------------
-<!-- https://jonathantemplin.github.io/Bayesian-Psychometric-Modeling-Course-Fall2022/lectures/lecture03/03_MCMC_and_Stan.html#/mcmc-algorithms -->
 
 ### Making MCMC Algorithms
 
-- Efficiency is the main reas
+-   Efficiency is the main reason for many algorithms
+    -   Efficiency in this context: How quickly the algorithm converges and provides adequate coverage ("sketching") of the posterior distribution
+    -   No one algorithm is uniformly most efficient for all models (here model = likelihood $\times$ prior)
+-   The good news is that many software packages (stan, JAGS, Mplus, especially) don't make you choose which specific algorithm to use
+-   The bad news is that sometimes your model may take a large amount of time to reach convergence (think days or weaks)
+-   Alternatively, you can code your own custom algorithm to make things run smoother (different priors/ sampling strategies)
 
+------------------------------------------------------------------------
+
+### Commonalities Across MCMC Algorithms
+
+-   Despite having fairly broad differences regarding how algorithms sample from the posterior distribution, there are quite a few things that are similar across algorithms:
+
+    1.  A period of the Markov chain where sampling is not directly from the posterior
+
+        -   The **burnin** period (sometimes coupled with other tuning periods and called **warmup**)
+
+    2.  Methods used to assess convergence of the chain to the posterior distribution
+
+        -   Often involving the need to use multiple chains with independent and differing starting values
+
+    3.  Summaries of the posterior distribution
+
+-   Further, rejection-based sampling algorithms (e.g., Metropolis) often need a tuning period to make the sampling more efficient
+
+    -   The tuning period comes before the algorithm begins its *burnin* period
+
+------------------------------------------------------------------------
+
+### MCMC Demonstration
+
+-   To demonstrate each type of algorithm, we will use a model for a normal distribution
+
+    1.  We will investigate each, brief
+
+    2.  We will then switch over to stan to show the syntax and let stan work
+
+    3.  Finnaly, we will conclude by talking about assessing convergence and how to report parameter estimates
+
+------------------------------------------------------------------------
+
+## Example Data: Post-Diet Weights
+
+Download example data [UCLA website](https://stats.idre.ucla.edu/spss/library/spss-libraryhow-do-i-handle-interactions-of-continuous-andcategorical-variables/)
+
+Information about data:
+
+-   In this example data file, it contains **30** subjects who used one of three diets: diet 1 (diet=1), diet 2 (diet=2), and a control group (diet=3).
+-   The file **DietData.csv** contains the data we needed.
+-   Variables in the data set are:
+    1.  Respondent: Respondent ID 1-30
+    2.  DietGroup: 1, 2, 3 representing the group to which a respondent was assigned
+    3.  HeightIN: The respondents' height in inches
+    4.  WeightLB (*Dependent Variable*): The respondents' weight in pounds
+-   **Research Question**: [Are there differences in final weights between the three diet groups, and, if so, what the nature of the differences?]{.underline}
 
 ## Wrapping up
-
