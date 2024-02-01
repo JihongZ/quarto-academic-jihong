@@ -4,7 +4,8 @@ subtitle: "Spring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229"
 author: "Dr. Jihong Zhang"
 date: "Jan 13 2024" 
 format: 
-  html: default
+  html: 
+    page-layout: full
 ---
 
 ![](Images/UA_Logo_Horizontal.png){width="2700"}
@@ -163,7 +164,7 @@ Weekly breakdown of topics and readings：
 +----------+----------+------------------------------------------------------+------------------------------------------------+----------------------------------------------+---------------------------------------------------------+
 | 3        | 01/29    | Introduction to Bayesian Statistics Part II          | SR Chapter 2                                   | [Lecture02_Jan29](./Lecture02/Lecture02.qmd) |                                                         |
 +----------+----------+------------------------------------------------------+------------------------------------------------+----------------------------------------------+---------------------------------------------------------+
-| 4        | 02/05    | Bayesian Inference and Computational Methods I       | SR Chapter 3                                   | [Lecture03_Feb05](./Lecture03/Lecture03.qmd) | [DietGroup.csv](./Lecture03/Code/DietData.csv)          |
+| 4        | 02/05    | Bayesian Inference and Computational Methods I       | SR Chapter 9                                   | [Lecture03_Feb05](./Lecture03/Lecture03.qmd) | [DietGroup.csv](./Lecture03/Code/DietData.csv)          |
 |          |          |                                                      |                                                |                                              |                                                         |
 |          |          |                                                      |                                                |                                              | [DietDataExample.R](./Lecture03/Code/DietDataExample.R) |
 +----------+----------+------------------------------------------------------+------------------------------------------------+----------------------------------------------+---------------------------------------------------------+
@@ -191,6 +192,7 @@ Weekly breakdown of topics and readings：
 +----------+----------+------------------------------------------------------+------------------------------------------------+----------------------------------------------+---------------------------------------------------------+
 | 16       | 04/29    | Student Presentations                                |                                                |                                              |                                                         |
 +----------+----------+------------------------------------------------------+------------------------------------------------+----------------------------------------------+---------------------------------------------------------+
+: {.striped .hover .bordered .responsive-xl tbl-colwidths="[5,5,30,20,20,20]"}
 
 [^1]: SR: *Statistical Rethinking 2ed Edition* by Richard McElreath
 
