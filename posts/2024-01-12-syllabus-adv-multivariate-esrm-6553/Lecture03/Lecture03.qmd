@@ -1,0 +1,111 @@
+---
+title: "Lecture 03"
+subtitle: "Linear Regression Model with Stan"
+author: "Jihong Zhang"
+institute: "Educational Statistics and Research Methods"
+title-slide-attributes:
+  data-background-image: ../Images/title_image.png
+  data-background-size: contain
+  data-background-opacity: "0.9"
+execute: 
+  echo: true
+format: 
+  revealjs:
+    logo: ../Images/UA_Logo_Horizontal.png
+    incremental: true  # choose "false "if want to show all together
+    theme: [serif, pp.scss]
+    footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553>
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    chalkboard: true
+    number-sections: false
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+    code-line-numbers: true
+    code-annotations: hover
+---
+
+## Today's Lecture Objectives
+
+1.  An Introduction to MCMC
+
+2.  An Introduction to Stan
+
+3.  Example: Linear Regression
+
+but, before we begin...
+
+## Quiz:
+
+1.  What is a conjugate prior?
+2.  Why we want to use conjugate priors?
+
+## In previous class...
+
+1.  We work with a simplest Bayesian model: roll "1" from a 6-size dice
+2.  We talked about the selection of prior distributions from uninformative to informative priors
+3.  We talked about binomial distribution as the likelihood function
+4.  The posterior distribution is directly derived by update $\alpha$ and $\beta$
+
+## Markov Chain Monte Carlo Estimation
+
+Today, we dive deeper into the estimation process.
+
+1.  Bayesian analysis is all about estimating the **posterior distribution**.
+2.  Up until now, we've worked with the posterior distribution that are well-know
+    -   Beta-Binomial conjugate pairs had a Beta posterior distribution
+    -   In general, likelihood distributions from the exponential family have conjugate priors 
+    - > Conjugate prior: the family of the prior is equivalent to the family of posterior.
+
+------------------------------------------------------------------------ 
+
+### Why not keep using conjugate priors for all scenarios?
+
+-   Oftentimes, however, posterior distributions are not easily obtainable
+    -   No longer able to use properties of the distribution to estimate parameters
+-   It is possible to use an optimization algorithm (e..g., Newton-Raphson or Expectation-Maximization) to find maximum value of posterior distribution
+    -   But, such algorithms may be very time consuming for high-dimensional problems
+-   Instead: "sketch" the posterior by sampling from it - then use that sketch to make inference
+    -   Sampling is done via MCMC
+
+------------------------------------------------------------------------
+
+### MCMC algorithm
+::::{.columns}
+:::{.column width='50%'}
+1. MCMC algorithm interactively draws samples from the posterior distribution
+    - For fairly simplistic models, each iteration has independent samples
+    - Most models have some layers of dependency included
+        - which can slow down the sample process from the posterior distribution
+    - One problem of slowness of MCMC is high-dimensional problems
+2. This plot shows one variant of MCMC - Metropolis sampling draws for two highly correlated parameters
+:::
+
+:::{.column width='50%'}
+![Metropolis chains under high correlations](./Fig1_MCMCContour.png)
+:::
+
+::::
+
+------------------------------------------------------------------------
+
+### Variations of MCMC algorithms
+
+- Most of these specific algorithms use one of two types sampling:
+    1. Direct sampling from the posterior distribution (i.e., *Gibbs sampling*)
+        - Often used when conjugate priors are specified
+        - Popular software: BUGS, JAGS, Mplus
+    2. Indirect (rejection-based) sampling from the posterior distribution (e.g, Metropolis-hastings, Hamiltonian Monte Carlo)
+        - Popular software: Stan
+
+------------------------------------------------------------------------
+<!-- https://jonathantemplin.github.io/Bayesian-Psychometric-Modeling-Course-Fall2022/lectures/lecture03/03_MCMC_and_Stan.html#/mcmc-algorithms -->
+
+### Making MCMC Algorithms
+
+- Efficiency is the main reas
+
+
+## Wrapping up
+
