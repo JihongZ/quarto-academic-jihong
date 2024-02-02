@@ -13,7 +13,7 @@ format:
   revealjs:
     logo: ../Images/UA_Logo_Horizontal.png
     incremental: true  # choose "false "if want to show all together
-    theme: [serif, pp.scss]
+    theme: [serif, ../pp.scss]
     footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553>
     transition: slide
     background-transition: fade
@@ -430,7 +430,7 @@ model { // #<7>
 
 ------------------------------------------------------------------------
 
-### Stan Data and Parameter Delcaration
+### Stan Data and Parameter Declaration
 
 ```{r filename="EmptyModel.stan"}
 #| eval: false
@@ -440,7 +440,7 @@ data {
 }
 ```
 
-Like many compiled languages (e.g., Java, C++), Stan expects you to declare what types of data/parameters you are defining:
+-   Like many compiled languages (e.g., Java, C++), Stan expects you to declare what types of data/parameters you are defining:
 
 ::: nonincremental
 -   `int`: Integer values (no decimals)
@@ -448,15 +448,15 @@ Like many compiled languages (e.g., Java, C++), Stan expects you to declare what
 -   `vector`: A one-dimensional set of real valued numbers
 :::
 
-Sometimes, additional definitions are provided giving the range of the variable (or restricting the set of starting values):
+-   Sometimes, additional definitions are provided giving the range of the variable (or restricting the set of starting values):
+
+    -   See [here](https://mc-stan.org/docs/reference-manual/data-types.html) for more information about data types in Stan.
 
 ::: nonincremental
--   `real<lower=0> signa` ;
+-   `real<lower=0> sigma` ;
 :::
 
-See [here](https://mc-stan.org/docs/reference-manual/data-types.html) for more information about data types in Stan.
-
-For `vector` or `matrix` or `array` , we may need to add size to tell Stan how many elements it has.
+-   For `vector` or `matrix` or `array` , we may need to add size to tell Stan how many elements it has.
 
 ::: nonincremental
 -   `vector[N]` has N elements

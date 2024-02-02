@@ -13,7 +13,7 @@ format:
   revealjs:
     logo: ../Images/UA_Logo_Horizontal.png
     incremental: true  # choose "false "if want to show all together
-    theme: [serif, pp.scss]
+    theme: [serif, ../pp.scss]
     footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553>
     transition: slide
     background-transition: fade
@@ -36,8 +36,7 @@ format:
 
 4.  Bayesian update
 
-but, before we begin...
-[Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
+but, before we begin... [Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
 
 [Music: Good Bayesian](https://www.youtube.com/watch?v=qV6Wc_f1Cgo)
 
@@ -514,13 +513,12 @@ fit2$summary()
 ------------------------------------------------------------------------
 
 ## Install CmdStan
-[cmdstanr Installation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan)
-[cmdstanr Users' Guide](https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation)
+
+[cmdstanr Installation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan) [cmdstanr Users' Guide](https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation)
 
 ## Next Class
 
 We will talk more about how Bayesian model works. Thank you.
-
 
 ## Bonus: Conjugacy of Beta Distribution
 
@@ -560,4 +558,3 @@ Today is a quick introduction to Bayesian Concept
     -   Likelihood principle: All the information about the data is contained in the likelihood function
     -   Likelihood is a sort of "scientific judgment" on the generation process of the data
 -   Posterior distribution: What we know about the parameter after seeing the data
-
