@@ -21,7 +21,7 @@ format:
 ---
 
 ```{r setup, include=FALSE}
-root_dir = "/Users/jihong/Documents/Projects/quarto-academic-jihong/posts/2017-11-10-Linking-simulation/"
+root_dir = here::here("posts", "2017-11-10-Linking-simulation")
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = root_dir)
 ```

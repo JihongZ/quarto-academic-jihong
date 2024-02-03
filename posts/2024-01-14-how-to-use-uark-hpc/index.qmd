@@ -25,13 +25,16 @@ If your account was successfully setted up, passwords will be required. After yo
 Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.
 
 ### SSH login without password
-1. Generate a pair of authentication keys in your local machine and do not enter a passphrase using the following codes:
-```bash
+
+1.  Generate a pair of authentication keys in your local machine and do not enter a passphrase using the following codes:
+
+``` bash
 ssh-keygen -t rsa   
 ```
 
 Please note that make the passphrase empty:
-```
+
+```         
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/[username]/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
@@ -40,13 +43,15 @@ Your identification has been saved in /Users/[username]/.ssh/id_rsa
 Your public key has been saved in /Users/[username]/.ssh/id_rsa.pub
 ```
 
-2. In your local machine, type in following commands to copy local public key to the hpc server.
-```bash
+2.  In your local machine, type in following commands to copy local public key to the hpc server.
+
+``` bash
 scp ~/.ssh/id_rsa.pub [loginname]@hpc-portal2.hpc.uark.edu:/home/[loginname]/.ssh/authorized_keys
 ```
 
-3. Now you should be able to login the hpc login node without password:
-```bash
+3.  Now you should be able to login the hpc login node without password:
+
+``` bash
 ssh [loginname]@hpc-portal2.hpc.uark.edu
 ```
 
@@ -110,7 +115,7 @@ srun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash
 This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.
 
 | slurm commands      | compatibility commands   | Meaning                            |
-|-------------------|-----------------------|-------------------------------|
+|-------------------|-----------------------|------------------------------|
 | sbatch              | qsub                     | submit \<job file\>                |
 | srun                | qsub -I                  | submit interactive job             |
 | squeue              | qstat                    | list all queued jobs               |
@@ -145,3 +150,9 @@ c1331:jzhang:~/HelloWorld$
 ``` bash
 squeue -u loginname
 ```
+
+### Troubleshooting
+
+1.  Revise `.bashrc` so that the ssh cannot login?
+
+    You potential can try `ctrl+c` to avoid the ssh to execute bashrc. Try multiple time if not succeed. See [here](https://serverfault.com/questions/206544/i-screwed-up-exit-in-bashrc) for reference.
