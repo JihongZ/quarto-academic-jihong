@@ -9,7 +9,7 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.547">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Jihong Zhang">
   <title>Dr. Jihong Zhang - Lecture 02</title>
@@ -522,7 +522,7 @@ LL(p_1|\{0, 1, 0, 1, 1\})
 <pre><code>[1] 0.6</code></pre>
 </div>
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-1-1.png" width="672" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="log-likelihood-function-along-data">Log-likelihood Function along “Data”</h3>
@@ -532,25 +532,52 @@ LL(Data|p_1 \in \{0, 0.2,0.4, 0.6, 0.8,1\})
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a></a>p1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">10</span></span>
-<span id="cb4-3"><a></a>nTrails <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb4-4"><a></a>nSuccess <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span>nTrails</span>
-<span id="cb4-5"><a></a>Likelihood <span class="ot">=</span> <span class="fu">sapply</span>(p1, \(x) <span class="fu">choose</span>(nTrails,nSuccess)<span class="sc">*</span>(x)<span class="sc">^</span>nSuccess<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span>(nTrails <span class="sc">-</span> nSuccess))</span>
-<span id="cb4-6"><a></a>Likelihood_forPlot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(Likelihood)</span>
-<span id="cb4-7"><a></a><span class="fu">colnames</span>(Likelihood_forPlot) <span class="ot">&lt;-</span> p1</span>
-<span id="cb4-8"><a></a>Likelihood_forPlot<span class="sc">$</span>Sample <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails), <span class="at">levels =</span> <span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails))</span>
-<span id="cb4-9"><a></a><span class="co"># plot</span></span>
-<span id="cb4-10"><a></a>Likelihood_forPlot <span class="sc">%&gt;%</span> </span>
-<span id="cb4-11"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Sample, <span class="at">names_to =</span> <span class="st">"p1"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-12"><a></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-13"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> <span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span>, <span class="at">color =</span> p1)) <span class="sc">+</span></span>
-<span id="cb4-14"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">group=</span>p1), <span class="at">size =</span> <span class="fl">1.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ tidyr::extract()   masks magrittr::extract()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::lag()       masks stats::lag()
+✖ purrr::set_names() masks magrittr::set_names()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>p1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb8-2"><a></a>nTrails <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb8-3"><a></a>nSuccess <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span>nTrails</span>
+<span id="cb8-4"><a></a>Likelihood <span class="ot">=</span> <span class="fu">sapply</span>(p1, \(x) <span class="fu">choose</span>(nTrails,nSuccess)<span class="sc">*</span>(x)<span class="sc">^</span>nSuccess<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span>(nTrails <span class="sc">-</span> nSuccess))</span>
+<span id="cb8-5"><a></a>Likelihood_forPlot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(Likelihood)</span>
+<span id="cb8-6"><a></a><span class="fu">colnames</span>(Likelihood_forPlot) <span class="ot">&lt;-</span> p1</span>
+<span id="cb8-7"><a></a>Likelihood_forPlot<span class="sc">$</span>Sample <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails), <span class="at">levels =</span> <span class="fu">paste0</span>(nSuccess, <span class="st">" out of "</span>, nTrails))</span>
+<span id="cb8-8"><a></a><span class="co"># plot</span></span>
+<span id="cb8-9"><a></a>Likelihood_forPlot <span class="sc">%&gt;%</span> </span>
+<span id="cb8-10"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Sample, <span class="at">names_to =</span> <span class="st">"p1"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11"><a></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> <span class="st">`</span><span class="at">log(Likelihood)</span><span class="st">`</span>, <span class="at">color =</span> p1)) <span class="sc">+</span></span>
+<span id="cb8-13"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-14"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">group=</span>p1), <span class="at">size =</span> <span class="fl">1.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
 
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
 <section id="step-2-choose-the-prior-distribution-for-p_1" class="slide level2">
 <h2>Step 2: Choose the Prior Distribution for <span class="math inline">\(p_1\)</span></h2>
 <p>We must now pick the prior distribution of <span class="math inline">\(p_1\)</span>:</p>
@@ -619,43 +646,43 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Function for variance of Beta distribution</span></span>
-<span id="cb5-2"><a></a>varianceFun <span class="ot">=</span> <span class="cf">function</span>(alpha_beta){</span>
-<span id="cb5-3"><a></a>  alpha <span class="ot">=</span> alpha_beta[<span class="dv">1</span>]</span>
-<span id="cb5-4"><a></a>  beta <span class="ot">=</span> alpha_beta[<span class="dv">2</span>]</span>
-<span id="cb5-5"><a></a>  <span class="fu">return</span>((alpha <span class="sc">*</span> beta)<span class="sc">/</span>((alpha <span class="sc">+</span> beta)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(alpha <span class="sc">+</span> beta <span class="sc">+</span> <span class="dv">1</span>)))</span>
-<span id="cb5-6"><a></a>}</span>
-<span id="cb5-7"><a></a></span>
-<span id="cb5-8"><a></a><span class="co"># Multiple prior choices from uninformative to informative</span></span>
-<span id="cb5-9"><a></a>alpha_beta_choices <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb5-10"><a></a>  <span class="at">I_dont_trust =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>), </span>
-<span id="cb5-11"><a></a>  <span class="at">not_strong =</span>   <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">96</span>), </span>
-<span id="cb5-12"><a></a>  <span class="at">litte_strong =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">496</span>), </span>
-<span id="cb5-13"><a></a>  <span class="at">very_strong =</span>  <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">996</span>))</span>
-<span id="cb5-14"><a></a></span>
-<span id="cb5-15"><a></a><span class="do">## Transform to data.frame for plot</span></span>
-<span id="cb5-16"><a></a>alpha_beta_variance_plot <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(alpha_beta_choices, varianceFun)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-17"><a></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb5-18"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Degree"</span>, <span class="at">values_to =</span> <span class="st">"Variance"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-19"><a></a>  <span class="fu">mutate</span>(<span class="at">Degree =</span> <span class="fu">factor</span>(Degree, <span class="at">levels =</span> <span class="fu">unique</span>(Degree))) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-20"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>(</span>
-<span id="cb5-21"><a></a>    <span class="st">"(2, 6)"</span>,</span>
-<span id="cb5-22"><a></a>    <span class="st">"(20, 96)"</span>,</span>
-<span id="cb5-23"><a></a>    <span class="st">"(100, 496)"</span>,</span>
-<span id="cb5-24"><a></a>    <span class="st">"(200, 996)"</span></span>
-<span id="cb5-25"><a></a>  ))</span>
-<span id="cb5-26"><a></a></span>
-<span id="cb5-27"><a></a>alpha_beta_variance_plot <span class="sc">%&gt;%</span> </span>
-<span id="cb5-28"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Degree, <span class="at">y =</span> Variance)) <span class="sc">+</span></span>
-<span id="cb5-29"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Degree)) <span class="sc">+</span></span>
-<span id="cb5-30"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Alpha_Beta), <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb5-31"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Variances along difference choices of alpha and beta"</span>) <span class="sc">+</span></span>
-<span id="cb5-32"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">21</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Function for variance of Beta distribution</span></span>
+<span id="cb10-2"><a></a>varianceFun <span class="ot">=</span> <span class="cf">function</span>(alpha_beta){</span>
+<span id="cb10-3"><a></a>  alpha <span class="ot">=</span> alpha_beta[<span class="dv">1</span>]</span>
+<span id="cb10-4"><a></a>  beta <span class="ot">=</span> alpha_beta[<span class="dv">2</span>]</span>
+<span id="cb10-5"><a></a>  <span class="fu">return</span>((alpha <span class="sc">*</span> beta)<span class="sc">/</span>((alpha <span class="sc">+</span> beta)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(alpha <span class="sc">+</span> beta <span class="sc">+</span> <span class="dv">1</span>)))</span>
+<span id="cb10-6"><a></a>}</span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a><span class="co"># Multiple prior choices from uninformative to informative</span></span>
+<span id="cb10-9"><a></a>alpha_beta_choices <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb10-10"><a></a>  <span class="at">I_dont_trust =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>), </span>
+<span id="cb10-11"><a></a>  <span class="at">not_strong =</span>   <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">96</span>), </span>
+<span id="cb10-12"><a></a>  <span class="at">litte_strong =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">496</span>), </span>
+<span id="cb10-13"><a></a>  <span class="at">very_strong =</span>  <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">996</span>))</span>
+<span id="cb10-14"><a></a></span>
+<span id="cb10-15"><a></a><span class="do">## Transform to data.frame for plot</span></span>
+<span id="cb10-16"><a></a>alpha_beta_variance_plot <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(alpha_beta_choices, varianceFun)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-17"><a></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-18"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Degree"</span>, <span class="at">values_to =</span> <span class="st">"Variance"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-19"><a></a>  <span class="fu">mutate</span>(<span class="at">Degree =</span> <span class="fu">factor</span>(Degree, <span class="at">levels =</span> <span class="fu">unique</span>(Degree))) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-20"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>(</span>
+<span id="cb10-21"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb10-22"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb10-23"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb10-24"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb10-25"><a></a>  ))</span>
+<span id="cb10-26"><a></a></span>
+<span id="cb10-27"><a></a>alpha_beta_variance_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb10-28"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Degree, <span class="at">y =</span> Variance)) <span class="sc">+</span></span>
+<span id="cb10-29"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Degree)) <span class="sc">+</span></span>
+<span id="cb10-30"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Alpha_Beta), <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb10-31"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Variances along difference choices of alpha and beta"</span>) <span class="sc">+</span></span>
+<span id="cb10-32"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">21</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="Lecture02_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -669,48 +696,48 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>dbeta <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta) {</span>
-<span id="cb6-2"><a></a>  <span class="co"># probability density function</span></span>
-<span id="cb6-3"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha, beta)</span>
-<span id="cb6-4"><a></a>  <span class="fu">return</span>(PDF)</span>
-<span id="cb6-5"><a></a>}</span>
-<span id="cb6-6"><a></a></span>
-<span id="cb6-7"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb6-8"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
-<span id="cb6-9"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
-<span id="cb6-10"><a></a>)</span>
-<span id="cb6-11"><a></a>pdf_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
-<span id="cb6-12"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-13"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
-<span id="cb6-14"><a></a>    <span class="fu">dbeta</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span>
-<span id="cb6-15"><a></a>  ))</span>
-<span id="cb6-16"><a></a></span>
-<span id="cb6-17"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
-<span id="cb6-18"><a></a>pdf_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-19"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb6-20"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
-<span id="cb6-21"><a></a><span class="fu">colnames</span>(pdf_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
-<span id="cb6-22"><a></a>pdf_forplot <span class="ot">&lt;-</span> pdf_forplot <span class="sc">%&gt;%</span> </span>
-<span id="cb6-23"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
-<span id="cb6-24"><a></a>    <span class="st">"(2, 6)"</span>,</span>
-<span id="cb6-25"><a></a>    <span class="st">"(20, 96)"</span>,</span>
-<span id="cb6-26"><a></a>    <span class="st">"(100, 496)"</span>,</span>
-<span id="cb6-27"><a></a>    <span class="st">"(200, 996)"</span></span>
-<span id="cb6-28"><a></a>  )) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-29"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-30"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
-<span id="cb6-31"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
-<span id="cb6-32"><a></a></span>
-<span id="cb6-33"><a></a>pdf_forplot <span class="sc">%&gt;%</span> </span>
-<span id="cb6-34"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb6-35"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb6-36"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
-<span id="cb6-37"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
-<span id="cb6-38"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>dbeta <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta) {</span>
+<span id="cb11-2"><a></a>  <span class="co"># probability density function</span></span>
+<span id="cb11-3"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha, beta)</span>
+<span id="cb11-4"><a></a>  <span class="fu">return</span>(PDF)</span>
+<span id="cb11-5"><a></a>}</span>
+<span id="cb11-6"><a></a></span>
+<span id="cb11-7"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-8"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
+<span id="cb11-9"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
+<span id="cb11-10"><a></a>)</span>
+<span id="cb11-11"><a></a>pdf_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
+<span id="cb11-12"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-13"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb11-14"><a></a>    <span class="fu">dbeta</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span>
+<span id="cb11-15"><a></a>  ))</span>
+<span id="cb11-16"><a></a></span>
+<span id="cb11-17"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
+<span id="cb11-18"><a></a>pdf_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-19"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-20"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
+<span id="cb11-21"><a></a><span class="fu">colnames</span>(pdf_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
+<span id="cb11-22"><a></a>pdf_forplot <span class="ot">&lt;-</span> pdf_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb11-23"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
+<span id="cb11-24"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb11-25"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb11-26"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb11-27"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb11-28"><a></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-29"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-30"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
+<span id="cb11-31"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
+<span id="cb11-32"><a></a></span>
+<span id="cb11-33"><a></a>pdf_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb11-34"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb11-35"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb11-36"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
+<span id="cb11-37"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
+<span id="cb11-38"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p><strong>Question: WHY NOT USE NORMAL DISTRIBUTION?</strong></p>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"><p><strong>Question: WHY NOT USE NORMAL DISTRIBUTION?</strong></p>
 </section>
 <section id="step-3-the-posterior-distribution" class="slide level2">
 <h2>Step 3: The Posterior Distribution</h2>
@@ -734,55 +761,55 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>dbeta_posterior <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta, data) {</span>
-<span id="cb7-2"><a></a>  alpha_new <span class="ot">=</span> alpha <span class="sc">+</span> <span class="fu">sum</span>(data) </span>
-<span id="cb7-3"><a></a>  beta_new <span class="ot">=</span> beta <span class="sc">+</span> (<span class="fu">length</span>(data) <span class="sc">-</span> <span class="fu">sum</span>(data) )</span>
-<span id="cb7-4"><a></a>  <span class="co"># probability density function</span></span>
-<span id="cb7-5"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha_new<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta_new<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha_new, beta_new)</span>
-<span id="cb7-6"><a></a>  <span class="fu">return</span>(PDF)</span>
-<span id="cb7-7"><a></a>}</span>
-<span id="cb7-8"><a></a><span class="co"># Observed data</span></span>
-<span id="cb7-9"><a></a>dat <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb7-10"><a></a></span>
-<span id="cb7-11"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-12"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
-<span id="cb7-13"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
-<span id="cb7-14"><a></a>)</span>
-<span id="cb7-15"><a></a></span>
-<span id="cb7-16"><a></a>pdf_posterior_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
-<span id="cb7-17"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-18"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
-<span id="cb7-19"><a></a>    <span class="fu">dbeta_posterior</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta,</span>
-<span id="cb7-20"><a></a>                    <span class="at">data =</span> dat)</span>
-<span id="cb7-21"><a></a>  ))</span>
-<span id="cb7-22"><a></a></span>
-<span id="cb7-23"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
-<span id="cb7-24"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_posterior_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-25"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb7-26"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
-<span id="cb7-27"><a></a><span class="fu">colnames</span>(pdf_posterior_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
-<span id="cb7-28"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
-<span id="cb7-29"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
-<span id="cb7-30"><a></a>    <span class="st">"(2, 6)"</span>,</span>
-<span id="cb7-31"><a></a>    <span class="st">"(20, 96)"</span>,</span>
-<span id="cb7-32"><a></a>    <span class="st">"(100, 496)"</span>,</span>
-<span id="cb7-33"><a></a>    <span class="st">"(200, 996)"</span></span>
-<span id="cb7-34"><a></a>  )) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-35"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-36"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
-<span id="cb7-37"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
-<span id="cb7-38"><a></a></span>
-<span id="cb7-39"><a></a>pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
-<span id="cb7-40"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb7-41"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb7-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
-<span id="cb7-43"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
-<span id="cb7-44"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>) <span class="sc">+</span></span>
-<span id="cb7-45"><a></a>  <span class="fu">labs</span>( <span class="at">y =</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>dbeta_posterior <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, alpha, beta, data) {</span>
+<span id="cb12-2"><a></a>  alpha_new <span class="ot">=</span> alpha <span class="sc">+</span> <span class="fu">sum</span>(data) </span>
+<span id="cb12-3"><a></a>  beta_new <span class="ot">=</span> beta <span class="sc">+</span> (<span class="fu">length</span>(data) <span class="sc">-</span> <span class="fu">sum</span>(data) )</span>
+<span id="cb12-4"><a></a>  <span class="co"># probability density function</span></span>
+<span id="cb12-5"><a></a>  PDF <span class="ot">=</span> ((p1)<span class="sc">^</span>(alpha_new<span class="dv">-1</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1)<span class="sc">^</span>(beta_new<span class="dv">-1</span>)) <span class="sc">/</span> <span class="fu">beta</span>(alpha_new, beta_new)</span>
+<span id="cb12-6"><a></a>  <span class="fu">return</span>(PDF)</span>
+<span id="cb12-7"><a></a>}</span>
+<span id="cb12-8"><a></a><span class="co"># Observed data</span></span>
+<span id="cb12-9"><a></a>dat <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb12-10"><a></a></span>
+<span id="cb12-11"><a></a>condition <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-12"><a></a>  <span class="at">alpha =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">200</span>),</span>
+<span id="cb12-13"><a></a>  <span class="at">beta =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">96</span>, <span class="dv">496</span>, <span class="dv">996</span>)</span>
+<span id="cb12-14"><a></a>)</span>
+<span id="cb12-15"><a></a></span>
+<span id="cb12-16"><a></a>pdf_posterior_bycond <span class="ot">&lt;-</span> condition <span class="sc">%&gt;%</span> </span>
+<span id="cb12-17"><a></a>  <span class="fu">nest_by</span>(alpha, beta) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-18"><a></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb12-19"><a></a>    <span class="fu">dbeta_posterior</span>(<span class="at">p1 =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta,</span>
+<span id="cb12-20"><a></a>                    <span class="at">data =</span> dat)</span>
+<span id="cb12-21"><a></a>  ))</span>
+<span id="cb12-22"><a></a></span>
+<span id="cb12-23"><a></a><span class="do">## prepare data for plotting pdf by conditions</span></span>
+<span id="cb12-24"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(cbind, pdf_posterior_bycond<span class="sc">$</span>data) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-25"><a></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb12-26"><a></a>  <span class="fu">as.data.frame</span>() <span class="do">## merge conditions together</span></span>
+<span id="cb12-27"><a></a><span class="fu">colnames</span>(pdf_posterior_forplot) <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>)<span class="sc">/</span><span class="dv">100</span> <span class="co"># add p1 values as x-axis</span></span>
+<span id="cb12-28"><a></a>pdf_posterior_forplot <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb12-29"><a></a>  <span class="fu">mutate</span>(<span class="at">Alpha_Beta =</span> <span class="fu">c</span>( <span class="co"># add alpha_beta conditions as colors</span></span>
+<span id="cb12-30"><a></a>    <span class="st">"(2, 6)"</span>,</span>
+<span id="cb12-31"><a></a>    <span class="st">"(20, 96)"</span>,</span>
+<span id="cb12-32"><a></a>    <span class="st">"(100, 496)"</span>,</span>
+<span id="cb12-33"><a></a>    <span class="st">"(200, 996)"</span></span>
+<span id="cb12-34"><a></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-35"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Alpha_Beta, <span class="at">names_to =</span> <span class="st">'p1'</span>, <span class="at">values_to =</span> <span class="st">'pdf'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-36"><a></a>  <span class="fu">mutate</span>(<span class="at">p1 =</span> <span class="fu">as.numeric</span>(p1),</span>
+<span id="cb12-37"><a></a>         <span class="at">Alpha_Beta =</span> <span class="fu">factor</span>(Alpha_Beta,<span class="at">levels =</span> <span class="fu">unique</span>(Alpha_Beta)))</span>
+<span id="cb12-38"><a></a></span>
+<span id="cb12-39"><a></a>pdf_posterior_forplot <span class="sc">%&gt;%</span> </span>
+<span id="cb12-40"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-41"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.17</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb12-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta)) <span class="sc">+</span></span>
+<span id="cb12-43"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf, <span class="at">col =</span> Alpha_Beta, <span class="at">group =</span> Alpha_Beta)) <span class="sc">+</span> </span>
+<span id="cb12-44"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Prior choices"</span>) <span class="sc">+</span></span>
+<span id="cb12-45"><a></a>  <span class="fu">labs</span>( <span class="at">y =</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="manually-calculate-summaries-of-the-posterior-distribution">Manually calculate summaries of the posterior distribution</h3>
@@ -800,15 +827,15 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>uninfo <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(2, 6)"</span>)</span>
-<span id="cb8-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo<span class="sc">$</span>p1 <span class="sc">*</span> uninfo<span class="sc">$</span>pdf)) <span class="co"># .3885</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>uninfo <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(2, 6)"</span>)</span>
+<span id="cb13-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo<span class="sc">$</span>p1 <span class="sc">*</span> uninfo<span class="sc">$</span>pdf)) <span class="co"># .3885</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Sample Posterior Mean: 0.388500388484552"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>uninfo2 <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(100, 496)"</span>)</span>
-<span id="cb10-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo2<span class="sc">$</span>p1 <span class="sc">*</span> uninfo2<span class="sc">$</span>pdf)) <span class="co"># 0.1731</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>uninfo2 <span class="ot">&lt;-</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">"(100, 496)"</span>)</span>
+<span id="cb15-2"><a></a><span class="fu">paste0</span>(<span class="st">"Sample Posterior Mean: "</span>, <span class="fu">mean</span>(uninfo2<span class="sc">$</span>p1 <span class="sc">*</span> uninfo2<span class="sc">$</span>pdf)) <span class="co"># 0.1731</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Sample Posterior Mean: 0.173112153145432"</code></pre>
 </div>
@@ -818,25 +845,37 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 
 <h3 id="stan-code-for-the-example-model">Stan Code for the example model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(cmdstanr)</span>
-<span id="cb12-2"><a></a><span class="fu">register_knitr_engine</span>(<span class="at">override =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">library</span>(cmdstanr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is cmdstanr version 0.7.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>- CmdStanR documentation and vignettes: mc-stan.org/cmdstanr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>- CmdStan path: /Users/jihong/.cmdstan/cmdstan-2.34.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>- CmdStan version: 2.34.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">register_knitr_engine</span>(<span class="at">override =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-output.var="dice_model">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb13-1"><a></a><span class="kw">data</span> {</span>
-<span id="cb13-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N; <span class="co">// sample size</span></span>
-<span id="cb13-3"><a></a>  <span class="dt">array</span>[N] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt; y; <span class="co">// observed data</span></span>
-<span id="cb13-4"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; alpha; <span class="co">// hyperparameter alpha</span></span>
-<span id="cb13-5"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; beta; <span class="co">// hyperparameter beta</span></span>
-<span id="cb13-6"><a></a>}</span>
-<span id="cb13-7"><a></a><span class="kw">parameters</span> {</span>
-<span id="cb13-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; p1; <span class="co">// parameters</span></span>
-<span id="cb13-9"><a></a>}</span>
-<span id="cb13-10"><a></a><span class="kw">model</span> {</span>
-<span id="cb13-11"><a></a>  p1 ~ beta(alpha, beta); <span class="co">// prior distribution</span></span>
-<span id="cb13-12"><a></a>  <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span>:N){</span>
-<span id="cb13-13"><a></a>    y[n] ~ bernoulli(p1); <span class="co">// model</span></span>
-<span id="cb13-14"><a></a>  }</span>
-<span id="cb13-15"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb23-1"><a></a><span class="kw">data</span> {</span>
+<span id="cb23-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N; <span class="co">// sample size</span></span>
+<span id="cb23-3"><a></a>  <span class="dt">array</span>[N] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt; y; <span class="co">// observed data</span></span>
+<span id="cb23-4"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; alpha; <span class="co">// hyperparameter alpha</span></span>
+<span id="cb23-5"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; beta; <span class="co">// hyperparameter beta</span></span>
+<span id="cb23-6"><a></a>}</span>
+<span id="cb23-7"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb23-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; p1; <span class="co">// parameters</span></span>
+<span id="cb23-9"><a></a>}</span>
+<span id="cb23-10"><a></a><span class="kw">model</span> {</span>
+<span id="cb23-11"><a></a>  p1 ~ beta(alpha, beta); <span class="co">// prior distribution</span></span>
+<span id="cb23-12"><a></a>  <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span>:N){</span>
+<span id="cb23-13"><a></a>    y[n] ~ bernoulli(p1); <span class="co">// model</span></span>
+<span id="cb23-14"><a></a>  }</span>
+<span id="cb23-15"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -844,26 +883,26 @@ B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># mod &lt;- cmdstan_model('dice_model.stan')</span></span>
-<span id="cb14-2"><a></a>data_list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb14-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb14-4"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
-<span id="cb14-5"><a></a>  <span class="at">alpha =</span> <span class="dv">2</span>,</span>
-<span id="cb14-6"><a></a>  <span class="at">beta =</span> <span class="dv">6</span></span>
-<span id="cb14-7"><a></a>)</span>
-<span id="cb14-8"><a></a>data_list2 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb14-9"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb14-10"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
-<span id="cb14-11"><a></a>  <span class="at">alpha =</span> <span class="dv">100</span>,</span>
-<span id="cb14-12"><a></a>  <span class="at">beta =</span> <span class="dv">496</span></span>
-<span id="cb14-13"><a></a>)</span>
-<span id="cb14-14"><a></a>fit1 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb14-15"><a></a>  <span class="at">data =</span> data_list1,</span>
-<span id="cb14-16"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
-<span id="cb14-17"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb14-18"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb14-19"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
-<span id="cb14-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># mod &lt;- cmdstan_model('dice_model.stan')</span></span>
+<span id="cb24-2"><a></a>data_list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb24-4"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
+<span id="cb24-5"><a></a>  <span class="at">alpha =</span> <span class="dv">2</span>,</span>
+<span id="cb24-6"><a></a>  <span class="at">beta =</span> <span class="dv">6</span></span>
+<span id="cb24-7"><a></a>)</span>
+<span id="cb24-8"><a></a>data_list2 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-9"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb24-10"><a></a>  <span class="at">N =</span> <span class="dv">5</span>,</span>
+<span id="cb24-11"><a></a>  <span class="at">alpha =</span> <span class="dv">100</span>,</span>
+<span id="cb24-12"><a></a>  <span class="at">beta =</span> <span class="dv">496</span></span>
+<span id="cb24-13"><a></a>)</span>
+<span id="cb24-14"><a></a>fit1 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb24-15"><a></a>  <span class="at">data =</span> data_list1,</span>
+<span id="cb24-16"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
+<span id="cb24-17"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-18"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-19"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
+<span id="cb24-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Running MCMC with 4 parallel chains...
@@ -891,17 +930,17 @@ Chain 4 finished in 0.0 seconds.
 
 All 4 chains finished successfully.
 Mean chain execution time: 0.0 seconds.
-Total execution time: 0.3 seconds.</code></pre>
+Total execution time: 0.2 seconds.</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>fit2 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb16-2"><a></a>  <span class="at">data =</span> data_list2,</span>
-<span id="cb16-3"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
-<span id="cb16-4"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb16-5"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb16-6"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
-<span id="cb16-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>fit2 <span class="ot">&lt;-</span> dice_model<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb26-2"><a></a>  <span class="at">data =</span> data_list2,</span>
+<span id="cb26-3"><a></a>  <span class="at">seed =</span> <span class="dv">123</span>,</span>
+<span id="cb26-4"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb26-5"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb26-6"><a></a>  <span class="at">refresh =</span> <span class="dv">1000</span></span>
+<span id="cb26-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Running MCMC with 4 parallel chains...
@@ -939,16 +978,16 @@ Total execution time: 0.2 seconds.</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit1<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(2, 6)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb18-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
-<span id="cb18-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb18-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using uninformative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit1<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(2, 6)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb28-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using uninformative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>fit1<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>fit1<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 10
@@ -958,23 +997,23 @@ Total execution time: 0.2 seconds.</code></pre>
 2 p1        0.381  0.377 0.130 0.135   0.177  0.603  1.00    1499.    1691.</code></pre>
 </div>
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section>
 <section class="slide level2">
 
 <h4 id="informative-prior-distribution-100-496-and-posterior-distribution">Informative prior distribution (100, 496) and posterior distribution</h4>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit2<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(100, 496)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb21-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using informative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens</span>(fit2<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'p1'</span>)) <span class="sc">+</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1, <span class="at">y =</span> pdf), <span class="at">data =</span> pdf_posterior_forplot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Alpha_Beta <span class="sc">==</span> <span class="st">'(100, 496)'</span>), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb31-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">col =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">col =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior distribution using informative prior vs. the conjugate prior (The Gibbs sampler) method"</span>, <span class="at">caption =</span> <span class="st">'Green: mode of prior distribution; Purple: expected value from observed data; Red: Gibbs sampling method'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>fit2<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fit2<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 10
@@ -985,7 +1024,7 @@ Total execution time: 0.2 seconds.</code></pre>
 # ℹ 1 more variable: ess_tail &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<img data-src="Lecture02_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture02_files/figure-html/unnamed-chunk-12-1.png" width="672" class="r-stretch"></section>
 <section id="install-cmdstan" class="slide level2">
 <h2>Install CmdStan</h2>
 <p><a href="https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan">cmdstanr Installation</a> <a href="https://mc-stan.org/docs/cmdstan-guide/cmdstan-installation.html#troubleshooting-the-installation">cmdstanr Users’ Guide</a></p>
@@ -1256,44 +1295,6 @@ Total execution time: 0.2 seconds.</code></pre>
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -11,7 +11,7 @@ format:
   revealjs:
     logo: ../Images/UA_Logo_Horizontal.png
     incremental: true  # choose "false "if want to show all together
-    theme: [serif, pp.scss]
+    theme: [serif, ../pp.scss]
     footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553>
     transition: slide
     background-transition: fade

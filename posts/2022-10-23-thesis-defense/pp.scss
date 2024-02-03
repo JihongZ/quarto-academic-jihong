@@ -1,6 +1,7 @@
 // Include theme-specific fonts
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
 
 /*-- scss:defaults --*/
 // Override theme settings (see ../template/settings.scss)
@@ -11,7 +12,7 @@
 $backgroundColor: #fcfbf9;
 
 // Primary/body text
-$mainFont: 'Jost', sans-serif;
+$mainFont: 'Neuton', serif;
 $mainFontSize: 30px;
 $mainColor: #333;
 
