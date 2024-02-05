@@ -151,6 +151,24 @@ c1331:jzhang:~/HelloWorld$
 squeue -u loginname
 ```
 
+Below shows the information of all running/down task for the queue `comp06` (there are 9 Jobs but only 7 are running).
+
+```bash
+✘ jzhang@pinnacle-l8  ~/Projects/DCM  squeue -p comp06
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            362406    comp06    measr   jzhang PD       0:00      1 (Resources)
+            362361    comp06 03a_iqtr amatthew PD       0:00      1 (Priority)
+            362385    comp06 sys/dash ashmitau  R      36:05      1 c1402
+            362334    comp06   fixed2    igorf  R    1:53:29      1 c1402
+            362333    comp06   fixed1    igorf  R    1:53:32      1 c1402
+            362332    comp06   fixed0    igorf  R    1:53:35      1 c1402
+            362309    comp06 sys/dash    igorf  R    2:43:12      1 c1402
+            362360    comp06 03a_iqtr amatthew  R      59:32      1 c1403
+            362311    comp06  mystery cdgoolsb  R    2:37:50      1 c1410
+            362310    comp06  mystery cdgoolsb  R    2:38:20      1 c1410
+            362308    comp06  mystery cdgoolsb  R    2:43:21      1 c1410
+```
+
 ### Troubleshooting
 
 1.  Revise `.bashrc` so that the ssh cannot login?
