@@ -75,3 +75,33 @@ model00.samples = model00.fromFile$sample(
   iter_warmup = 10000,
   iter_sampling = 10000
 )
+
+## Using rstan
+library(rstan)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+
+# example MCMC analysis in rstan
+model00.rstan = stan(
+  model_code = stanModel,
+  model_name = "Empty model",
+  data = stanData,
+  warmup = 10000,
+  iter = 20000,
+  chains = 4,
+  verbose = TRUE
+)
+
+## Model 0 with poor convergence
+model00Poor.fromFile = cmdstan_model(stan_file = "EmptyModelPoor.stan")
+model00Poor.samples = model00Poor.fromFile$sample(
+  data = stanData,
+  seed = 1,
+  chains = 4,
+  parallel_chains = 4,
+  iter_warmup = 10000,
+  iter_sampling = 10000,
+  refresh = 5000
+)
+model00Poor.samples$summary()
+bayesplot::mcmc_trace(model00Poor.samples$draws("beta0"))

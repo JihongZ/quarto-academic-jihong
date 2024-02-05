@@ -14,7 +14,7 @@ website:
   twitter-card: 
     creator: "@jihongzgamma"
   open-graph: true
-  page-footer: "Copyright 2015-2023, @JihongZ" 
+  page-footer: "Copyright 2015-2024, @JihongZ" 
   # sidebar:
   #   style: "floating"
   #   contents:
@@ -33,6 +33,9 @@ website:
       - text: "Blog"     
         icon: 'bi bi-file-post-fill'
         file: posts.qmd  
+      - icon: bi-file-earmark-person
+        text: C.V.
+        file: uploads/Curriculum_Vitae.pdf
       - text: "More"
         icon: 'bi bi-three-dots-vertical'
         menu:

@@ -115,7 +115,7 @@ srun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash
 This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.
 
 | slurm commands      | compatibility commands   | Meaning                            |
-|-------------------|-----------------------|------------------------------|
+|---------------------|--------------------------|------------------------------------|
 | sbatch              | qsub                     | submit \<job file\>                |
 | srun                | qsub -I                  | submit interactive job             |
 | squeue              | qstat                    | list all queued jobs               |

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.547">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jihong Zhang">
+
+<title>Dr.&nbsp;Jihong Zhang - Lecture 01</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../icon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-149871707-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;family=Oxygen+Mono&amp;family=Ysabeau+Office&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script>
+<link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Lecture 01">
+<meta property="og:description" content="Course and Bayesian Analysis Introduction">
+<meta property="og:site_name" content="Dr. Jihong Zhang">
+<meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Lecture 01">
+<meta name="twitter:description" content="Course and Bayesian Analysis Introduction">
+<meta name="twitter:creator" content="@jihongzgamma">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts.html"> <i class="bi bi-bi bi-file-post-fill" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-bi bi-three-dots-vertical" role="img">
+</i> 
+ <span class="menu-text">More</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../../../projects.html">
+ <span class="dropdown-text">Projects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../links.html">
+ <span class="dropdown-text">About</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#todays-lecture-objectives" id="toc-todays-lecture-objectives" class="nav-link active" data-scroll-target="#todays-lecture-objectives"><span class="header-section-number">0.1</span> Today’s Lecture Objectives</a></li>
+  <li><a href="#introduce-myself" id="toc-introduce-myself" class="nav-link" data-scroll-target="#introduce-myself"><span class="header-section-number">0.2</span> Introduce myself</a></li>
+  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus"><span class="header-section-number">0.3</span> Syllabus</a></li>
+  <li><a href="#course-time" id="toc-course-time" class="nav-link" data-scroll-target="#course-time"><span class="header-section-number">0.4</span> Course Time</a></li>
+  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours"><span class="header-section-number">0.5</span> Office Hours</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">0.6</span> Materials</a></li>
+  <li><a href="#quiz-what-is-bayesian" id="toc-quiz-what-is-bayesian" class="nav-link" data-scroll-target="#quiz-what-is-bayesian"><span class="header-section-number">0.7</span> Quiz: What is Bayesian?</a></li>
+  <li><a href="#bayesian-model-components" id="toc-bayesian-model-components" class="nav-link" data-scroll-target="#bayesian-model-components"><span class="header-section-number">0.8</span> Bayesian Model Components</a>
+  <ul class="collapse">
+  <li><a href="#bayesian-thinking-process" id="toc-bayesian-thinking-process" class="nav-link" data-scroll-target="#bayesian-thinking-process"><span class="header-section-number">0.8.1</span> Bayesian Thinking Process</a></li>
+  </ul></li>
+  <li><a href="#bayesian-analysis-why-it-is-used" id="toc-bayesian-analysis-why-it-is-used" class="nav-link" data-scroll-target="#bayesian-analysis-why-it-is-used"><span class="header-section-number">0.9</span> Bayesian Analysis: Why It Is Used?</a></li>
+  <li><a href="#bayesian-analysis-why-it-is-used-cont." id="toc-bayesian-analysis-why-it-is-used-cont." class="nav-link" data-scroll-target="#bayesian-analysis-why-it-is-used-cont."><span class="header-section-number">0.10</span> Bayesian Analysis: Why It Is Used? (Cont.)</a></li>
+  <li><a href="#bayesian-analysis-why-it-is-used-cont.-1" id="toc-bayesian-analysis-why-it-is-used-cont.-1" class="nav-link" data-scroll-target="#bayesian-analysis-why-it-is-used-cont.-1"><span class="header-section-number">0.11</span> Bayesian Analysis: Why It Is Used? (Cont.)</a></li>
+  <li><a href="#bayesian-analysis-issues" id="toc-bayesian-analysis-issues" class="nav-link" data-scroll-target="#bayesian-analysis-issues"><span class="header-section-number">0.12</span> Bayesian Analysis: Issues</a></li>
+  <li><a href="#bayesian-analysis-is-popular" id="toc-bayesian-analysis-is-popular" class="nav-link" data-scroll-target="#bayesian-analysis-is-popular"><span class="header-section-number">0.13</span> Bayesian Analysis is popular</a></li>
+  <li><a href="#what-topics-bayesian-analysis-can-cover" id="toc-what-topics-bayesian-analysis-can-cover" class="nav-link" data-scroll-target="#what-topics-bayesian-analysis-can-cover"><span class="header-section-number">0.14</span> What topics Bayesian Analysis can cover?</a></li>
+  <li><a href="#funding-available-only-for-nih-cdc-fda-ahrq-and-acf-2020-spring.-source-httpsreport.nih.gov" id="toc-funding-available-only-for-nih-cdc-fda-ahrq-and-acf-2020-spring.-source-httpsreport.nih.gov" class="nav-link" data-scroll-target="#funding-available-only-for-nih-cdc-fda-ahrq-and-acf-2020-spring.-source-httpsreport.nih.gov"><span class="header-section-number">1</span> <img src="../Images/circle_topics.png" class="img-fluid" style="width:100.0%" alt="Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"></a>
+  <ul class="collapse">
+  <li><a href="#what-topics-bayesian-analysis-can-cover-1" id="toc-what-topics-bayesian-analysis-can-cover-1" class="nav-link" data-scroll-target="#what-topics-bayesian-analysis-can-cover-1"><span class="header-section-number">1.1</span> What topics Bayesian Analysis can cover?</a></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up"><span class="header-section-number">1.2</span> Wrapping Up</a></li>
+  <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class"><span class="header-section-number">1.3</span> Next Class</a></li>
+  <li><a href="#suggestions" id="toc-suggestions" class="nav-link" data-scroll-target="#suggestions"><span class="header-section-number">1.4</span> Suggestions</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture01.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 01</h1>
+<p class="subtitle lead">Course and Bayesian Analysis Introduction</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jihong Zhang </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Educational Statistics and Research Methods
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="todays-lecture-objectives" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="todays-lecture-objectives"><span class="header-section-number">0.1</span> Today’s Lecture Objectives</h2>
+<ol type="1">
+<li>Introduce myself</li>
+<li>Syllabus</li>
+<li>Extra Course Information</li>
+<li>Introduce Bayesian Analysis</li>
+</ol>
+<p>but, before we begin…</p>
+</section>
+<section id="introduce-myself" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="introduce-myself"><span class="header-section-number">0.2</span> Introduce myself</h2>
+<p>Let me introduce myself first…</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/UI.jpg" class="img-fluid figure-img" width="350"></p>
+<figcaption>University if Iowa</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/HK.jpg" class="img-fluid figure-img" width="350"></p>
+<figcaption>Hong Kong: Victoria Harbour</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/CUHK.jpg" class="img-fluid figure-img" width="350"></p>
+<figcaption>Chinese University of Hong Kong</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="syllabus" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="syllabus"><span class="header-section-number">0.3</span> Syllabus</h2>
+<p><a href="https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/index.pdf">Syllabus of ESRM 6553</a></p>
+</section>
+<section id="course-time" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="course-time"><span class="header-section-number">0.4</span> Course Time</h2>
+<ul>
+<li><p>Monday 5PM to 7:45PM:</p>
+<ul>
+<li><p>5PM to 6:15PM: First half class</p></li>
+<li><p>6:15PM to 6:30PM: 15-min break</p></li>
+<li><p>6:30PM to 7:45PM: Second half class</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="office-hours" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="office-hours"><span class="header-section-number">0.5</span> Office Hours</h2>
+<ul>
+<li><p>Tuesday 1:30PM to 4:30PM</p></li>
+<li><p>You should be able to find me in GRAD Room 109</p></li>
+</ul>
+</section>
+<section id="materials" class="level2" data-number="0.6">
+<h2 data-number="0.6" class="anchored" data-anchor-id="materials"><span class="header-section-number">0.6</span> Materials</h2>
+<ul>
+<li>I will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)</li>
+</ul>
+</section>
+<section id="quiz-what-is-bayesian" class="level2" data-number="0.7">
+<h2 data-number="0.7" class="anchored" data-anchor-id="quiz-what-is-bayesian"><span class="header-section-number">0.7</span> Quiz: What is Bayesian?</h2>
+<ol type="1">
+<li><a href="https://www.youtube.com/watch?v=0e38NuBFqaQ">How to Pronounce Bayesian (Real Life Examples!)</a>
+<ul>
+<li>“B-Asian” or “Bayes-ian”?</li>
+<li>What “Bayesian” mean? Assign probabilities to everything!</li>
+</ul></li>
+<li><a href="https://www.youtube.com/watch?v=dNeo7FNlOyY">Frequentist vs Bayesian</a>
+<ul>
+<li>Example: In U.S., more Male Asian Faculty or Female Asian Faculty?
+<ul>
+<li>Frequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?</li>
+<li>Bayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="bayesian-model-components" class="level2" data-number="0.8">
+<h2 data-number="0.8" class="anchored" data-anchor-id="bayesian-model-components"><span class="header-section-number">0.8</span> Bayesian Model Components</h2>
+<ol type="1">
+<li>What we see: Observed Data</li>
+<li>What we cannot see: Future Data, Data yet to be collected, Parameters</li>
+</ol>
+<hr>
+<p><strong>Take home Note I: Everything is random in Bayesian!</strong></p>
+<ul>
+<li>Observed Data: Some <strong>random</strong> information given a unknown generation process</li>
+<li>Parameter: The <strong>random</strong> components controlling the generation process</li>
+</ul>
+<hr>
+<p><strong>Take home Note II: Every random component can be expressed as probability!</strong></p>
+<ul>
+<li>The probability of observed data given parameters: <span class="math inline">p(\text{Observed Data}|\text{Parameters})</span> = <strong>Likelihood</strong></li>
+<li>The probability of parameters: <span class="math inline">p(\text{Parameters})</span> = <strong>Prior Distribution</strong></li>
+<li>The probability of parameters given observed data: <span class="math inline">p(\text{Parameters}|\text{Observed Data})</span> = <strong>Posterior Distribution</strong>*</li>
+</ul>
+<hr>
+<section id="bayesian-thinking-process" class="level3" data-number="0.8.1">
+<h3 data-number="0.8.1" class="anchored" data-anchor-id="bayesian-thinking-process"><span class="header-section-number">0.8.1</span> Bayesian Thinking Process</h3>
+<section id="a-toy-example" class="level4">
+<h4 class="anchored" data-anchor-id="a-toy-example">A toy example:</h4>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd I originally thought the ratio of male Asian faculty to female is about 1:2 (<strong>Prior</strong>). But the data we sampled from 2000 doctoral students suggested gender ratio is 1:1 (<strong>Data; Likelihood that the true ratio we don’t know</strong>). Based on Bayes’s rule, estimate for the ratio is probably 1:1.5 (<strong>Posterior</strong>) after combining these two statements. ======= I originally thought the ratio of male Asian faculty to female is about 1:2 (<strong>Prior</strong>). We obtained the information from 2000 doctoral candidates suggested gender ratio is 1:1 (<strong>Data; Likelihood give the true ratio we don’t know</strong>). Based on Bayes’s rule, estimate for the ratio is probably 1:1.5 (<strong>Posterior</strong>) after combining these two statements. &gt;&gt;&gt;&gt;&gt;&gt;&gt; 6e75efe (update 2024 CV):posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.qmd</p>
+</section>
+</section>
+</section>
+<section id="bayesian-analysis-why-it-is-used" class="level2 smaller" data-number="0.9">
+<h2 class="smaller anchored" data-number="0.9" data-anchor-id="bayesian-analysis-why-it-is-used"><span class="header-section-number">0.9</span> Bayesian Analysis: Why It Is Used?</h2>
+<p>There are at least four main reasons why people use Bayesian Analysis:</p>
+<ol type="1">
+<li>Missing data
+<ul>
+<li>Multiple imputation</li>
+<li>More complicated model for certain types of missing data</li>
+</ul></li>
+<li>Lack of software capable of handing large sized analyses
+<ul>
+<li>Have a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!</li>
+</ul></li>
+</ol>
+</section>
+<section id="bayesian-analysis-why-it-is-used-cont." class="level2 smaller" data-number="0.10">
+<h2 class="smaller anchored" data-number="0.10" data-anchor-id="bayesian-analysis-why-it-is-used-cont."><span class="header-section-number">0.10</span> Bayesian Analysis: Why It Is Used? (Cont.)</h2>
+<ol start="3" type="1">
+<li>New complex models not available in frequentist framework
+<ul>
+<li>Have a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)</li>
+</ul></li>
+<li>Enjoy the Bayesian thinking process
+<ul>
+<li>It is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.</li>
+</ul></li>
+</ol>
+</section>
+<section id="bayesian-analysis-why-it-is-used-cont.-1" class="level2" data-number="0.11">
+<h2 data-number="0.11" class="anchored" data-anchor-id="bayesian-analysis-why-it-is-used-cont.-1"><span class="header-section-number">0.11</span> Bayesian Analysis: Why It Is Used? (Cont.)</h2>
+<p><img src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/DAG_BN.png" class="img-fluid"></p>
+</section>
+<section id="bayesian-analysis-issues" class="level2" data-number="0.12">
+<h2 data-number="0.12" class="anchored" data-anchor-id="bayesian-analysis-issues"><span class="header-section-number">0.12</span> Bayesian Analysis: Issues</h2>
+<ol type="1">
+<li>Subjective vs.&nbsp;Objective
+<ul>
+<li>Prior distribution is subjective. It is based on your prior knowledge.</li>
+<li>However, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.</li>
+</ul></li>
+<li>Computationally Intensive
+<ul>
+<li>It is not a problem anymore. We have computers.</li>
+<li>But we still need weeks or months to get results for some complated model and big data</li>
+</ul></li>
+<li>Difficult to understand</li>
+</ol>
+</section>
+<section id="bayesian-analysis-is-popular" class="level2" data-number="0.13">
+<h2 data-number="0.13" class="anchored" data-anchor-id="bayesian-analysis-is-popular"><span class="header-section-number">0.13</span> Bayesian Analysis is popular</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd <img src="../Images/histogram_fundingamount.png" class="img-fluid" style="width:100.0%" alt="Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"></p>
+</section>
+<section id="what-topics-bayesian-analysis-can-cover" class="level2" data-number="0.14">
+<h2 data-number="0.14" class="anchored" data-anchor-id="what-topics-bayesian-analysis-can-cover"><span class="header-section-number">0.14</span> What topics Bayesian Analysis can cover?</h2>
+</section>
+<section id="funding-available-only-for-nih-cdc-fda-ahrq-and-acf-2020-spring.-source-httpsreport.nih.gov" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <img src="../Images/circle_topics.png" class="img-fluid" style="width:100.0%" alt="Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/"></h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/histogram_fundingamount.png" class="img-fluid figure-img"></p>
+<figcaption>Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</figcaption>
+</figure>
+</div>
+<section id="what-topics-bayesian-analysis-can-cover-1" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-topics-bayesian-analysis-can-cover-1"><span class="header-section-number">1.1</span> What topics Bayesian Analysis can cover?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Images/circle_topics.png" class="img-fluid figure-img"></p>
+<figcaption>Funding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/</figcaption>
+</figure>
+</div>
+</section>
+<section id="wrapping-up" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="wrapping-up"><span class="header-section-number">1.2</span> Wrapping Up</h2>
+<ol type="1">
+<li>We know what is “Bayesian” and its components.</li>
+<li>Why Bayesian Estimation is different from other estimation, say maximum likelihood</li>
+<li>We also know that Bayesian analysis is popular in many fields, especially complex data &gt;&gt;&gt;&gt;&gt;&gt;&gt; 6e75efe (update 2024 CV):posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.qmd</li>
+</ol>
+</section>
+<section id="next-class" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="next-class"><span class="header-section-number">1.3</span> Next Class</h2>
+<p>We will talk about how Bayesian methods works in a little bit more technical way.</p>
+</section>
+<section id="suggestions" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="suggestions"><span class="header-section-number">1.4</span> Suggestions</h2>
+<p>Your opinions are very important to me. Feel free to let me know if you have any suggestions on the course.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="preferred_color_scheme">
+<input type="hidden" id="giscus-alt-theme" value="preferred_color_scheme">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2015-2023, <span class="citation" data-cites="JihongZ">@JihongZ</span></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

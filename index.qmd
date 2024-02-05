@@ -22,9 +22,6 @@ about:
     - icon: bi-bookmark-heart-fill
       text: ORCID
       href: https://orcid.org/0000-0003-2820-3734
-    - icon: bi-file-earmark-person
-      text: C.V.
-      href: ./Curriculum_Vitae.pdf
 listing:
   - id: posts
     contents: posts/*/*.[Rq]md
@@ -35,14 +32,13 @@ listing:
     filter-ui: false
     page-size: 3
     feed: true
-footer: "Copyright 2015-2023 @Jihong"
 ---
 
 ## About me
 
-Dr. Jihong Zhang currently holds the position of Assistant Professor in the Educational Statistics and Research Methods (ESRM) Program at the University of Arkansas. Previously, he served as a Postdoctoral Fellow in the School of Social Science at the Chinese University of Hong Kong. Dr. Zhang's academic journey includes a rigorous doctoral training in the Educational Measurement and Statistics (EMS) program at the University of Iowa. His primary research focus during this period was on Bayesian latent variable modeling, Item Response Theory modeling, and other advanced psychometric methodologies.
+I currently hold the position of Assistant Professor in the Educational Statistics and Research Methods (ESRM) Program at the University of Arkansas. Previously, I served as a postdoctoral fellow in the School of Social Science at the Chinese University of Hong Kong. My academic journey includes a rigorous doctoral training in the Educational Measurement and Statistics (EMS) program at the University of Iowa. My primary research focus was on Psychological and Bayesian Network, Bayesian latent variable modeling, Item Response Theory modeling, and other advanced psychometric methodologies.
 
-Dr. Zhang's expertise lies in the application of sophisticated statistical models, including machine learning and Bayesian networks. His research endeavors are primarily aimed at assisting researchers in the social sciences to comprehend their data more effectively, interpret results accurately, and utilize the potent tools of statistics judiciously. His work is characterized by a commitment to enhancing the methodological understanding and application of statistics in educational research and beyond.
+My expertise lies in the application of sophisticated statistical models, including machine learning and Bayesian networks. My research endeavors are primarily aimed at assisting researchers in the social sciences to comprehend their data more effectively, interpret results accurately, and utilize the potent tools of statistics judiciously. My work is characterized by a commitment to enhancing the methodological understanding and application of statistics in educational research and beyond.
 
 ::: {.panel-tabset align="left"}
 ## Interests
