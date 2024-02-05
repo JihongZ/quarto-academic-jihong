@@ -52,7 +52,7 @@ format:
     toc: true
     grid:
       sidebar-width: 250px
-      body-width: 750px
+      body-width: 900px
       margin-width: 250px
     comments:
       giscus:

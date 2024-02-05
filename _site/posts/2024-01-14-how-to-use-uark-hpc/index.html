@@ -193,7 +193,8 @@ ga('send', {
   <li>
 <a href="#checking-job" id="toc-checking-job" class="nav-link" data-scroll-target="#checking-job"><span class="header-section-number">5</span> Checking job</a>
   <ul class="collapse">
-<li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">5.1</span> Troubleshooting</a></li>
+<li><a href="#queues" id="toc-queues" class="nav-link" data-scroll-target="#queues"><span class="header-section-number">5.1</span> Queues</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">5.2</span> Troubleshooting</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -358,22 +359,78 @@ Your public key has been saved in /Users/[username]/.ssh/id_rsa.pub</code></pre>
 </section><section id="checking-job" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="checking-job">
 <span class="header-section-number">5</span> Checking job</h2>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> loginname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Below shows the information of all running/down task for the queue <code>comp06</code> (there are 9 Jobs but only 7 are running).</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">✘</span> jzhang@pinnacle-l8  ~/Projects/DCM  squeue <span class="at">-p</span> comp06</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>             <span class="ex">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er">(</span><span class="ex">REASON</span><span class="kw">)</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362406</span>    comp06    measr   jzhang PD       0:00      1 <span class="er">(</span><span class="ex">Resources</span><span class="kw">)</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362361</span>    comp06 03a_iqtr amatthew PD       0:00      1 <span class="er">(</span><span class="ex">Priority</span><span class="kw">)</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362385</span>    comp06 sys/dash ashmitau  R      36:05      1 c1402</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362334</span>    comp06   fixed2    igorf  R    1:53:29      1 c1402</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362333</span>    comp06   fixed1    igorf  R    1:53:32      1 c1402</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362332</span>    comp06   fixed0    igorf  R    1:53:35      1 c1402</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362309</span>    comp06 sys/dash    igorf  R    2:43:12      1 c1402</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362360</span>    comp06 03a_iqtr amatthew  R      59:32      1 c1403</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362311</span>    comp06  mystery cdgoolsb  R    2:37:50      1 c1410</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362310</span>    comp06  mystery cdgoolsb  R    2:38:20      1 c1410</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362308</span>    comp06  mystery cdgoolsb  R    2:43:21      1 c1410</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="troubleshooting" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="troubleshooting">
-<span class="header-section-number">5.1</span> Troubleshooting</h3>
+<p>Below shows the information of all running/down task for the queue <code>comp06</code> (there are 9 Jobs but only 7 are running). Note that comp06 and comp72 queues share the same nodes, both belonging to pinnacle cluster. There are 49 public standard compute nodes. Thus, if there are 49 running jobs in both queues, then your job has to be waitting until some jobs finished.</p>
+<p>For example, below shows all 47 running jobs in comp06/comp72 queues. Some have been running like 2 days. There are 72 hours limit though for all computation nodes.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-p</span> comp06,comp72 <span class="at">-t</span> R</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er">(</span><span class="ex">REASON</span><span class="kw">)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">362406</span>    comp06    measr   jzhang  R    1:04:24      1 c1501</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">362385</span>    comp06 sys/dash ashmitau  R    2:07:25      1 c1402</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a> <span class="ex">362309</span>    comp06 sys/dash    igorf  R    4:14:32      1 c1402</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">362361</span>    comp06 03a_iqtr amatthew  R      55:02      1 c1420</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a> <span class="ex">362311</span>    comp06  mystery cdgoolsb  R    4:09:10      1 c1410</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">362310</span>    comp06  mystery cdgoolsb  R    4:09:40      1 c1410</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a> <span class="ex">362308</span>    comp06  mystery cdgoolsb  R    4:14:41      1 c1410</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a> <span class="ex">362454</span>    comp72 test_str pradeepk  R      11:03      1 c1512</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">362150</span>    comp72   cv0_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">362151</span>    comp72   cv1_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a> <span class="ex">362152</span>    comp72   cv2_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a> <span class="ex">362137</span>    comp72 sys/dash maghamoh  R 1-03:12:27      1 c1410</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a> <span class="ex">362340</span>    comp72  cv1_pls    igorf  R    1:00:24      1 c1512</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a> <span class="ex">362341</span>    comp72  cv2_pls    igorf  R    1:00:24      1 c1512</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">362339</span>    comp72  cv0_pls    igorf  R    1:04:24      1 c1501</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a> <span class="ex">360997</span>    comp72  TiS2-ph bothinah  R 2-04:46:42      1 c1609</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a> <span class="ex">360877</span>    comp72 Temp_230 sppoudel  R      54:55      1 c1419</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">360875</span>    comp72 Temp_220 sppoudel  R    6:19:42      1 c1415</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a> <span class="ex">360876</span>    comp72 Temp_225 sppoudel  R    6:19:42      1 c1509</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a> <span class="ex">354260</span>    comp72 peep19-0   djo001  R   11:27:37      1 c1506</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a> <span class="ex">354262</span>    comp72 peep20-0   djo001  R   11:27:37      1 c1514</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a> <span class="ex">354263</span>    comp72 peep21-0   djo001  R   11:27:37      1 c1515</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a> <span class="ex">351991</span>    comp72 peep16-0   djo001  R   12:31:45      1 c1507</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a> <span class="ex">351988</span>    comp72 peep18-2   djo001  R   14:00:48      1 c1603</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a> <span class="ex">351987</span>    comp72 peep17-2   djo001  R   14:07:24      1 c1519</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a> <span class="ex">360873</span>    comp72 Temp_210 sppoudel  R   14:49:25      1 c1408</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a> <span class="ex">360874</span>    comp72 Temp_215 sppoudel  R   14:49:25      1 c1418</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a> <span class="ex">351989</span>    comp72 peep18-0   djo001  R   14:49:55      1 c1516</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a> <span class="ex">351990</span>    comp72 peep17-0   djo001  R   14:49:55      1 c1518</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a> <span class="ex">351986</span>    comp72 peep16-2   djo001  R   15:36:01      1 c1605</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a> <span class="ex">360824</span>    comp72 SmNiO3-2 paillard  R   16:23:51      4 c<span class="pp">[</span><span class="ss">1405</span><span class="pp">-</span><span class="ss">1406,1503,1508</span><span class="pp">]</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a> <span class="ex">360871</span>    comp72 Temp_205 sppoudel  R   16:23:51      1 c1511</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a> <span class="ex">360821</span>    comp72 SmNiO3-2 paillard  R 1-01:41:15      4 c<span class="pp">[</span><span class="ss">1412</span><span class="pp">-</span><span class="ss">1413,1513,1517</span><span class="pp">]</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a> <span class="ex">360869</span>    comp72 Temp_200 sppoudel  R 1-01:41:15      1 c1606</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a> <span class="ex">360868</span>    comp72 Temp_195 sppoudel  R 1-14:30:28      1 c1504</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a> <span class="ex">349719</span>    comp72  peep8-2   djo001  R 1-16:02:28      1 c1608</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a> <span class="ex">360867</span>    comp72 Temp_190 sppoudel  R 1-20:18:00      1 c1610</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a> <span class="ex">360818</span>    comp72 SmNiO3-2 paillard  R 1-20:18:01      4 c<span class="pp">[</span><span class="ss">1404,1409,1502,1505</span><span class="pp">]</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a> <span class="ex">360866</span>    comp72 Temp_180 sppoudel  R 2-04:52:43      1 c1411</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a> <span class="ex">349718</span>    comp72  peep9-2   djo001  R 2-05:37:18      1 c1604</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a> <span class="ex">349717</span>    comp72 peep10-2   djo001  R 2-05:51:48      1 c1520</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a> <span class="ex">349715</span>    comp72 peep12-2   djo001  R 2-09:11:29      1 c1417</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a> <span class="ex">349716</span>    comp72 peep11-2   djo001  R 2-09:11:29      1 c1607</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a> <span class="ex">349714</span>    comp72 peep13-2   djo001  R 2-09:30:18      1 c1510</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a> <span class="ex">338160</span>    comp72 INT3-WT- dgirodat  R 2-10:20:18      1 c1407</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a> <span class="ex">338164</span>    comp72 C1069T-p dgirodat  R 2-10:20:18      1 c1414</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you want to get the worst case scenario estimate of when your waiting jobs will start, you can always run following command,</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span> <span class="at">--start</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="queues" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="queues">
+<span class="header-section-number">5.1</span> Queues</h3>
+<p>Most frequently used queues are from <code>pinnacle</code> cluster.</p>
+<p>Below is a list of queues in the <code>pinnacle</code> cluster. The number after the queue is the time limit for a running job. For example, <code>comp72</code> has 72 hour limits while <code>comp06</code> has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use <code>comp01</code> for quick examination of coding and use <code>comp72</code> for time consuming jobs.</p>
+<pre><code>comp72/06/01: standard compute nodes, 72/6/1 hour limit, 42/46/48 nodes
+gpu72/06:     gpu nodes: 72/6 hour limit, 19 nodes
+agpu72/06:    a100 gpu nodes: 72/6 hour limit
+himem72/06:   768 GB nodes, 72/6 hour limit, 6 nodes
+pubcondo06:   condo nodes all-user use, 6 hour limit, various constraints required, 25 nodes
+pcon06:       same as pubcondo06, shortened name for easier printout, use this going forward
+cloud72:      virtual machines and containers, usually single processor, 72 hour limit, 3 nodes
+condo:        condo nodes, no time limit, authorization required, various constraints required, 25 nodes
+tres72/06:    reimaged trestles nodes, 72/06 hour limit, 126 nodes
+razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
+<p>Here’s some useful information regarding selecting queue from https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage</p>
+<blockquote class="blockquote">
+<p>Generally the nodes are reserved for the most efficient use, especially for expensive features such as GPU and extra memory. Pinnacle compute nodes are very busy (comp.. and himem.. partitions) are reserved for scalable programs that can use all 32/24 cores (except for the cloud partition, and condo usage by the owner). Cores are allocated by the product of ntasks-per-node x cpus-per-task. Exceptions: (1) serial/single core jobs that use more memory than available on Razor/Trestles (64 to 192 GB) (2) multiple jobs submitted together that use a whole node, such as 4 x 8 cores (3) two jobs on one high-memory node (2 x 12 cores) that each use more than 192 GB (and less than 384 GB so that they can run on the himem node)</p>
+</blockquote>
+</section><section id="troubleshooting" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="troubleshooting">
+<span class="header-section-number">5.2</span> Troubleshooting</h3>
 <ol type="1">
 <li>
 <p>Revise <code>.bashrc</code> so that the ssh cannot login?</p>

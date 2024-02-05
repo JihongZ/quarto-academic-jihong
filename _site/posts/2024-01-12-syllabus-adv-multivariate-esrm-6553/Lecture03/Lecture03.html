@@ -613,7 +613,7 @@ Jihong Zhang
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2) <span class="co"># R package for data visualization</span></span>
 <span id="cb1-2"><a></a><span class="co"># read in data</span></span>
-<span id="cb1-3"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Code/DietData.csv"</span>)</span>
+<span id="cb1-3"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'posts'</span>, <span class="st">'2024-01-12-syllabus-adv-multivariate-esrm-6553'</span>, <span class="st">'Lecture03'</span>, <span class="st">'Code'</span>, <span class="st">'DietData.csv'</span>))</span>
 <span id="cb1-4"><a></a>dat<span class="sc">$</span>DietGroup <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>DietGroup, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
 <span id="cb1-5"><a></a><span class="fu">head</span>(dat)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1090,7 +1090,7 @@ attr(,"assign")
 <pre><strong>DietDataExample.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># compile model -- this method is for stand-alone stan files (uses cmdstanr)</span></span>
-<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2"></a><span class="fu">setwd</span>(<span class="st">"~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03"</span>)</span>
+<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2"></a><span class="co">#setwd("~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03")</span></span>
 <span id="annotated-cell-7-3"><a href="#annotated-cell-7-3"></a>model00.fromFile <span class="ot">=</span> <span class="fu">cmdstan_model</span>(<span class="at">stan_file =</span> <span class="st">"Code/EmptyModel.stan"</span>)</span>
 <span id="annotated-cell-7-4"><a href="#annotated-cell-7-4"></a></span>
 <span id="annotated-cell-7-5"><a href="#annotated-cell-7-5"></a><span class="co"># or this method using the string text in R</span></span>
@@ -2399,6 +2399,58 @@ Total execution time: 0.4 seconds.</code></pre>
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="using-rstanarm-for-simple-bayesian-models">Using <code>rstanarm</code> for simple Bayesian models</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">library</span>(rstanarm)</span>
+<span id="cb34-2"><a></a><span class="co"># Set this manually if desired:</span></span>
+<span id="cb34-3"><a></a>ncores <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>(<span class="at">logical =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb34-4"><a></a><span class="do">###</span></span>
+<span id="cb34-5"><a></a><span class="fu">options</span>(<span class="at">mc.cores =</span> ncores)</span>
+<span id="cb34-6"><a></a><span class="fu">set.seed</span>(<span class="dv">5078022</span>)</span>
+<span id="cb34-7"><a></a>refm_fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(</span>
+<span id="cb34-8"><a></a>  WeightLB <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb34-9"><a></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb34-10"><a></a>  <span class="at">data =</span> dat,</span>
+<span id="cb34-11"><a></a>  <span class="do">### 5000 warmups and 5000 samplings</span></span>
+<span id="cb34-12"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter =</span> <span class="dv">10000</span></span>
+<span id="cb34-13"><a></a>)</span>
+<span id="cb34-14"><a></a><span class="fu">summary</span>(refm_fit)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Model Info:
+ function:     stan_glm
+ family:       gaussian [identity]
+ formula:      WeightLB ~ 1
+ algorithm:    sampling
+ sample:       20000 (posterior sample size)
+ priors:       see help('prior_summary')
+ observations: 30
+ predictors:   1
+
+Estimates:
+              mean   sd    10%   50%   90%
+(Intercept) 171.0    9.3 159.2 170.9 182.8
+sigma        50.8    6.9  42.6  50.1  59.9
+
+Fit Diagnostics:
+           mean   sd    10%   50%   90%
+mean_PPD 171.0   13.3 154.1 171.1 187.9
+
+The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help('summary.stanreg')).
+
+MCMC diagnostics
+              mcse Rhat n_eff
+(Intercept)   0.1  1.0  12322
+sigma         0.1  1.0  11327
+mean_PPD      0.1  1.0  14789
+log-posterior 0.0  1.0   7153
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).</code></pre>
 </div>
 </div>
 </section>

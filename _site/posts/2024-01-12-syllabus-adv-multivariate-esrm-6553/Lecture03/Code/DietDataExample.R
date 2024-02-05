@@ -105,3 +105,21 @@ model00Poor.samples = model00Poor.fromFile$sample(
 )
 model00Poor.samples$summary()
 bayesplot::mcmc_trace(model00Poor.samples$draws("beta0"))
+
+
+# Bonus: using rstanarm ---------------------------------------------------
+## It is as simple as we did linear regression using lm()
+library(rstanarm)
+# Set this manually if desired:
+ncores <- parallel::detectCores(logical = FALSE)
+###
+options(mc.cores = ncores)
+set.seed(5078022)
+refm_fit <- stan_glm(
+  WeightLB ~ 1,
+  family = gaussian(),
+  data = dat,
+  ### 5000 warmups and 5000 samplings
+  chains = 4, iter = 10000
+)
+summary(refm_fit)

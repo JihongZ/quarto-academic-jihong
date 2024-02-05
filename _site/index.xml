@@ -269,13 +269,16 @@ background-color: null;
 font-style: inherit;">squeue</span> <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">-u</span> loginname</span></code></pre></div>
-<p>Below shows the information of all running/down task for the queue <code>comp06</code> (there are 9 Jobs but only 7 are running).</p>
+<p>Below shows the information of all running/down task for the queue <code>comp06</code> (there are 9 Jobs but only 7 are running). Note that comp06 and comp72 queues share the same nodes, both belonging to pinnacle cluster. There are 49 public standard compute nodes. Thus, if there are 49 running jobs in both queues, then your job has to be waitting until some jobs finished.</p>
+<p>For example, below shows all 47 running jobs in comp06/comp72 queues. Some have been running like 2 days. There are 72 hours limit though for all computation nodes.</p>
 <div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">✘</span> jzhang@pinnacle-l8  ~/Projects/DCM  squeue <span class="at" style="color: #657422;
+font-style: inherit;">squeue</span> <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">-p</span> comp06</span>
-<span id="cb14-2">             <span class="ex" style="color: null;
+font-style: inherit;">-p</span> comp06,comp72 <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-t</span> R</span>
+<span id="cb14-2"> <span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er" style="color: #AD0000;
 background-color: null;
@@ -284,53 +287,204 @@ background-color: null;
 font-style: inherit;">REASON</span><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">)</span></span>
-<span id="cb14-3">            <span class="ex" style="color: null;
+<span id="cb14-3"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362406</span>    comp06    measr   jzhang PD       0:00      1 <span class="er" style="color: #AD0000;
+font-style: inherit;">362406</span>    comp06    measr   jzhang  R    1:04:24      1 c1501</span>
+<span id="cb14-4"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">(</span><span class="ex" style="color: null;
+font-style: inherit;">362385</span>    comp06 sys/dash ashmitau  R    2:07:25      1 c1402</span>
+<span id="cb14-5"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">Resources</span><span class="kw" style="color: #003B4F;
+font-style: inherit;">362309</span>    comp06 sys/dash    igorf  R    4:14:32      1 c1402</span>
+<span id="cb14-6"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">)</span></span>
-<span id="cb14-4">            <span class="ex" style="color: null;
+font-style: inherit;">362361</span>    comp06 03a_iqtr amatthew  R      55:02      1 c1420</span>
+<span id="cb14-7"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362361</span>    comp06 03a_iqtr amatthew PD       0:00      1 <span class="er" style="color: #AD0000;
+font-style: inherit;">362311</span>    comp06  mystery cdgoolsb  R    4:09:10      1 c1410</span>
+<span id="cb14-8"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">(</span><span class="ex" style="color: null;
+font-style: inherit;">362310</span>    comp06  mystery cdgoolsb  R    4:09:40      1 c1410</span>
+<span id="cb14-9"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">Priority</span><span class="kw" style="color: #003B4F;
+font-style: inherit;">362308</span>    comp06  mystery cdgoolsb  R    4:14:41      1 c1410</span>
+<span id="cb14-10"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">)</span></span>
-<span id="cb14-5">            <span class="ex" style="color: null;
+font-style: inherit;">362454</span>    comp72 test_str pradeepk  R      11:03      1 c1512</span>
+<span id="cb14-11"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362385</span>    comp06 sys/dash ashmitau  R      36:05      1 c1402</span>
-<span id="cb14-6">            <span class="ex" style="color: null;
+font-style: inherit;">362150</span>    comp72   cv0_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-12"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362334</span>    comp06   fixed2    igorf  R    1:53:29      1 c1402</span>
-<span id="cb14-7">            <span class="ex" style="color: null;
+font-style: inherit;">362151</span>    comp72   cv1_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-13"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362333</span>    comp06   fixed1    igorf  R    1:53:32      1 c1402</span>
-<span id="cb14-8">            <span class="ex" style="color: null;
+font-style: inherit;">362152</span>    comp72   cv2_rf    igorf  R 1-00:43:47      1 c1410</span>
+<span id="cb14-14"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362332</span>    comp06   fixed0    igorf  R    1:53:35      1 c1402</span>
-<span id="cb14-9">            <span class="ex" style="color: null;
+font-style: inherit;">362137</span>    comp72 sys/dash maghamoh  R 1-03:12:27      1 c1410</span>
+<span id="cb14-15"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362309</span>    comp06 sys/dash    igorf  R    2:43:12      1 c1402</span>
-<span id="cb14-10">            <span class="ex" style="color: null;
+font-style: inherit;">362340</span>    comp72  cv1_pls    igorf  R    1:00:24      1 c1512</span>
+<span id="cb14-16"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362360</span>    comp06 03a_iqtr amatthew  R      59:32      1 c1403</span>
-<span id="cb14-11">            <span class="ex" style="color: null;
+font-style: inherit;">362341</span>    comp72  cv2_pls    igorf  R    1:00:24      1 c1512</span>
+<span id="cb14-17"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362311</span>    comp06  mystery cdgoolsb  R    2:37:50      1 c1410</span>
-<span id="cb14-12">            <span class="ex" style="color: null;
+font-style: inherit;">362339</span>    comp72  cv0_pls    igorf  R    1:04:24      1 c1501</span>
+<span id="cb14-18"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362310</span>    comp06  mystery cdgoolsb  R    2:38:20      1 c1410</span>
-<span id="cb14-13">            <span class="ex" style="color: null;
+font-style: inherit;">360997</span>    comp72  TiS2-ph bothinah  R 2-04:46:42      1 c1609</span>
+<span id="cb14-19"> <span class="ex" style="color: null;
 background-color: null;
-font-style: inherit;">362308</span>    comp06  mystery cdgoolsb  R    2:43:21      1 c1410</span></code></pre></div>
-<section id="troubleshooting" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="troubleshooting">
-<span class="header-section-number">5.1</span> Troubleshooting</h3>
+font-style: inherit;">360877</span>    comp72 Temp_230 sppoudel  R      54:55      1 c1419</span>
+<span id="cb14-20"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360875</span>    comp72 Temp_220 sppoudel  R    6:19:42      1 c1415</span>
+<span id="cb14-21"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360876</span>    comp72 Temp_225 sppoudel  R    6:19:42      1 c1509</span>
+<span id="cb14-22"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">354260</span>    comp72 peep19-0   djo001  R   11:27:37      1 c1506</span>
+<span id="cb14-23"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">354262</span>    comp72 peep20-0   djo001  R   11:27:37      1 c1514</span>
+<span id="cb14-24"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">354263</span>    comp72 peep21-0   djo001  R   11:27:37      1 c1515</span>
+<span id="cb14-25"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351991</span>    comp72 peep16-0   djo001  R   12:31:45      1 c1507</span>
+<span id="cb14-26"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351988</span>    comp72 peep18-2   djo001  R   14:00:48      1 c1603</span>
+<span id="cb14-27"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351987</span>    comp72 peep17-2   djo001  R   14:07:24      1 c1519</span>
+<span id="cb14-28"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360873</span>    comp72 Temp_210 sppoudel  R   14:49:25      1 c1408</span>
+<span id="cb14-29"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360874</span>    comp72 Temp_215 sppoudel  R   14:49:25      1 c1418</span>
+<span id="cb14-30"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351989</span>    comp72 peep18-0   djo001  R   14:49:55      1 c1516</span>
+<span id="cb14-31"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351990</span>    comp72 peep17-0   djo001  R   14:49:55      1 c1518</span>
+<span id="cb14-32"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">351986</span>    comp72 peep16-2   djo001  R   15:36:01      1 c1605</span>
+<span id="cb14-33"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360824</span>    comp72 SmNiO3-2 paillard  R   16:23:51      4 c<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1405</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1406,1503,1508</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb14-34"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360871</span>    comp72 Temp_205 sppoudel  R   16:23:51      1 c1511</span>
+<span id="cb14-35"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360821</span>    comp72 SmNiO3-2 paillard  R 1-01:41:15      4 c<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1412</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1413,1513,1517</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb14-36"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360869</span>    comp72 Temp_200 sppoudel  R 1-01:41:15      1 c1606</span>
+<span id="cb14-37"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360868</span>    comp72 Temp_195 sppoudel  R 1-14:30:28      1 c1504</span>
+<span id="cb14-38"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349719</span>    comp72  peep8-2   djo001  R 1-16:02:28      1 c1608</span>
+<span id="cb14-39"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360867</span>    comp72 Temp_190 sppoudel  R 1-20:18:00      1 c1610</span>
+<span id="cb14-40"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360818</span>    comp72 SmNiO3-2 paillard  R 1-20:18:01      4 c<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1404,1409,1502,1505</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb14-41"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">360866</span>    comp72 Temp_180 sppoudel  R 2-04:52:43      1 c1411</span>
+<span id="cb14-42"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349718</span>    comp72  peep9-2   djo001  R 2-05:37:18      1 c1604</span>
+<span id="cb14-43"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349717</span>    comp72 peep10-2   djo001  R 2-05:51:48      1 c1520</span>
+<span id="cb14-44"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349715</span>    comp72 peep12-2   djo001  R 2-09:11:29      1 c1417</span>
+<span id="cb14-45"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349716</span>    comp72 peep11-2   djo001  R 2-09:11:29      1 c1607</span>
+<span id="cb14-46"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">349714</span>    comp72 peep13-2   djo001  R 2-09:30:18      1 c1510</span>
+<span id="cb14-47"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">338160</span>    comp72 INT3-WT- dgirodat  R 2-10:20:18      1 c1407</span>
+<span id="cb14-48"> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">338164</span>    comp72 C1069T-p dgirodat  R 2-10:20:18      1 c1414</span></code></pre></div>
+<p>When you want to get the worst case scenario estimate of when your waiting jobs will start, you can always run following command,</p>
+<div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">squeue</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-u</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">loginname</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--start</span></span></code></pre></div>
+<section id="queues" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="queues">
+<span class="header-section-number">5.1</span> Queues</h3>
+<p>Most frequently used queues are from <code>pinnacle</code> cluster.</p>
+<p>Below is a list of queues in the <code>pinnacle</code> cluster. The number after the queue is the time limit for a running job. For example, <code>comp72</code> has 72 hour limits while <code>comp06</code> has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use <code>comp01</code> for quick examination of coding and use <code>comp72</code> for time consuming jobs.</p>
+<pre><code>comp72/06/01: standard compute nodes, 72/6/1 hour limit, 42/46/48 nodes
+gpu72/06:     gpu nodes: 72/6 hour limit, 19 nodes
+agpu72/06:    a100 gpu nodes: 72/6 hour limit
+himem72/06:   768 GB nodes, 72/6 hour limit, 6 nodes
+pubcondo06:   condo nodes all-user use, 6 hour limit, various constraints required, 25 nodes
+pcon06:       same as pubcondo06, shortened name for easier printout, use this going forward
+cloud72:      virtual machines and containers, usually single processor, 72 hour limit, 3 nodes
+condo:        condo nodes, no time limit, authorization required, various constraints required, 25 nodes
+tres72/06:    reimaged trestles nodes, 72/06 hour limit, 126 nodes
+razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
+<p>Here’s some useful information regarding selecting queue from https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage</p>
+<blockquote class="blockquote">
+<p>Generally the nodes are reserved for the most efficient use, especially for expensive features such as GPU and extra memory. Pinnacle compute nodes are very busy (comp.. and himem.. partitions) are reserved for scalable programs that can use all 32/24 cores (except for the cloud partition, and condo usage by the owner). Cores are allocated by the product of ntasks-per-node x cpus-per-task. Exceptions: (1) serial/single core jobs that use more memory than available on Razor/Trestles (64 to 192 GB) (2) multiple jobs submitted together that use a whole node, such as 4 x 8 cores (3) two jobs on one high-memory node (2 x 12 cores) that each use more than 192 GB (and less than 384 GB so that they can run on the himem node)</p>
+</blockquote>
+</section><section id="troubleshooting" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="troubleshooting">
+<span class="header-section-number">5.2</span> Troubleshooting</h3>
 <ol type="1">
 <li>
 <p>Revise <code>.bashrc</code> so that the ssh cannot login?</p>
@@ -13840,14 +13994,14 @@ background-color: null;
 font-style: inherit;">)</span>,</span>
 <span>  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">useShinyjs</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html">useShinyjs</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span>,</span>
 <span>  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">extendShinyjs</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/shinyjs/man/extendShinyjs.html">extendShinyjs</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span>text <span class="op" style="color: #5E5E5E;
 background-color: null;

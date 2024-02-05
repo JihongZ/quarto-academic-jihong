@@ -177,7 +177,7 @@ Information about data:
 ```{r}
 library(ggplot2) # R package for data visualization
 # read in data
-dat <- read.csv("~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Code/DietData.csv")
+dat <- read.csv(here::here('posts', '2024-01-12-syllabus-adv-multivariate-esrm-6553', 'Lecture03', 'Code', 'DietData.csv'))
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
 head(dat)
 ```
@@ -518,7 +518,7 @@ model {
 
 ```{r filename="DietDataExample.R"}
 # compile model -- this method is for stand-alone stan files (uses cmdstanr)
-setwd("~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03")
+#setwd("~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03")
 model00.fromFile = cmdstan_model(stan_file = "Code/EmptyModel.stan")
 
 # or this method using the string text in R
@@ -853,6 +853,28 @@ bayesplot::mcmc_dens(model00.samples$draws('sigma')) +
 ```
 :::
 :::
+
+------------------------------------------------------------------------
+
+### Using `rstanarm` for simple Bayesian models
+
+```{r}
+library(rstanarm)
+# Set this manually if desired:
+ncores <- parallel::detectCores(logical = FALSE)
+###
+options(mc.cores = ncores)
+set.seed(5078022)
+refm_fit <- stan_glm(
+  WeightLB ~ 1,
+  family = gaussian(),
+  data = dat,
+  ### 5000 warmups and 5000 samplings
+  chains = 4, iter = 10000
+)
+summary(refm_fit)
+```
+
 
 ------------------------------------------------------------------------
 
