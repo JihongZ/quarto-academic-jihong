@@ -22,7 +22,7 @@ website:
   #       contents:
   #         - auto: '*.qmd'
   navbar:
-    background: '#008080'
+    background: '#CEB8A6'
     collapse-below: lg
     pinned: true
     title: false
@@ -33,7 +33,7 @@ website:
       - text: "Blog"     
         icon: 'bi bi-file-post-fill'
         file: posts.qmd  
-      - icon: bi-file-earmark-person
+      - icon: bi-file-earmark-person # somehow the file path only works in nav. bar, not link in index
         text: C.V.
         file: uploads/Curriculum_Vitae.pdf
       - text: "More"
