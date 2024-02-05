@@ -358,6 +358,20 @@ Your public key has been saved in /Users/[username]/.ssh/id_rsa.pub</code></pre>
 </section><section id="checking-job" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="checking-job">
 <span class="header-section-number">5</span> Checking job</h2>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> loginname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Below shows the information of all running/down task for the queue <code>comp06</code> (there are 9 Jobs but only 7 are running).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">✘</span> jzhang@pinnacle-l8  ~/Projects/DCM  squeue <span class="at">-p</span> comp06</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>             <span class="ex">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er">(</span><span class="ex">REASON</span><span class="kw">)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362406</span>    comp06    measr   jzhang PD       0:00      1 <span class="er">(</span><span class="ex">Resources</span><span class="kw">)</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362361</span>    comp06 03a_iqtr amatthew PD       0:00      1 <span class="er">(</span><span class="ex">Priority</span><span class="kw">)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362385</span>    comp06 sys/dash ashmitau  R      36:05      1 c1402</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362334</span>    comp06   fixed2    igorf  R    1:53:29      1 c1402</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362333</span>    comp06   fixed1    igorf  R    1:53:32      1 c1402</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362332</span>    comp06   fixed0    igorf  R    1:53:35      1 c1402</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362309</span>    comp06 sys/dash    igorf  R    2:43:12      1 c1402</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362360</span>    comp06 03a_iqtr amatthew  R      59:32      1 c1403</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362311</span>    comp06  mystery cdgoolsb  R    2:37:50      1 c1410</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362310</span>    comp06  mystery cdgoolsb  R    2:38:20      1 c1410</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>            <span class="ex">362308</span>    comp06  mystery cdgoolsb  R    2:43:21      1 c1410</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="troubleshooting" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="troubleshooting">
 <span class="header-section-number">5.1</span> Troubleshooting</h3>
 <ol type="1">

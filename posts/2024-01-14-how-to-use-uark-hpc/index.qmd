@@ -151,7 +151,7 @@ c1331:jzhang:~/HelloWorld$
 squeue -u loginname
 ```
 
-Below shows the information of all running/down task for the queue `comp06` (there are 9 Jobs but only 7 are running).
+Below shows the information of all running/down task for the queue `comp06` (there are 9 Jobs but only 7 are running). Note that comp06 and comp72 queues share the same nodes.
 
 ```bash
 ✘ jzhang@pinnacle-l8  ~/Projects/DCM  squeue -p comp06
@@ -167,6 +167,12 @@ Below shows the information of all running/down task for the queue `comp06` (the
             362311    comp06  mystery cdgoolsb  R    2:37:50      1 c1410
             362310    comp06  mystery cdgoolsb  R    2:38:20      1 c1410
             362308    comp06  mystery cdgoolsb  R    2:43:21      1 c1410
+```
+
+When you want to get the worst case scenario estimate of when your waiting jobs will start, you can always run following command,
+
+```bash
+squeue -u [loginname] --start
 ```
 
 ### Troubleshooting
