@@ -12,15 +12,12 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
-More details please refer to the link below:
-(https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html#lin)
+More details please refer to the link below: (<https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html#lin>)
 
-
-This post shows how to use `glmnet` package to fit lasso regression and how to visualize the output.
-The description of data is shown in [here](http://myweb.uiowa.edu/pbreheny/data/whoari.html).
+This post shows how to use `glmnet` package to fit lasso regression and how to visualize the output. The description of data is shown in [here](http://myweb.uiowa.edu/pbreheny/data/whoari.html).
 
 ```{r packages, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 library(glmnet)
@@ -29,7 +26,6 @@ library(dplyr)
 library(ggplot2)
 ```
 
-
 ```{r pressure}
 dt <- readRDS(url("https://s3.amazonaws.com/pbreheny-data-sets/whoari.rds"))
 attach(dt)
@@ -37,18 +33,21 @@ fit <- glmnet(X, y)
 ```
 
 ## Visualize the coefficients
+
 ```{r}
 plot(fit)
 ```
 
 ### Label the path
+
 ```{r}
 plot(fit, label = TRUE)
 ```
 
-The summary table below shows from left to right the number of nonzero coefficients (DF), the percent (of null) deviance explained (%dev) and the value of $\lambda$ (`Lambda`). 
+The summary table below shows from left to right the number of nonzero coefficients (DF), the percent (of null) deviance explained (%dev) and the value of $\lambda$ (`Lambda`).
 
 We can get the actual coefficients at a specific $\lambda$ whin the range of sequence:
+
 ```{r}
 coeffs <- coef(fit, s = 0.1) 
 coeffs.dt <- data.frame(name = coeffs@Dimnames[[1]][coeffs@i + 1], coefficient = coeffs@x) 
@@ -59,6 +58,7 @@ coeffs.dt[order(coeffs.dt$coefficient, decreasing = T),]
 ```
 
 Also, it can allow people to make predictions at specific $\lambda$ with new input data:
+
 ```{r}
 nx = matrix(rnorm(nrow(dt$X)*ncol(dt$X)), nrow = nrow(dt$X), ncol = ncol(dt$X))
 pred <- predict(fit, newx = nx, s = c(0.1, 0.05)) 
@@ -66,6 +66,7 @@ head(pred, 20)
 ```
 
 `cv.glmnet` is the function to do cross-validation here.
+
 ```{r}
 X <- dt$X
 y <- dt$y
@@ -77,7 +78,9 @@ Plotting the object gives the selected $\lambda$ and corresponding Mean-Square E
 ```{r}
 plot(cv.fit)
 ```
+
 We can view the selected $\lambda$'s and the corresponding coefficients, For example,
+
 ```{r}
 cv.fit$lambda.min
 cv.fit$lambda.1se
@@ -109,7 +112,9 @@ ggplot(data = coeffs.table) +
 ```
 
 ## Elastic net
+
 As an example, we can set $\alpha=0.2$
+
 ```{r}
 fit2 <- glmnet(X, y, alpha = 0.2, weights = c(rep(1, 716), rep(2, 100)), nlambda = 20)
 
@@ -125,8 +130,6 @@ plot(fit2, xvar = "lambda", label = TRUE)
 plot(fit2, xvar = "dev", label = TRUE)
 ```
 
-
 ```{r}
 predict(fit2, newx = X[1:5, ], type = "response", s = 0.03)
 ```
-

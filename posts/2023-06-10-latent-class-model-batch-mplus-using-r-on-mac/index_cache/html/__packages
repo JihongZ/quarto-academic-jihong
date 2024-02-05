@@ -1,12 +1,5 @@
-base
-methods
 chatgpt
 magrittr
-datasets
-utils
-grDevices
-graphics
-stats
 kableExtra
 MplusAutomation
 tidyverse
@@ -20,3 +13,4 @@ stringr
 forcats
 future
 furrr
+lubridate

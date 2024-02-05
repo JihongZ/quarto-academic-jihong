@@ -172,19 +172,27 @@ Information about data:
 
 ### Visualizing Data: *WeightLB* variable
 
+::: columns
+::: {.column width="50%"}
 ```{r}
 library(ggplot2) # R package for data visualization
 # read in data
 dat <- read.csv("~/Documents/Projects/quarto-academic-jihong/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Code/DietData.csv")
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
 head(dat)
+```
+:::
 
+::: {.column width="50%"}
+```{r}
 # Histplot for WeightLB - Dependent Variable
 ggplot(dat) +
   geom_histogram(aes(x = WeightLB, y = ..density..), position = "identity", binwidth = 20, fill = 'grey', col = 'grey') +
   geom_density(aes(x = WeightLB), alpha = .2, size = 1.2) +
   theme_classic()
 ```
+:::
+:::
 
 ------------------------------------------------------------------------
 
@@ -432,6 +440,8 @@ model { // #<7>
 
 ### Stan Data and Parameter Declaration
 
+::: columns
+::: {.column width="50%"}
 ```{r filename="EmptyModel.stan"}
 #| eval: false
 data {
@@ -447,9 +457,9 @@ data {
     -   `real`: Floating point numbers
 
     -   `vector`: A one-dimensional set of real valued numbers
+:::
 
-<!-- -->
-
+::: {.column width="50%"}
 -   Sometimes, additional definitions are provided giving the range of the variable (or restricting the set of starting values):
 
     -   See [here](https://mc-stan.org/docs/reference-manual/data-types.html) for more information about data types in Stan.
@@ -459,6 +469,8 @@ data {
 -   For `vector` or `matrix` or `array` , we may need to add size to tell Stan how many elements it has.
 
     -   `vector[N]` has N elements
+:::
+:::
 
 ------------------------------------------------------------------------
 

@@ -26,7 +26,7 @@ knitr::opts_chunk$set(eval=TRUE, include=TRUE, message=FALSE, warning=FALSE,
                       echo = 'fenced')
 knitr::knit_engines$get('mermaid')
 #str(knitr::opts_chunk$get())
-use_python("~/venv-metal/bin/python")
+use_python("~/venv-metal/bin/python3")
 use_virtualenv("~/venv-metal")
 Sys.setenv(TORCH_INSTALL=1)
 ```
@@ -157,7 +157,7 @@ a_inR # original python object in R
 a_data_inR_revised # revised matrix in R
 ```
 
-```{r}
+```{r, error=TRUE}
 torch <- import("torch", convert=FALSE)
 a_inR$data = torch$from_numpy(a_data_inR_revised)
 a_inR
@@ -223,7 +223,7 @@ kbl(tidy(multinomial_fit, exponentiate = FALSE), digits = 2,
 
 As shown in @tbl-coef , it seems that multinominal logistic regression suggests none of the four features can significantly differentiate species but this could be misleading. This is because there are underlying correlations between sepal width/length and petal width/length. Next step is we can use `matplotlib` module to explore the relationships among four characteristics.
 
-```{python, out.width = "80%", out.height = "100%", dpi = 200, fig.retina = 1}
+```{python, out.width = "80%", out.height = "100%", dpi = 200, fig.retina = 1, error = TRUE}
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
@@ -271,7 +271,6 @@ chart1 = alt.Chart(iris).mark_point().encode(
 vw = chart1.to_json()
 ```
 
-
 ```{r display}
 #| label: fig-vega1
 #| fig-cap: An interactive plot using python altair
@@ -279,7 +278,6 @@ vw = chart1.to_json()
 #| results: asis
 as_vegaspec(py$vw)
 ```
-
 
 Alternatively, we can use `ggplot2` R package + python data to plot the scatter plots, which I prefer.
 
