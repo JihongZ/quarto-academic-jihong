@@ -123,7 +123,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#software",
     "title": "ESRM 6553: Adv. Multivariate",
     "section": "2.3 Software",
-    "text": "2.3 Software\n\nR and R packages (tidyverse)\nStan is gaining in popularity and has an avid user community. To use Stan in R, you need to download RStan package. Here is the tutorial of installing RStan.\n(Optional) Mplus, JAGS, WinBUGS"
+    "text": "2.3 Software\n\nR and R packages (tidyverse)\nStan is gaining in popularity and has an avid user community. To use Stan in R, you need to download RStan or cmdstanr package. Here is the tutorial of installing RStan or click here for installing cmdstanr package.\n(Optional) Mplus, JAGS, WinBUGS"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#projects",
@@ -161,11 +161,11 @@
     "text": "4.2 Academic Integrity\nYou are responsible for reading and understanding the University of Arkansas’ Academic Integrity Policy. You are expected to complete all assignments and exams with the highest level of integrity. Any form of academic dishonesty will result in a failing grade for the course and will be reported to the Office of Academic Integrity. If you have any questions about what constitutes academic dishonesty, please ask me."
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#emergency-preparadness",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#emergency-preparadness",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#emergency-preparedness",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#emergency-preparedness",
     "title": "ESRM 6553: Adv. Multivariate",
-    "section": "4.3 Emergency Preparadness",
-    "text": "4.3 Emergency Preparadness\nThe University of Arkansas is committed to providing a safe and healthy environment for study and work. In that regard, the university has developed a campus safety plan and an emergency preparedness plan to respond to a variety of emergency situations. The emergency preparedness plan can be found at emergency.uark.edu. Additionally, the university uses a campus-wide emergency notification system, UARKAlert, to communicate important emergency information via email and text messaging. To learn more and to sign up: http://safety.uark.edu/emergency-preparedness/emergency-notification-system/"
+    "section": "4.3 Emergency Preparedness",
+    "text": "4.3 Emergency Preparedness\nThe University of Arkansas is committed to providing a safe and healthy environment for study and work. In that regard, the university has developed a campus safety plan and an emergency preparedness plan to respond to a variety of emergency situations. The emergency preparedness plan can be found at emergency.uark.edu. Additionally, the university uses a campus-wide emergency notification system, UARKAlert, to communicate important emergency information via email and text messaging. To learn more and to sign up: http://safety.uark.edu/emergency-preparedness/emergency-notification-system/"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#inclement-weather",

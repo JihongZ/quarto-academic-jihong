@@ -133,7 +133,7 @@ Specific permissions will be provided to students regarding the use of generativ
 
 You are responsible for reading and understanding the University of Arkansas' Academic Integrity Policy. You are expected to complete all assignments and exams with the highest level of integrity. Any form of academic dishonesty will result in a failing grade for the course and will be reported to the Office of Academic Integrity. If you have any questions about what constitutes academic dishonesty, please ask me.
 
-## Emergency Preparadness
+## Emergency Preparedness
 
 The University of Arkansas is committed to providing a safe and healthy environment for study and work. In that regard, the university has developed a campus safety plan and an emergency preparedness plan to respond to a variety of emergency situations. The emergency preparedness plan can be found at emergency.uark.edu. Additionally, the university uses a campus-wide emergency notification system, UARKAlert, to communicate important emergency information via email and text messaging. To learn more and to sign up: http://safety.uark.edu/emergency-preparedness/emergency-notification-system/
 
