@@ -1,7 +1,8 @@
 project:
   type: website
-  output-dir: _site
-
+  resources: 
+    - "uploads/*.pdf"
+    
 website:
   title: "Dr. Jihong Zhang"
   site-url: "https://www.jihongzhang.org/"
@@ -43,7 +44,7 @@ website:
           - links.qmd
       - icon: rss
         href: index.xml
-  
+    
 format:
   html:
     theme: 

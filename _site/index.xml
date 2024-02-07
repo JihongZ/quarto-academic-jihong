@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Dr. Jihong Zhang</title>
-<link>https://jihongzhang.org/</link>
-<atom:link href="https://jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.jihongzhang.org/</link>
+<atom:link href="https://www.jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
 <description>Technical and Statistical but Fun</description>
 <generator>quarto-1.4.547</generator>
 <lastBuildDate>Sun, 14 Jan 2024 06:00:00 GMT</lastBuildDate>
 <item>
   <title>How to set up High Performance Computing of University of Arkansas</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/</link>
+  <link>https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/</link>
   <description><![CDATA[ <section id="general-information" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="general-information">
 <span class="header-section-number">1</span> General Information</h2>
 <p>Arkansas High Performance Computing Center (AHPCC) is available for research and instructional use to faculty and students of any Arkansas university and their research collaborators. There is no charge for use of our computing resources.</p>
@@ -33,7 +33,7 @@ background-color: null;
 font-style: inherit;">]</span>@hpc-portal2.hpc.uark.edu</span></code></pre></div>
 <p>If your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/login.png" class="img-fluid figure-img"></p>
 <figcaption>Login Screenshot</figcaption></figure>
 </div>
 <p>Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.</p>
@@ -494,19 +494,19 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 
 
 </section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/</guid>
+  <guid>https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/</guid>
   <pubDate>Sun, 14 Jan 2024 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>ESRM 6553: Adv. Multivariate</title>
-  <dc:creator>Dr. Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/</link>
+  <dc:creator>Jihong Zhang</dc:creator>
+  <link>https://www.jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/</link>
   <description><![CDATA[ 
 
 
 
 
-<p><img src="https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/UA_Logo_Horizontal.png" class="img-fluid" width="2700"></p>
+<p><img src="https://www.jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/UA_Logo_Horizontal.png" class="img-fluid" width="2700"></p>
 <section id="general-information" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> General Information</h1>
 <ul>
@@ -853,13 +853,13 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <li id="fn3"><p>BPM: <em>Bayesian Psychometric Modeling</em> by Levy, Mislevy (2016)↩︎</p></li>
 </ol>
 </section></div> ]]></description>
-  <guid>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/</guid>
+  <guid>https://www.jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/</guid>
   <pubDate>Sat, 13 Jan 2024 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Data visualization for survey data</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/</link>
+  <link>https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/</link>
   <description><![CDATA[ <section id="r-package---survey" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="r-package---survey">
 <span class="header-section-number">1</span> R package - survey</h2>
 <section id="what-chatgpt-say-about-survey-package" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="what-chatgpt-say-about-survey-package">
@@ -2170,7 +2170,7 @@ background-color: null;
 font-style: inherit;">p</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2181,15 +2181,15 @@ font-style: inherit;">p</span></span></code></pre></div>
 </section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
   <category>ggplot2</category>
-  <guid>https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/</guid>
   <pubDate>Tue, 04 Jul 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>A tutorial for forester R package</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/</link>
   <description><![CDATA[ <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
 <figcaption>Workflow of forester</figcaption></figure>
 </div>
 <div class="cell">
@@ -2482,13 +2482,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>tutorial</category>
   <category>package</category>
-  <guid>https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/</guid>
   <pubDate>Wed, 28 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>One Template for Quarto Report</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/</link>
   <description><![CDATA[ <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
@@ -2638,7 +2638,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/ggplot2.png" class="img-fluid figure-img" width="259"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/ggplot2.png" class="img-fluid figure-img" width="259"></p>
 </figure>
 </div>
 </div>
@@ -2869,13 +2869,13 @@ font-style: inherit;">```</span></span></code></pre></div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/</guid>
   <pubDate>Tue, 27 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Moving My Website to Quarto</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps because some reasons same as other bloggers:</p>
 <p>(1) Quarto is the next generation of rmarkdown.</p>
@@ -2890,21 +2890,21 @@ font-style: inherit;">```</span></span></code></pre></div>
 <li>Quarto official documentation is always the best place to starts with.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="https://quarto.org"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 <ol start="2" type="1">
 <li>
 <p>Nicola Rennie’s blog is very inspiring. Nice font setting and background. I feel like <a href="https://github.com/hugo-apero/">Hugo Apéro</a> is the best hugo theme in the market.</p>
-<p><a href="https://nrennie.rbind.io"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/nrennie.png" width="320" height="200"></a></p>
+<p><a href="https://nrennie.rbind.io"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/nrennie.png" width="320" height="200"></a></p>
 </li>
 <li>
 <p>Yihui’s blog. As the creator of blogdown, Yihui talked about why not transfer to Quarto :P I am a old player of hugo/blogdown, but I am not good at customizing the website from the scratch. Thus, quarto suits my needs very well. For those who is very experienced at JS, hugo is still a better choice.</p>
-<p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/yihui.png" width="320" height="200"></a></p>
+<p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/#should-you-switch"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/yihui.png" width="320" height="200"></a></p>
 </li>
 <li>
 <p>Frank Harrel’s blog: R workflow.</p>
-<p><a href="https://www.fharrell.com/post/rflow/"><img src="https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/FrankHarrel.png" width="320" height="200"></a></p>
+<p><a href="https://www.fharrell.com/post/rflow/"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/FrankHarrel.png" width="320" height="200"></a></p>
 </li>
 </ol></section><section id="tricks-of-quarto" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="tricks-of-quarto">
 <span class="header-section-number">2</span> Tricks of Quarto</h2>
@@ -3088,18 +3088,18 @@ font-style: inherit;">```</span></span></code></pre></div>
 <li id="fn2"><p>By default, it will insert R code chunk. If another language is frequently, use <code>Tools &gt; Modify keyboard shortcuts &gt; filter 'Insert'</code>. There should be a place for setting shortcut for other language.↩︎</p></li>
 <li id="fn3"><p>Click `F4` in any place in the div works.↩︎</p></li>
 </ol></section></div> ]]></description>
-  <guid>https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/</guid>
   <pubDate>Sun, 25 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>A Conversation between R and Python on Data Analysis and Machine Learning</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>When I play with machine learning using python and R, I keep wondering whether I can combine R and Python code in a better way, such as using R for data cleaning/visualization and Python for machine learning. Online resources for PyTorch are basically written using python code. However, I always struggle with pandas and numpy but prefer tidyverse for data cleaning, and data manipulation. That’s why I write this blog. I will start with the Pytorch tensor manipulation and import Pytorch tensor into R, then talk about mixing R/python data analysis with R/python visualization.</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 <figcaption>reticulate package logo</figcaption></figure>
 </div>
 <section id="pytorch-tensor" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="pytorch-tensor">
@@ -5120,7 +5120,7 @@ background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5146,7 +5146,7 @@ background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5183,20 +5183,20 @@ font-style: inherit;">```</span></span></code></pre></div>
   <category>R</category>
   <category>PyTorch</category>
   <category>Deep Learning</category>
-  <guid>https://jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/</guid>
   <pubDate>Tue, 20 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Latent Class Model: Batch Mplus using R on Mac</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/</link>
+  <link>https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p><a href="https://www.statmodel.com/glance.shtml">Mplus</a> is a very popular program for varied latent varaible modeling: (1) Structural equation modeling (2) multilevel analysis (3) mixture modeling (latent class model). R, in the other hand, is a general statistical programming language which not limits to certain statistical models. However, there are scarcely online resources illustrate how to run Mplus using R on Mac.</p>
 </blockquote>
 <section id="requirement" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="requirement">
 <span class="header-section-number">1</span> Requirement</h2>
 <p>To make sure Mplus can been successfully called in R, the very first thing is checking whether your MacOS can use command-line version of Mplus. Simply type <code>Mplus</code> command in your terminal app on Mac, if you see “Mplus VERSION (Mac)”, then Mplus on MacOS should work and can be called within R. Otherwise, you should check whether you install Mplus software successfully beforehand.</p>
-<p><img src="https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png" class="img-fluid"></p>
+<p><img src="https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png" class="img-fluid"></p>
 <p>Second, you should install R + Rstudio (Optional). Rstudio is optional but strongly recommended.</p>
 <p>Third, <code>MplusAutomation</code> package should also been installed in R:</p>
 <div class="cell">
@@ -7367,21 +7367,21 @@ font-style: inherit;">}</span></span></code></pre></div>
   <category>blog</category>
   <category>LCM</category>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/</guid>
+  <guid>https://www.jihongzhang.org/posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/</guid>
   <pubDate>Sat, 10 Jun 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-10-23-thesis-defense/</link>
+  <link>https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>https://jihongzhang.org/posts/2022-10-23-thesis-defense/</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-10-23-thesis-defense/</guid>
   <pubDate>Sun, 23 Oct 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>NSF Grant on Bayesian Cognitive Diagnosis</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/</link>
+  <link>https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>The NSF grant awards can be easily searched via <a href="https://nsf.gov/awardsearch">NSF website</a>. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really interested in: (1) Who as Principal Investigator (PI) obtained most NSF awards? (2) Which institute obtained most NSF awards?</p>
 </blockquote>
@@ -8158,7 +8158,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -8166,13 +8166,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/</guid>
   <pubDate>Fri, 20 May 2022 17:30:38 GMT</pubDate>
 </item>
 <item>
   <title>Web Scraping Academia Institute’s Grant Fundings using R</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/</link>
+  <link>https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/</link>
   <description><![CDATA[ <p>This is an example of how to web scrape grants of active research in college’s official website. Please follow the academia institute’s website robots rules.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
@@ -8831,7 +8831,7 @@ background-color: null;
 font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -9177,7 +9177,7 @@ background-color: null;
 font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -9187,13 +9187,13 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
   <category>Web Scrapping</category>
-  <guid>https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/</guid>
   <pubDate>Thu, 12 May 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Power Analysis for Structural Equation Modeling</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/</link>
+  <link>https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/</link>
   <description><![CDATA[ <p>The statistical power of a hypothesis test is the probability of detecting an effect, if there’s a true effect presented to detect. <mark>Power</mark>, defined as <strong>the confidence in the conclusions drawn from the results</strong>, plays an important role of determining the minimum sample size (number of observation) required to detect an effect in an experiment. The power analysis of SEM is often ignored in application research partly because few guidelines exist for researchers to conduct power analysis in SEM framework. This tutorial introduces two web tools which can be used to conduct power analysis for Structural Equation Modeling (SEM). An empirical example of my own research on students’ time effect on academic motivations will also be presented for illustration. For privacy, only short name of the latent constructs are used.</p>
 <p><span class="citation" data-cites="wang_power_2021">Wang and Rhemtulla (2021)</span> argued that there’re two ways of determining sample size planning in SEM: (1) traditional rule of thumbs, (2) power analysis for SEM based on parameter effect size and model misspecification. To be more specific, two ways of determining sample size planning in SEM are:</p>
 <ol type="1">
@@ -9212,7 +9212,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/webpower.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1032"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/webpower.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1032"></p>
 <figcaption>Chi-square LR test</figcaption></figure>
 </div>
 </div>
@@ -9226,7 +9226,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/model_vis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1243"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/model_vis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1243"></p>
 <figcaption>Model Specification</figcaption></figure>
 </div>
 </div>
@@ -9236,7 +9236,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/parameter_est.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1110"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/parameter_est.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1110"></p>
 <figcaption>Parameter estimates by lavaan</figcaption></figure>
 </div>
 </div>
@@ -9246,7 +9246,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_256.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1158"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_256.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1158"></p>
 <figcaption>Local Power with sample size 256</figcaption></figure>
 </div>
 </div>
@@ -9255,17 +9255,17 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_300.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1142"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_300.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1142"></p>
 <figcaption>Local power with N = 300</figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_500.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1131"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/local_power_500.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1131"></p>
 <figcaption>Local power with N = 500</figcaption></figure>
 </div>
 </div>
@@ -9299,13 +9299,13 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
   <category>lavaan</category>
   <category>blog</category>
   <category>tutorial</category>
-  <guid>https://jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-04-29-power-analysis-for-sem/</guid>
   <pubDate>Fri, 29 Apr 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Workshop] Creating Academic Blog via R</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/</link>
+  <link>https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/</link>
   <description><![CDATA[ <section id="resource" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="resource">
 <span class="header-section-number">1</span> Resource</h2>
 <p><a href="https://m-clark.github.io/distill-workshop">Michael Clark</a> has a great workshop in his blog introducing distill package. I suggest readers check it out first.</p>
@@ -9325,7 +9325,7 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/flowchart.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="306"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/flowchart.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="306"></p>
 <figcaption>Flowchart for creating website</figcaption></figure>
 </div>
 </div>
@@ -9338,7 +9338,7 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
 <li>_posts</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/file_structure.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/file_structure.png" class="img-fluid figure-img"></p>
 <figcaption>Example of file structure used in my github website</figcaption></figure>
 </div>
 </section><section id="new-post" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="new-post">
@@ -9362,7 +9362,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Rmd_file.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Rmd_file.png" class="img-fluid figure-img"></p>
 <figcaption>Files in your post folder</figcaption></figure>
 </div>
 <p>Open the Rmd file and make sure the header of your Rmd file is like this:</p>
@@ -9380,12 +9380,12 @@ output:
 ---</code></pre>
 <p>After editting the Rmd file, knit the fill and then build website using <em>Build Website</em> button in the Build pane of Rstudio.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/build_website.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/build_website.png" class="img-fluid figure-img"></p>
 <figcaption>The Build button in Rstudio</figcaption></figure>
 </div>
 <p>It will then pop up your updated website in a window.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png" class="img-fluid figure-img"></p>
 <figcaption>Preview of updated website</figcaption></figure>
 </div>
 <p>However, the website is not published yet. To publish the website, upload the files to Github. Following is a example of pushing the local files to the Github server via command line.</p>
@@ -9410,12 +9410,12 @@ font-style: inherit;">git</span> push</span></code></pre></div>
 <span class="header-section-number">4.1</span> Settings of Github Repo</h3>
 <p>Go to the Github Repo &gt; Settings &gt; Pages</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Settings.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/Settings.png" class="img-fluid figure-img"></p>
 <figcaption>Github Settings</figcaption></figure>
 </div>
 <p>In the webpage, choose <em>_docs</em> and you will see your website is published.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/docs.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/docs.png" class="img-fluid figure-img"></p>
 <figcaption>change settings</figcaption></figure>
 </div>
 </section></section><section id="reference" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="reference">
@@ -9428,13 +9428,13 @@ font-style: inherit;">git</span> push</span></code></pre></div>
   <category>Github</category>
   <category>Rstudio</category>
   <category>Workshop</category>
-  <guid>https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/</guid>
+  <guid>https://www.jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/</guid>
   <pubDate>Sun, 24 Apr 2022 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Health Care Data Analysis with Apple Watch</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/</link>
+  <link>https://www.jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/</link>
   <description><![CDATA[ 
 {{}}
 <blockquote class="blockquote">
@@ -10071,13 +10071,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>blog</category>
   <category>R</category>
   <category>health</category>
-  <guid>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/</guid>
+  <guid>https://www.jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/</guid>
   <pubDate>Tue, 06 Jul 2021 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2021-01-31-ppmc-cfa/</link>
+  <link>https://www.jihongzhang.org/posts/2021-01-31-ppmc-cfa/</link>
   <description><![CDATA[ <section id="abstract" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="abstract">
 <span class="header-section-number">1</span> Abstract</h2>
 <p>Posterior Predictive Model Checking (PPMC) is frequently used for model fit evaluation in Bayesian Confirmatory Factor Analysis (BCFA). In standard PPMC procedures, model misfit is quantified by the location of a ML-based estimate to the predictive distribution of a statistic for a model. When the ML-based point estimate is far away from the center of the density of the posterior predictive distribution, model fit is poor. One main critique of such standard PPMC procedures is the strong link to the ML-based point estimates of the observed data. Not included in this approach, however, is how variable the ML-based point estimates are and their use in general as the reference point for Bayesian analyses. We propose a new method of PPMC based on the Posterior Predictive distribution of Bayesian saturated model for BCFA models. The method uses the predictive distribution from parameters of the posterior distribution of the saturated model as reference to detect the local misfit of hypothesized models. The results of the simulation study suggest that the saturated model PPMC approach was an accurate method of determining local model misfit and could be used for model comparison. A real example is also provided in this study.</p>
@@ -10091,13 +10091,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2021-01-31-ppmc-cfa/</guid>
+  <guid>https://www.jihongzhang.org/posts/2021-01-31-ppmc-cfa/</guid>
   <pubDate>Sun, 31 Jan 2021 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Study Notes: gt package and format table</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/</link>
+  <link>https://www.jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/</link>
   <description><![CDATA[ <p>A introduction about <code>gt</code> package is <a href="https://themockup.blog/posts/2020-05-16-gt-a-grammer-of-tables/">here</a></p>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
@@ -12189,13 +12189,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
-  <guid>https://jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/</guid>
+  <guid>https://www.jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/</guid>
   <pubDate>Mon, 25 May 2020 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Introduction to Latent Attribute Network Analysis</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/</link>
+  <link>https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Network analysis is a very useful tool. This post show how to visualize the latent attribute network in Diagnostic Classification Modeling(DCM). There are a ton of R package could be used to visualize network structure.</p>
 </blockquote>
@@ -12467,7 +12467,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -12551,7 +12551,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -12716,7 +12716,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -12825,7 +12825,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -12836,13 +12836,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>blog</category>
   <category>Network</category>
   <category>DCM</category>
-  <guid>https://jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-10-20-introduction-to-latent-attribute-network-analysis/</guid>
   <pubDate>Sun, 20 Oct 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Which Country own the most Liberty Nobel Prizes? France? Ireland?</title>
   <dc:creator>Jihong Zhang</dc:creator>
-  <link>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/</link>
+  <link>https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>It is of my interest to use <code>ggplot</code> package to visualize some fun data. In this post, I tried to play with a Nobel Prizes Data including countries, prize year, each prize. The goal is to plot a cumulative traceplot of Liberty Nobel Prizes for top 10 countries.</p>
 </blockquote>
@@ -13788,7 +13788,7 @@ background-color: null;
 font-style: inherit;">pp1</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -13825,7 +13825,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-9-1.gif" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-9-1.gif" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -13836,13 +13836,13 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>visualization</category>
   <category>blog</category>
   <category>ggplot2</category>
-  <guid>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/</guid>
   <pubDate>Mon, 20 May 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Make a Game in R</title>
   <dc:creator>jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</link>
+  <link>https://www.jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>Recently I found a interesting R package call nessy which allows you to create a simple game driven by shiny. Thus. I tried a little bit about this package. Making a interactive app in R is promising in the files like teaching, presentation and visualization.</p>
 </blockquote>
@@ -14416,13 +14416,13 @@ font-style: inherit;">)</span></span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>blog</category>
-  <guid>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</guid>
   <pubDate>Fri, 19 Apr 2019 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Introduce gganimate for Psychometric</title>
   <dc:creator>Jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/</link>
+  <link>https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/</link>
   <description><![CDATA[ <blockquote class="blockquote">
 <p>A new R packge (<code>gganimate</code> ) provides some new features for animation in R. Its big advantage is it could make use of ggplot API and embeded into ggplot. Next, I will use a sample data to show the example. Then I will use some real educational data to explore a little bit what we can do in psychometric area.</p>
 </blockquote>
@@ -14575,7 +14575,7 @@ background-color: null;
 font-style: inherit;">p</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -14598,7 +14598,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-3-1.gif" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-3-1.gif" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -14702,7 +14702,7 @@ background-color: null;
 font-style: inherit;">p_bygroup</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -14723,7 +14723,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-6-1.gif" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-6-1.gif" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -14735,7 +14735,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 </section></section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>R</category>
   <category>Tutorial</category>
-  <guid>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/</guid>
+  <guid>https://www.jihongzhang.org/posts/2019-02-22-Play-With-gganimate/</guid>
   <pubDate>Fri, 22 Feb 2019 06:00:00 GMT</pubDate>
 </item>
 </channel>
