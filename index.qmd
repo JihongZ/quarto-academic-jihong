@@ -44,6 +44,7 @@ My expertise lies in the application of sophisticated statistical models, includ
 ## Interests
 
 -   Bayesian Psychometric Modeling
+-   Psychometric network and Latent variable modeling
 -   Machine Learning and data mining in Education
 -   Diagnostic Classification Models
 
