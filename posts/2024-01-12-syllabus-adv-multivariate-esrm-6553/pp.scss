@@ -1,6 +1,6 @@
 // Include theme-specific fonts
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair:opsz@5..1200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
@@ -11,9 +11,14 @@
 // overridden by the super-theme
 // see https://github.com/mcanouil/quarto-revealjs-storybook/blob/main/_extensions/storybook/storybook.scss for more details of SCSS variables
 
-$font-family-sans-serif: "Playfair", "Jost", Palatino, FreeSerif, serif !default;
-$font-family-monospace: 'Inconsolata', monospace;
-  
+$font-family-sans-serif: "Hina Mincho", "Jost", Palatino, FreeSerif, serif !default;
+$font-family-monospace: 'Inconsolata', monospace !default;
+
+// code chunk
+$code-block-bg: #efe5be;
+$code-block-font-size: 0.70em;
+
+
 // picture
 .picture {
   border-style: solid;
@@ -43,7 +48,7 @@ $font-family-monospace: 'Inconsolata', monospace;
     margin-top: 1.8em;
     margin-bottom: 0px;
     font-weight: 700;
-    font-family: "Tangerine";
+    font-family: "Jost";
     text-shadow: 2px 2px 2px #b22222;
     color: #EEB422 !important;
   }
@@ -52,8 +57,8 @@ $font-family-monospace: 'Inconsolata', monospace;
     opacity: 0.50;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
+    font-style: normal;
     font-size: 1em;
     color: #333 !important;
   }

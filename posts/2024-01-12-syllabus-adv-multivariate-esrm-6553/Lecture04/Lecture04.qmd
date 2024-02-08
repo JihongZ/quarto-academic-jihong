@@ -1,0 +1,350 @@
+---
+title: "Lecture 04"
+subtitle: "Linear Regression Model with Stan II"
+author: "Jihong Zhang"
+institute: "Educational Statistics and Research Methods"
+title-slide-attributes:
+  data-background-image: ../Images/title_image.png
+  data-background-size: contain
+  data-background-opacity: "0.9"
+execute: 
+  echo: true
+format: 
+  revealjs:
+    logo: ../Images/UA_Logo_Horizontal.png
+    incremental: true  # choose "false "if want to show all together
+    theme: [serif, ../pp.scss]
+    footer:  <https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553>
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    chalkboard: true
+    number-sections: false
+    code-line-numbers: true
+    code-annotations: hover
+    code-copy: true
+    highlight-style: arrow
+    code-block-border-left: true
+    code-block-background: "#b22222"
+---
+
+## Today's Lecture Objectives
+
+1.  Making Stan Syntax Shorter
+
+2.  Computing Functions of Model Parameters
+
+    **Download R file [DietDataExample2.R]{.underline}**
+
+## In previous class...
+
+```{r}
+dat <- read.csv(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture03", "Code", "DietData.csv"))
+dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
+dat$HeightIN60 <- dat$HeightIN - 60
+head(dat)
+```
+
+1.  Introduce the empty model
+2.  Example: Post-Diet Weights
+    -   WeightLB (*Dependent Variable*): The respondents' weight in pounds
+    -   HeightIN: The respondents' height in inches
+    -   DietGroup: 1, 2, 3 representing the group to which a respondent was assigned
+3.  The empty model has two parameters to be estimated: (1) $\beta_0$, (2) $\sigma_e$
+4.  The posterior mean/median/mode of $\beta_0$ should be mean of WeightLB
+5.  The posterior mean/median/mode of $\sigma_e$ should be sd of WeightLB
+
+## Making `Stan` Code Short
+
+The Stan syntax from our previous model was lengthy:
+
+-   A declared variable for each parameter
+
+-   The linear combination of coefficients multiplying predictors
+
+Stan has built-in features to shorten syntax:
+
+-   Matrices/Vectors
+
+-   Matrix products
+
+-   Multivariate distribution (initially for prior distributions)
+
+------------------------------------------------------------------------
+
+## Linear Models without Matrices
+
+The linear model from our example was:
+
+$$
+\text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\ 
++\beta_4 \text{HeightIN}_p\text{Group2}_p \\
++\beta_5 \text{HeightIN}_p\text{Group3}_p \\
++ e_p
+$$
+
+with:
+
+-   $\text{Group2}_p$ the binary indicator of person $p$ being in group 2
+
+-   $\text{Group}3_p$ the binary indicator of person $p$ being in group 3
+
+-   $e_p \sim N(0, \sigma_e)$
+
+------------------------------------------------------------------------
+
+### Path Diagram of Model
+
+```{mermaid}
+%%| echo: false
+%%| label: fig-diagram
+graph LR;
+  HeightIN60 --> WeightLB;
+  DietGroup2 --> WeightLB;
+  DietGroup3 --> WeightLB;
+  HeightIN60xDietGroup2 --> WeightLB;
+  HeightIN60xDietGroup3 --> WeightLB;
+```
+
+------------------------------------------------------------------------
+
+## Linear Models with Matrices
+
+::: columns
+::: {.column width="50%"}
+Model (predictor) matrix with the size 30 (rows) $\times$ 6 (columns)
+
+$$
+\mathbf{X} = \begin{bmatrix}1 & -4 & 0 & 0 & 0 & 0\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+1 & 12 & 0 & 1 & 0 & 12 \end{bmatrix}
+$$
+:::
+
+::: {.column width="50%"}
+Coefficients vectors with the size 6 (rows) $\times$ 1 (column):
+
+$$
+\mathbf{\beta} =
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\beta_2 \\
+\beta_3 \\
+\beta_4 \\
+\beta_5 \\
+\end{bmatrix}
+$$
+:::
+:::
+
+```{r}
+FullModelFormula = as.formula("WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup")
+model.matrix(FullModelFormula, data = dat) |> head()
+```
+
+## Linear Models with Matrices
+
+We then rewrite the equation from
+
+$$
+\text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\ 
++\beta_4 \text{HeightIN}_p\text{Group2}_p \\
++\beta_5 \text{HeightIN}_p\text{Group3}_p \\
++ e_p
+$$
+
+to:
+
+$$
+\mathbf{WeightLB} = \mathbf{X}\boldsymbol{\beta} + \mathbf{e} 
+$$
+
+Where:
+
+-   $\mathbf{WeightLB}$ is the vector of outcome (N $\times$ 1)
+
+-   $\mathbf{X}$ is the model (predictor) matrix (N $\times$ P for P - 1 predictors)
+
+-   $\boldsymbol{\beta}$ is the coefficients vector (P $\times$ 1)
+
+-   $\mathbf{e}$ is the vector for residuals (N $\times$ 1)
+
+## Example: Predicted Values
+
+Similar to Monte Carlo Simulation, given $P$ and $\boldsymbol{\beta}$
+
+```{r}
+set.seed(1234)
+P = 6
+beta = matrix(data = runif(n = 6, min = 0, max = 10), nrow = P, ncol = 1)
+beta
+X = model.matrix(FullModelFormula, data = dat)
+X %*% beta 
+```
+
+## Vectorize prior distributions
+
+Previously, we defined a normal distribution for each regression coefficient $$
+\beta_0 \sim normal(0, 1) \\
+\vdots \\
+\beta_p \sim normal(0, 1)
+$$
+
+-   They are all univariate normal distribution
+-   Issue: Each parameter had a prior that was independent of the other parameter; then the correlation between betas is low and cannot be changed.
+
+For example, the code shows two betas with univariate normal distribution have low correlation (r = -0.025)
+
+```{r}
+set.seed(1234)
+beta0 = rnorm(100, 0, 1)
+beta1 = rnorm(100, 0, 1)
+cor(beta0, beta1)
+```
+
+------------------------------------------------------------------------
+
+## Vectorize prior distributions (Cont.)
+
+When combining all parameters into a vector, a natural extension is a multivariate normal distribution, so that the betas have a pre-defined correlation strength
+
+- The syntax shows the two betas generated by the multivariate normal distribution with correlation of .5
+
+```{r}
+set.seed(1234)
+sigma_of_betas = matrix(c(1, 0.5, 0.5, 1), ncol = 2)
+betas = mvtnorm::rmvnorm(100, mean = c(0, 0), sigma = sigma_of_betas)
+beta0 = betas[,1]
+beta1 = betas[,2]
+cor(beta0, beta1)
+```
+Back to the `stan` code, we need to specify:
+
+- Mean vector of betas (`meanBeta`; size P $\times$ 1)
+  - Put all prior means for those coefficients into a vector
+- Covariance matrix for betas (`covBeta`; size P $\times$ P) 
+  - Put all prior variances into the diagonal; zeros for off diagonal; 'cause we are not sure the potential correlation between betas
+
+
+## Syntax Changes: Data Section
+
+**Old syntax without matrix:**
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| eval: false
+data{
+    int<lower=0> N;
+    vector[N] weightLB;
+    vector[N] height60IN;
+    vector[N] group2;
+    vector[N] group3;
+    vector[N] heightXgroup2;
+    vector[N] heightXgroup3;
+}
+```
+
+**New syntax with matrix:**
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| eval: false
+data{
+  int<lower=0> N;         // number of observations
+  int<lower=0> P;         // number of predictors (plus column for intercept)
+  matrix[N, P] X;         // model.matrix() from R 
+  vector[N] y;            // outcome
+  
+  vector[P] meanBeta;     // hyperparameter: prior mean vector for coefficients
+  matrix[P, P] covBeta;   // hyperparameter: prior covariance matrix for coefficients
+  
+  real sigmaRate;         // hyperparameter: prior rate parameter for residual standard deviation
+}
+```
+
+
+## Syntax Changes: Parameters Section
+
+**Old syntax without matrix:**
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+parameters {
+  real beta0;
+  real betaHeight;
+  real betaGroup2;
+  real betaGroup3;
+  real betaHxG2;
+  real betaHxG3;
+  real<lower=0> sigma;
+}
+```
+
+**New syntax with matrix:**
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+parameters {
+  vector[P] beta;         // vector of coefficients for Beta
+  real<lower=0> sigma;    // residual standard deviation
+}
+```
+
+## Syntax Changes: Prior Distributions Definition
+
+**Old syntax without matrix:**
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| code-line-numbers: "2-8"
+model {
+  beta0 ~ normal(0,1);
+  betaHeight ~ normal(0,1);
+  betaGroup2 ~ normal(0,1);
+  betaGroup3 ~ normal(0,1);
+  betaHxG2 ~ normal(0,1);
+  betaHxG3 ~ normal(0,1);
+  sigma ~ exponential(.1); // prior for sigma
+  weightLB ~ normal(
+    beta0 + betaHeight * height60IN + betaGroup2 * group2 + 
+    betaGroup3 * group3 + betaHxG2 *heightXgroup2 +
+    betaHxG3 * heightXgroup3, sigma);
+}
+```
+
+**New syntax with matrix:**
+
+- `multi_normal()` is the multivariate normal sampling in Stan, similar to `rmvnorm()` in R
+- `exponential()` is the exponential distribution sampling in Stan, similar to `rexp()` in R
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+model {
+  beta ~ multi_normal(meanBeta, covBeta); // prior for coefficients
+  sigma ~ exponential(sigmaRate);         // prior for sigma
+  y ~ normal(X*beta, sigma);              // linear model
+}
+```
+
+```{r}
+#| echo: false
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+rate_list = seq(0.1, 1, 0.2)
+pdf_points = sapply(rate_list, \(x) rexp(1000, x)) |> as.data.frame()
+colnames(pdf_points) <- rate_list
+pdf_points %>% 
+  pivot_longer(everything()) %>% 
+  mutate(
+    sigmaRate = factor(name, levels = rate_list)
+    ) %>% 
+  ggplot() +
+  geom_density(aes(x = value, fill = sigmaRate), alpha = 0.3) +
+  scale_x_continuous(limits = c(0, 20)) +
+  labs(x = "Sigma")
+```
+
+
+## Wrapping up
+
+1.  MCMC algorithm includes the Bayes' theorm and sampling approaches
+2.  Stan syntax: need `.stan` storing the model information and `.r` storing R codes to run and summarize the model
+3.  `cmdstanr` will compile the `.stan` and run the MCMC
+4.  To run MCMC, you need to specify number of chains, interations, burnins. You also translate data information into a data list
+5.  After you finish estimation, check the convergence using $\hat{R}$ and visual inspection of traceplot
