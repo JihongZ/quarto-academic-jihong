@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 
 /*-- scss:defaults --*/
@@ -12,11 +13,12 @@
 // see https://github.com/mcanouil/quarto-revealjs-storybook/blob/main/_extensions/storybook/storybook.scss for more details of SCSS variables
 
 $font-family-sans-serif: "Hina Mincho", "Jost", Palatino, FreeSerif, serif !default;
-$font-family-monospace: 'Inconsolata', monospace !default;
+$font-family-monospace: 'Ubuntu Mono', 'Inconsolata', monospace !default;
 
 // code chunk
-$code-block-bg: #efe5be;
-$code-block-font-size: 0.70em;
+$code-block-bg: #fdfdfd ;
+$fontcolor: #333;
+$code-block-font-size: 0.50em;
 
 
 // picture
