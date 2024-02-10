@@ -45,6 +45,7 @@ library(cmdstanr)
 library(bayesplot)
 library(tidyr)
 library(dplyr)
+color_scheme_set('brightblue')
 dat <- read.csv(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture03", "Code", "DietData.csv"))
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
 dat$HeightIN60 <- dat$HeightIN - 60
@@ -57,8 +58,8 @@ head(dat)
     -   HeightIN: The respondents' height in inches
     -   DietGroup: 1, 2, 3 representing the group to which a respondent was assigned
 3.  The empty model has two parameters to be estimated: (1) $\beta_0$, (2) $\sigma_e$
-4.  The posterior mean/median/mode of $\beta_0$ should be mean of WeightLB
-5.  The posterior mean/median/mode of $\sigma_e$ should be sd of WeightLB
+4.  The posterior mean/median of $\beta_0$ should be mean of WeightLB
+5.  The posterior mean/median of $\sigma_e$ should be sd of WeightLB
 
 ## Making `Stan` Code Short
 
@@ -149,7 +150,7 @@ FullModelFormula = as.formula("WeightLB ~ HeightIN60 + DietGroup + HeightIN60*Di
 model.matrix(FullModelFormula, data = dat) |> head()
 ```
 
-## Linear Models with Matrices
+## Linear Models with Matrices (Cont.)
 
 We then rewrite the equation from
 
@@ -176,18 +177,49 @@ Where:
 
 -   $\mathbf{e}$ is the vector for residuals (N $\times$ 1)
 
-## Example: Predicted Values
+------------------------------------------------------------------------
 
-Similar to Monte Carlo Simulation, given $P$ and $\boldsymbol{\beta}$
+### Example: Predicted Values and $\text{R}^2$
+
+::: columns
+::: {.column width="50%"}
+**Similar to Monte Carlo Simulation, given** $P$ **and** $\boldsymbol{\beta}$
 
 ```{r}
+#| code-fold: true
 set.seed(1234)
-P = 6
-beta = matrix(data = runif(n = 6, min = 0, max = 10), nrow = P, ncol = 1)
-beta
+fit_lm <- lm(formula = FullModelFormula, data = dat)
+
+beta = coefficients(fit_lm)
+P = length(beta)
 X = model.matrix(FullModelFormula, data = dat)
-X %*% beta 
+head(X%*%beta)
 ```
+:::
+
+::: {.column width="50%"}
+**Calculating** $R^2$ **and adjusted** $R^2$**:**
+
+```{r}
+rss = crossprod(dat$WeightLB - X%*%beta) # residual sum of squares
+tss = crossprod(dat$WeightLB - mean(dat$WeightLB)) # total sum of squares
+R2 = 1 - rss / tss
+R2.adjust = 1 - (rss/(nrow(dat)-P)) / (tss/((nrow(dat)-1)))
+data.frame(
+  R2, # r-square
+  R2.adjust # adjusted. r-square
+)
+```
+
+**`lm` function:** $R^2$ **and adjusted** $R^2$:
+
+```{r}
+summary_lm <- summary(fit_lm)
+summary_lm$r.squared
+summary_lm$adj.r.squared
+```
+:::
+:::
 
 ## Vectorize prior distributions
 
@@ -259,7 +291,7 @@ data{
   int<lower=0> P;         // number of predictors (plus column for intercept)
   matrix[N, P] X;         // model.matrix() from R 
   vector[N] weightLB;     // outcome
-  real sigmaRate;         // hyperparameter: prior rate parameter for residual standard deviation
+  real sigmaRate;         // hyperparameter: rate parameter for residual standard deviation
 }
 ```
 
@@ -418,7 +450,17 @@ fit_full_new$summary()[, -c(9, 10)]
 :::
 :::
 
+The differences between two method:
+
+-   `betaGroup3` has the largest differences between two methods
+
+```{r}
+cbind(fit_full_old$summary()[,1], fit_full_old$summary()[, -c(1, 9, 10)] - fit_full_new$summary()[, -c(1, 9, 10)])
+```
+
 ## Compare computational time
+
+-   The Stan code with matrix has faster computation:
 
 ::: columns
 ::: {.column width="50%"}
@@ -434,10 +476,320 @@ fit_full_new$time()
 :::
 :::
 
+-   Pros: With matrices, there is less syntax to write
+
+    -   Model is equivalent
+    -   More efficient for sampling (sample from matrix space)
+    -   More flexible: modify matrix elements in R instead of individual parameters in Stan
+
+-   Cons: Output, however, is not labeled with respect to parameters
+
+    -   May have to label output
+
+## Computing Functions of Parameters
+
+-   Often, we need to compute some linear or non-linear function of parameters in a linear model
+
+    -   Missing effects - beta for diet group 2 and 3
+
+    -   Model fit indices: $R^2$
+
+    -   Transformed effects - residual variance $\sigma^2$
+
+-   In non-Bayesian (frequentist) analyses, there are often formed with the point estimates of parameters (with standard errors - second derivative of likelihood function)
+
+-   For Bayesian analyses, however, we seek to build the posterior distribution for any function of parameters
+
+    -   This means applying the function to all posterior samples
+    -   It is especially useful when you want to propose your new statistic
+
+------------------------------------------------------------------------
+
+### Example: Need Slope for Diet Group 2
+
+Recall our model:
+
+$$
+\text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\ 
++\beta_4 \text{HeightIN}_p\text{Group2}_p \\
++\beta_5 \text{HeightIN}_p\text{Group3}_p \\
++ e_p
+$$
+
+Here, $\beta_1$ denotes the average change in $\text{WeightLB}$ with one-unit increase in $\text{HeightIN}$ for members in the reference group— Diet Group 1.
+
+Question: What about the slope for members in Diet Group 2.
+
+-   Typically, we can calculate by hand by assign $\text{Group2}$ as 1 and all effects regarding $\text{HeightIN}$:
+
+    $$
+    \beta_{\text{group2}}*\text{HeightIN} = (\beta_1 + \beta_4*1 + \beta_5*0)*\text{HeightIN}
+    $$
+
+    $$
+    \beta_{\text{group2}}= \beta_1 +\beta_4
+    $$
+
+-   Similarly, the intercept for Group2 - the average mean of $\text{WeightLB}$ is $\beta_0 + \beta_2$.
+
+------------------------------------------------------------------------
+
+### Computing slope for Diet Group 2
+
+Our task: Create posterior distribution for Diet Group 2
+
+-   We must do so for each iteration we've kept from our MCMC chain
+
+-   A somewhat tedious way to do this is after using Stan
+
+```{r}
+fit_full_new$summary()
+beta_group2 <- fit_full_new$draws("beta[2]")  + fit_full_new$draws("beta[5]")
+summary(beta_group2)
+```
+
+------------------------------------------------------------------------
+
+### Computing slope within Stan
+
+Stan can compute these values for us-with the "generated quantities" section of the syntax
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| code-line-numbers: "16-20"
+#| code-fold: true
+#| code-summary: "Stan code"
+data{
+  int<lower=0> N;         // number of observations
+  int<lower=0> P;         // number of predictors (plus column for intercept)
+  matrix[N, P] X;         // model.matrix() from R 
+  vector[N] weightLB;     // outcome
+  real sigmaRate;         // hyperparameter: prior rate parameter for residual standard deviation
+}
+parameters {
+  vector[P] beta;         // vector of coefficients for Beta
+  real<lower=0> sigma;    // residual standard deviation
+}
+model {
+  sigma ~ exponential(sigmaRate);         // prior for sigma
+  weightLB ~ normal(X*beta, sigma);       // linear model
+}
+generated quantities{
+  real slopeG2;
+  slopeG2 = beta[2] + beta[5];
+}
+```
+
+The generated quantities block computes values that do not affect the posterior distributions of the parameters–they are computed after the sampling from each iteration
+
+-   The values are then added to the Stan object and can be seen in the summary
+
+    -   They can also be plotted using `bayesplot` package
+
+```{r}
+#| results: hide
+mod_full_compute <- cmdstan_model("Code/FullModel_compute.stan")
+fit_full_compute <- mod_full_compute$sample(
+  data = data_full_new,
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4,
+  refresh = 0
+)
+```
+
+```{r}
+fit_full_compute$summary('slopeG2')
+```
+
+------------------------------------------------------------------------
+
+```{r}
+bayesplot::mcmc_dens_chains(fit_full_compute$draws('slopeG2'))
+```
+
+------------------------------------------------------------------------
+
+### Alternative way of computing the slope with Matrix
+
+This is a little more complicated but more flexible method.
+
+That is, we can make use of matrix operation and form a contrast matrix
+
+-   Contrasts are linear combinations of parameters
+
+    -   You may have used these in R using `glht` package
+
+For use, we form a contrast matrix that is size of $C \times P$ where C is the number of contrasts:
+
+-   The entries of this matrix are the values that multiplying the coefficients
+
+    -   For $(\beta_1 + \beta_2)$ this would be:
+
+        -   a "1" in the corresponding entry for $\beta_1$
+
+        -   a "1" in the corresponding entry for $\beta_4$
+
+        -   "0"s elsewhere
+
+    -   $$
+        \mathbf{C} = \begin{bmatrix}
+        0\ \mathbf{1}\ 0\ 0\ \mathbf{1}\ 0
+        \end{bmatrix}
+        $$
+
+-   Then, the contrast matrix is multiplied by the coefficients vector to form the values:
+
+    -   $\mathbf{C} * \beta$
+
+------------------------------------------------------------------------
+
+### Contrasts in Stan
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| code-line-numbers: "7-8,18-21"
+#| code-fold: true
+#| code-summary: "Stan code"
+data{
+  int<lower=0> N;         // number of observations
+  int<lower=0> P;         // number of predictors (plus column for intercept)
+  matrix[N, P] X;         // model.matrix() from R 
+  vector[N] weightLB;     // outcome
+  real sigmaRate;         // hyperparameter: prior rate parameter for residual standard deviation
+  int<lower=0> nContrasts;
+  matrix[nContrasts, P] contrast; // C matrix 
+}
+parameters {
+  vector[P] beta;         // vector of coefficients for Beta
+  real<lower=0> sigma;    // residual standard deviation
+}
+model {
+  sigma ~ exponential(sigmaRate);         // prior for sigma
+  weightLB ~ normal(X*beta, sigma);       // linear model
+}
+generated quantities{
+  vector[nContrasts] computedEffects;
+  computedEffects = contrast*beta;
+}
+```
+
+```{r}
+#| code-line-numbers: "2-9,11"
+#| code-fold: true
+#| code-summary: "R code"
+#| output: false
+mod_full_contrast <- cmdstan_model("Code/FullModel_contrast.stan")
+contrast_dat <- list(
+  nContrasts = 2,
+  contrast = matrix(
+    c(0,1,0,0,1,0, # slope for diet group2
+      1,0,1,0,0,0),# intercept for diet group 2
+    nrow = 2, byrow = TRUE
+  )
+)
+fit_full_contrast <- mod_full_contrast$sample(
+  data = c(data_full_new, contrast_dat),
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4,
+  refresh = 0
+)
+```
+
+```{r}
+fit_full_contrast$summary('computedEffects')[, -c(9, 10)]
+```
+
+```{r}
+bayesplot::mcmc_hist(fit_full_contrast$draws('computedEffects'))
+```
+
+------------------------------------------------------------------------
+
+### Computing $\text{R}^2$
+
+We can use the `generated quantities` section to build a posterior distribution for $\text{R}^2$
+
+There are several formulas for $\text{R}^2$, we will use the following:
+
+$$
+\text{R}^2 = 1-\frac{RSS}{TSS} = 1- \frac{\Sigma_{p=1}^{N}(y_p -\hat{y}_p)}{\Sigma_{p=1}^{N}(y_p -\bar{y}_p)}
+$$ Where:
+
+1.  RSS is the residual sum of squares
+2.  TSS is the total sum of squares of dependent variable
+3.  $\hat{y}_p$ is the predicted values: $\hat{y}_p = \mathbf{X}\boldsymbol{\beta}$
+4.  $\bar{y}_p$ is the mean value of dependent variable: $\bar{y}_p = \frac{\Sigma_{p=1}^{N}y_p}{N}$
+
+Notice: RSS depends on sampled parameters, so we will use this to build our posterior distribution for $\text{R}^2$
+
+------------------------------------------------------------------------
+
+For adjusted $\text{R}^2$, we use the following:
+
+$$
+\text{adj.R}^2 = 1-\frac{RSS/(N-P)}{TSS/(N-1)} = 1- \frac{\Sigma_{p=1}^{N}(y_p -\hat{y}_p)}{\Sigma_{p=1}^{N}(y_p -\bar{y}_p)}*\frac{N-P}{N-1}
+$$
+
+Then, we can calculate the how to calculate $\text{adj.R}^2$ by $\text{R}^2$:
+
+$$
+\text{adj.R}^2 = 1-(1-\text{R}^2)*\frac{N-P}{N-1} = \frac{(P-1)+(N-1)R^2}{N-P}
+$$
+
+------------------------------------------------------------------------
+
+### `Stan` code for Computing $\text{R}^2$
+
+```{stan output.var='display', eval = FALSE, tidy = FALSE}
+#| code-fold: true
+#| code-summary: "Stan code"
+#| code-line-numbers: "4-15"
+generated quantities{
+  vector[nContrasts] computedEffects;
+  computedEffects = contrast*beta;
+  // compute R2
+  real rss;
+  real tss;
+  real R2;
+  real R2adj;
+  {// anything in these brackets will not appear in summary table
+    vector[N] pred = X*beta;
+    rss = dot_self(weightLB-pred); // dot_self is stan function for matrix square
+    tss = dot_self(weightLB-mean(weightLB));
+  }
+  R2 = 1-rss/tss;
+  R2adj = 1-(rss/(N-P))/(tss/(N-1));
+}
+```
+
+Recall that our `lm` function provides $\text{R}^2$ as 0.9787 and adjusted $\text{R}^2$ as 0.9742
+
+```{r}
+fit_full_contrast$summary(c('rss', 'tss', 'R2','R2adj'))[, -c(9, 10)]
+bayesplot::mcmc_hist(fit_full_contrast$draws(c('R2', 'R2adj')))
+```
+
+------------------------------------------------------------------------
+
+### Get posterior mode
+
+```{r}
+# Create the function.
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+# Calculate the mode using the user function.
+getmode(fit_full_contrast$draws('R2'))
+getmode(fit_full_contrast$draws('R2adj'))
+```
+
 ## Wrapping up
 
-1.  MCMC algorithm includes the Bayes' theorm and sampling approaches
-2.  Stan syntax: need `.stan` storing the model information and `.r` storing R codes to run and summarize the model
-3.  `cmdstanr` will compile the `.stan` and run the MCMC
-4.  To run MCMC, you need to specify number of chains, interations, burnins. You also translate data information into a data list
-5.  After you finish estimation, check the convergence using $\hat{R}$ and visual inspection of traceplot
+Today we further added generated quantities into our Bayesian toolset:
+
+-   How to make `Stan` use less syntax using matrices
+-   How to form posterior distributions for functions of parameters
+
+We will use both of these features in psychometric models.

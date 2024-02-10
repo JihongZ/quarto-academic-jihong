@@ -1,0 +1,43 @@
+---
+title: "Customize Rstudio Theme"
+author: Jihong Zhang
+date: 2024-02-10
+execute:
+  eval: true
+format: html
+---
+
+First, install some customized themes from github. For example, [here](https://github.com/lusignan/RStudio-Material-Theme).
+
+Then, copy one .rstheme file from \~/.config/rstudio/themes to your customized file.
+
+``` bash
+➜  rstudio ls
+dictionaries       rstudio-prefs.json themes
+➜  rstudio ls   
+dictionaries       rstudio-prefs.json themes
+➜  rstudio cd themes 
+➜  themes ls
+material-lighter.rstheme   material-palenight.rstheme material.rstheme
+➜  themes cp material.rstheme material.rstheme              
+cp: material.rstheme and material.rstheme are identical (not copied).
+➜  themes cp material.rstheme jihongMaterial.rstheme
+➜  themes code jihongMaterial.rstheme        
+```
+
+Open the `.rstheme` file, add the following code:
+
+``` {.css filename="jihongMaterial.rstheme"}
+.pm-proportional-font {
+  font-family: "American Typewriter", serif !important;
+  font-size: 14pt !important;
+}
+```
+
+Change the font family in the according quote.
+
+Here is the my customized file: [jihongMaterial.rstheme](./jihongMaterial.rstheme)
+
+Note:
+
+-   Please look over the [website](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html) for more details.

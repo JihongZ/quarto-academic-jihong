@@ -138,4 +138,73 @@ fit_full_new$time()
 # 3        3  0.070    0.025 0.095
 # 4        4  0.062    0.025 0.087
 #################
-lm(WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup, data = dat)
+
+
+# New Stan Code -----------------------------------------------------------
+mod_full_new <- cmdstan_model("FullModel_New.stan")
+FullModelFormula = as.formula("WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup")
+X = model.matrix(FullModelFormula, data = dat)
+data_full_new <- list(
+  N = nrow(dat),
+  P = ncol(X),
+  X = X, 
+  weightLB = dat$WeightLB,
+  sigmaRate = 0.1
+)
+fit_full_new <- mod_full_new$sample(
+  data = data_full_new,
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4
+)
+fit_full_new$summary()[, -c(9, 10)]
+cbind(fit_full_old$summary()[,1], fit_full_old$summary()[, -c(1, 9, 10)] - fit_full_new$summary()[, -c(1, 9, 10)])
+
+
+
+# Compare new to old stan code --------------------------------------------
+fit_full_old$time()
+fit_full_new$time()
+
+fit_full_new$summary()
+beta_group2 <- fit_full_new$draws("beta[2]")  + fit_full_new$draws("beta[5]")
+summary(beta_group2)
+
+
+
+
+# Compute quantities ------------------------------------------------------
+mod_full_compute <- cmdstan_model("FullModel_compute.stan")
+fit_full_compute <- mod_full_compute$sample(
+  data = data_full_new,
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4,
+  refresh = 0
+)
+fit_full_compute$summary('slopeG2')
+bayesplot::mcmc_dens_chains(fit_full_compute$draws('slopeG2'))
+
+## group comparison
+mod_full_contrast <- cmdstan_model("FullModel_contrast.stan")
+contrast_dat <- list(
+  nContrasts = 2,
+  contrast = matrix(
+    c(0,1,0,0,1,0, # slope for diet group2
+      1,0,1,0,0,0),# intercept for diet group 2
+    nrow = 2, byrow = TRUE
+  )
+)
+fit_full_contrast <- mod_full_contrast$sample(
+  data = c(data_full_new, contrast_dat),
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4,
+  refresh = 0
+)
+fit_full_contrast$summary('computedEffects')[, -c(9, 10)]
+bayesplot::mcmc_hist(fit_full_contrast$draws('computedEffects'))
+
+fit_full_contrast$summary(c('rss', 'tss', 'R2'))[, -c(9, 10)]
+bayesplot::mcmc_hist(fit_full_contrast$draws('R2'))
+

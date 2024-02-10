@@ -10,7 +10,7 @@
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.547">
 <meta name="author" content="Jihong Zhang">
 <title>Dr. Jihong Zhang - Lecture 04</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -440,10 +440,11 @@ Jihong Zhang
 <span id="cb1-2"><a></a><span class="fu">library</span>(bayesplot)</span>
 <span id="cb1-3"><a></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-5"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"2024-01-12-syllabus-adv-multivariate-esrm-6553"</span>, <span class="st">"Lecture03"</span>, <span class="st">"Code"</span>, <span class="st">"DietData.csv"</span>))</span>
-<span id="cb1-6"><a></a>dat<span class="sc">$</span>DietGroup <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>DietGroup, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb1-7"><a></a>dat<span class="sc">$</span>HeightIN60 <span class="ot">&lt;-</span> dat<span class="sc">$</span>HeightIN <span class="sc">-</span> <span class="dv">60</span></span>
-<span id="cb1-8"><a></a><span class="fu">head</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a></a><span class="fu">color_scheme_set</span>(<span class="st">'brightblue'</span>)</span>
+<span id="cb1-6"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"2024-01-12-syllabus-adv-multivariate-esrm-6553"</span>, <span class="st">"Lecture03"</span>, <span class="st">"Code"</span>, <span class="st">"DietData.csv"</span>))</span>
+<span id="cb1-7"><a></a>dat<span class="sc">$</span>DietGroup <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>DietGroup, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb1-8"><a></a>dat<span class="sc">$</span>HeightIN60 <span class="ot">&lt;-</span> dat<span class="sc">$</span>HeightIN <span class="sc">-</span> <span class="dv">60</span></span>
+<span id="cb1-9"><a></a><span class="fu">head</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Respondent DietGroup HeightIN WeightLB HeightIN60
 1          1         1       56      140         -4
@@ -465,8 +466,8 @@ Jihong Zhang
 </li>
 <li class="fragment">The empty model has two parameters to be estimated: (1) <span class="math inline">\(\beta_0\)</span>, (2) <span class="math inline">\(\sigma_e\)</span>
 </li>
-<li class="fragment">The posterior mean/median/mode of <span class="math inline">\(\beta_0\)</span> should be mean of WeightLB</li>
-<li class="fragment">The posterior mean/median/mode of <span class="math inline">\(\sigma_e\)</span> should be sd of WeightLB</li>
+<li class="fragment">The posterior mean/median of <span class="math inline">\(\beta_0\)</span> should be mean of WeightLB</li>
+<li class="fragment">The posterior mean/median of <span class="math inline">\(\sigma_e\)</span> should be sd of WeightLB</li>
 </ol></section><section id="making-stan-code-short" class="slide level2"><h2>Making <code>Stan</code> Code Short</h2>
 <p>The Stan syntax from our previous model was lengthy:</p>
 <ul>
@@ -556,7 +557,7 @@ Figure&nbsp;1
 6                     0</code></pre>
 </div>
 </div>
-</section><section id="linear-models-with-matrices-1" class="slide level2"><h2>Linear Models with Matrices</h2>
+</section><section id="linear-models-with-matrices-cont." class="slide level2"><h2>Linear Models with Matrices (Cont.)</h2>
 <p>We then rewrite the equation from</p>
 <p><span class="math display">\[
 \text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\
@@ -574,56 +575,57 @@ Figure&nbsp;1
 <li class="fragment"><p><span class="math inline">\(\mathbf{X}\)</span> is the model (predictor) matrix (N <span class="math inline">\(\times\)</span> P for P - 1 predictors)</p></li>
 <li class="fragment"><p><span class="math inline">\(\boldsymbol{\beta}\)</span> is the coefficients vector (P <span class="math inline">\(\times\)</span> 1)</p></li>
 <li class="fragment"><p><span class="math inline">\(\mathbf{e}\)</span> is the vector for residuals (N <span class="math inline">\(\times\)</span> 1)</p></li>
-</ul></section><section id="example-predicted-values" class="slide level2"><h2>Example: Predicted Values</h2>
-<p>Similar to Monte Carlo Simulation, given <span class="math inline">\(P\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
+</ul></section><section class="slide level2"><h3 id="example-predicted-values-and-textr2">Example: Predicted Values and <span class="math inline">\(\text{R}^2\)</span>
+</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Similar to Monte Carlo Simulation, given</strong> <span class="math inline">\(P\)</span> <strong>and</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb5-2"><a></a>P <span class="ot">=</span> <span class="dv">6</span></span>
-<span id="cb5-3"><a></a>beta <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">6</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>), <span class="at">nrow =</span> P, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
-<span id="cb5-4"><a></a>beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         [,1]
-[1,] 1.137034
-[2,] 6.222994
-[3,] 6.092747
-[4,] 6.233794
-[5,] 8.609154
-[6,] 6.403106</code></pre>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb5-2"><a></a>fit_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> FullModelFormula, <span class="at">data =</span> dat)</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a>beta <span class="ot">=</span> <span class="fu">coefficients</span>(fit_lm)</span>
+<span id="cb5-5"><a></a>P <span class="ot">=</span> <span class="fu">length</span>(beta)</span>
+<span id="cb5-6"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
+<span id="cb5-7"><a></a><span class="fu">head</span>(X<span class="sc">%*%</span>beta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>      [,1]
+1 149.0639
+2 147.5566
+3 146.0493
+4 144.5419
+5 143.0346
+6 149.8176</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
-<span id="cb7-2"><a></a>X <span class="sc">%*%</span> beta </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Calculating</strong> <span class="math inline">\(R^2\)</span> <strong>and adjusted</strong> <span class="math inline">\(R^2\)</span><strong>:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>rss <span class="ot">=</span> <span class="fu">crossprod</span>(dat<span class="sc">$</span>WeightLB <span class="sc">-</span> X<span class="sc">%*%</span>beta) <span class="co"># residual sum of squares</span></span>
+<span id="cb7-2"><a></a>tss <span class="ot">=</span> <span class="fu">crossprod</span>(dat<span class="sc">$</span>WeightLB <span class="sc">-</span> <span class="fu">mean</span>(dat<span class="sc">$</span>WeightLB)) <span class="co"># total sum of squares</span></span>
+<span id="cb7-3"><a></a>R2 <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> rss <span class="sc">/</span> tss</span>
+<span id="cb7-4"><a></a>R2.adjust <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> (rss<span class="sc">/</span>(<span class="fu">nrow</span>(dat)<span class="sc">-</span>P)) <span class="sc">/</span> (tss<span class="sc">/</span>((<span class="fu">nrow</span>(dat)<span class="sc">-</span><span class="dv">1</span>)))</span>
+<span id="cb7-5"><a></a><span class="fu">data.frame</span>(</span>
+<span id="cb7-6"><a></a>  R2, <span class="co"># r-square</span></span>
+<span id="cb7-7"><a></a>  R2.adjust <span class="co"># adjusted. r-square</span></span>
+<span id="cb7-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         [,1]
-1  -23.754942
-2    1.137034
-3   26.029010
-4   50.920986
-5   75.812963
-6  -36.200930
-7   13.583022
-8   32.252004
-9   32.252004
-10  63.366975
-11 -52.098810
-12   7.229781
-13  66.558373
-14 125.886965
-15 185.215556
-16 -81.763106
-17  36.894077
-18  81.390521
-19  81.390521
-20 155.551260
-21 -68.385772
-22 -17.881372
-23  32.623029
-24  83.127429
-25 133.631830
-26 -93.637972
-27  -5.255272
-28  57.875229
-29  70.501329
-30 158.884030</code></pre>
+<pre><code>         R2 R2.adjust
+1 0.9786724 0.9742292</code></pre>
+</div>
+</div>
+<p><strong><code>lm</code> function:</strong> <span class="math inline">\(R^2\)</span> <strong>and adjusted</strong> <span class="math inline">\(R^2\)</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>summary_lm <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit_lm)</span>
+<span id="cb9-2"><a></a>summary_lm<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9786724</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>summary_lm<span class="sc">$</span>adj.r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9742292</code></pre>
+</div>
+</div>
 </div>
 </div>
 </section><section id="vectorize-prior-distributions" class="slide level2"><h2>Vectorize prior distributions</h2>
@@ -638,10 +640,10 @@ Figure&nbsp;1
 </ul>
 <p>For example, the code shows two betas with univariate normal distribution have low correlation (r = -0.025)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb9-2"><a></a>beta0 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb9-3"><a></a>beta1 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb9-4"><a></a><span class="fu">cor</span>(beta0, beta1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb13-2"><a></a>beta0 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb13-3"><a></a>beta1 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb13-4"><a></a><span class="fu">cor</span>(beta0, beta1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.02538285</code></pre>
 </div>
@@ -652,12 +654,12 @@ Figure&nbsp;1
 <li class="fragment">The syntax shows the two betas generated by the multivariate normal distribution with correlation of .5</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb11-2"><a></a>sigma_of_betas <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb11-3"><a></a>betas <span class="ot">=</span> mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">sigma =</span> sigma_of_betas)</span>
-<span id="cb11-4"><a></a>beta0 <span class="ot">=</span> betas[,<span class="dv">1</span>]</span>
-<span id="cb11-5"><a></a>beta1 <span class="ot">=</span> betas[,<span class="dv">2</span>]</span>
-<span id="cb11-6"><a></a><span class="fu">cor</span>(beta0, beta1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb15-2"><a></a>sigma_of_betas <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb15-3"><a></a>betas <span class="ot">=</span> mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">sigma =</span> sigma_of_betas)</span>
+<span id="cb15-4"><a></a>beta0 <span class="ot">=</span> betas[,<span class="dv">1</span>]</span>
+<span id="cb15-5"><a></a>beta1 <span class="ot">=</span> betas[,<span class="dv">2</span>]</span>
+<span id="cb15-6"><a></a><span class="fu">cor</span>(beta0, beta1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5453899</code></pre>
 </div>
@@ -677,62 +679,62 @@ Figure&nbsp;1
 </ul></section><section id="syntax-changes-data-section" class="slide level2"><h2>Syntax Changes: Data Section</h2>
 <p><strong>Old syntax without matrix:</strong></p>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb13-1"><a></a><span class="kw">data</span>{</span>
-<span id="cb13-2"><a></a>    <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;</span>
-<span id="cb13-3"><a></a>    <span class="dt">vector</span>[N] weightLB;</span>
-<span id="cb13-4"><a></a>    <span class="dt">vector</span>[N] height60IN;</span>
-<span id="cb13-5"><a></a>    <span class="dt">vector</span>[N] group2;</span>
-<span id="cb13-6"><a></a>    <span class="dt">vector</span>[N] group3;</span>
-<span id="cb13-7"><a></a>    <span class="dt">vector</span>[N] heightXgroup2;</span>
-<span id="cb13-8"><a></a>    <span class="dt">vector</span>[N] heightXgroup3;</span>
-<span id="cb13-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb17-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb17-2"><a></a>    <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;</span>
+<span id="cb17-3"><a></a>    <span class="dt">vector</span>[N] weightLB;</span>
+<span id="cb17-4"><a></a>    <span class="dt">vector</span>[N] height60IN;</span>
+<span id="cb17-5"><a></a>    <span class="dt">vector</span>[N] group2;</span>
+<span id="cb17-6"><a></a>    <span class="dt">vector</span>[N] group3;</span>
+<span id="cb17-7"><a></a>    <span class="dt">vector</span>[N] heightXgroup2;</span>
+<span id="cb17-8"><a></a>    <span class="dt">vector</span>[N] heightXgroup3;</span>
+<span id="cb17-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>New syntax with matrix:</strong></p>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb14-1"><a></a><span class="kw">data</span>{</span>
-<span id="cb14-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
-<span id="cb14-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
-<span id="cb14-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
-<span id="cb14-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
-<span id="cb14-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
-<span id="cb14-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb18-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb18-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
+<span id="cb18-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
+<span id="cb18-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
+<span id="cb18-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
+<span id="cb18-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: rate parameter for residual standard deviation</span></span>
+<span id="cb18-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="syntax-changes-parameters-section" class="slide level2"><h2>Syntax Changes: Parameters Section</h2>
 <p><strong>Old syntax without matrix:</strong></p>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb15-1"><a></a><span class="kw">parameters</span> {</span>
-<span id="cb15-2"><a></a>  <span class="dt">real</span> beta0;</span>
-<span id="cb15-3"><a></a>  <span class="dt">real</span> betaHeight;</span>
-<span id="cb15-4"><a></a>  <span class="dt">real</span> betaGroup2;</span>
-<span id="cb15-5"><a></a>  <span class="dt">real</span> betaGroup3;</span>
-<span id="cb15-6"><a></a>  <span class="dt">real</span> betaHxG2;</span>
-<span id="cb15-7"><a></a>  <span class="dt">real</span> betaHxG3;</span>
-<span id="cb15-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;</span>
-<span id="cb15-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb19-1"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb19-2"><a></a>  <span class="dt">real</span> beta0;</span>
+<span id="cb19-3"><a></a>  <span class="dt">real</span> betaHeight;</span>
+<span id="cb19-4"><a></a>  <span class="dt">real</span> betaGroup2;</span>
+<span id="cb19-5"><a></a>  <span class="dt">real</span> betaGroup3;</span>
+<span id="cb19-6"><a></a>  <span class="dt">real</span> betaHxG2;</span>
+<span id="cb19-7"><a></a>  <span class="dt">real</span> betaHxG3;</span>
+<span id="cb19-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;</span>
+<span id="cb19-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>New syntax with matrix:</strong></p>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb16-1"><a></a><span class="kw">parameters</span> {</span>
-<span id="cb16-2"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
-<span id="cb16-3"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
-<span id="cb16-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb20-1"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb20-2"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
+<span id="cb20-3"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
+<span id="cb20-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="syntax-changes-prior-distributions-definition" class="slide level2"><h2>Syntax Changes: Prior Distributions Definition</h2>
 <p><strong>Old syntax without matrix:</strong></p>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="|2-8|9-12"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb17-1"><a></a><span class="kw">model</span> {</span>
-<span id="cb17-2"><a></a>  beta0 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-3"><a></a>  betaHeight ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-4"><a></a>  betaGroup2 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-5"><a></a>  betaGroup3 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-6"><a></a>  betaHxG2 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-7"><a></a>  betaHxG3 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
-<span id="cb17-8"><a></a>  sigma ~ exponential(.<span class="dv">1</span>); <span class="co">// prior for sigma</span></span>
-<span id="cb17-9"><a></a>  weightLB ~ normal(</span>
-<span id="cb17-10"><a></a>    beta0 + betaHeight * height60IN + betaGroup2 * group2 + </span>
-<span id="cb17-11"><a></a>    betaGroup3*group3 + betaHxG2*heightXgroup2 +</span>
-<span id="cb17-12"><a></a>    betaHxG3*heightXgroup3, sigma);</span>
-<span id="cb17-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="|2-8|9-12"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb21-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb21-2"><a></a>  beta0 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-3"><a></a>  betaHeight ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-4"><a></a>  betaGroup2 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-5"><a></a>  betaGroup3 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-6"><a></a>  betaHxG2 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-7"><a></a>  betaHxG3 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
+<span id="cb21-8"><a></a>  sigma ~ exponential(.<span class="dv">1</span>); <span class="co">// prior for sigma</span></span>
+<span id="cb21-9"><a></a>  weightLB ~ normal(</span>
+<span id="cb21-10"><a></a>    beta0 + betaHeight * height60IN + betaGroup2 * group2 + </span>
+<span id="cb21-11"><a></a>    betaGroup3*group3 + betaHxG2*heightXgroup2 +</span>
+<span id="cb21-12"><a></a>    betaHxG3*heightXgroup3, sigma);</span>
+<span id="cb21-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>New syntax with matrix:</strong></p>
 <ul>
@@ -742,10 +744,10 @@ Figure&nbsp;1
 <code>exponential()</code> is the exponential distribution sampling in Stan, similar to <code><a href="https://rdrr.io/r/stats/Exponential.html">rexp()</a></code> in R</li>
 </ul>
 <div class="cell" data-output.var="display">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|3"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb18-1"><a></a><span class="kw">model</span> {</span>
-<span id="cb18-2"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
-<span id="cb18-3"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
-<span id="cb18-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="|3"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb22-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb22-2"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
+<span id="cb22-3"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
+<span id="cb22-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section class="slide level2"><h3 id="a-litte-more-about-exponential-distribution">A litte more about exponential distribution</h3>
 <ul>
@@ -756,21 +758,21 @@ Figure&nbsp;1
 <li class="fragment">It is typically positive skewed (skewness is 2)</li>
 </ul>
 <div class="cell fig-cap-location-top">
-<div class="sourceCode cell-code" id="cb19" data-cap-location="top" data-code-line-numbers="1-3|4|5|7-15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb19-2"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb19-3"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-4"><a></a>rate_list <span class="ot">=</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.2</span>)</span>
-<span id="cb19-5"><a></a>pdf_points <span class="ot">=</span> <span class="fu">sapply</span>(rate_list, \(x) <span class="fu">rexp</span>(<span class="dv">1000</span>, x)) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb19-6"><a></a><span class="fu">colnames</span>(pdf_points) <span class="ot">&lt;-</span> rate_list</span>
-<span id="cb19-7"><a></a>pdf_points <span class="sc">%&gt;%</span> </span>
-<span id="cb19-8"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-9"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb19-10"><a></a>    <span class="at">sigmaRate =</span> <span class="fu">factor</span>(name, <span class="at">levels =</span> rate_list)</span>
-<span id="cb19-11"><a></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-12"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb19-13"><a></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> sigmaRate), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb19-14"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb19-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sigma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-cap-location="top" data-code-line-numbers="1-3|4|5|7-15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb23-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-3"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-4"><a></a>rate_list <span class="ot">=</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.2</span>)</span>
+<span id="cb23-5"><a></a>pdf_points <span class="ot">=</span> <span class="fu">sapply</span>(rate_list, \(x) <span class="fu">rexp</span>(<span class="dv">1000</span>, x)) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb23-6"><a></a><span class="fu">colnames</span>(pdf_points) <span class="ot">&lt;-</span> rate_list</span>
+<span id="cb23-7"><a></a>pdf_points <span class="sc">%&gt;%</span> </span>
+<span id="cb23-8"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-9"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-10"><a></a>    <span class="at">sigmaRate =</span> <span class="fu">factor</span>(name, <span class="at">levels =</span> rate_list)</span>
+<span id="cb23-11"><a></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-12"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-13"><a></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> sigmaRate), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb23-14"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb23-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sigma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <ul>
@@ -793,27 +795,27 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>mod_full_old <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_Old.stan"</span>)</span>
-<span id="cb20-2"><a></a>data_full_old <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb20-3"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
-<span id="cb20-4"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
-<span id="cb20-5"><a></a>  <span class="at">height60IN =</span> dat<span class="sc">$</span>HeightIN60,</span>
-<span id="cb20-6"><a></a>  <span class="at">group2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>),</span>
-<span id="cb20-7"><a></a>  <span class="at">group3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>),</span>
-<span id="cb20-8"><a></a>  <span class="at">heightXgroup2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60,</span>
-<span id="cb20-9"><a></a>  <span class="at">heightXgroup3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60</span>
-<span id="cb20-10"><a></a>)</span>
-<span id="cb20-11"><a></a>fit_full_old <span class="ot">&lt;-</span> mod_full_old<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb20-12"><a></a>  <span class="at">data =</span> data_full_old,</span>
-<span id="cb20-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb20-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb20-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb20-16"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
-<span id="cb20-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>mod_full_old <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_Old.stan"</span>)</span>
+<span id="cb24-2"><a></a>data_full_old <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-3"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
+<span id="cb24-4"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
+<span id="cb24-5"><a></a>  <span class="at">height60IN =</span> dat<span class="sc">$</span>HeightIN60,</span>
+<span id="cb24-6"><a></a>  <span class="at">group2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>),</span>
+<span id="cb24-7"><a></a>  <span class="at">group3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>),</span>
+<span id="cb24-8"><a></a>  <span class="at">heightXgroup2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60,</span>
+<span id="cb24-9"><a></a>  <span class="at">heightXgroup3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60</span>
+<span id="cb24-10"><a></a>)</span>
+<span id="cb24-11"><a></a>fit_full_old <span class="ot">&lt;-</span> mod_full_old<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb24-12"><a></a>  <span class="at">data =</span> data_full_old,</span>
+<span id="cb24-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb24-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-16"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb24-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 8
   variable      mean  median    sd   mad     q5     q95  rhat
@@ -830,26 +832,26 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>mod_full_new <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_New.stan"</span>)</span>
-<span id="cb23-2"><a></a>FullModelFormula <span class="ot">=</span> <span class="fu">as.formula</span>(<span class="st">"WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup"</span>)</span>
-<span id="cb23-3"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
-<span id="cb23-4"><a></a>data_full_new <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb23-5"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
-<span id="cb23-6"><a></a>  <span class="at">P =</span> <span class="fu">ncol</span>(X),</span>
-<span id="cb23-7"><a></a>  <span class="at">X =</span> X, </span>
-<span id="cb23-8"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
-<span id="cb23-9"><a></a>  <span class="at">sigmaRate =</span> <span class="fl">0.1</span></span>
-<span id="cb23-10"><a></a>)</span>
-<span id="cb23-11"><a></a>fit_full_new <span class="ot">&lt;-</span> mod_full_new<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb23-12"><a></a>  <span class="at">data =</span> data_full_new,</span>
-<span id="cb23-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb23-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb23-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span></span>
-<span id="cb23-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mod_full_new <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_New.stan"</span>)</span>
+<span id="cb27-2"><a></a>FullModelFormula <span class="ot">=</span> <span class="fu">as.formula</span>(<span class="st">"WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup"</span>)</span>
+<span id="cb27-3"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
+<span id="cb27-4"><a></a>data_full_new <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb27-5"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
+<span id="cb27-6"><a></a>  <span class="at">P =</span> <span class="fu">ncol</span>(X),</span>
+<span id="cb27-7"><a></a>  <span class="at">X =</span> X, </span>
+<span id="cb27-8"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
+<span id="cb27-9"><a></a>  <span class="at">sigmaRate =</span> <span class="fl">0.1</span></span>
+<span id="cb27-10"><a></a>)</span>
+<span id="cb27-11"><a></a>fit_full_new <span class="ot">&lt;-</span> mod_full_new<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb27-12"><a></a>  <span class="at">data =</span> data_full_new,</span>
+<span id="cb27-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb27-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb27-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span></span>
+<span id="cb27-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 8
   variable    mean  median    sd   mad     q5     q95  rhat
@@ -866,49 +868,394 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 </div>
 </div>
 </div>
+<p>The differences between two method:</p>
+<ul>
+<li class="fragment">
+<code>betaGroup3</code> has the largest differences between two methods</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">cbind</span>(fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[,<span class="dv">1</span>], fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)] <span class="sc">-</span> fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    variable         mean     median            sd          mad        q5
+1       lp__ -0.007672400  0.0063000  0.0242926098  0.007931910 -0.115880
+2      beta0  0.071524500  0.1155000 -0.0135811270 -0.029652000 -0.102200
+3 betaHeight  0.004062205 -0.0067305  0.0121231572  0.008502340 -0.018165
+4 betaGroup2 -0.013670300  0.0513000 -0.0005405792  0.069904590 -0.037665
+5 betaGroup3 -0.103896750 -0.2107500 -0.1281290904 -0.041068020  0.468720
+6   betaHxG2 -0.019823355 -0.0341300  0.0072874047  0.001823598  0.020645
+7   betaHxG3 -0.010911025 -0.0213900  0.0116900063  0.005040840 -0.041349
+8      sigma  0.011585872  0.0005500 -0.0326167204 -0.068377512  0.021184
+          q95          rhat
+1  0.03527000  2.381442e-03
+2  0.00740000  1.491287e-04
+3  0.02306265  1.225973e-03
+4  0.07863000  4.621964e-05
+5 -0.04479000 -4.035145e-05
+6  0.02261500  5.967744e-04
+7  0.03879350  6.457172e-05
+8 -0.00486500  2.857860e-04</code></pre>
+</div>
+</div>
 </section><section id="compare-computational-time" class="slide level2"><h2>Compare computational time</h2>
+<ul>
+<li class="fragment">The Stan code with matrix has faster computation:</li>
+</ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.2110929
+[1] 0.222126
 
 $chains
   chain_id warmup sampling total
-1        1  0.055    0.049 0.104
-2        2  0.070    0.052 0.122
-3        3  0.060    0.056 0.116
-4        4  0.059    0.045 0.104</code></pre>
+1        1  0.051    0.040 0.091
+2        2  0.059    0.046 0.105
+3        3  0.054    0.049 0.103
+4        4  0.053    0.040 0.093</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.1725891
+[1] 0.1861751
 
 $chains
   chain_id warmup sampling total
-1        1  0.031    0.028 0.059
-2        2  0.036    0.035 0.071
-3        3  0.041    0.034 0.075
-4        4  0.032    0.032 0.064</code></pre>
+1        1  0.029    0.025 0.054
+2        2  0.035    0.030 0.065
+3        3  0.036    0.030 0.066
+4        4  0.032    0.027 0.059</code></pre>
 </div>
 </div>
+</div>
+</div>
+<ul>
+<li class="fragment">
+<p>Pros: With matrices, there is less syntax to write</p>
+<ul>
+<li class="fragment">Model is equivalent</li>
+<li class="fragment">More efficient for sampling (sample from matrix space)</li>
+<li class="fragment">More flexible: modify matrix elements in R instead of individual parameters in Stan</li>
+</ul>
+</li>
+<li class="fragment">
+<p>Cons: Output, however, is not labeled with respect to parameters</p>
+<ul>
+<li class="fragment">May have to label output</li>
+</ul>
+</li>
+</ul></section><section id="computing-functions-of-parameters" class="slide level2"><h2>Computing Functions of Parameters</h2>
+<ul>
+<li class="fragment">
+<p>Often, we need to compute some linear or non-linear function of parameters in a linear model</p>
+<ul>
+<li class="fragment"><p>Missing effects - beta for diet group 2 and 3</p></li>
+<li class="fragment"><p>Model fit indices: <span class="math inline">\(R^2\)</span></p></li>
+<li class="fragment"><p>Transformed effects - residual variance <span class="math inline">\(\sigma^2\)</span></p></li>
+</ul>
+</li>
+<li class="fragment"><p>In non-Bayesian (frequentist) analyses, there are often formed with the point estimates of parameters (with standard errors - second derivative of likelihood function)</p></li>
+<li class="fragment">
+<p>For Bayesian analyses, however, we seek to build the posterior distribution for any function of parameters</p>
+<ul>
+<li class="fragment">This means applying the function to all posterior samples</li>
+<li class="fragment">It is especially useful when you want to propose your new statistic</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><h3 id="example-need-slope-for-diet-group-2">Example: Need Slope for Diet Group 2</h3>
+<p>Recall our model:</p>
+<p><span class="math display">\[
+\text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\
++\beta_4 \text{HeightIN}_p\text{Group2}_p \\
++\beta_5 \text{HeightIN}_p\text{Group3}_p \\
++ e_p
+\]</span></p>
+<p>Here, <span class="math inline">\(\beta_1\)</span> denotes the average change in <span class="math inline">\(\text{WeightLB}\)</span> with one-unit increase in <span class="math inline">\(\text{HeightIN}\)</span> for members in the reference group— Diet Group 1.</p>
+<p>Question: What about the slope for members in Diet Group 2.</p>
+<ul>
+<li class="fragment">
+<p>Typically, we can calculate by hand by assign <span class="math inline">\(\text{Group2}\)</span> as 1 and all effects regarding <span class="math inline">\(\text{HeightIN}\)</span>:</p>
+<p><span class="math display">\[
+\beta_{\text{group2}}*\text{HeightIN} = (\beta_1 + \beta_4*1 + \beta_5*0)*\text{HeightIN}
+\]</span></p>
+<p><span class="math display">\[
+\beta_{\text{group2}}= \beta_1 +\beta_4
+\]</span></p>
+</li>
+<li class="fragment"><p>Similarly, the intercept for Group2 - the average mean of <span class="math inline">\(\text{WeightLB}\)</span> is <span class="math inline">\(\beta_0 + \beta_2\)</span>.</p></li>
+</ul></section><section class="slide level2"><h3 id="computing-slope-for-diet-group-2">Computing slope for Diet Group 2</h3>
+<p>Our task: Create posterior distribution for Diet Group 2</p>
+<ul>
+<li class="fragment"><p>We must do so for each iteration we’ve kept from our MCMC chain</p></li>
+<li class="fragment"><p>A somewhat tedious way to do this is after using Stan</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 10
+  variable    mean  median    sd   mad     q5     q95  rhat ess_bulk ess_tail
+  &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 lp__     -76.6   -76.3   2.15  2.00  -80.6  -73.9    1.00    1401.    1886.
+2 beta[1]  148.    148.    3.27  3.23  142.   153.     1.00    1402.    1838.
+3 beta[2]   -0.374  -0.372 0.483 0.479  -1.16   0.414  1.00    1522.    2019.
+4 beta[3]  -24.1   -24.2   4.59  4.45  -31.6  -16.5    1.00    1746.    2190.
+5 beta[4]   81.3    81.3   4.44  4.40   74.1   88.5    1.00    1538.    2091.
+6 beta[5]    2.47    2.48  0.683 0.676   1.32   3.56   1.00    1805.    2118.
+7 beta[6]    3.57    3.57  0.646 0.643   2.52   4.62   1.00    1678.    2218.
+8 sigma      8.25    8.10  1.26  1.20    6.50  10.5    1.00    2265.    2212.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>beta_group2 <span class="ot">&lt;-</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[2]"</span>)  <span class="sc">+</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[5]"</span>)</span>
+<span id="cb38-2"><a></a><span class="fu">summary</span>(beta_group2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 10
+  variable  mean median    sd   mad    q5   q95  rhat ess_bulk ess_tail
+  &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 beta[2]   2.10   2.09 0.478 0.478  1.32  2.88  1.00    4032.    3211.</code></pre>
+</div>
+</div>
+</section><section class="slide level2"><h3 id="computing-slope-within-stan">Computing slope within Stan</h3>
+<p>Stan can compute these values for us-with the “generated quantities” section of the syntax</p>
+<div class="cell" data-output.var="display">
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="16-20"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb40-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb40-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
+<span id="cb40-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
+<span id="cb40-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
+<span id="cb40-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
+<span id="cb40-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
+<span id="cb40-7"><a></a>}</span>
+<span id="cb40-8"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb40-9"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
+<span id="cb40-10"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
+<span id="cb40-11"><a></a>}</span>
+<span id="cb40-12"><a></a><span class="kw">model</span> {</span>
+<span id="cb40-13"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
+<span id="cb40-14"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
+<span id="cb40-15"><a></a>}</span>
+<span id="cb40-16"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb40-17"><a></a>  <span class="dt">real</span> slopeG2;</span>
+<span id="cb40-18"><a></a>  slopeG2 = beta[<span class="dv">2</span>] + beta[<span class="dv">5</span>];</span>
+<span id="cb40-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The generated quantities block computes values that do not affect the posterior distributions of the parameters–they are computed after the sampling from each iteration</p>
+<ul>
+<li class="fragment">
+<p>The values are then added to the Stan object and can be seen in the summary</p>
+<ul>
+<li class="fragment">They can also be plotted using <code>bayesplot</code> package</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>mod_full_compute <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_compute.stan"</span>)</span>
+<span id="cb41-2"><a></a>fit_full_compute <span class="ot">&lt;-</span> mod_full_compute<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb41-3"><a></a>  <span class="at">data =</span> data_full_new,</span>
+<span id="cb41-4"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb41-5"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb41-6"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb41-7"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb41-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>fit_full_compute<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'slopeG2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 10
+  variable  mean median    sd   mad    q5   q95  rhat ess_bulk ess_tail
+  &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 slopeG2   2.10   2.09 0.478 0.478  1.32  2.88  1.00    4032.    3211.</code></pre>
+</div>
+</div>
+</section><section class="slide level2"><div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens_chains</span>(fit_full_compute<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'slopeG2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="alternative-way-of-computing-the-slope-with-matrix">Alternative way of computing the slope with Matrix</h3>
+<p>This is a little more complicated but more flexible method.</p>
+<p>That is, we can make use of matrix operation and form a contrast matrix</p>
+<ul>
+<li class="fragment">
+<p>Contrasts are linear combinations of parameters</p>
+<ul>
+<li class="fragment">You may have used these in R using <code>glht</code> package</li>
+</ul>
+</li>
+</ul>
+<p>For use, we form a contrast matrix that is size of <span class="math inline">\(C \times P\)</span> where C is the number of contrasts:</p>
+<ul>
+<li class="fragment">
+<p>The entries of this matrix are the values that multiplying the coefficients</p>
+<ul>
+<li class="fragment">
+<p>For <span class="math inline">\((\beta_1 + \beta_2)\)</span> this would be:</p>
+<ul>
+<li class="fragment"><p>a “1” in the corresponding entry for <span class="math inline">\(\beta_1\)</span></p></li>
+<li class="fragment"><p>a “1” in the corresponding entry for <span class="math inline">\(\beta_4\)</span></p></li>
+<li class="fragment"><p>“0”s elsewhere</p></li>
+</ul>
+</li>
+<li class="fragment"><p><span class="math display">\[
+\mathbf{C} = \begin{bmatrix}
+0\ \mathbf{1}\ 0\ 0\ \mathbf{1}\ 0
+\end{bmatrix}
+\]</span></p></li>
+</ul>
+</li>
+<li class="fragment">
+<p>Then, the contrast matrix is multiplied by the coefficients vector to form the values:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\mathbf{C} * \beta\)</span></li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><h3 id="contrasts-in-stan">Contrasts in Stan</h3>
+<div class="cell" data-output.var="display">
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb45" data-code-line-numbers="7-8,18-21"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb45-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb45-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
+<span id="cb45-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
+<span id="cb45-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
+<span id="cb45-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
+<span id="cb45-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
+<span id="cb45-7"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; nContrasts;</span>
+<span id="cb45-8"><a></a>  <span class="dt">matrix</span>[nContrasts, P] contrast; <span class="co">// C matrix </span></span>
+<span id="cb45-9"><a></a>}</span>
+<span id="cb45-10"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb45-11"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
+<span id="cb45-12"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
+<span id="cb45-13"><a></a>}</span>
+<span id="cb45-14"><a></a><span class="kw">model</span> {</span>
+<span id="cb45-15"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
+<span id="cb45-16"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
+<span id="cb45-17"><a></a>}</span>
+<span id="cb45-18"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb45-19"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
+<span id="cb45-20"><a></a>  computedEffects = contrast*beta;</span>
+<span id="cb45-21"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>R code</summary><div class="sourceCode cell-code" id="cb46" data-code-line-numbers="2-9,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>mod_full_contrast <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_contrast.stan"</span>)</span>
+<span id="cb46-2"><a></a>contrast_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb46-3"><a></a>  <span class="at">nContrasts =</span> <span class="dv">2</span>,</span>
+<span id="cb46-4"><a></a>  <span class="at">contrast =</span> <span class="fu">matrix</span>(</span>
+<span id="cb46-5"><a></a>    <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="co"># slope for diet group2</span></span>
+<span id="cb46-6"><a></a>      <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="co"># intercept for diet group 2</span></span>
+<span id="cb46-7"><a></a>    <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb46-8"><a></a>  )</span>
+<span id="cb46-9"><a></a>)</span>
+<span id="cb46-10"><a></a>fit_full_contrast <span class="ot">&lt;-</span> mod_full_contrast<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb46-11"><a></a>  <span class="at">data =</span> <span class="fu">c</span>(data_full_new, contrast_dat),</span>
+<span id="cb46-12"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb46-13"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb46-14"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb46-15"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb46-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'computedEffects'</span>)[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 8
+  variable             mean median    sd   mad     q5    q95  rhat
+  &lt;chr&gt;               &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 computedEffects[1]   2.10   2.09 0.478 0.478   1.32   2.88  1.00
+2 computedEffects[2] 123.   123.   3.16  3.02  118.   129.    1.00</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'computedEffects'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="computing-textr2">Computing <span class="math inline">\(\text{R}^2\)</span>
+</h3>
+<p>We can use the <code>generated quantities</code> section to build a posterior distribution for <span class="math inline">\(\text{R}^2\)</span></p>
+<p>There are several formulas for <span class="math inline">\(\text{R}^2\)</span>, we will use the following:</p>
+<p><span class="math display">\[
+\text{R}^2 = 1-\frac{RSS}{TSS} = 1- \frac{\Sigma_{p=1}^{N}(y_p -\hat{y}_p)}{\Sigma_{p=1}^{N}(y_p -\bar{y}_p)}
+\]</span> Where:</p>
+<ol type="1">
+<li class="fragment">RSS is the residual sum of squares</li>
+<li class="fragment">TSS is the total sum of squares of dependent variable</li>
+<li class="fragment">
+<span class="math inline">\(\hat{y}_p\)</span> is the predicted values: <span class="math inline">\(\hat{y}_p = \mathbf{X}\boldsymbol{\beta}\)</span>
+</li>
+<li class="fragment">
+<span class="math inline">\(\bar{y}_p\)</span> is the mean value of dependent variable: <span class="math inline">\(\bar{y}_p = \frac{\Sigma_{p=1}^{N}y_p}{N}\)</span>
+</li>
+</ol>
+<p>Notice: RSS depends on sampled parameters, so we will use this to build our posterior distribution for <span class="math inline">\(\text{R}^2\)</span></p>
+</section><section class="slide level2"><p>For adjusted <span class="math inline">\(\text{R}^2\)</span>, we use the following:</p>
+<p><span class="math display">\[
+\text{adj.R}^2 = 1-\frac{RSS/(N-P)}{TSS/(N-1)} = 1- \frac{\Sigma_{p=1}^{N}(y_p -\hat{y}_p)}{\Sigma_{p=1}^{N}(y_p -\bar{y}_p)}*\frac{N-P}{N-1}
+\]</span></p>
+<p>Then, we can calculate the how to calculate <span class="math inline">\(\text{adj.R}^2\)</span> by <span class="math inline">\(\text{R}^2\)</span>:</p>
+<p><span class="math display">\[
+\text{adj.R}^2 = 1-(1-\text{R}^2)*\frac{N-P}{N-1} = \frac{(P-1)+(N-1)R^2}{N-P}
+\]</span></p>
+</section><section class="slide level2"><h3 id="stan-code-for-computing-textr2">
+<code>Stan</code> code for Computing <span class="math inline">\(\text{R}^2\)</span>
+</h3>
+<div class="cell" data-output.var="display">
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb50" data-code-line-numbers="4-15"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb50-1"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb50-2"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
+<span id="cb50-3"><a></a>  computedEffects = contrast*beta;</span>
+<span id="cb50-4"><a></a>  <span class="co">// compute R2</span></span>
+<span id="cb50-5"><a></a>  <span class="dt">real</span> rss;</span>
+<span id="cb50-6"><a></a>  <span class="dt">real</span> tss;</span>
+<span id="cb50-7"><a></a>  <span class="dt">real</span> R2;</span>
+<span id="cb50-8"><a></a>  <span class="dt">real</span> R2adj;</span>
+<span id="cb50-9"><a></a>  {<span class="co">// anything in these brackets will not appear in summary table</span></span>
+<span id="cb50-10"><a></a>    <span class="dt">vector</span>[N] pred = X*beta;</span>
+<span id="cb50-11"><a></a>    rss = dot_self(weightLB-pred); <span class="co">// dot_self is stan function for matrix square</span></span>
+<span id="cb50-12"><a></a>    tss = dot_self(weightLB-mean(weightLB));</span>
+<span id="cb50-13"><a></a>  }</span>
+<span id="cb50-14"><a></a>  R2 = <span class="dv">1</span>-rss/tss;</span>
+<span id="cb50-15"><a></a>  R2adj = <span class="dv">1</span>-(rss/(N-P))/(tss/(N<span class="dv">-1</span>));</span>
+<span id="cb50-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Recall that our <code>lm</code> function provides <span class="math inline">\(\text{R}^2\)</span> as 0.9787 and adjusted <span class="math inline">\(\text{R}^2\)</span> as 0.9742</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="fu">c</span>(<span class="st">'rss'</span>, <span class="st">'tss'</span>, <span class="st">'R2'</span>,<span class="st">'R2adj'</span>))[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 8
+  variable      mean    median        sd       mad        q5       q95  rhat
+  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;
+1 rss       1941.     1877.    285.      226.       1616.     2499.     1.00
+2 tss      71112     71112       0         0       71112     71112     NA   
+3 R2           0.973     0.974   0.00401   0.00317     0.965     0.977  1.00
+4 R2adj        0.967     0.968   0.00484   0.00384     0.958     0.973  1.00</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">'R2'</span>, <span class="st">'R2adj'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="get-posterior-mode">Get posterior mode</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># Create the function.</span></span>
+<span id="cb54-2"><a></a>getmode <span class="ot">&lt;-</span> <span class="cf">function</span>(v) {</span>
+<span id="cb54-3"><a></a>   uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(v)</span>
+<span id="cb54-4"><a></a>   uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(v, uniqv)))]</span>
+<span id="cb54-5"><a></a>}</span>
+<span id="cb54-6"><a></a></span>
+<span id="cb54-7"><a></a><span class="co"># Calculate the mode using the user function.</span></span>
+<span id="cb54-8"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.974917</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2adj'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.96674</code></pre>
 </div>
 </div>
 </section><section id="wrapping-up" class="slide level2"><h2>Wrapping up</h2>
-<ol type="1">
-<li class="fragment">MCMC algorithm includes the Bayes’ theorm and sampling approaches</li>
-<li class="fragment">Stan syntax: need <code>.stan</code> storing the model information and <code>.r</code> storing R codes to run and summarize the model</li>
-<li class="fragment">
-<code>cmdstanr</code> will compile the <code>.stan</code> and run the MCMC</li>
-<li class="fragment">To run MCMC, you need to specify number of chains, interations, burnins. You also translate data information into a data list</li>
-<li class="fragment">After you finish estimation, check the convergence using <span class="math inline">\(\hat{R}\)</span> and visual inspection of traceplot</li>
-</ol>
+<p>Today we further added generated quantities into our Bayesian toolset:</p>
+<ul>
+<li class="fragment">How to make <code>Stan</code> use less syntax using matrices</li>
+<li class="fragment">How to form posterior distributions for functions of parameters</li>
+</ul>
+<p>We will use both of these features in psychometric models.</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../Images/UA_Logo_Horizontal.png" class="slide-logo"></p>

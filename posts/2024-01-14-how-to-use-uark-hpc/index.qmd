@@ -153,9 +153,9 @@ squeue -u loginname
 
 Below shows the information of all running/down task for the queue `comp06` (there are 9 Jobs but only 7 are running). Note that comp06 and comp72 queues share the same nodes, both belonging to pinnacle cluster. There are 49 public standard compute nodes. Thus, if there are 49 running jobs in both queues, then your job has to be waitting until some jobs finished.
 
-For example, below shows all 47 running jobs in comp06/comp72 queues. Some have been running like 2 days. There are 72 hours limit though for all computation nodes. 
+For example, below shows all 47 running jobs in comp06/comp72 queues. Some have been running like 2 days. There are 72 hours limit though for all computation nodes.
 
-```bash
+``` bash
 squeue -p comp06,comp72 -t R
  JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
  362406    comp06    measr   jzhang  R    1:04:24      1 c1501
@@ -208,7 +208,7 @@ squeue -p comp06,comp72 -t R
 
 When you want to get the worst case scenario estimate of when your waiting jobs will start, you can always run following command,
 
-```bash
+``` bash
 squeue -u [loginname] --start
 ```
 
@@ -216,9 +216,9 @@ squeue -u [loginname] --start
 
 Most frequently used queues are from `pinnacle` cluster.
 
-Below is a list of queues in the `pinnacle` cluster. The number after the queue is the time limit for a running job. For example, `comp72` has 72 hour limits while `comp06` has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use `comp01` for quick examination of coding and use `comp72` for time consuming jobs. 
+Below is a list of queues in the `pinnacle` cluster. The number after the queue is the time limit for a running job. For example, `comp72` has 72 hour limits while `comp06` has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use `comp01` for quick examination of coding and use `comp72` for time consuming jobs.
 
-```
+```         
 comp72/06/01: standard compute nodes, 72/6/1 hour limit, 42/46/48 nodes
 gpu72/06:     gpu nodes: 72/6 hour limit, 19 nodes
 agpu72/06:    a100 gpu nodes: 72/6 hour limit
@@ -233,7 +233,7 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress
 
 Here's some useful information regarding selecting queue from https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage
 
-> Generally the nodes are reserved for the most efficient use, especially for expensive features such as GPU and extra memory. Pinnacle compute nodes are very busy (comp.. and himem.. partitions) are reserved for scalable programs that can use all 32/24 cores (except for the cloud partition, and condo usage by the owner). Cores are allocated by the product of ntasks-per-node x cpus-per-task. Exceptions: (1) serial/single core jobs that use more memory than available on Razor/Trestles (64 to 192 GB) (2) multiple jobs submitted together that use a whole node, such as 4 x 8 cores (3) two jobs on one high-memory node (2 x 12 cores) that each use more than 192 GB (and less than 384 GB so that they can run on the himem node) 
+> Generally the nodes are reserved for the most efficient use, especially for expensive features such as GPU and extra memory. Pinnacle compute nodes are very busy (comp.. and himem.. partitions) are reserved for scalable programs that can use all 32/24 cores (except for the cloud partition, and condo usage by the owner). Cores are allocated by the product of ntasks-per-node x cpus-per-task. Exceptions: (1) serial/single core jobs that use more memory than available on Razor/Trestles (64 to 192 GB) (2) multiple jobs submitted together that use a whole node, such as 4 x 8 cores (3) two jobs on one high-memory node (2 x 12 cores) that each use more than 192 GB (and less than 384 GB so that they can run on the himem node)
 
 ### Troubleshooting
 
