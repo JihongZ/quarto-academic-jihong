@@ -7,6 +7,8 @@ execute:
 format: html
 ---
 
+![Screenshot for customized material theme](newthemess.png){fig-align="center"}
+
 First, install some customized themes from github. For example, [here](https://github.com/lusignan/RStudio-Material-Theme).
 
 Then, copy one .rstheme file from \~/.config/rstudio/themes to your customized file.
@@ -29,8 +31,13 @@ Open the `.rstheme` file, add the following code:
 
 ``` {.css filename="jihongMaterial.rstheme"}
 .pm-proportional-font {
-  font-family: "American Typewriter", serif !important;
-  font-size: 14pt !important;
+  font-family: "Roboto Mono for Powerline", serif !important;
+  font-size: 13pt !important;
+}
+
+.pm-editing-root-node {
+    padding-left: calc((100% - 1300px)/2) !important;
+    padding-right: calc((100% - 1300px)/2) !important;
 }
 ```
 

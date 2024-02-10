@@ -20,6 +20,12 @@
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.jihongzhang.org/posts/2024-02-10-Customize-Rstudio-Theme/newthemess.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Screenshot for customized material theme</figcaption>
+</figure>
+</div>
 <p>First, install some customized themes from github. For example, <a href="https://github.com/lusignan/RStudio-Material-Theme">here</a>.</p>
 <p>Then, copy one .rstheme file from ~/.config/rstudio/themes to your customized file.</p>
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
@@ -9697,7 +9703,7 @@ font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a><
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -12983,7 +12989,7 @@ font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a><
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
