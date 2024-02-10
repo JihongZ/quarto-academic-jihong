@@ -903,8 +903,8 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">02/12</td>
 <td style="text-align: left;">Bayesian Inference and Computational Methods II</td>
-<td style="text-align: left;">SR Chapter 3</td>
-<td style="text-align: left;"><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html">Lecture04_12: Vectorization of Stan</a></td>
+<td style="text-align: left;"><a href="https://mc-stan.org/docs/2_18/stan-users-guide/vectorization.html">StanUserGuide:Chapter21</a></td>
+<td style="text-align: left;"><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html">Lecture04_Feb12: Vectorization of Stan</a></td>
 <td><ol type="1">
 <li><a href="Lecture04/Code/DietDataExample2.R">DietDataExample2.R</a></li>
 <li><a href="Lecture04/Code/FullModel_Old.stan">FullModel_Old.stan</a></li>
@@ -9420,7 +9420,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
