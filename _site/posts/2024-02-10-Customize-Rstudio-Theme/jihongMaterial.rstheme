@@ -2,8 +2,8 @@
 /* rs-theme-is-dark: TRUE */
 
 .pm-proportional-font {
-  font-family: "Roboto Mono for Powerline", serif !important;
-  font-size: 13pt !important;
+  font-family: "Apple SD Gothic Neo", serif !important;
+  font-size: 16pt !important;
 }
 
 .pm-editing-root-node {

@@ -1,5 +1,5 @@
 ---
-title: "Customize Rstudio Theme"
+title: "Customize font family of Visual Mode in Rstudio"
 author: Jihong Zhang
 date: 2024-02-10
 execute:
@@ -9,30 +9,31 @@ format: html
 
 ![Screenshot for customized material theme](newthemess.png){fig-align="center"}
 
-First, install some customized themes from github. For example, [here](https://github.com/lusignan/RStudio-Material-Theme).
+> Visual model of quarto and rmarkdown is very easy to use. Though users can change font family for Source mode in Rstudio by `Options` menu, there is no direct way change font family for Visual model. However, by customizing the rstudio theme file—".rstheme", users can change font size/family/margin of Visual mode.
 
-Then, copy one .rstheme file from \~/.config/rstudio/themes to your customized file.
+First of all, users can install some customized rstudio themes from github. For example, following guidelines [here](https://github.com/lusignan/RStudio-Material-Theme).
 
-``` bash
-➜  rstudio ls
-dictionaries       rstudio-prefs.json themes
+Second, on Mac, copy one .rstheme file (\~/.config/rstudio/themes) and rename it to your customized file (in my case, `jihongMaterials.rstheme`).
+
+``` {.bash .bash echo="fenced"}
 ➜  rstudio ls   
 dictionaries       rstudio-prefs.json themes
 ➜  rstudio cd themes 
 ➜  themes ls
 material-lighter.rstheme   material-palenight.rstheme material.rstheme
-➜  themes cp material.rstheme material.rstheme              
-cp: material.rstheme and material.rstheme are identical (not copied).
 ➜  themes cp material.rstheme jihongMaterial.rstheme
 ➜  themes code jihongMaterial.rstheme        
 ```
 
-Open the `.rstheme` file, add the following code:
+Third, open up the `.rstheme` file and add the following code in the beginning of the file:
 
 ``` {.css filename="jihongMaterial.rstheme"}
+/* rs-theme-name: jihongMaterial */
+/* rs-theme-is-dark: TRUE */
+
 .pm-proportional-font {
-  font-family: "Roboto Mono for Powerline", serif !important;
-  font-size: 13pt !important;
+  font-family: "Apple SD Gothic Neo", serif !important;
+  font-size: 16pt !important;
 }
 
 .pm-editing-root-node {
@@ -41,7 +42,9 @@ Open the `.rstheme` file, add the following code:
 }
 ```
 
-Change the font family in the according quote.
+Note that .pm-proportional-font controls the font in Visual model. Users can change the font family/size just like CSS file.
+
+Now, restart your Rstudio, select your theme from \`Global Options\`. You should find the user-specified font family in your Visual Model
 
 Here is the my customized file: [jihongMaterial.rstheme](./jihongMaterial.rstheme)
 
