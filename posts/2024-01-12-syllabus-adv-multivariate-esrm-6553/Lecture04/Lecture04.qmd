@@ -793,3 +793,8 @@ Today we further added generated quantities into our Bayesian toolset:
 -   How to form posterior distributions for functions of parameters
 
 We will use both of these features in psychometric models.
+
+## Next Class
+
+1.  Bayesian Model fit
+2.  Bayesian Model Comparison
