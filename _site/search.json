@@ -368,7 +368,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#compare-computational-time",
     "title": "Lecture 04",
     "section": "Compare computational time",
-    "text": "Compare computational time\n\nThe Stan code with matrix has faster computation:\n\n\n\n\nfit_full_old$time()\n\n$total\n[1] 0.2036338\n\n$chains\n  chain_id warmup sampling total\n1        1  0.053    0.042 0.095\n2        2  0.062    0.049 0.111\n3        3  0.055    0.052 0.107\n4        4  0.055    0.043 0.098\n\n\n\n\nfit_full_new$time()\n\n$total\n[1] 0.1600819\n\n$chains\n  chain_id warmup sampling total\n1        1  0.030    0.027 0.057\n2        2  0.036    0.032 0.068\n3        3  0.037    0.031 0.068\n4        4  0.032    0.029 0.061\n\n\n\n\n\n\nPros: With matrices, there is less syntax to write\n\nModel is equivalent\nMore efficient for sampling (sample from matrix space)\nMore flexible: modify matrix elements in R instead of individual parameters in Stan\n\n\n\nCons: Output, however, is not labeled with respect to parameters\n\nMay have to label output"
+    "text": "Compare computational time\n\nThe Stan code with matrix has faster computation:\n\n\n\n\nfit_full_old$time()\n\n$total\n[1] 0.2076511\n\n$chains\n  chain_id warmup sampling total\n1        1  0.054    0.043 0.097\n2        2  0.063    0.050 0.113\n3        3  0.056    0.053 0.109\n4        4  0.056    0.043 0.099\n\n\n\n\nfit_full_new$time()\n\n$total\n[1] 0.1853049\n\n$chains\n  chain_id warmup sampling total\n1        1  0.048    0.035 0.083\n2        2  0.064    0.035 0.099\n3        3  0.045    0.036 0.081\n4        4  0.044    0.034 0.078\n\n\n\n\n\n\nPros: With matrices, there is less syntax to write\n\nModel is equivalent\nMore efficient for sampling (sample from matrix space)\nMore flexible: modify matrix elements in R instead of individual parameters in Stan\n\n\n\nCons: Output, however, is not labeled with respect to parameters\n\nMay have to label output"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#computing-functions-of-parameters",
@@ -1671,5 +1671,26 @@
     "title": "Lecture 04",
     "section": "Making Stan Code Short and Efficient",
     "text": "Making Stan Code Short and Efficient\nThe Stan syntax from our previous model was lengthy:\n\nA declared variable for each parameter\nThe linear combination of coefficients by multiplying predictors\n\nStan has built-in features to shorten syntax:\n\nMatrices/Vectors\nMatrix products\nMultivariate distribution (initially for prior distributions)\nBuilt-in Functions (sum() better than +=)\n\nNote: if you are interested in Efficiency tuning in Stan, look at this Charpter for more details."
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#resources-online",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#resources-online",
+    "title": "ESRM 6553: Adv. Multivariate",
+    "section": "5.1 Resources Online",
+    "text": "5.1 Resources Online\n\nAn Introduction to Bayesian Data Analysis for Cognitive Science (Authors: Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#cognitive-science",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#cognitive-science",
+    "title": "ESRM 6553: Adv. Multivariate",
+    "section": "6.2 Cognitive Science",
+    "text": "6.2 Cognitive Science\n\nAn Introduction to Bayesian Data Analysis for Cognitive Science, by Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#applied-statistics",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#applied-statistics",
+    "title": "ESRM 6553: Adv. Multivariate",
+    "section": "6.1 Applied Statistics",
+    "text": "6.1 Applied Statistics\n\nBayesian Data Analysis, by Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin."
   }
 ]

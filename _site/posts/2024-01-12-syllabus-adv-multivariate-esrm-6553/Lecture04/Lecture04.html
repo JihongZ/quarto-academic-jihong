@@ -861,73 +861,112 @@ Figure&nbsp;1
 <span id="cb21-3"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
 <span id="cb21-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section class="slide level2"><h3 id="a-litte-more-about-exponential-distribution">A litte more about exponential distribution</h3>
+</section><section class="slide level2"><h3 id="a-little-more-about-exponential-distribution">A little more about exponential distribution</h3>
 <ul>
 <li class="fragment">The mean of the exp. distribution is <span class="math inline">\(\frac{1}{\lambda}\)</span>, where <span class="math inline">\(\lambda\)</span> is called <strong>rate parameter</strong>
 </li>
 <li class="fragment">The variance of the exp. distribution is <span class="math inline">\(\frac{1}{\lambda^2}\)</span>
 </li>
 <li class="fragment">It is typically positive skewed (skewness is 2)</li>
+<li class="fragment">Question: which hyperparameter rate is most informative/uninformative</li>
 </ul>
 <div class="cell fig-cap-location-top">
-<div class="sourceCode cell-code" id="cb22" data-cap-location="top" data-code-line-numbers="1-3|4|5|7-15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(tidyr)</span>
+<div class="sourceCode cell-code" id="cb22" data-cap-location="top" data-code-line-numbers="1-3|4|5|7-16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb22-2"><a></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb22-3"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb22-4"><a></a>rate_list <span class="ot">=</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.2</span>)</span>
-<span id="cb22-5"><a></a>pdf_points <span class="ot">=</span> <span class="fu">sapply</span>(rate_list, \(x) <span class="fu">rexp</span>(<span class="dv">1000</span>, x)) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb22-5"><a></a>pdf_points <span class="ot">=</span> <span class="fu">sapply</span>(rate_list, \(x) <span class="fu">dexp</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.01</span>), x)) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
 <span id="cb22-6"><a></a><span class="fu">colnames</span>(pdf_points) <span class="ot">&lt;-</span> rate_list</span>
-<span id="cb22-7"><a></a>pdf_points <span class="sc">%&gt;%</span> </span>
-<span id="cb22-8"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-9"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb22-10"><a></a>    <span class="at">sigmaRate =</span> <span class="fu">factor</span>(name, <span class="at">levels =</span> rate_list)</span>
-<span id="cb22-11"><a></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-12"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb22-13"><a></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> sigmaRate), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb22-14"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb22-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sigma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a></a>pdf_points<span class="sc">$</span>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.01</span>)</span>
+<span id="cb22-8"><a></a>pdf_points <span class="sc">%&gt;%</span> </span>
+<span id="cb22-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>x, <span class="at">values_to =</span> <span class="st">'y'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-10"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb22-11"><a></a>    <span class="at">sigmaRate =</span> <span class="fu">factor</span>(name, <span class="at">levels =</span> rate_list)</span>
+<span id="cb22-12"><a></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-13"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-14"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> sigmaRate, <span class="at">group =</span> sigmaRate), <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb22-15"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb22-16"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sigma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<ul>
-<li class="fragment">The rate parameter 0.9 has the most informative prior distribution of <span class="math inline">\(sigma_e\)</span>
-</li>
-<li class="fragment">The rate parameter 0.1 has the most uninformative prior distribution of <span class="math inline">\(sigma_e\)</span>
-</li>
-</ul></section><section id="" class="slide level2 output-location-slide"><div class="cell fig-cap-location-top output-location-slide">
+</section><section id="" class="slide level2 output-location-slide"><div class="cell fig-cap-location-top output-location-slide">
 <div class="cell-output-display">
 <div id="fig-pdf-exp" class="quarto-figure quarto-figure-center quarto-float" data-cap-location="top">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pdf-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The probability density function for the exponential distribution
+Figure&nbsp;2: PDF for the exponential distribution by varied rate parameters
 </figcaption><div aria-describedby="fig-pdf-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img data-src="Lecture04_files/figure-revealjs/fig-pdf-exp-1.png" width="960">
 </div>
 </figure>
 </div>
 </div>
-</div></section><section id="compare-results-and-computational-time" class="slide level2"><h2>Compare results and computational time</h2>
+</div></section><section class="slide level2"><h3 id="since-we-talked-about-exponential-distribution">Since we talked about Exponential distribution…</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Let’s dive deeper into Laplace distribution. It is sometimes called double-exponential distribution. Exponential distribution is positive part of Laplace distribution.</p>
+<p><span class="math display">\[
+\text{PDF}_{exp.} = \lambda e^{-\lambda x}
+\]</span></p>
+<p><span class="math display">\[
+\text{PDF}_{laplace} = \frac{1}{2b} e^{-\frac{|x - u|}{b}}
+\]</span></p>
+<ul>
+<li class="fragment"><p>Thus, we know that for x &gt; 0, exponential distribution is a special case of Laplace distribution with scale parameter <span class="math inline">\(b\)</span> as <span class="math inline">\(\frac{1}{\lambda}\)</span> and location parameter as 0.</p></li>
+<li class="fragment"><p>Laplace-based distribution, Cauchy, and Horseshoe distribution all belong to so-called “<strong>shrinkage</strong>” priors.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Shrinkage priors will be very useful for high-dimensional data (say P = 1000) and variable selection</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">library</span>(LaplacesDemon)</span>
+<span id="cb23-2"><a></a>b_list <span class="ot">=</span> <span class="dv">1</span> <span class="sc">/</span> rate_list <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb23-3"><a></a>pdf_points <span class="ot">=</span> <span class="fu">sapply</span>(b_list, \(x) <span class="fu">dlaplace</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>, <span class="dv">20</span>, <span class="fl">0.01</span>), <span class="at">scale =</span> x, <span class="at">location =</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb23-4"><a></a><span class="fu">colnames</span>(pdf_points) <span class="ot">&lt;-</span> <span class="fu">round</span>(b_list, <span class="dv">2</span>)</span>
+<span id="cb23-5"><a></a>pdf_points<span class="sc">$</span>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>, <span class="dv">20</span>, <span class="fl">0.01</span>)</span>
+<span id="cb23-6"><a></a>pdf_points <span class="sc">%&gt;%</span> </span>
+<span id="cb23-7"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>x, <span class="at">values_to =</span> <span class="st">'y'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-8"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-9"><a></a>    <span class="at">scale =</span> <span class="fu">factor</span>(name, <span class="at">levels =</span> <span class="fu">round</span>(b_list, <span class="dv">2</span>))</span>
+<span id="cb23-10"><a></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-11"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-12"><a></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> scale, <span class="at">group =</span> scale), <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb23-13"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">20</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb23-14"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="compare-results-and-computational-time" class="slide level2"><h2>Compare results and computational time</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>mod_full_old <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_Old.stan"</span>)</span>
-<span id="cb23-2"><a></a>data_full_old <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb23-3"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
-<span id="cb23-4"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
-<span id="cb23-5"><a></a>  <span class="at">height60IN =</span> dat<span class="sc">$</span>HeightIN60,</span>
-<span id="cb23-6"><a></a>  <span class="at">group2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>),</span>
-<span id="cb23-7"><a></a>  <span class="at">group3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>),</span>
-<span id="cb23-8"><a></a>  <span class="at">heightXgroup2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60,</span>
-<span id="cb23-9"><a></a>  <span class="at">heightXgroup3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60</span>
-<span id="cb23-10"><a></a>)</span>
-<span id="cb23-11"><a></a>fit_full_old <span class="ot">&lt;-</span> mod_full_old<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb23-12"><a></a>  <span class="at">data =</span> data_full_old,</span>
-<span id="cb23-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb23-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb23-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb23-16"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
-<span id="cb23-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>mod_full_old <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_Old.stan"</span>)</span>
+<span id="cb24-2"><a></a>data_full_old <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-3"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
+<span id="cb24-4"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
+<span id="cb24-5"><a></a>  <span class="at">height60IN =</span> dat<span class="sc">$</span>HeightIN60,</span>
+<span id="cb24-6"><a></a>  <span class="at">group2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>),</span>
+<span id="cb24-7"><a></a>  <span class="at">group3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>),</span>
+<span id="cb24-8"><a></a>  <span class="at">heightXgroup2 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60,</span>
+<span id="cb24-9"><a></a>  <span class="at">heightXgroup3 =</span> <span class="fu">as.numeric</span>(dat<span class="sc">$</span>DietGroup <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">*</span> dat<span class="sc">$</span>HeightIN60</span>
+<span id="cb24-10"><a></a>)</span>
+<span id="cb24-11"><a></a>fit_full_old <span class="ot">&lt;-</span> mod_full_old<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb24-12"><a></a>  <span class="at">data =</span> data_full_old,</span>
+<span id="cb24-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb24-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb24-16"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb24-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 8
   variable      mean  median    sd   mad     q5     q95  rhat
@@ -944,26 +983,26 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>mod_full_new <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_New.stan"</span>)</span>
-<span id="cb26-2"><a></a>FullModelFormula <span class="ot">=</span> <span class="fu">as.formula</span>(<span class="st">"WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup"</span>)</span>
-<span id="cb26-3"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
-<span id="cb26-4"><a></a>data_full_new <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb26-5"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
-<span id="cb26-6"><a></a>  <span class="at">P =</span> <span class="fu">ncol</span>(X),</span>
-<span id="cb26-7"><a></a>  <span class="at">X =</span> X, </span>
-<span id="cb26-8"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
-<span id="cb26-9"><a></a>  <span class="at">sigmaRate =</span> <span class="fl">0.1</span></span>
-<span id="cb26-10"><a></a>)</span>
-<span id="cb26-11"><a></a>fit_full_new <span class="ot">&lt;-</span> mod_full_new<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb26-12"><a></a>  <span class="at">data =</span> data_full_new,</span>
-<span id="cb26-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb26-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb26-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span></span>
-<span id="cb26-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mod_full_new <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_New.stan"</span>)</span>
+<span id="cb27-2"><a></a>FullModelFormula <span class="ot">=</span> <span class="fu">as.formula</span>(<span class="st">"WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup"</span>)</span>
+<span id="cb27-3"><a></a>X <span class="ot">=</span> <span class="fu">model.matrix</span>(FullModelFormula, <span class="at">data =</span> dat)</span>
+<span id="cb27-4"><a></a>data_full_new <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb27-5"><a></a>  <span class="at">N =</span> <span class="fu">nrow</span>(dat),</span>
+<span id="cb27-6"><a></a>  <span class="at">P =</span> <span class="fu">ncol</span>(X),</span>
+<span id="cb27-7"><a></a>  <span class="at">X =</span> X, </span>
+<span id="cb27-8"><a></a>  <span class="at">weightLB =</span> dat<span class="sc">$</span>WeightLB,</span>
+<span id="cb27-9"><a></a>  <span class="at">sigmaRate =</span> <span class="fl">0.1</span></span>
+<span id="cb27-10"><a></a>)</span>
+<span id="cb27-11"><a></a>fit_full_new <span class="ot">&lt;-</span> mod_full_new<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb27-12"><a></a>  <span class="at">data =</span> data_full_new,</span>
+<span id="cb27-13"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb27-14"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb27-15"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span></span>
+<span id="cb27-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 8
   variable    mean  median    sd   mad     q5     q95  rhat
@@ -986,7 +1025,7 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 <code>betaGroup3</code> has the largest differences between two methods</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">cbind</span>(fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[,<span class="dv">1</span>], fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)] <span class="sc">-</span> fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">cbind</span>(fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[,<span class="dv">1</span>], fit_full_old<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)] <span class="sc">-</span> fit_full_new<span class="sc">$</span><span class="fu">summary</span>()[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    variable         mean     median            sd          mad        q5
 1       lp__ -0.007672400  0.0063000  0.0242926098  0.007931910 -0.115880
@@ -1015,32 +1054,32 @@ Figure&nbsp;2: The probability density function for the exponential distribution
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.2036338
+[1] 0.2076511
 
 $chains
   chain_id warmup sampling total
-1        1  0.053    0.042 0.095
-2        2  0.062    0.049 0.111
-3        3  0.055    0.052 0.107
-4        4  0.055    0.043 0.098</code></pre>
+1        1  0.054    0.043 0.097
+2        2  0.063    0.050 0.113
+3        3  0.056    0.053 0.109
+4        4  0.056    0.043 0.099</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.1600819
+[1] 0.1853049
 
 $chains
   chain_id warmup sampling total
-1        1  0.030    0.027 0.057
-2        2  0.036    0.032 0.068
-3        3  0.037    0.031 0.068
-4        4  0.032    0.029 0.061</code></pre>
+1        1  0.048    0.035 0.083
+2        2  0.064    0.035 0.099
+3        3  0.045    0.036 0.081
+4        4  0.044    0.034 0.078</code></pre>
 </div>
 </div>
 </div>
@@ -1106,7 +1145,7 @@ $chains
 <li class="fragment"><p>A somewhat tedious way to do this is after using Stan</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 10
   variable    mean  median    sd   mad     q5     q95  rhat ess_bulk ess_tail
@@ -1120,8 +1159,8 @@ $chains
 7 beta[6]    3.57    3.57  0.646 0.643   2.52   4.62   1.00    1678.    2218.
 8 sigma      8.25    8.10  1.26  1.20    6.50  10.5    1.00    2265.    2212.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>beta_group2 <span class="ot">&lt;-</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[2]"</span>)  <span class="sc">+</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[5]"</span>)</span>
-<span id="cb37-2"><a></a><span class="fu">summary</span>(beta_group2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>beta_group2 <span class="ot">&lt;-</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[2]"</span>)  <span class="sc">+</span> fit_full_new<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"beta[5]"</span>)</span>
+<span id="cb38-2"><a></a><span class="fu">summary</span>(beta_group2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 10
   variable  mean median    sd   mad    q5   q95  rhat ess_bulk ess_tail
@@ -1132,25 +1171,25 @@ $chains
 </section><section class="slide level2"><h3 id="computing-slope-within-stan">Computing slope within Stan</h3>
 <p>Stan can compute these values for us-with the “generated quantities” section of the syntax</p>
 <div class="cell" data-output.var="display">
-<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb39" data-code-line-numbers="16-20"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb39-1"><a></a><span class="kw">data</span>{</span>
-<span id="cb39-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
-<span id="cb39-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
-<span id="cb39-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
-<span id="cb39-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
-<span id="cb39-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
-<span id="cb39-7"><a></a>}</span>
-<span id="cb39-8"><a></a><span class="kw">parameters</span> {</span>
-<span id="cb39-9"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
-<span id="cb39-10"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
-<span id="cb39-11"><a></a>}</span>
-<span id="cb39-12"><a></a><span class="kw">model</span> {</span>
-<span id="cb39-13"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
-<span id="cb39-14"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
-<span id="cb39-15"><a></a>}</span>
-<span id="cb39-16"><a></a><span class="kw">generated quantities</span>{</span>
-<span id="cb39-17"><a></a>  <span class="dt">real</span> slopeG2;</span>
-<span id="cb39-18"><a></a>  slopeG2 = beta[<span class="dv">2</span>] + beta[<span class="dv">5</span>];</span>
-<span id="cb39-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="16-20"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb40-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb40-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
+<span id="cb40-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
+<span id="cb40-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
+<span id="cb40-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
+<span id="cb40-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
+<span id="cb40-7"><a></a>}</span>
+<span id="cb40-8"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb40-9"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
+<span id="cb40-10"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
+<span id="cb40-11"><a></a>}</span>
+<span id="cb40-12"><a></a><span class="kw">model</span> {</span>
+<span id="cb40-13"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
+<span id="cb40-14"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
+<span id="cb40-15"><a></a>}</span>
+<span id="cb40-16"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb40-17"><a></a>  <span class="dt">real</span> slopeG2;</span>
+<span id="cb40-18"><a></a>  slopeG2 = beta[<span class="dv">2</span>] + beta[<span class="dv">5</span>];</span>
+<span id="cb40-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The generated quantities block computes values that do not affect the posterior distributions of the parameters–they are computed after the sampling from each iteration</p>
@@ -1163,17 +1202,17 @@ $chains
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>mod_full_compute <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_compute.stan"</span>)</span>
-<span id="cb40-2"><a></a>fit_full_compute <span class="ot">&lt;-</span> mod_full_compute<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb40-3"><a></a>  <span class="at">data =</span> data_full_new,</span>
-<span id="cb40-4"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb40-5"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb40-6"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb40-7"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
-<span id="cb40-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>mod_full_compute <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_compute.stan"</span>)</span>
+<span id="cb41-2"><a></a>fit_full_compute <span class="ot">&lt;-</span> mod_full_compute<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb41-3"><a></a>  <span class="at">data =</span> data_full_new,</span>
+<span id="cb41-4"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb41-5"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb41-6"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb41-7"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb41-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>fit_full_compute<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'slopeG2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>fit_full_compute<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'slopeG2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 10
   variable  mean median    sd   mad    q5   q95  rhat ess_bulk ess_tail
@@ -1182,10 +1221,10 @@ $chains
 </div>
 </div>
 </section><section class="slide level2"><div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens_chains</span>(fit_full_compute<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'slopeG2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_dens_chains</span>(fit_full_compute<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'slopeG2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="alternative-way-of-computing-the-slope-with-matrix">Alternative way of computing the slope with Matrix</h3>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="alternative-way-of-computing-the-slope-with-matrix">Alternative way of computing the slope with Matrix</h3>
 <p>This is a little more complicated but more flexible method.</p>
 <p>That is, we can make use of matrix operation and form a contrast matrix</p>
 <ul>
@@ -1224,50 +1263,50 @@ $chains
 </li>
 </ul></section><section class="slide level2"><h3 id="contrasts-in-stan">Contrasts in Stan</h3>
 <div class="cell" data-output.var="display">
-<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb44" data-code-line-numbers="7-8,18-21"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb44-1"><a></a><span class="kw">data</span>{</span>
-<span id="cb44-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
-<span id="cb44-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
-<span id="cb44-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
-<span id="cb44-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
-<span id="cb44-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
-<span id="cb44-7"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; nContrasts;</span>
-<span id="cb44-8"><a></a>  <span class="dt">matrix</span>[nContrasts, P] contrast; <span class="co">// C matrix </span></span>
-<span id="cb44-9"><a></a>}</span>
-<span id="cb44-10"><a></a><span class="kw">parameters</span> {</span>
-<span id="cb44-11"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
-<span id="cb44-12"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
-<span id="cb44-13"><a></a>}</span>
-<span id="cb44-14"><a></a><span class="kw">model</span> {</span>
-<span id="cb44-15"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
-<span id="cb44-16"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
-<span id="cb44-17"><a></a>}</span>
-<span id="cb44-18"><a></a><span class="kw">generated quantities</span>{</span>
-<span id="cb44-19"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
-<span id="cb44-20"><a></a>  computedEffects = contrast*beta;</span>
-<span id="cb44-21"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb45" data-code-line-numbers="7-8,18-21"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb45-1"><a></a><span class="kw">data</span>{</span>
+<span id="cb45-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
+<span id="cb45-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; P;         <span class="co">// number of predictors (plus column for intercept)</span></span>
+<span id="cb45-4"><a></a>  <span class="dt">matrix</span>[N, P] X;         <span class="co">// model.matrix() from R </span></span>
+<span id="cb45-5"><a></a>  <span class="dt">vector</span>[N] weightLB;     <span class="co">// outcome</span></span>
+<span id="cb45-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: prior rate parameter for residual standard deviation</span></span>
+<span id="cb45-7"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; nContrasts;</span>
+<span id="cb45-8"><a></a>  <span class="dt">matrix</span>[nContrasts, P] contrast; <span class="co">// C matrix </span></span>
+<span id="cb45-9"><a></a>}</span>
+<span id="cb45-10"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb45-11"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
+<span id="cb45-12"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
+<span id="cb45-13"><a></a>}</span>
+<span id="cb45-14"><a></a><span class="kw">model</span> {</span>
+<span id="cb45-15"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
+<span id="cb45-16"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
+<span id="cb45-17"><a></a>}</span>
+<span id="cb45-18"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb45-19"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
+<span id="cb45-20"><a></a>  computedEffects = contrast*beta;</span>
+<span id="cb45-21"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>R code</summary><div class="sourceCode cell-code" id="cb45" data-code-line-numbers="2-9,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>mod_full_contrast <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_contrast.stan"</span>)</span>
-<span id="cb45-2"><a></a>contrast_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb45-3"><a></a>  <span class="at">nContrasts =</span> <span class="dv">2</span>,</span>
-<span id="cb45-4"><a></a>  <span class="at">contrast =</span> <span class="fu">matrix</span>(</span>
-<span id="cb45-5"><a></a>    <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="co"># slope for diet group2</span></span>
-<span id="cb45-6"><a></a>      <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="co"># intercept for diet group 2</span></span>
-<span id="cb45-7"><a></a>    <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
-<span id="cb45-8"><a></a>  )</span>
-<span id="cb45-9"><a></a>)</span>
-<span id="cb45-10"><a></a>fit_full_contrast <span class="ot">&lt;-</span> mod_full_contrast<span class="sc">$</span><span class="fu">sample</span>(</span>
-<span id="cb45-11"><a></a>  <span class="at">data =</span> <span class="fu">c</span>(data_full_new, contrast_dat),</span>
-<span id="cb45-12"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb45-13"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb45-14"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
-<span id="cb45-15"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
-<span id="cb45-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>R code</summary><div class="sourceCode cell-code" id="cb46" data-code-line-numbers="2-9,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>mod_full_contrast <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">"Code/FullModel_contrast.stan"</span>)</span>
+<span id="cb46-2"><a></a>contrast_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb46-3"><a></a>  <span class="at">nContrasts =</span> <span class="dv">2</span>,</span>
+<span id="cb46-4"><a></a>  <span class="at">contrast =</span> <span class="fu">matrix</span>(</span>
+<span id="cb46-5"><a></a>    <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="co"># slope for diet group2</span></span>
+<span id="cb46-6"><a></a>      <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="co"># intercept for diet group 2</span></span>
+<span id="cb46-7"><a></a>    <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb46-8"><a></a>  )</span>
+<span id="cb46-9"><a></a>)</span>
+<span id="cb46-10"><a></a>fit_full_contrast <span class="ot">&lt;-</span> mod_full_contrast<span class="sc">$</span><span class="fu">sample</span>(</span>
+<span id="cb46-11"><a></a>  <span class="at">data =</span> <span class="fu">c</span>(data_full_new, contrast_dat),</span>
+<span id="cb46-12"><a></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb46-13"><a></a>  <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb46-14"><a></a>  <span class="at">parallel_chains =</span> <span class="dv">4</span>,</span>
+<span id="cb46-15"><a></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb46-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'computedEffects'</span>)[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="st">'computedEffects'</span>)[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 8
   variable             mean median    sd   mad     q5    q95  rhat
@@ -1277,10 +1316,10 @@ $chains
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'computedEffects'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'computedEffects'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="computing-textr2">Computing <span class="math inline">\(\text{R}^2\)</span>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="computing-textr2">Computing <span class="math inline">\(\text{R}^2\)</span>
 </h3>
 <p>We can use the <code>generated quantities</code> section to build a posterior distribution for <span class="math inline">\(\text{R}^2\)</span></p>
 <p>There are several formulas for <span class="math inline">\(\text{R}^2\)</span>, we will use the following:</p>
@@ -1310,27 +1349,27 @@ $chains
 <code>Stan</code> code for Computing <span class="math inline">\(\text{R}^2\)</span>
 </h3>
 <div class="cell" data-output.var="display">
-<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb49" data-code-line-numbers="4-15"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb49-1"><a></a><span class="kw">generated quantities</span>{</span>
-<span id="cb49-2"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
-<span id="cb49-3"><a></a>  computedEffects = contrast*beta;</span>
-<span id="cb49-4"><a></a>  <span class="co">// compute R2</span></span>
-<span id="cb49-5"><a></a>  <span class="dt">real</span> rss;</span>
-<span id="cb49-6"><a></a>  <span class="dt">real</span> tss;</span>
-<span id="cb49-7"><a></a>  <span class="dt">real</span> R2;</span>
-<span id="cb49-8"><a></a>  <span class="dt">real</span> R2adj;</span>
-<span id="cb49-9"><a></a>  {<span class="co">// anything in these brackets will not appear in summary table</span></span>
-<span id="cb49-10"><a></a>    <span class="dt">vector</span>[N] pred = X*beta;</span>
-<span id="cb49-11"><a></a>    rss = dot_self(weightLB-pred); <span class="co">// dot_self is stan function for matrix square</span></span>
-<span id="cb49-12"><a></a>    tss = dot_self(weightLB-mean(weightLB));</span>
-<span id="cb49-13"><a></a>  }</span>
-<span id="cb49-14"><a></a>  R2 = <span class="dv">1</span>-rss/tss;</span>
-<span id="cb49-15"><a></a>  R2adj = <span class="dv">1</span>-(rss/(N-P))/(tss/(N<span class="dv">-1</span>));</span>
-<span id="cb49-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Stan code</summary><div class="sourceCode cell-code" id="cb50" data-code-line-numbers="4-15"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb50-1"><a></a><span class="kw">generated quantities</span>{</span>
+<span id="cb50-2"><a></a>  <span class="dt">vector</span>[nContrasts] computedEffects;</span>
+<span id="cb50-3"><a></a>  computedEffects = contrast*beta;</span>
+<span id="cb50-4"><a></a>  <span class="co">// compute R2</span></span>
+<span id="cb50-5"><a></a>  <span class="dt">real</span> rss;</span>
+<span id="cb50-6"><a></a>  <span class="dt">real</span> tss;</span>
+<span id="cb50-7"><a></a>  <span class="dt">real</span> R2;</span>
+<span id="cb50-8"><a></a>  <span class="dt">real</span> R2adj;</span>
+<span id="cb50-9"><a></a>  {<span class="co">// anything in these brackets will not appear in summary table</span></span>
+<span id="cb50-10"><a></a>    <span class="dt">vector</span>[N] pred = X*beta;</span>
+<span id="cb50-11"><a></a>    rss = dot_self(weightLB-pred); <span class="co">// dot_self is stan function for matrix square</span></span>
+<span id="cb50-12"><a></a>    tss = dot_self(weightLB-mean(weightLB));</span>
+<span id="cb50-13"><a></a>  }</span>
+<span id="cb50-14"><a></a>  R2 = <span class="dv">1</span>-rss/tss;</span>
+<span id="cb50-15"><a></a>  R2adj = <span class="dv">1</span>-(rss/(N-P))/(tss/(N<span class="dv">-1</span>));</span>
+<span id="cb50-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Recall that our <code>lm</code> function provides <span class="math inline">\(\text{R}^2\)</span> as 0.9787 and adjusted <span class="math inline">\(\text{R}^2\)</span> as 0.9742</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="fu">c</span>(<span class="st">'rss'</span>, <span class="st">'tss'</span>, <span class="st">'R2'</span>,<span class="st">'R2adj'</span>))[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>fit_full_contrast<span class="sc">$</span><span class="fu">summary</span>(<span class="fu">c</span>(<span class="st">'rss'</span>, <span class="st">'tss'</span>, <span class="st">'R2'</span>,<span class="st">'R2adj'</span>))[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 8
   variable      mean    median        sd       mad        q5       q95  rhat
@@ -1340,23 +1379,23 @@ $chains
 3 R2           0.973     0.974   0.00401   0.00317     0.965     0.977  1.00
 4 R2adj        0.967     0.968   0.00484   0.00384     0.958     0.973  1.00</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">'R2'</span>, <span class="st">'R2adj'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_hist</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">'R2'</span>, <span class="st">'R2adj'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="get-posterior-mode">Get posterior mode</h3>
+<img data-src="Lecture04_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section><section class="slide level2"><h3 id="get-posterior-mode">Get posterior mode</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="co"># Create the function.</span></span>
-<span id="cb53-2"><a></a>getmode <span class="ot">&lt;-</span> <span class="cf">function</span>(v) {</span>
-<span id="cb53-3"><a></a>   uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(v)</span>
-<span id="cb53-4"><a></a>   uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(v, uniqv)))]</span>
-<span id="cb53-5"><a></a>}</span>
-<span id="cb53-6"><a></a></span>
-<span id="cb53-7"><a></a><span class="co"># Calculate the mode using the user function.</span></span>
-<span id="cb53-8"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># Create the function.</span></span>
+<span id="cb54-2"><a></a>getmode <span class="ot">&lt;-</span> <span class="cf">function</span>(v) {</span>
+<span id="cb54-3"><a></a>   uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(v)</span>
+<span id="cb54-4"><a></a>   uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(v, uniqv)))]</span>
+<span id="cb54-5"><a></a>}</span>
+<span id="cb54-6"><a></a></span>
+<span id="cb54-7"><a></a><span class="co"># Calculate the mode using the user function.</span></span>
+<span id="cb54-8"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.974917</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2adj'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">getmode</span>(fit_full_contrast<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'R2adj'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.96674</code></pre>
 </div>

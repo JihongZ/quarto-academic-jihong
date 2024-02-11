@@ -205,3 +205,13 @@ Weekly breakdown of topics and readings：
 [^3]: BPM: *Bayesian Psychometric Modeling* by Levy, Mislevy (2016)
 
 Academic calendar for Spring 2024: [Here](https://registrar.uark.edu/academic-dates/academic-semester-calendar/spring-2024-january-intersession-2024.php)
+
+# Other Online Materials
+
+## Applied Statistics
+
+1.  [Bayesian Data Analysis, by Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin.](http://www.stat.columbia.edu/~gelman/book/BDA3.pdf)
+
+## Cognitive Science
+
+1.  [An Introduction to Bayesian Data Analysis for Cognitive Science, by Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)](https://vasishth.github.io/bayescogsci/book/)
