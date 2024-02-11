@@ -109,7 +109,7 @@ with:
 
 ------------------------------------------------------------------------
 
-### Path Diagram of Model
+### Path Diagram of the Full Model
 
 ```{mermaid}
 %%| echo: false
@@ -192,7 +192,7 @@ Where:
 
 ::: columns
 ::: {.column width="50%"}
-**Similar to Monte Carlo Simulation, given** $P$ **and** $\boldsymbol{\beta}$
+**Similar to Monte Carlo Simulation, given** matrices $P$ **and** $\boldsymbol{\beta}$
 
 ```{r}
 #| code-fold: true
@@ -276,7 +276,10 @@ Back to the `stan` code, we need to specify:
 
 ## Syntax Changes: Data Section
 
-**Old syntax without matrix:**
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   **Old syntax without matrix:**
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 #| eval: false
@@ -290,8 +293,13 @@ data{
     vector[N] heightXgroup3;
 }
 ```
+:::
+:::
 
-**New syntax with matrix:**
+::: {.column width="50%"}
+::: nonincremental
+-   **New syntax with matrix:**
+:::
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 #| eval: false
@@ -303,10 +311,16 @@ data{
   real sigmaRate;         // hyperparameter: rate parameter for residual standard deviation
 }
 ```
+:::
+:::
 
 ## Syntax Changes: Parameters Section
 
-**Old syntax without matrix:**
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   **Old syntax without matrix:**
+:::
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 parameters {
@@ -319,8 +333,12 @@ parameters {
   real<lower=0> sigma;
 }
 ```
+:::
 
-**New syntax with matrix:**
+::: {.column width="50%"}
+::: nonincremental
+-   **New syntax with matrix:**
+:::
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 parameters {
@@ -328,10 +346,16 @@ parameters {
   real<lower=0> sigma;    // residual standard deviation
 }
 ```
+:::
+:::
 
 ## Syntax Changes: Prior Distributions Definition
 
-**Old syntax without matrix:**
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   **Old syntax without matrix:**
+:::
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 #| code-line-numbers: "|2-8|9-12"
@@ -349,11 +373,15 @@ model {
     betaHxG3*heightXgroup3, sigma);
 }
 ```
+:::
 
+::: {.column width="50%"}
 **New syntax with matrix:**
 
+::: nonincremental
 -   `multi_normal()` is the multivariate normal sampling in Stan, similar to `rmvnorm()` in R; For uninformative, we did not need to specify
 -   `exponential()` is the exponential distribution sampling in Stan, similar to `rexp()` in R
+:::
 
 ```{stan output.var='display', eval = FALSE, tidy = FALSE}
 #| code-line-numbers: "|3"
@@ -362,6 +390,8 @@ model {
   weightLB ~ normal(X*beta, sigma);       // linear model
 }
 ```
+:::
+:::
 
 ------------------------------------------------------------------------
 

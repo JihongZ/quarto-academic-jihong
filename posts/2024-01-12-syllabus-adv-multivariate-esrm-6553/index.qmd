@@ -85,7 +85,9 @@ It is assumed that students have has solid statistical training up to and includ
 -   Kaplan, D. (2014), Bayesian Statistics for the Social Sciences. New York: Guilford Press.
 -   Gelman, A., Carlin, J. B., Stern, H. S., and Rubin, D. B. (2020), Bayesian Data Analysis 3rd edition. Chapman and Hall.
 -   [Andrew Gelman's Website](http://andrewgelman.com) for an unfiltered, stream of consciousness Bayesian commentary
--   **Supplementary Texts:** [Stan User's Guide](https://mc-stan.org/docs/2_33/stan-users-guide-2_33.pdf)
+-   **Supplementary Texts:**
+    -   [Stan User's Guide (PDF)](https://mc-stan.org/docs/2_33/stan-users-guide-2_33.pdf)
+    -   [Stan User's Guide (HTML)](https://mc-stan.org/docs/stan-users-guide/index.html)
 
 ## Software
 
@@ -215,3 +217,4 @@ Academic calendar for Spring 2024: [Here](https://registrar.uark.edu/academic-da
 ## Cognitive Science
 
 1.  [An Introduction to Bayesian Data Analysis for Cognitive Science, by Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)](https://vasishth.github.io/bayescogsci/book/)
+

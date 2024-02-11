@@ -604,7 +604,7 @@ Jihong Zhang
 <li class="fragment"><p><span class="math inline">\(\text{Group2}_p\)</span> the binary indicator of person <span class="math inline">\(p\)</span> being in group 2</p></li>
 <li class="fragment"><p><span class="math inline">\(\text{Group}3_p\)</span> the binary indicator of person <span class="math inline">\(p\)</span> being in group 3</p></li>
 <li class="fragment"><p><span class="math inline">\(e_p \sim N(0, \sigma_e)\)</span></p></li>
-</ul></section><section class="slide level2"><h3 id="path-diagram-of-model">Path Diagram of Model</h3>
+</ul></section><section class="slide level2"><h3 id="path-diagram-of-the-full-model">Path Diagram of the Full Model</h3>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-diagram" class="quarto-figure quarto-figure-center quarto-float">
@@ -691,7 +691,7 @@ Figure&nbsp;1
 </h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Similar to Monte Carlo Simulation, given</strong> <span class="math inline">\(P\)</span> <strong>and</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
+<p><strong>Similar to Monte Carlo Simulation, given</strong> matrices <span class="math inline">\(P\)</span> <strong>and</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb4-2"><a></a>fit_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> FullModelFormula, <span class="at">data =</span> dat)</span>
@@ -832,7 +832,13 @@ Figure&nbsp;1
 <span id="cb19-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="syntax-changes-prior-distributions-definition" class="slide level2"><h2>Syntax Changes: Prior Distributions Definition</h2>
-<p><strong>Old syntax without matrix:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li><strong>Old syntax without matrix:</strong></li>
+</ul>
+</div>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb20" data-code-line-numbers="|2-8|9-12"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb20-1"><a></a><span class="kw">model</span> {</span>
 <span id="cb20-2"><a></a>  beta0 ~ normal(<span class="dv">0</span>,<span class="dv">100</span>);</span>
@@ -848,18 +854,23 @@ Figure&nbsp;1
 <span id="cb20-12"><a></a>    betaHxG3*heightXgroup3, sigma);</span>
 <span id="cb20-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div><div class="column" style="width:50%;">
 <p><strong>New syntax with matrix:</strong></p>
+<div>
 <ul>
-<li class="fragment">
+<li>
 <code>multi_normal()</code> is the multivariate normal sampling in Stan, similar to <code>rmvnorm()</code> in R; For uninformative, we did not need to specify</li>
-<li class="fragment">
+<li>
 <code>exponential()</code> is the exponential distribution sampling in Stan, similar to <code><a href="https://rdrr.io/r/stats/Exponential.html">rexp()</a></code> in R</li>
 </ul>
+</div>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb21" data-code-line-numbers="|3"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb21-1"><a></a><span class="kw">model</span> {</span>
 <span id="cb21-2"><a></a>  sigma ~ exponential(sigmaRate);         <span class="co">// prior for sigma</span></span>
 <span id="cb21-3"><a></a>  weightLB ~ normal(X*beta, sigma);       <span class="co">// linear model</span></span>
 <span id="cb21-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </section><section class="slide level2"><h3 id="a-little-more-about-exponential-distribution">A little more about exponential distribution</h3>
 <ul>
@@ -868,7 +879,7 @@ Figure&nbsp;1
 <li class="fragment">The variance of the exp. distribution is <span class="math inline">\(\frac{1}{\lambda^2}\)</span>
 </li>
 <li class="fragment">It is typically positive skewed (skewness is 2)</li>
-<li class="fragment">Question: which hyperparameter rate is most informative/uninformative</li>
+<li class="fragment">Question: which hyperparameter rate <span class="math inline">\(\lambda\)</span> is most informative/uninformative</li>
 </ul>
 <div class="cell fig-cap-location-top">
 <div class="sourceCode cell-code" id="cb22" data-cap-location="top" data-code-line-numbers="1-3|4|5|7-16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(tidyr)</span>
@@ -1057,14 +1068,14 @@ Figure&nbsp;2: PDF for the exponential distribution by varied rate parameters
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.2076511
+[1] 0.1996679
 
 $chains
   chain_id warmup sampling total
-1        1  0.054    0.043 0.097
-2        2  0.063    0.050 0.113
-3        3  0.056    0.053 0.109
-4        4  0.056    0.043 0.099</code></pre>
+1        1  0.053    0.042 0.095
+2        2  0.063    0.049 0.112
+3        3  0.057    0.052 0.109
+4        4  0.055    0.043 0.098</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1072,14 +1083,14 @@ $chains
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.1853049
+[1] 0.1687021
 
 $chains
   chain_id warmup sampling total
-1        1  0.048    0.035 0.083
-2        2  0.064    0.035 0.099
-3        3  0.045    0.036 0.081
-4        4  0.044    0.034 0.078</code></pre>
+1        1  0.031    0.028 0.059
+2        2  0.034    0.032 0.066
+3        3  0.037    0.031 0.068
+4        4  0.033    0.028 0.061</code></pre>
 </div>
 </div>
 </div>
