@@ -370,7 +370,7 @@ model {
 -   The mean of the exp. distribution is $\frac{1}{\lambda}$, where $\lambda$ is called **rate parameter**
 -   The variance of the exp. distribution is $\frac{1}{\lambda^2}$
 -   It is typically positive skewed (skewness is 2)
--   Question: which hyperparameter rate is most informative/uninformative
+-   Question: which hyperparameter rate $\lambda$ is most informative/uninformative
 
 ```{r}
 #| echo: true
