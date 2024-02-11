@@ -39,8 +39,12 @@ format:
 
 ## In previous class...
 
+::: columns
+::: {.column width="50%"}
 ```{r}
-#| message: false
+#| output: true
+#| code-fold: true
+#| code-summary: "R code for data read in"
 library(cmdstanr)
 library(bayesplot)
 library(tidyr)
@@ -49,9 +53,12 @@ color_scheme_set('brightblue')
 dat <- read.csv(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture03", "Code", "DietData.csv"))
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
 dat$HeightIN60 <- dat$HeightIN - 60
-head(dat)
+kableExtra::kable( rbind(head(dat), tail(dat)) ) |> kableExtra::kable_classic_2() |> 
+  kableExtra::kable_styling(full_width = F, font_size = 15)
 ```
+:::
 
+::: {.column width="50%"}
 1.  Introduce the empty model
 2.  Example: Post-Diet Weights
     -   WeightLB (*Dependent Variable*): The respondents' weight in pounds
@@ -60,22 +67,24 @@ head(dat)
 3.  The empty model has two parameters to be estimated: (1) $\beta_0$, (2) $\sigma_e$
 4.  The posterior mean/median of $\beta_0$ should be mean of WeightLB
 5.  The posterior mean/median of $\sigma_e$ should be sd of WeightLB
+:::
+:::
 
-## Making `Stan` Code Short
+## Making `Stan` Code Short and Efficient
 
 The Stan syntax from our previous model was lengthy:
 
 -   A declared variable for each parameter
-
--   The linear combination of coefficients multiplying predictors
+-   The linear combination of coefficients by multiplying predictors
 
 Stan has built-in features to shorten syntax:
 
 -   Matrices/Vectors
-
 -   Matrix products
-
 -   Multivariate distribution (initially for prior distributions)
+-   Built-in Functions (`sum()` better than `+=`)
+
+Note: if you are interested in Efficiency tuning in Stan, look at this [Charpter](https://mc-stan.org/docs/stan-users-guide/efficiency-tuning.html) for more details.
 
 ------------------------------------------------------------------------
 
