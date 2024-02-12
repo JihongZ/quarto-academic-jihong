@@ -789,7 +789,12 @@ Figure&nbsp;1
 </ul>
 </li>
 </ul></section><section id="syntax-changes-data-section" class="slide level2"><h2>Syntax Changes: Data Section</h2>
-<p><strong>Old syntax without matrix:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li><strong>Old syntax without matrix:</strong></li>
+</ul>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb16-1"><a></a><span class="kw">data</span>{</span>
 <span id="cb16-2"><a></a>    <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;</span>
@@ -801,7 +806,13 @@ Figure&nbsp;1
 <span id="cb16-8"><a></a>    <span class="dt">vector</span>[N] heightXgroup3;</span>
 <span id="cb16-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>New syntax with matrix:</strong></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li><strong>New syntax with matrix:</strong></li>
+</ul>
+</div>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb17-1"><a></a><span class="kw">data</span>{</span>
 <span id="cb17-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;         <span class="co">// number of observations</span></span>
@@ -811,8 +822,16 @@ Figure&nbsp;1
 <span id="cb17-6"><a></a>  <span class="dt">real</span> sigmaRate;         <span class="co">// hyperparameter: rate parameter for residual standard deviation</span></span>
 <span id="cb17-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
 </section><section id="syntax-changes-parameters-section" class="slide level2"><h2>Syntax Changes: Parameters Section</h2>
-<p><strong>Old syntax without matrix:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li><strong>Old syntax without matrix:</strong></li>
+</ul>
+</div>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb18-1"><a></a><span class="kw">parameters</span> {</span>
 <span id="cb18-2"><a></a>  <span class="dt">real</span> beta0;</span>
@@ -824,12 +843,19 @@ Figure&nbsp;1
 <span id="cb18-8"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;</span>
 <span id="cb18-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>New syntax with matrix:</strong></p>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li><strong>New syntax with matrix:</strong></li>
+</ul>
+</div>
 <div class="cell" data-output.var="display">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb19-1"><a></a><span class="kw">parameters</span> {</span>
 <span id="cb19-2"><a></a>  <span class="dt">vector</span>[P] beta;         <span class="co">// vector of coefficients for Beta</span></span>
 <span id="cb19-3"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;    <span class="co">// residual standard deviation</span></span>
 <span id="cb19-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </section><section id="syntax-changes-prior-distributions-definition" class="slide level2"><h2>Syntax Changes: Prior Distributions Definition</h2>
 <div class="columns">
@@ -1068,14 +1094,14 @@ Figure&nbsp;2: PDF for the exponential distribution by varied rate parameters
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fit_full_old<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.1996679
+[1] 0.2029581
 
 $chains
   chain_id warmup sampling total
-1        1  0.053    0.042 0.095
-2        2  0.063    0.049 0.112
-3        3  0.057    0.052 0.109
-4        4  0.055    0.043 0.098</code></pre>
+1        1  0.054    0.043 0.097
+2        2  0.063    0.050 0.113
+3        3  0.057    0.053 0.110
+4        4  0.054    0.044 0.098</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1083,14 +1109,14 @@ $chains
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>fit_full_new<span class="sc">$</span><span class="fu">time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$total
-[1] 0.1687021
+[1] 0.16032
 
 $chains
   chain_id warmup sampling total
-1        1  0.031    0.028 0.059
-2        2  0.034    0.032 0.066
-3        3  0.037    0.031 0.068
-4        4  0.033    0.028 0.061</code></pre>
+1        1  0.030    0.028 0.058
+2        2  0.036    0.033 0.069
+3        3  0.036    0.033 0.069
+4        4  0.032    0.030 0.062</code></pre>
 </div>
 </div>
 </div>

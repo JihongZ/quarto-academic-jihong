@@ -340,14 +340,14 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#syntax-changes-data-section",
     "title": "Lecture 04",
     "section": "Syntax Changes: Data Section",
-    "text": "Syntax Changes: Data Section\nOld syntax without matrix:\n\ndata{\n    int&lt;lower=0&gt; N;\n    vector[N] weightLB;\n    vector[N] height60IN;\n    vector[N] group2;\n    vector[N] group3;\n    vector[N] heightXgroup2;\n    vector[N] heightXgroup3;\n}\n\nNew syntax with matrix:\n\ndata{\n  int&lt;lower=0&gt; N;         // number of observations\n  int&lt;lower=0&gt; P;         // number of predictors (plus column for intercept)\n  matrix[N, P] X;         // model.matrix() from R \n  vector[N] weightLB;     // outcome\n  real sigmaRate;         // hyperparameter: rate parameter for residual standard deviation\n}"
+    "text": "Syntax Changes: Data Section\n\n\n\n\nOld syntax without matrix:\n\n\ndata{\n    int&lt;lower=0&gt; N;\n    vector[N] weightLB;\n    vector[N] height60IN;\n    vector[N] group2;\n    vector[N] group3;\n    vector[N] heightXgroup2;\n    vector[N] heightXgroup3;\n}\n\n\n\n\n\nNew syntax with matrix:\n\n\n\ndata{\n  int&lt;lower=0&gt; N;         // number of observations\n  int&lt;lower=0&gt; P;         // number of predictors (plus column for intercept)\n  matrix[N, P] X;         // model.matrix() from R \n  vector[N] weightLB;     // outcome\n  real sigmaRate;         // hyperparameter: rate parameter for residual standard deviation\n}"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#syntax-changes-parameters-section",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#syntax-changes-parameters-section",
     "title": "Lecture 04",
     "section": "Syntax Changes: Parameters Section",
-    "text": "Syntax Changes: Parameters Section\nOld syntax without matrix:\n\nparameters {\n  real beta0;\n  real betaHeight;\n  real betaGroup2;\n  real betaGroup3;\n  real betaHxG2;\n  real betaHxG3;\n  real&lt;lower=0&gt; sigma;\n}\n\nNew syntax with matrix:\n\nparameters {\n  vector[P] beta;         // vector of coefficients for Beta\n  real&lt;lower=0&gt; sigma;    // residual standard deviation\n}"
+    "text": "Syntax Changes: Parameters Section\n\n\n\n\nOld syntax without matrix:\n\n\n\nparameters {\n  real beta0;\n  real betaHeight;\n  real betaGroup2;\n  real betaGroup3;\n  real betaHxG2;\n  real betaHxG3;\n  real&lt;lower=0&gt; sigma;\n}\n\n\n\n\nNew syntax with matrix:\n\n\n\nparameters {\n  vector[P] beta;         // vector of coefficients for Beta\n  real&lt;lower=0&gt; sigma;    // residual standard deviation\n}"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#syntax-changes-prior-distributions-definition",
@@ -368,7 +368,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#compare-computational-time",
     "title": "Lecture 04",
     "section": "Compare computational time",
-    "text": "Compare computational time\n\nThe Stan code with matrix has faster computation:\n\n\n\n\nfit_full_old$time()\n\n$total\n[1] 0.1996679\n\n$chains\n  chain_id warmup sampling total\n1        1  0.053    0.042 0.095\n2        2  0.063    0.049 0.112\n3        3  0.057    0.052 0.109\n4        4  0.055    0.043 0.098\n\n\n\n\nfit_full_new$time()\n\n$total\n[1] 0.1687021\n\n$chains\n  chain_id warmup sampling total\n1        1  0.031    0.028 0.059\n2        2  0.034    0.032 0.066\n3        3  0.037    0.031 0.068\n4        4  0.033    0.028 0.061\n\n\n\n\n\n\nPros: With matrices, there is less syntax to write\n\nModel is equivalent\nMore efficient for sampling (sample from matrix space)\nMore flexible: modify matrix elements in R instead of individual parameters in Stan\n\n\n\nCons: Output, however, is not labeled with respect to parameters\n\nMay have to label output"
+    "text": "Compare computational time\n\nThe Stan code with matrix has faster computation:\n\n\n\n\nfit_full_old$time()\n\n$total\n[1] 0.2029581\n\n$chains\n  chain_id warmup sampling total\n1        1  0.054    0.043 0.097\n2        2  0.063    0.050 0.113\n3        3  0.057    0.053 0.110\n4        4  0.054    0.044 0.098\n\n\n\n\nfit_full_new$time()\n\n$total\n[1] 0.16032\n\n$chains\n  chain_id warmup sampling total\n1        1  0.030    0.028 0.058\n2        2  0.036    0.033 0.069\n3        3  0.036    0.033 0.069\n4        4  0.032    0.030 0.062\n\n\n\n\n\n\nPros: With matrices, there is less syntax to write\n\nModel is equivalent\nMore efficient for sampling (sample from matrix space)\nMore flexible: modify matrix elements in R instead of individual parameters in Stan\n\n\n\nCons: Output, however, is not labeled with respect to parameters\n\nMay have to label output"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html#computing-functions-of-parameters",
@@ -1530,7 +1530,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#optional-materials",
     "title": "ESRM 6553: Adv. Multivariate",
     "section": "2.2 Optional Materials",
-    "text": "2.2 Optional Materials\n\nKaplan, D. (2014), Bayesian Statistics for the Social Sciences. New York: Guilford Press.\nGelman, A., Carlin, J. B., Stern, H. S., and Rubin, D. B. (2020), Bayesian Data Analysis 3rd edition. Chapman and Hall.\nAndrew Gelman’s Website for an unfiltered, stream of consciousness Bayesian commentary\nSupplementary Texts: Stan User’s Guide"
+    "text": "2.2 Optional Materials\n\nKaplan, D. (2014), Bayesian Statistics for the Social Sciences. New York: Guilford Press.\nGelman, A., Carlin, J. B., Stern, H. S., and Rubin, D. B. (2020), Bayesian Data Analysis 3rd edition. Chapman and Hall.\nAndrew Gelman’s Website for an unfiltered, stream of consciousness Bayesian commentary\nSupplementary Texts:\n\nStan User’s Guide (PDF)\nStan User’s Guide (HTML)"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html#software",

@@ -764,7 +764,11 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <li>Kaplan, D. (2014), Bayesian Statistics for the Social Sciences. New York: Guilford Press.</li>
 <li>Gelman, A., Carlin, J. B., Stern, H. S., and Rubin, D. B. (2020), Bayesian Data Analysis 3rd edition. Chapman and Hall.</li>
 <li><a href="http://andrewgelman.com">Andrew Gelman’s Website</a> for an unfiltered, stream of consciousness Bayesian commentary</li>
-<li><strong>Supplementary Texts:</strong> <a href="https://mc-stan.org/docs/2_33/stan-users-guide-2_33.pdf">Stan User’s Guide</a></li>
+<li><strong>Supplementary Texts:</strong>
+<ul>
+<li><a href="https://mc-stan.org/docs/2_33/stan-users-guide-2_33.pdf">Stan User’s Guide (PDF)</a></li>
+<li><a href="https://mc-stan.org/docs/stan-users-guide/index.html">Stan User’s Guide (HTML)</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="software" class="level2" data-number="2.3">
