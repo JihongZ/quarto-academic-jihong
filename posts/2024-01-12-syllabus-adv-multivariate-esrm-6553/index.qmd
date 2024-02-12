@@ -217,4 +217,3 @@ Academic calendar for Spring 2024: [Here](https://registrar.uark.edu/academic-da
 ## Cognitive Science
 
 1.  [An Introduction to Bayesian Data Analysis for Cognitive Science, by Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)](https://vasishth.github.io/bayescogsci/book/)
-

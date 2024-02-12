@@ -1,9 +1,0 @@
----
-title: "Blog"
-subtitle: 'Blogs about R, Python, machine learning, data science, and visualisation'
-listing:
-  contents: posts/*/*.[Rq]md
-  sort: "date desc"
-  type: default
-  categories: cloud
----

@@ -386,7 +386,7 @@ F-statistic: 346.5 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span class="header-section-number">3.2</span> Fitting the model</h3>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">bayes.mod.fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/R2jags/man/jags.html">jags</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sim.dat.jags</span>, inits <span class="op">=</span> <span class="va">bayes.mod.inits</span>,</span>
+<span><span class="va">bayes.mod.fit</span> <span class="op">&lt;-</span> <span class="fu">jags</span><span class="op">(</span>data <span class="op">=</span> <span class="va">sim.dat.jags</span>, inits <span class="op">=</span> <span class="va">bayes.mod.inits</span>,</span>
 <span>  parameters.to.save <span class="op">=</span> <span class="va">bayes.mod.params</span>, n.chains <span class="op">=</span> <span class="fl">3</span>, n.iter <span class="op">=</span> <span class="fl">9000</span>,</span>
 <span>  n.burnin <span class="op">=</span> <span class="fl">1000</span>, model.file <span class="op">=</span> <span class="va">bayes.mod</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -962,8 +962,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
-</script><input type="hidden" id="giscus-base-theme" value="preferred_color_scheme"><input type="hidden" id="giscus-alt-theme" value="preferred_color_scheme">
+</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
