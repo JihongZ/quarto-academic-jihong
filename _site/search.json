@@ -1831,7 +1831,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#introduction-approximation-to-leave-one-out",
     "title": "Lecture 05",
     "section": "Introduction: Approximation to Leave-one-out",
-    "text": "Introduction: Approximation to Leave-one-out\nBig picture:\n\nThis comparative fit indices include WAIC, LOO, Parento Smoothed Important Sampling (PSIS) via Stan’s LOO package\nWAIC/LOO can be used for model comparison with lowest value suggesting better model fit\nDifferent from AIC/BIC/DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach\n\nGives a finite-sample approximation\nImplemented in Stan\nCan quickly compare models\nGives warnings when it may be less reliable to use"
+    "text": "Introduction: Approximation to Leave-one-out\nBig picture:\n\nThis comparative fit indices include WAIC, LOO, Pareto Smoothed Important Sampling (PSIS) via Stan’s LOO package\nWAIC/LOO can be used for model comparison with lowest value suggesting better model fit\nDifferent from AIC/BIC/DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach\n\nGives a finite-sample approximation\nImplemented in Stan\nCan quickly compare models\nGives warnings when it may be less reliable to use"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#waic-in-stan",

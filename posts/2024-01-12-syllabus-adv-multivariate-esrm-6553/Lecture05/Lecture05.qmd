@@ -444,7 +444,7 @@ $$p_D = \overline{D(\theta)} - D(\bar\theta)$$and where
 
 Big picture:
 
-1.  This comparative fit indices include WAIC, LOO, Parento Smoothed Important Sampling (PSIS) via Stan's `LOO` package
+1.  This comparative fit indices include WAIC, LOO, Pareto Smoothed Important Sampling (PSIS) via Stan's `LOO` package
 2.  WAIC/LOO can be used for model comparison with lowest value suggesting better model fit
 3.  Different from AIC/BIC/DIC, LOO via PSIS attempts to "approximate" the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach
     -   Gives a finite-sample approximation
