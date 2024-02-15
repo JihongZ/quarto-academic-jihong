@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong">
 <meta name="dcterms.date" content="2017-10-19">
-<title>Dr.&nbsp;Jihong Zhang - How to use lavaan package to perform Confirmatory Factor Analysis</title>
+<title>Dr. Jihong Zhang – How to use lavaan package to perform Confirmatory Factor Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -348,6 +348,7 @@ window.Quarto = {
 </section></section><section id="descriptive-statistics" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="descriptive-statistics">
 <span class="header-section-number">2</span> Descriptive Statistics</h2>
 <p>The descriptive statistics for all items are provided below. It appears that item 4 is the least difficult item as it has the highest mean (<span class="math inline">\mu = 4.189, sd = 1.317</span>); item 5 is the most difficult item as it has lowest mean score (<span class="math inline">\mu = 3.604, sd = 1.423</span>). All responses for each item range from 1 to 6 (1 = Strongly agree, 6 = Strongly disagree). Thus, all categories are responded. In term of item discrimination, as item 3 has the largest standard deviation (<span class="math inline">sd = 1.364</span>) and item 6 has the smallest, item 3 has highest discrimination whearas item 6 has lowest in CTT.</p>
+<div>
 <table data-quarto-postprocess="true" class="table">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -480,7 +481,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Item-total correlation table was provided below. All item-total correlation coefficients are higher than 0.7, which suggests good internal consistence. Item 1 has lowest item-total correlation (<span class="math inline">r = 0.733, sd = 1.337</span>).</p>
+<div>
 <table data-quarto-postprocess="true" class="table">
 <caption>Item-total Correlation Table</caption>
 <thead><tr class="header">
@@ -556,12 +559,14 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 <section id="sample-correlation-matrix" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="sample-correlation-matrix">
 <span class="header-section-number">2.1</span> Sample Correlation Matrix</h3>
 <p>According to Pearson Correlation Matrix below, we can see all items have fairly high pearson correlation coefficients ranging from 0.44 to 0.72. This provides the evidence of dimensionality. Item 2 and item 3 has highest correlation coefficient(<span class="math inline">r_{23} = 0.717</span>). The lowest correlations lies between item 1 and item 4 as well as item 1 and item 5.</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">dat2</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Pearson Correlation Matrix"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Pearson Correlation Matrix</caption>
 <thead><tr class="header">
@@ -630,6 +635,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section><section id="sample-mean-and-variance" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="sample-mean-and-variance">
@@ -807,6 +813,7 @@ Variances:
 <div class="cell">
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">model1</span><span class="op">)</span><span class="op">$</span><span class="va">cov</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Normalized Residual Variance-Covariance Matrix"</span>,digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Normalized Residual Variance-Covariance Matrix</caption>
 <thead><tr class="header">
@@ -876,8 +883,10 @@ Variances:
 </tbody>
 </table>
 </div>
+</div>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modificationindices</a></span><span class="op">(</span><span class="va">model1</span>, standardized <span class="op">=</span> <span class="cn">TRUE</span>,sort. <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Modification Indices"</span>, digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Modification Indices</caption>
 <thead><tr class="header">
@@ -993,6 +1002,7 @@ Variances:
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section><section id="two-factor-model" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="two-factor-model">
@@ -1119,6 +1129,7 @@ Variances:
 <div class="cell">
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">model2</span><span class="op">)</span><span class="op">$</span><span class="va">cov</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Normalized Residual Variance-Covariance Matrix"</span>,digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Normalized Residual Variance-Covariance Matrix</caption>
 <thead><tr class="header">
@@ -1188,8 +1199,10 @@ Variances:
 </tbody>
 </table>
 </div>
+</div>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modificationindices</a></span><span class="op">(</span><span class="va">model2</span>, standardized <span class="op">=</span> <span class="cn">TRUE</span>,sort. <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Modification Indices"</span>, digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Modification Indices</caption>
 <thead><tr class="header">
@@ -1305,6 +1318,7 @@ Variances:
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section></section><section id="path-diagram" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="path-diagram">
@@ -1434,6 +1448,7 @@ Defined Parameters:
 <span class="header-section-number">8.1</span> Table 1: Model Fit Statistics Using MLR</h3>
 <div class="cell">
 <div class="cell-output-display">
+<div>
 <table class="table table-striped table-sm small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1482,10 +1497,12 @@ Defined Parameters:
 </table>
 </div>
 </div>
+</div>
 </section><section id="table-2-model-comparisons" class="level3" data-number="8.2"><h3 data-number="8.2" class="anchored" data-anchor-id="table-2-model-comparisons">
 <span class="header-section-number">8.2</span> Table 2: Model Comparisons</h3>
 <div class="cell">
 <div class="cell-output-display">
+<div>
 <table class="table table-striped table-sm small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1504,10 +1521,12 @@ Defined Parameters:
 </table>
 </div>
 </div>
+</div>
 </section><section id="table-3-model-estimates" class="level3" data-number="8.3"><h3 data-number="8.3" class="anchored" data-anchor-id="table-3-model-estimates">
 <span class="header-section-number">8.3</span> Table 3: Model Estimates</h3>
 <div class="cell">
 <div class="cell-output-display">
+<div>
 <table class="table table-striped table-sm small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 25%">
@@ -1664,6 +1683,7 @@ Standardized
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 

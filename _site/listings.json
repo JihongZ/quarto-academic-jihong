@@ -36,12 +36,8 @@
     ]
   },
   {
-    "listing": "/posts/index.html",
+    "listing": "/index.html",
     "items": [
-      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html",
-      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html",
-      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html",
-      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html",
       "/posts/2024-02-10-Customize-Rstudio-Theme/index.html",
       "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
       "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html",
@@ -76,8 +72,14 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/posts/index.html",
     "items": [
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Homeworks/Homework.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html",
+      "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html",
       "/posts/2024-02-10-Customize-Rstudio-Theme/index.html",
       "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
       "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html",
@@ -109,6 +111,12 @@
       "/posts/2017-11-12-MESUREMENT-INVARIANCE/index.html",
       "/posts/2017-11-10-Linking-simulation/index.html",
       "/posts/2017-11-08-sem-homework/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/2024-Mixing-Network-DCM/index.html"
     ]
   }
 ]
