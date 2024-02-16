@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.10">
+<meta name="generator" content="quarto-1.4.549">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2019-10-20">
-<title>Dr. Jihong Zhang – Introduction to Latent Attribute Network Analysis</title>
+<title>Dr.&nbsp;Jihong Zhang - Introduction to Latent Attribute Network Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,9 +110,11 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;family=Oxygen+Mono&amp;family=Ysabeau+Office&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
 <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -266,7 +268,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/alexanderrobitzsch/CDM">CDM</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://statnet.org/">network</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://statnet.org/">network</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="data-preparation" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="data-preparation">
 <span class="header-section-number">1</span> Data Preparation</h2>
@@ -295,7 +297,7 @@ C2  0  0  0  0  3  3</code></pre>
 <span class="header-section-number">2</span> <code>Network</code> package</h2>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Network package</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://statnet.org/">network</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://statnet.org/">network</a></span><span class="op">)</span></span>
 <span><span class="va">routes_work</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/network/man/network.html">network</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">edge.list</span>, vertex.attr <span class="op">=</span> <span class="va">node.list</span>, </span>
 <span>                       matrix.type <span class="op">=</span> <span class="st">"edgelist"</span>, ignore.eval <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">routes_work</span>, vertex.cex <span class="op">=</span> <span class="fl">3</span>, mode <span class="op">=</span> <span class="st">"circle"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
