@@ -8,9 +8,6 @@ categories:
   - linking
 format: 
   html:
-    header-includes: |
-      <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap" rel="stylesheet">
-    mainfont: 'Ysabeau Infant'
     self-contained: true
     toc: true
     code-fold: true
