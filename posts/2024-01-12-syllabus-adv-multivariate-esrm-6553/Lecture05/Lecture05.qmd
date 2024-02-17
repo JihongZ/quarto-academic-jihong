@@ -76,7 +76,7 @@ bibliography: references.bib
     :::
 :::
 
-![](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/Lecture5_PPMC_DataSets.png){fig-align="center"}
+![](/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/Lecture5_PPMC_DataSets.png){fig-align="center" width="600"}
 
 ------------------------------------------------------------------------
 
@@ -371,7 +371,7 @@ fit_full_ppp$summary(variables = c('mean_weightLB_rep', 'sd_weightLB_rep', 'ppp_
 
 ------------------------------------------------------------------------
 
-## Advantages or disadvatages of Computing PPP within Stan
+## Advantages or disadvantages of Computing PPP within Stan
 
 ::: columns
 ::: {.column width="60%"}
@@ -404,7 +404,7 @@ Relative model fit: used to compare 2 or more competing models in terms of their
 
     -   AIC, BIC, DIC etc.
 
-    -   Typically IC is a function of log-likelihood and penality
+    -   Typically IC is a function of log-likelihood and penalty
 
     -   The model with the lowest IC is the model that fits best
 
@@ -438,29 +438,154 @@ where $p_D$ is the estimated number of parameters as follows:
 
 $$p_D = \overline{D(\theta)} - D(\bar\theta)$$and where
 
+$$
+D(\theta) = -2 \log(p(y \mid \theta)) + C
+$$
+
+C is a constant that cancels out when model comparisons are made
+
+Here.
+
+-   $\overline{D(\theta)}$ is the average log likelihood of the data (y) given the parameters ($\theta$) computed across all samples
+
+-   $D(\bar\theta)$ is the log likelihood of the data (y) computed at the average of the parameters ($\theta$) computed across all samples
+
 ------------------------------------------------------------------------
 
-## Introduction: Approximation to Leave-one-out 
+### DIC in Stan
+
+Some program like JAGS will have provided DIC directly, but Stan does not provides direct ways of calculating DIC:
+
+We can manually calculate approximated DIC by replacing $\bar\theta$ as median of posteriors $\dot\theta$ if the posterior distributions are almost normal.
+
+::: columns
+::: {.column width="50%"}
+**DIC for Full Model**
+
+```{r}
+# extract log-likelihood and parameters
+posterior_draws <- fit_full_ppp$draws(c('log_lik', 'beta'), format = 'draws_matrix')
+log_like_draws <- rowSums(posterior_draws[,colnames(posterior_draws) %in% paste0("log_lik[", 1:30, "]")]) 
+# find draws of loglikelihood that have parameters equaling to median values
+theta_draws <- posterior_draws[, colnames(posterior_draws) %in% paste0("beta[", 1:6, "]")]
+theta_ave_iteration = apply(round(theta_draws, 3), 2, \(x) which(x == median(x))) |> unlist() |> as.numeric()
+log_like_draws_meantheta = (-2)*mean(log_like_draws[theta_ave_iteration])
+mean_log_like_draws = (-2)*mean(log_like_draws)
+# compute DIC
+DIC_full = mean_log_like_draws - log_like_draws_meantheta + mean_log_like_draws
+DIC_full
+```
+:::
+
+::: {.column width="50%"}
+**DIC for Empty Model**
+
+```{r}
+# extract log-likelihood and parameters
+posterior_draws <- fit_empty_ppp$draws(c('log_lik', 'beta0'), format = 'draws_matrix')
+log_like_draws <- rowSums(posterior_draws[,colnames(posterior_draws) %in% paste0("log_lik[", 1:30, "]")]) 
+# find draws of loglikelihood that have parameters equaling to median values
+theta_draws <- posterior_draws[, colnames(posterior_draws) == "beta0"]
+theta_ave_iteration = which(round(theta_draws,2) == median(round(theta_draws,2)))
+log_like_draws_meantheta = (-2)*mean(log_like_draws[theta_ave_iteration])
+mean_log_like_draws = (-2)*mean(log_like_draws)
+# compute DIC
+DIC_empty = mean_log_like_draws - log_like_draws_meantheta + mean_log_like_draws
+DIC_empty
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+### Issues to DIC
+
+The DIC has fallen out of favor recently (not used in Stan)
+
+::: nonincremental
+-   Has issues when parameters are discrete
+
+-   Not fully Bayesian (point estimate of average of parameter values)
+
+-   Can give negative values for estimated numbers of parameters in a model
+:::
+
+**WAIC** (Widely applicable or Watanabe-Akaike information criterion, Watanabe, 2010) corrects some of the problems with DIC:
+
+::: nonincremental
+-   Fully Bayesian (uses entire posterior distribution)
+
+-   Asymptotically equal to Bayesian cross-validation
+
+-   Invariant to parameterization
+:::
+
+------------------------------------------------------------------------
+
+## Watanabe-Akaike information criterion (WAIC)
+
+::: nonincremental
+-   A more frequently used model comparison indices for Bayesian analysis
+
+-   Using the `loo` R package, we can calculate WAIC with the `waic()` function:
+:::
+
+::: columns
+::: {.column width="50%"}
+**WAIC for the full model**
+
+```{r}
+loo::waic(fit_full_ppp$draws('log_lik'))
+```
+:::
+
+::: {.column width="50%"}
+**WAIC for the empty model**
+
+```{r}
+loo::waic(fit_empty_ppp$draws('log_lik'))
+```
+:::
+:::
+
+::: nonincremental
+-   Here:
+    -   `elpd_waic` is the expected log pointwise predictive density for WAIC
+
+    -   `p_waic` is the WAIC-version estimated number of parameter, similar to $p(D)$ in DIC, which is a penalty to the likelihood for more parameters
+
+    -   `waic` is the WAIC index used for model comparisons (lowest value is best fitting; -2\*`elpd_waic`)
+-   Note that WAIC needs a `log_lik` variable in the model analysis to be calculated correctly. `cmdstan` will automate calculate this variable.
+:::
+
+------------------------------------------------------------------------
+
+## LOO: Approximation to Leave-one-out
 
 Big picture:
 
-1.  This comparative fit indices include WAIC, LOO, Pareto Smoothed Important Sampling (PSIS) via Stan's `LOO` package
+::: nonincremental
+1.  Besides WAIC, other comparative fit indices include LOO via Pareto Smoothed Important Sampling (PSIS) via Stan's `LOO` package
+
 2.  WAIC/LOO can be used for model comparison with lowest value suggesting better model fit
-3.  Different from AIC/BIC/DIC, LOO via PSIS attempts to "approximate" the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach
+
+3.  Different from DIC, LOO via PSIS attempts to "approximate" the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach
+
+    ::: nonincremental
     -   Gives a finite-sample approximation
     -   Implemented in Stan
     -   Can quickly compare models
     -   Gives warnings when it may be less reliable to use
+    :::
+
+4.  The details of computation of LOO are very technical, but are nicely compiled in Vehtari, Gelman, and Gabry (2017).
+:::
 
 ------------------------------------------------------------------------
 
-## WAIC in Stan
+### LOO: Leave-one-out in Stan
 
-------------------------------------------------------------------------
-
-## LOO: Leave-one-out in Stan
-
-Using `loo` package, Efficient approximate leave-one-out cross-validation (LOO-CV)
+Using `loo` package, we can calculate efficient approximate leave-one-out cross-validation (LOO-CV)
 
 ::: columns
 ::: {.column width="50%"}
@@ -498,7 +623,30 @@ Here:
 
 ------------------------------------------------------------------------
 
-## LOO: Pareto smoothed importance sampling (PSIS)
+### LOO: Comparing Model with LOO
+
+Alternative, you can use the built-in function `loo_compare` in `loo` package to compare alternative models:
+
+```{r}
+loo::loo_compare(list(empty = fit_empty_ppp$loo(), full = fit_full_ppp$loo()))
+```
+
+This function calculats the standard error of the difference in `elpd` (expected log pointwise predictive density) between models
+
+::: nonincremental
+-   The SE gives an indication of the standard error in the estimate (relative to the size)
+-   Can use this to downweight the choice of models when the standard error is high (Open Question: how high is high?)
+    -   $$
+        0 \in \text{elpd_diff}\ \pm\ 1.96*\text{se_diff}
+        $$
+-   Note: `elpd_diff` is `looic` divided by -2 (on the log-likelihood scale, not the deviance scale)
+    -   Here, we interpret the results as the model with full predictors is preferred to the model with empty predictors.
+    -   The "confidence interval" of the `elpd_diff` does not include 0, indicating we can be fairly certain of this result
+:::
+
+------------------------------------------------------------------------
+
+### LOO: Pareto smoothed importance sampling (PSIS)
 
 -   Estimated a vector of Pareto shape parameters $k$ for individuals which represents the reliability of sampling:
 
@@ -522,9 +670,160 @@ This is new area, please see more references [@vehtari2016]
 
 ------------------------------------------------------------------------
 
+## Compile the relative model fit indices
+
+Below shows the all three model comparison fit indices for the empty model and the full model.
+
+```{r}
+data.frame(
+  Model = c("Full Model", "Empty Model"),
+  DIC = c(DIC_full, DIC_empty),
+  WAIC = c(WAIC_full, WAIC_empty),
+  LOOIC = c(LOO_full, LOO_empty)
+)
+```
+
+::: nonincremental
+-   All fit indices suggest the full model is better than the empty model
+
+-   For simple models, the results of DIC/WAIC/LOOIC should be consistent
+
+-   In some situations that they are inconsistent, please use WAIC/LOO as standards.
+:::
+
+------------------------------------------------------------------------
+
+## General points about Bayesian Model Comparison
+
+::: nonincremental
+-   Note, WAIC and LOO will converge as sample size increases (WAIC is asymptotic value of LOO)
+-   Latent variable models present challenges (could be your dissertation project)
+    -   Need log likelihood with latent variable being integrated out
+-   Missing data present challenges
+    -   Need log likelihood with missing data integrated out
+-   Generally, using LOO is recommended (but providing both is appropriate)
+:::
+
+------------------------------------------------------------------------
+
+## Cutting-Edge Research Field: Approximation Algorithm
+
+::: nonincremental
+-   MCMC sampling could be very computational time-consuming.
+
+-   For number of parameters up to thousands or even millions, it could be a challenge to get the estimation.
+
+-   Thus, approximation algorithms has been developed, such as Laplace Approximation, Variational Inference [@dhaka2020; @yao2018], [Pathfinder methods](https://statmodeling.stat.columbia.edu/2021/08/10/pathfinder-a-parallel-quasi-newton-algorithm-for-reaching-regions-of-high-probability-mass/) [@zhang2021].
+:::
+
+Quoted from [Gelman's blog](https://statmodeling.stat.columbia.edu/2023/02/08/implementing-laplace-approximation-in-stan-whats-happening-under-the-hood/):
+
+> ::: columns
+> ::: {.column width="50%"}
+> **Advantages of Laplace:**
+>
+> ::: nonincremental
+> -   Relatively cheap to compute, given that we already have a mode-finder in Stan.
+> -   Easy to understand, use, and communicate.
+> -   Works reasonably well in many examples (wherever the posterior can be well approximated by a normal distribution).
+> -   Easy to take draws from the normal approximation, also easy to compute importance ratios and use [Pareto-smoothed importance sampling](http://www.stat.columbia.edu/~gelman/research/unpublished/psis4.pdf).
+> :::
+> :::
+>
+> ::: {.column width="50%"}
+> **Limitations of Laplace:**
+>
+> ::: nonincremental
+> -   Sometimes the normal approx is pretty bad (funnels, multimodal distributions, long tails).
+>
+> -   Sometimes the joint mode is useless or does not even exist (funnels, etc.), in which case the model itself would need to be altered in some way to get a stable mode.
+> :::
+> :::
+> :::
+
+```{r}
+#| message: false
+#| warning: false
+#| code-fold: true
+#| error: false
+#| eval: false
+# Stan's LBFGS algorithm
+fit_full_optim <- mod_full_ppp$optimize(data = data_full_new, seed = 1234, jacobian = TRUE)
+fit_full_laplace <- mod_full_ppp$laplace(data = data_full_new, mode = fit_full_optim, draws = 4000)
+
+# Run 'variational' method to use ADVI to approximate posterior
+fit_full_vb <- mod_full_ppp$variational(data = data_full_new, seed = 1234, draws = 4000)
+
+# Run 'pathfinder' method, a new alternative to the variational method
+fit_pf <- mod_full_ppp$pathfinder(data = data_full_new, seed = 1234, draws = 4000)
+```
+
+------------------------------------------------------------------------
+
+### Approximation Algorithm vs. Full MCMC
+
+Though they are very quicker to converge, the accuracy of these approximation algorithms largely depend on the complexity of modeling (number of parameters, prior distributions, latent variables etc.)
+
+```{r}
+#| code-fold: true
+#| fig-cap: "Mean and 95% Credit Interval of aproximation algorithms and MCMC"
+summ_list <- lapply(c(fit_full_ppp, fit_full_laplace, fit_full_vb, fit_pf), \(x) 
+                    x$summary(c("beta", "sigma"))[c('variable', 'mean',"q5", "q95")])
+summ_list[[1]]$Algorithm = "MCMC"
+summ_list[[2]]$Algorithm = "Laplace Approx."
+summ_list[[3]]$Algorithm = "Variational Inference"
+summ_list[[4]]$Algorithm = "Pathfinder"
+summ_forplot <- Reduce(rbind, summ_list)  
+summ_forplot$Algorithm = factor(summ_forplot$Algorithm, levels = c("MCMC", "Laplace Approx.", "Pathfinder", "Variational Inference"))
+
+ggplot(summ_forplot) +
+  geom_col(aes(x = variable, y = mean, fill = Algorithm), position = position_dodge()) +
+  geom_errorbar(aes(x = variable, ymax = q95, ymin = q5, fill = Algorithm),position = position_dodge2(padding = 0.6)) +
+  labs(x = '', y = '') +
+  theme_classic()
+```
+
+------------------------------------------------------------------------
+
+```{r}
+library(tidyverse)
+rbind(
+  cbind(data.frame(Algorithm = "Laplace Approx."), fit_full_laplace$draws(paste0("beta[", 1:6, "]"), format = "draws_df")[, 1:6]),
+  cbind(data.frame(Algorithm = "Variational Inference"), fit_full_vb$draws(paste0("beta[", 1:6, "]"), format = "draws_df")[, 1:6]),
+  cbind(data.frame(Algorithm = "Pathfinder"), fit_pf$draws(paste0("beta[", 1:6, "]"))[, 1:6]),
+  cbind(data.frame(Algorithm = "MCMC"), fit_full_ppp$draws(paste0("beta[", 1:6, "]"), format = "draws_df")[, 1:6])
+) |>
+  mutate(Algorithm = factor(Algorithm, levels = c("MCMC", "Laplace Approx.", "Pathfinder", "Variational Inference"))) |> 
+  pivot_longer(starts_with("beta"), names_to = "Parameter", values_to = "Draws") |>
+  ggplot() +
+  geom_density(aes(x = Draws, fill = Algorithm), alpha = 0.4) +
+  facet_wrap(~Parameter, scales = "free")
+```
+
+------------------------------------------------------------------------
+
 ## Wrapping up
+
+The three lectures using linear models was built to show nearly all parts needed in a Bayesian analysis
+
+-   MCMC specifications
+
+-   Prior specifications
+
+-   Assessing MCMC convergence
+
+-   Reporting MCMC results
+
+-   Determining if a model fits the data (absolute fit)
+
+-   Determining which model fits the data better (relative fit)
+
+All of these topics will be with us when we start model complicated models in our future lecture.
+
+------------------------------------------------------------------------
 
 ## Next Class
 
-1.  Bayesian Model fit
-2.  Bayesian Model Comparison
+1.  Generalized measurement models
+
+## Reference

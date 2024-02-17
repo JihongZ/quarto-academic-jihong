@@ -1673,67 +1673,81 @@
     "text": "Compute PPP-values within Stan\nWe can use the generated quantities block of Stan to compute PPP-values for us:\n\ngenerated quantities{\n  // simulated data\n  array[N] real weightLB_rep = normal_rng(X*beta, sigma);\n  // posterior predictive distribution for mean and SD\n  real mean_weightLB = mean(weightLB);\n  real sd_weightLB = sd(weightLB);\n  real mean_weightLB_rep = mean(to_vector(weightLB_rep));\n  real&lt;lower=0&gt; sd_weightLB_rep = sd(to_vector(weightLB_rep));\n  // ppp-values for mean and sd\n  int&lt;lower=0, upper=1&gt; ppp_mean = (mean_weightLB_rep &gt; mean_weightLB);\n  int&lt;lower=0, upper=1&gt; ppp_sd = (sd_weightLB_rep &gt; sd_weightLB);\n}\n\nIt will give us:\n\nfit_full_ppp$summary(variables = c('mean_weightLB_rep', 'sd_weightLB_rep', 'ppp_mean', 'ppp_sd'))\n\n# A tibble: 4 × 10\n  variable           mean median    sd   mad    q5   q95  rhat ess_bulk ess_tail\n  &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 mean_weightLB_… 171.     171.  2.16   2.13 168.  175.  1.00     4680.    3511.\n2 sd_weightLB_rep  49.7     49.7 2.18   2.10  46.2  53.4 1.00     4000.    3808.\n3 ppp_mean          0.503    1   0.500  0      0     1   1.00     4294.      NA \n4 ppp_sd            0.537    1   0.499  0      0     1   0.999    3893.      NA"
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#advantages-or-disadvatages-of-computing-ppp-within-stan",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#advantages-or-disadvatages-of-computing-ppp-within-stan",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#advantages-or-disadvantages-of-computing-ppp-within-stan",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#advantages-or-disadvantages-of-computing-ppp-within-stan",
     "title": "Lecture 05",
-    "section": "Advantages or disadvatages of Computing PPP within Stan",
-    "text": "Advantages or disadvatages of Computing PPP within Stan\n\n\nPros:\n\nBuilt-in functions of Stan to generate simulated data for example normal_rng(), making PPP-values estimated much faster\nNice visual inspection tools existed - bayesplot\n\n\nCons:\n\nNot allowed to debug each step in PPMC if something wrong\nCannot adjust the statistics and need to re-run the whole MCMC sampling, which is time-consuming\n\n\n\nbayesplot::mcmc_dens_chains(fit_full_ppp$draws('mean_weightLB_rep'))\n\n\n\nPosterior predictive distribution for mean of weight by chains"
+    "section": "Advantages or disadvantages of Computing PPP within Stan",
+    "text": "Advantages or disadvantages of Computing PPP within Stan\n\n\nPros:\n\nBuilt-in functions of Stan to generate simulated data for example normal_rng(), making PPP-values estimated much faster\nNice visual inspection tools existed - bayesplot\n\n\nCons:\n\nNot allowed to debug each step in PPMC if something wrong\nCannot adjust the statistics and need to re-run the whole MCMC sampling, which is time-consuming\n\n\n\nbayesplot::mcmc_dens_chains(fit_full_ppp$draws('mean_weightLB_rep'))\n\n\n\nPosterior predictive distribution for mean of weight by chains"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#relative-model-fit",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#relative-model-fit",
     "title": "Lecture 05",
     "section": "Relative Model Fit",
-    "text": "Relative Model Fit\nRelative model fit: used to compare 2 or more competing models in terms of their mode fit. Sometime, it is also called model selection.\n\n\nIn non-Bayesian models, Information Criteria are often used to make comparisons\n\nAIC, BIC, DIC etc.\nTypically IC is a function of log-likelihood and penality\nThe model with the lowest IC is the model that fits best\n\n\n\nBayesian model fit is similar\n\nUses an index value\nThe model with the lowest index is the model that fits best\n\n\n\nRecent advances in Bayesian model fit use indices that are tied to make cross-validation predictions (inspired by machine learning):\n\nFit model leaving one observation out (LOO)\nCalculate statistics related to prediction (for instance, log-likelihood of that observation conditional on model parameters)\nDo for all observations\n\n\nNew Bayesian indices try to mirror these leave-one-out predictions (but approximate these due to time constraints)"
+    "text": "Relative Model Fit\nRelative model fit: used to compare 2 or more competing models in terms of their mode fit. Sometime, it is also called model selection.\n\n\nIn non-Bayesian models, Information Criteria are often used to make comparisons\n\nAIC, BIC, DIC etc.\nTypically IC is a function of log-likelihood and penalty\nThe model with the lowest IC is the model that fits best\n\n\n\nBayesian model fit is similar\n\nUses an index value\nThe model with the lowest index is the model that fits best\n\n\n\nRecent advances in Bayesian model fit use indices that are tied to make cross-validation predictions (inspired by machine learning):\n\nFit model leaving one observation out (LOO)\nCalculate statistics related to prediction (for instance, log-likelihood of that observation conditional on model parameters)\nDo for all observations\n\n\nNew Bayesian indices try to mirror these leave-one-out predictions (but approximate these due to time constraints)"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#deviance-information-indices",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#deviance-information-indices",
     "title": "Lecture 05",
     "section": "Deviance Information Indices",
-    "text": "Deviance Information Indices\nWhen late 1990s and early 2000s, the Deviance Information Criterion was popular for relative Bayesian model fit comparisons. It is proved not as good as LOO or WAIC. But let’s have a look at:\n\\[\n\\text{DIC} = p_D + \\overline{D(\\theta)}\n\\]\nwhere \\(p_D\\) is the estimated number of parameters as follows:\n\\[p_D = \\overline{D(\\theta)} - D(\\bar\\theta)\\]and where"
+    "text": "Deviance Information Indices\nWhen late 1990s and early 2000s, the Deviance Information Criterion was popular for relative Bayesian model fit comparisons. It is proved not as good as LOO or WAIC. But let’s have a look at:\n\\[\n\\text{DIC} = p_D + \\overline{D(\\theta)}\n\\]\nwhere \\(p_D\\) is the estimated number of parameters as follows:\n\\[p_D = \\overline{D(\\theta)} - D(\\bar\\theta)\\]and where\n\\[\nD(\\theta) = -2 \\log(p(y \\mid \\theta)) + C\n\\]\nC is a constant that cancels out when model comparisons are made\nHere.\n\n\\(\\overline{D(\\theta)}\\) is the average log likelihood of the data (y) given the parameters (\\(\\theta\\)) computed across all samples\n\\(D(\\bar\\theta)\\) is the log likelihood of the data (y) computed at the average of the parameters (\\(\\theta\\)) computed across all samples"
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#introduction-approximation-to-leave-one-out",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#introduction-approximation-to-leave-one-out",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#watanabe-akaike-information-criterion-waic",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#watanabe-akaike-information-criterion-waic",
     "title": "Lecture 05",
-    "section": "Introduction: Approximation to Leave-one-out",
-    "text": "Introduction: Approximation to Leave-one-out\nBig picture:\n\nThis comparative fit indices include WAIC, LOO, Pareto Smoothed Important Sampling (PSIS) via Stan’s LOO package\nWAIC/LOO can be used for model comparison with lowest value suggesting better model fit\nDifferent from AIC/BIC/DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach\n\nGives a finite-sample approximation\nImplemented in Stan\nCan quickly compare models\nGives warnings when it may be less reliable to use"
+    "section": "Watanabe-Akaike information criterion (WAIC)",
+    "text": "Watanabe-Akaike information criterion (WAIC)\n\n\nA more frequently used model comparison indices for Bayesian analysis\nUsing the loo R package, we can calculate WAIC with the waic() function:\n\n\n\n\nWAIC for the full model\n\nloo::waic(fit_full_ppp$draws('log_lik'))\n\n\nComputed from 4000 by 30 log-likelihood matrix\n\n          Estimate   SE\nelpd_waic   -109.4  6.9\np_waic         6.7  2.6\nwaic         218.8 13.8\n\n5 (16.7%) p_waic estimates greater than 0.4. We recommend trying loo instead. \n\n\n\nWAIC for the empty model\n\nloo::waic(fit_empty_ppp$draws('log_lik'))\n\n\nComputed from 4000 by 30 log-likelihood matrix\n\n          Estimate  SE\nelpd_waic   -161.0 2.7\np_waic         1.4 0.3\nwaic         322.0 5.3\n\n\n\n\n\n\nHere:\n\nelpd_waic is the expected log pointwise predictive density for WAIC\np_waic is the WAIC-version estimated number of parameter, similar to \\(p(D)\\) in DIC, which is a penalty to the likelihood for more parameters\nwaic is the WAIC index used for model comparisons (lowest value is best fitting; -2*elpd_waic)\n\n\nNote that WAIC needs a log_lik variable in the model analysis to be calculated correctly. cmdstan will automate calculate this variable."
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#waic-in-stan",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#waic-in-stan",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-approximation-to-leave-one-out",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-approximation-to-leave-one-out",
     "title": "Lecture 05",
-    "section": "WAIC in Stan",
-    "text": "WAIC in Stan"
+    "section": "LOO: Approximation to Leave-one-out",
+    "text": "LOO: Approximation to Leave-one-out\nBig picture:\n\n\nBesides WAIC, other comparative fit indices include LOO via Pareto Smoothed Important Sampling (PSIS) via Stan’s LOO package\nWAIC/LOO can be used for model comparison with lowest value suggesting better model fit\n\nDifferent from DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach\n\n\nGives a finite-sample approximation\nImplemented in Stan\nCan quickly compare models\nGives warnings when it may be less reliable to use\n\n\n\nThe details of computation of LOO are very technical, but are nicely compiled in Vehtari, Gelman, and Gabry (2017)."
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-leave-one-out-in-stan",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-leave-one-out-in-stan",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#compile-the-relative-model-fit-indices",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#compile-the-relative-model-fit-indices",
     "title": "Lecture 05",
-    "section": "LOO: Leave-one-out in Stan",
-    "text": "LOO: Leave-one-out in Stan\nUsing loo package, Efficient approximate leave-one-out cross-validation (LOO-CV)\n\n\nFull model’s LOO:\n\nfull_loo_res &lt;- fit_full_ppp$loo('log_lik', save_psis = TRUE)\nfull_loo_res$estimates\n\n           Estimate        SE\nelpd_loo -109.71896  6.991681\np_loo       7.00372  2.737974\nlooic     219.43791 13.983362\n\n\n\nEmpty model’s LOO:\n\nempty_loo_res &lt;- fit_empty_ppp$loo('log_lik', save_psis = TRUE)\nempty_loo_res$estimates\n\n            Estimate       SE\nelpd_loo -160.985770 2.661104\np_loo       1.411739 0.293790\nlooic     321.971541 5.322207\n\n\n\n\nHere:\n\nelpd_loo is the expected log pointwise predictive density for LOO (recall that posterior predictive distribution has some uncertainty around the mean value…)\np_loo is the LOO calculation of number of model parameters (a penalty to the likelihood for more parameters)\nlooic is the LOO index used for model comparisons — lowest value suggests best fitting -2elpd_loo"
+    "section": "Compile the relative model fit indices",
+    "text": "Compile the relative model fit indices\nBelow shows the all three model comparison fit indices for the empty model and the full model.\n\ndata.frame(\n  Model = c(\"Full Model\", \"Empty Model\"),\n  DIC = c(DIC_full, DIC_empty),\n  WAIC = c(WAIC_full, WAIC_empty),\n  LOOIC = c(LOO_full, LOO_empty)\n)\n\n        Model      DIC     WAIC    LOOIC\n1  Full Model 211.6029 218.7536 219.4379\n2 Empty Model 322.1444 321.9548 321.9715\n\n\n\n\nAll fit indices suggest the full model is better than the empty model\nFor simple models, the results of DIC/WAIC/LOOIC should be consistent\nIn some situations that they are inconsistent, please use WAIC/LOO as standards."
   },
   {
-    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-pareto-smoothed-importance-sampling-psis",
-    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#loo-pareto-smoothed-importance-sampling-psis",
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#general-points-about-bayesian-model-comparison",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#general-points-about-bayesian-model-comparison",
     "title": "Lecture 05",
-    "section": "LOO: Pareto smoothed importance sampling (PSIS)",
-    "text": "LOO: Pareto smoothed importance sampling (PSIS)\n\n\nEstimated a vector of Pareto shape parameters \\(k\\) for individuals which represents the reliability of sampling:\n\n\\(k &lt; .5\\) (good) suggests the estimate converges quickly\n\\(.5 &lt; k &lt; .7\\) (ok) suggests the estimate converges slowly\n\\(.7 &lt; k &lt; 1\\) (bad) suggests bad performance\n\\(k &gt; 1\\) (very bad)\n\n\nPSIS screens all cases that has had bad diagnostic values\n\n\npareto_k_table(full_loo_res)\n\nPareto k diagnostic values:\n                         Count Pct.    Min. n_eff\n(-Inf, 0.5]   (good)     26    86.7%   796       \n (0.5, 0.7]   (ok)        3    10.0%   217       \n   (0.7, 1]   (bad)       1     3.3%   56        \n   (1, Inf)   (very bad)  0     0.0%   &lt;NA&gt;      \n\n\nCriteria: Estimated tail shape parameter\nThis is new area, please see more references (Vehtari, Gelman, and Gabry 2016)"
+    "section": "General points about Bayesian Model Comparison",
+    "text": "General points about Bayesian Model Comparison\n\n\nNote, WAIC and LOO will converge as sample size increases (WAIC is asymptotic value of LOO)\nLatent variable models present challenges (could be your dissertation project)\n\nNeed log likelihood with latent variable being integrated out\n\n\nMissing data present challenges\n\nNeed log likelihood with missing data integrated out\n\n\nGenerally, using LOO is recommended (but providing both is appropriate)"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#cutting-edge-research-field-approximation-algorithm",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#cutting-edge-research-field-approximation-algorithm",
+    "title": "Lecture 05",
+    "section": "Cutting-Edge Research Field: Approximation Algorithm",
+    "text": "Cutting-Edge Research Field: Approximation Algorithm\n\n\nMCMC sampling could be very computational time-consuming.\nFor number of parameters up to thousands or even millions, it could be a challenge to get the estimation.\nThus, approximation algorithms has been developed, such as Laplace Approximation, Variational Inference (Dhaka et al. 2020; Yao et al. 2018), Pathfinder methods (Zhang et al. 2021).\n\n\nQuoted from Gelman’s blog:\n\n\n\nAdvantages of Laplace:\n\n\nRelatively cheap to compute, given that we already have a mode-finder in Stan.\nEasy to understand, use, and communicate.\nWorks reasonably well in many examples (wherever the posterior can be well approximated by a normal distribution).\nEasy to take draws from the normal approximation, also easy to compute importance ratios and use Pareto-smoothed importance sampling.\n\n\n\nLimitations of Laplace:\n\n\nSometimes the normal approx is pretty bad (funnels, multimodal distributions, long tails).\nSometimes the joint mode is useless or does not even exist (funnels, etc.), in which case the model itself would need to be altered in some way to get a stable mode.\n\n\n\n\n\n\nCode# Stan's LBFGS algorithm\nfit_full_optim &lt;- mod_full_ppp$optimize(data = data_full_new, seed = 1234, jacobian = TRUE)\nfit_full_laplace &lt;- mod_full_ppp$laplace(data = data_full_new, mode = fit_full_optim, draws = 4000)\n\n# Run 'variational' method to use ADVI to approximate posterior\nfit_full_vb &lt;- mod_full_ppp$variational(data = data_full_new, seed = 1234, draws = 4000)\n\n# Run 'pathfinder' method, a new alternative to the variational method\nfit_pf &lt;- mod_full_ppp$pathfinder(data = data_full_new, seed = 1234, draws = 4000)"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#wrapping-up",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#wrapping-up",
     "title": "Lecture 05",
     "section": "Wrapping up",
-    "text": "Wrapping up"
+    "text": "Wrapping up\nThe three lectures using linear models was built to show nearly all parts needed in a Bayesian analysis\n\nMCMC specifications\nPrior specifications\nAssessing MCMC convergence\nReporting MCMC results\nDetermining if a model fits the data (absolute fit)\nDetermining which model fits the data better (relative fit)\n\nAll of these topics will be with us when we start model complicated models in our future lecture."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#next-class",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#next-class",
     "title": "Lecture 05",
     "section": "Next Class",
-    "text": "Next Class\n\nBayesian Model fit\nBayesian Model Comparison\n\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553\n\n\n\n\nVehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. “Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.” Statistics and Computing 27 (5): 1413–32. https://doi.org/10.1007/s11222-016-9696-4."
+    "text": "Next Class\n\nGeneralized measurement models"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#reference",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#reference",
+    "title": "Lecture 05",
+    "section": "Reference",
+    "text": "Reference\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553\n\n\n\n\nDhaka, Akash Kumar, Alejandro Catalina, Michael Riis Andersen, Måns Magnusson, Jonathan H. Huggins, and Aki Vehtari. 2020. “Robust, Accurate Stochastic Optimization for Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.2009.00666.\n\n\nVehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. “Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.” Statistics and Computing 27 (5): 1413–32. https://doi.org/10.1007/s11222-016-9696-4.\n\n\nYao, Yuling, Aki Vehtari, Daniel Simpson, and Andrew Gelman. 2018. “Yes, but Did It Work?: Evaluating Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.1802.02538.\n\n\nZhang, Lu, Bob Carpenter, Andrew Gelman, and Aki Vehtari. 2021. “Pathfinder: Parallel Quasi-Newton Variational Inference.” https://doi.org/10.48550/ARXIV.2108.03782."
   },
   {
     "objectID": "posts/2023-06-28-a-tutorial-for-forester-r-package/index.html",

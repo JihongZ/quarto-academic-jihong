@@ -491,7 +491,7 @@ Jihong Zhang
 </ul>
 </div>
 
-<img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/Lecture5_PPMC_DataSets.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="ppmc-example-linear-models" class="slide level2"><h2>PPMC Example: Linear Models</h2>
+<img data-src="../../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/Lecture5_PPMC_DataSets.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section><section id="ppmc-example-linear-models" class="slide level2"><h2>PPMC Example: Linear Models</h2>
 <p>The linear model from our example was:</p>
 <p><span class="math display">\[
 \text{WeightLB}_p = \beta_0 + \beta_1 \text{HeightIN}_p + \beta_2 \text{Group2}_p + \beta_3\text{Group3}_p \\
@@ -800,7 +800,7 @@ draw   beta[1] beta[2] beta[3] beta[4] beta[5] beta[6] sigma
 4 ppp_sd            0.537    1   0.499  0      0     1   0.999    3893.      NA </code></pre>
 </div>
 </div>
-</section><section id="advantages-or-disadvatages-of-computing-ppp-within-stan" class="slide level2"><h2>Advantages or disadvatages of Computing PPP within Stan</h2>
+</section><section id="advantages-or-disadvantages-of-computing-ppp-within-stan" class="slide level2"><h2>Advantages or disadvantages of Computing PPP within Stan</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Pros:</p>
@@ -833,7 +833,7 @@ draw   beta[1] beta[2] beta[3] beta[4] beta[5] beta[6] sigma
 <p>In non-Bayesian models, Information Criteria are often used to make comparisons</p>
 <ul>
 <li class="fragment"><p>AIC, BIC, DIC etc.</p></li>
-<li class="fragment"><p>Typically IC is a function of log-likelihood and penality</p></li>
+<li class="fragment"><p>Typically IC is a function of log-likelihood and penalty</p></li>
 <li class="fragment"><p>The model with the lowest IC is the model that fits best</p></li>
 </ul>
 </li>
@@ -860,28 +860,153 @@ draw   beta[1] beta[2] beta[3] beta[4] beta[5] beta[6] sigma
 \]</span></p>
 <p>where <span class="math inline">\(p_D\)</span> is the estimated number of parameters as follows:</p>
 <p><span class="math display">\[p_D = \overline{D(\theta)} - D(\bar\theta)\]</span>and where</p>
-</section><section id="introduction-approximation-to-leave-one-out" class="slide level2"><h2>Introduction: Approximation to Leave-one-out</h2>
-<p>Big picture:</p>
-<ol type="1">
-<li class="fragment">This comparative fit indices include WAIC, LOO, Pareto Smoothed Important Sampling (PSIS) via Stan’s <code>LOO</code> package</li>
-<li class="fragment">WAIC/LOO can be used for model comparison with lowest value suggesting better model fit</li>
-<li class="fragment">Different from AIC/BIC/DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach
+<p><span class="math display">\[
+D(\theta) = -2 \log(p(y \mid \theta)) + C
+\]</span></p>
+<p>C is a constant that cancels out when model comparisons are made</p>
+<p>Here.</p>
 <ul>
-<li class="fragment">Gives a finite-sample approximation</li>
-<li class="fragment">Implemented in Stan</li>
-<li class="fragment">Can quickly compare models</li>
-<li class="fragment">Gives warnings when it may be less reliable to use</li>
+<li class="fragment"><p><span class="math inline">\(\overline{D(\theta)}\)</span> is the average log likelihood of the data (y) given the parameters (<span class="math inline">\(\theta\)</span>) computed across all samples</p></li>
+<li class="fragment"><p><span class="math inline">\(D(\bar\theta)\)</span> is the log likelihood of the data (y) computed at the average of the parameters (<span class="math inline">\(\theta\)</span>) computed across all samples</p></li>
+</ul></section><section class="slide level2"><h3 id="dic-in-stan">DIC in Stan</h3>
+<p>Some program like JAGS will have provided DIC directly, but Stan does not provides direct ways of calculating DIC:</p>
+<p>We can manually calculate approximated DIC by replacing <span class="math inline">\(\bar\theta\)</span> as median of posteriors <span class="math inline">\(\dot\theta\)</span> if the posterior distributions are almost normal.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>DIC for Full Model</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># extract log-likelihood and parameters</span></span>
+<span id="cb32-2"><a></a>posterior_draws <span class="ot">&lt;-</span> fit_full_ppp<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">'log_lik'</span>, <span class="st">'beta'</span>), <span class="at">format =</span> <span class="st">'draws_matrix'</span>)</span>
+<span id="cb32-3"><a></a>log_like_draws <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(posterior_draws[,<span class="fu">colnames</span>(posterior_draws) <span class="sc">%in%</span> <span class="fu">paste0</span>(<span class="st">"log_lik["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="st">"]"</span>)]) </span>
+<span id="cb32-4"><a></a><span class="co"># find draws of loglikelihood that have parameters equaling to median values</span></span>
+<span id="cb32-5"><a></a>theta_draws <span class="ot">&lt;-</span> posterior_draws[, <span class="fu">colnames</span>(posterior_draws) <span class="sc">%in%</span> <span class="fu">paste0</span>(<span class="st">"beta["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">"]"</span>)]</span>
+<span id="cb32-6"><a></a>theta_ave_iteration <span class="ot">=</span> <span class="fu">apply</span>(<span class="fu">round</span>(theta_draws, <span class="dv">3</span>), <span class="dv">2</span>, \(x) <span class="fu">which</span>(x <span class="sc">==</span> <span class="fu">median</span>(x))) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb32-7"><a></a>log_like_draws_meantheta <span class="ot">=</span> (<span class="sc">-</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">mean</span>(log_like_draws[theta_ave_iteration])</span>
+<span id="cb32-8"><a></a>mean_log_like_draws <span class="ot">=</span> (<span class="sc">-</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">mean</span>(log_like_draws)</span>
+<span id="cb32-9"><a></a><span class="co"># compute DIC</span></span>
+<span id="cb32-10"><a></a>DIC_full <span class="ot">=</span> mean_log_like_draws <span class="sc">-</span> log_like_draws_meantheta <span class="sc">+</span> mean_log_like_draws</span>
+<span id="cb32-11"><a></a>DIC_full</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 211.6029</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>DIC for Empty Model</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># extract log-likelihood and parameters</span></span>
+<span id="cb34-2"><a></a>posterior_draws <span class="ot">&lt;-</span> fit_empty_ppp<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">'log_lik'</span>, <span class="st">'beta0'</span>), <span class="at">format =</span> <span class="st">'draws_matrix'</span>)</span>
+<span id="cb34-3"><a></a>log_like_draws <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(posterior_draws[,<span class="fu">colnames</span>(posterior_draws) <span class="sc">%in%</span> <span class="fu">paste0</span>(<span class="st">"log_lik["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="st">"]"</span>)]) </span>
+<span id="cb34-4"><a></a><span class="co"># find draws of loglikelihood that have parameters equaling to median values</span></span>
+<span id="cb34-5"><a></a>theta_draws <span class="ot">&lt;-</span> posterior_draws[, <span class="fu">colnames</span>(posterior_draws) <span class="sc">==</span> <span class="st">"beta0"</span>]</span>
+<span id="cb34-6"><a></a>theta_ave_iteration <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">round</span>(theta_draws,<span class="dv">2</span>) <span class="sc">==</span> <span class="fu">median</span>(<span class="fu">round</span>(theta_draws,<span class="dv">2</span>)))</span>
+<span id="cb34-7"><a></a>log_like_draws_meantheta <span class="ot">=</span> (<span class="sc">-</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">mean</span>(log_like_draws[theta_ave_iteration])</span>
+<span id="cb34-8"><a></a>mean_log_like_draws <span class="ot">=</span> (<span class="sc">-</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">mean</span>(log_like_draws)</span>
+<span id="cb34-9"><a></a><span class="co"># compute DIC</span></span>
+<span id="cb34-10"><a></a>DIC_empty <span class="ot">=</span> mean_log_like_draws <span class="sc">-</span> log_like_draws_meantheta <span class="sc">+</span> mean_log_like_draws</span>
+<span id="cb34-11"><a></a>DIC_empty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 322.1444</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><h3 id="issues-to-dic">Issues to DIC</h3>
+<p>The DIC has fallen out of favor recently (not used in Stan)</p>
+<div>
+<ul>
+<li><p>Has issues when parameters are discrete</p></li>
+<li><p>Not fully Bayesian (point estimate of average of parameter values)</p></li>
+<li><p>Can give negative values for estimated numbers of parameters in a model</p></li>
+</ul>
+</div>
+<p><strong>WAIC</strong> (Widely applicable or Watanabe-Akaike information criterion, Watanabe, 2010) corrects some of the problems with DIC:</p>
+<div>
+<ul>
+<li><p>Fully Bayesian (uses entire posterior distribution)</p></li>
+<li><p>Asymptotically equal to Bayesian cross-validation</p></li>
+<li><p>Invariant to parameterization</p></li>
+</ul>
+</div>
+</section><section id="watanabe-akaike-information-criterion-waic" class="slide level2"><h2>Watanabe-Akaike information criterion (WAIC)</h2>
+<div>
+<ul>
+<li><p>A more frequently used model comparison indices for Bayesian analysis</p></li>
+<li><p>Using the <code>loo</code> R package, we can calculate WAIC with the <code>waic()</code> function:</p></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>WAIC for the full model</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>loo<span class="sc">::</span><span class="fu">waic</span>(fit_full_ppp<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'log_lik'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Computed from 4000 by 30 log-likelihood matrix
+
+          Estimate   SE
+elpd_waic   -109.4  6.9
+p_waic         6.7  2.6
+waic         218.8 13.8
+
+5 (16.7%) p_waic estimates greater than 0.4. We recommend trying loo instead. </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>WAIC for the empty model</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>loo<span class="sc">::</span><span class="fu">waic</span>(fit_empty_ppp<span class="sc">$</span><span class="fu">draws</span>(<span class="st">'log_lik'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Computed from 4000 by 30 log-likelihood matrix
+
+          Estimate  SE
+elpd_waic   -161.0 2.7
+p_waic         1.4 0.3
+waic         322.0 5.3</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li>Here:
+<ul>
+<li><p><code>elpd_waic</code> is the expected log pointwise predictive density for WAIC</p></li>
+<li><p><code>p_waic</code> is the WAIC-version estimated number of parameter, similar to <span class="math inline">\(p(D)\)</span> in DIC, which is a penalty to the likelihood for more parameters</p></li>
+<li><p><code>waic</code> is the WAIC index used for model comparisons (lowest value is best fitting; -2*<code>elpd_waic</code>)</p></li>
 </ul>
 </li>
-</ol></section><section id="waic-in-stan" class="slide level2"><h2>WAIC in Stan</h2>
-</section><section id="loo-leave-one-out-in-stan" class="slide level2"><h2>LOO: Leave-one-out in Stan</h2>
-<p>Using <code>loo</code> package, Efficient approximate leave-one-out cross-validation (LOO-CV)</p>
+<li>Note that WAIC needs a <code>log_lik</code> variable in the model analysis to be calculated correctly. <code>cmdstan</code> will automate calculate this variable.</li>
+</ul>
+</div>
+</section><section id="loo-approximation-to-leave-one-out" class="slide level2"><h2>LOO: Approximation to Leave-one-out</h2>
+<p>Big picture:</p>
+<div>
+<ol type="1">
+<li><p>Besides WAIC, other comparative fit indices include LOO via Pareto Smoothed Important Sampling (PSIS) via Stan’s <code>LOO</code> package</p></li>
+<li><p>WAIC/LOO can be used for model comparison with lowest value suggesting better model fit</p></li>
+<li>
+<p>Different from DIC, LOO via PSIS attempts to “approximate” the process of leave-one-out cross-validation (LOO-CV) using a sampling based-approach</p>
+<div>
+<ul>
+<li>Gives a finite-sample approximation</li>
+<li>Implemented in Stan</li>
+<li>Can quickly compare models</li>
+<li>Gives warnings when it may be less reliable to use</li>
+</ul>
+</div>
+</li>
+<li><p>The details of computation of LOO are very technical, but are nicely compiled in Vehtari, Gelman, and Gabry (2017).</p></li>
+</ol>
+</div>
+</section><section class="slide level2"><h3 id="loo-leave-one-out-in-stan">LOO: Leave-one-out in Stan</h3>
+<p>Using <code>loo</code> package, we can calculate efficient approximate leave-one-out cross-validation (LOO-CV)</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Full model’s LOO:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>full_loo_res <span class="ot">&lt;-</span> fit_full_ppp<span class="sc">$</span><span class="fu">loo</span>(<span class="st">'log_lik'</span>, <span class="at">save_psis =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb32-2"><a></a>full_loo_res<span class="sc">$</span>estimates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>full_loo_res <span class="ot">&lt;-</span> fit_full_ppp<span class="sc">$</span><span class="fu">loo</span>(<span class="st">'log_lik'</span>, <span class="at">save_psis =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-2"><a></a>full_loo_res<span class="sc">$</span>estimates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Estimate        SE
 elpd_loo -109.71896  6.991681
@@ -892,8 +1017,8 @@ looic     219.43791 13.983362</code></pre>
 </div><div class="column" style="width:50%;">
 <p>Empty model’s LOO:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>empty_loo_res <span class="ot">&lt;-</span> fit_empty_ppp<span class="sc">$</span><span class="fu">loo</span>(<span class="st">'log_lik'</span>, <span class="at">save_psis =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-2"><a></a>empty_loo_res<span class="sc">$</span>estimates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>empty_loo_res <span class="ot">&lt;-</span> fit_empty_ppp<span class="sc">$</span><span class="fu">loo</span>(<span class="st">'log_lik'</span>, <span class="at">save_psis =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb42-2"><a></a>empty_loo_res<span class="sc">$</span>estimates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Estimate       SE
 elpd_loo -160.985770 2.661104
@@ -908,7 +1033,36 @@ looic     321.971541 5.322207</code></pre>
 <li class="fragment"><p><code>elpd_loo</code> is the expected log pointwise predictive density for LOO (recall that posterior predictive distribution has some uncertainty around the mean value…)</p></li>
 <li class="fragment"><p><code>p_loo</code> is the LOO calculation of number of model parameters (a penalty to the likelihood for more parameters)</p></li>
 <li class="fragment"><p><code>looic</code> is the LOO index used for model comparisons — lowest value suggests best fitting -2<code>elpd_loo</code></p></li>
-</ul></section><section id="loo-pareto-smoothed-importance-sampling-psis" class="slide level2"><h2>LOO: Pareto smoothed importance sampling (PSIS)</h2>
+</ul></section><section class="slide level2"><h3 id="loo-comparing-model-with-loo">LOO: Comparing Model with LOO</h3>
+<p>Alternative, you can use the built-in function <code>loo_compare</code> in <code>loo</code> package to compare alternative models:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>loo<span class="sc">::</span><span class="fu">loo_compare</span>(<span class="fu">list</span>(<span class="at">empty =</span> fit_empty_ppp<span class="sc">$</span><span class="fu">loo</span>(), <span class="at">full =</span> fit_full_ppp<span class="sc">$</span><span class="fu">loo</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      elpd_diff se_diff
+full    0.0       0.0  
+empty -51.3       7.9  </code></pre>
+</div>
+</div>
+<p>This function calculats the standard error of the difference in <code>elpd</code> (expected log pointwise predictive density) between models</p>
+<div>
+<ul>
+<li>The SE gives an indication of the standard error in the estimate (relative to the size)</li>
+<li>Can use this to downweight the choice of models when the standard error is high (Open Question: how high is high?)
+<ul>
+<li><span class="math display">\[
+0 \in \text{elpd_diff}\ \pm\ 1.96*\text{se_diff}
+\]</span></li>
+</ul>
+</li>
+<li>Note: <code>elpd_diff</code> is <code>looic</code> divided by -2 (on the log-likelihood scale, not the deviance scale)
+<ul>
+<li>Here, we interpret the results as the model with full predictors is preferred to the model with empty predictors.</li>
+<li>The “confidence interval” of the <code>elpd_diff</code> does not include 0, indicating we can be fairly certain of this result</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section class="slide level2"><h3 id="loo-pareto-smoothed-importance-sampling-psis">LOO: Pareto smoothed importance sampling (PSIS)</h3>
 <ul>
 <li class="fragment">
 <p>Estimated a vector of Pareto shape parameters <span class="math inline">\(k\)</span> for individuals which represents the reliability of sampling:</p>
@@ -922,7 +1076,7 @@ looic     321.971541 5.322207</code></pre>
 <li class="fragment"><p>PSIS screens all cases that has had bad diagnostic values</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">pareto_k_table</span>(full_loo_res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">pareto_k_table</span>(full_loo_res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Pareto k diagnostic values:
                          Count Pct.    Min. n_eff
@@ -933,13 +1087,139 @@ looic     321.971541 5.322207</code></pre>
 </div>
 </div>
 <p>Criteria: Estimated tail shape parameter</p>
-<p>This is new area, please see more references <span class="citation" data-cites="vehtari2016">(<a href="#/next-class" role="doc-biblioref" onclick="">Vehtari, Gelman, and Gabry 2016</a>)</span></p>
-</section><section id="wrapping-up" class="slide level2"><h2>Wrapping up</h2>
-</section><section id="next-class" class="slide level2 smaller scrollable"><h2>Next Class</h2>
+<p>This is new area, please see more references <span class="citation" data-cites="vehtari2016">(<a href="#/reference" role="doc-biblioref" onclick="">Vehtari, Gelman, and Gabry 2016</a>)</span></p>
+</section><section id="compile-the-relative-model-fit-indices" class="slide level2"><h2>Compile the relative model fit indices</h2>
+<p>Below shows the all three model comparison fit indices for the empty model and the full model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">data.frame</span>(</span>
+<span id="cb48-2"><a></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Full Model"</span>, <span class="st">"Empty Model"</span>),</span>
+<span id="cb48-3"><a></a>  <span class="at">DIC =</span> <span class="fu">c</span>(DIC_full, DIC_empty),</span>
+<span id="cb48-4"><a></a>  <span class="at">WAIC =</span> <span class="fu">c</span>(WAIC_full, WAIC_empty),</span>
+<span id="cb48-5"><a></a>  <span class="at">LOOIC =</span> <span class="fu">c</span>(LOO_full, LOO_empty)</span>
+<span id="cb48-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Model      DIC     WAIC    LOOIC
+1  Full Model 211.6029 218.7536 219.4379
+2 Empty Model 322.1444 321.9548 321.9715</code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li><p>All fit indices suggest the full model is better than the empty model</p></li>
+<li><p>For simple models, the results of DIC/WAIC/LOOIC should be consistent</p></li>
+<li><p>In some situations that they are inconsistent, please use WAIC/LOO as standards.</p></li>
+</ul>
+</div>
+</section><section id="general-points-about-bayesian-model-comparison" class="slide level2"><h2>General points about Bayesian Model Comparison</h2>
+<div>
+<ul>
+<li>Note, WAIC and LOO will converge as sample size increases (WAIC is asymptotic value of LOO)</li>
+<li>Latent variable models present challenges (could be your dissertation project)
+<ul>
+<li>Need log likelihood with latent variable being integrated out</li>
+</ul>
+</li>
+<li>Missing data present challenges
+<ul>
+<li>Need log likelihood with missing data integrated out</li>
+</ul>
+</li>
+<li>Generally, using LOO is recommended (but providing both is appropriate)</li>
+</ul>
+</div>
+</section><section id="cutting-edge-research-field-approximation-algorithm" class="slide level2"><h2>Cutting-Edge Research Field: Approximation Algorithm</h2>
+<div>
+<ul>
+<li><p>MCMC sampling could be very computational time-consuming.</p></li>
+<li><p>For number of parameters up to thousands or even millions, it could be a challenge to get the estimation.</p></li>
+<li><p>Thus, approximation algorithms has been developed, such as Laplace Approximation, Variational Inference <span class="citation" data-cites="dhaka2020 yao2018">(<a href="#/reference" role="doc-biblioref" onclick="">Dhaka et al. 2020</a>; <a href="#/reference" role="doc-biblioref" onclick="">Yao et al. 2018</a>)</span>, <a href="https://statmodeling.stat.columbia.edu/2021/08/10/pathfinder-a-parallel-quasi-newton-algorithm-for-reaching-regions-of-high-probability-mass/">Pathfinder methods</a> <span class="citation" data-cites="zhang2021">(<a href="#/reference" role="doc-biblioref" onclick="">Zhang et al. 2021</a>)</span>.</p></li>
+</ul>
+</div>
+<p>Quoted from <a href="https://statmodeling.stat.columbia.edu/2023/02/08/implementing-laplace-approximation-in-stan-whats-happening-under-the-hood/">Gelman’s blog</a>:</p>
+<blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Advantages of Laplace:</strong></p>
+<div>
+<ul>
+<li>Relatively cheap to compute, given that we already have a mode-finder in Stan.</li>
+<li>Easy to understand, use, and communicate.</li>
+<li>Works reasonably well in many examples (wherever the posterior can be well approximated by a normal distribution).</li>
+<li>Easy to take draws from the normal approximation, also easy to compute importance ratios and use <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/psis4.pdf">Pareto-smoothed importance sampling</a>.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Limitations of Laplace:</strong></p>
+<div>
+<ul>
+<li><p>Sometimes the normal approx is pretty bad (funnels, multimodal distributions, long tails).</p></li>
+<li><p>Sometimes the joint mode is useless or does not even exist (funnels, etc.), in which case the model itself would need to be altered in some way to get a stable mode.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</blockquote>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="co"># Stan's LBFGS algorithm</span></span>
+<span id="cb50-2"><a></a>fit_full_optim <span class="ot">&lt;-</span> mod_full_ppp<span class="sc">$</span><span class="fu">optimize</span>(<span class="at">data =</span> data_full_new, <span class="at">seed =</span> <span class="dv">1234</span>, <span class="at">jacobian =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb50-3"><a></a>fit_full_laplace <span class="ot">&lt;-</span> mod_full_ppp<span class="sc">$</span><span class="fu">laplace</span>(<span class="at">data =</span> data_full_new, <span class="at">mode =</span> fit_full_optim, <span class="at">draws =</span> <span class="dv">4000</span>)</span>
+<span id="cb50-4"><a></a></span>
+<span id="cb50-5"><a></a><span class="co"># Run 'variational' method to use ADVI to approximate posterior</span></span>
+<span id="cb50-6"><a></a>fit_full_vb <span class="ot">&lt;-</span> mod_full_ppp<span class="sc">$</span><span class="fu">variational</span>(<span class="at">data =</span> data_full_new, <span class="at">seed =</span> <span class="dv">1234</span>, <span class="at">draws =</span> <span class="dv">4000</span>)</span>
+<span id="cb50-7"><a></a></span>
+<span id="cb50-8"><a></a><span class="co"># Run 'pathfinder' method, a new alternative to the variational method</span></span>
+<span id="cb50-9"><a></a>fit_pf <span class="ot">&lt;-</span> mod_full_ppp<span class="sc">$</span><span class="fu">pathfinder</span>(<span class="at">data =</span> data_full_new, <span class="at">seed =</span> <span class="dv">1234</span>, <span class="at">draws =</span> <span class="dv">4000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><h3 id="approximation-algorithm-vs.-full-mcmc">Approximation Algorithm vs.&nbsp;Full MCMC</h3>
+<p>Though they are very quicker to converge, the accuracy of these approximation algorithms largely depend on the complexity of modeling (number of parameters, prior distributions, latent variables etc.)</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>summ_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">c</span>(fit_full_ppp, fit_full_laplace, fit_full_vb, fit_pf), \(x) </span>
+<span id="cb51-2"><a></a>                    x<span class="sc">$</span><span class="fu">summary</span>(<span class="fu">c</span>(<span class="st">"beta"</span>, <span class="st">"sigma"</span>))[<span class="fu">c</span>(<span class="st">'variable'</span>, <span class="st">'mean'</span>,<span class="st">"q5"</span>, <span class="st">"q95"</span>)])</span>
+<span id="cb51-3"><a></a>summ_list[[<span class="dv">1</span>]]<span class="sc">$</span>Algorithm <span class="ot">=</span> <span class="st">"MCMC"</span></span>
+<span id="cb51-4"><a></a>summ_list[[<span class="dv">2</span>]]<span class="sc">$</span>Algorithm <span class="ot">=</span> <span class="st">"Laplace Approx."</span></span>
+<span id="cb51-5"><a></a>summ_list[[<span class="dv">3</span>]]<span class="sc">$</span>Algorithm <span class="ot">=</span> <span class="st">"Variational Inference"</span></span>
+<span id="cb51-6"><a></a>summ_list[[<span class="dv">4</span>]]<span class="sc">$</span>Algorithm <span class="ot">=</span> <span class="st">"Pathfinder"</span></span>
+<span id="cb51-7"><a></a>summ_forplot <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, summ_list)  </span>
+<span id="cb51-8"><a></a>summ_forplot<span class="sc">$</span>Algorithm <span class="ot">=</span> <span class="fu">factor</span>(summ_forplot<span class="sc">$</span>Algorithm, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MCMC"</span>, <span class="st">"Laplace Approx."</span>, <span class="st">"Pathfinder"</span>, <span class="st">"Variational Inference"</span>))</span>
+<span id="cb51-9"><a></a></span>
+<span id="cb51-10"><a></a><span class="fu">ggplot</span>(summ_forplot) <span class="sc">+</span></span>
+<span id="cb51-11"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">y =</span> mean, <span class="at">fill =</span> Algorithm), <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb51-12"><a></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">ymax =</span> q95, <span class="at">ymin =</span> q5, <span class="at">fill =</span> Algorithm),<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">padding =</span> <span class="fl">0.6</span>)) <span class="sc">+</span></span>
+<span id="cb51-13"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">''</span>, <span class="at">y =</span> <span class="st">''</span>) <span class="sc">+</span></span>
+<span id="cb51-14"><a></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="Lecture05_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Mean and 95% Credit Interval of aproximation algorithms and MCMC</p></section><section class="slide level2"><div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb52-2"><a></a><span class="fu">rbind</span>(</span>
+<span id="cb52-3"><a></a>  <span class="fu">cbind</span>(<span class="fu">data.frame</span>(<span class="at">Algorithm =</span> <span class="st">"Laplace Approx."</span>), fit_full_laplace<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">paste0</span>(<span class="st">"beta["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">"]"</span>), <span class="at">format =</span> <span class="st">"draws_df"</span>)[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]),</span>
+<span id="cb52-4"><a></a>  <span class="fu">cbind</span>(<span class="fu">data.frame</span>(<span class="at">Algorithm =</span> <span class="st">"Variational Inference"</span>), fit_full_vb<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">paste0</span>(<span class="st">"beta["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">"]"</span>), <span class="at">format =</span> <span class="st">"draws_df"</span>)[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]),</span>
+<span id="cb52-5"><a></a>  <span class="fu">cbind</span>(<span class="fu">data.frame</span>(<span class="at">Algorithm =</span> <span class="st">"Pathfinder"</span>), fit_pf<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">paste0</span>(<span class="st">"beta["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">"]"</span>))[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]),</span>
+<span id="cb52-6"><a></a>  <span class="fu">cbind</span>(<span class="fu">data.frame</span>(<span class="at">Algorithm =</span> <span class="st">"MCMC"</span>), fit_full_ppp<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">paste0</span>(<span class="st">"beta["</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">"]"</span>), <span class="at">format =</span> <span class="st">"draws_df"</span>)[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span>
+<span id="cb52-7"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb52-8"><a></a>  <span class="fu">mutate</span>(<span class="at">Algorithm =</span> <span class="fu">factor</span>(Algorithm, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MCMC"</span>, <span class="st">"Laplace Approx."</span>, <span class="st">"Pathfinder"</span>, <span class="st">"Variational Inference"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb52-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">starts_with</span>(<span class="st">"beta"</span>), <span class="at">names_to =</span> <span class="st">"Parameter"</span>, <span class="at">values_to =</span> <span class="st">"Draws"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb52-10"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb52-11"><a></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> Draws, <span class="at">fill =</span> Algorithm), <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb52-12"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Parameter, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Lecture05_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section><section id="wrapping-up" class="slide level2"><h2>Wrapping up</h2>
+<p>The three lectures using linear models was built to show nearly all parts needed in a Bayesian analysis</p>
+<ul>
+<li class="fragment"><p>MCMC specifications</p></li>
+<li class="fragment"><p>Prior specifications</p></li>
+<li class="fragment"><p>Assessing MCMC convergence</p></li>
+<li class="fragment"><p>Reporting MCMC results</p></li>
+<li class="fragment"><p>Determining if a model fits the data (absolute fit)</p></li>
+<li class="fragment"><p>Determining which model fits the data better (relative fit)</p></li>
+</ul>
+<p>All of these topics will be with us when we start model complicated models in our future lecture.</p>
+</section><section id="next-class" class="slide level2"><h2>Next Class</h2>
 <ol type="1">
-<li class="fragment">Bayesian Model fit</li>
-<li class="fragment">Bayesian Model Comparison</li>
-</ol>
+<li class="fragment">Generalized measurement models</li>
+</ol></section><section id="reference" class="slide level2 smaller scrollable"><h2>Reference</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../Images/UA_Logo_Horizontal.png" class="slide-logo"></p>
@@ -948,8 +1228,17 @@ looic     321.971541 5.322207</code></pre>
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-dhaka2020" class="csl-entry" role="listitem">
+Dhaka, Akash Kumar, Alejandro Catalina, Michael Riis Andersen, Måns Magnusson, Jonathan H. Huggins, and Aki Vehtari. 2020. <span>“Robust, Accurate Stochastic Optimization for Variational Inference.”</span> <em>arXiv</em>. <a href="https://doi.org/10.48550/ARXIV.2009.00666">https://doi.org/10.48550/ARXIV.2009.00666</a>.
+</div>
 <div id="ref-vehtari2016" class="csl-entry" role="listitem">
 Vehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. <span>“Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.”</span> <em>Statistics and Computing</em> 27 (5): 1413–32. <a href="https://doi.org/10.1007/s11222-016-9696-4">https://doi.org/10.1007/s11222-016-9696-4</a>.
+</div>
+<div id="ref-yao2018" class="csl-entry" role="listitem">
+Yao, Yuling, Aki Vehtari, Daniel Simpson, and Andrew Gelman. 2018. <span>“Yes, but Did It Work?: Evaluating Variational Inference.”</span> <em>arXiv</em>. <a href="https://doi.org/10.48550/ARXIV.1802.02538">https://doi.org/10.48550/ARXIV.1802.02538</a>.
+</div>
+<div id="ref-zhang2021" class="csl-entry" role="listitem">
+Zhang, Lu, Bob Carpenter, Andrew Gelman, and Aki Vehtari. 2021. <span>“Pathfinder: Parallel Quasi-Newton Variational Inference.”</span> <a href="https://doi.org/10.48550/ARXIV.2108.03782">https://doi.org/10.48550/ARXIV.2108.03782</a>.
 </div>
 </div>
 </section>
