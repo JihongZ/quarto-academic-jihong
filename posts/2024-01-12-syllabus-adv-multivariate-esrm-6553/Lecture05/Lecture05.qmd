@@ -648,6 +648,7 @@ This function calculats the standard error of the difference in `elpd` (expected
 
 ### LOO: Pareto smoothed importance sampling (PSIS)
 
+::: nonincremental
 -   Estimated a vector of Pareto shape parameters $k$ for individuals which represents the reliability of sampling:
 
     -   $k < .5$ (good) suggests the estimate converges quickly
@@ -658,15 +659,16 @@ This function calculats the standard error of the difference in `elpd` (expected
 
     -   $k > 1$ (very bad)
 
--   PSIS screens all cases that has had bad diagnostic values
+-   PSIS screens all cases that have bad diagnostic values. The percentage may tells some information regarding reliability of Bayesian estimation.
+
+-   Criteria: Estimated tail shape parameter
+
+-   This is new area, please see more references [@vehtari2016]
+:::
 
 ```{r}
 pareto_k_table(full_loo_res)
 ```
-
-Criteria: Estimated tail shape parameter
-
-This is new area, please see more references [@vehtari2016]
 
 ------------------------------------------------------------------------
 
