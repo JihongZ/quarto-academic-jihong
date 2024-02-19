@@ -11,16 +11,17 @@ website:
     tracking-id: "UA-149871707-1"
   page-navigation: true
   back-to-top-navigation: true
+  reader-mode: true
   twitter-card: 
     creator: "@jihongzgamma"
   open-graph: true
   page-footer: "Copyright 2015-2024, @JihongZ" 
-  # sidebar:
-  #   style: "floating"
-  #   contents:
-  #     - section: Contents
-  #       contents:
-  #         - auto: '*.qmd'
+  #sidebar:
+  #  style: "docked"
+  #  contents:
+  #    - section: Contents
+  #      contents:
+  #        - auto: 'posts/*/index.qmd'
   navbar:
     background: '#CEB8A6'
     collapse-below: lg
@@ -47,9 +48,8 @@ website:
 format:
   html:
     theme: 
-      light: [Cosmo, rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
-      dark: [Cyborg, rwds-dark.scss]
-    toc: true
+      light: [Flatly, rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
+      dark: [darkly, rwds-dark.scss]
     grid:
       sidebar-width: 250px
       body-width: 900px
@@ -65,6 +65,7 @@ format:
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     mainfont: 'Taub Sans'
+    fontsize: 1em
     html-math-method: katex
     # code settings
     monofont: 'JetBrains Mono'
@@ -74,9 +75,10 @@ format:
     code-overflow: wrap
     linestretch: 1.5
     # toc
+    toc: true
     table-of-contents: true
     toc-location: right
-    fontsize: 1em
+    
     
 editor: visual
 

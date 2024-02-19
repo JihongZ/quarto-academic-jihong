@@ -175,6 +175,11 @@ ga('send', {
 </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -184,8 +189,8 @@ ga('send', {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#load-required-packages" id="toc-load-required-packages" class="nav-link active" data-scroll-target="#load-required-packages"><span class="header-section-number">1</span> 0. Load Required Packages</a></li>
-  <li><a href="#read-in-xml-data" id="toc-read-in-xml-data" class="nav-link" data-scroll-target="#read-in-xml-data"><span class="header-section-number">2</span> 1. Read in XML data</a></li>
+<li><a href="#load-required-packages" id="toc-load-required-packages" class="nav-link active" data-scroll-target="#load-required-packages"><span class="header-section-number">1</span> Load Required Packages</a></li>
+  <li><a href="#read-in-xml-data" id="toc-read-in-xml-data" class="nav-link" data-scroll-target="#read-in-xml-data"><span class="header-section-number">2</span> Read in XML data</a></li>
   <li><a href="#other-materials" id="toc-other-materials" class="nav-link" data-scroll-target="#other-materials"><span class="header-section-number">3</span> Other materials</a></li>
   </ul></nav>
     </div>
@@ -222,17 +227,13 @@ ga('send', {
   
 
 
-</header>
-{{}}
-<blockquote class="blockquote">
+</header><blockquote class="blockquote">
 <p>The data contained within Health app on iPhone can be saved and exported for other uses. Perhaps you want to export Health app data to use in another health or fitness app, importing it to elsewhere, or maybe you want to use the raw Health data for your own purposes.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Exporting Health data from iPhone results in a zip archive that contains the raw data as gathered by Health app in XML format. This exported Health data will include any data stored or gathered by the Health app and any associated devices, including any Medical ID data, the native iPhone step counter and distance tracker, any data from an Apple Watch, and any data gathered from any third party devices that are syncing to Health app, like a smart scale or blood pressure monitor.</p>
 </blockquote>
 <p>You can find more details about exporting data from <a href="https://osxdaily.com/2019/05/20/export-health-data-from-iphone/">How to Export Health Data form iPhone</a> and <a href="http://www.markwk.com/data-analysis-for-apple-health.html">How to Export, Parse and Explore Your Apple Health Data with Python</a>.</p>
 <section id="load-required-packages" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="load-required-packages">
-<span class="header-section-number">1</span> 0. Load Required Packages</h2>
+<span class="header-section-number">1</span> Load Required Packages</h2>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -255,7 +256,7 @@ ga('send', {
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"kableExtra"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="read-in-xml-data" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="read-in-xml-data">
-<span class="header-section-number">2</span> 1. Read in XML data</h2>
+<span class="header-section-number">2</span> Read in XML data</h2>
 <p>The .xml file could be downloaded and exported directly from iphone’s health app. To read in the XML file and transform it into data frame, <code>XML</code> R package will help.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">loc</span><span class="op">&lt;-</span><span class="st">"导出.xml"</span> <span class="co"># enter file path location of export.xml file here #</span></span>

@@ -1070,6 +1070,7 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <li id="fn3"><p>BPM: <em>Bayesian Psychometric Modeling</em> by Levy, Mislevy (2016)↩︎</p></li>
 </ol>
 </section></div> ]]></description>
+  <category>class</category>
   <guid>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/</guid>
   <pubDate>Sat, 13 Jan 2024 06:00:00 GMT</pubDate>
 </item>
@@ -9652,17 +9653,13 @@ font-style: inherit;">git</span> push</span></code></pre></div>
   <title>Health Care Data Analysis with Apple Watch</title>
   <dc:creator>Jihong Zhang</dc:creator>
   <link>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/</link>
-  <description><![CDATA[ 
-{{}}
-<blockquote class="blockquote">
+  <description><![CDATA[ <blockquote class="blockquote">
 <p>The data contained within Health app on iPhone can be saved and exported for other uses. Perhaps you want to export Health app data to use in another health or fitness app, importing it to elsewhere, or maybe you want to use the raw Health data for your own purposes.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Exporting Health data from iPhone results in a zip archive that contains the raw data as gathered by Health app in XML format. This exported Health data will include any data stored or gathered by the Health app and any associated devices, including any Medical ID data, the native iPhone step counter and distance tracker, any data from an Apple Watch, and any data gathered from any third party devices that are syncing to Health app, like a smart scale or blood pressure monitor.</p>
 </blockquote>
 <p>You can find more details about exporting data from <a href="https://osxdaily.com/2019/05/20/export-health-data-from-iphone/">How to Export Health Data form iPhone</a> and <a href="http://www.markwk.com/data-analysis-for-apple-health.html">How to Export, Parse and Explore Your Apple Health Data with Python</a>.</p>
 <section id="load-required-packages" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="load-required-packages">
-<span class="header-section-number">1</span> 0. Load Required Packages</h2>
+<span class="header-section-number">1</span> Load Required Packages</h2>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -9911,7 +9908,7 @@ background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </div>
 </section><section id="read-in-xml-data" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="read-in-xml-data">
-<span class="header-section-number">2</span> 1. Read in XML data</h2>
+<span class="header-section-number">2</span> Read in XML data</h2>
 <p>The .xml file could be downloaded and exported directly from iphone’s health app. To read in the XML file and transform it into data frame, <code>XML</code> R package will help.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
