@@ -4,6 +4,8 @@ subtitle: "Spring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229"
 author: "Jihong Zhang"
 date: "Jan 13 2024" 
 date-modified: "Feb 7 2024"
+categories:
+  - class
 ---
 
 ![](Images/UA_Logo_Horizontal.png){width="2700"}

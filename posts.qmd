@@ -4,6 +4,6 @@ subtitle: 'Blogs about R, Python, machine learning, data science, and visualisat
 listing:
   contents: posts/*/*.[Rq]md
   sort: "date desc"
-  type: default
+  type: grid
   categories: cloud
 ---
