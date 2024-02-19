@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.10">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jihong">
 <meta name="dcterms.date" content="2018-09-12">
-<title>Dr.&nbsp;Jihong Zhang - [Manual]Using Jags and R2jags in R</title>
+
+<title>Dr. Jihong Zhang – [Manual]Using Jags and R2jags in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -72,7 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -98,7 +103,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script type="text/javascript">
+}</script>
+
+<script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -110,12 +117,16 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script>
+<link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
-<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -128,7 +139,9 @@ ga('send', {
     fleqn: false
    });
 }}});
-  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -155,6 +168,7 @@ window.Quarto = {
   typesetMath
 };
 </script>
+
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - [Manual]Using Jags and R2jags in R">
 <meta property="og:description" content="Technical and Statistical but Fun">
 <meta property="og:site_name" content="Dr. Jihong Zhang">
@@ -163,17 +177,20 @@ window.Quarto = {
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html"> <i class="bi bi-bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
@@ -194,8 +211,8 @@ window.Quarto = {
 </i> 
  <span class="menu-text">More</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
-<li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
+        <li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">Projects</span></a>
   </li>  
@@ -204,14 +221,14 @@ window.Quarto = {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-</li>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -221,27 +238,33 @@ window.Quarto = {
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#what-is-jags" id="toc-what-is-jags" class="nav-link active" data-scroll-target="#what-is-jags"><span class="header-section-number">1</span> What is JAGS?</a></li>
+  <li><a href="#what-is-jags" id="toc-what-is-jags" class="nav-link active" data-scroll-target="#what-is-jags"><span class="header-section-number">1</span> What is JAGS?</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">2</span> Installation</a></li>
-  <li>
-<a href="#jags-examples" id="toc-jags-examples" class="nav-link" data-scroll-target="#jags-examples"><span class="header-section-number">3</span> JAGS Examples</a>
+  <li><a href="#jags-examples" id="toc-jags-examples" class="nav-link" data-scroll-target="#jags-examples"><span class="header-section-number">3</span> JAGS Examples</a>
   <ul class="collapse">
-<li><a href="#beyesian-model" id="toc-beyesian-model" class="nav-link" data-scroll-target="#beyesian-model"><span class="header-section-number">3.1</span> Beyesian Model</a></li>
+  <li><a href="#beyesian-model" id="toc-beyesian-model" class="nav-link" data-scroll-target="#beyesian-model"><span class="header-section-number">3.1</span> Beyesian Model</a></li>
   <li><a href="#fitting-the-model" id="toc-fitting-the-model" class="nav-link" data-scroll-target="#fitting-the-model"><span class="header-section-number">3.2</span> Fitting the model</a></li>
   <li><a href="#diagnostics" id="toc-diagnostics" class="nav-link" data-scroll-target="#diagnostics"><span class="header-section-number">3.3</span> Diagnostics</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">[Manual]Using Jags and R2jags in R</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Manual</div>
@@ -271,62 +294,63 @@ window.Quarto = {
   
 
 
-</header><blockquote class="blockquote">
+</header>
+
+
+<blockquote class="blockquote">
 <p>This post is aimed to introduce the basics of using jags in R programming. Jags is a frequently used program for conducting Bayesian statistics.Most of information below is borrowed from <a href="http://jeromyanglim.blogspot.com/2012/04/getting-started-with-jags-rjags-and.html">Jeromy Anglim’s Blog</a>. I will keep editing this post if I found more resources about jags.</p>
 </blockquote>
-<section id="what-is-jags" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="what-is-jags">
-<span class="header-section-number">1</span> What is JAGS?</h2>
+<section id="what-is-jags" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-is-jags"><span class="header-section-number">1</span> What is JAGS?</h2>
 <p>JAGS stands for Just Another Gibbs Sampler. To quote the program author, Martyn Plummer, “It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation…” It uses a dialect of the BUGS language, similar but a little different to OpenBUGS and WinBUGS.</p>
-</section><section id="installation" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="installation">
-<span class="header-section-number">2</span> Installation</h2>
+</section>
+<section id="installation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="installation"><span class="header-section-number">2</span> Installation</h2>
 <p>To run jags with R, There is an interface with R called <code>rjags</code>. 1. <a href="http://mcmc-jags.sourceforge.net/">Download and install Jags</a> based on your operating system. 2. Install additional R packages: type <code>install.packages(c(“rjags”,”coda”))</code> in R console. <code>rjags</code> is to interface with JAGS and <code>coda</code> is to process MCMC output.</p>
-</section><section id="jags-examples" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="jags-examples">
-<span class="header-section-number">3</span> JAGS Examples</h2>
+</section>
+<section id="jags-examples" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="jags-examples"><span class="header-section-number">3</span> JAGS Examples</h2>
 <p>There are a lot of examples online. The following provides links or simple codes to JAGS code.</p>
 <ul>
 <li>Justin Esarey
 <ul>
 <li>An entire course on <a href="http://jee3.web.rice.edu/teaching.htm">Bayesian Statistics</a> with examples in R and JAGS. It includes 10 lectures and each lecture lasts around 2 hours. The content is designed for a social science audience and it includes a syllabus linking with Simon Jackman’s text. The videos are linked from above or available direclty on <a href="http://www.youtube.com/playlist?list=PLAFC5F02F224FA59F">YouTube</a>.</li>
-</ul>
-</li>
+</ul></li>
 <li>Jeromy Anglim
 <ul>
-<li>The author of this blog also provides a few examples. He shared the codes on his <a href="https://github.com/jeromyanglim">github account</a>
-</li>
-</ul>
-</li>
+<li>The author of this blog also provides a few examples. He shared the codes on his <a href="https://github.com/jeromyanglim">github account</a></li>
+</ul></li>
 <li>John Myles White
 <ul>
 <li>A course on statistical models that is under development with <a href="https://github.com/johnmyleswhite/JAGSExamples">JAGS scripts on github</a>.</li>
 <li><a href="http://www.johnmyleswhite.com/notebook/2010/08/20/using-jags-in-r-with-the-rjags-package/">Simple introductory examples of fitting a normal distribution, linear regression, and logistic regression</a></li>
 <li>A follow-up post demonstrating the use of the coda package with rjags to perform <a href="http://www.johnmyleswhite.com/notebook/2010/08/29/mcmc-diagnostics-in-r-with-the-coda-package/">MCMC diagnostics</a>.</li>
-</ul>
-</li>
+</ul></li>
 <li>A simple simulation sample:</li>
 </ul>
 <p>First, simulate the Data:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">R2jags</span><span class="op">)</span></span>
-<span><span class="va">n.sim</span> <span class="op">&lt;-</span> <span class="fl">100</span>; <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">x1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n.sim</span>, mean <span class="op">=</span> <span class="fl">5</span>, sd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">n.sim</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span>
-<span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n.sim</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n.sim <span class="ot">&lt;-</span> <span class="dv">100</span>; <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n.sim, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n.sim, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we create the outcome y based on coefficients <span class="math inline">b_1</span> and <span class="math inline">b_2</span> for the respective predictors and an intercept a:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b1</span> <span class="op">&lt;-</span> <span class="fl">1.2</span></span>
-<span><span class="va">b2</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">3.1</span></span>
-<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1.5</span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">b1</span><span class="op">*</span><span class="va">x1</span> <span class="op">+</span> <span class="va">b2</span><span class="op">*</span><span class="va">x2</span> <span class="op">+</span> <span class="va">e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b1<span class="sc">*</span>x1 <span class="sc">+</span> b2<span class="sc">*</span>x2 <span class="sc">+</span> e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we combine the variables into one dataframe for processing later:</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sim.dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">x1</span>, <span class="va">x2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim.dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And we create and summarize a (frequentist) linear model fit on these data:</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">freq.mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x1</span> <span class="op">+</span> <span class="va">x2</span>, data <span class="op">=</span> <span class="va">sim.dat</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">freq.mod</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>freq.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> sim.dat)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(freq.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -349,53 +373,54 @@ Multiple R-squared:  0.8772,    Adjusted R-squared:  0.8747
 F-statistic: 346.5 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<section id="beyesian-model" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="beyesian-model">
-<span class="header-section-number">3.1</span> Beyesian Model</h3>
+<section id="beyesian-model" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="beyesian-model"><span class="header-section-number">3.1</span> Beyesian Model</h3>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bayes.mod</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span> <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">N</span><span class="op">)</span><span class="op">{</span></span>
-<span> <span class="va">y</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">mu</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, <span class="va">tau</span><span class="op">)</span></span>
-<span> <span class="va">mu</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">alpha</span> <span class="op">+</span> <span class="va">beta1</span> <span class="op">*</span> <span class="va">x1</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">+</span> <span class="va">beta2</span> <span class="op">*</span> <span class="va">x2</span><span class="op">[</span><span class="va">i</span><span class="op">]</span></span>
-<span> <span class="op">}</span></span>
-<span> <span class="va">alpha</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.01</span><span class="op">)</span></span>
-<span> <span class="va">beta1</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">dunif</a></span><span class="op">(</span><span class="op">-</span><span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span></span>
-<span> <span class="va">beta2</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">dunif</a></span><span class="op">(</span><span class="op">-</span><span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span></span>
-<span> <span class="va">tau</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/GammaDist.html">dgamma</a></span><span class="op">(</span><span class="fl">.01</span>, <span class="fl">.01</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bayes.mod <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> y[i] <span class="sc">~</span> <span class="fu">dnorm</span>(mu[i], tau)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> mu[i] <span class="ot">&lt;-</span> alpha <span class="sc">+</span> beta1 <span class="sc">*</span> x1[i] <span class="sc">+</span> beta2 <span class="sc">*</span> x2[i]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a> alpha <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, .<span class="dv">01</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a> beta1 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> beta2 <span class="sc">~</span> <span class="fu">dunif</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> tau <span class="sc">~</span> <span class="fu">dgamma</span>(.<span class="dv">01</span>, .<span class="dv">01</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now define the vectors of the data matrix for JAGS:</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">sim.dat</span><span class="op">$</span><span class="va">y</span></span>
-<span><span class="va">x1</span> <span class="op">&lt;-</span> <span class="va">sim.dat</span><span class="op">$</span><span class="va">x1</span></span>
-<span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="va">sim.dat</span><span class="op">$</span><span class="va">x2</span></span>
-<span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">sim.dat</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>y</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x1</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> sim.dat<span class="sc">$</span>x2</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sim.dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Read in the data frame for JAGS</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sim.dat.jags</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"y"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"N"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sim.dat.jags <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"y"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"N"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Define the parameters whose posterior distributions you are interested in summarizing later:</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bayes.mod.params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"alpha"</span>, <span class="st">"beta1"</span>, <span class="st">"beta2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bayes.mod.params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"alpha"</span>, <span class="st">"beta1"</span>, <span class="st">"beta2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Setting up starting values</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bayes.mod.inits</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
-<span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"alpha"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, <span class="st">"beta1"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, <span class="st">"beta2"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># inits1 &lt;- list("alpha" = 0, "beta1" = 0, "beta2" = 0)</span></span>
-<span><span class="co"># inits2 &lt;- list("alpha" = 1, "beta1" = 1, "beta2" = 1)</span></span>
-<span><span class="co"># inits3 &lt;- list("alpha" = -1, "beta1" = -1, "beta2" = -1)</span></span>
-<span><span class="co"># bayes.mod.inits &lt;- list(inits1, inits2, inits3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bayes.mod.inits <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(<span class="st">"alpha"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta1"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>), <span class="st">"beta2"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># inits1 &lt;- list("alpha" = 0, "beta1" = 0, "beta2" = 0)</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># inits2 &lt;- list("alpha" = 1, "beta1" = 1, "beta2" = 1)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># inits3 &lt;- list("alpha" = -1, "beta1" = -1, "beta2" = -1)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># bayes.mod.inits &lt;- list(inits1, inits2, inits3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="fitting-the-model" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="fitting-the-model">
-<span class="header-section-number">3.2</span> Fitting the model</h3>
+</section>
+<section id="fitting-the-model" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="fitting-the-model"><span class="header-section-number">3.2</span> Fitting the model</h3>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">bayes.mod.fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/R2jags/man/jags.html">jags</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sim.dat.jags</span>, inits <span class="op">=</span> <span class="va">bayes.mod.inits</span>,</span>
-<span>  parameters.to.save <span class="op">=</span> <span class="va">bayes.mod.params</span>, n.chains <span class="op">=</span> <span class="fl">3</span>, n.iter <span class="op">=</span> <span class="fl">9000</span>,</span>
-<span>  n.burnin <span class="op">=</span> <span class="fl">1000</span>, model.file <span class="op">=</span> <span class="va">bayes.mod</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>bayes.mod.fit <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> sim.dat.jags, <span class="at">inits =</span> bayes.mod.inits,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters.to.save =</span> bayes.mod.params, <span class="at">n.chains =</span> <span class="dv">3</span>, <span class="at">n.iter =</span> <span class="dv">9000</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n.burnin =</span> <span class="dv">1000</span>, <span class="at">model.file =</span> bayes.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>module glm loaded</code></pre>
 </div>
@@ -411,10 +436,11 @@ Graph information:
 Initializing model</code></pre>
 </div>
 </div>
-</section><section id="diagnostics" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="diagnostics">
-<span class="header-section-number">3.3</span> Diagnostics</h3>
+</section>
+<section id="diagnostics" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="diagnostics"><span class="header-section-number">3.3</span> Diagnostics</h3>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">bayes.mod.fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Inference for Bugs model at "/var/folders/9t/ryz7lf_s7ts720p_lwdttfhm0000gn/T//RtmppxyFg2/model157ce57d94444.txt", fit using jags,
  3 chains, each with 9000 iterations (first 1000 discarded), n.thin = 8
@@ -433,13 +459,17 @@ pD = 4.2 and DIC = 276.0
 DIC is an estimate of expected predictive error (lower deviance is better).</code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">bayes.mod.fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">traceplot</span><span class="op">(</span><span class="va">bayes.mod.fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">traceplot</span>(bayes.mod.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"><img src="index_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"><img src="index_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid" width="672"><img src="index_files/figure-html/unnamed-chunk-13-4.png" class="img-fluid" width="672"></p>
 
 
-</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -969,10 +999,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark">
+</script>
+<script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -984,6 +1018,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
