@@ -13,6 +13,7 @@
     <lastmod>2024-02-19T01:49:24.348Z</lastmod>
   </url>
   <url>
+<<<<<<< HEAD
     <loc>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</loc>
     <lastmod>2024-01-31T19:14:10.513Z</lastmod>
   </url>
@@ -42,6 +43,37 @@
   </url>
   <url>
     <loc>https://jihongzhang.org/posts/2018-04-29-updateing-R/index.html</loc>
+=======
+    <loc>https://jihongzhang.org/posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html</loc>
+    <lastmod>2024-02-18T04:49:11.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html</loc>
+    <lastmod>2024-02-02T05:48:28.543Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html</loc>
+    <lastmod>2024-02-18T04:19:39.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html</loc>
+    <lastmod>2024-02-02T05:48:06.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html</loc>
+    <lastmod>2024-02-11T23:13:44.605Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2019-10-08-handout-for-smep-poster/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2018-09-12-manual-learn-jags-in-r/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2017-11-20-Longitudinal-Effect-of-Motivation/index.html</loc>
+>>>>>>> 26e7866dd7e640651d089fdc98c55614902d1571
     <lastmod>2024-01-31T19:14:10.503Z</lastmod>
   </url>
   <url>
@@ -205,8 +237,101 @@
     <lastmod>2024-02-18T04:49:11.359Z</lastmod>
   </url>
   <url>
+<<<<<<< HEAD
     <loc>https://jihongzhang.org/projects/2024-Mixing-Network-DCM/index.html</loc>
     <lastmod>2024-02-09T02:00:22.749Z</lastmod>
+=======
+    <loc>https://jihongzhang.org/posts/2017-11-10-Linking-simulation/index.html</loc>
+    <lastmod>2024-02-16T02:37:37.522Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.513Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2023-07-04-data-visualization-for-survey-data/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.624Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/index.html</loc>
+    <lastmod>2024-02-11T00:26:34.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2020-05-25-study-notes-gt-package-and-format-table/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2023-06-26-moving-to-quarto/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2021-07-04-visualization-for-process-data/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2021-01-31-ppmc-cfa/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2018-09-11-model-checking-in-dcm/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.571Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2019-11-14-use-r-as-a-bash/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.504Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2018-04-29-updateing-R/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2021-08-30-gradient-descent-via-julia/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2017-11-12-MESUREMENT-INVARIANCE/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html</loc>
+    <lastmod>2024-02-09T02:00:22.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html</loc>
+    <lastmod>2024-02-18T00:32:24.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Homeworks/Homework.html</loc>
+    <lastmod>2024-02-16T02:16:00.188Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2023-06-28-a-tutorial-for-forester-r-package/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jihongzhang.org/posts/2019-02-22-Play-With-gganimate/index.html</loc>
+    <lastmod>2024-01-31T19:14:10.513Z</lastmod>
+>>>>>>> 26e7866dd7e640651d089fdc98c55614902d1571
   </url>
   <url>
     <loc>https://jihongzhang.org/projects.html</loc>
