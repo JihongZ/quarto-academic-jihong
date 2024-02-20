@@ -453,13 +453,48 @@ Jihong Zhang
 <li class="fragment">
 <p>In previous class…</p>
 <ol type="1">
-<li class="fragment"><p>We estimated the empty model and the full model (you can try other constrained model between the empty and full model)</p></li>
+<li class="fragment">
+<p>We estimated the empty model and the full model (you can try other constrained model between the empty and full model)</p>
+<ul>
+<li class="fragment"><p>Empty model: a model without any covariate (predictors)</p></li>
+<li class="fragment"><p>Full model: a model with all possible covariates and up-to highest interaction effects</p></li>
+</ul>
+</li>
 <li class="fragment"><p>We also make the Stan code more efficient by vectorizing the parameters and the data</p></li>
-<li class="fragment"><p>The next question is how to determine the model is “good” enough</p></li>
+<li class="fragment">
+<p>The next question is <strong>how to determine the model is “good” enough</strong></p>
+<ul>
+<li class="fragment"><p>“good” has multiple meanings</p></li>
+<li class="fragment"><p>a typical criteria is to what degree the model can generate a “simulated” data that is similar to the original data</p></li>
+<li class="fragment"><p>or, the likelihood of original data given the parameters of model</p></li>
+</ul>
+</li>
 </ol>
 </li>
-</ol></section><section id="absolute-model-fit-ppmc" class="slide level2"><h2>Absolute Model Fit: PPMC</h2>
-<p><strong>Posterior predictive model checking</strong> (PPMC) is a Bayesian method for determining if a model fits the data.</p>
+</ol></section><section id="types-of-model-fit" class="slide level2"><h2>Types of Model fit</h2>
+<ul>
+<li class="fragment">
+<p>Absolute model fit</p>
+<ul>
+<li class="fragment"><p>PPMC</p></li>
+<li class="fragment"><p>In SEM, RMSEA, chi-square, SRMR, and GFI</p></li>
+</ul>
+</li>
+<li class="fragment">
+<p>Relative model fit</p>
+<ul>
+<li class="fragment">information criterion</li>
+</ul>
+</li>
+<li class="fragment">
+<p>Incremental model fit (not frequently used other than SEM)</p>
+<ul>
+<li class="fragment"><p>A special type of absolute model fit - how a model fits to a saturated model</p></li>
+<li class="fragment"><p>In SEM, comparative fit index (CFI), Tucker-Lewis index (TLI)</p></li>
+</ul>
+</li>
+</ul></section><section id="absolute-model-fit-ppmc" class="slide level2"><h2>Absolute Model Fit: PPMC</h2>
+<p><strong>Posterior predictive model checking</strong> <span class="citation" data-cites="gelman1996">(<a href="#/reference" role="doc-biblioref" onclick="">Gelman, Meng, and Stern 1996</a>)</span> is a Bayesian method evaluation technique for determining if a model fits the data.</p>
 <ul>
 <li class="fragment">
 <p>Absolute model fit: “Does my model fit my data well?”</p>
@@ -722,22 +757,27 @@ draw   beta[1] beta[2] beta[3] beta[4] beta[5] beta[6] sigma
 </div>
 </section><section id="ppmc-characteristics" class="slide level2"><h2>PPMC Characteristics</h2>
 <p>PPMC methods are very useful</p>
+<div>
 <ul>
-<li class="fragment"><p>They provide a visual way to determine if the model fits the observed data</p></li>
-<li class="fragment"><p>They are the main method of assessing absolute fit in Bayesian models</p></li>
-<li class="fragment"><p>Absolute fit assesses if a model fits the data instead of comparing to another model</p></li>
+<li>They provide a visual way to determine if the model fits the observed data</li>
+<li>They are the main method of assessing absolute fit in Bayesian models</li>
+<li>Absolute fit assesses if a model fits the data instead of comparing to another model</li>
 </ul>
+</div>
 <p>But, there are some drawbacks to PPMC methods</p>
+<div>
 <ul>
-<li class="fragment">
-<p>Almost any statistic can be used</p>
+<li>Almost any statistic can be used
 <ul>
-<li class="fragment">Some are better than others (mean and SD of outcomes are nice choices for linear regression)</li>
+<li>Some are better than others (mean and SD of outcomes are nice choices for linear regression)</li>
 </ul>
 </li>
-<li class="fragment"><p>No standard determining how much misfit is too much</p></li>
-<li class="fragment"><p>May be overwhelming to compute depending on your model</p></li>
-</ul></section><section id="posterior-predictive-p-values" class="slide level2"><h2>Posterior Predictive P-values</h2>
+<li>No standard determining how much misfit is too much</li>
+<li>May be overwhelming to compute depending on your model</li>
+</ul>
+</div>
+<p><strong>Question</strong>: Can PPMC be used for models with maximum likelihood estimation or ordinary least squares?</p>
+</section><section id="posterior-predictive-p-values" class="slide level2"><h2>Posterior Predictive P-values</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>We can summarize the PPMC using a type of “p-value”</p>
@@ -1232,6 +1272,9 @@ empty -51.3       7.9  </code></pre>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-dhaka2020" class="csl-entry" role="listitem">
 Dhaka, Akash Kumar, Alejandro Catalina, Michael Riis Andersen, Måns Magnusson, Jonathan H. Huggins, and Aki Vehtari. 2020. <span>“Robust, Accurate Stochastic Optimization for Variational Inference.”</span> <em>arXiv</em>. <a href="https://doi.org/10.48550/ARXIV.2009.00666">https://doi.org/10.48550/ARXIV.2009.00666</a>.
+</div>
+<div id="ref-gelman1996" class="csl-entry" role="listitem">
+Gelman, Andrew, Xiao-Li Meng, and Hal Stern. 1996. <span>“Posterior Predictive Assessment of Model Fitness Via Realized Discrepancies.”</span> <em>Statistica Sinica</em>.
 </div>
 <div id="ref-vehtari2016" class="csl-entry" role="listitem">
 Vehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. <span>“Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.”</span> <em>Statistics and Computing</em> 27 (5): 1413–32. <a href="https://doi.org/10.1007/s11222-016-9696-4">https://doi.org/10.1007/s11222-016-9696-4</a>.

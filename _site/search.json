@@ -81,14 +81,21 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#todays-lecture-objectives",
     "title": "Lecture 05",
     "section": "Today’s Lecture Objectives",
-    "text": "Today’s Lecture Objectives\n\nBayesian methods for determining how well a model fits the data (absolute fit)\nBayesian methods for determining which model fits better (relative model fit)\n\nIn previous class…\n\nWe estimated the empty model and the full model (you can try other constrained model between the empty and full model)\nWe also make the Stan code more efficient by vectorizing the parameters and the data\nThe next question is how to determine the model is “good” enough"
+    "text": "Today’s Lecture Objectives\n\nBayesian methods for determining how well a model fits the data (absolute fit)\nBayesian methods for determining which model fits better (relative model fit)\n\nIn previous class…\n\n\nWe estimated the empty model and the full model (you can try other constrained model between the empty and full model)\n\nEmpty model: a model without any covariate (predictors)\nFull model: a model with all possible covariates and up-to highest interaction effects\n\n\nWe also make the Stan code more efficient by vectorizing the parameters and the data\n\nThe next question is how to determine the model is “good” enough\n\n“good” has multiple meanings\na typical criteria is to what degree the model can generate a “simulated” data that is similar to the original data\nor, the likelihood of original data given the parameters of model"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#types-of-model-fit",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#types-of-model-fit",
+    "title": "Lecture 05",
+    "section": "Types of Model fit",
+    "text": "Types of Model fit\n\n\nAbsolute model fit\n\nPPMC\nIn SEM, RMSEA, chi-square, SRMR, and GFI\n\n\n\nRelative model fit\n\ninformation criterion\n\n\n\nIncremental model fit (not frequently used other than SEM)\n\nA special type of absolute model fit - how a model fits to a saturated model\nIn SEM, comparative fit index (CFI), Tucker-Lewis index (TLI)"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#absolute-model-fit-ppmc",
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#absolute-model-fit-ppmc",
     "title": "Lecture 05",
     "section": "Absolute Model Fit: PPMC",
-    "text": "Absolute Model Fit: PPMC\nPosterior predictive model checking (PPMC) is a Bayesian method for determining if a model fits the data.\n\n\nAbsolute model fit: “Does my model fit my data well?”\n\nRecall that “model is a simplified version of the true data-generation process”\nThus, the model should be able to reproduce the “data” that is similar to observed data\nIn machine learning, this is also called “validation”, typically used as a separate “validation data sets”\n\n\nOverall idea: if a model fits the data well, then simulated data based on the model will resemble the observed data"
+    "text": "Absolute Model Fit: PPMC\nPosterior predictive model checking (Gelman, Meng, and Stern 1996) is a Bayesian method evaluation technique for determining if a model fits the data.\n\n\nAbsolute model fit: “Does my model fit my data well?”\n\nRecall that “model is a simplified version of the true data-generation process”\nThus, the model should be able to reproduce the “data” that is similar to observed data\nIn machine learning, this is also called “validation”, typically used as a separate “validation data sets”\n\n\nOverall idea: if a model fits the data well, then simulated data based on the model will resemble the observed data"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#ppmc-example-linear-models",
@@ -102,7 +109,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#ppmc-characteristics",
     "title": "Lecture 05",
     "section": "PPMC Characteristics",
-    "text": "PPMC Characteristics\nPPMC methods are very useful\n\nThey provide a visual way to determine if the model fits the observed data\nThey are the main method of assessing absolute fit in Bayesian models\nAbsolute fit assesses if a model fits the data instead of comparing to another model\n\nBut, there are some drawbacks to PPMC methods\n\n\nAlmost any statistic can be used\n\nSome are better than others (mean and SD of outcomes are nice choices for linear regression)\n\n\nNo standard determining how much misfit is too much\nMay be overwhelming to compute depending on your model"
+    "text": "PPMC Characteristics\nPPMC methods are very useful\n\n\nThey provide a visual way to determine if the model fits the observed data\nThey are the main method of assessing absolute fit in Bayesian models\nAbsolute fit assesses if a model fits the data instead of comparing to another model\n\n\nBut, there are some drawbacks to PPMC methods\n\n\nAlmost any statistic can be used\n\nSome are better than others (mean and SD of outcomes are nice choices for linear regression)\n\n\nNo standard determining how much misfit is too much\nMay be overwhelming to compute depending on your model\n\n\nQuestion: Can PPMC be used for models with maximum likelihood estimation or ordinary least squares?"
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#posterior-predictive-p-values",
@@ -193,7 +200,7 @@
     "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html#reference",
     "title": "Lecture 05",
     "section": "Reference",
-    "text": "Reference\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553\n\n\n\n\nDhaka, Akash Kumar, Alejandro Catalina, Michael Riis Andersen, Måns Magnusson, Jonathan H. Huggins, and Aki Vehtari. 2020. “Robust, Accurate Stochastic Optimization for Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.2009.00666.\n\n\nVehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. “Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.” Statistics and Computing 27 (5): 1413–32. https://doi.org/10.1007/s11222-016-9696-4.\n\n\nYao, Yuling, Aki Vehtari, Daniel Simpson, and Andrew Gelman. 2018. “Yes, but Did It Work?: Evaluating Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.1802.02538.\n\n\nZhang, Lu, Bob Carpenter, Andrew Gelman, and Aki Vehtari. 2021. “Pathfinder: Parallel Quasi-Newton Variational Inference.” https://doi.org/10.48550/ARXIV.2108.03782."
+    "text": "Reference\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553\n\n\n\n\nDhaka, Akash Kumar, Alejandro Catalina, Michael Riis Andersen, Måns Magnusson, Jonathan H. Huggins, and Aki Vehtari. 2020. “Robust, Accurate Stochastic Optimization for Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.2009.00666.\n\n\nGelman, Andrew, Xiao-Li Meng, and Hal Stern. 1996. “Posterior Predictive Assessment of Model Fitness Via Realized Discrepancies.” Statistica Sinica.\n\n\nVehtari, Aki, Andrew Gelman, and Jonah Gabry. 2016. “Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and WAIC.” Statistics and Computing 27 (5): 1413–32. https://doi.org/10.1007/s11222-016-9696-4.\n\n\nYao, Yuling, Aki Vehtari, Daniel Simpson, and Andrew Gelman. 2018. “Yes, but Did It Work?: Evaluating Variational Inference.” arXiv. https://doi.org/10.48550/ARXIV.1802.02538.\n\n\nZhang, Lu, Bob Carpenter, Andrew Gelman, and Aki Vehtari. 2021. “Pathfinder: Parallel Quasi-Newton Variational Inference.” https://doi.org/10.48550/ARXIV.2108.03782."
   },
   {
     "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html#todays-lecture-objectives",

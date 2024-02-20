@@ -40,13 +40,41 @@ bibliography: references.bib
 
     1.  We estimated the empty model and the full model (you can try other constrained model between the empty and full model)
 
+        -   Empty model: a model without any covariate (predictors)
+
+        -   Full model: a model with all possible covariates and up-to highest interaction effects
+
     2.  We also make the Stan code more efficient by vectorizing the parameters and the data
 
-    3.  The next question is how to determine the model is "good" enough
+    3.  The next question is **how to determine the model is "good" enough**
+
+        -   "good" has multiple meanings
+
+        -   a typical criteria is to what degree the model can generate a "simulated" data that is similar to the original data
+
+        -   or, the likelihood of original data given the parameters of model
+
+## Types of Model fit
+
+-   Absolute model fit
+
+    -   PPMC
+
+    -   In SEM, RMSEA, chi-square, SRMR, and GFI
+
+-   Relative model fit
+
+    -   information criterion
+
+-   Incremental model fit (not frequently used other than SEM)
+
+    -   A special type of absolute model fit - how a model fits to a saturated model
+
+    -   In SEM, comparative fit index (CFI), Tucker-Lewis index (TLI)
 
 ## Absolute Model Fit: PPMC
 
-**Posterior predictive model checking** (PPMC) is a Bayesian method for determining if a model fits the data.
+**Posterior predictive model checking** [@gelman1996] is a Bayesian method evaluation technique for determining if a model fits the data.
 
 -   Absolute model fit: "Does my model fit my data well?"
 
@@ -101,7 +129,7 @@ with:
 
 ```{r}
 #| echo: false
-load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture05", "Code","Lecture05.RData"))
+load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture05", "Code", "Lecture05.RData"))
 ```
 
 ```{r}
@@ -289,21 +317,22 @@ ggplot(ppp) +
 
 PPMC methods are very useful
 
+::: nonincremental
 -   They provide a visual way to determine if the model fits the observed data
-
 -   They are the main method of assessing absolute fit in Bayesian models
-
 -   Absolute fit assesses if a model fits the data instead of comparing to another model
+:::
 
 But, there are some drawbacks to PPMC methods
 
+::: nonincremental
 -   Almost any statistic can be used
-
     -   Some are better than others (mean and SD of outcomes are nice choices for linear regression)
-
 -   No standard determining how much misfit is too much
-
 -   May be overwhelming to compute depending on your model
+:::
+
+**Question**: Can PPMC be used for models with maximum likelihood estimation or ordinary least squares?
 
 ------------------------------------------------------------------------
 
