@@ -9,7 +9,7 @@
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2024-02-10">
 
-<title>Dr. Jihong Zhang – Customize font family of Visual Mode in Rstudio</title>
+<title>Dr. Jihong Zhang – Customize font family of Visual Mode in Rstudio and in Zotero</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -126,10 +126,10 @@ ga('send', {
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
 
 
-<meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Customize font family of Visual Mode in Rstudio">
+<meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Customize font family of Visual Mode in Rstudio and in Zotero">
 <meta property="og:description" content="Technical and Statistical but Fun">
 <meta property="og:site_name" content="Dr. Jihong Zhang">
-<meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Customize font family of Visual Mode in Rstudio">
+<meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Customize font family of Visual Mode in Rstudio and in Zotero">
 <meta name="twitter:description" content="Technical and Statistical but Fun">
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
@@ -201,15 +201,22 @@ ga('send', {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#rstudio-visual-editor-font" id="toc-rstudio-visual-editor-font" class="nav-link active" data-scroll-target="#rstudio-visual-editor-font"><span class="header-section-number">1</span> Rstudio Visual Editor Font</a></li>
+  <li><a href="#zotero-editor-font" id="toc-zotero-editor-font" class="nav-link" data-scroll-target="#zotero-editor-font"><span class="header-section-number">2</span> Zotero Editor Font</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Customize font family of Visual Mode in Rstudio</h1>
+<h1 class="title">Customize font family of Visual Mode in Rstudio and in Zotero</h1>
 </div>
 
 
@@ -238,6 +245,8 @@ ga('send', {
 </header>
 
 
+<section id="rstudio-visual-editor-font" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="rstudio-visual-editor-font"><span class="header-section-number">1</span> Rstudio Visual Editor Font</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="newthemess.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -249,30 +258,30 @@ ga('send', {
 </blockquote>
 <p>First of all, users can install some customized rstudio themes from github. For example, following guidelines <a href="https://github.com/lusignan/RStudio-Material-Theme">here</a>.</p>
 <p>Second, on Mac, copy one .rstheme file (~/.config/rstudio/themes) and rename it to your customized file (in my case, <code>jihongMaterials.rstheme</code>).</p>
-<div class="sourceCode" id="cb1" data-echo="fenced"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span>  rstudio ls   </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dictionaries</span>       rstudio-prefs.json themes</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span>  rstudio cd themes </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span>  themes ls</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">material-lighter.rstheme</span>   material-palenight.rstheme material.rstheme</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span>  themes cp material.rstheme jihongMaterial.rstheme</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span>  themes code jihongMaterial.rstheme        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-echo="fenced"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">➜</span>  rstudio ls   </span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">dictionaries</span>       rstudio-prefs.json themes</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">➜</span>  rstudio cd themes </span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">➜</span>  themes ls</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">material-lighter.rstheme</span>   material-palenight.rstheme material.rstheme</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="ex">➜</span>  themes cp material.rstheme jihongMaterial.rstheme</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">➜</span>  themes code jihongMaterial.rstheme        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Third, open up the <code>.rstheme</code> file and add the following code in the beginning of the file:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>jihongMaterial.rstheme</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="jihongMaterial.rstheme"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* rs-theme-name: jihongMaterial */</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rs-theme-is-dark: TRUE */</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.pm-proportional-font</span> {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Apple SD Gothic Neo"</span><span class="op">,</span> <span class="dv">serif</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">pt</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">.pm-editing-root-node</span> {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-left</span><span class="ch">:</span> <span class="fu">calc(</span>(<span class="dv">100</span><span class="dt">%</span> <span class="op">-</span> <span class="dv">1300</span><span class="dt">px</span>)<span class="op">/</span><span class="dv">2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-right</span><span class="ch">:</span> <span class="fu">calc(</span>(<span class="dv">100</span><span class="dt">%</span> <span class="op">-</span> <span class="dv">1300</span><span class="dt">px</span>)<span class="op">/</span><span class="dv">2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-filename="jihongMaterial.rstheme"><pre class="sourceCode numberSource css code-overflow-scroll number-lines code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">/* rs-theme-name: jihongMaterial */</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">/* rs-theme-is-dark: TRUE */</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">.pm-proportional-font</span> {</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Apple SD Gothic Neo"</span><span class="op">,</span> <span class="dv">serif</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">pt</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">.pm-editing-root-node</span> {</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    <span class="kw">padding-left</span><span class="ch">:</span> <span class="fu">calc(</span>(<span class="dv">100</span><span class="dt">%</span> <span class="op">-</span> <span class="dv">1300</span><span class="dt">px</span>)<span class="op">/</span><span class="dv">2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="kw">padding-right</span><span class="ch">:</span> <span class="fu">calc(</span>(<span class="dv">100</span><span class="dt">%</span> <span class="op">-</span> <span class="dv">1300</span><span class="dt">px</span>)<span class="op">/</span><span class="dv">2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that .pm-proportional-font controls the font in Visual model. Users can change the font family/size just like CSS file.</p>
 <p>Now, restart your Rstudio, select your theme from `Global Options`. You should find the user-specified font family in your Visual Model</p>
@@ -281,8 +290,381 @@ ga('send', {
 <ul>
 <li>Please look over the <a href="https://docs.posit.co/ide/user/ide/guide/ui/appearance.html">website</a> for more details.</li>
 </ul>
+</section>
+<section id="zotero-editor-font" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="zotero-editor-font"><span class="header-section-number">2</span> Zotero Editor Font</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="zoteroscreenshot.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot for Zotero windown</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash code-overflow-scroll number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">➜</span>  mkdir /Users/<span class="pp">[</span><span class="ss">username</span><span class="pp">]</span>/Library/Application\ Support/Zotero/Profiles/<span class="pp">[</span><span class="ss">xxxxxxx</span><span class="pp">]</span>.default/Chrome</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">➜</span>  cd /Users/<span class="pp">[</span><span class="ss">username</span><span class="pp">]</span>/Library/Application\ Support/Zotero/Profiles/<span class="pp">[</span><span class="ss">xxxxxxx</span><span class="pp">]</span>.default/Chrome </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">➜</span>  touch userChrome.css</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">➜</span>  vim userChrome.css </span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">➜</span>  open userChrome.css </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To change the font family for Zotero window, create a new folder “Chrome” in above path. Next, create a <code>userChrome.css</code> in that folder. A template for css file is <a href="https://github.com/Rosmaninho/Zotero-Dark-Theme">here</a>. Add font-family setting in the first several lines (line3-5).</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>userChrome.css</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="userChrome.css"><pre class="sourceCode numberSource css code-overflow-scroll number-lines code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">/*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="op">*</span> {<span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">'Baloo 2'</span><span class="op">,</span> <span class="dv">Source Sans Pro</span><span class="op">,</span> <span class="dv">Fira Sans</span><span class="op">,</span> <span class="dv">SF Pro Text</span><span class="op">,</span> <span class="dv">-apple-system</span><span class="op">,</span> <span class="dv">sans-serif</span> <span class="at">!</span> <span class="dv">important</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">/*change background color and text color of zotero toolbar and menubar*/</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="pp">#zotero-tb</span><span class="op">,</span> <span class="pp">#zotero-toolbar</span><span class="op">,</span> <span class="pp">#navigator-toolbox</span><span class="op">,</span> <span class="pp">#tab-bar-container</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="pp">#zotero-toolbar</span> {<span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">/*change color of menu items to white*/</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="pp">#navigator-toolbox</span> menu { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span> }</span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">/*change color of menu items in drop down menus back to black*/</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="pp">#manage-attachments-menu</span> label<span class="op">,</span> <span class="pp">#developer-menu</span> label<span class="op">,</span> <span class="pp">#layout-menu</span> label<span class="op">,</span> <span class="pp">#note-font-size-menu</span> label<span class="op">,</span> <span class="pp">#font-size-menu</span> label<span class="op">,</span> <span class="pp">#debug-output-menu</span> label<span class="op">,</span> <span class="pp">#new-item</span> label { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">/*Fixed New Item showing in white*/</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="pp">#navigator-toolbox</span> menu<span class="in">:first-child</span> { <span class="kw">color</span><span class="ch">:</span> <span class="bu">unset</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co">/*Change color of tags selector below collections tree*/</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="pp">#zotero-tag-selector-container</span> {  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="kw">border-top</span><span class="ch">:</span><span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="pp">#zotero-tag-selector-container</span> input { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-29"><a href="#cb4-29"></a></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="fu">.tag-selector-list-container</span> {<span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-33"><a href="#cb4-33"></a></span>
+<span id="cb4-34"><a href="#cb4-34"></a><span class="co">/* for Zotero 6*/</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a><span class="fu">.tag-selector-item</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#BBCEF1</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-37"><a href="#cb4-37"></a></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="fu">.tag-selector-item</span> {</span>
+<span id="cb4-39"><a href="#cb4-39"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a><span class="kw">color</span><span class="ch">:</span><span class="cn">white</span> <span class="op">;</span> }</span>
+<span id="cb4-41"><a href="#cb4-41"></a></span>
+<span id="cb4-42"><a href="#cb4-42"></a><span class="fu">.tag-selector-item.selected</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-43"><a href="#cb4-43"></a>    <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-44"><a href="#cb4-44"></a></span>
+<span id="cb4-45"><a href="#cb4-45"></a><span class="fu">.tag-selector-item.selected</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#BBCEF1</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-46"><a href="#cb4-46"></a>    <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-47"><a href="#cb4-47"></a></span>
+<span id="cb4-48"><a href="#cb4-48"></a><span class="pp">#zotero-tb-search</span> { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-52"><a href="#cb4-52"></a></span>
+<span id="cb4-53"><a href="#cb4-53"></a><span class="pp">#zotero-pane</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-55"><a href="#cb4-55"></a></span>
+<span id="cb4-56"><a href="#cb4-56"></a><span class="co">/*change background and color of collections and items panes*/</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a>treechildren { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-59"><a href="#cb4-59"></a></span>
+<span id="cb4-60"><a href="#cb4-60"></a><span class="co">/*for Zotero 6*/</span></span>
+<span id="cb4-61"><a href="#cb4-61"></a><span class="fu">.virtualized-table</span> <span class="fu">.row</span>{<span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-62"><a href="#cb4-62"></a><span class="fu">.virtualized-table</span> <span class="fu">.row.highlighted</span> {<span class="kw">background</span><span class="ch">:</span> <span class="cn">#BBCEF1</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-63"><a href="#cb4-63"></a><span class="fu">.virtualized-table</span> <span class="fu">.row.selected</span> {<span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-64"><a href="#cb4-64"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-65"><a href="#cb4-65"></a><span class="fu">.virtualized-table</span><span class="in">:not(:focus)</span> <span class="fu">.row.selected</span> {<span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-66"><a href="#cb4-66"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-67"><a href="#cb4-67"></a><span class="fu">.row</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-69"><a href="#cb4-69"></a></span>
+<span id="cb4-70"><a href="#cb4-70"></a></span>
+<span id="cb4-71"><a href="#cb4-71"></a><span class="fu">.tabs</span> {  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-72"><a href="#cb4-72"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a><span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-74"><a href="#cb4-74"></a></span>
+<span id="cb4-75"><a href="#cb4-75"></a><span class="fu">.tab</span> {<span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-77"><a href="#cb4-77"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-78"><a href="#cb4-78"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-79"><a href="#cb4-79"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-80"><a href="#cb4-80"></a></span>
+<span id="cb4-81"><a href="#cb4-81"></a><span class="fu">.tab</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-82"><a href="#cb4-82"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-83"><a href="#cb4-83"></a><span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-84"><a href="#cb4-84"></a></span>
+<span id="cb4-85"><a href="#cb4-85"></a><span class="fu">.tab</span><span class="in">:not(:focus)</span>{ <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-86"><a href="#cb4-86"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="op">;</span></span>
+<span id="cb4-87"><a href="#cb4-87"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="op">;</span></span>
+<span id="cb4-88"><a href="#cb4-88"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-89"><a href="#cb4-89"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-90"><a href="#cb4-90"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-91"><a href="#cb4-91"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-92"><a href="#cb4-92"></a><span class="kw">border-bottom-left-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-93"><a href="#cb4-93"></a><span class="kw">border-bottom-right-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-94"><a href="#cb4-94"></a></span>
+<span id="cb4-95"><a href="#cb4-95"></a><span class="fu">.tab.selected</span><span class="in">:not(</span><span class="fu">.highlighted</span><span class="in">)</span>{ <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-96"><a href="#cb4-96"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-97"><a href="#cb4-97"></a>  <span class="kw">border-top</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-98"><a href="#cb4-98"></a>  <span class="kw">border-left</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-99"><a href="#cb4-99"></a>  <span class="kw">border-right</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-100"><a href="#cb4-100"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-101"><a href="#cb4-101"></a>  <span class="kw">border-bottom-left-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-102"><a href="#cb4-102"></a>  <span class="kw">border-bottom-right-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-103"><a href="#cb4-103"></a></span>
+<span id="cb4-104"><a href="#cb4-104"></a><span class="fu">.tab-close</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-105"><a href="#cb4-105"></a></span>
+<span id="cb4-106"><a href="#cb4-106"></a><span class="co">/*PDF reader notes list*/</span></span>
+<span id="cb4-107"><a href="#cb4-107"></a><span class="fu">.notes-list-container</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-108"><a href="#cb4-108"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-109"><a href="#cb4-109"></a></span>
+<span id="cb4-110"><a href="#cb4-110"></a><span class="fu">.note-row</span> {<span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-111"><a href="#cb4-111"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-112"><a href="#cb4-112"></a></span>
+<span id="cb4-113"><a href="#cb4-113"></a><span class="fu">.note-row</span> <span class="fu">.date</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-114"><a href="#cb4-114"></a></span>
+<span id="cb4-115"><a href="#cb4-115"></a><span class="fu">.more-row</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-117"><a href="#cb4-117"></a></span>
+<span id="cb4-118"><a href="#cb4-118"></a><span class="fu">.note-row</span><span class="in">:hover</span><span class="op">,</span> <span class="fu">.more-row</span><span class="in">:hover</span> {<span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-119"><a href="#cb4-119"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-120"><a href="#cb4-120"></a></span>
+<span id="cb4-121"><a href="#cb4-121"></a><span class="co">/*collections tree background*/</span></span>
+<span id="cb4-122"><a href="#cb4-122"></a><span class="pp">#zotero-collections-tree</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span> <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-123"><a href="#cb4-123"></a><span class="co">/*increase spacing between rows in collections and items and add a border to separate panes (not working on zotero 6)*/</span></span>
+<span id="cb4-124"><a href="#cb4-124"></a><span class="co">/*#zotero-collections-tree treechildren::-moz-tree-row { height: 30px !important; }</span></span>
+<span id="cb4-125"><a href="#cb4-125"></a><span class="co">.virtualized-table { rowHeight: 30px !important; } */</span></span>
+<span id="cb4-126"><a href="#cb4-126"></a><span class="co">/*change background and color of collections when hovering*/</span></span>
+<span id="cb4-127"><a href="#cb4-127"></a><span class="pp">#zotero-collections-tree</span> treechildren<span class="in">::-moz-tree-row(</span>hover<span class="in">)</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-128"><a href="#cb4-128"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-129"><a href="#cb4-129"></a></span>
+<span id="cb4-130"><a href="#cb4-130"></a><span class="co">/*change color of selected item in Collections pane (My library or folders) */</span></span>
+<span id="cb4-131"><a href="#cb4-131"></a><span class="pp">#zotero-collections-tree</span> treechildren<span class="in">::-moz-tree-cell(</span>selected<span class="in">)</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-132"><a href="#cb4-132"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-133"><a href="#cb4-133"></a></span>
+<span id="cb4-134"><a href="#cb4-134"></a><span class="pp">#zotero-collections-tree</span> treechildren<span class="in">::-moz-tree-cell-text(</span>selected<span class="in">)</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-135"><a href="#cb4-135"></a></span>
+<span id="cb4-136"><a href="#cb4-136"></a><span class="pp">#zotero-collections-tree</span> treechildren { <span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span> <span class="op">;</span> }</span>
+<span id="cb4-137"><a href="#cb4-137"></a><span class="co">/*for Zotero 6*/</span></span>
+<span id="cb4-138"><a href="#cb4-138"></a><span class="pp">#zotero-collections-tree</span>  <span class="fu">.virtualized-table</span> {<span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span> <span class="op">;</span> }</span>
+<span id="cb4-139"><a href="#cb4-139"></a><span class="co">/*increase spacing between rows in collections and items (-moz-tree-row not working in zotero 6)*/</span></span>
+<span id="cb4-140"><a href="#cb4-140"></a><span class="co">/*#zotero-items-tree treechildren::-moz-tree-row { height: 30px !important; }*/</span></span>
+<span id="cb4-141"><a href="#cb4-141"></a><span class="pp">#zotero-items-tree</span> { <span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-142"><a href="#cb4-142"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> </span>
+<span id="cb4-143"><a href="#cb4-143"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span> <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-144"><a href="#cb4-144"></a></span>
+<span id="cb4-145"><a href="#cb4-145"></a><span class="co">/*change background and color of items when hovering*/</span></span>
+<span id="cb4-146"><a href="#cb4-146"></a><span class="pp">#zotero-items-tree</span> treechildren<span class="in">::-moz-tree-row(</span>hover<span class="in">)</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-147"><a href="#cb4-147"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-148"><a href="#cb4-148"></a></span>
+<span id="cb4-149"><a href="#cb4-149"></a><span class="co">/*change background and color of items when selecting*/</span></span>
+<span id="cb4-150"><a href="#cb4-150"></a><span class="pp">#zotero-items-tree</span> treechildren<span class="in">::-moz-tree-row(</span>selected<span class="in">)</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-151"><a href="#cb4-151"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-152"><a href="#cb4-152"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-153"><a href="#cb4-153"></a><span class="pp">#zotero-items-tree</span> treechildren<span class="in">::-moz-tree-cell-text(</span>selected<span class="in">)</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-154"><a href="#cb4-154"></a></span>
+<span id="cb4-155"><a href="#cb4-155"></a><span class="co">/*change background and color of columns field selector*/</span></span>
+<span id="cb4-156"><a href="#cb4-156"></a><span class="pp">#zotero-items-tree</span> treecol { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-157"><a href="#cb4-157"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-158"><a href="#cb4-158"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-159"><a href="#cb4-159"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-160"><a href="#cb4-160"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-161"><a href="#cb4-161"></a></span>
+<span id="cb4-162"><a href="#cb4-162"></a><span class="co">/*fix columns field selector for Zotero 6*/</span></span>
+<span id="cb4-163"><a href="#cb4-163"></a><span class="pp">#zotero-items-tree</span> <span class="fu">.virtualized-table-header</span> { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-164"><a href="#cb4-164"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-165"><a href="#cb4-165"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-166"><a href="#cb4-166"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-167"><a href="#cb4-167"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-168"><a href="#cb4-168"></a></span>
+<span id="cb4-169"><a href="#cb4-169"></a><span class="pp">#zotero-items-tree</span> <span class="fu">.virtualized-table-header</span> <span class="fu">.cell</span><span class="in">:hover</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-170"><a href="#cb4-170"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-171"><a href="#cb4-171"></a></span>
+<span id="cb4-172"><a href="#cb4-172"></a><span class="fu">.treecol-image</span> { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-173"><a href="#cb4-173"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-174"><a href="#cb4-174"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-175"><a href="#cb4-175"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-176"><a href="#cb4-176"></a></span>
+<span id="cb4-177"><a href="#cb4-177"></a><span class="co">/*Change color of fields in item pane (clicky items) when hovering */</span></span>
+<span id="cb4-178"><a href="#cb4-178"></a><span class="pp">#zotero-item-pane-content</span> <span class="fu">.zotero-clicky</span><span class="in">:hover</span></span>
+<span id="cb4-179"><a href="#cb4-179"></a>{   <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-180"><a href="#cb4-180"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-181"><a href="#cb4-181"></a></span>
+<span id="cb4-182"><a href="#cb4-182"></a><span class="pp">#better-bibtex-citekey-display</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-183"><a href="#cb4-183"></a></span>
+<span id="cb4-184"><a href="#cb4-184"></a><span class="co">/*change color of buttons, but messes with .zotero-clicky-minus and .zotero-clicky-plus in Tags tab*/</span></span>
+<span id="cb4-185"><a href="#cb4-185"></a></span>
+<span id="cb4-186"><a href="#cb4-186"></a><span class="co">/*Correct Minus and plus clicky buttons */</span></span>
+<span id="cb4-187"><a href="#cb4-187"></a><span class="pp">#zotero-item-pane-content</span> <span class="fu">.zotero-clicky-minus</span><span class="in">:hover</span> { <span class="kw">color</span><span class="ch">:</span> <span class="dv">transparent</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-188"><a href="#cb4-188"></a><span class="pp">#zotero-item-pane-content</span> <span class="fu">.zotero-clicky-plus</span><span class="in">:hover</span> { <span class="kw">color</span><span class="ch">:</span> <span class="dv">transparent</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-189"><a href="#cb4-189"></a></span>
+<span id="cb4-190"><a href="#cb4-190"></a><span class="co">/*tabs in Preferences dialog - well more like all the tabs except the ones I'll specify later*/</span></span>
+<span id="cb4-191"><a href="#cb4-191"></a>tabpanel { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-192"><a href="#cb4-192"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-193"><a href="#cb4-193"></a></span>
+<span id="cb4-194"><a href="#cb4-194"></a>tab<span class="ex">[</span><span class="ss">selected</span><span class="op">=</span><span class="st">"true"</span><span class="ex">]</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-195"><a href="#cb4-195"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-196"><a href="#cb4-196"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-197"><a href="#cb4-197"></a></span>
+<span id="cb4-198"><a href="#cb4-198"></a>tab { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-199"><a href="#cb4-199"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#eee</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-200"><a href="#cb4-200"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-201"><a href="#cb4-201"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-202"><a href="#cb4-202"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-203"><a href="#cb4-203"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-204"><a href="#cb4-204"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-205"><a href="#cb4-205"></a><span class="kw">border-bottom-left-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-206"><a href="#cb4-206"></a><span class="kw">border-bottom-right-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-207"><a href="#cb4-207"></a></span>
+<span id="cb4-208"><a href="#cb4-208"></a>tab<span class="in">:hover</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-209"><a href="#cb4-209"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#E0E8F6</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-210"><a href="#cb4-210"></a><span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">inset</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-211"><a href="#cb4-211"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-212"><a href="#cb4-212"></a></span>
+<span id="cb4-213"><a href="#cb4-213"></a><span class="co">/*change items in item pane besides tabs*/</span></span>
+<span id="cb4-214"><a href="#cb4-214"></a><span class="pp">#zotero-duplicates-merge-pane</span> <span class="op">&gt;</span> groupbox <span class="op">&gt;</span> <span class="fu">.groupbox-body</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-215"><a href="#cb4-215"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-216"><a href="#cb4-216"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-217"><a href="#cb4-217"></a></span>
+<span id="cb4-218"><a href="#cb4-218"></a><span class="pp">#zotero-item-pane-content</span> <span class="op">&gt;</span> groupbox <span class="op">&gt;</span> <span class="fu">.groupbox-body</span> { <span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-219"><a href="#cb4-219"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-220"><a href="#cb4-220"></a></span>
+<span id="cb4-221"><a href="#cb4-221"></a><span class="co">/*change color of retraction details background*/</span></span>
+<span id="cb4-222"><a href="#cb4-222"></a><span class="pp">#retraction-details</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7f0000</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-223"><a href="#cb4-223"></a></span>
+<span id="cb4-224"><a href="#cb4-224"></a><span class="co">/*background of item-pane-content (Zotero 6)*/</span></span>
+<span id="cb4-225"><a href="#cb4-225"></a><span class="fu">.zotero-view-tabbox</span><span class="op">,</span> <span class="fu">.zotero-item-pane-content</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-226"><a href="#cb4-226"></a></span>
+<span id="cb4-227"><a href="#cb4-227"></a><span class="co">/*tabs in Item pane*/</span></span>
+<span id="cb4-228"><a href="#cb4-228"></a><span class="pp">#zotero-item-pane-content</span> tabpanel { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-229"><a href="#cb4-229"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-230"><a href="#cb4-230"></a></span>
+<span id="cb4-231"><a href="#cb4-231"></a><span class="co">/*fixed color in drop-down tags: see https://css-tricks.com/solved-with-css-dropdown-menus/*/</span></span>
+<span id="cb4-232"><a href="#cb4-232"></a><span class="pp">#tags-box-container</span> ul li ul { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-233"><a href="#cb4-233"></a><span class="pp">#tags-box-container</span> input { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-234"><a href="#cb4-234"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-235"><a href="#cb4-235"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-236"><a href="#cb4-236"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-237"><a href="#cb4-237"></a></span>
+<span id="cb4-238"><a href="#cb4-238"></a><span class="co">/*In PDF reader tab pane*/</span></span>
+<span id="cb4-239"><a href="#cb4-239"></a><span class="fu">.zotero-view-tabbox</span>  <span class="fu">.tags-box-container</span> ul li ul { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-240"><a href="#cb4-240"></a><span class="fu">.zotero-view-tabbox</span>  <span class="fu">.tags-box-container</span> input { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-241"><a href="#cb4-241"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-242"><a href="#cb4-242"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-243"><a href="#cb4-243"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-244"><a href="#cb4-244"></a></span>
+<span id="cb4-245"><a href="#cb4-245"></a><span class="fu">.zotero-view-tabbox</span> tab<span class="ex">[</span><span class="ss">selected</span><span class="op">=</span><span class="st">"true"</span><span class="ex">]</span>{ <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-246"><a href="#cb4-246"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-247"><a href="#cb4-247"></a></span>
+<span id="cb4-248"><a href="#cb4-248"></a><span class="fu">.zotero-view-tabbox</span> tab { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-249"><a href="#cb4-249"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#eee</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-250"><a href="#cb4-250"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-251"><a href="#cb4-251"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-252"><a href="#cb4-252"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">0.2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-253"><a href="#cb4-253"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-254"><a href="#cb4-254"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-255"><a href="#cb4-255"></a><span class="kw">border-bottom-left-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-256"><a href="#cb4-256"></a><span class="kw">border-bottom-right-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-257"><a href="#cb4-257"></a></span>
+<span id="cb4-258"><a href="#cb4-258"></a><span class="fu">.zotero-view-tabbox</span> tab<span class="in">:hover</span>{ <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-259"><a href="#cb4-259"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-260"><a href="#cb4-260"></a></span>
+<span id="cb4-261"><a href="#cb4-261"></a><span class="fu">.zotero-view-tabbox</span> tabpanel { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-262"><a href="#cb4-262"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-263"><a href="#cb4-263"></a>  <span class="fu">.zotero-view-tabbox</span> <span class="fu">.zotero-clicky</span><span class="in">:hover</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-264"><a href="#cb4-264"></a></span>
+<span id="cb4-265"><a href="#cb4-265"></a><span class="pp">#zotero-item-pane-content</span> tab<span class="ex">[</span><span class="ss">selected</span><span class="op">=</span><span class="st">"true"</span><span class="ex">]</span>{ <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-266"><a href="#cb4-266"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span>}</span>
+<span id="cb4-267"><a href="#cb4-267"></a></span>
+<span id="cb4-268"><a href="#cb4-268"></a><span class="pp">#zotero-item-pane-content</span> tab { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-269"><a href="#cb4-269"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#eee</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-270"><a href="#cb4-270"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-271"><a href="#cb4-271"></a><span class="kw">border-top</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#0a84ff</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-272"><a href="#cb4-272"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">127</span><span class="op">,</span><span class="dv">0.2</span><span class="fu">)</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-273"><a href="#cb4-273"></a><span class="kw">border-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#1d1d1d</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-274"><a href="#cb4-274"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-275"><a href="#cb4-275"></a><span class="kw">border-bottom-left-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-276"><a href="#cb4-276"></a><span class="kw">border-bottom-right-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-277"><a href="#cb4-277"></a></span>
+<span id="cb4-278"><a href="#cb4-278"></a><span class="pp">#zotero-item-pane-content</span> tab<span class="in">:hover</span>{ <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-279"><a href="#cb4-279"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-280"><a href="#cb4-280"></a><span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">inset</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-281"><a href="#cb4-281"></a><span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-282"><a href="#cb4-282"></a></span>
+<span id="cb4-283"><a href="#cb4-283"></a><span class="co">/*define color of item type field*/</span></span>
+<span id="cb4-284"><a href="#cb4-284"></a><span class="pp">#item-type-menu</span> { <span class="kw">-moz-appearance</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb4-285"><a href="#cb4-285"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-286"><a href="#cb4-286"></a>    <span class="kw">height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">em</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-287"><a href="#cb4-287"></a>    <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">em</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-288"><a href="#cb4-288"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">2</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-289"><a href="#cb4-289"></a>    <span class="kw">margin</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-290"><a href="#cb4-290"></a>    <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">em</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-291"><a href="#cb4-291"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="dv">transparent</span><span class="op">;</span></span>
+<span id="cb4-292"><a href="#cb4-292"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="dv">transparent</span><span class="op">;</span> }</span>
+<span id="cb4-293"><a href="#cb4-293"></a></span>
+<span id="cb4-294"><a href="#cb4-294"></a><span class="pp">#item-type-menu</span><span class="in">:hover</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span> </span>
+<span id="cb4-295"><a href="#cb4-295"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#BBCEF1</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-296"><a href="#cb4-296"></a></span>
+<span id="cb4-297"><a href="#cb4-297"></a><span class="co">/*define color of date-field-status*/</span></span>
+<span id="cb4-298"><a href="#cb4-298"></a><span class="pp">#zotero-date-field-status</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">#ffffff</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-299"><a href="#cb4-299"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-300"><a href="#cb4-300"></a></span>
+<span id="cb4-301"><a href="#cb4-301"></a><span class="co">/*preferences dialog*/</span></span>
+<span id="cb4-302"><a href="#cb4-302"></a><span class="pp">#zotero-prefpane-general</span><span class="op">,</span> <span class="pp">#zotero-prefpane-sync</span><span class="op">,</span> <span class="pp">#zotero-prefpane-export</span><span class="op">,</span> <span class="pp">#zotero-prefpane-advanced-keys-tab</span><span class="op">,</span> <span class="pp">#wordProcessors</span><span class="op">,</span> <span class="pp">#zotero-quickCopy-format</span><span class="op">,</span> <span class="pp">#sync-reset-form</span><span class="op">,</span> <span class="pp">#zotero-export-options</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-303"><a href="#cb4-303"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-304"><a href="#cb4-304"></a><span class="pp">#zotero-prefpane-general</span> title { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-305"><a href="#cb4-305"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-306"><a href="#cb4-306"></a></span>
+<span id="cb4-307"><a href="#cb4-307"></a>prefwindow { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-308"><a href="#cb4-308"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-309"><a href="#cb4-309"></a></span>
+<span id="cb4-310"><a href="#cb4-310"></a>prefwindow <span class="fu">.chromeclass-toolbar</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">#FFFFFF</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-311"><a href="#cb4-311"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#323234</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-312"><a href="#cb4-312"></a></span>
+<span id="cb4-313"><a href="#cb4-313"></a><span class="co">/*about dialog*/</span></span>
+<span id="cb4-314"><a href="#cb4-314"></a><span class="pp">#aboutcontent</span> { <span class="kw">background</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-315"><a href="#cb4-315"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-316"><a href="#cb4-316"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span> }</span>
+<span id="cb4-317"><a href="#cb4-317"></a></span>
+<span id="cb4-318"><a href="#cb4-318"></a><span class="pp">#version</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-319"><a href="#cb4-319"></a></span>
+<span id="cb4-320"><a href="#cb4-320"></a><span class="co">/*advanced search dialog*/</span></span>
+<span id="cb4-321"><a href="#cb4-321"></a><span class="pp">#zotero-advanced-search-dialog</span> <span class="pp">#zotero-search-box-controls</span> { <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-322"><a href="#cb4-322"></a><span class="kw">background</span><span class="ch">:</span> <span class="cn">#7E7E7E</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-323"><a href="#cb4-323"></a></span>
+<span id="cb4-324"><a href="#cb4-324"></a><span class="co">/*Note editor - ongoing*/</span></span>
+<span id="cb4-325"><a href="#cb4-325"></a><span class="pp">#zotero-note-editor</span> linksbox { <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#474749</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb4-326"><a href="#cb4-326"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span> }</span>
+<span id="cb4-327"><a href="#cb4-327"></a></span>
+<span id="cb4-328"><a href="#cb4-328"></a><span class="pp">#zotero-note-window</span> h1 { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb4-329"><a href="#cb4-329"></a><span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.6</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-330"><a href="#cb4-330"></a><span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span> }</span>
+<span id="cb4-331"><a href="#cb4-331"></a></span>
+<span id="cb4-332"><a href="#cb4-332"></a><span class="pp">#zotero-note-window</span> h2 { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb4-333"><a href="#cb4-333"></a><span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-334"><a href="#cb4-334"></a><span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb4-335"><a href="#cb4-335"></a><span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb4-336"><a href="#cb4-336"></a><span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span> }</span>
+<span id="cb4-337"><a href="#cb4-337"></a></span>
+<span id="cb4-338"><a href="#cb4-338"></a><span class="pp">#zotero-note-window</span> h3 { <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb4-339"><a href="#cb4-339"></a><span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.2</span><span class="dt">em</span><span class="op">;</span> }</span>
+<span id="cb4-340"><a href="#cb4-340"></a></span>
+<span id="cb4-341"><a href="#cb4-341"></a><span class="pp">#zotero-note-window</span> p { <span class="kw">text-indent</span><span class="ch">:</span> <span class="dv">1.75</span><span class="dt">em</span><span class="op">;</span> }</span>
+<span id="cb4-342"><a href="#cb4-342"></a></span>
+<span id="cb4-343"><a href="#cb4-343"></a><span class="pp">#zotero-note-window</span> ul<span class="op">,</span> ol { <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">1.75</span><span class="dt">em</span><span class="op">;</span> }</span>
+<span id="cb4-344"><a href="#cb4-344"></a></span>
+<span id="cb4-345"><a href="#cb4-345"></a><span class="pp">#zotero-note-window</span> blockquote { <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-346"><a href="#cb4-346"></a><span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-347"><a href="#cb4-347"></a><span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-348"><a href="#cb4-348"></a><span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">1.55</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-349"><a href="#cb4-349"></a><span class="kw">border-left</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">darkgrey</span><span class="op">;</span></span>
+<span id="cb4-350"><a href="#cb4-350"></a><span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="fu">(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">248</span><span class="op">,</span> <span class="dv">248</span><span class="fu">)</span><span class="op">;</span> }</span>
+<span id="cb4-351"><a href="#cb4-351"></a></span>
+<span id="cb4-352"><a href="#cb4-352"></a><span class="pp">#zotero-note-window</span> blockquote p { <span class="kw">text-indent</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
