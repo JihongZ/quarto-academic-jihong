@@ -9,8 +9,34 @@
 <link>https://jihongzhang.org/</link>
 <atom:link href="https://jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
 <description>Technical and Statistical but Fun</description>
-<generator>quarto-1.5.10</generator>
-<lastBuildDate>Sat, 10 Feb 2024 06:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.549</generator>
+<lastBuildDate>Tue, 20 Feb 2024 06:00:00 GMT</lastBuildDate>
+<item>
+  <title>Danmu Cloud for Bilibili</title>
+  <dc:creator>Jihong Zhang</dc:creator>
+  <link>https://jihongzhang.org/posts/2024-02-20-Danmu-Analysis-Bilibili/</link>
+  <description><![CDATA[ <div class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div id="fig-mtcars" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jihongzhang.org/posts/2024-02-20-Danmu-Analysis-Bilibili/img01.png" class="img-fluid figure-img" width="752">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig" id="fig-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Word Cloud
+</figcaption></figure>
+</div>
+</div></div></div>
+<iframe width="100%" height="700px" src="https://jihongz.shinyapps.io/Danmu_Cloud_mobile" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>shiny</category>
+  <category>text analysis</category>
+  <guid>https://jihongzhang.org/posts/2024-02-20-Danmu-Analysis-Bilibili/</guid>
+  <pubDate>Tue, 20 Feb 2024 06:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Customize font family of Visual Mode in Rstudio and in Zotero</title>
   <dc:creator>Jihong Zhang</dc:creator>
@@ -20,12 +46,12 @@
 
 
 
-<section id="rstudio-visual-editor-font" class="level2" data-number="1">
+<section id="rstudio-visual-editor-font" class="level2 page-columns page-full" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="rstudio-visual-editor-font"><span class="header-section-number">1</span> Rstudio Visual Editor Font</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="https://jihongzhang.org/posts/2024-02-10-Customize-Rstudio-Theme/newthemess.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Screenshot for customized material theme</figcaption>
+<figcaption class="margin-caption">Screenshot for customized material theme</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
@@ -71,7 +97,6 @@ background-color: null;
 font-style: inherit;">.pm-proportional-font</span> {</span>
 <span id="cb2-5">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-family</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
@@ -87,7 +112,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb2-6">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-size</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -106,7 +130,6 @@ background-color: null;
 font-style: inherit;">.pm-editing-root-node</span> {</span>
 <span id="cb2-10">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="fu" style="color: #4758AB;
@@ -134,7 +157,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb2-11">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="fu" style="color: #4758AB;
@@ -170,12 +192,12 @@ font-style: inherit;">;</span></span>
 <li>Please look over the <a href="https://docs.posit.co/ide/user/ide/guide/ui/appearance.html">website</a> for more details.</li>
 </ul>
 </section>
-<section id="zotero-editor-font" class="level2" data-number="2">
+<section id="zotero-editor-font" class="level2 page-columns page-full" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="zotero-editor-font"><span class="header-section-number">2</span> Zotero Editor Font</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="https://jihongzhang.org/posts/2024-02-10-Customize-Rstudio-Theme/zoteroscreenshot.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot for Zotero windown</figcaption>
+<figcaption class="margin-caption">Screenshot for Zotero windown</figcaption>
 </figure>
 </div>
 <div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource bash code-overflow-scroll number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
@@ -230,7 +252,6 @@ font-style: inherit;">/*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zot
 background-color: null;
 font-style: inherit;">*</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -242,7 +263,6 @@ background-color: null;
 font-style: inherit;">;</span> </span>
 <span id="cb4-4">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-family</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
@@ -295,7 +315,6 @@ font-style: inherit;">,</span> <span class="pp" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">#tab-bar-container</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -307,7 +326,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-9"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -321,7 +339,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-toolbar</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -345,7 +362,6 @@ font-style: inherit;">/*change color of menu items to white*/</span></span>
 background-color: null;
 font-style: inherit;">#navigator-toolbox</span> menu { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -385,7 +401,6 @@ font-style: inherit;">,</span> <span class="pp" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">#new-item</span> label { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -405,7 +420,6 @@ font-style: inherit;">#navigator-toolbox</span> menu<span class="in" style="colo
 background-color: null;
 font-style: inherit;">:first-child</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="bu" style="color: null;
@@ -423,7 +437,6 @@ font-style: inherit;">/*Change color of tags selector below collections tree*/</
 background-color: null;
 font-style: inherit;">#zotero-tag-selector-container</span> {  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -441,7 +454,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-23">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
@@ -462,7 +474,6 @@ font-style: inherit;">;</span>}</span>
 background-color: null;
 font-style: inherit;">#zotero-tag-selector-container</span> input { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -474,7 +485,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-26">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -486,7 +496,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-27">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -504,7 +513,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-28">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -519,7 +527,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.tag-selector-list-container</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -531,7 +538,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-31">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -543,7 +549,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-32">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -563,7 +568,6 @@ font-style: inherit;">.tag-selector-item</span><span class="in" style="color: #5
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -575,7 +579,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-36">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -591,7 +594,6 @@ background-color: null;
 font-style: inherit;">.tag-selector-item</span> {</span>
 <span id="cb4-39">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -603,7 +605,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-40"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span><span class="cn" style="color: #8f5902;
@@ -616,7 +617,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.tag-selector-item.selected</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -628,7 +628,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-43">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-weight</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -645,7 +644,6 @@ font-style: inherit;">.tag-selector-item.selected</span><span class="in" style="
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -657,7 +655,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-46">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-weight</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -672,7 +669,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-tb-search</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -684,7 +680,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-49">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background-color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -696,7 +691,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-50">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -708,7 +702,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-51">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -729,7 +722,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-pane</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -741,7 +733,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-54"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -757,7 +748,6 @@ background-color: null;
 font-style: inherit;">/*change background and color of collections and items panes*/</span></span>
 <span id="cb4-57">treechildren { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -769,7 +759,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-58"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -789,7 +778,6 @@ font-style: inherit;">.virtualized-table</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">.row</span>{<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -800,7 +788,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -816,7 +803,6 @@ font-style: inherit;">.virtualized-table</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">.row.highlighted</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -827,7 +813,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -843,7 +828,6 @@ font-style: inherit;">.virtualized-table</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">.row.selected</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -854,7 +838,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -866,7 +849,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-64"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -890,7 +872,6 @@ font-style: inherit;">:not(:focus)</span> <span class="fu" style="color: #4758AB
 background-color: null;
 font-style: inherit;">.row.selected</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -901,7 +882,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -913,7 +893,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-66"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -935,7 +914,6 @@ font-style: inherit;">.row</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -947,7 +925,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-68"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -958,7 +935,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -974,7 +950,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.tabs</span> {  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -986,7 +961,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-72">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -998,7 +972,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-73"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1015,7 +988,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.tab</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1027,7 +999,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-76"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1039,7 +1010,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-77"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1051,7 +1021,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-78"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1081,7 +1050,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-79"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1116,7 +1084,6 @@ font-style: inherit;">.tab</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1128,7 +1095,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-82"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1140,7 +1106,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-83"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1159,7 +1124,6 @@ font-style: inherit;">.tab</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:not(:focus)</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1171,7 +1135,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-86"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1181,7 +1144,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-87"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1191,7 +1153,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-88"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1209,7 +1170,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-89"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1239,7 +1199,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-90"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1269,7 +1228,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-91"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1283,7 +1241,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-92"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-left-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1297,7 +1254,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-93"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-right-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1320,7 +1276,6 @@ font-style: inherit;">.highlighted</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1332,7 +1287,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-96">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1344,7 +1298,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-97">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1362,7 +1315,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-98">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1392,7 +1344,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-99">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1410,7 +1361,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-100">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1424,7 +1374,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-101">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-left-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1438,7 +1387,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-102">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-right-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1457,7 +1405,6 @@ font-style: inherit;">.tab-close</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1475,7 +1422,6 @@ font-style: inherit;">/*PDF reader notes list*/</span></span>
 background-color: null;
 font-style: inherit;">.notes-list-container</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1487,7 +1433,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-108"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1502,7 +1447,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.note-row</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1514,7 +1458,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-111">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1531,7 +1474,6 @@ font-style: inherit;">.note-row</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">.date</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1546,7 +1488,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.more-row</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1558,7 +1499,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-116">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1581,7 +1521,6 @@ font-style: inherit;">.more-row</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:hover</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1593,7 +1532,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-119"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1611,7 +1549,6 @@ font-style: inherit;">/*collections tree background*/</span></span>
 background-color: null;
 font-style: inherit;">#zotero-collections-tree</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1620,7 +1557,6 @@ font-style: inherit;">#ffffff</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1650,7 +1586,6 @@ font-style: inherit;">::-moz-tree-row(</span>hover<span class="in" style="color:
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1662,7 +1597,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-128"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1673,7 +1607,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1695,7 +1628,6 @@ font-style: inherit;">::-moz-tree-cell(</span>selected<span class="in" style="co
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1706,7 +1638,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1718,7 +1649,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-132"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1743,7 +1673,6 @@ font-style: inherit;">::-moz-tree-cell-text(</span>selected<span class="in" styl
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1758,7 +1687,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-collections-tree</span> treechildren { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1783,7 +1711,6 @@ font-style: inherit;">#zotero-collections-tree</span>  <span class="fu" style="c
 background-color: null;
 font-style: inherit;">.virtualized-table</span> {<span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1809,7 +1736,6 @@ font-style: inherit;">/*#zotero-items-tree treechildren::-moz-tree-row { height:
 background-color: null;
 font-style: inherit;">#zotero-items-tree</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1827,7 +1753,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-142"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1845,7 +1770,6 @@ background-color: null;
 font-style: inherit;">;</span> </span>
 <span id="cb4-143"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1854,7 +1778,6 @@ font-style: inherit;">#ffffff</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1876,7 +1799,6 @@ font-style: inherit;">::-moz-tree-row(</span>hover<span class="in" style="color:
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1888,7 +1810,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-147"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1899,7 +1820,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1921,7 +1841,6 @@ font-style: inherit;">::-moz-tree-row(</span>selected<span class="in" style="col
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1933,7 +1852,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-151"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1944,7 +1862,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1956,7 +1873,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-152"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -1980,7 +1896,6 @@ font-style: inherit;">::-moz-tree-cell-text(</span>selected<span class="in" styl
 background-color: null;
 font-style: inherit;">)</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -1991,7 +1906,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2009,7 +1923,6 @@ font-style: inherit;">/*change background and color of columns field selector*/<
 background-color: null;
 font-style: inherit;">#zotero-items-tree</span> treecol { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2021,7 +1934,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-157">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2033,7 +1945,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-158"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2045,7 +1956,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-159"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2063,7 +1973,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-160"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2089,7 +1998,6 @@ font-style: inherit;">#zotero-items-tree</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">.virtualized-table-header</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2101,7 +2009,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-164">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2113,7 +2020,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-165"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2125,7 +2031,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-166"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2143,7 +2048,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-167"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2170,7 +2074,6 @@ font-style: inherit;">.cell</span><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2182,7 +2085,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-170"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2197,7 +2099,6 @@ font-style: inherit;">;</span>}</span>
 background-color: null;
 font-style: inherit;">.treecol-image</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2209,7 +2110,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-173">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2221,7 +2121,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-174"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2233,7 +2132,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-175"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2262,7 +2160,6 @@ background-color: null;
 font-style: inherit;">:hover</span></span>
 <span id="cb4-179">{   <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2274,7 +2171,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-180">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2291,7 +2187,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#better-bibtex-citekey-display</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2317,7 +2212,6 @@ font-style: inherit;">.zotero-clicky-minus</span><span class="in" style="color: 
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2335,7 +2229,6 @@ font-style: inherit;">.zotero-clicky-plus</span><span class="in" style="color: #
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2351,7 +2244,6 @@ background-color: null;
 font-style: inherit;">/*tabs in Preferences dialog - well more like all the tabs except the ones I'll specify later*/</span></span>
 <span id="cb4-191">tabpanel { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2363,7 +2255,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-192"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2386,7 +2277,6 @@ font-style: inherit;">"true"</span><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">]</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2398,7 +2288,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-195"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2410,7 +2299,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-196"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2429,7 +2317,6 @@ font-style: inherit;">;</span> }</span>
 <span id="cb4-197"></span>
 <span id="cb4-198">tab { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2441,7 +2328,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-199"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2453,7 +2339,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-200"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2465,7 +2350,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-201"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2483,7 +2367,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-202"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2501,7 +2384,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-203"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2519,7 +2401,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-204"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2533,7 +2414,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-205"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-left-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2547,7 +2427,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-206"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-right-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2564,7 +2443,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2576,7 +2454,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-209"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2588,7 +2465,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-210"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">box-shadow</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2612,7 +2488,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-211"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2646,7 +2521,6 @@ font-style: inherit;">&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">.groupbox-body</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2658,7 +2532,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-215">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2670,7 +2543,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-216">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2691,7 +2563,6 @@ font-style: inherit;">&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">.groupbox-body</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2702,7 +2573,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2714,7 +2584,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-219"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2732,7 +2601,6 @@ font-style: inherit;">/*change color of retraction details background*/</span></
 background-color: null;
 font-style: inherit;">#retraction-details</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2754,7 +2622,6 @@ font-style: inherit;">,</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">.zotero-item-pane-content</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2765,7 +2632,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2783,7 +2649,6 @@ font-style: inherit;">/*tabs in Item pane*/</span></span>
 background-color: null;
 font-style: inherit;">#zotero-item-pane-content</span> tabpanel { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2795,7 +2660,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-229">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2813,7 +2677,6 @@ font-style: inherit;">/*fixed color in drop-down tags: see https://css-tricks.co
 background-color: null;
 font-style: inherit;">#tags-box-container</span> ul li ul { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2824,7 +2687,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2838,7 +2700,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#tags-box-container</span> input { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2850,7 +2711,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-234">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background-color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2862,7 +2722,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-235">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2874,7 +2733,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-236">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2900,7 +2758,6 @@ font-style: inherit;">.zotero-view-tabbox</span>  <span class="fu" style="color:
 background-color: null;
 font-style: inherit;">.tags-box-container</span> ul li ul { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2911,7 +2768,6 @@ font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2927,7 +2783,6 @@ font-style: inherit;">.zotero-view-tabbox</span>  <span class="fu" style="color:
 background-color: null;
 font-style: inherit;">.tags-box-container</span> input { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2939,7 +2794,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-241">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background-color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2951,7 +2805,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-242">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -2963,7 +2816,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-243">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -2994,7 +2846,6 @@ font-style: inherit;">"true"</span><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">]</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3006,7 +2857,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-246"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3027,7 +2877,6 @@ font-style: inherit;">;</span>}</span>
 background-color: null;
 font-style: inherit;">.zotero-view-tabbox</span> tab { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3039,7 +2888,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-249"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3051,7 +2899,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-250"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3063,7 +2910,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-251"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3081,7 +2927,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-252"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3115,7 +2960,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-253"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3133,7 +2977,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-254"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3147,7 +2990,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-255"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-left-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3161,7 +3003,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-256"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-right-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3180,7 +3021,6 @@ font-style: inherit;">.zotero-view-tabbox</span> tab<span class="in" style="colo
 background-color: null;
 font-style: inherit;">:hover</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3192,7 +3032,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-259"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3207,7 +3046,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.zotero-view-tabbox</span> tabpanel { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3219,7 +3057,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-262">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3237,7 +3074,6 @@ font-style: inherit;">.zotero-clicky</span><span class="in" style="color: #5E5E5
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3262,7 +3098,6 @@ font-style: inherit;">"true"</span><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">]</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3274,7 +3109,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-266"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3295,7 +3129,6 @@ font-style: inherit;">;</span>}</span>
 background-color: null;
 font-style: inherit;">#zotero-item-pane-content</span> tab { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3307,7 +3140,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-269"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3319,7 +3151,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-270"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3331,7 +3162,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-271"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3349,7 +3179,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-272"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3383,7 +3212,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-273"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-right</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3401,7 +3229,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-274"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3415,7 +3242,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-275"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-left-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3429,7 +3255,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-276"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom-right-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3448,7 +3273,6 @@ font-style: inherit;">#zotero-item-pane-content</span> tab<span class="in" style
 background-color: null;
 font-style: inherit;">:hover</span>{ <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3460,7 +3284,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-279"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3472,7 +3295,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-280"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">box-shadow</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3496,7 +3318,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-281"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-radius</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3524,7 +3345,6 @@ font-style: inherit;">/*define color of item type field*/</span></span>
 background-color: null;
 font-style: inherit;">#item-type-menu</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">-moz-appearance</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3534,7 +3354,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-285">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3546,7 +3365,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-286">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">height</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3560,7 +3378,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-287">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">min-height</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3574,7 +3391,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-288">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3594,7 +3410,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-289">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">margin</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3618,7 +3433,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-290">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">max-height</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3632,7 +3446,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-291">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3648,7 +3461,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-292">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background-color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3663,7 +3475,6 @@ font-style: inherit;">#item-type-menu</span><span class="in" style="color: #5E5E
 background-color: null;
 font-style: inherit;">:hover</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3675,7 +3486,6 @@ background-color: null;
 font-style: inherit;">;</span> </span>
 <span id="cb4-295"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3693,7 +3503,6 @@ font-style: inherit;">/*define color of date-field-status*/</span></span>
 background-color: null;
 font-style: inherit;">#zotero-date-field-status</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3705,7 +3514,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-299">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3761,7 +3569,6 @@ font-style: inherit;">,</span> <span class="pp" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">#zotero-export-options</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3773,7 +3580,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-303"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3787,7 +3593,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-prefpane-general</span> title { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3799,7 +3604,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-305"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3812,7 +3616,6 @@ font-style: inherit;">;</span> }</span>
 <span id="cb4-306"></span>
 <span id="cb4-307">prefwindow { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3824,7 +3627,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-308"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3839,7 +3641,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">.chromeclass-toolbar</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3851,7 +3652,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-311"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3869,7 +3669,6 @@ font-style: inherit;">/*about dialog*/</span></span>
 background-color: null;
 font-style: inherit;">#aboutcontent</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3881,7 +3680,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-315">  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3893,7 +3691,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-316">    <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -3908,7 +3705,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#version</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3928,7 +3724,6 @@ font-style: inherit;">#zotero-advanced-search-dialog</span> <span class="pp" sty
 background-color: null;
 font-style: inherit;">#zotero-search-box-controls</span> { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3940,7 +3735,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-322"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3958,7 +3752,6 @@ font-style: inherit;">/*Note editor - ongoing*/</span></span>
 background-color: null;
 font-style: inherit;">#zotero-note-editor</span> linksbox { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">background-color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3970,7 +3763,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-326"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3985,7 +3777,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> h1 { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -3995,7 +3786,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-329"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-size</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4007,7 +3797,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-330"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4020,7 +3809,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> h2 { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -4030,7 +3818,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-333"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-size</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4042,7 +3829,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-334"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-weight</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4052,7 +3838,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-335"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4062,7 +3847,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-336"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4075,7 +3859,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> h3 { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -4085,7 +3868,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-339"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">font-size</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4100,7 +3882,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> p { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">text-indent</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4117,7 +3898,6 @@ font-style: inherit;">#zotero-note-window</span> ul<span class="op" style="color
 background-color: null;
 font-style: inherit;">,</span> ol { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4132,7 +3912,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> blockquote { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">margin-top</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4142,7 +3921,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-346"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">margin-bottom</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4152,7 +3930,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-347"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">margin-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4162,7 +3939,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-348"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">padding-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4174,7 +3950,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-349"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">border-left</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4190,7 +3965,6 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb4-350"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">color</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
@@ -4217,7 +3991,6 @@ font-style: inherit;">;</span> }</span>
 background-color: null;
 font-style: inherit;">#zotero-note-window</span> blockquote p { <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">text-indent</span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
@@ -4509,7 +4282,6 @@ font-style: inherit;">(</span><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">REASON</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">)</span></span>
 <span id="cb14-3"> <span class="ex" style="color: null;
 background-color: null;
@@ -4992,7 +4764,7 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <td style="text-align: left;"><a href="https://mc-stan.org/docs/2_18/stan-users-guide/vectorization.html">StanUserGuide:Chapter21</a></td>
 <td>Linear Regression Model with Stan II</td>
 <td style="text-align: left;"><p><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html">Lecture04_Feb12</a></p>
-<p><a href="Lecture04/Lecture04.mp4">Lecture04.mp4</a></p></td>
+<p><a href="Lecture04/Lecture04_Feb12_recording.mp4">Lecture04:recording.mp4</a></p></td>
 <td><ol type="1">
 <li><a href="Lecture04/Code/DietDataExample2.R">DietDataExample2.R</a></li>
 <li><a href="Lecture04/Code/FullModel_Old.stan">FullModel_Old.stan</a></li>
@@ -5007,8 +4779,7 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 <td style="text-align: left;">Bayesian Inference and Computational Methods III</td>
 <td style="text-align: left;">SR Chapter 9.2 &amp; 9.3</td>
 <td>Bayesian Model Fit and Comparisons</td>
-<td style="text-align: left;"><p><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html">Lecture05_Feb19</a></p>
-<p><a href="Lecture05/Lecture05.mp4">Lecture05.mp4</a></p></td>
+<td style="text-align: left;"><a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html">Lecture05_Feb19</a></td>
 <td><ol type="1">
 <li><a href="Lecture05/Code/Lecture05.R">Lecture05.R</a></li>
 <li><a href="Lecture05/Code/FullModel_PPP.stan">FullModel_PPP.stan</a></li>
@@ -5168,7 +4939,6 @@ background-color: null;
 font-style: inherit;"># Load the necessary package</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5270,7 +5040,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5280,17 +5049,15 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://glue.tidyverse.org/">glue</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://github.com/tidyverse/glue">glue</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5300,7 +5067,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5310,7 +5076,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5320,7 +5085,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5330,7 +5094,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5342,7 +5105,6 @@ background-color: null;
 font-style: inherit;"># format styles of table </span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5352,7 +5114,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5362,7 +5123,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5372,7 +5132,6 @@ background-color: null;
 font-style: inherit;">)</span> </span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5452,7 +5211,6 @@ font-style: inherit;">mykbl</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5644,7 +5402,6 @@ font-style: inherit;">freqTable</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -5711,14 +5468,12 @@ background-color: null;
 font-style: inherit;">NULL</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">var</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> <span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">freqTblVars</span><span class="op" style="color: #5E5E5E;
@@ -5849,7 +5604,6 @@ font-style: inherit;">freqTableComb</span><span class="op" style="color: #5E5E5E
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<div>
 <table class="table table-striped table-condensed table-sm small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
@@ -5898,12 +5652,10 @@ font-style: inherit;">)</span></span></code></pre></div>
 </table>
 </div>
 </div>
-</div>
 <p>Or we can use <code>survey</code> package for descriptive analysis</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -6540,7 +6292,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="st" style="color: #20794D;
@@ -6550,12 +6301,11 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'forester'</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://github.com/ModelOriented/forester">'forester'</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="va" style="color: #111111;
@@ -6619,7 +6369,6 @@ font-style: inherit;">mykbl</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -6673,7 +6422,7 @@ font-style: inherit;">}</span></span></code></pre></div>
 </div>
 <p>As contributors of the R package said in their <a href="https://github.com/ModelOriented/forester">github website</a>:</p>
 <blockquote class="blockquote">
-<p>“The <em>forester</em> package is <strong>an AutoML tool in R</strong> that wraps up all machine learning processes into a single <code>train()</code> function, which includes:”</p>
+<p>“The <em>forester</em> package is <strong>an AutoML tool in R</strong> that wraps up all machine learning processes into a single <code><a href="https://rdrr.io/pkg/forester/man/train.html">train()</a></code> function, which includes:”</p>
 </blockquote>
 <ul>
 <li>rendering a brief <strong>data check</strong> report,</li>
@@ -6707,7 +6456,7 @@ font-style: inherit;">}</span></span></code></pre></div>
 <li>One of the contributor, Hubert Ruczynski, wrote up a detailed <a href="https://medium.com/responsibleml/forester-predicting-house-prices-use-case-b537253b6142">tutorial</a> published in Mar 1, 2023.</li>
 </ul></section><section id="an-example" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="an-example">
 <span class="header-section-number">2</span> An example</h2>
-<p>First of all, <code>forester::check_data</code> is a very convenient function to glimpse the data for data analysis. By default it will output a “CHECK DATA REPORT”, including some data quality checking list, meanwhile it will also do Spearman correlations.</p>
+<p>First of all, <code><a href="https://rdrr.io/pkg/forester/man/check_data.html">forester::check_data</a></code> is a very convenient function to glimpse the data for data analysis. By default it will output a “CHECK DATA REPORT”, including some data quality checking list, meanwhile it will also do Spearman correlations.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
 background-color: null;
@@ -6719,7 +6468,7 @@ font-style: inherit;">forester</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">check_data</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/forester/man/check_data.html">check_data</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -6798,7 +6547,6 @@ font-style: inherit;">)</span></span></code></pre></div>
   <description><![CDATA[ <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -6808,7 +6556,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -6881,7 +6628,7 @@ font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_transparent</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/ggimage/man/theme_transparent.html">theme_transparent</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -6889,7 +6636,7 @@ font-style: inherit;">)</span></span>
 <span></span>
 <span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sticker</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/hexSticker/man/sticker.html">sticker</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -6958,7 +6705,6 @@ font-style: inherit;">#| echo: fenced</span></span>
 background-color: null;
 font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="st" style="color: #20794D;
@@ -6968,7 +6714,6 @@ font-style: inherit;">"NEET Analysis"</span></span>
 background-color: null;
 font-style: inherit;">author</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="st" style="color: #20794D;
@@ -6978,7 +6723,6 @@ font-style: inherit;">"Jihong Zhang"</span></span>
 background-color: null;
 font-style: inherit;">format</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span></span>
@@ -6988,13 +6732,11 @@ font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span></span>
 <span id="cb2-6"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">    header-includes</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">: </span><span class="ch" style="color: #20794D;
 background-color: null;
 font-style: inherit;">|</span></span>
@@ -7005,7 +6747,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mainfont</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="st" style="color: #20794D;
@@ -7017,7 +6758,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">self-contained</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="ch" style="color: #20794D;
@@ -7029,7 +6769,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">toc</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="ch" style="color: #20794D;
@@ -7041,7 +6780,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">code-fold</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="ch" style="color: #20794D;
@@ -7053,7 +6791,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">code-summary</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="st" style="color: #20794D;
@@ -7065,7 +6802,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">code-line-numbers</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="ch" style="color: #20794D;
@@ -7077,7 +6813,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">number-sections</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="ch" style="color: #20794D;
@@ -7089,7 +6824,6 @@ font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">number-offset</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;"> </span><span class="dv" style="color: #AD0000;
@@ -7235,7 +6969,6 @@ font-style: inherit;">```</span></span></code></pre></div>
 <div class="cell">
 <details class="code-fold"><summary>⌘+C</summary><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -7282,7 +7015,6 @@ font-style: inherit;">TRUE</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<div>
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Sepal.Length</th>
@@ -7336,7 +7068,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <p>Note that the code block can be numbered and added with a left border using <code>code-block-bg: true</code> and <code>code-block-border-left: "#31BAE9"</code></p>
@@ -7994,7 +7725,6 @@ font-style: inherit;">```</span></span></code></pre></div>
 Table&nbsp;1: Coefficients of multinominal logistic regression
 </figcaption><div aria-describedby="tbl-coef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
 <table class="table table-condensed table-hover do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">DV</th>
@@ -8071,7 +7801,6 @@ Table&nbsp;1: Coefficients of multinominal logistic regression
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </figure>
@@ -9528,14 +9257,12 @@ font-style: inherit;">```</span></span></code></pre></div>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -9555,7 +9282,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -9565,7 +9291,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -9577,7 +9302,6 @@ background-color: null;
 font-style: inherit;"># for map functions</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -9684,7 +9408,7 @@ font-style: inherit;">m1</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusObject</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusObject.html">mplusObject</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span></span>
 <span>  TITLE <span class="op" style="color: #5E5E5E;
@@ -9776,7 +9500,7 @@ font-style: inherit;">res_m1</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusModeler</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusModeler.html">mplusModeler</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -9799,7 +9523,7 @@ font-style: inherit;">summary_m1</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">get_summaries</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/get_results.html">get_summaries</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -9862,7 +9586,6 @@ font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<div>
 <table class="lightable-material-dark table table-condensed table-hover table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -10005,7 +9728,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </table>
 </div>
 </div>
-</div>
 <p>This is a simplistic procedure for one model. What about a bunch of models?</p>
 </section><section id="batch-lca-in-r-select-number-of-latent-classes" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="batch-lca-in-r-select-number-of-latent-classes">
 <span class="header-section-number">2.2</span> Batch LCA in R: select number of latent classes</h3>
@@ -10017,7 +9739,6 @@ font-style: inherit;">fitMplus</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -10088,7 +9809,6 @@ font-style: inherit;">)</span></span>
 <span>  </span>
 <span>  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="fu" style="color: #4758AB;
@@ -10117,7 +9837,6 @@ font-style: inherit;">}</span></span>
 <span>  </span>
 <span>  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
@@ -10231,7 +9950,7 @@ font-style: inherit;">modelTEMP</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusObject</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusObject.html">mplusObject</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span></span>
 <span>      TITLE <span class="op" style="color: #5E5E5E;
@@ -10356,7 +10075,6 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">}</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">else</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span></span>
@@ -10456,7 +10174,7 @@ font-style: inherit;">modelTEMP</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusObject</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusObject.html">mplusObject</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span></span>
 <span>      TITLE <span class="op" style="color: #5E5E5E;
@@ -10576,7 +10294,6 @@ font-style: inherit;">}</span></span>
 <span>  </span>
 <span>  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
@@ -10604,7 +10321,7 @@ font-style: inherit;">resTEMP</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusModeler</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusModeler.html">mplusModeler</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -10625,7 +10342,6 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">}</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">else</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span></span>
@@ -10639,7 +10355,7 @@ font-style: inherit;">resTEMP</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mplusModeler</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/mplusModeler.html">mplusModeler</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -10666,7 +10382,7 @@ font-style: inherit;">summaryTEMP</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">get_summaries</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://michaelhallquist.github.io/MplusAutomation/reference/get_results.html">get_summaries</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -10897,7 +10613,6 @@ font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<div>
 <table class="lightable-material-dark table table-condensed table-hover table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -10967,7 +10682,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </table>
 </div>
 </div>
-</div>
 <p>As the table shown, 7-class model appears to have the best model fit among 6 alternative models (lowest AIC/BIC/aBIC).</p>
 </section></section><section id="conclusion" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="conclusion">
 <span class="header-section-number">3</span> Conclusion</h2>
@@ -10988,7 +10702,6 @@ font-style: inherit;">extract_r3step</span> <span class="op" style="color: #5E5E
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -11532,7 +11245,6 @@ font-style: inherit;">read_saveddata</span> <span class="op" style="color: #5E5E
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -11731,7 +11443,6 @@ font-style: inherit;">}</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -12456,7 +12167,7 @@ font-style: inherit;">ggdark</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">dark_theme_gray</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/ggdark/man/ggdarktheme.html">dark_theme_gray</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -12521,17 +12232,15 @@ font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://www.omegahat.net/RSXML/">XML</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="http://www.omegahat.net/RSXML/">XML</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -12541,7 +12250,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -12551,7 +12259,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -12561,7 +12268,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -12612,14 +12318,12 @@ background-color: null;
 font-style: inherit;">0</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">page</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
@@ -12697,14 +12401,12 @@ font-style: inherit;">)</span> </span>
 <span>  </span>
 <span>  <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">item</span> <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
@@ -12945,7 +12647,6 @@ font-style: inherit;">)</span> </span></code></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
 <table class="lightable-material table table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">topic</th>
@@ -12994,7 +12695,6 @@ font-style: inherit;">)</span> </span></code></pre></div>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </section><section id="visualization-in-ggplot2" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="visualization-in-ggplot2">
@@ -13610,7 +13310,7 @@ font-style: inherit;"># remove lengend</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -13698,7 +13398,7 @@ Wang, Y. Andre, and Mijke Rhemtulla. 2021. <span>“Power Analysis for Parameter
 </div>
 </section><section id="new-post" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="new-post">
 <span class="header-section-number">4</span> New Post</h2>
-<p>To create a new post, use <code>distill::create_post()</code> function with the name of the post. The function will create a new directory “2022-XX-XX-post-name” in the <em>_posts</em> folder in which there exists a Rmd file with same name. The Rmd file will be your content of the new post.</p>
+<p>To create a new post, use <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> function with the name of the post. The function will create a new directory “2022-XX-XX-post-name” in the <em>_posts</em> folder in which there exists a Rmd file with same name. The Rmd file will be your content of the new post.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -13706,7 +13406,7 @@ font-style: inherit;">distill</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">create_post</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">create_post</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span>title <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -13820,19 +13520,17 @@ font-style: inherit;">)</span></span>
 <span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://www.omegahat.net/RSXML/">XML</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="http://www.omegahat.net/RSXML/">XML</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -13847,14 +13545,12 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -13880,14 +13576,12 @@ font-style: inherit;">)</span></span></code></pre></div>
 </div>
 <div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -13907,14 +13601,12 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -13937,19 +13629,17 @@ font-style: inherit;">)</span></span></code></pre></div>
 </div>
 <div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -13976,14 +13666,12 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -14007,14 +13695,12 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -14034,14 +13720,12 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -14370,7 +14054,6 @@ background-color: null;
 font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
-<div>
 <table class="lightable-material-dark table" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">sourceName</th>
@@ -14430,9 +14113,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <td style="text-align: right;">60</td>
 </tr>
 </tbody>
-</table>
-</div>
-</section><section id="other-materials" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="other-materials">
+</table></section><section id="other-materials" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="other-materials">
 <span class="header-section-number">3</span> Other materials</h2>
 <p>There a decent <a href="https://www.inpredictable.com/2021/06/analyzing-your-run-data-with-r.html">blog</a> illustrating how to handle with apple watch export file.</p>
 
@@ -14512,12 +14193,11 @@ font-style: inherit;">)</span></span>
 <span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://gt.rstudio.com">gt</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://gt.rstudio.com/">gt</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="fu" style="color: #4758AB;
@@ -14526,7 +14206,6 @@ font-style: inherit;"><a href="https://rdrr.io/r/base/message.html">suppressMess
 background-color: null;
 font-style: inherit;">(</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -14597,7 +14276,6 @@ font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<div>
 <div id="igswwuafpv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
@@ -15066,7 +14744,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>You can add row names (<code>rowname_col</code> argument) and add group names (<code>groupname_col</code> argument) into the table:</p>
 <div class="cell">
 <div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
@@ -15152,7 +14829,6 @@ font-style: inherit;">"Rank"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<div>
 <div id="cegypqpubo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
@@ -15725,7 +15401,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>Next, the boarder could be added into the table:</p>
 <div class="cell">
 <div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
@@ -15989,7 +15664,6 @@ font-style: inherit;">)</span></span>
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell-output-display">
-<div>
 <div id="hzhvwexxdx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
@@ -16562,7 +16236,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
@@ -16580,7 +16253,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -16590,7 +16262,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -16600,12 +16271,11 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://statnet.org/">network</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="http://statnet.org/">network</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
 </div>
@@ -16794,12 +16464,11 @@ background-color: null;
 font-style: inherit;">## Network package</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://statnet.org/">network</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="http://statnet.org/">network</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="va" style="color: #111111;
@@ -16862,7 +16531,6 @@ background-color: null;
 font-style: inherit;">## igraph package </span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -16885,7 +16553,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -16946,7 +16613,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell">
 <div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -16956,7 +16622,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -17238,7 +16903,6 @@ font-style: inherit;">)</span></span></code></pre></div>
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -17248,7 +16912,6 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -17258,17 +16921,15 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -17973,7 +17634,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span>  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_flag</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/ggimage/man/geom_flag.html">geom_flag</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span>data <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -18019,7 +17680,7 @@ font-style: inherit;">(</span>values <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">lacroix_palette</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/LaCroixColoR/man/lacroix_palette.html">lacroix_palette</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="st" style="color: #20794D;
 background-color: null;
@@ -18102,7 +17763,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span>  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_wsj</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://rdrr.io/pkg/ggthemes/man/theme_wsj.html">theme_wsj</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span>color <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -18192,7 +17853,6 @@ font-style: inherit;"># ggsave("~/图片/plot_2019-05-14.png", width = 29, heigh
 <div class="cell">
 <div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -18207,7 +17867,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span>  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">transition_reveal</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;"><a href="https://gganimate.com/reference/transition_reveal.html">transition_reveal</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
@@ -18229,589 +17889,6 @@ font-style: inherit;">)</span></span></code></pre></div>
   <category>ggplot2</category>
   <guid>https://jihongzhang.org/posts/2019-05-20-nobel-prizes-visualization/</guid>
   <pubDate>Mon, 20 May 2019 05:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Make a Game in R</title>
-  <dc:creator>jihong </dc:creator>
-  <link>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</link>
-  <description><![CDATA[ <blockquote class="blockquote">
-<p>Recently I found a interesting R package call nessy which allows you to create a simple game driven by shiny. Thus. I tried a little bit about this package. Making a interactive app in R is promising in the files like teaching, presentation and visualization.</p>
-</blockquote>
-<p>Finally, I created the following shiny app:</p>
-<div class="cell">
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">nessy</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;"><a href="https://deanattali.com/shinyjs/">shinyjs</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span></span>
-<span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">jscode</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"shinyjs.closeWindow = function() { window.close(); }"</span></span>
-<span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">ui</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cartridge</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span></span>
-<span>  title <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"{Memorize the Names!}"</span>,</span>
-<span>  subtitle <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Do you have some names to memorize in few minutes? Try this game!"</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">container_with_title</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span></span>
-<span>    title <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Names you want to memorize (i.e. Jonathan, Lesa)"</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">container_with_title</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span></span>
-<span>    title <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Add a Name"</span>,</span>
-<span>    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">text_input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name1"</span>, label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Name"</span>, placeholder <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Jonathan Templin"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">text_input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"key"</span>, label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Keys"</span>, placeholder <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Iowa/DCM"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">htmlOutput</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"namelist"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">button_primary</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"add"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Add"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">button_success</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"play"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Play the Game"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html">useShinyjs</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/pkg/shinyjs/man/extendShinyjs.html">extendShinyjs</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>text <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">jscode</span>, functions <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"closeWindow"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">button_error</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"close"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Close Window"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>  </span>
-<span>  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Game pages</span></span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">uiOutput</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"gamepage"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span></span>
-<span></span>
-<span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">server</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">output</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">session</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span>  <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">reactiveValues</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span></span>
-<span>    oldnames <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>,</span>
-<span>    allnames <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NULL</span>,</span>
-<span>    allkeys <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NULL</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  </span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">observeEvent</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">add</span>, <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">oldnames</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">oldnames</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"&lt;br&gt;"</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">name1</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"  &lt;==&gt;  "</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">key</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allnames</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allnames</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">name1</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allkeys</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allkeys</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">key</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">output</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">namelist</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">renderText</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">oldnames</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  </span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">observeEvent</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">play</span>, <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">selectedkey</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allkeys</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">selectedname</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allnames</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">[</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">names</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">allkeys</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">selectedkey</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">]</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">output</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">gamepage</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">renderUI</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span>      <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">container_with_title</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span></span>
-<span>        <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Key:"</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">selectedkey</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span>,</span>
-<span>        <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">text_input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span>id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"guessname"</span>, label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Guess a Name"</span>, placeholder <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Jonathan"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>      <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span></span>
-<span></span>
-<span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">observeEvent</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">close</span>, <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span>    <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">js</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">closeWindow</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">stopApp</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span>
-<span>  </span>
-<span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span></span>
-<span></span>
-<span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">shiny</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">(</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">ui</span>, <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">server</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">)</span></span></code></pre></div>
-</div>
-<p>The game is like this:</p>
-<iframe width="900" height="900" scrolling="no" frameborder="no" src="https://jihongz.shinyapps.io/Game_with_R/">
-</iframe>
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <category>blog</category>
-  <guid>https://jihongzhang.org/posts/2019-04-19-make-a-game-in-r/</guid>
-  <pubDate>Fri, 19 Apr 2019 05:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

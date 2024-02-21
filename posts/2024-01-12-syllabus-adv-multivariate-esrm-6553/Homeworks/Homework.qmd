@@ -1,6 +1,8 @@
 ---
 title: "Online Homework"
 author: "Jihong Zhang"
+categories: 
+  - homework
 format: 
   html:
     number-sections: true

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.10">
+<meta name="generator" content="quarto-1.4.549">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2023-06-28">
-<title>Dr. Jihong Zhang – A tutorial for forester R package</title>
+<title>Dr.&nbsp;Jihong Zhang - A tutorial for forester R package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,7 +124,7 @@ ga('send', {
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -182,8 +182,62 @@ ga('send', {
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">A tutorial for forester R package</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">2024Spring: ESRM 6553</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
@@ -233,7 +287,7 @@ ga('send', {
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span>, message<span class="op">=</span><span class="cn">FALSE</span>, warnings<span class="op">=</span><span class="cn">FALSE</span>, include <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>knitr.kable.NA <span class="op">=</span> <span class="st">''</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">'tidyverse'</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">'forester'</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ModelOriented/forester">'forester'</a></span><span class="op">)</span></span>
 <span><span class="va">mycolors</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#4682B4"</span>, <span class="st">"#B4464B"</span>, <span class="st">"#B4AF46"</span>, </span>
 <span>             <span class="st">"#1B9E77"</span>, <span class="st">"#D95F02"</span>, <span class="st">"#7570B3"</span>,</span>
 <span>             <span class="st">"#E7298A"</span>, <span class="st">"#66A61E"</span>, <span class="st">"#B4F60A"</span><span class="op">)</span></span>
@@ -246,7 +300,7 @@ ga('send', {
 </div>
 <p>As contributors of the R package said in their <a href="https://github.com/ModelOriented/forester">github website</a>:</p>
 <blockquote class="blockquote">
-<p>“The <em>forester</em> package is <strong>an AutoML tool in R</strong> that wraps up all machine learning processes into a single <code>train()</code> function, which includes:”</p>
+<p>“The <em>forester</em> package is <strong>an AutoML tool in R</strong> that wraps up all machine learning processes into a single <code><a href="https://rdrr.io/pkg/forester/man/train.html">train()</a></code> function, which includes:”</p>
 </blockquote>
 <ul>
 <li>rendering a brief <strong>data check</strong> report,</li>
@@ -280,9 +334,9 @@ ga('send', {
 <li>One of the contributor, Hubert Ruczynski, wrote up a detailed <a href="https://medium.com/responsibleml/forester-predicting-house-prices-use-case-b537253b6142">tutorial</a> published in Mar 1, 2023.</li>
 </ul></section><section id="an-example" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="an-example">
 <span class="header-section-number">2</span> An example</h2>
-<p>First of all, <code>forester::check_data</code> is a very convenient function to glimpse the data for data analysis. By default it will output a “CHECK DATA REPORT”, including some data quality checking list, meanwhile it will also do Spearman correlations.</p>
+<p>First of all, <code><a href="https://rdrr.io/pkg/forester/man/check_data.html">forester::check_data</a></code> is a very convenient function to glimpse the data for data analysis. By default it will output a “CHECK DATA REPORT”, including some data quality checking list, meanwhile it will also do Spearman correlations.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">check_dat_res</span> <span class="op">&lt;-</span> <span class="fu">forester</span><span class="fu">::</span><span class="fu">check_data</span><span class="op">(</span><span class="va">iris</span>, <span class="st">'Species'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">check_dat_res</span> <span class="op">&lt;-</span> <span class="fu">forester</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/forester/man/check_data.html">check_data</a></span><span class="op">(</span><span class="va">iris</span>, <span class="st">'Species'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code> -------------------- CHECK DATA REPORT -------------------- 
  

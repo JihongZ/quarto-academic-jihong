@@ -7,9 +7,10 @@ execute:
 format:
   html:
     code-line-numbers: true
+    fig-cap-location: margin # put captions of figure in the margin
 ---
 
-## Rstudio Visual Editor Font 
+## Rstudio Visual Editor Font
 
 ![Screenshot for customized material theme](newthemess.png){fig-align="center"}
 
@@ -60,7 +61,7 @@ Note:
 
 ![Screenshot for Zotero windown](zoteroscreenshot.png)
 
-```{.bash .code-overflow-scroll}
+``` {.bash .code-overflow-scroll}
 ➜  mkdir /Users/[username]/Library/Application\ Support/Zotero/Profiles/[xxxxxxx].default/Chrome
 ➜  cd /Users/[username]/Library/Application\ Support/Zotero/Profiles/[xxxxxxx].default/Chrome 
 ➜  touch userChrome.css
@@ -70,7 +71,7 @@ Note:
 
 To change the font family for Zotero window, create a new folder "Chrome" in above path. Next, create a `userChrome.css` in that folder. A template for css file is [here](https://github.com/Rosmaninho/Zotero-Dark-Theme). Add font-family setting in the first several lines (line3-5).
 
-```{.css .code-overflow-scroll filename="userChrome.css" code-line-numbers=3-5}
+``` {.css .code-overflow-scroll filename="userChrome.css" code-line-numbers="3-5"}
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
 * {border: 0 !important; 
@@ -249,7 +250,7 @@ border-bottom: 1px solid #1d1d1d !important; }
 
 /*Change color of fields in item pane (clicky items) when hovering */
 #zotero-item-pane-content .zotero-clicky:hover
-{	color: black !important;
+{   color: black !important;
   border-radius: 0px !important; }
 
 #better-bibtex-citekey-display { color: white !important; }
@@ -355,21 +356,21 @@ border-radius: 0px 0px 0 0 !important; }
 
 /*define color of item type field*/
 #item-type-menu { -moz-appearance: none;
-	color: white !important;
-	height: 1.5em !important;
-	min-height: 1.5em !important;
-	padding: 0 0 0 2px !important;
-	margin: 1px 5px 0 1px !important;
-	max-height: 1.5em !important;
-	border: 1px solid transparent;
-	background-color: transparent; }
+    color: white !important;
+    height: 1.5em !important;
+    min-height: 1.5em !important;
+    padding: 0 0 0 2px !important;
+    margin: 1px 5px 0 1px !important;
+    max-height: 1.5em !important;
+    border: 1px solid transparent;
+    background-color: transparent; }
 
-#item-type-menu:hover {	color: black !important; 
+#item-type-menu:hover { color: black !important; 
 background: #BBCEF1 !important; }
 
 /*define color of date-field-status*/
 #zotero-date-field-status { color: #ffffff !important;
-	padding: 0 10px 0 1px !important; }
+    padding: 0 10px 0 1px !important; }
 
 /*preferences dialog*/
 #zotero-prefpane-general, #zotero-prefpane-sync, #zotero-prefpane-export, #zotero-prefpane-advanced-keys-tab, #wordProcessors, #zotero-quickCopy-format, #sync-reset-form, #zotero-export-options { color: black !important;
@@ -384,9 +385,9 @@ prefwindow .chromeclass-toolbar { color: #FFFFFF !important;
 background: #323234 !important; }
 
 /*about dialog*/
-#aboutcontent {	background: #474749 !important;
+#aboutcontent { background: #474749 !important;
   color: white !important;
-	padding: 10px; }
+    padding: 10px; }
 
 #version { color: white !important; }
 

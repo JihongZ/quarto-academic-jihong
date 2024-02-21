@@ -18,6 +18,7 @@ format:
 ---
 
 ## R package - survey
+
 ### What ChatGPT say about `survey` package
 
 > Me: I don't know much about `survey` R package. Can you tell me know about core features of this package?
@@ -26,23 +27,23 @@ Sure, the `survey` package in R is designed specifically for analysis of data fr
 
 Here are some of the core features of the `survey` package:
 
-1. **Descriptive Statistics:** The package provides functions for computing descriptive statistics on survey data, including mean, total, and quantiles.
+1.  **Descriptive Statistics:** The package provides functions for computing descriptive statistics on survey data, including mean, total, and quantiles.
 
-2. **Regression Models:** The package provides a variety of model fitting functions for binary and multi-category response, count data, survival data, and continuous response.
+2.  **Regression Models:** The package provides a variety of model fitting functions for binary and multi-category response, count data, survival data, and continuous response.
 
-3. **Design Effects:** It allows calculation of design effects for complex survey designs.
+3.  **Design Effects:** It allows calculation of design effects for complex survey designs.
 
-4. **Post-stratification and Raking:** The package allows for adjusting the sampling weights to match known population margins.
+4.  **Post-stratification and Raking:** The package allows for adjusting the sampling weights to match known population margins.
 
-5. **Subpopulation Analysis:** It includes functions for correctly handling analyses that are limited to a subset of the population (a subpopulation).
+5.  **Subpopulation Analysis:** It includes functions for correctly handling analyses that are limited to a subset of the population (a subpopulation).
 
-6. **Variance Estimation:** The `survey` package supports multiple methods of variance estimation, including Taylor series linearization, replication weights, and subbootstrap.
+6.  **Variance Estimation:** The `survey` package supports multiple methods of variance estimation, including Taylor series linearization, replication weights, and subbootstrap.
 
 Remember that before you can use these functions, you will need to define a survey design object that specifies the features of your survey's design (like the sampling method, strata, clustering, and weights).
 
 Here's an example of how you might use it to calculate the mean of a variable from a survey:
 
-```r
+``` r
 # Load the necessary package
 library(survey)
 
@@ -53,7 +54,7 @@ des <- svydesign(ids = ~1, data = mydata, weights = ~weight)
 mean <- svytotal(~variable, design = des)
 ```
 
-Please replace `mydata`, `weight`, and `variable` with your actual data frame, weight column, and the variable you're interested in, respectively. 
+Please replace `mydata`, `weight`, and `variable` with your actual data frame, weight column, and the variable you're interested in, respectively.
 
 Remember, working with survey data can be complex due to the design features of surveys. The `survey` package in R provides a robust set of tools for dealing with this complexity.
 
@@ -96,9 +97,6 @@ mykbl <- function(x, ...){
 datList <- readRDS(here::here("posts/2023-07-04-data-visualization-for-survey-data/Example_Data.RDS"))
 str(datList)
 ```
-
-
-
 
 ### Descriptive statistics
 
@@ -145,8 +143,6 @@ svymean(make.formula(vars), design = dexample, na.rm = TRUE)
 svytotal(make.formula(vars), design = dexample, na.rm = TRUE)
 ```
 
-
-
 ### Stacked barplot for survey data responses
 
 ```{r}
@@ -174,5 +170,5 @@ p = p + geom_text(aes(y = factor(items, levels = paste0("EDEQS", 1:12)),
 p = p + scale_fill_manual(values = mycolors)
 p
 ```
-We can clearly identify item 7 has highest proportion of level 0, and needed to be theoretically justified.
 
+We can clearly identify item 7 has highest proportion of level 0, and needed to be theoretically justified.
