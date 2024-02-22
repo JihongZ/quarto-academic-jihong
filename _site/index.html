@@ -98,6 +98,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-teaching .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-teaching'] = new List('listing-teaching', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
 <script type="text/javascript">
@@ -302,6 +330,44 @@ window.Quarto = {
 <p><span style="color:darkgrey;">June 2021 - Jan 2022</span></p></li>
 </ul>
 </div>
+</div>
+</div>
+</section>
+<section id="teaching" class="level2">
+<h2 data-anchor-id="teaching">Teaching</h2>
+<div id="listing-teaching" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="class" data-listing-date-sort="1705125600000" data-listing-file-modified-sort="1708482792462" data-listing-date-modified-sort="1707285600000" data-listing-reading-time-sort="41" data-listing-word-count-sort="8173">
+<div class="thumbnail">
+<p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external"></a></p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/UA_Logo_Horizontal.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">ESRM 6553: Advanced Multivariate Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">Spring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229</a>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">This course offers an in-depth exploration of multivariate statistics within the context of Bayesian inferences. Bayesian statistics have been widely used in public health…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">
+<div class="listing-date">
+Jan 13, 2024
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
 </div>
 </section>

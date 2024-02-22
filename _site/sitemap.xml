@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jihongzhang.org/posts.html</loc>
-    <lastmod>2024-02-21T03:52:56.212Z</lastmod>
+    <lastmod>2024-02-21T05:59:28.701Z</lastmod>
   </url>
   <url>
     <loc>https://jihongzhang.org/index.html</loc>
-    <lastmod>2024-02-21T04:55:27.141Z</lastmod>
+    <lastmod>2024-02-21T06:04:14.862Z</lastmod>
   </url>
   <url>
     <loc>https://jihongzhang.org/projects/Initialize-R-Project/index.html</loc>
@@ -219,5 +219,9 @@
   <url>
     <loc>https://jihongzhang.org/links.html</loc>
     <lastmod>2024-01-31T19:14:10.498Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jihongzhang.org/index.html</loc>
+    <lastmod>2024-02-21T06:04:14.862Z</lastmod>
   </url>
 </urlset>

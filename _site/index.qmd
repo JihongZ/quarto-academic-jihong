@@ -32,6 +32,8 @@ listing:
     filter-ui: false
     page-size: 3
     feed: true
+  - id: teaching
+    contents: "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.qmd"
 ---
 
 ## About me
@@ -69,6 +71,10 @@ My expertise lies in the application of sophisticated statistical models, includ
     [June 2021 - Jan 2022]{style="color:darkgrey;"}
 :::
 
+## Teaching
+
+::: {#teaching}
+:::
 
 ## Recent posts
 

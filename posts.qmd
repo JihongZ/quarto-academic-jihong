@@ -6,4 +6,6 @@ listing:
   sort: "date desc"
   type: grid
   categories: cloud
+  fields: [image, date, title, categories, author, reading-time]
+  filter-ui: [title, date]
 ---

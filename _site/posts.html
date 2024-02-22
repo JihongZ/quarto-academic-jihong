@@ -80,10 +80,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       page: 18,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-date"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -329,6 +329,12 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-categories="shiny,text analysis" data-listing-date-sort="1708408800000" data-listing-file-modified-sort="1708492533119" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
 <a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="quarto-grid-link">
@@ -338,6 +344,9 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 Danmu Cloud for Bilibili
 </h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('shiny'); return false;">
 shiny
@@ -345,20 +354,6 @@ shiny
 <div class="listing-category" onclick="window.quartoListingCategory('text analysis'); return false;">
 text analysis
 </div>
-</div>
-<div class="card-text listing-description">
-
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div id="fig-mtcars" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-
-</div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig" id="fig-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Word Cloud
-</figcaption></figure>
-</div>
-</div></div>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -380,8 +375,8 @@ Feb 20, 2024
 <h5 class="no-anchor card-title listing-title">
 Customize font family of Visual Mode in Rstudio and in Zotero
 </h5>
-<div class="card-text listing-description">
-Visual model of quarto and rmarkdown is very easy to use. Though users can change font family for Source mode in Rstudio by <code>Options</code> menu, there is no direct way change font…
+<div class="listing-reading-time card-text text-muted">
+9 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -403,8 +398,8 @@ Feb 10, 2024
 <h5 class="no-anchor card-title listing-title">
 How to set up High Performance Computing of University of Arkansas
 </h5>
-<div class="card-text listing-description">
-Arkansas High Performance Computing Center (AHPCC) is available for research and instructional use to faculty and students of any Arkansas university and their research…
+<div class="listing-reading-time card-text text-muted">
+12 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -426,13 +421,13 @@ Jan 14, 2024
 <h5 class="no-anchor card-title listing-title">
 ESRM 6553: Advanced Multivariate Analysis
 </h5>
+<div class="listing-reading-time card-text text-muted">
+41 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('class'); return false;">
 class
 </div>
-</div>
-<div class="card-text listing-description">
-This course offers an in-depth exploration of multivariate statistics within the context of Bayesian inferences. Bayesian statistics have been widely used in public health…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -454,6 +449,9 @@ Jan 13, 2024
 <h5 class="no-anchor card-title listing-title">
 Data visualization for survey data
 </h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -461,9 +459,6 @@ blog
 <div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
 ggplot2
 </div>
-</div>
-<div class="card-text listing-description">
-Many tutorials online are about general data visualization. This post aims to showcase some tricks for survey data
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -485,6 +480,9 @@ Jul 4, 2023
 <h5 class="no-anchor card-title listing-title">
 A tutorial for forester R package
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
 tutorial
@@ -492,9 +490,6 @@ tutorial
 <div class="listing-category" onclick="window.quartoListingCategory('package'); return false;">
 package
 </div>
-</div>
-<div class="card-text listing-description">
-As contributors of the R package said in their github website:
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -516,8 +511,8 @@ Jun 28, 2023
 <h5 class="no-anchor card-title listing-title">
 One Template for Quarto Report
 </h5>
-<div class="card-text listing-description">
-A template used for academic reporting
+<div class="listing-reading-time card-text text-muted">
+2 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -539,8 +534,8 @@ Jun 27, 2023
 <h5 class="no-anchor card-title listing-title">
 Moving My Website to Quarto
 </h5>
-<div class="card-text listing-description">
-Since June 25, 2023, I start to move my website from hugo/rmarkdown/blogdown/wowchemy to quarto website. It is difficult to explain why I spend so much time on that. Perhaps…
+<div class="listing-reading-time card-text text-muted">
+4 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -562,6 +557,9 @@ Jun 25, 2023
 <h5 class="no-anchor card-title listing-title">
 A Conversation between R and Python on Data Analysis and Machine Learning
 </h5>
+<div class="listing-reading-time card-text text-muted">
+8 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -575,9 +573,6 @@ PyTorch
 <div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
 Deep Learning
 </div>
-</div>
-<div class="card-text listing-description">
-When I play with machine learning using python and R, I keep wondering whether I can combine R and Python code in a better way, such as using R for data…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -599,6 +594,9 @@ Jun 20, 2023
 <h5 class="no-anchor card-title listing-title">
 Latent Class Model: Batch Mplus using R on Mac
 </h5>
+<div class="listing-reading-time card-text text-muted">
+11 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -609,9 +607,6 @@ LCM
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-</div>
-<div class="card-text listing-description">
-Mplus is a very popular program for varied latent varaible modeling: (1) Structural equation modeling (2) multilevel analysis (3) mixture modeling (latent class model). R…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -633,8 +628,8 @@ Jun 10, 2023
 <h5 class="no-anchor card-title listing-title">
 Dissertation Defence
 </h5>
-<div class="card-text listing-description">
-
+<div class="listing-reading-time card-text text-muted">
+22 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -656,11 +651,11 @@ Oct 23, 2022
 <h5 class="no-anchor card-title listing-title">
 NSF Grant on Bayesian Cognitive Diagnosis
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 
-</div>
-<div class="card-text listing-description">
-The NSF grant awards can be easily searched via NSF website. Check <code>Active Awards</code> and type “Bayesian &amp; Cognitive Diagnosis” into the search box. Two things I’m really…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -682,6 +677,9 @@ May 20, 2022
 <h5 class="no-anchor card-title listing-title">
 Web Scraping Academia Institute’s Grant Fundings using R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+4 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -689,9 +687,6 @@ blog
 <div class="listing-category" onclick="window.quartoListingCategory('Web Scrapping'); return false;">
 Web Scrapping
 </div>
-</div>
-<div class="card-text listing-description">
-How to use R for web scrapping
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -713,6 +708,9 @@ May 12, 2022
 <h5 class="no-anchor card-title listing-title">
 Power Analysis for Structural Equation Modeling
 </h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -732,9 +730,6 @@ blog
 <div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
 tutorial
 </div>
-</div>
-<div class="card-text listing-description">
-Showcase current software used for power analysis of Structural Equation Modeling
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -756,6 +751,9 @@ Apr 29, 2022
 <h5 class="no-anchor card-title listing-title">
 [Workshop] Creating Academic Blog via R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -769,9 +767,6 @@ Rstudio
 <div class="listing-category" onclick="window.quartoListingCategory('Workshop'); return false;">
 Workshop
 </div>
-</div>
-<div class="card-text listing-description">
-Michael Clark has a great workshop in his blog introducing distill package. I suggest readers check it out first.
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -793,6 +788,9 @@ Apr 24, 2022
 <h5 class="no-anchor card-title listing-title">
 Health Care Data Analysis with Apple Watch
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -803,9 +801,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('health'); return false;">
 health
 </div>
-</div>
-<div class="card-text listing-description">
-The data contained within Health app on iPhone can be saved and exported for other uses. Perhaps you want to export Health app data to use in another health or fitness app…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -827,13 +822,13 @@ Jul 6, 2021
 <h5 class="no-anchor card-title listing-title">
 [Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-</div>
-<div class="card-text listing-description">
-Posterior Predictive Model Checking (PPMC) is frequently used for model fit evaluation in Bayesian Confirmatory Factor Analysis (BCFA). In standard PPMC procedures, model…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -855,13 +850,13 @@ Jan 31, 2021
 <h5 class="no-anchor card-title listing-title">
 Study Notes: gt package and format table
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-</div>
-<div class="card-text listing-description">
-A introduction about <code>gt</code> package is here
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -883,6 +878,9 @@ May 25, 2020
 <h5 class="no-anchor card-title listing-title">
 Introduction to Latent Attribute Network Analysis
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -893,9 +891,6 @@ Network
 <div class="listing-category" onclick="window.quartoListingCategory('DCM'); return false;">
 DCM
 </div>
-</div>
-<div class="card-text listing-description">
-Network analysis is a very useful tool. This post show how to visualize the latent attribute network in Diagnostic Classification Modeling(DCM). There are a ton of R package…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -917,6 +912,9 @@ Oct 20, 2019
 <h5 class="no-anchor card-title listing-title">
 Which Country own the most Liberty Nobel Prizes? France? Ireland?
 </h5>
+<div class="listing-reading-time card-text text-muted">
+4 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
 visualization
@@ -927,9 +925,6 @@ blog
 <div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
 ggplot2
 </div>
-</div>
-<div class="card-text listing-description">
-It is of my interest to use <code>ggplot</code> package to visualize some fun data. In this post, I tried to play with a Nobel Prizes Data including countries, prize year, each prize.…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -951,13 +946,13 @@ May 20, 2019
 <h5 class="no-anchor card-title listing-title">
 Make a Game in R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
 </div>
-</div>
-<div class="card-text listing-description">
-Recently I found a interesting R package call nessy which allows you to create a simple game driven by shiny. Thus. I tried a little bit about this package. Making a…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -979,6 +974,9 @@ Apr 19, 2019
 <h5 class="no-anchor card-title listing-title">
 Introduce gganimate for Psychometric
 </h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -986,9 +984,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('Tutorial'); return false;">
 Tutorial
 </div>
-</div>
-<div class="card-text listing-description">
-A new R packge (<code>gganimate</code> ) provides some new features for animation in R. Its big advantage is it could make use of ggplot API and embeded into ggplot. Next, I will use a…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1010,6 +1005,9 @@ Feb 22, 2019
 <h5 class="no-anchor card-title listing-title">
 Lasso Regression Example using glmnet package in R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -1017,9 +1015,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('manual'); return false;">
 manual
 </div>
-</div>
-<div class="card-text listing-description">
-More details please refer to the link below: (https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html#lin)
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1041,13 +1036,13 @@ Feb 19, 2019
 <h5 class="no-anchor card-title listing-title">
 Visuliaztion of Item Information Curves In R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
 </div>
-</div>
-<div class="card-text listing-description">
-This blog is to show a new way to display item information curves using <code>ggridges</code> package. The ridge plot could show the IIF plots very clear when you have a large number of…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1069,13 +1064,13 @@ Jan 10, 2019
 <h5 class="no-anchor card-title listing-title">
 [Manual]Using Jags and R2jags in R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Manual'); return false;">
 Manual
 </div>
-</div>
-<div class="card-text listing-description">
-This post is aimed to introduce the basics of using jags in R programming. Jags is a frequently used program for conducting Bayesian statistics.Most of information below is…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1097,13 +1092,13 @@ Sep 12, 2018
 <h5 class="no-anchor card-title listing-title">
 Introduce Descrepancy Measures
 </h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-</div>
-<div class="card-text listing-description">
-This Blog is the notes for my recent project about reliability and model checking. Next I want to organize a little about one important concept in model checking -…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1125,6 +1120,9 @@ Sep 11, 2018
 <h5 class="no-anchor card-title listing-title">
 How to do Data Cleaning in R
 </h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
 blog
@@ -1135,9 +1133,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('tidyverse'); return false;">
 tidyverse
 </div>
-</div>
-<div class="card-text listing-description">
-This blog is trying to elaborate steps for cleaning the data. Since datasets varied, this blog could not cover all. Depedent on the data you’re using, different methods…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1159,6 +1154,9 @@ Sep 4, 2018
 <h5 class="no-anchor card-title listing-title">
 My New Shiny App Cut Score Consistency
 </h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -1166,10 +1164,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('Shiny'); return false;">
 Shiny
 </div>
-</div>
-<div class="card-text listing-description">
-<summary>R Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu">include_app</span><span class="op">(</span><span class="st">"https://jihongz.shinyapps.io/Cutscore-1/"</span>, height <span class="op">=</span> <span class="fl">1200</span><span class="op">)</span> </span></code></pre></div>
-
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1191,6 +1185,9 @@ Mar 10, 2018
 <h5 class="no-anchor card-title listing-title">
 Latent Profile Analysis using MCLUST (in R)
 </h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -1201,9 +1198,6 @@ clustering
 <div class="listing-category" onclick="window.quartoListingCategory('latent class'); return false;">
 latent class
 </div>
-</div>
-<div class="card-text listing-description">
-Hi there! This is Jihong. This is a webpage folked from JOSHUA M. ROSENBERG. It aims to provid a very clear example about how to conduct Latent Profile Analysis using MCLUST…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1225,6 +1219,9 @@ Nov 23, 2017
 <h5 class="no-anchor card-title listing-title">
 One Example of Measurement Invariance
 </h5>
+<div class="listing-reading-time card-text text-muted">
+12 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -1235,9 +1232,6 @@ SEM
 <div class="listing-category" onclick="window.quartoListingCategory('lavaan'); return false;">
 lavaan
 </div>
-</div>
-<div class="card-text listing-description">
-Recently, I was asked by my friend why should we use Measurement Invariance in real research. Why not just ignore this complex and tedious process? As far I’m concerned…<strong></strong><code></code>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1259,6 +1253,9 @@ Nov 12, 2017
 <h5 class="no-anchor card-title listing-title">
 Simulation Study of Linking Using Mirt
 </h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -1269,9 +1266,6 @@ mirt
 <div class="listing-category" onclick="window.quartoListingCategory('linking'); return false;">
 linking
 </div>
-</div>
-<div class="card-text listing-description">
-This simulation study is to show how to do IRT Linking Process using mirt R Package. The simulation data includes 2 forms - Form A and Form B. These 2 forms are simulated…<!--more-->
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1293,6 +1287,9 @@ Nov 10, 2017
 <h5 class="no-anchor card-title listing-title">
 How to use lavaan package to perform Confirmatory Factor Analysis
 </h5>
+<div class="listing-reading-time card-text text-muted">
+14 min
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Manual'); return false;">
 Manual
@@ -1303,9 +1300,6 @@ R
 <div class="listing-category" onclick="window.quartoListingCategory('Lavaan'); return false;">
 Lavaan
 </div>
-</div>
-<div class="card-text listing-description">
-This is one of my homework in Structural Equation Modeling in Fall 2017. Dr.&nbsp;Templin provided a excelent example showing how to perform Confirmatory Factor Analysis (CFA)…<code></code>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
