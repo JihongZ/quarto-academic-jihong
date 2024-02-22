@@ -4004,6 +4004,8 @@ font-style: inherit;">;</span> }</span></code></pre></div>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>tutorial</category>
+  <category>theming</category>
   <guid>https://www.jihongzhang.org/posts/2024-02-10-Customize-Rstudio-Theme/</guid>
   <pubDate>Sat, 10 Feb 2024 06:00:00 GMT</pubDate>
 </item>
@@ -4167,9 +4169,9 @@ font-style: inherit;">--pty</span> /bin/bash</span></code></pre></div>
 <p>This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
+<col style="width: 26%">
 <col style="width: 31%">
-<col style="width: 43%">
+<col style="width: 42%">
 </colgroup>
 <thead><tr class="header">
 <th>slurm commands</th>
@@ -4490,6 +4492,8 @@ razr72/06:    reimaged razor nodes, 72 hour limit, in progress</code></pre>
 
 
 </section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>tutorial</category>
+  <category>hpc</category>
   <guid>https://www.jihongzhang.org/posts/2024-01-14-how-to-use-uark-hpc/</guid>
   <pubDate>Sun, 14 Jan 2024 06:00:00 GMT</pubDate>
 </item>

@@ -18,9 +18,7 @@ format:
 #| fig-cap: "Word Cloud"
 #| column: margin
 #| echo: false
-
 knitr::include_graphics("img01.png")
-
 ```
 
 ```{=html}
