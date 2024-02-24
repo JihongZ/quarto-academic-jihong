@@ -1,3 +1,7 @@
+if (0) {
+  load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+                  "Lecture06", "Code", "Lecture06.RData"))
+}
 # Simulation Study: Model 1 -----------------------------------------------
 # One-factor model without cross-loadings
 library(tidyverse)
@@ -21,7 +25,7 @@ Lambda <- matrix(
   byrow = T
 )
 mu <- matrix(rep(0.1, J), nrow = 1, byrow = T)
-residual <- mvtnorm::rmvnorm(N, mean = rep(0, J), sigma = diag(sigma, J))
+residual <- mvtnorm::rmvnorm(N, mean = rep(0, J), sigma = diag(sigma^2, J))
 Y <- t(apply(FS %*% t(Lambda), 1, \(x) x + mu)) + residual
 
 
@@ -84,7 +88,6 @@ mod_cfa_twofactor <- cmdstan_model(here::here("posts", "2024-01-12-syllabus-adv-
 fit_pf <- mod_cfa_twofactor$pathfinder(data = data_list, seed = 1234, draws = 4000)
 fit_pf$summary('lambda')
 
-
 fit_cfa_twofactor <- mod_cfa_twofactor$sample(
   data = data_list,
   seed = 1234,
@@ -94,13 +97,35 @@ fit_cfa_twofactor <- mod_cfa_twofactor$sample(
   iter_warmup = 1000
 )
 
+saveRDS(fit_cfa_twofactor, here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+                                      "Lecture06", "Code", "fit_cfa_twofactor.RDS"))
 fit_cfa_twofactor$summary("lambda")
-fit_cfa_twofactor$summary("corrTheta")
+fit_cfa_twofactor$summary(c("corrTheta[1,2]", "corrTheta[2,1]"))
+fit_cfa_twofactor$summary("L[2,1]")
+
 fit_cfa_twofactor$summary("mu")
 fit_cfa_twofactor$summary("sigma")
+fit_cfa_twofactor$summary("Item_Mean_rep")
+
+### PPMC
+Item_Mean_rep_mat <- fit_cfa_twofactor$draws("Item_Mean_rep", format = 'matrix')
+Item_Mean_obs <- colMeans(Y)
+PPP <- rep(NA, J)
+for (item in 1:J) {
+  PPP[item] <- mean(Item_Mean_rep_mat[, item] > Item_Mean_obs[item])
+}
+data.frame(
+  Item = factor(1:J, levels = 1:J),
+  PPP = PPP
+) |> 
+  ggplot() +
+  geom_col(aes(x = Item, y = PPP)) + 
+  geom_hline(aes(yintercept = .5), col = 'red', size = 1.3) + 
+  theme_classic()
 
 
 # Simulation 2 ------------------------------------------------------------
+set.seed(1234)
 N <- 1000
 J2 <- 7
 # parameters
@@ -120,7 +145,7 @@ Lambda2 <- matrix(
   byrow = T
 )
 mu <- matrix(rep(0.1, J2), nrow = 1, byrow = T)
-residual <- mvtnorm::rmvnorm(N, mean = rep(0, J2), sigma = diag(sigma, J2))
+residual <- mvtnorm::rmvnorm(N, mean = rep(0, J2), sigma = diag(sigma^2, J2))
 Y2 <- t(apply(FS %*% t(Lambda2), 1, \(x) x + mu)) + residual
 
 Q2 = Lambda2
@@ -137,55 +162,46 @@ loc2 <- Q2 |>
   mutate(q = -q + 2) |> 
   as.matrix()
 
-mod_cfa_exp2 <- cmdstan_model(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "simulation_exp2.stan"))
+mod_cfa_exp2 <- cmdstan_model(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+                                         "Lecture06", "Code", "simulation_exp2.stan"))
 
+data_list2 <- list(
+  N = 1000, # number of subjects/observations
+  J = J2, # number of items
+  K = 2, # number of latent variables,
+  Y = Y2,
+  Q = Q2,
+  # location of lambda
+  R = nrow(loc2),
+  jj = loc2[,1],
+  kk = loc2[,2],
+  q = loc2[,3],
+  #hyperparameter
+  meanSigma = .1,
+  scaleSigma = 1,
+  meanMu = rep(0, J2),
+  covMu = diag(10, J2),
+  meanTheta = rep(0, 2),
+  corrTheta = matrix(c(1, .3, .3, 1), 2, 2, byrow = T)
+)
+    
+## MCMC
+fit_cfa_exp2 <- mod_cfa_exp2$sample(
+  data = data_list2,
+  seed = 1234,
+  chains = 4,
+  parallel_chains = 4, 
+  iter_sampling = 3000,
+  iter_warmup = 3000
+)
+saveRDS(fit_cfa_exp2, here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+                                      "Lecture06", "Code", "fit_cfa_exp2.RDS"))
+# fit_cfa_exp2 <- readRDS(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+#                                  "Lecture06", "Code", "fit_cfa_exp2.RDS"))
+fit_cfa_exp2$summary('lambda')
+fit_cfa_exp2$summary('mu')
 
-res_list = list()
-length(res_list) <- 9
-i = 0
-for (scaleL1 in c(1, 10, 100)) {
-  for (scaleL2 in c(1, 10, 100)) {
-    i = i + 1
-    data_list2 <- list(
-      N = 1000, # number of subjects/observations
-      J = J2, # number of items
-      K = 2, # number of latent variables,
-      Y = Y2,
-      Q = Q2,
-      # location of lambda
-      R = nrow(loc2),
-      jj = loc2[,1],
-      kk = loc2[,2],
-      q = loc2[,3],
-      #hyperparameter
-      meanSigma = .1,
-      scaleSigma = 1,
-      meanMu = rep(0, J2),
-      covMu = diag(10, J2),
-      meanTheta = rep(0, 2),
-      corrTheta = matrix(c(1, .3, .3, 1), 2, 2, byrow = T),
-      meanLambda = c(0.1, 0),
-      scaleLambda = c(scaleL1, scaleL2)
-    )
-    
-    ## MCMC
-    fit_cfa_exp2 <- mod_cfa_exp2$sample(
-      data = data_list2,
-      seed = 1234,
-      chains = 4,
-      parallel_chains = 4, 
-      iter_sampling = 4000,
-      iter_warmup = 2000
-    )
-    
-    res <- list(
-      scaleL1 = scaleL1,
-      scaleL2 = scaleL2,
-      posterior = fit_cfa_exp2$summary("lambda")
-    )
-    res_list[[i]] <- res
-  }
-}  
+  
 
 # quick check using pathfinder
 # fit_pf2 <- mod_cfa_exp2$pathfinder(data = data_list2, seed = 1234, draws = 4000)
@@ -195,8 +211,8 @@ for (scaleL1 in c(1, 10, 100)) {
 
 
 
-save(Y, fit, mod_cfa_twofactor, fit_cfa_twofactor, Q, loc, data_list,
-     mod_cfa_exp2, fit_cfa_exp2, Q2, loc2, data_list2, res_list,
+save(Y, fit, Q, loc, data_list,
+     Q2, loc2, data_list2, Lambda2,
      file = here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
                        "Lecture06", "Code", "Lecture06.RData")
 )

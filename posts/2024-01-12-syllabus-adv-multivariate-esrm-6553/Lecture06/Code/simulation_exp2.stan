@@ -16,8 +16,7 @@ data {
   matrix[J, J] covMu;      // prior covariance matrix for coefficients
   vector[K] meanTheta;
   matrix[K, K] corrTheta;
-  array[2] int<lower=0> meanLambda;      // prior covariance matrix for coefficients
-  array[2] int<lower=0> scaleLambda;      // prior covariance matrix for coefficients
+  
 }
 parameters {
   vector<lower=0,upper=1>[J] mu;
@@ -31,7 +30,11 @@ model {
   mu ~ multi_normal(meanMu, covMu);
   // specify lambda's regulation
   for (r in 1:R) {
-     lambda[jj[r], kk[r]] ~ cauchy(meanLambda[q[r]], scaleLambda[q[r]]);
+    if (q[r] == 1){
+      lambda[jj[r], kk[r]] ~ normal(0, 10);
+    }else{// student_t(nu, mu, sigma)
+      lambda[jj[r], kk[r]] ~ student_t(1, 0, 0.01);
+    }
   }
   //corrTheta ~ lkj_corr(eta);
   for (i in 1:N) {
@@ -39,6 +42,6 @@ model {
   }
   for (j in 1:J) {
     sigma[j] ~ cauchy(meanSigma, scaleSigma);                   // Prior for unique standard deviations
-    Y[,j] ~ normal(mu[j]+theta*to_vector(lambda[j,]), sigma[j]);
+    Y[,j] ~ normal(mu[j]+to_row_vector(lambda[j,])*theta', sigma[j]);
   }
 }

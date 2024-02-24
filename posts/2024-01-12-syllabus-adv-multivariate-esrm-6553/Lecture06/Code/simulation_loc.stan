@@ -42,3 +42,19 @@ model {
     Y[,j] ~ normal(mu[j]+lambda[j]*theta[,kk[j]], sigma[j]);
   }
 }
+generated quantities {
+  vector[N * J] log_lik;
+  matrix[N, J] temp;
+  matrix[N, J] Y_rep;
+  vector[J] Item_Mean_rep;
+  for (i in 1:N) {
+    for (j in 1:J) {
+      temp[i, j] = normal_lpdf(Y[i, j] | mu[j]+lambda[j]*theta[i,kk[j]],  sigma[j]); 
+    }
+  }
+  log_lik = to_vector(temp);
+  for (j in 1:J) {
+    Y_rep[,j] = to_vector(normal_rng(mu[j]+lambda[j]*theta[,kk[j]], sigma[j]));
+    Item_Mean_rep[j] = mean(Y_rep[,j]);
+  }
+}
