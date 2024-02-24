@@ -2257,5 +2257,19 @@
     "title": "Lecture 06",
     "section": "A Simulation Study",
     "text": "A Simulation Study\n\nload(here::here(\"posts\", \"2024-01-12-syllabus-adv-multivariate-esrm-6553\", \"Lecture06\", \"Code\", \"Lecture06.RData\"))\nfit_cfa_twofactor$summary(\"lambda\")\n\n# A tibble: 6 × 10\n  variable   mean median     sd    mad    q5   q95  rhat ess_bulk ess_tail\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 lambda[1] 0.697  0.697 0.0199 0.0202 0.665 0.730  1.00    2231.    5062.\n2 lambda[2] 0.501  0.501 0.0161 0.0161 0.475 0.528  1.00    4215.    6977.\n3 lambda[3] 0.291  0.291 0.0124 0.0125 0.271 0.312  1.00    7500.   11108.\n4 lambda[4] 0.713  0.713 0.0210 0.0208 0.679 0.748  1.00    2015.    3392.\n5 lambda[5] 0.482  0.481 0.0160 0.0163 0.456 0.508  1.00    5437.    7473.\n6 lambda[6] 0.318  0.318 0.0130 0.0129 0.296 0.339  1.00    7835.   10430."
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture06/Lecture06.html#simulation-study-1",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture06/Lecture06.html#simulation-study-1",
+    "title": "Lecture 06",
+    "section": "Simulation Study 1",
+    "text": "Simulation Study 1\nThe model specification is a two-factor with each measured by 3 items. In total, there are 6 items with continuous responses. Sample size is 1000.\n\nModel Specification"
+  },
+  {
+    "objectID": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture06/Lecture06.html#other-materials",
+    "href": "posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture06/Lecture06.html#other-materials",
+    "title": "Lecture 06",
+    "section": "Other materials",
+    "text": "Other materials\n\nJonathan Templin’s Website\nWinston-Salem’s Website\nRick Farouni’s Website"
   }
 ]

@@ -4,43 +4,41 @@ data {
   int<lower=0> K; // number of latent variables
   matrix[N, J] Y; // item responses
   
-  int<lower=0> R; // number of rows in location matrix
-  array[R] int<lower=0>jj; // index of item in location matrix
-  array[R] int<lower=0>kk; // index of latent variables in location matrix
-  array[R] int<lower=0>Ind; // index of lambda
-  //matrix[J, K] Q;
+  //location of lambda
+  array[J] int<lower=0> kk;
   
   //hyperparameter
+  real<lower=0> sigmaRate;
   vector[J] meanMu;
   matrix[J, J] covMu;      // prior covariance matrix for coefficients
   vector[K] meanTheta;
-  matrix[K, K] covTheta;      // prior covariance matrix for coefficients
-  vector[R] meanLambda;
-  matrix[R, R] covLambda;      // prior covariance matrix for coefficients
+  
+  vector[J] meanLambda;
+  matrix[J, J] covLambda;      // prior covariance matrix for coefficients
+  
+  real<lower=0> eta; // LKJ shape parameters
 }
-
-// The parameters accepted by the model. Our model
-// accepts two parameters 'mu' and 'sigma'.
 parameters {
   vector[J] mu;
-  vector<lower=0>[R] lambda;
+  vector<lower=0,upper=1>[J] lambda;
   vector<lower=0>[J] sigma; // the unique residual standard deviation for each item
   matrix[N, K] theta;                // the latent variables (one for each person)
+  // corr_matrix[K] corrTheta;  // factor correlation matrix
+  cholesky_factor_corr[K] L; 
 }
-
-// The model to be estimated. We model the output
-// 'y' to be normally distributed with mean 'mu'
-// and standard deviation 'sigma'.
+transformed parameters{
+  matrix[K,K] corrTheta = multiply_lower_tri_self_transpose(L);
+}
 model {
   mu ~ multi_normal(meanMu, covMu);
-  sigma ~ exponential(0.01);                   // Prior for unique standard deviations
+  sigma ~ exponential(sigmaRate);                   // Prior for unique standard deviations
   lambda ~ multi_normal(meanLambda, covLambda);
-  
+  //corrTheta ~ lkj_corr(eta); // LKJ prior on the correlation matrix of factors
+  L ~ lkj_corr_cholesky(eta);
   for (i in 1:N) {
-    theta[i,] ~ multi_normal(meanTheta, covTheta);
+    theta[i,] ~ multi_normal(meanTheta, corrTheta);
   }
-  for (r in 1:R) {
-    Y[,jj[r]] ~ normal(mu[jj[r]]+lambda[Ind[r]]*theta[,kk[r]], sigma[jj[r]]);
+  for (j in 1:J) {
+    Y[,j] ~ normal(mu[j]+lambda[j]*theta[,kk[j]], sigma[j]);
   }
 }
-

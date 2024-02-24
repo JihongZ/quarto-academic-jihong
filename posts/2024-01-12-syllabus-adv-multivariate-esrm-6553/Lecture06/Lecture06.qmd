@@ -40,7 +40,7 @@ format:
 
 3.  Dive deeper into the observed-variables modeling aspect
 
-# Measurement Model in general 
+# Measurement Model in general
 
 ## Measurement Model Analysis Steps
 
@@ -205,10 +205,9 @@ The model shows:
 :::
 
 ::: {.column width="30%"}
-
 Then,
 
--   $\Theta$ = $\begin{bmatrix} \theta_{1,1}, \theta_{1,2}\\\theta_{2,1}, \theta_{2,2}\\ \cdots,\cdots \\  \theta_{N, 1}, \theta_{N,2} \end{bmatrix}$ $\sim [0, \Sigma]$
+-   $\Theta$ = $\begin{bmatrix} \theta_{1,1}, \theta_{1,2}\\\theta_{2,1}, \theta_{2,2}\\ \cdots,\cdots \\ \theta_{N, 1}, \theta_{N,2} \end{bmatrix}$ $\sim [0, \Sigma]$
 
 -   $\Lambda^T$ = $\begin{bmatrix}\lambda_{1,1}, \lambda_{1,2}, ..., \lambda_{1,5}\\\lambda_{2,1}, \lambda_{2,2}, ..., \lambda_{2,5}\end{bmatrix}$
 :::
@@ -216,7 +215,7 @@ Then,
 
 ------------------------------------------------------------------------
 
-### Example 3 with general form 
+### Example 3 with general form
 
 ::: columns
 ::: {.column width="70%"}
@@ -244,10 +243,9 @@ The model shows:
 :::
 
 ::: {.column width="30%"}
-
 Then,
 
--   $\Theta$ = $\begin{bmatrix} \theta_{1,1}, \theta_{1,2}\\\theta_{2,1}, \theta_{2,2}\\ \cdots,\cdots \\  \theta_{N, 1}, \theta_{N,2} \end{bmatrix}$ $\sim [0, \Sigma]$
+-   $\Theta$ = $\begin{bmatrix} \theta_{1,1}, \theta_{1,2}\\\theta_{2,1}, \theta_{2,2}\\ \cdots,\cdots \\ \theta_{N, 1}, \theta_{N,2} \end{bmatrix}$ $\sim [0, \Sigma]$
 
 -   $\Lambda^T$ = $\begin{bmatrix}\lambda_{1,1}, \lambda_{1,2}, \lambda_{1,3}, 0,0\\ 0, 0, \lambda_{2,3}, \lambda_{2,4}, \lambda_{2,5}\end{bmatrix}$
 
@@ -301,21 +299,190 @@ ggplot() +
 ------------------------------------------------------------------------
 
 2.  Multidimensionality
-    -    How many factors to be measured?
+    -   How many factors to be measured?
     -   If $\geq$ 2 factors, we specify mean vectors and variance-covariance matrix
     -   To link latent variables with observed variables, we need to create a indicator matrix of coefficient/effects of latent variable on items.
         -   In diagnostic modeling and multidimensional IRT, we call it Q-matrix
 
 ## Simulation Study 1
 
-The model specification is a two-factor with each measured by 3 items. In total, there are 6 items with continuous responses.
+The model specification is a two-factor with each measured by 3 items. In total, there are 6 items with continuous responses. Sample size is 1000.
 
-### 1. Simulation settings
+![Model Specification](simulation_model1.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### Data Simulation
 
 ```{r}
+#| echo: false
 load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "Lecture06.RData"))
-fit_cfa_twofactor$summary("lambda")
 ```
+
+```{r}
+# One-factor model without cross-loadings
+library(tidyverse)
+library(cmdstanr)
+set.seed(1234)
+N <- 1000
+J <- 6
+# parameters
+psi <- .3 # factor correlation
+sigma <- .1 # residual varaince
+FS <- mvtnorm::rmvnorm(N, mean = c(0, 0), 
+                       sigma = matrix(c(1, psi, psi, 1), 
+                                      2, 2, byrow = T))
+Lambda <- matrix(
+  c(
+    0.7, 0,
+    0.5, 0,
+    0.3, 0,
+    0, 0.7,
+    0, 0.5,
+    0, 0.3
+  ), 6, 2,
+  byrow = T
+)
+mu <- matrix(rep(0.1, J), nrow = 1, byrow = T)
+residual <- mvtnorm::rmvnorm(N, mean = rep(0, J), sigma = diag(sigma, J))
+Y <- t(apply(FS %*% t(Lambda), 1, \(x) x + mu)) + residual
+head(Y)
+```
+
+------------------------------------------------------------------------
+
+### Strategies for Stan Code for Model 1: factor loadings
+
+::: nonincremental
+-   We will iterate over item response function across each item
+-   To benefit from the efficiency of vectorization, we specify a vector of factor loadings with length 6
+    -   $\{\lambda_1, \lambda_2, \cdots, \lambda_6 \}$
+
+    -   Optionally, a matrix with number of items by number of factor for $\lambda$s can be specified like $\lambda_{11}$ and $\lambda_{62}$, that introduces flexibility but complexity
+-   We should have a location table telling `stan` the information about which factor each factor loading belong to
+    -   For example, $\lambda_{1}$ belongs to factor 1 and $\lambda_4$ belong to factor 2
+:::
+
+```{r}
+kableExtra::kable(as.data.frame(loc)) 
+```
+
+------------------------------------------------------------------------
+
+### Strategies for Stan Code for Model 1: prior distribution and hyperparameters
+
+::: columns
+::: {.column width="80%"}
+::: incremental
+-   residual variances for items: $\sigma \sim \text{exponential}(sigmaRate)$
+    -   sigmaRate is set to 1
+-   item intercepts: $\mu \sim \text{MVN}(meanMu, covMu)$
+    -   meanMu is set to a vector of 0s with length 6
+
+    -   covMu is set to a diagonol matrix of 1000 with 6 $\times$ 6
+-   factor scores: $\Theta \sim \text{MVN}(meanTheta, corrTheta)$
+    -   meanTheta is set to a vector of 0s with length 2
+
+    -   $corrTheta \sim lkj\_corr(eta)$ and eta is set to 1
+
+    -   Optionally, $L \sim lkj\_corr\_cholesky(eta)$ and corrTheta = LL'
+-   factor loadings: $\Lambda \sim \text{MVN}(meanLambda, covLambda)$
+    -   meanLambda is set to a vector of 0s with length 6 (number of items)
+
+    -   covLambdais set to a matrix of $\begin{pmatrix}1000, 0,\cdots,0\\ \cdots\\0, 0, \cdots1000\end{pmatrix}$
+:::
+:::
+
+::: {.column width="20%"}
+-   **Question: what about factor correlation** $\psi$?
+
+-   See [this blog](http://stla.github.io/stlapblog/posts/StanLKJprior.html) and [Stan's reference](https://mc-stan.org/docs/functions-reference/cholesky-lkj-correlation-distribution.html) for Choleskey decomposition
+
+-   For eta = 1, the distribution is uniform over the space of all correlation matrices
+:::
+:::
+
+------------------------------------------------------------------------
+
+### Data Structure
+
+::: columns
+::: {.column width="50%"}
+```{r filename="Lecture06.R"}
+data_list2 <- list(
+  N = 1000, # number of subjects/observations
+  J = J2, # number of items
+  K = 2, # number of latent variables,
+  Y = Y2,
+  Q = Q2,
+  # location of lambda
+  R = nrow(loc2),
+  jj = loc2[,1],
+  kk = loc2[,2],
+  q = loc2[,3],
+  #hyperparameter
+  sigmaRate = .01,
+  meanMu = rep(0, J2),
+  covMu = diag(1000, J2),
+  meanTheta = rep(0, 2),
+  eta = 1,
+  meanLambda = c(0, 0),
+  scaleLambda = c(10, 1)
+)
+```
+:::
+
+::: {.column width="50%"}
+```{stan output.var='display', eval = FALSE, tidy = FALSE, filename = "simulation_loc.stan"}
+data {
+  int<lower=0> N; // number of observations
+  int<lower=0> J; // number of items
+  int<lower=0> K; // number of latent variables
+  matrix[N, J] Y; // item responses
+  array[J] int<lower=0> kk; //location of lambda
+  //hyperparameter
+  real<lower=0> sigmaRate;
+  vector[J] meanMu;
+  matrix[J, J] covMu;      // prior covariance matrix for coefficients
+  vector[K] meanTheta;
+  vector[J] meanLambda;
+  matrix[J, J] covLambda;      // prior covariance matrix for coefficients
+  real<lower=0> eta; // LKJ shape parameters
+}
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+### MCMC Results with Stan
+
+::: columns
+::: {.column width="50%"}
+Benchmark model using `lavaan`
+
+```{r}
+# lavaan
+library(lavaan)
+mod <- "
+F1 =~ I1 + I2 + I3
+F2 =~ I4 + I5 + I6
+"
+dat <- as.data.frame(Y)
+colnames(dat) <- paste0('I', 1:6)
+fit <- cfa(mod, data = dat, std.lv = TRUE)
+lavaan::parameterestimates(fit) |> filter(op == "=~")
+```
+:::
+
+::: {.column width="50%"}
+Model 1 using `Stan`
+
+```{r}
+fit_cfa_twofactor$summary("lambda") |> select(variable,mean, median, sd, q5, q95)
+```
+:::
+:::
 
 ## Wrapping up
 
@@ -348,3 +515,4 @@ All of these topics will be with us when we start model complicated models in ou
 3.  [Rick Farouni's Website](https://rfarouni.github.io/assets/projects/BayesianFactorAnalysis/BayesianFactorAnalysis.html)
 
 ## Reference
+
