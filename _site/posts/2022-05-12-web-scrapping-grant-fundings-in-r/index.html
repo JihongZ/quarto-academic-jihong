@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2022-05-12">
 <meta name="description" content="How to use R for web scrapping">
-<title>Dr.&nbsp;Jihong Zhang - Web Scraping Academia Institute’s Grant Fundings using R</title>
+<title>Dr. Jihong Zhang – Web Scraping Academia Institute’s Grant Fundings using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -287,7 +287,7 @@ ga('send', {
 
 </header><p>This is an example of how to web scrape grants of active research in college’s official website. Please follow the academia institute’s website robots rules.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.omegahat.net/RSXML/">XML</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.omegahat.net/RSXML/">XML</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://stringr.tidyverse.org">stringr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -324,6 +324,7 @@ ga('send', {
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
+<div>
 <table class="lightable-material table table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">topic</th>
@@ -372,6 +373,7 @@ ga('send', {
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section><section id="visualization-in-ggplot2" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="visualization-in-ggplot2">
