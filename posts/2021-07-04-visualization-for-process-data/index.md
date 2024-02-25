@@ -1,6 +1,6 @@
 ---
 title: Visualization for Process Data
-author: []
+authors: [Jihong Zhang]
 date: '2021-07-04'
 slug: visualization-for-process-data
 categories:
@@ -9,25 +9,23 @@ categories:
   - tutorial
 subtitle: ''
 summary: 'This tutorial aims to explore various types of tools of visualizing the process data.'
-authors: [Jihong Zhang]
 lastmod: '2021-07-04T22:13:27-05:00'
 featured: no
 projects: []
 ---
 
-This tutorial aims to explore various types of tools of visualizing the process data. 
+This tutorial aims to explore various types of tools of visualizing the process data.
 
 Before diving into the main text, I found one trick to `git pull` one repo but ignore the local changes is:
 
-
-```bash
+``` bash
 git clean -f
 git pull
 ```
 
 ## Load Packages
 
-```r
+``` r
 library(ProcData)
 library(tidyverse)
 library(RColorBrewer) # for color pallett
@@ -37,12 +35,11 @@ library(RColorBrewer) # for color pallett
 
 A dataset containing the response processes and binary response outcomes of 16763 respondents. *seqs* is an object of class "proc" containing the action sequences and the time sequences of the respondents and *responses* is binary responses of 16763 respondents. The order of the respondents matches that in *seqs*ß.
 
-
-```r
+``` r
 str(cc_data, max.level = 2)
 ```
 
-```
+```         
 ## List of 2
 ##  $ seqs     :List of 2
 ##   ..$ action_seqs:List of 16763
@@ -52,11 +49,11 @@ str(cc_data, max.level = 2)
 ##   ..- attr(*, "names")= chr [1:16763] "ARE000000200039" "ARE000000200051" "ARE000000300079" "ARE000000400093" ...
 ```
 
-```r
+``` r
 head(cc_data$seqs$action_seqs, n = 3)
 ```
 
-```
+```         
 ## $ARE000000200039
 ##  [1] "start"    "0_0_0"    "1_2_-2"   "2_2_2"    "2_2_2"    "2_2_2"   
 ##  [7] "2_2_2"    "2_2_2"    "2_2_-2"   "2_2_-2"   "2_-2_-2"  "-2_-2_-2"
@@ -77,7 +74,7 @@ head(cc_data$seqs$action_seqs, n = 3)
 
 ## Data Transformation
 
-```r
+``` r
 ## actions
 dt1 <- cc_data$seqs$action_seqs[1:30]
 ## time stamps
@@ -98,7 +95,7 @@ dt_full <- cbind(dt1_long, time = dt2_long[,2]) %>%
 head(dt_full)
 ```
 
-```
+```         
 ## # A tibble: 6 x 4
 ##   ID              action  time time_upper
 ##   <chr>           <fct>  <dbl>      <dbl>
@@ -112,7 +109,7 @@ head(dt_full)
 
 ## Data Visualization
 
-```r
+``` r
 set.seed(1234)
 n <- 30 # 30 colors
 qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
@@ -126,6 +123,3 @@ ggplot(aes(x = time, y = ID, col = action), data = dt_full) +
   labs(y = "", x = "Time Length") +
   theme(legend.position="") 
 ```
-
-<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-5-1.png" width="672" height="50" />
-

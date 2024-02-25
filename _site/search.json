@@ -783,7 +783,7 @@
     "href": "posts/2021-07-04-visualization-for-process-data/index.html#data-visualization",
     "title": "Visualization for Process Data",
     "section": "4 Data Visualization",
-    "text": "4 Data Visualization\nset.seed(1234)\nn &lt;- 30 # 30 colors\nqual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]\ncol_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))\nline_color = sample(col_vector, n)\n\nggplot(aes(x = time, y = ID, col = action), data = dt_full) +\n  geom_point(size = 2)+\n  geom_linerange(aes(xmin = time, xmax= time_upper), linetype = 1, size = 1.5)+\n  scale_color_manual(values = col_vector, name = \"\") +\n  labs(y = \"\", x = \"Time Length\") +\n  theme(legend.position=\"\") \n&lt;img src=“{{&lt; blogdown/postref &gt;}}index.en_files/figure-html/unnamed-chunk-5-1.png” width=“672” height=“50” /&gt;"
+    "text": "4 Data Visualization\nset.seed(1234)\nn &lt;- 30 # 30 colors\nqual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]\ncol_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))\nline_color = sample(col_vector, n)\n\nggplot(aes(x = time, y = ID, col = action), data = dt_full) +\n  geom_point(size = 2)+\n  geom_linerange(aes(xmin = time, xmax= time_upper), linetype = 1, size = 1.5)+\n  scale_color_manual(values = col_vector, name = \"\") +\n  labs(y = \"\", x = \"Time Length\") +\n  theme(legend.position=\"\")"
   },
   {
     "objectID": "posts/2019-05-20-nobel-prizes-visualization/index.html",
