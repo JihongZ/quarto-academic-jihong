@@ -19,13 +19,8 @@ website:
   sidebar:
     style: "floating"
     contents:
-      - section: '2024Spring: ESRM 6553'
-        contents:
-          - 'posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd'
-          - 'posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.qmd'
-          - 'posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.qmd'
-          - 'posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.qmd'
-          - 'posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.qmd'
+      - section: 'Lecture Slides'
+        contents: Lecture*.qmd
   navbar:
     background: '#CEB8A6'
     collapse-below: lg
