@@ -315,17 +315,24 @@ ggplot() +
 
 ### Data Simulation
 
-```{r}
+```{r metadata}
 #| echo: false
-load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "Lecture06.RData"))
-fit_cfa_twofactor <- readRDS(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "fit_cfa_twofactor.RDS"))
-fit_cfa_exp2 <- readRDS(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "fit_cfa_exp2.RDS"))
+# load packages
+library(cmdstanr)
+library(posterior)
+library(lavaan)
+library(posterior)
+root_dir <- here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code")
+m1_temp_rds_file <- "fileb34b5984c0d3.RDS"
+fit_cfa_twofactor <- readRDS(here::here(root_dir, m1_temp_rds_file))
+
+m2_temp_rds_file <- "fileb34b3bf4c63b.RDS"
+fit_cfa_exp2 <- readRDS(here::here(root_dir, m2_temp_rds_file))
 ```
 
-```{r}
+```{r model1savedinfo}
+#| echo: false
 # Two-factor model without cross-loadings
-library(tidyverse)
-library(cmdstanr)
 set.seed(1234)
 N <- 1000
 J <- 6
@@ -349,6 +356,28 @@ Lambda <- matrix(
 mu <- matrix(rep(0.1, J), nrow = 1, byrow = T)
 residual <- mvtnorm::rmvnorm(N, mean = rep(0, J), sigma = diag(sigma, J))
 Y <- t(apply(FS %*% t(Lambda), 1, \(x) x + mu)) + residual
+Q <- matrix(
+  c(
+    1, 0,
+    1, 0,
+    1, 0,
+    0, 1,
+    0, 1,
+    0, 1
+  ), 6, 2,
+  byrow = T
+)
+loc <- Q |>
+  as.data.frame() |>
+  rename(`1` = V1, `2` = V2) |> 
+  rownames_to_column("Item") |>
+  pivot_longer(c(`1`, `2`), names_to = "Theta", values_to = "q") |> 
+  mutate(across(Item:q, as.numeric)) |> 
+  filter(q == 1) |> 
+  as.matrix()
+```
+
+```{r}
 head(Y)
 ```
 
@@ -475,7 +504,7 @@ transformed parameters{
 }
 ```
 
-Note that `L` is the cholesky decomposition factor of factor correlation matrix
+Note that `L` is the Cholesky decomposition factor of factor correlation matrix
 
 ::: nonincremental
 -   It is also a lower triangle matrix
@@ -490,6 +519,7 @@ Note that `L` is the cholesky decomposition factor of factor correlation matrix
 ::: columns
 ::: {.column width="50%"}
 ```{r filename="Lecture06.R"}
+#| eval: false
 data_list <- list(
   N = 1000, # number of subjects/observations
   J = J, # number of items
@@ -629,8 +659,8 @@ Then, we examined the LOO with PSIS. According to Pareto K diagnostic, most log-
 
 Question: Why we have 8000 $\times$ 6000 log-likelihood elements? hints: our information in data
 
-```{r, cache=TRUE}
-library(posterior)
+```{r}
+
 fit_cfa_twofactor$summary(
   variables = NULL,
   "rhat"
@@ -639,7 +669,7 @@ fit_cfa_twofactor$summary(
            max_rhat = max(rhat, na.rm = T))
 ```
 
-```{r, cache=TRUE}
+```{r}
 loo_res <- fit_cfa_twofactor$loo(variables = 'log_lik', save_psis = TRUE, cores = 2)
 print(loo_res)
 ```
@@ -654,7 +684,6 @@ Benchmark model using `lavaan`
 
 ```{r}
 # lavaan
-library(lavaan)
 mod <- "
 F1 =~ I1 + I2 + I3
 F2 =~ I4 + I5 + I6
@@ -692,7 +721,7 @@ We can easily notice how consistent between estimates of `lavaan` with `Stan` :
 
 ### MCMC Results \> Visualization \> Factor Loadings
 
-```{r, cache=TRUE}
+```{r}
 bayesplot::color_scheme_set("viridis")
 bayesplot::mcmc_trace(fit_cfa_twofactor$draws(), regex_pars = "lambda")
 ```
@@ -723,7 +752,7 @@ fit_cfa_twofactor$summary(c("corrTheta[1,2]", "corrTheta[2,1]"))
 
 -   We can also visual inspect trace plots of MCMC draws of `L`
 
-```{r, cache=TRUE}
+```{r}
 bayesplot::mcmc_trace(fit_cfa_twofactor$draws("L[2,1]"))
 ```
 
@@ -739,7 +768,7 @@ fit_cfa_twofactor$summary("mu")
 
 We notices item 4 is little off with true values.
 
-```{r, cache=TRUE}
+```{r}
 bayesplot::mcmc_trace(fit_cfa_twofactor$draws("mu"))
 ```
 
@@ -751,11 +780,50 @@ bayesplot::mcmc_trace(fit_cfa_twofactor$draws("mu"))
 fit_cfa_twofactor$summary("sigma")
 ```
 
-```{r, cache=TRUE}
+```{r}
 bayesplot::mcmc_trace(fit_cfa_twofactor$draws("sigma"))
 ```
 
 ## Simulation Study 2
+
+```{r model2savedinfo}
+#| echo: false
+set.seed(1234)
+N <- 1000
+J2 <- 7
+# parameters
+psi <- .3 # factor correlation
+sigma <- .1 # residual varaince
+FS <- mvtnorm::rmvnorm(N, mean = c(0, 0), sigma = matrix(c(1, psi, psi, 1), 2, 2, byrow = T))
+Lambda2 <- matrix(
+  c(
+    0.7, 0,
+    0.5, 0,
+    0.3, 0,
+    0.5, 0.5,
+    0, 0.7,
+    0, 0.5,
+    0, 0.3
+  ), J2, 2,
+  byrow = T
+)
+mu <- matrix(rep(0.1, J2), nrow = 1, byrow = T)
+residual <- mvtnorm::rmvnorm(N, mean = rep(0, J2), sigma = diag(sigma^2, J2))
+Y2 <- t(apply(FS %*% t(Lambda2), 1, \(x) x + mu)) + residual
+
+## Data preparation
+## Transform Q to location index
+Q2 = Lambda2
+Q2[Q2 != 0] <- 1
+loc2 <- Q2 |>
+  as.data.frame() |>
+  rename(`1` = V1, `2` = V2) |> 
+  rownames_to_column("Item") |>
+  pivot_longer(c(`1`, `2`), names_to = "Theta", values_to = "q") |> 
+  mutate(across(Item:q, as.numeric)) |> 
+  mutate(q = -q + 2) |> 
+  as.matrix()
+```
 
 ::: nonincremental
 -   To illustrate how to model a more complex CFA with cross-loadings, let's generate a new simulation data with test length 7 and two latent variables
@@ -953,8 +1021,7 @@ fit_cfa_exp2 <- mod_cfa_exp2$sample(
 )
 ```
 
-```{r, cache=TRUE}
-library(posterior)
+```{r}
 fit_cfa_exp2$summary(
   variables = NULL,
   "rhat"
@@ -967,7 +1034,7 @@ fit_cfa_exp2$summary(
 
 ### MCMC Results \> Estimation \> Factor Loadings
 
-```{r, cache=TRUE}
+```{r}
 fit_cfa_exp2$summary('lambda') |> select(variable, mean, median, sd, q5, q95)
 ```
 

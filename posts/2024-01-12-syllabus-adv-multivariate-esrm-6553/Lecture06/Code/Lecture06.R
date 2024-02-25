@@ -2,6 +2,8 @@ if (0) {
   load(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
                   "Lecture06", "Code", "Lecture06.RData"))
 }
+root_dir <- here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code")
+
 # Simulation Study: Model 1 -----------------------------------------------
 # One-factor model without cross-loadings
 library(tidyverse)
@@ -82,7 +84,7 @@ data_list <- list(
   covLambda = diag(1000, J)
 )
 
-mod_cfa_twofactor <- cmdstan_model(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code", "simulation_loc.stan"))
+mod_cfa_twofactor <- cmdstan_model(here::here(root_dir, "simulation_loc.stan"))
 
 # quick check using pathfinder
 fit_pf <- mod_cfa_twofactor$pathfinder(data = data_list, seed = 1234, draws = 4000)
@@ -97,8 +99,10 @@ fit_cfa_twofactor <- mod_cfa_twofactor$sample(
   iter_warmup = 1000
 )
 
-saveRDS(fit_cfa_twofactor, here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
-                                      "Lecture06", "Code", "fit_cfa_twofactor.RDS"))
+## save model 1 object into local directory
+# m1_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = root_dir)
+# fit_cfa_twofactor$save_object(file = m1_temp_rds_file)
+
 fit_cfa_twofactor$summary("lambda")
 fit_cfa_twofactor$summary(c("corrTheta[1,2]", "corrTheta[2,1]"))
 fit_cfa_twofactor$summary("L[2,1]")
@@ -148,11 +152,10 @@ mu <- matrix(rep(0.1, J2), nrow = 1, byrow = T)
 residual <- mvtnorm::rmvnorm(N, mean = rep(0, J2), sigma = diag(sigma^2, J2))
 Y2 <- t(apply(FS %*% t(Lambda2), 1, \(x) x + mu)) + residual
 
-Q2 = Lambda2
-Q2[Q2 != 0] <- 1
-Q2
 ## Data preparation
 ## Transform Q to location index
+Q2 = Lambda2
+Q2[Q2 != 0] <- 1
 loc2 <- Q2 |>
   as.data.frame() |>
   rename(`1` = V1, `2` = V2) |> 
@@ -162,8 +165,7 @@ loc2 <- Q2 |>
   mutate(q = -q + 2) |> 
   as.matrix()
 
-mod_cfa_exp2 <- cmdstan_model(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
-                                         "Lecture06", "Code", "simulation_exp2.stan"))
+mod_cfa_exp2 <- cmdstan_model(here::here(root_dir, "simulation_exp2.stan"))
 
 data_list2 <- list(
   N = 1000, # number of subjects/observations
@@ -194,10 +196,11 @@ fit_cfa_exp2 <- mod_cfa_exp2$sample(
   iter_sampling = 3000,
   iter_warmup = 3000
 )
-saveRDS(fit_cfa_exp2, here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
-                                      "Lecture06", "Code", "fit_cfa_exp2.RDS"))
-# fit_cfa_exp2 <- readRDS(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
-#                                  "Lecture06", "Code", "fit_cfa_exp2.RDS"))
+
+## save model 2 object into local directory
+## m2_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = root_dir)
+## fit_cfa_exp2$save_object(file = m2_temp_rds_file)
+
 fit_cfa_exp2$summary('lambda')
 fit_cfa_exp2$summary('mu')
 
@@ -206,10 +209,6 @@ fit_cfa_exp2$summary('mu')
 # quick check using pathfinder
 # fit_pf2 <- mod_cfa_exp2$pathfinder(data = data_list2, seed = 1234, draws = 4000)
 # fit_pf2$summary('lambda')
-
-
-
-
 
 save(Y, fit, Q, loc, data_list,
      Q2, loc2, data_list2, Lambda2,
