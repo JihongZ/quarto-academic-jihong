@@ -27,6 +27,8 @@ jobs:
       - name: Install R dependences
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
+          cache: true
+          cache-version: 2
           packages:
             any::knitr
             any::rmarkdown
