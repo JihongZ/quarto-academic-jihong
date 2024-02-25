@@ -1,5 +1,5 @@
 ---
-title: "Jihong Zhang"
+title: "Jihong Zhang, Dr."
 subtitle: 'Learn harder, Play harder'
 comments: false
 page-layout: full
@@ -50,19 +50,28 @@ My expertise lies in the application of sophisticated statistical models, includ
 ## Interests
 
 -   Bayesian Psychometric Modeling
+
 -   Psychometric network and Latent variable modeling
+
 -   Machine Learning and data mining in Education
+
 -   Diagnostic Classification Models
 
 ## Education
 
 -   **Ph.D.** | Educational Measurement & Statistics | University of Iowa | [2019 - 2022]{style="color:darkgrey;"}
+
 -   **M.S.**  | Educational Psychology | University of Kansas| [2015 - 2019]{style="color:darkgrey;"}
+
 -   **B.S.**  | Applied Psychology  | Soochow University | [2009 - 2013]{#date style="color:darkgrey;"}
+
 -   **B.S.**  | Law  | Soochow University | [2011 - 2013]{#date style="color:darkgrey;"}
 
 ## Experience
 
+-   University of Arkansas | **Assistant Professor**
+    | [Dec 2022 - June 2023]{style="color:darkgrey;"}
+    
 -   The Chinese University of Hong Kong | **Postdoctoral Fellow**
     | [Dec 2022 - June 2023]{style="color:darkgrey;"}
 
