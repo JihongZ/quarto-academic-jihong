@@ -15,7 +15,6 @@ link-citations: true
 toc: true
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", eval=FALSE)
 ```
@@ -23,7 +22,6 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", eval=FALSE)
 ## Resource
 
 [Michael Clark](https://m-clark.github.io/distill-workshop) has a great workshop in his blog introducing distill package. I suggest readers check it out first.
-
 
 ## Requirement
 
@@ -37,13 +35,11 @@ To get started with Github, please refer to the [official website](https://docs.
 
 ## Procedure
 
-To create a website with the URL <username.github.io>, create the directory name with same name and same Github repo name. For example, my github repo name is "jihongz.github.io", and it is published in <http://jihongz.github.io>.
+To create a website with the URL \<username.github.io\>, create the directory name with same name and same Github repo name. For example, my github repo name is "jihongz.github.io", and it is published in <http://jihongz.github.io>.
 
 ```{r, echo=FALSE, fig.cap="Flowchart for creating website", eval=TRUE}
 knitr::include_graphics(path = "img/flowchart.png")
 ```
-
-
 
 To have your personal website, you need to have all require files for the website. The basic files for Github Pages based website with distill includes:
 
@@ -66,7 +62,7 @@ distill::create_post(title = "Tutorial of creating personal blog using distill p
 
 Open the Rmd file and make sure the header of your Rmd file is like this:
 
-```
+```         
 ---
 title: "[Tutorial] Creating Academic Blog"
 description: |
@@ -85,7 +81,7 @@ After editting the Rmd file, knit the fill and then build website using *Build W
 
 ![The Build button in Rstudio](img/build_website.png)
 
-It will then pop up your updated website in a window. 
+It will then pop up your updated website in a window.
 
 ![Preview of updated website](img/website_preview.png)
 
@@ -99,11 +95,11 @@ git push
 
 ### Settings of Github Repo
 
-Go to the Github Repo > Settings > Pages
+Go to the Github Repo \> Settings \> Pages
 
 ![Github Settings](img/Settings.png)
 
-In the webpage, choose *\_docs* and you will see your website is published. 
+In the webpage, choose *\_docs* and you will see your website is published.
 
 ![change settings](img/docs.png)
 

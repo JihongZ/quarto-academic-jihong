@@ -1,6 +1,6 @@
 ---
 title: Simulation Study of Linking Using Mirt
-author: Jihong
+author: Jihong Zhang
 date: '2017-11-10'
 categories:
   - R
@@ -8,7 +8,6 @@ categories:
   - linking
 format: 
   html:
-    self-contained: true
     toc: true
     code-fold: true
     code-summary: ' R Code'
