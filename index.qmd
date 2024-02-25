@@ -56,9 +56,10 @@ My expertise lies in the application of sophisticated statistical models, includ
 
 ## Education
 
--   **Ph.D.** \| Educational Measurement & Statistics \| [2019 - 2022]{style="color:darkgrey;"}
--   **M.S.** \| Educational Psychology \| [2015 - 2019]{style="color:darkgrey;"}
--   **B.S.** \| Applied Psychology \| [2009 - 2013]{#date style="color:darkgrey;"}
+-   **Ph.D.** | Educational Measurement & Statistics | University of Iowa | [2019 - 2022]{style="color:darkgrey;"}
+-   **M.S.**  | Educational Psychology | University of Kansas| [2015 - 2019]{style="color:darkgrey;"}
+-   **B.S.**  | Applied Psychology  | Soochow University | [2009 - 2013]{#date style="color:darkgrey;"}
+-   **B.S.**  | Law  | Soochow University | [2011 - 2013]{#date style="color:darkgrey;"}
 
 ## Experience
 

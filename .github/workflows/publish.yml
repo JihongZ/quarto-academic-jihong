@@ -30,6 +30,5 @@ jobs:
       - name: Publish to Netlify (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          render: "false"
           target: netlify
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
