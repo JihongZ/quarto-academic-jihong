@@ -27,12 +27,11 @@ SessionTBL <- data.frame(
   Session_Content = Session,
   Index = 1:length(Session)) |> 
   mutate(MaxNum = ifelse(str_detect(Session, "Convenience Samples"), Index, 0))
-#SessionTBL[1:which(SessionTBL$MaxNum > 0), ]  
 
 SessionInfo <- SessionTBL |> 
   mutate(
-    Session = ifelse(str_detect(Session_Content, "Session"), Session_Content, ""),
-    Presentation = ifelse(!str_detect(Session_Content, "Session"), Session_Content, ""),
+    Session = ifelse(str_detect(Session_Content, "Session|Posters"), Session_Content, ""),
+    Presentation = ifelse(!str_detect(Session_Content, "Session|Posters"), Session_Content, ""),
   ) |> 
   select(-Session_Content, -Index, -MaxNum)
 ```
@@ -64,7 +63,7 @@ Topics |>
   pivot_longer(everything(), names_to = 'Topic', values_to = 'Frequency') |> 
   ggplot() +
   geom_col(aes(x = fct_reorder(Topic, Frequency), y = Frequency, fill = fct_reorder(Topic, Frequency))) +
-  geom_text(aes(x = fct_reorder(Topic, Frequency), y = Frequency, label = paste0(Frequency, " / ", sum(!is.na(SessionInfo$Presentation))) ), nudge_y = 0.3) +
+  geom_text(aes(x = fct_reorder(Topic, Frequency), y = Frequency, label = paste0(Frequency, " / ", sum(str_length(SessionInfo$Presentation) > 0)) ), nudge_y = 0.3) +
   labs(x = "Topics") +
   scale_fill_manual(values = custom.col) +
   theme(text = element_text(size = 14)) +
@@ -75,7 +74,9 @@ Topics |>
 ## Column {width=70%}
 
 ```{r}
-DT::datatable(SessionInfo)
+DT::datatable(SessionInfo, style = 'bootstrap4') |> 
+  DT::formatStyle(columns = c("Session"), fontWeight = 'bold', `text-align` = 'left') |> 
+  DT::formatStyle(columns = c("Presentation"), color = "#293352", `text-align` = 'left')
 ```
 
 
