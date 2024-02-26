@@ -1,10 +1,10 @@
 ---
-title: "Palmer Penguins"
-author: "Cobblepot Analytics"
+title: "MMM 2023 Archive"
+author: "Jihong Zhang"
 format: dashboard
 ---
 
-## Row {height="70%"}
+## Column 
 
 ```{r}
 library(leaflet)
@@ -14,13 +14,37 @@ leaflet() %>%
              popup="University of Connecticut")
 ```
 
-## Row {height="30%"}
 
 ```{r}
-library(DT)
-datatable(mtcars)
+library(stringr)
+library(tidyverse)
+library(rvest)
+
+## 2023 archive
+scrape_url = "https://modeling.uconn.edu/2023archive/"
+html_from_page <- read_html(scrape_url)
+
+
+# session
+Session <- html_from_page |> html_elements('strong') |> html_text(trim = TRUE)
+Session <- trimws(Session)
+Session[3] <- paste0(Session[3], " ", Session[4])
+Session <- Session[-4]
+Session <- Session[Session != ""]
+SessionTBL <- data.frame(
+  Session_Content = Session,
+  Index = 1:length(Session)) |> 
+  mutate(MaxNum = ifelse(str_detect(Session, "Convenience Samples"), Index, 0))
+#SessionTBL[1:which(SessionTBL$MaxNum > 0), ]  
+
+SessionInfo <- SessionTBL |> 
+  mutate(
+    Session = ifelse(str_detect(Session_Content, "Room"), Session_Content, ""),
+    Presentation = ifelse(!str_detect(Session_Content, "Room"), Session_Content, ""),
+  ) |> 
+  select(-Session_Content, -Index, -MaxNum)
+
+
+DT::datatable(SessionInfo)
 ```
 
-```{r}
-datatable(iris)
-```
