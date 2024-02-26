@@ -1,21 +1,13 @@
 ---
 title: "MMM 2023 Archive"
 author: "Jihong Zhang"
-format: dashboard
+format: 
+  dashboard:
+    orientation: columns
 ---
 
-## Column 
-
 ```{r}
-library(leaflet)
-leaflet() %>%
-  addTiles() %>% 
-  addMarkers(lat=41.807, lng=-72.253,
-             popup="University of Connecticut")
-```
-
-
-```{r}
+#| echo: false
 library(stringr)
 library(tidyverse)
 library(rvest)
@@ -43,8 +35,45 @@ SessionInfo <- SessionTBL |>
     Presentation = ifelse(!str_detect(Session_Content, "Room"), Session_Content, ""),
   ) |> 
   select(-Session_Content, -Index, -MaxNum)
+```
 
 
+## Column {width=30%} 
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>% 
+  addMarkers(lat=41.807, lng=-72.253,
+             popup="University of Connecticut")
+```
+```{r}
+custom.col <- c("#FFDB6D", "#C4961A", "#F4EDCA", 
+                "#D16103", "#C3D7A4", "#52854C", "#4E84C4", "#293352")
+Topics <- data.frame(
+  Longitudinal = sum(str_detect(SessionInfo$Presentation, "Longitudinal")),
+  SEM = sum(str_detect(SessionInfo$Presentation, "Structural")),
+  Bayesian = sum(str_detect(SessionInfo$Presentation, "Bayesian|Bayes")),
+  Model_Fit = sum(str_detect(SessionInfo$Presentation, "fit|Fit")),
+  IRT = sum(str_detect(SessionInfo$Presentation, "Item Response")),
+  DIF = sum(str_detect(SessionInfo$Presentation, "DIF|Differential"))
+)
+Topics |> 
+  pivot_longer(everything(), names_to = 'Topic', values_to = 'Frequency') |> 
+  ggplot() +
+  geom_col(aes(x = fct_reorder(Topic, Frequency), y = Frequency, fill = fct_reorder(Topic, Frequency))) +
+  geom_text(aes(x = fct_reorder(Topic, Frequency), y = Frequency, label = Frequency), nudge_y = 0.3) +
+  labs(x = "Topics") +
+  scale_fill_manual(values = custom.col) +
+  theme(text = element_text(size = 14)) +
+  theme_classic() +
+  guides(fill = "none") # remove legends
+```
+
+## Column {width=70%}
+
+```{r}
 DT::datatable(SessionInfo)
 ```
+
 
