@@ -31,8 +31,8 @@ SessionTBL <- data.frame(
 
 SessionInfo <- SessionTBL |> 
   mutate(
-    Session = ifelse(str_detect(Session_Content, "Room"), Session_Content, ""),
-    Presentation = ifelse(!str_detect(Session_Content, "Room"), Session_Content, ""),
+    Session = ifelse(str_detect(Session_Content, "Session"), Session_Content, ""),
+    Presentation = ifelse(!str_detect(Session_Content, "Session"), Session_Content, ""),
   ) |> 
   select(-Session_Content, -Index, -MaxNum)
 ```
@@ -51,18 +51,20 @@ leaflet() %>%
 custom.col <- c("#FFDB6D", "#C4961A", "#F4EDCA", 
                 "#D16103", "#C3D7A4", "#52854C", "#4E84C4", "#293352")
 Topics <- data.frame(
-  Longitudinal = sum(str_detect(SessionInfo$Presentation, "Longitudinal")),
-  SEM = sum(str_detect(SessionInfo$Presentation, "Structural")),
+  SEM = sum(str_detect(SessionInfo$Presentation, "Structural|SEM")),
   Bayesian = sum(str_detect(SessionInfo$Presentation, "Bayesian|Bayes")),
-  Model_Fit = sum(str_detect(SessionInfo$Presentation, "fit|Fit")),
+  `Model Fit` = sum(str_detect(SessionInfo$Presentation, "fit|Fit")),
   IRT = sum(str_detect(SessionInfo$Presentation, "Item Response")),
-  DIF = sum(str_detect(SessionInfo$Presentation, "DIF|Differential"))
+  DIF = sum(str_detect(SessionInfo$Presentation, "DIF|Differential")),
+  `Multilevel|Longitudinal` = sum(str_detect(SessionInfo$Presentation, "Multilevel|Latent Growth|Longitudinal")),
+  `Factor Analysis` = sum(str_detect(SessionInfo$Presentation, "Latent Variable|Bifactor"))
 )
+
 Topics |> 
   pivot_longer(everything(), names_to = 'Topic', values_to = 'Frequency') |> 
   ggplot() +
   geom_col(aes(x = fct_reorder(Topic, Frequency), y = Frequency, fill = fct_reorder(Topic, Frequency))) +
-  geom_text(aes(x = fct_reorder(Topic, Frequency), y = Frequency, label = Frequency), nudge_y = 0.3) +
+  geom_text(aes(x = fct_reorder(Topic, Frequency), y = Frequency, label = paste0(Frequency, " / ", sum(!is.na(SessionInfo$Presentation))) ), nudge_y = 0.3) +
   labs(x = "Topics") +
   scale_fill_manual(values = custom.col) +
   theme(text = element_text(size = 14)) +
