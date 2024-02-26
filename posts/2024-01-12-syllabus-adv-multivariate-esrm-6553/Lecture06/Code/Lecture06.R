@@ -3,7 +3,7 @@ if (0) {
                   "Lecture06", "Code", "Lecture06.RData"))
 }
 root_dir <- here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code")
-
+large_data_dir <- here::here("~/Library/CloudStorage/OneDrive-Personal/2024 Spring/ESRM6553 - Advanced Multivariate Modeling/Lecture06")
 # Simulation Study: Model 1 -----------------------------------------------
 # One-factor model without cross-loadings
 library(tidyverse)
@@ -100,8 +100,8 @@ fit_cfa_twofactor <- mod_cfa_twofactor$sample(
 )
 
 ## save model 1 object into local directory
-# m1_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = root_dir)
-# fit_cfa_twofactor$save_object(file = m1_temp_rds_file)
+#m1_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = large_data_dir)
+#fit_cfa_twofactor$save_object(file = m1_temp_rds_file)
 
 fit_cfa_twofactor$summary("lambda")
 fit_cfa_twofactor$summary(c("corrTheta[1,2]", "corrTheta[2,1]"))
@@ -198,8 +198,8 @@ fit_cfa_exp2 <- mod_cfa_exp2$sample(
 )
 
 ## save model 2 object into local directory
-## m2_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = root_dir)
-## fit_cfa_exp2$save_object(file = m2_temp_rds_file)
+m2_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = large_data_dir)
+fit_cfa_exp2$save_object(file = m2_temp_rds_file)
 
 fit_cfa_exp2$summary('lambda')
 fit_cfa_exp2$summary('mu')
@@ -210,9 +210,9 @@ fit_cfa_exp2$summary('mu')
 # fit_pf2 <- mod_cfa_exp2$pathfinder(data = data_list2, seed = 1234, draws = 4000)
 # fit_pf2$summary('lambda')
 
-save(Y, fit, Q, loc, data_list,
-     Q2, loc2, data_list2, Lambda2,
-     file = here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
-                       "Lecture06", "Code", "Lecture06.RData")
-)
+#save(Y, fit, Q, loc, data_list,
+#     Q2, loc2, data_list2, Lambda2,
+#     file = here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", 
+#                       "Lecture06", "Code", "Lecture06.RData")
+#)
 
