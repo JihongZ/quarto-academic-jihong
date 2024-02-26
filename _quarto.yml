@@ -31,18 +31,19 @@ website:
         icon: 'bi bi-house' # https://icons.getbootstrap.com
         file: index.qmd
       - text: "Blog"     
-        icon: 'bi bi-file-post-fill'
-        file: posts.qmd  
-      - icon: bi-file-earmark-person # somehow the file path only works in nav. bar, not link in index
-        text: C.V.
+        icon: 'bi bi-pencil-square'
+        file: posts.qmd 
+      - text: "Dashboard"
+        icon: "bi bi-speedometer2"
+        file: dashboards/template.qmd  
+      - text: C.V.
+        icon: "bi bi-person" # somehow the file path only works in nav. bar, not link in index
         file: uploads/Curriculum_Vitae.pdf
       - text: "More"
-        icon: 'bi bi-three-dots-vertical'
+        icon: 'bi bi-three-dots'
         menu:
           - projects.qmd
           - links.qmd
-      - icon: rss
-        href: index.xml
     
 format:
   html:

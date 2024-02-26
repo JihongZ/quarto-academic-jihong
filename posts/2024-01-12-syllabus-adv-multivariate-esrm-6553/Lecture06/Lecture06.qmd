@@ -322,10 +322,10 @@ library(cmdstanr)
 library(posterior)
 library(lavaan)
 library(posterior)
-root_dir <- here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code")
+library(here)
+root_dir <- here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture06", "Code")
 m1_temp_rds_file <- "fileb34b5984c0d3.RDS"
-fit_cfa_twofactor <- readRDS(here::here(root_dir, m1_temp_rds_file))
-
+fit_cfa_twofactor <- readRDS(here(root_dir, m1_temp_rds_file))
 m2_temp_rds_file <- "fileb34b3bf4c63b.RDS"
 fit_cfa_exp2 <- readRDS(here::here(root_dir, m2_temp_rds_file))
 ```

@@ -1,0 +1,26 @@
+---
+title: "Palmer Penguins"
+author: "Cobblepot Analytics"
+format: dashboard
+---
+
+## Row {height="70%"}
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>% 
+  addMarkers(lat=41.807, lng=-72.253,
+             popup="University of Connecticut")
+```
+
+## Row {height="30%"}
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+```{r}
+datatable(iris)
+```
