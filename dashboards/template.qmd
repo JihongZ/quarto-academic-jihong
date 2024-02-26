@@ -34,10 +34,19 @@ SessionInfo <- SessionTBL |>
     Presentation = ifelse(!str_detect(Session_Content, "Session|Posters"), Session_Content, ""),
   ) |> 
   select(-Session_Content, -Index, -MaxNum)
+
+## Calculate each session
+Index <- rep(NA, nrow(SessionTBL))
+Index[1] <- 1
+for (i in 2:nrow(SessionTBL)) {
+  Index[i] = ifelse(str_detect(SessionTBL$Session_Content[i], "Session|Posters"), Index[i-1]+1, Index[i-1])
+}
+Session_list <- as.data.frame(table(Index)-1) |> 
+  mutate(Session = SessionInfo$Session[SessionInfo$Session!=""]) 
+
 ```
 
-
-## Column {width=30%} 
+## Column {width="30%"}
 
 ```{r}
 library(leaflet)
@@ -46,6 +55,7 @@ leaflet() %>%
   addMarkers(lat=41.807, lng=-72.253,
              popup="University of Connecticut")
 ```
+
 ```{r}
 custom.col <- c("#FFDB6D", "#C4961A", "#F4EDCA", 
                 "#D16103", "#C3D7A4", "#52854C", "#4E84C4", "#293352")
@@ -71,12 +81,36 @@ Topics |>
   guides(fill = "none") # remove legends
 ```
 
-## Column {width=70%}
+## Column {width="70%"}
 
 ```{r}
+#| title: Session and Presentation
 DT::datatable(SessionInfo, style = 'bootstrap4') |> 
   DT::formatStyle(columns = c("Session"), fontWeight = 'bold', `text-align` = 'left') |> 
   DT::formatStyle(columns = c("Presentation"), color = "#293352", `text-align` = 'left')
 ```
 
+### Row
+```{r}
+#| content: valuebox
+#| title: Posters
+list(
+  icon = "arrow-repeat",
+  color = "danger",
+  value = Session_list[which.max(Session_list$Freq), "Freq"]
+)
+# Session_list[which.max(Session_list$Freq), "Session"]
+```
+
+```{r}
+#| title: 'Session 8D: Sample Heterogeneity in Dynamic Psychological Processes'
+#| content: valuebox
+#| color: warning
+
+Session_list2 = Session_list |> filter(Session != "Posters")
+list(
+  icon = 'chat',
+  value = Session_list2[which.max(Session_list2$Freq), "Freq"]
+)
+```
 

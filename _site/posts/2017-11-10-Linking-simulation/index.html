@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.10">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2017-11-10">
-<title>Dr.&nbsp;Jihong Zhang - Simulation Study of Linking Using Mirt</title>
+
+<title>Dr. Jihong Zhang – Simulation Study of Linking Using Mirt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -72,7 +76,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="../../site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="../../site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="../../site_libs/quarto-dashboard/components.js"></script>
+<link href="../../site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -98,7 +111,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script type="text/javascript">
+}</script>
+
+<script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -110,92 +125,59 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
-<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
 </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
 <meta property="og:title" content="Dr.&nbsp;Jihong Zhang - Simulation Study of Linking Using Mirt">
-<meta property="og:description" content="Technical and Statistical but Fun">
 <meta property="og:site_name" content="Dr. Jihong Zhang">
 <meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - Simulation Study of Linking Using Mirt">
-<meta name="twitter:description" content="Technical and Statistical but Fun">
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-<body class="nav-sidebar floating nav-fixed">
+
+<body class="quarto-dashboard nav-sidebar nav-fixed dashboard-fill fullcontent">
+
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html"> <i class="bi bi-bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> <i class="bi bi-bi bi-file-post-fill" role="img">
+    <a class="nav-link" href="../../posts.html"> <i class="bi bi-bi bi-pencil-square" role="img">
 </i> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../uploads/Curriculum_Vitae.pdf"> <i class="bi bi-file-earmark-person" role="img">
+    <a class="nav-link" href="../../dashboards/template.html"> <i class="bi bi-bi bi-speedometer2" role="img">
+</i> 
+<span class="menu-text">Dashboard</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../uploads/Curriculum_Vitae.pdf"> <i class="bi bi-bi bi-person" role="img">
 </i> 
 <span class="menu-text">C.V.</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-bi bi-three-dots-vertical" role="img">
+      <i class="bi bi-bi bi-three-dots" role="img">
 </i> 
  <span class="menu-text">More</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">
-<li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
+        <li>
     <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">Projects</span></a>
   </li>  
@@ -204,16 +186,10 @@ window.Quarto = {
  <span class="dropdown-text">About</span></a>
   </li>  
     </ul>
-</li>
-  <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
+  </li>
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -221,167 +197,92 @@ window.Quarto = {
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Simulation Study of Linking Using Mirt</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">2024Spring: ESRM 6553</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+    </nav>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Simulation Study of Linking Using Mirt</a></div>
+        
+        <div class="navbar-author">Jihong Zhang</div>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-    </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-introduction" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#introduction" data-scrolling="false" href="#introduction" aria-controls="introduction" aria-selected="true"><span class="nav-link-text">1 Introduction</span></a></li><li class="nav-item" role="presentation"><a id="tab-calibration-of-form-a" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#calibration-of-form-a" data-scrolling="false" href="#calibration-of-form-a" aria-controls="calibration-of-form-a" aria-selected="false"><span class="nav-link-text">2 Calibration of Form A</span></a></li><li class="nav-item" role="presentation"><a id="tab-calibration-of-form-b" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#calibration-of-form-b" data-scrolling="false" href="#calibration-of-form-b" aria-controls="calibration-of-form-b" aria-selected="false"><span class="nav-link-text">3 Calibration of Form B</span></a></li><li class="nav-item" role="presentation"><a id="tab-linking" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#linking" data-scrolling="false" href="#linking" aria-controls="linking" aria-selected="false"><span class="nav-link-text">4 Linking</span></a></li></ul></div></div>
+</nav>
+</header></header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
+<!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
-   
-  <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
-  <li>
-<a href="#calibration-of-form-a" id="toc-calibration-of-form-a" class="nav-link" data-scroll-target="#calibration-of-form-a"><span class="header-section-number">3</span> Calibration of Form A</a>
-  <ul class="collapse">
-<li><a href="#look-at-the-data" id="toc-look-at-the-data" class="nav-link" data-scroll-target="#look-at-the-data"><span class="header-section-number">3.1</span> Look at the data</a></li>
-  <li><a href="#plot-the-density-of-true-theta-of-group-a" id="toc-plot-the-density-of-true-theta-of-group-a" class="nav-link" data-scroll-target="#plot-the-density-of-true-theta-of-group-a"><span class="header-section-number">3.2</span> Plot the density of true <span class="math inline">\theta</span> of Group A</a></li>
-  <li>
-<a href="#ctt-table" id="toc-ctt-table" class="nav-link" data-scroll-target="#ctt-table"><span class="header-section-number">3.3</span> CTT Table</a>
-  <ul class="collapse">
-<li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data"><span class="header-section-number">3.3.1</span> Clean data</a></li>
-  <li><a href="#classical-test-theory" id="toc-classical-test-theory" class="nav-link" data-scroll-target="#classical-test-theory"><span class="header-section-number">3.3.2</span> Classical Test Theory</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#final-calibration-of-form-a" id="toc-final-calibration-of-form-a" class="nav-link" data-scroll-target="#final-calibration-of-form-a"><span class="header-section-number">3.4</span> Final Calibration of Form A</a>
-  <ul class="collapse">
-<li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">3.4.1</span> Model Specification</a></li>
-  </ul>
-</li>
-  </ul>
-</li>
-  <li>
-<a href="#calibration-of-form-b" id="toc-calibration-of-form-b" class="nav-link" data-scroll-target="#calibration-of-form-b"><span class="header-section-number">4</span> Calibration of Form B</a>
-  <ul class="collapse">
-<li>
-<a href="#final-calibration-of-form-a-1" id="toc-final-calibration-of-form-a-1" class="nav-link" data-scroll-target="#final-calibration-of-form-a-1"><span class="header-section-number">4.1</span> Final Calibration of Form A</a>
-  <ul class="collapse">
-<li><a href="#model-specification-of-b" id="toc-model-specification-of-b" class="nav-link" data-scroll-target="#model-specification-of-b"><span class="header-section-number">4.1.1</span> Model Specification of B</a></li>
-  </ul>
-</li>
-  <li><a href="#b-plot" id="toc-b-plot" class="nav-link" data-scroll-target="#b-plot"><span class="header-section-number">4.2</span> b-plot</a></li>
-  <li><a href="#a-plot" id="toc-a-plot" class="nav-link" data-scroll-target="#a-plot"><span class="header-section-number">4.3</span> a-plot</a></li>
-  </ul>
-</li>
-  <li><a href="#linking" id="toc-linking" class="nav-link" data-scroll-target="#linking"><span class="header-section-number">5</span> Linking</a></li>
-  </ul></nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Simulation Study of Linking Using Mirt</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">mirt</div>
-    <div class="quarto-category">linking</div>
-  </div>
-  </div>
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jihong Zhang </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2017</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header><blockquote class="blockquote">
+<blockquote class="blockquote bslib-grid-item html-fill-item">
 <p>This simulation study is to show how to do IRT Linking Process using mirt R Package. The simulation data includes 2 forms - Form A and Form B. These 2 forms are simulated based on 2 groups of individual, one group has 0 mean trait, another has 0.25 mean trait. Both groups have same sd. <!--more--></p>
 </blockquote>
-<section id="introduction" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Introduction</h1>
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="introduction" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-introduction">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>The means and sds of simulated Form A and B are like:</p>
-<p><span class="math display">
+<span class="math display">\[
 \theta_{A} = \theta_{B} - 0.25 \\
 \sigma_A^2 = \sigma_B^2
-</span></p>
-</section><section id="calibration-of-form-a" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Calibration of Form A</h1>
-<p>The mean of <span class="math inline">\theta</span> for individuals administrated with form A is 0, the standard deviation (SD=1). In the dataset, X is ID, V1 is true trait (<span class="math inline">\theta</span>), V3 to V52 is unique items, V54 to V63 are common items.</p>
-<section id="look-at-the-data" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="look-at-the-data">
-<span class="header-section-number">3.1</span> Look at the data</h2>
+\]</span>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div id="calibration-of-form-a" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-calibration-of-form-a">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>The mean of <span class="math inline">\(\theta\)</span> for individuals administrated with form A is 0, the standard deviation (SD=1). In the dataset, X is ID, V1 is true trait (<span class="math inline">\(\theta\)</span>), V3 to V52 is unique items, V54 to V63 are common items.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>First of all, have a look at the data</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(mirt)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mirt)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr html-fill-item html-fill-container">
 <pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
+<div class="cell-output cell-output-stderr html-fill-item html-fill-container">
 <pre><code>Warning: package 'stringr' was built under R version 4.2.3</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="do">### Read in Raw data from Form A:</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormA.csv"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Read in Raw data from Form A:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormA.csv"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>Rows: 5,000
 Columns: 64
 $ X   &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,…
@@ -450,59 +351,112 @@ $ V62 &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0,
 $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, …</code></pre>
 </div>
 </div>
-</section><section id="plot-the-density-of-true-theta-of-group-a" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="plot-the-density-of-true-theta-of-group-a">
-<span class="header-section-number">3.2</span> Plot the density of true <span class="math inline">\theta</span> of Group A</h2>
-<p>From the density function, <span class="math inline">mu_{\theta}</span> is 0, <span class="math inline">sd_{\theta}</span> is 1.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dat<span class="sc">$</span>V1), <span class="at">main =</span> <span class="st">"Group A True Trait Density"</span>, </span>
-<span id="cb6-2"><a href="#cb6-2"></a>     <span class="at">xlab=</span><span class="fu">expression</span>(theta) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/theta-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>From the density function, <span class="math inline">\(mu_{\theta}\)</span> is 0, <span class="math inline">\(sd_{\theta}\)</span> is 1.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dat<span class="sc">$</span>V1), <span class="at">main =</span> <span class="st">"Group A True Trait Density"</span>, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="fu">expression</span>(theta) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/theta-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</section><section id="ctt-table" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="ctt-table">
-<span class="header-section-number">3.3</span> CTT Table</h2>
-<p>CTT table could provide a brief description of table. 2 key valables in the table is item difficulty (<em>item.diff</em>) calculated by item means <span class="math inline">P(y=1)</span> and item discrimination (item.disc), which is item-total correlation.</p>
-<section id="clean-data" class="level3" data-number="3.3.1"><h3 data-number="3.3.1" class="anchored" data-anchor-id="clean-data">
-<span class="header-section-number">3.3.1</span> Clean data</h3>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>CTT table could provide a brief description of table. 2 key valables in the table is item difficulty (<em>item.diff</em>) calculated by item means <span class="math inline">\(P(y=1)\)</span> and item discrimination (item.disc), which is item-total correlation.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>By cleaning, data has 60 items including 50 unique item (from item1 to item50) and 10 common items (from item51 to item60). The sample size is 5000.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dat_cali <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">colnames</span>(dat_cali) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
-</section><section id="classical-test-theory" class="level3" data-number="3.3.2"><h3 data-number="3.3.2" class="anchored" data-anchor-id="classical-test-theory">
-<span class="header-section-number">3.3.2</span> Classical Test Theory</h3>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat_cali <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>Then calculate the CTT table for Form A. The item discrimination and difficulty could be compared between Form A and Form B. Because the relationship between trait and total score is non-linear, so there is effect of shrinkage.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># item stats</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="do">## item discrimnation</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="do">## item difficulty</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali)</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="do">## item response frequency</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali, table), bind_rows)</span>
-<span id="cb8-10"><a href="#cb8-10"></a></span>
-<span id="cb8-11"><a href="#cb8-11"></a>CTT <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb8-12"><a href="#cb8-12"></a></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="fu">kable</span>(CTT, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali, table), bind_rows)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>CTT <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
 <table class="table table-sm table-striped small">
 <caption>CTT Table for Form A</caption>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: right;">item.disc</th>
 <th style="text-align: right;">item.diff</th>
 <th style="text-align: right;">0</th>
 <th style="text-align: right;">1</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">item1</td>
@@ -928,46 +882,92 @@ $ V63 &lt;int&gt; 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
 </table>
 </div>
 </div>
-</section></section><section id="final-calibration-of-form-a" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="final-calibration-of-form-a">
-<span class="header-section-number">3.4</span> Final Calibration of Form A</h2>
-<section id="model-specification" class="level3" data-number="3.4.1"><h3 data-number="3.4.1" class="anchored" data-anchor-id="model-specification">
-<span class="header-section-number">3.4.1</span> Model Specification</h3>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>SPECS <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb9-5"><a href="#cb9-5"></a>mod_A3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb9-6"><a href="#cb9-6"></a>parms_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_A3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>a_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">1</span>] </span>
-<span id="cb10-2"><a href="#cb10-2"></a>b_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">2</span>] </span>
-<span id="cb10-3"><a href="#cb10-3"></a>c_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">3</span>] </span>
-<span id="cb10-4"><a href="#cb10-4"></a>theta_A <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_A3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb10-5"><a href="#cb10-5"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb10-6"><a href="#cb10-6"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SPECS <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mod_A3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>parms_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_A3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">1</span>] </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>b_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">2</span>] </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>c_A <span class="ot">&lt;-</span> parms_a[,<span class="dv">3</span>] </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>theta_A <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_A3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>Using 3-PL for irt model of form A. Extracting the cofficients (a, b, c) of IRT. The model-implied theta was outputed, whose mean is 0.1314938</p>
 <p>The plot below suggest that SE is low when theta is close to mean, but low theta and high theta has large SE.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">plot</span>(theta_A[,<span class="dv">1</span>],theta_A[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/SE-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_A[,<span class="dv">1</span>],theta_A[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/SE-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
 </div>
-</section></section></section><section id="calibration-of-form-b" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Calibration of Form B</h1>
+</div>
+<div id="calibration-of-form-b" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-calibration-of-form-b">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>The structure of Form B is as same as Form A.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>dat_b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormB.csv"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">glimpse</span>(dat_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat_b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"FormB.csv"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>Rows: 5,000
 Columns: 64
 $ X   &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,…
@@ -1036,50 +1036,63 @@ $ V62 &lt;int&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
 $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, …</code></pre>
 </div>
 </div>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb14-2"><a href="#cb14-2"></a></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat_b) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">ggtitle</span>(<span class="st">"Group B True Trait Density"</span>) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> V1), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">xlab</span>(<span class="st">"True Latent Trait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/theta_b-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat_b) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Group B True Trait Density"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> V1), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"True Latent Trait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/theta_b-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
-</div>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>dat_cali2 <span class="ot">&lt;-</span> dat_b <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">colnames</span>(dat_cali2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
-<span id="cb15-3"><a href="#cb15-3"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali2)</span>
-<span id="cb15-4"><a href="#cb15-4"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali2)</span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="co"># item stats</span></span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="do">## item discrimnation</span></span>
-<span id="cb15-9"><a href="#cb15-9"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali2, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb15-10"><a href="#cb15-10"></a></span>
-<span id="cb15-11"><a href="#cb15-11"></a><span class="do">## item difficulty</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali2)</span>
-<span id="cb15-13"><a href="#cb15-13"></a></span>
-<span id="cb15-14"><a href="#cb15-14"></a><span class="do">## item response frequency</span></span>
-<span id="cb15-15"><a href="#cb15-15"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali2, table), bind_rows)</span>
-<span id="cb15-16"><a href="#cb15-16"></a></span>
-<span id="cb15-17"><a href="#cb15-17"></a>CTT2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
-<span id="cb15-18"><a href="#cb15-18"></a></span>
-<span id="cb15-19"><a href="#cb15-19"></a><span class="fu">kable</span>(CTT2, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dat_cali2 <span class="ot">&lt;-</span> dat_b <span class="sc">%&gt;%</span> <span class="fu">select</span>(V3<span class="sc">:</span>V52, V54<span class="sc">:</span>V63)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat_cali2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat_cali2)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">ncol</span>(dat_cali2)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># item stats</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">## item discrimnation</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>item.disc <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat_cali2, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">cor</span>(x, <span class="fu">rowSums</span>(dat_cali, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">## item difficulty</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>item.diff <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(dat_cali2)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="do">## item response frequency</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>item.freq <span class="ot">&lt;-</span> <span class="fu">reduce</span>(<span class="fu">lapply</span>(dat_cali2, table), bind_rows)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>CTT2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(item.disc, item.diff, item.freq)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(CTT2, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"CTT Table for Form A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
 <table class="table table-sm table-striped small">
 <caption>CTT Table for Form A</caption>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: right;">item.disc</th>
 <th style="text-align: right;">item.diff</th>
 <th style="text-align: right;">0</th>
 <th style="text-align: right;">1</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">item1</td>
@@ -1505,34 +1518,48 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </table>
 </div>
 </div>
-<section id="final-calibration-of-form-a-1" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="final-calibration-of-form-a-1">
-<span class="header-section-number">4.1</span> Final Calibration of Form A</h2>
-<section id="model-specification-of-b" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="model-specification-of-b">
-<span class="header-section-number">4.1.1</span> Model Specification of B</h3>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>SPECS2 <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
-<span id="cb16-5"><a href="#cb16-5"></a>mod_B3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali2, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a>parms_b <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_B3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>SPECS2 <span class="ot">&lt;-</span> <span class="fu">mirt.model</span>(<span class="st">'F = 1-60</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">                    PRIOR = (1-60, a1, lnorm, 0, 1),</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  d,  norm, 0, 1),</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">                    (1-60,  g,  norm, -1.39,1)'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>mod_B3PL <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data=</span>dat_cali2, <span class="at">model=</span>SPECS, <span class="at">itemtype=</span><span class="st">'3PL'</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>parms_b <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod_B3PL, <span class="at">simplify=</span><span class="cn">TRUE</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>a_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">1</span>] </span>
-<span id="cb17-2"><a href="#cb17-2"></a>b_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">2</span>] </span>
-<span id="cb17-3"><a href="#cb17-3"></a>c_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">3</span>] </span>
-<span id="cb17-4"><a href="#cb17-4"></a>theta_B <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_B3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
-<span id="cb17-5"><a href="#cb17-5"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
-<span id="cb17-6"><a href="#cb17-6"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span>
-<span id="cb17-7"><a href="#cb17-7"></a><span class="fu">head</span>(theta_B, <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"Model-implied Theta of B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">1</span>] </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>b_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">2</span>] </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>c_B <span class="ot">&lt;-</span> parms_b[,<span class="dv">3</span>] </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>theta_B <span class="ot">&lt;-</span> <span class="fu">fscores</span>(mod_B3PL,<span class="at">method=</span><span class="st">"EAP"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">full.scores=</span><span class="cn">TRUE</span>, <span class="at">full.scores.SE=</span><span class="cn">TRUE</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scores.only=</span><span class="cn">TRUE</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(theta_B, <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">"Model-implied Theta of B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
 <table class="table table-sm table-striped small">
 <caption>Model-implied Theta of B</caption>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: right;">F</th>
 <th style="text-align: right;">SE_F</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0.933</td>
@@ -1618,135 +1645,184 @@ $ V63 &lt;int&gt; 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
 </table>
 </div>
 </div>
-</section></section><section id="b-plot" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="b-plot">
-<span class="header-section-number">4.2</span> b-plot</h2>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <p>The relationship between b parameters of A and B reflect the latent traits of A and B:</p>
-<p><span class="math display">
+<p><span class="math display">\[
 \theta_{A} = \theta_{B} - 0.25 \\
 \sigma_A^2 = \sigma_B^2
-</span> thus, <span class="math inline">b_B -b_A</span> should also be -0.25. the estimated difference of b is calculate by the mean of b parametes of Form A’s common items and that of Form B’s common items, which is -0.2756443. Thus, it is very close to difference of true traits.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="do">### b-plot</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">plot</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb18-3"><a href="#cb18-3"></a>     <span class="at">main=</span><span class="fu">paste0</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)), </span>
-<span id="cb18-4"><a href="#cb18-4"></a>     <span class="at">xlab =</span> <span class="st">"b_A"</span>,</span>
-<span id="cb18-5"><a href="#cb18-5"></a>     <span class="at">ylab =</span> <span class="st">"b_B"</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+\]</span> thus, <span class="math inline">\(b_B -b_A\)</span> should also be -0.25. the estimated difference of b is calculate by the mean of b parametes of Form A’s common items and that of Form B’s common items, which is -0.2756443. Thus, it is very close to difference of true traits.</p>
 </div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">### b-plot</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste0</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)), </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"b_A"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"b_B"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(b_B[51:60])-mean(b_A[51:60])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="a-plot" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="a-plot">
-<span class="header-section-number">4.3</span> a-plot</h2>
-<p>Because <span class="math inline">\theta_B - \theta_A = 0.25</span>, so a parametes are: <span class="math display">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Because <span class="math inline">\(\theta_B - \theta_A = 0.25\)</span>, so a parametes are: <span class="math display">\[
 a_A / a_B = 1
-</span></p>
+\]</span></p>
 <p>The true ratio of (means of) a parameters is 1.016284, which is very close to 1. SD of A and B are both close to 1.</p>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="do">### a-plot</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">plot</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
-<span id="cb20-3"><a href="#cb20-3"></a>     <span class="at">main=</span><span class="fu">round</span>(<span class="fu">cor</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)</span>
-<span id="cb20-4"><a href="#cb20-4"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### a-plot</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">round</span>(<span class="fu">cor</span>(a_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>],a_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>]),<span class="dv">5</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SDs of b-values across forms</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>SD_bA <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>SD_bB <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>Mean_bA <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>Mean_bB <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># mean(a_A[51:60]) / mean(a_B[51:60]) </span></span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="co">#SDs of b-values across forms</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>SD_bA <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb21-6"><a href="#cb21-6"></a>SD_bB <span class="ot">&lt;-</span> <span class="fu">sd</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a>Mean_bA <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_A[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span>
-<span id="cb21-9"><a href="#cb21-9"></a>Mean_bB <span class="ot">&lt;-</span> <span class="fu">mean</span>(b_B[<span class="dv">51</span><span class="sc">:</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
-</section></section><section id="linking" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Linking</h1>
-<div class="cell">
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="do">###</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="do">### Run one or the other, NOT BOTH!</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="do">###</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a></span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="do">### MS linking: place item parameters from</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb22-7"><a href="#cb22-7"></a>slope <span class="ot">&lt;-</span> SD_bA <span class="sc">/</span> SD_bB</span>
-<span id="cb22-8"><a href="#cb22-8"></a>inter <span class="ot">&lt;-</span> Mean_bA <span class="sc">-</span> slope<span class="sc">*</span>Mean_bB</span>
-<span id="cb22-9"><a href="#cb22-9"></a></span>
-<span id="cb22-10"><a href="#cb22-10"></a><span class="do">### MM linking: place item parameters from</span></span>
-<span id="cb22-11"><a href="#cb22-11"></a><span class="do">### Form B on the scale of Form A</span></span>
-<span id="cb22-12"><a href="#cb22-12"></a><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
-<span id="cb22-13"><a href="#cb22-13"></a><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
-<span id="cb22-14"><a href="#cb22-14"></a></span>
-<span id="cb22-15"><a href="#cb22-15"></a></span>
-<span id="cb22-16"><a href="#cb22-16"></a><span class="do">###</span></span>
-<span id="cb22-17"><a href="#cb22-17"></a><span class="do">### Perform the Linking</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a><span class="do">###</span></span>
-<span id="cb22-19"><a href="#cb22-19"></a></span>
-<span id="cb22-20"><a href="#cb22-20"></a>LINKED_items <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">3</span>)</span>
-<span id="cb22-21"><a href="#cb22-21"></a></span>
-<span id="cb22-22"><a href="#cb22-22"></a><span class="co">#Column 3 is c, it stays the same</span></span>
-<span id="cb22-23"><a href="#cb22-23"></a>LINKED_items[,<span class="dv">3</span>] <span class="ot">&lt;-</span> c_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]</span>
-<span id="cb22-24"><a href="#cb22-24"></a></span>
-<span id="cb22-25"><a href="#cb22-25"></a><span class="co">#Column 2 is b, it is linked:</span></span>
-<span id="cb22-26"><a href="#cb22-26"></a>LINKED_items[,<span class="dv">2</span>] <span class="ot">&lt;-</span> b_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb22-27"><a href="#cb22-27"></a></span>
-<span id="cb22-28"><a href="#cb22-28"></a><span class="co">#Column 1 is a, it is also linked:</span></span>
-<span id="cb22-29"><a href="#cb22-29"></a>LINKED_items[,<span class="dv">1</span>] <span class="ot">&lt;-</span> a_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">/</span> slope</span>
-<span id="cb22-30"><a href="#cb22-30"></a></span>
-<span id="cb22-31"><a href="#cb22-31"></a><span class="do">### Now the ITEM BANK has 110 items all</span></span>
-<span id="cb22-32"><a href="#cb22-32"></a><span class="do">### linked to a common metric!</span></span>
-<span id="cb22-33"><a href="#cb22-33"></a><span class="fu">rownames</span>(LINKED_items) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item_B"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
-<span id="cb22-34"><a href="#cb22-34"></a>ITEM.BANK <span class="ot">&lt;-</span> <span class="fu">rbind</span>(parms_a[,<span class="sc">-</span><span class="dv">4</span>], LINKED_items)</span>
-<span id="cb22-35"><a href="#cb22-35"></a><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
-<span id="cb22-36"><a href="#cb22-36"></a></span>
-<span id="cb22-37"><a href="#cb22-37"></a><span class="co">#Link the theta estimates</span></span>
-<span id="cb22-38"><a href="#cb22-38"></a>LINKED_theta <span class="ot">&lt;-</span> theta_B[,<span class="dv">1</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
-<span id="cb22-39"><a href="#cb22-39"></a>LINKED_se <span class="ot">&lt;-</span> theta_B[,<span class="dv">2</span>]<span class="sc">/</span>slope</span>
-<span id="cb22-40"><a href="#cb22-40"></a></span>
-<span id="cb22-41"><a href="#cb22-41"></a><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
-<span id="cb22-42"><a href="#cb22-42"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div id="linking" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-linking">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Run one or the other, NOT BOTH!</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="do">### MS linking: place item parameters from</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> SD_bA <span class="sc">/</span> SD_bB</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> Mean_bA <span class="sc">-</span> slope<span class="sc">*</span>Mean_bB</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="do">### MM linking: place item parameters from</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Form B on the scale of Form A</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># slope &lt;- Mean_aA / Mean_aB</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># inter &lt;- Mean_bA - slope*Mean_bB</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="do">### Perform the Linking</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>LINKED_items <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">3</span>)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 3 is c, it stays the same</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">3</span>] <span class="ot">&lt;-</span> c_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 2 is b, it is linked:</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">2</span>] <span class="ot">&lt;-</span> b_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Column 1 is a, it is also linked:</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>LINKED_items[,<span class="dv">1</span>] <span class="ot">&lt;-</span> a_B[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>] <span class="sc">/</span> slope</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="do">### Now the ITEM BANK has 110 items all</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="do">### linked to a common metric!</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(LINKED_items) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"item_B"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>ITEM.BANK <span class="ot">&lt;-</span> <span class="fu">rbind</span>(parms_a[,<span class="sc">-</span><span class="dv">4</span>], LINKED_items)</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(ITEM.BANK,file="item_bank.csv")</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="co">#Link the theta estimates</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>LINKED_theta <span class="ot">&lt;-</span> theta_B[,<span class="dv">1</span>]<span class="sc">*</span>slope <span class="sc">+</span> inter</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>LINKED_se <span class="ot">&lt;-</span> theta_B[,<span class="dv">2</span>]<span class="sc">/</span>slope</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(cbind(LINKED_theta,LINKED_se),file="LINKED_FormB_theta_est.csv")</span></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "Mean of Theta of B is -0.013"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>, <span class="fu">sd</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>, <span class="fu">sd</span>(theta_B[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "SD of Theta of B is 0.97"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># after Linked</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">print</span>(<span class="st">"After Linking:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># after Linked</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"After Linking:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "After Linking:"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of B is "</span>,<span class="fu">mean</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "Mean of Theta of B is 0.269"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>,<span class="fu">sd</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of B is "</span>,<span class="fu">sd</span>(LINKED_theta) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "SD of Theta of B is 0.935"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Theta of A is</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of A is "</span>,<span class="fu">mean</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Theta of A is</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Mean of Theta of A is "</span>,<span class="fu">mean</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "Mean of Theta of A is -0.021"</code></pre>
 </div>
-<details class="code-fold"><summary>R Code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of A is "</span>, <span class="fu">sd</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code html-fill-item html-fill-container" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"SD of Theta of A is "</span>, <span class="fu">sd</span>(theta_A[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre><code>[1] "SD of Theta of A is 0.965"</code></pre>
 </div>
 </div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
 
-</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -2276,10 +2352,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark">
+</script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -2291,6 +2367,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
 
 
 </body></html>
