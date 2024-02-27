@@ -1,19 +1,21 @@
 ## Load packages
-library(cmdstanr)
-library(bayesplot)
+require(cmdstanr)
+require(bayesplot)
+
 ## Read in data
 dat <- read.csv(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture03", "Code", "DietData.csv"))
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
-dat$HeightIN60 <- dat$HeightIN - 60
-head(dat)
+dat$HeightIN60 <- dat$HeightIN - 60 # mean centered
+head(dat) # show only first 6 rows to check
 
 ## Predicted data values
 set.seed(1234)
-P = 6
+P = 6 # number of predictors/covariates
 beta = matrix(data = runif(n = 6, min = 0, max = 10), nrow = P, ncol = 1)
 beta
+FullModelFormula = as.formula("WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup")
 X = model.matrix(FullModelFormula, data = dat)
-X %*% beta 
+X %*% beta # Predicted Y
 
 ## Univariate vs. Multivariate variables
 ### Univariate
@@ -22,12 +24,13 @@ beta0 = rnorm(100, 0, 1)
 beta1 = rnorm(100, 0, 1)
 cor(beta0, beta1)
 
-### Multivariate
+### Multivariate vs. Univarite
 set.seed(1234)
 sigma_of_betas = matrix(c(1, 0.5, 0.5, 1), ncol = 2)
 betas = mvtnorm::rmvnorm(100, mean = c(0, 0), sigma = sigma_of_betas)
-beta0 = betas[,1]
 beta1 = betas[,2]
+beta0 = betas[,1]
+
 cor(beta0, beta1)
 
 ## Old Stan syntax
@@ -75,8 +78,10 @@ fit_full_old <- mod_full_old$sample(
   chains = 4,
   parallel_chains = 4
 )
-fit_full_old$summary()
+fit_full_old$draws('betaHeight')
+fit_full_old$summary('betaHeight')
 fit_full_old$time()
+
 ################# On my computer, M1 Chip Mackbook pro
 # $total
 # [1] 0.1987331
@@ -89,7 +94,7 @@ fit_full_old$time()
 # 4        4  0.061    0.047 0.108
 #################
 
-## Old Stan syntax
+## NewStan syntax
 FullModelNew <- "
 data{
   int<lower=0> N;         // number of observations
@@ -109,7 +114,6 @@ model {
 "
 write.table(FullModelNew, "FullModel_New.stan", row.names = FALSE, col.names = FALSE, quote = FALSE)
 mod_full_new <- cmdstan_model("FullModel_New.stan")
-FullModelFormula = as.formula("WeightLB ~ HeightIN60 + DietGroup + HeightIN60*DietGroup")
 X = model.matrix(FullModelFormula, data = dat)
 data_full_new <- list(
   N = nrow(dat),

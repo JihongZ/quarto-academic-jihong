@@ -1,15 +1,16 @@
 ## Load packages
-library(cmdstanr)
-library(bayesplot)
+require(cmdstanr)
+require(bayesplot)
+
 ## Read in data
 dat <- read.csv(here::here("posts", "2024-01-12-syllabus-adv-multivariate-esrm-6553", "Lecture03", "Code", "DietData.csv"))
 dat$DietGroup <- factor(dat$DietGroup, levels = 1:3)
-dat$HeightIN60 <- dat$HeightIN - 60
-head(dat)
+dat$HeightIN60 <- dat$HeightIN - 60 # mean centered
+head(dat) # show only first 6 rows to check
 
 ## Predicted data values
 set.seed(1234)
-P = 6
+P = 6 # number of predictors/covariates
 beta = matrix(data = runif(n = 6, min = 0, max = 10), nrow = P, ncol = 1)
 beta
 X = model.matrix(FullModelFormula, data = dat)

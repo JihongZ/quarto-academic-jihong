@@ -75,7 +75,7 @@ data_list <- list(
   # location of lambda
   kk = loc[,2],
   #hyperparameter
-  sigmaRate = .01,
+  sigmaRate = .1,
   meanMu = rep(0, J),
   covMu = diag(1000, J),
   meanTheta = rep(0, 2),
@@ -87,8 +87,8 @@ data_list <- list(
 mod_cfa_twofactor <- cmdstan_model(here::here(root_dir, "simulation_loc.stan"))
 
 # quick check using pathfinder
-fit_pf <- mod_cfa_twofactor$pathfinder(data = data_list, seed = 1234, draws = 4000)
-fit_pf$summary('lambda')
+# fit_pf <- mod_cfa_twofactor$pathfinder(data = data_list, seed = 1234, draws = 4000)
+# fit_pf$summary('lambda')
 
 fit_cfa_twofactor <- mod_cfa_twofactor$sample(
   data = data_list,
@@ -100,8 +100,9 @@ fit_cfa_twofactor <- mod_cfa_twofactor$sample(
 )
 
 ## save model 1 object into local directory
-#m1_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = large_data_dir)
-#fit_cfa_twofactor$save_object(file = m1_temp_rds_file)
+# m1_temp_rds_file <- tempfile(fileext = ".RDS", tmpdir = large_data_dir)
+# fit_cfa_twofactor$save_object(file = m1_temp_rds_file)
+
 
 fit_cfa_twofactor$summary("lambda")
 fit_cfa_twofactor$summary(c("corrTheta[1,2]", "corrTheta[2,1]"))
