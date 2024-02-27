@@ -124,7 +124,7 @@ ga('send', {
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
 </head>
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -342,7 +342,7 @@ ga('send', {
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">A tutorial for forester R package</h1>
   <div class="quarto-categories">
     <div class="quarto-category">tutorial</div>
@@ -373,9 +373,9 @@ ga('send', {
   
 
 
-</header><div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
-<figcaption>Workflow of forester</figcaption></figure>
+</header><div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+<figcaption class="margin-caption">Workflow of forester</figcaption></figure>
 </div>
 <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span>, message<span class="op">=</span><span class="cn">FALSE</span>, warnings<span class="op">=</span><span class="cn">FALSE</span>, include <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -701,7 +701,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jihongzhang\.org");
+      var filterRegex = new RegExp("https:\/\/www\.jihongzhang\.org\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

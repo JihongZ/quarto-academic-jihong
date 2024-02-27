@@ -10,7 +10,6 @@ categories:
 format:
   html:
     code-line-numbers: true
-    fig-cap-location: margin # put captions of figure in the margin
 ---
 
 ## Rstudio Visual Editor Font
@@ -74,7 +73,9 @@ Note:
 
 To change the font family for Zotero window, create a new folder "Chrome" in above path. Next, create a `userChrome.css` in that folder. A template for css file is [here](https://github.com/Rosmaninho/Zotero-Dark-Theme). Add font-family setting in the first several lines (line3-5).
 
-``` {.css .code-overflow-scroll filename="userChrome.css" code-line-numbers="3-5"}
+If you want to use my theme file, you can cope&paste following syntax into your `userChrome.css` file.
+
+``` {.css .code-overflow-scroll .column-page filename="userChrome.css" code-line-numbers="3-5"}
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
 * {border: 0 !important; 

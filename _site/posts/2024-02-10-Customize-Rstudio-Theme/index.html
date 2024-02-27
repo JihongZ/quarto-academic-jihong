@@ -461,11 +461,12 @@ ga('send', {
 <span id="cb3-4"><a href="#cb3-4"></a><span class="ex">➜</span>  vim userChrome.css </span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="ex">➜</span>  open userChrome.css </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To change the font family for Zotero window, create a new folder “Chrome” in above path. Next, create a <code>userChrome.css</code> in that folder. A template for css file is <a href="https://github.com/Rosmaninho/Zotero-Dark-Theme">here</a>. Add font-family setting in the first several lines (line3-5).</p>
-<div class="code-with-filename">
+<p>If you want to use my theme file, you can cope&amp;paste following syntax into your <code>userChrome.css</code> file.</p>
+<div class="code-with-filename page-columns page-full">
 <div class="code-with-filename-file">
 <pre><strong>userChrome.css</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="userChrome.css"><pre class="sourceCode numberSource css code-overflow-scroll number-lines code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<div class="sourceCode page-columns page-full" id="cb4" data-filename="userChrome.css"><pre class="sourceCode numberSource css code-overflow-scroll column-page number-lines code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">/*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="op">*</span> {<span class="kw">border</span><span class="ch">:</span> <span class="dv">0</span> <span class="at">!important</span><span class="op">;</span> </span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">'Baloo 2'</span><span class="op">,</span> <span class="dv">Source Sans Pro</span><span class="op">,</span> <span class="dv">Fira Sans</span><span class="op">,</span> <span class="dv">SF Pro Text</span><span class="op">,</span> <span class="dv">-apple-system</span><span class="op">,</span> <span class="dv">sans-serif</span> <span class="at">!</span> <span class="dv">important</span><span class="op">;</span></span>
@@ -1048,7 +1049,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jihongzhang\.org");
+      var filterRegex = new RegExp("https:\/\/www\.jihongzhang\.org\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

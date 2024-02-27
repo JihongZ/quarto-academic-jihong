@@ -78,6 +78,10 @@ format:
     toc: true
     table-of-contents: true
     toc-location: right
+    fig-cap-location: margin # put captions of figure in the margin
+    reference-location: margin
+    citation-location: margin
+    footnotes-hover: true
     
     
 editor: visual
