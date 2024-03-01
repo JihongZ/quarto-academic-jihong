@@ -30,6 +30,26 @@ sticker(p, package="quarto", p_size=20, s_x=1, s_y=.75,
 knitr::include_graphics("ggplot2.png")
 ```
 
+Here's another code for my logo on the sidebar of my website.
+
+```{r}
+#| eval: true
+#| echo: true 
+library(hexSticker)
+library(ggplot2)
+
+p <- ggplot(data = iris) + 
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width), shape = "M", color = "white", size =8, alpha = 0.3) +
+  geom_point(aes(x = Petal.Length, y = Petal.Width), shape = "J", color = "black", size =8, alpha = 0.3)
+p <- p + theme_void() + theme_transparent()
+
+sticker(p, package="Jihong|Melody", p_size=17, s_x=1, s_y=.75, 
+        s_width=0.9, s_height = 0.9,
+        p_color = "#c0c0c0",
+        h_color = "#98A08D",
+        h_fill = "#008080", filename="images/jihonglogo.png", dpi = 500)
+```
+
 ``` yaml
 #| echo: fenced
 title: "NEET Analysis"
