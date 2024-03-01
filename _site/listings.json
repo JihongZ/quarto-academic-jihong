@@ -2,7 +2,6 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/2024-02-20-Danmu-Analysis-Bilibili/index.html",
       "/posts/2024-02-10-Customize-Rstudio-Theme/index.html",
       "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
       "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html",
@@ -40,6 +39,7 @@
     "listing": "/projects.html",
     "items": [
       "/projects/Initialize-R-Project/index.html",
+      "/projects/2024-02-20-Danmu-Analysis-Bilibili/index.html",
       "/projects/2024-Mixing-Network-DCM/index.html"
     ]
   },
@@ -90,7 +90,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/2024-02-20-Danmu-Analysis-Bilibili/index.html",
       "/posts/2024-02-10-Customize-Rstudio-Theme/index.html",
       "/posts/2024-01-14-how-to-use-uark-hpc/index.html",
       "/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html",

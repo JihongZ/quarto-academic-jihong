@@ -1,5 +1,5 @@
 ---
-title: "Danmu Cloud for Bilibili"
+title: "ShinyApp: Danmu Cloud for Bilibili"
 author: Jihong Zhang
 date: 2024-02-20
 execute:
