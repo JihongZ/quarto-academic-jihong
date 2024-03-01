@@ -1,21 +1,49 @@
 // @import 'https://fonts.googleapis.com/css2?family=Maven+Pro:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:wght@300;400;500&family=JetBrains+Mono:ital@0;1';
 $web-font-path: "No";
 
+/*-- scss:rules --*/
+@font-face {
+    font-family: 'Taub Sans';
+    src: local('Taub Sans Regular'), local('Taub-Sans-Regular'),
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.woff2') format('woff2'),
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.woff') format('woff'),
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Palatino';
+    src: local('Palatino'), local('Palatino'),
+         url('./fonts/Palatino/Palatino.woff') format('woff'),
+         url('./fonts/Palatino/Palatino.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.menu-text {
+  font-family: "Palatino", sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #000000;
+}
+h1, h2, h3 {
+  //color: #333333; 
+  //font-family: "Ysabeau Office", sans-serif;
+  font-family: "Palatino", sans-serif;
+  letter-spacing: 1.8px;
+  font-weight: normal;
+}
+p { // main font family of post content
+  font-family: 'Palatino', sans-serif;
+  font-weight: normal;
+}
+
 /*-- scss:defaults --*/
 $darkteal: #008080;
 $lightwhite: #c0c0c0;
 $gray: #64605f;
 $navbar-bg: #000000;
-/*-- scss:rules --*/
-@font-face {
-    font-family: 'Taub Sans';
-    src: local('Taub Sans Regular'), local('Taub-Sans-Regular'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.woff2') format('woff2'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.woff') format('woff'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
+
 #quarto-content {
   color: $lightwhite;
   background-color: black;
@@ -43,18 +71,6 @@ $primary:   $green !default;
   margin-top: -1px;
   margin-bottom: -6px;
 }
-.menu-text {
-  font-family: "Taub Sans", sans-serif;
-  letter-spacing: 1.8px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-
-h1, h2, h3 {
-  color: $lightwhite;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
 
 .blockquote {
   color: $gray;
@@ -66,16 +82,5 @@ h1, h2, h3 {
 
 .listing-author{
   color: $lightwhite;
-}
-
-/*-- scss:rules --*/
-h1, h2, h3 {
-  //color: #333333; 
-  font-family: "Taub Sans", sans-serif;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-p { // main font family of post content
-  font-family: 'Taub Sans', sans-serif;
 }
 

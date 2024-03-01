@@ -76,10 +76,10 @@ format:
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    mainfont: 'Taub Sans'
-    fontsize: 1.1em
     html-math-method: katex
     # code settings
+    fontsize: 1em
+    mainfont: 'Palatino'
     monofont: 'JetBrains Mono'
     code-link: true
     code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/

@@ -5,12 +5,38 @@ $web-font-path: "No";
 @font-face {
     font-family: 'Taub Sans';
     src: local('Taub Sans Regular'), local('Taub-Sans-Regular'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.woff2') format('woff2'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.woff') format('woff'),
-        url('./fonts/TaubSans-Regular/TaubSans-Regular.ttf') format('truetype');
-    font-weight: 400;
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.woff2') format('woff2'),
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.woff') format('woff'),
+         url('./fonts/TaubSans-Regular/TaubSans-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
   }
+@font-face {
+    font-family: 'Palatino';
+    src: local('Palatino'), local('Palatino'),
+         url('./fonts/Palatino/Palatino.woff') format('woff'),
+         url('./fonts/Palatino/Palatino.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.menu-text {
+  font-family: "Palatino", sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #000000;
+}
+h1, h2, h3 {
+  //color: #333333; 
+  //font-family: "Ysabeau Office", sans-serif;
+  font-family: "Palatino", sans-serif;
+  letter-spacing: 1.8px;
+  font-weight: normal;
+}
+p { // main font family of post content
+  font-family: 'Palatino', sans-serif;
+  font-weight: normal;
+}
 
 /*-- scss:defaults --*/
 // colors
@@ -85,30 +111,6 @@ $primary:   $pink !default;
   margin-top: -1px;
   margin-bottom: -6px;
 }
-
-
-
-
-
-.menu-text {
-  font-family: "Taub Sans", sans-serif;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #000000;
-}
-
-h1, h2, h3 {
-  //color: #333333; 
-  //font-family: "Ysabeau Office", sans-serif;
-  font-family: "Taub Sans", sans-serif;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-p { // main font family of post content
-  //font-family: 'Ysabeau Office', sans-serif;
-  font-family: 'Taub Sans', sans-serif;
-}
-
 
 $link-color: $darkteal;
 // Code blocks

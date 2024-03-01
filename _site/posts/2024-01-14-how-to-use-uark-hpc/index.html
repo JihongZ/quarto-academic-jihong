@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2024-01-14">
-<title>Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of University of Arkansas</title>
+<title>Jihong Z. - Play Harder and Learn Harder - How to set up High Performance Computing of University of Arkansas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,10 +116,10 @@ ga('send', {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/rwds.css">
-<meta property="og:title" content="Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of University of Arkansas">
+<meta property="og:title" content="Jihong Z. - Play Harder and Learn Harder - How to set up High Performance Computing of University of Arkansas">
 <meta property="og:description" content="Technical and Statistical but Fun">
-<meta property="og:site_name" content="Dr. Jihong Zhang">
-<meta name="twitter:title" content="Dr.&nbsp;Jihong Zhang - How to set up High Performance Computing of University of Arkansas">
+<meta property="og:site_name" content="Jihong Z. - Play Harder and Learn Harder">
+<meta name="twitter:title" content="Jihong Z. - Play Harder and Learn Harder - How to set up High Performance Computing of University of Arkansas">
 <meta name="twitter:description" content="Technical and Statistical but Fun">
 <meta name="twitter:creator" content="@jihongzgamma">
 <meta name="twitter:card" content="summary">
@@ -142,27 +142,27 @@ ga('send', {
 <li class="nav-item">
     <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-bi bi-house" role="img">
 </i> 
-<span class="menu-text">Home<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-home">Home</span><span class="text-line"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../posts.html"> <i class="bi bi-bi bi-pencil-square" role="img">
 </i> 
-<span class="menu-text">Blog<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-blog">Blog</span><span class="text-line-blog"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../dashboards/template.html"> <i class="bi bi-bi bi-speedometer2" role="img">
 </i> 
-<span class="menu-text">Dashboard<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-db">Dashboard</span><span class="text-line-db"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../uploads/Curriculum_Vitae.pdf"> <i class="bi bi-bi bi-person" role="img">
 </i> 
-<span class="menu-text">C.V.<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-cv">C.V.</span><span class="text-line-cv"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../projects.html"> <i class="bi bi-bi bi-three-dots" role="img">
 </i> 
-<span class="menu-text">Projects<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-pj">Projects</span><span class="text-line-pj"></span></span></a>
   </li>  
 </ul>
 </div> <!-- /navcollapse -->
@@ -268,7 +268,7 @@ ga('send', {
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">How to set up High Performance Computing of University of Arkansas</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">How to set up High Performance Computing of University of Arkansas</h1>
   <div class="quarto-categories">
     <div class="quarto-category">tutorial</div>
     <div class="quarto-category">hpc</div>
@@ -562,8 +562,6 @@ Note
 </ol>
 
 
-<!-- -->
-
 </section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -787,57 +785,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1146,277 +1093,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><script src="https://giscus.app/client.js" data-repo="JihongZ/quarto-academic-jihong" data-repo-id="R_kgDOJz3gyg" data-category="General" data-category-id="DIC_kwDOJz3gys4CXdYE" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb17" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How to set up High Performance Computing of University of Arkansas"</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Jihong Zhang</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-01-14</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - tutorial</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - hpc</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## General Information</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>Arkansas High Performance Computing Center (AHPCC) is available for research and instructional use to faculty and students of any Arkansas university and their research collaborators. There is no charge for use of our computing resources.</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>To use the HPC, an AHPCC account must be requested through <span class="co">[</span><span class="ot">Internal Account Request Form</span><span class="co">](http://hpc.uark.edu/hpc-support/user-account-requests/internal.php)</span>. Please see <span class="co">[</span><span class="ot">here</span><span class="co">](https://dartproject.org/hpc/)</span> for more information about AHPPC inventory.</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Connect to HPC</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>As long as you have an AHPCC account, you can connect to HPC through SSH. For Windows users, you can use <span class="co">[</span><span class="ot">PuTTY</span><span class="co">](http://www.putty.org/)</span> to connect to HPC. For Mac and Linux users, you can use the terminal to connect to HPC. The command is:</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span>@hpc-portal2.hpc.uark.edu</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>If your account was successfully setted up, passwords will be required. After you enter your password, you will be connected to HPC.</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="al">![Login Screenshot](login.png)</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>Note: Pinnacle is a new resource at the University of Arkansas in 2019. It consists of 100 Intel based nodes with 20 NVIDIA V100 GPU nodes enabling data science and machine learning and 8 big memory nodes with 768 Gb ram/each for projects requiring a large memory footprint.</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### SSH login without password</span></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Generate a pair of authentication keys in your local machine and do not enter a passphrase using the following codes:</span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa   </span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>Please note that make the passphrase empty:</span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="in">Generating public/private rsa key pair.</span></span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="in">Enter file in which to save the key (/Users/[username]/.ssh/id_rsa): </span></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a><span class="in">Enter passphrase (empty for no passphrase): </span></span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="in">Enter same passphrase again: </span></span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a><span class="in">Your identification has been saved in /Users/[username]/.ssh/id_rsa</span></span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="in">Your public key has been saved in /Users/[username]/.ssh/id_rsa.pub</span></span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>In your local machine, type in following commands to copy local public key to the hpc server.</span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> ~/.ssh/id_rsa.pub <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span>@hpc-portal2.hpc.uark.edu:/home/<span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span>/.ssh/authorized_keys</span>
-<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Now you should be able to login the hpc login node without password:</span>
-<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span>@hpc-portal2.hpc.uark.edu</span>
-<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Moving data</span></span>
-<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>For moving data files from local machine to HPC, type in following codes on your local machine:</span>
-<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> program.c loginname@hpc-portal2.hpc.uark.edu:/home/loginname/</span>
-<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a>To copy an entire directory tree <span class="in">`src`</span> using SCP, use <span class="in">`-r`</span> for recursive:</span>
-<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> src loginname@hpc-portal2.hpc.uark.edu:/home/loginname/</span>
-<span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a>Similarly, for moving data files from HPC to local machine, type in following codes on your local machine:</span>
-<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./</span>
-<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-80"><a href="#cb17-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Jobs submission</span></span>
-<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a>There are multiple steps to submit the R file to cluster to run.</span>
-<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a>**First**, we need to determine the computing nodes we want to use. Please refer to this <span class="co">[</span><span class="ot">link</span><span class="co">](https://hpcwiki.uark.edu/doku.php?id=equipment)</span> for detailed information about HPC equipment. A general 'submitting' command is like this:</span>
-<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">-q</span> q06h32c <span class="at">-l</span> walltime=1:00 <span class="at">-l</span> nodes=1:ppn=32 example.sh</span>
-<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
-<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-94"><a href="#cb17-94" aria-hidden="true" tabindex="-1"></a><span class="in">`sbatch`</span> command aims to submit a job with the job file <span class="in">`example.sh`</span>. The command above submitted the job to the q06h32c queue with a wall-time of 1 minute requesting all 32 cores on 1 node.</span>
-<span id="cb17-95"><a href="#cb17-95" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a>**Second**, create a job file with `.sh` extension. Here's a simple example of a job file `example.sh` that can tell HPC **how** to run your R code:</span>
-<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-99"><a href="#cb17-99" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-100"><a href="#cb17-100" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb17-101"><a href="#cb17-101" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=mpi</span></span>
-<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=zzz.slurm</span></span>
-<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition comp06</span></span>
-<span id="cb17-104"><a href="#cb17-104" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=2</span></span>
-<span id="cb17-105"><a href="#cb17-105" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tasks-per-node=32</span></span>
-<span id="cb17-106"><a href="#cb17-106" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=6:00:00</span></span>
-<span id="cb17-107"><a href="#cb17-107" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load gcc/11.2.1 mkl/19.0.5 R/4.2.2</span>
-<span id="cb17-108"><a href="#cb17-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-109"><a href="#cb17-109" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> HelloWorld/example.R</span>
-<span id="cb17-110"><a href="#cb17-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-112"><a href="#cb17-112" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a>**Note**</span>
-<span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a>Where &lt;mark&gt;Line 8&lt;/mark&gt; loaded all required modules:</span>
-<span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-117"><a href="#cb17-117" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`gcc`</span> and <span class="in">`mkl`</span> are required for R package installation (Note: To the date, <span class="in">`gcc/11.2.1`</span> is the latest version of <span class="in">`gcc`</span> than can compile the <span class="in">`cmdstanr`</span> successfully). Please see <span class="co">[</span><span class="ot">here</span><span class="co">](https://hpcwiki.uark.edu/doku.php?id=r)</span> for more details.</span>
-<span id="cb17-118"><a href="#cb17-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-119"><a href="#cb17-119" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Rscript`</span> is the bash command to execute R file on HPC. <span class="in">`HelloWorld/example.R`</span> is the path of your R script.</span>
-<span id="cb17-120"><a href="#cb17-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-121"><a href="#cb17-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Anything behind the <span class="in">`#SBATCH`</span> are options for the SLURM scheduler. Please see following summary or view <span class="co">[</span><span class="ot">it</span><span class="co">](https://slurm.schedmd.com/pdfs/summary.pdf)</span> online:</span>
-<span id="cb17-122"><a href="#cb17-122" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-123"><a href="#cb17-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a><span class="in">xfun::embed_file("summary.pdf")</span></span>
-<span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-128"><a href="#cb17-128" aria-hidden="true" tabindex="-1"></a>**Third**, you may want to use R interactively to test your R code is running well. Use the following bash command to start a brand new R in terminal:</span>
-<span id="cb17-129"><a href="#cb17-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-131"><a href="#cb17-131" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-N1</span> <span class="at">-n1</span> <span class="at">-c1</span> <span class="at">-p</span> cloud72 <span class="at">-q</span> cloud <span class="at">-t</span> 2:00:00 <span class="at">--pty</span> /bin/bash</span>
-<span id="cb17-132"><a href="#cb17-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
-<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.</span>
-<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a>| slurm commands      | compatibility commands   | Meaning                            |</span>
-<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a>|---------------------|--------------------------|------------------------------------|</span>
-<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a>| sbatch              | qsub                     | submit <span class="sc">\&lt;</span>job file<span class="sc">\&gt;</span>                |</span>
-<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a>| srun                | qsub -I                  | submit interactive job             |</span>
-<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a>| squeue              | qstat                    | list all queued jobs               |</span>
-<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>| squeue -u -rfeynman | qstat -u rfeynman        | list queued jobs for user rfeynman |</span>
-<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a>| scancel             | qdel                     | cancel <span class="sc">\&lt;</span>job#<span class="sc">\&gt;</span>                    |</span>
-<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a>| sinfo               | shownodes -l -n;qstat -q | node status;list of queues         |</span>
-<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
-<span id="cb17-151"><a href="#cb17-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-152"><a href="#cb17-152" aria-hidden="true" tabindex="-1"></a>For slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load <span class="in">`R/4.2.2`</span> module, those packages installed via an interactive job will be stored at <span class="in">`$HOME$/R/x86_64-pc-linux-gnu/4.2/`</span>. See <span class="co">[</span><span class="ot">here</span><span class="co">](https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage)</span> for more details about interactive job.</span>
-<span id="cb17-153"><a href="#cb17-153" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-154"><a href="#cb17-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-155"><a href="#cb17-155" aria-hidden="true" tabindex="-1"></a>**Finnally,** the whole workflow of job submission is as follows:</span>
-<span id="cb17-156"><a href="#cb17-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-157"><a href="#cb17-157" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-158"><a href="#cb17-158" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span> cat exampleJob.sh</span>
-<span id="cb17-159"><a href="#cb17-159" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb17-160"><a href="#cb17-160" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1</span></span>
-<span id="cb17-161"><a href="#cb17-161" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tasks-per-node=2</span></span>
-<span id="cb17-162"><a href="#cb17-162" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=Exp0</span></span>
-<span id="cb17-163"><a href="#cb17-163" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge</span>
-<span id="cb17-164"><a href="#cb17-164" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load os/el7 gcc/9.3.1 mkl/19.0.5 R/4.2.2</span>
-<span id="cb17-165"><a href="#cb17-165" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$SLURM_SUBMIT_DIR</span></span>
-<span id="cb17-166"><a href="#cb17-166" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> example.R</span>
-<span id="cb17-167"><a href="#cb17-167" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span> rm slurm-334001.out</span>
-<span id="cb17-168"><a href="#cb17-168" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span> sbatch exampleJob.sh</span>
-<span id="cb17-169"><a href="#cb17-169" aria-hidden="true" tabindex="-1"></a><span class="ex">Submitted</span> batch job 334002</span>
-<span id="cb17-170"><a href="#cb17-170" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span> ls</span>
-<span id="cb17-171"><a href="#cb17-171" aria-hidden="true" tabindex="-1"></a><span class="ex">exampleJob.sh</span>  example.R  gene_up.txt  MS_entrez_id_alldata.txt  slurm-334002.out</span>
-<span id="cb17-172"><a href="#cb17-172" aria-hidden="true" tabindex="-1"></a><span class="ex">c1331:jzhang:~/HelloWorld$</span></span>
-<span id="cb17-173"><a href="#cb17-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-174"><a href="#cb17-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-175"><a href="#cb17-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Checking job</span></span>
-<span id="cb17-176"><a href="#cb17-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-177"><a href="#cb17-177" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-178"><a href="#cb17-178" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> loginname</span>
-<span id="cb17-179"><a href="#cb17-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-180"><a href="#cb17-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-181"><a href="#cb17-181" aria-hidden="true" tabindex="-1"></a>Below shows the information of all running/down task for the queue <span class="in">`comp06`</span> (there are 9 Jobs but only 7 are running). Note that comp06 and comp72 queues share the same nodes, both belonging to pinnacle cluster. There are 49 public standard compute nodes. Thus, if there are 49 running jobs in both queues, then your job has to be waitting until some jobs finished.</span>
-<span id="cb17-182"><a href="#cb17-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-183"><a href="#cb17-183" aria-hidden="true" tabindex="-1"></a>For example, below shows all 47 running jobs in comp06/comp72 queues. Some have been running like 2 days. There are 72 hours limit though for all computation nodes.</span>
-<span id="cb17-184"><a href="#cb17-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-185"><a href="#cb17-185" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-186"><a href="#cb17-186" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-p</span> comp06,comp72 <span class="at">-t</span> R</span>
-<span id="cb17-187"><a href="#cb17-187" aria-hidden="true" tabindex="-1"></a> <span class="ex">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er">(</span><span class="ex">REASON</span><span class="kw">)</span></span>
-<span id="cb17-188"><a href="#cb17-188" aria-hidden="true" tabindex="-1"></a> <span class="ex">362406</span>    comp06    measr   jzhang  R    1:04:24      1 c1501</span>
-<span id="cb17-189"><a href="#cb17-189" aria-hidden="true" tabindex="-1"></a> <span class="ex">362385</span>    comp06 sys/dash ashmitau  R    2:07:25      1 c1402</span>
-<span id="cb17-190"><a href="#cb17-190" aria-hidden="true" tabindex="-1"></a> <span class="ex">362309</span>    comp06 sys/dash    igorf  R    4:14:32      1 c1402</span>
-<span id="cb17-191"><a href="#cb17-191" aria-hidden="true" tabindex="-1"></a> <span class="ex">362361</span>    comp06 03a_iqtr amatthew  R      55:02      1 c1420</span>
-<span id="cb17-192"><a href="#cb17-192" aria-hidden="true" tabindex="-1"></a> <span class="ex">362311</span>    comp06  mystery cdgoolsb  R    4:09:10      1 c1410</span>
-<span id="cb17-193"><a href="#cb17-193" aria-hidden="true" tabindex="-1"></a> <span class="ex">362310</span>    comp06  mystery cdgoolsb  R    4:09:40      1 c1410</span>
-<span id="cb17-194"><a href="#cb17-194" aria-hidden="true" tabindex="-1"></a> <span class="ex">362308</span>    comp06  mystery cdgoolsb  R    4:14:41      1 c1410</span>
-<span id="cb17-195"><a href="#cb17-195" aria-hidden="true" tabindex="-1"></a> <span class="ex">362454</span>    comp72 test_str pradeepk  R      11:03      1 c1512</span>
-<span id="cb17-196"><a href="#cb17-196" aria-hidden="true" tabindex="-1"></a> <span class="ex">362150</span>    comp72   cv0_rf    igorf  R 1-00:43:47      1 c1410</span>
-<span id="cb17-197"><a href="#cb17-197" aria-hidden="true" tabindex="-1"></a> <span class="ex">362151</span>    comp72   cv1_rf    igorf  R 1-00:43:47      1 c1410</span>
-<span id="cb17-198"><a href="#cb17-198" aria-hidden="true" tabindex="-1"></a> <span class="ex">362152</span>    comp72   cv2_rf    igorf  R 1-00:43:47      1 c1410</span>
-<span id="cb17-199"><a href="#cb17-199" aria-hidden="true" tabindex="-1"></a> <span class="ex">362137</span>    comp72 sys/dash maghamoh  R 1-03:12:27      1 c1410</span>
-<span id="cb17-200"><a href="#cb17-200" aria-hidden="true" tabindex="-1"></a> <span class="ex">362340</span>    comp72  cv1_pls    igorf  R    1:00:24      1 c1512</span>
-<span id="cb17-201"><a href="#cb17-201" aria-hidden="true" tabindex="-1"></a> <span class="ex">362341</span>    comp72  cv2_pls    igorf  R    1:00:24      1 c1512</span>
-<span id="cb17-202"><a href="#cb17-202" aria-hidden="true" tabindex="-1"></a> <span class="ex">362339</span>    comp72  cv0_pls    igorf  R    1:04:24      1 c1501</span>
-<span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a> <span class="ex">360997</span>    comp72  TiS2-ph bothinah  R 2-04:46:42      1 c1609</span>
-<span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a> <span class="ex">360877</span>    comp72 Temp_230 sppoudel  R      54:55      1 c1419</span>
-<span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a> <span class="ex">360875</span>    comp72 Temp_220 sppoudel  R    6:19:42      1 c1415</span>
-<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a> <span class="ex">360876</span>    comp72 Temp_225 sppoudel  R    6:19:42      1 c1509</span>
-<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a> <span class="ex">354260</span>    comp72 peep19-0   djo001  R   11:27:37      1 c1506</span>
-<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a> <span class="ex">354262</span>    comp72 peep20-0   djo001  R   11:27:37      1 c1514</span>
-<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a> <span class="ex">354263</span>    comp72 peep21-0   djo001  R   11:27:37      1 c1515</span>
-<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a> <span class="ex">351991</span>    comp72 peep16-0   djo001  R   12:31:45      1 c1507</span>
-<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a> <span class="ex">351988</span>    comp72 peep18-2   djo001  R   14:00:48      1 c1603</span>
-<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a> <span class="ex">351987</span>    comp72 peep17-2   djo001  R   14:07:24      1 c1519</span>
-<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a> <span class="ex">360873</span>    comp72 Temp_210 sppoudel  R   14:49:25      1 c1408</span>
-<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a> <span class="ex">360874</span>    comp72 Temp_215 sppoudel  R   14:49:25      1 c1418</span>
-<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a> <span class="ex">351989</span>    comp72 peep18-0   djo001  R   14:49:55      1 c1516</span>
-<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a> <span class="ex">351990</span>    comp72 peep17-0   djo001  R   14:49:55      1 c1518</span>
-<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a> <span class="ex">351986</span>    comp72 peep16-2   djo001  R   15:36:01      1 c1605</span>
-<span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a> <span class="ex">360824</span>    comp72 SmNiO3-2 paillard  R   16:23:51      4 c<span class="pp">[</span><span class="ss">1405</span><span class="pp">-</span><span class="ss">1406,1503,1508</span><span class="pp">]</span></span>
-<span id="cb17-219"><a href="#cb17-219" aria-hidden="true" tabindex="-1"></a> <span class="ex">360871</span>    comp72 Temp_205 sppoudel  R   16:23:51      1 c1511</span>
-<span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a> <span class="ex">360821</span>    comp72 SmNiO3-2 paillard  R 1-01:41:15      4 c<span class="pp">[</span><span class="ss">1412</span><span class="pp">-</span><span class="ss">1413,1513,1517</span><span class="pp">]</span></span>
-<span id="cb17-221"><a href="#cb17-221" aria-hidden="true" tabindex="-1"></a> <span class="ex">360869</span>    comp72 Temp_200 sppoudel  R 1-01:41:15      1 c1606</span>
-<span id="cb17-222"><a href="#cb17-222" aria-hidden="true" tabindex="-1"></a> <span class="ex">360868</span>    comp72 Temp_195 sppoudel  R 1-14:30:28      1 c1504</span>
-<span id="cb17-223"><a href="#cb17-223" aria-hidden="true" tabindex="-1"></a> <span class="ex">349719</span>    comp72  peep8-2   djo001  R 1-16:02:28      1 c1608</span>
-<span id="cb17-224"><a href="#cb17-224" aria-hidden="true" tabindex="-1"></a> <span class="ex">360867</span>    comp72 Temp_190 sppoudel  R 1-20:18:00      1 c1610</span>
-<span id="cb17-225"><a href="#cb17-225" aria-hidden="true" tabindex="-1"></a> <span class="ex">360818</span>    comp72 SmNiO3-2 paillard  R 1-20:18:01      4 c<span class="pp">[</span><span class="ss">1404,1409,1502,1505</span><span class="pp">]</span></span>
-<span id="cb17-226"><a href="#cb17-226" aria-hidden="true" tabindex="-1"></a> <span class="ex">360866</span>    comp72 Temp_180 sppoudel  R 2-04:52:43      1 c1411</span>
-<span id="cb17-227"><a href="#cb17-227" aria-hidden="true" tabindex="-1"></a> <span class="ex">349718</span>    comp72  peep9-2   djo001  R 2-05:37:18      1 c1604</span>
-<span id="cb17-228"><a href="#cb17-228" aria-hidden="true" tabindex="-1"></a> <span class="ex">349717</span>    comp72 peep10-2   djo001  R 2-05:51:48      1 c1520</span>
-<span id="cb17-229"><a href="#cb17-229" aria-hidden="true" tabindex="-1"></a> <span class="ex">349715</span>    comp72 peep12-2   djo001  R 2-09:11:29      1 c1417</span>
-<span id="cb17-230"><a href="#cb17-230" aria-hidden="true" tabindex="-1"></a> <span class="ex">349716</span>    comp72 peep11-2   djo001  R 2-09:11:29      1 c1607</span>
-<span id="cb17-231"><a href="#cb17-231" aria-hidden="true" tabindex="-1"></a> <span class="ex">349714</span>    comp72 peep13-2   djo001  R 2-09:30:18      1 c1510</span>
-<span id="cb17-232"><a href="#cb17-232" aria-hidden="true" tabindex="-1"></a> <span class="ex">338160</span>    comp72 INT3-WT- dgirodat  R 2-10:20:18      1 c1407</span>
-<span id="cb17-233"><a href="#cb17-233" aria-hidden="true" tabindex="-1"></a> <span class="ex">338164</span>    comp72 C1069T-p dgirodat  R 2-10:20:18      1 c1414</span>
-<span id="cb17-234"><a href="#cb17-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-235"><a href="#cb17-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-236"><a href="#cb17-236" aria-hidden="true" tabindex="-1"></a>When you want to get the worst case scenario estimate of when your waiting jobs will start, you can always run following command,</span>
-<span id="cb17-237"><a href="#cb17-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-238"><a href="#cb17-238" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-239"><a href="#cb17-239" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="pp">[</span><span class="ss">loginname</span><span class="pp">]</span> <span class="at">--start</span></span>
-<span id="cb17-240"><a href="#cb17-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-241"><a href="#cb17-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-242"><a href="#cb17-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### Queues</span></span>
-<span id="cb17-243"><a href="#cb17-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-244"><a href="#cb17-244" aria-hidden="true" tabindex="-1"></a>Most frequently used queues are from <span class="in">`pinnacle`</span> cluster.</span>
-<span id="cb17-245"><a href="#cb17-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a>Below is a list of queues in the <span class="in">`pinnacle`</span> cluster. The number after the queue is the time limit for a running job. For example, <span class="in">`comp72`</span> has 72 hour limits while <span class="in">`comp06`</span> has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use <span class="in">`comp01`</span> for quick examination of coding and use <span class="in">`comp72`</span> for time consuming jobs.</span>
-<span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
-<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a><span class="ex">comp72/06/01:</span> standard compute nodes, 72/6/1 hour limit, 42/46/48 nodes</span>
-<span id="cb17-250"><a href="#cb17-250" aria-hidden="true" tabindex="-1"></a><span class="ex">gpu72/06:</span>     gpu nodes: 72/6 hour limit, 19 nodes</span>
-<span id="cb17-251"><a href="#cb17-251" aria-hidden="true" tabindex="-1"></a><span class="ex">agpu72/06:</span>    a100 gpu nodes: 72/6 hour limit</span>
-<span id="cb17-252"><a href="#cb17-252" aria-hidden="true" tabindex="-1"></a><span class="ex">himem72/06:</span>   768 GB nodes, 72/6 hour limit, 6 nodes</span>
-<span id="cb17-253"><a href="#cb17-253" aria-hidden="true" tabindex="-1"></a><span class="ex">pubcondo06:</span>   condo nodes all-user use, 6 hour limit, various constraints required, 25 nodes</span>
-<span id="cb17-254"><a href="#cb17-254" aria-hidden="true" tabindex="-1"></a><span class="ex">pcon06:</span>       same as pubcondo06, shortened name for easier printout, use this going forward</span>
-<span id="cb17-255"><a href="#cb17-255" aria-hidden="true" tabindex="-1"></a><span class="ex">cloud72:</span>      virtual machines and containers, usually single processor, 72 hour limit, 3 nodes</span>
-<span id="cb17-256"><a href="#cb17-256" aria-hidden="true" tabindex="-1"></a><span class="ex">condo:</span>        condo nodes, no time limit, authorization required, various constraints required, 25 nodes</span>
-<span id="cb17-257"><a href="#cb17-257" aria-hidden="true" tabindex="-1"></a><span class="ex">tres72/06:</span>    reimaged trestles nodes, 72/06 hour limit, 126 nodes</span>
-<span id="cb17-258"><a href="#cb17-258" aria-hidden="true" tabindex="-1"></a><span class="ex">razr72/06:</span>    reimaged razor nodes, 72 hour limit, in progress</span>
-<span id="cb17-259"><a href="#cb17-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-260"><a href="#cb17-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a>Here's some useful information regarding selecting queue from https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage</span>
-<span id="cb17-262"><a href="#cb17-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-263"><a href="#cb17-263" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Generally the nodes are reserved for the most efficient use, especially for expensive features such as GPU and extra memory. Pinnacle compute nodes are very busy (comp.. and himem.. partitions) are reserved for scalable programs that can use all 32/24 cores (except for the cloud partition, and condo usage by the owner). Cores are allocated by the product of ntasks-per-node x cpus-per-task. Exceptions: (1) serial/single core jobs that use more memory than available on Razor/Trestles (64 to 192 GB) (2) multiple jobs submitted together that use a whole node, such as 4 x 8 cores (3) two jobs on one high-memory node (2 x 12 cores) that each use more than 192 GB (and less than 384 GB so that they can run on the himem node)</span></span>
-<span id="cb17-264"><a href="#cb17-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-265"><a href="#cb17-265" aria-hidden="true" tabindex="-1"></a><span class="fu">### Troubleshooting</span></span>
-<span id="cb17-266"><a href="#cb17-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-267"><a href="#cb17-267" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Revise <span class="in">`.bashrc`</span> so that the ssh cannot login?</span>
-<span id="cb17-268"><a href="#cb17-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-269"><a href="#cb17-269" aria-hidden="true" tabindex="-1"></a>    You potential can try <span class="in">`ctrl+c`</span> to avoid the ssh to execute bashrc. Try multiple time if not succeed. See <span class="co">[</span><span class="ot">here</span><span class="co">](https://serverfault.com/questions/206544/i-screwed-up-exit-in-bashrc)</span> for reference.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
