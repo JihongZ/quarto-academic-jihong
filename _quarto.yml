@@ -84,7 +84,7 @@ format:
     code-link: true
     code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/
     code-line-numbers: false
-    code-overflow: wrap
+    code-overflow: scroll
     linestretch: 1.5
     # toc
     toc: true

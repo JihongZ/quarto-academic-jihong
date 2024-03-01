@@ -80,15 +80,21 @@ scp -r loginname@hpc-portal2.hpc.uark.edu:/home/loginname/src ./
 
 ## Jobs submission
 
-Please refer to this [link](https://hpcwiki.uark.edu/doku.php?id=equipment) for detailed information about HPC equipment.
+There are multiple steps to submit the R file to cluster to run.
+
+**First**, we need to determine the computing nodes we want to use. Please refer to this [link](https://hpcwiki.uark.edu/doku.php?id=equipment) for detailed information about HPC equipment. A general 'submitting' command is like this:
 
 ``` bash
 sbatch -q q06h32c -l walltime=1:00 -l nodes=1:ppn=32 example.sh
 ```
 
-`sbatch` command aims to submit a job with the job file `example.sh`. The command above submitted the job to the q06h32c queue with a wall-time of 1 minute requesting all 32 cores on 1 node.
+::: {.callout-note appearance="simple"}
+## Note
 
-Here's a simple example of a job script:
+`sbatch` command aims to submit a job with the job file `example.sh`. The command above submitted the job to the q06h32c queue with a wall-time of 1 minute requesting all 32 cores on 1 node.
+:::
+
+**Second**, create a job file with `.sh` extension. Here's a simple example of a job file `example.sh` that can tell HPC **how** to run your R code:
 
 ``` bash
 #!/bin/bash
@@ -103,22 +109,36 @@ module load gcc/11.2.1 mkl/19.0.5 R/4.2.2
 Rscript HelloWorld/example.R
 ```
 
-Where `gcc` and `mkl` are required for R package installation (Note: To the date, gcc/11.2.1 is the latest version which can compile the `cmdstan` successfully.). Please see [here](https://hpcwiki.uark.edu/doku.php?id=r) for more details. `Rscript` is the command to execute R file. `HelloWorld/example.R` is the path of your R script. For `#SBATCH`, those are options for SLURM scheduler. Please see following summary or view [it](https://slurm.schedmd.com/pdfs/summary.pdf) online:
+::: {.callout-note appearance="simple"}
+**Note**
+
+Where <mark>Line 8</mark> loaded all required modules:
+
+-   `gcc` and `mkl` are required for R package installation (Note: To the date, `gcc/11.2.1` is the latest version of `gcc` than can compile the `cmdstanr` successfully). Please see [here](https://hpcwiki.uark.edu/doku.php?id=r) for more details.
+
+-   `Rscript` is the bash command to execute R file on HPC. `HelloWorld/example.R` is the path of your R script.
+
+-   Anything behind the `#SBATCH` are options for the SLURM scheduler. Please see following summary or view [it](https://slurm.schedmd.com/pdfs/summary.pdf) online:
+:::
 
 ```{r, echo=FALSE}
 xfun::embed_file("summary.pdf")
 ```
 
-To use R interactively, please start an interactive job using following command:
+**Third**, you may want to use R interactively to test your R code is running well. Use the following bash command to start a brand new R in terminal:
 
 ``` bash
 srun -N1 -n1 -c1 -p cloud72 -q cloud -t 2:00:00 --pty /bin/bash
 ```
 
+::: {.callout-note appearance="simple"}
+## Note
+
 This command will redirect to cloud72 queue, which includes virtual machines and containers, usually single processor, 72 hour limit, 3 nodes.
+:::
 
 | slurm commands      | compatibility commands   | Meaning                            |
-|-------------------|-----------------------|-------------------------------|
+|-------------------|-----------------------|------------------------------|
 | sbatch              | qsub                     | submit \<job file\>                |
 | srun                | qsub -I                  | submit interactive job             |
 | squeue              | qstat                    | list all queued jobs               |
@@ -126,9 +146,13 @@ This command will redirect to cloud72 queue, which includes virtual machines and
 | scancel             | qdel                     | cancel \<job#\>                    |
 | sinfo               | shownodes -l -n;qstat -q | node status;list of queues         |
 
-For slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load `R/4.2.2` module, those packages installed via an interactive job will be stored at `$HOME$/R/x86_64-pc-linux-gnu/4.2/`. See [here](https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage) for more details about interactive job.
+::: callout-note
+## Note
 
-The workflow of job submission is as follows:
+For slurm, please use the commands in the 1st column. Then you should be able to start R in an interactive job and install required packages. If you load `R/4.2.2` module, those packages installed via an interactive job will be stored at `$HOME$/R/x86_64-pc-linux-gnu/4.2/`. See [here](https://hpcwiki.uark.edu/doku.php?id=pinnacle_usage) for more details about interactive job.
+:::
+
+**Finnally,** the whole workflow of job submission is as follows:
 
 ``` bash
 c1331:jzhang:~/HelloWorld$ cat exampleJob.sh
@@ -221,7 +245,7 @@ Most frequently used queues are from `pinnacle` cluster.
 
 Below is a list of queues in the `pinnacle` cluster. The number after the queue is the time limit for a running job. For example, `comp72` has 72 hour limits while `comp06` has only 6 hour limit, but they share same nodes. Thus, for efficiency, maybe use `comp01` for quick examination of coding and use `comp72` for time consuming jobs.
 
-```         
+``` bash
 comp72/06/01: standard compute nodes, 72/6/1 hour limit, 42/46/48 nodes
 gpu72/06:     gpu nodes: 72/6 hour limit, 19 nodes
 agpu72/06:    a100 gpu nodes: 72/6 hour limit

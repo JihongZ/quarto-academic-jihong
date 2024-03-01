@@ -75,7 +75,7 @@ To change the font family for Zotero window, create a new folder "Chrome" in abo
 
 If you want to use my theme file, you can cope&paste following syntax into your `userChrome.css` file.
 
-``` {.css .code-overflow-scroll .column-page filename="userChrome.css" code-line-numbers="3-5"}
+``` {.css filename="userChrome.css" code-line-numbers="3-5"}
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
 * {border: 0 !important; 
