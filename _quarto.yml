@@ -62,6 +62,9 @@ format:
     theme: 
       light: [cosmo, rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
       dark: [darkly, rwds-dark.scss]
+    highlight-style:
+      light: custom-light.theme
+      dark: custom-dark.theme
     grid:
       sidebar-width: 250px
       body-width: 900px
@@ -94,7 +97,6 @@ format:
     reference-location: margin
     citation-location: margin
     footnotes-hover: true
-    
     
 editor: visual
 

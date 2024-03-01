@@ -7,6 +7,8 @@ draft: false
 categories: 
   - blog
   - ggplot2
+execute: 
+  eval: false
 format:
   html:
     toc: true
@@ -43,16 +45,30 @@ Remember that before you can use these functions, you will need to define a surv
 
 Here's an example of how you might use it to calculate the mean of a variable from a survey:
 
-``` r
+```{r}
 # Load the necessary package
 library(survey)
 
+mydata <- iris
+
 # Define the survey design
-des <- svydesign(ids = ~1, data = mydata, weights = ~weight)
+des <- svydesign(ids = ~1, data = mydata, weights = ~Sepal.Length)
 
 # Calculate the mean of a variable
-mean <- svytotal(~variable, design = des)
+mean <- svymean(~Species, design = des)
+
+mean
 ```
+
+::: callout-note
+## Note
+
+|             |                                                                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `variables` | Formula or data frame specifying the variables measured in the survey. If `NULL`, the `data` argument is used.                |
+| `ids`       | Formula or data frame specifying cluster ids from largest level to smallest level, `~0` or `~1` is a formula for no clusters. |
+| `probs`     | Formula or data frame specifying cluster sampling probabilities                                                               |
+:::
 
 Please replace `mydata`, `weight`, and `variable` with your actual data frame, weight column, and the variable you're interested in, respectively.
 

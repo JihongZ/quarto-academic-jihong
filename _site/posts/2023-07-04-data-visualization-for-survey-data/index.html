@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.21">
+<meta name="generator" content="quarto-1.4.550">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jihong Zhang">
 <meta name="dcterms.date" content="2023-07-04">
 <meta name="description" content="Many tutorials online are about general data visualization. This post aims to showcase some tricks for survey data">
-<title>Dr. Jihong Zhang – Data visualization for survey data</title>
+<title>Dr.&nbsp;Jihong Zhang - Data visualization for survey data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,7 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../icon.png" rel="icon" type="image/png">
+<link href="../../images/icon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,8 +111,7 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer=""></script><link href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -136,7 +135,7 @@ ga('send', {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-bi bi-house" role="img">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -174,7 +173,7 @@ ga('send', {
 </li>
 </ul>
 </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -190,143 +189,67 @@ ga('send', {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data visualization for survey data</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/jihonglogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homepage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Lecture Slides</span></a>
+ <span class="menu-text">ESRM6553-Adv.Multivariate</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Posts</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
-<li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">2024 01 12 Syllabus Adv Multivariate Esrm 6553</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">
-<li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Lecture01</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth4 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
   </div>
 </li>
-      </ul>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Lecture02</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture02/Lecture02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 02</span></a>
   </div>
 </li>
-      </ul>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Lecture03</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture03/Lecture03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 03</span></a>
   </div>
 </li>
-      </ul>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Lecture04</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 04</span></a>
   </div>
 </li>
-      </ul>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
- <span class="menu-text">Lecture05</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 05</span></a>
   </div>
-</li>
-      </ul>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
- <span class="menu-text">Lecture06</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth4 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture06/Lecture06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-      </ul>
-</li>
-      </ul>
 </li>
       </ul>
 </li>
@@ -409,14 +332,53 @@ ga('send', {
 </ol>
 <p>Remember that before you can use these functions, you will need to define a survey design object that specifies the features of your survey’s design (like the sampling method, strata, clustering, and weights).</p>
 <p>Here’s an example of how you might use it to calculate the mean of a variable from a survey:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the necessary package</span></span>
+<div class="cell">
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the necessary package</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://r-survey.r-forge.r-project.org/survey/">survey</a></span><span class="op">)</span></span>
 <span></span>
+<span><span class="va">mydata</span> <span class="op">&lt;-</span> <span class="va">iris</span></span>
+<span></span>
 <span><span class="co"># Define the survey design</span></span>
-<span><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html">svydesign</a></span><span class="op">(</span>ids <span class="op">=</span> <span class="op">~</span><span class="fl">1</span>, data <span class="op">=</span> <span class="va">mydata</span>, weights <span class="op">=</span> <span class="op">~</span><span class="va">weight</span><span class="op">)</span></span>
+<span><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html">svydesign</a></span><span class="op">(</span>ids <span class="op">=</span> <span class="op">~</span><span class="fl">1</span>, data <span class="op">=</span> <span class="va">mydata</span>, weights <span class="op">=</span> <span class="op">~</span><span class="va">Sepal.Length</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculate the mean of a variable</span></span>
-<span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svytotal</a></span><span class="op">(</span><span class="op">~</span><span class="va">variable</span>, design <span class="op">=</span> <span class="va">des</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svymean</a></span><span class="op">(</span><span class="op">~</span><span class="va">Species</span>, design <span class="op">=</span> <span class="va">des</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>variables</code></td>
+<td>Formula or data frame specifying the variables measured in the survey. If <code>NULL</code>, the <code>data</code> argument is used.</td>
+</tr>
+<tr class="even">
+<td><code>ids</code></td>
+<td>Formula or data frame specifying cluster ids from largest level to smallest level, <code>~0</code> or <code>~1</code> is a formula for no clusters.</td>
+</tr>
+<tr class="odd">
+<td><code>probs</code></td>
+<td>Formula or data frame specifying cluster sampling probabilities</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Please replace <code>mydata</code>, <code>weight</code>, and <code>variable</code> with your actual data frame, weight column, and the variable you’re interested in, respectively.</p>
 <p>Remember, working with survey data can be complex due to the design features of surveys. The <code>survey</code> package in R provides a robust set of tools for dealing with this complexity.</p>
 </section></section><section id="an-empirical-example" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="an-empirical-example">
@@ -449,50 +411,19 @@ ga('send', {
 <div class="cell">
 <details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datList</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="st">"posts/2023-07-04-data-visualization-for-survey-data/Example_Data.RDS"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">datList</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>List of 2
- $ measurement: tibble [500 × 12] (S3: tbl_df/tbl/data.frame)
-  ..$ EDEQS1 : num [1:500] 1 0 3 2 0 0 1 0 2 0 ...
-  ..$ EDEQS2 : num [1:500] 0 0 0 1 0 0 0 0 0 0 ...
-  ..$ EDEQS3 : num [1:500] 0 0 0 2 0 0 0 0 2 0 ...
-  ..$ EDEQS4 : num [1:500] 0 0 1 2 0 0 0 0 1 0 ...
-  ..$ EDEQS5 : num [1:500] 3 1 3 1 0 1 1 0 2 1 ...
-  ..$ EDEQS6 : num [1:500] 1 1 3 2 0 1 1 0 2 1 ...
-  ..$ EDEQS7 : num [1:500] 0 0 0 1 0 0 0 0 0 0 ...
-  ..$ EDEQS8 : num [1:500] 0 0 2 1 0 0 1 0 1 0 ...
-  ..$ EDEQS9 : num [1:500] 0 1 2 2 0 0 2 0 0 0 ...
-  ..$ EDEQS10: num [1:500] 0 0 1 1 0 0 1 0 0 0 ...
-  ..$ EDEQS11: num [1:500] 1 1 2 1 0 1 0 0 1 1 ...
-  ..$ EDEQS12: num [1:500] 2 1 3 2 0 1 1 0 2 1 ...
- $ description: tibble [500 × 6] (S3: tbl_df/tbl/data.frame)
-  ..$ age       : num [1:500] 18 19 18 19 20 19 18 19 19 20 ...
-  ..$ gender    : Factor w/ 2 levels "男","女": 2 1 2 2 2 2 2 1 1 2 ...
-  ..$ race      : Factor w/ 2 levels "汉","少数": 2 1 1 1 1 1 1 1 1 1 ...
-  ..$ birthplace: Factor w/ 2 levels "城市","农村": 2 2 2 1 1 2 2 1 2 2 ...
-  ..$ height    : num [1:500] 160 160 160 160 163 158 170 176 183 155 ...
-  ..$ weight    : num [1:500] 110 100 140 140 90 NA 105 121 180 90 ...</code></pre>
-</div>
+</details>
 </div>
 <section id="descriptive-statistics" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="descriptive-statistics">
 <span class="header-section-number">2.1</span> Descriptive statistics</h3>
 <p>We can use multiple R tools for descriptive statistics. <code>bruceR</code> is one of them.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">description</span> <span class="op">&lt;-</span> <span class="va">datList</span><span class="op">$</span><span class="va">description</span></span>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">description</span> <span class="op">&lt;-</span> <span class="va">datList</span><span class="op">$</span><span class="va">description</span></span>
 <span><span class="fu">bruceR</span><span class="fu">::</span><span class="fu"><a href="https://psychbruce.github.io/bruceR/reference/Freq.html">Freq</a></span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">description</span>, <span class="va">gender</span><span class="op">:</span><span class="va">birthplace</span><span class="op">)</span>, </span>
 <span>             varname <span class="op">=</span> <span class="st">"gender"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>Frequency Statistics:
-────────────
-      N    %
-────────────
-男  172 34.4
-女  328 65.6
-────────────
-Total N = 500</code></pre>
-</div>
+</details>
 </div>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">freqTblVars</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gender"</span>, <span class="st">"race"</span>, <span class="st">"birthplace"</span><span class="op">)</span></span>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">freqTblVars</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gender"</span>, <span class="st">"race"</span>, <span class="st">"birthplace"</span><span class="op">)</span></span>
 <span><span class="va">freqTable</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">tbl</span>, <span class="va">var</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">tbl</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>    <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span><span class="st">"Levels"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -505,145 +436,29 @@ Total N = 500</code></pre>
 <span>  <span class="va">freqTableComb</span> <span class="op">&lt;-</span> <span class="va">freqTableComb</span> <span class="op">|&gt;</span> </span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="st">"Variable"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>Frequency Statistics:
-────────────
-      N    %
-────────────
-男  172 34.4
-女  328 65.6
-────────────
-Total N = 500
-Frequency Statistics:
-──────────────
-        N    %
-──────────────
-汉    449 89.8
-少数   51 10.2
-──────────────
-Total N = 500
-Frequency Statistics:
-──────────────
-        N    %
-──────────────
-城市  183 36.6
-农村  317 63.4
-──────────────
-Total N = 500</code></pre>
-</div>
+</details>
 </div>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">mykbl</span><span class="op">(</span><span class="va">freqTableComb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<table class="table table-striped table-condensed table-sm small" data-quarto-postprocess="true">
-<thead><tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Levels</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">%</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">gender</td>
-<td style="text-align: left;">男</td>
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">34.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">gender</td>
-<td style="text-align: left;">女</td>
-<td style="text-align: right;">328</td>
-<td style="text-align: right;">65.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">race</td>
-<td style="text-align: left;">汉</td>
-<td style="text-align: right;">449</td>
-<td style="text-align: right;">89.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">race</td>
-<td style="text-align: left;">少数</td>
-<td style="text-align: right;">51</td>
-<td style="text-align: right;">10.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">birthplace</td>
-<td style="text-align: left;">城市</td>
-<td style="text-align: right;">183</td>
-<td style="text-align: right;">36.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">birthplace</td>
-<td style="text-align: left;">农村</td>
-<td style="text-align: right;">317</td>
-<td style="text-align: right;">63.4</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">mykbl</span><span class="op">(</span><span class="va">freqTableComb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Or we can use <code>survey</code> package for descriptive analysis</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://r-survey.r-forge.r-project.org/survey/">survey</a></span><span class="op">)</span></span>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://r-survey.r-forge.r-project.org/survey/">survey</a></span><span class="op">)</span></span>
 <span><span class="va">dexample</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html">svydesign</a></span><span class="op">(</span>ids <span class="op">=</span> <span class="op">~</span><span class="fl">1</span>,</span>
-<span>                     data <span class="op">=</span> <span class="va">datList</span><span class="op">$</span><span class="va">measurement</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>Warning in svydesign.default(ids = ~1, data = datList$measurement): No weights
-or probabilities supplied, assuming equal probability</code></pre>
-</div>
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dexample</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>Independent Sampling design (with replacement)
-svydesign(ids = ~1, data = datList$measurement)
-Probabilities:
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-      1       1       1       1       1       1 
-Data variables:
- [1] "EDEQS1"  "EDEQS2"  "EDEQS3"  "EDEQS4"  "EDEQS5"  "EDEQS6"  "EDEQS7" 
- [8] "EDEQS8"  "EDEQS9"  "EDEQS10" "EDEQS11" "EDEQS12"</code></pre>
-</div>
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## summay statistics for all measurement indicators</span></span>
+<span>                     data <span class="op">=</span> <span class="va">datList</span><span class="op">$</span><span class="va">measurement</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dexample</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## summay statistics for all measurement indicators</span></span>
 <span><span class="va">vars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">datList</span><span class="op">$</span><span class="va">measurement</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svymean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">make.formula</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, design <span class="op">=</span> <span class="va">dexample</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>         mean     SE
-EDEQS1  0.882 0.0439
-EDEQS2  0.286 0.0283
-EDEQS3  0.322 0.0280
-EDEQS4  0.328 0.0270
-EDEQS5  0.910 0.0448
-EDEQS6  1.046 0.0500
-EDEQS7  0.120 0.0203
-EDEQS8  0.530 0.0382
-EDEQS9  0.360 0.0295
-EDEQS10 0.398 0.0283
-EDEQS11 0.738 0.0346
-EDEQS12 1.072 0.0413</code></pre>
-</div>
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svytotal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">make.formula</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, design <span class="op">=</span> <span class="va">dexample</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>        total     SE
-EDEQS1    441 21.932
-EDEQS2    143 14.160
-EDEQS3    161 13.984
-EDEQS4    164 13.512
-EDEQS5    455 22.404
-EDEQS6    523 25.004
-EDEQS7     60 10.149
-EDEQS8    265 19.112
-EDEQS9    180 14.752
-EDEQS10   199 14.149
-EDEQS11   369 17.300
-EDEQS12   536 20.646</code></pre>
-</div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svymean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">make.formula</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, design <span class="op">=</span> <span class="va">dexample</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">svytotal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/surveysummary.html">make.formula</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, design <span class="op">=</span> <span class="va">dexample</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section><section id="stacked-barplot-for-survey-data-responses" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="stacked-barplot-for-survey-data-responses">
 <span class="header-section-number">2.2</span> Stacked barplot for survey data responses</h3>
 <div class="cell">
-<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">=</span> <span class="va">datList</span><span class="op">$</span><span class="va">measurement</span></span>
+<details open="" class="code-fold"><summary>R Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">=</span> <span class="va">datList</span><span class="op">$</span><span class="va">measurement</span></span>
 <span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>ID <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"EDEQS"</span><span class="op">)</span>, \<span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">x</span>, levels <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -666,12 +481,7 @@ EDEQS12   536 20.646</code></pre>
 <span>              position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_stack.html">position_stack</a></span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">TRUE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">p</span> <span class="op">=</span> <span class="va">p</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">mycolors</span><span class="op">)</span></span>
 <span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+</details>
 </div>
 <p>We can clearly identify item 7 has highest proportion of level 0, and needed to be theoretically justified.</p>
 
@@ -899,24 +709,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jihongzhang\.org");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -951,11 +743,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
