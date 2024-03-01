@@ -20,6 +20,7 @@ $darkteal: #008080;
 $lightwhite: #c0c0c0;
 $gray: #64605f;
 $navbar-bg:#FFFFFF;
+$menutext-bg: #000000;
 
 // Animation logo: https://ellakaye.co.uk/posts/2023-04-11_animated-logo/
 $pink:      #D4006A;
@@ -44,11 +45,56 @@ $primary:   $pink !default;
   margin-top: -1px;
   margin-bottom: -6px;
 }
+.text-line-blog {
+  display: block;
+  background: #6636a9;
+  width: 0%;
+  height: 3px;
+  margin: auto;
+  display: table;
+  margin-top: -1px;
+  margin-bottom: -6px;
+}
+.text-line-db {
+  display: block;
+  background: #6ec742;
+  width: 0%;
+  height: 3px;
+  margin: auto;
+  display: table;
+  margin-top: -1px;
+  margin-bottom: -6px;
+}
+.text-line-cv {
+  display: block;
+  background: #4b74a9;
+  width: 0%;
+  height: 3px;
+  margin: auto;
+  display: table;
+  margin-top: -1px;
+  margin-bottom: -6px;
+}
+.text-line-pj {
+  display: block;
+  background: #ffd942;
+  width: 0%;
+  height: 3px;
+  margin: auto;
+  display: table;
+  margin-top: -1px;
+  margin-bottom: -6px;
+}
+
+
+
+
 
 .menu-text {
   font-family: "Taub Sans", sans-serif;
   letter-spacing: 1px;
   font-weight: 700;
+  color: #000000;
 }
 
 h1, h2, h3 {

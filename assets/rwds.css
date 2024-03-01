@@ -4,10 +4,82 @@
 }
 
 .menu-text:hover > .text-line {
-  animation-duration: 600ms;
+  animation-duration: 400ms;
   animation-name: line-expand;
   animation-fill-mode: forwards;
 }
+
+
+.menu-text:hover > .menutext-home {
+  animation-duration: 400ms;
+  animation-name: changecolor-home;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-home {
+  from {color: #000000;}
+  to {color: #D4006A;}
+}
+
+.menu-text:hover > .menutext-blog {
+  animation-duration: 400ms;
+  animation-name: changecolor-blog;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-blog {
+  from {color: #000000;}
+  to {color: #6636a9;}
+}
+.menu-text:hover > .text-line-blog {
+  animation-duration: 400ms;
+  animation-name: line-expand;
+  animation-fill-mode: forwards;
+}
+
+.menu-text:hover > .menutext-db {
+  animation-duration: 400ms;
+  animation-name: changecolor-db;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-db {
+  from {color: #000000;}
+  to {color: #6ec742;}
+}
+.menu-text:hover > .text-line-db {
+  animation-duration: 400ms;
+  animation-name: line-expand;
+  animation-fill-mode: forwards;
+}
+
+.menu-text:hover > .menutext-cv {
+  animation-duration: 400ms;
+  animation-name: changecolor-cv;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-cv {
+  from {color: #000000;}
+  to {color: #4b74a9;}
+}
+.menu-text:hover > .text-line-cv {
+  animation-duration: 400ms;
+  animation-name: line-expand;
+  animation-fill-mode: forwards;
+}
+
+.menu-text:hover > .menutext-pj {
+  animation-duration: 400ms;
+  animation-name: changecolor-pj;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-pj {
+  from {color: #000000;}
+  to {color: #ffd942;}
+}
+.menu-text:hover > .text-line-pj {
+  animation-duration: 400ms;
+  animation-name: line-expand;
+  animation-fill-mode: forwards;
+}
+
 
 @keyframes line-expand {
   from {

@@ -47,6 +47,7 @@ $primary:   $green !default;
   font-family: "Taub Sans", sans-serif;
   letter-spacing: 1.8px;
   font-weight: 700;
+  color: #FFFFFF;
 }
 
 h1, h2, h3 {
@@ -66,20 +67,6 @@ h1, h2, h3 {
 .listing-author{
   color: $lightwhite;
 }
-
-// Code blocks
-div.sourceCode, div.sourceCode pre.sourceCode {
-  background-color: #133337;
-}
-
-//pre code {
-//  display: block;
-//  border: 1px solid $darkteal;
-//  box-shadow: 5px 5px 5px $darkteal;
-//  padding: 1em;
-//  overflow-x: auto;
-//  line-height: 1.75;
-//}
 
 /*-- scss:rules --*/
 h1, h2, h3 {

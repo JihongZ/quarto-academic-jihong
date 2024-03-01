@@ -80,8 +80,8 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      page: 30,
+      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 25,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-date"],
     };
@@ -195,27 +195,27 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-bi bi-house" role="img">
 </i> 
-<span class="menu-text">Home<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-home">Home</span><span class="text-line"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./posts.html"> <i class="bi bi-bi bi-pencil-square" role="img">
 </i> 
-<span class="menu-text">Blog<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-blog">Blog</span><span class="text-line-blog"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./dashboards/template.html"> <i class="bi bi-bi bi-speedometer2" role="img">
 </i> 
-<span class="menu-text">Dashboard<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-db">Dashboard</span><span class="text-line-db"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./uploads/Curriculum_Vitae.pdf"> <i class="bi bi-bi bi-person" role="img">
 </i> 
-<span class="menu-text">C.V.<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-cv">C.V.</span><span class="text-line-cv"></span></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./projects.html"> <i class="bi bi-bi bi-three-dots" role="img">
 </i> 
-<span class="menu-text">Projects<span class="text-line"></span></span></a>
+<span class="menu-text"><span class="menutext-pj">Projects</span><span class="text-line-pj"></span></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -234,7 +234,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Blog</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><span style="color:#6636a9">Blog</span></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -313,7 +313,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title"><span style="color:#6636a9">Blog</span></h1>
 <p class="subtitle lead">Blogs about R, Python, machine learning, data science, and visualisation</p>
 </div>
 
@@ -335,697 +335,1181 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-</th>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Categories
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-<th>
-Reading Time
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="shiny,text analysis" data-listing-date-sort="1708408800000" data-listing-file-modified-sort="1708930997807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Danmu Cloud for Bilibili" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2024-02-20-Danmu-Analysis-Bilibili/img01.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Feb 20, 2024</span>
-</td>
-<td>
-<a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="title listing-title">Danmu Cloud for Bilibili</a>
-</td>
-<td>
-<span class="listing-categories">shiny, text analysis</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="tutorial,theming" data-listing-date-sort="1707544800000" data-listing-file-modified-sort="1709262416181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1645" data-listing-title-sort="Customize font family of Visual Mode in Rstudio and in Zotero" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2024-02-10-Customize-Rstudio-Theme/newthemess.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Feb 10, 2024</span>
-</td>
-<td>
-<a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="title listing-title">Customize font family of Visual Mode in Rstudio and in Zotero</a>
-</td>
-<td>
-<span class="listing-categories">tutorial, theming</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">9 min</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="tutorial,hpc" data-listing-date-sort="1705212000000" data-listing-file-modified-sort="1709265441795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2478" data-listing-title-sort="How to set up High Performance Computing of University of Arkansas" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2024-01-14-how-to-use-uark-hpc/login.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jan 14, 2024</span>
-</td>
-<td>
-<a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="title listing-title">How to set up High Performance Computing of University of Arkansas</a>
-</td>
-<td>
-<span class="listing-categories">tutorial, hpc</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">13 min</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="class" data-listing-date-sort="1705125600000" data-listing-file-modified-sort="1709272142674" data-listing-date-modified-sort="1707285600000" data-listing-reading-time-sort="45" data-listing-word-count-sort="8855" data-listing-title-sort="ESRM 6553: Advanced Multivariate Analysis" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/UA_Logo_Horizontal.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jan 13, 2024</span>
-</td>
-<td>
-<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="title listing-title">ESRM 6553: Advanced Multivariate Analysis</a>
-</td>
-<td>
-<span class="listing-categories">class</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">45 min</span>
-</td>
-</tr>
-<tr data-index="4" data-categories="blog,ggplot2" data-listing-date-sort="1688446800000" data-listing-file-modified-sort="1709266731079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1177" data-listing-title-sort="Data visualization for survey data" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Jul 4, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="title listing-title">Data visualization for survey data</a>
-</td>
-<td>
-<span class="listing-categories">blog, ggplot2</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="5" data-categories="tutorial,package" data-listing-date-sort="1687928400000" data-listing-file-modified-sort="1708930997638" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="265" data-listing-title-sort="A tutorial for forester R package" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jun 28, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="title listing-title">A tutorial for forester R package</a>
-</td>
-<td>
-<span class="listing-categories">tutorial, package</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="6" data-categories="tutorial,quarto" data-listing-date-sort="1687842000000" data-listing-file-modified-sort="1709271882996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="355" data-listing-title-sort="One Template for Quarto Report" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2023-06-27-one-template-for-quarto-report/ggplot2.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jun 27, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="title listing-title">One Template for Quarto Report</a>
-</td>
-<td>
-<span class="listing-categories">tutorial, quarto</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="7" data-categories="quarto" data-listing-date-sort="1687669200000" data-listing-file-modified-sort="1709271933450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="658" data-listing-title-sort="Moving My Website to Quarto" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2023-06-26-moving-to-quarto/quarto.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jun 25, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-06-26-moving-to-quarto/index.html" class="title listing-title">Moving My Website to Quarto</a>
-</td>
-<td>
-<span class="listing-categories">quarto</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
-</tr>
-<tr data-index="8" data-categories="blog,R,PyTorch,Deep Learning" data-listing-date-sort="1687237200000" data-listing-file-modified-sort="1708930997615" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1532" data-listing-title-sort="A Conversation between R and Python on Data Analysis and Machine Learning" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jun 20, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="title listing-title">A Conversation between R and Python on Data Analysis and Machine Learning</a>
-</td>
-<td>
-<span class="listing-categories">blog, R, PyTorch, Deep Learning</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">8 min</span>
-</td>
-</tr>
-<tr data-index="9" data-categories="blog,LCM,R" data-listing-date-sort="1686373200000" data-listing-file-modified-sort="1708930997614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2127" data-listing-title-sort="Latent Class Model: Batch Mplus using R on Mac" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jun 10, 2023</span>
-</td>
-<td>
-<a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="title listing-title">Latent Class Model: Batch Mplus using R on Mac</a>
-</td>
-<td>
-<span class="listing-categories">blog, LCM, R</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">11 min</span>
-</td>
-</tr>
-<tr data-index="10" data-listing-date-sort="1666501200000" data-listing-file-modified-sort="1708930997609" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4283" data-listing-title-sort="Dissertation Defence" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Oct 23, 2022</span>
-</td>
-<td>
-<a href="./posts/2022-10-23-thesis-defense/index.html" class="title listing-title">Dissertation Defence</a>
-</td>
-<td>
-<span class="listing-categories">&nbsp;</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">22 min</span>
-</td>
-</tr>
-<tr data-index="11" data-categories="" data-listing-date-sort="1653067838000" data-listing-file-modified-sort="1708930997603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="434" data-listing-title-sort="NSF Grant on Bayesian Cognitive Diagnosis" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">May 20, 2022</span>
-</td>
-<td>
-<a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="title listing-title">NSF Grant on Bayesian Cognitive Diagnosis</a>
-</td>
-<td>
-<span class="listing-categories"></span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="12" data-categories="blog,Web Scrapping" data-listing-date-sort="1652331600000" data-listing-file-modified-sort="1708930997583" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="618" data-listing-title-sort="Web Scraping Academia Institute's Grant Fundings using R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">May 12, 2022</span>
-</td>
-<td>
-<a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="title listing-title">Web Scraping Academia Institute’s Grant Fundings using R</a>
-</td>
-<td>
-<span class="listing-categories">blog, Web Scrapping</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
-</tr>
-<tr data-index="13" data-categories="R,rshiny,webpower,lavaan,blog,tutorial" data-listing-date-sort="1651208400000" data-listing-file-modified-sort="1708930997579" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1155" data-listing-title-sort="Power Analysis for Structural Equation Modeling" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2022-04-29-power-analysis-for-sem/webpower.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Apr 29, 2022</span>
-</td>
-<td>
-<a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="title listing-title">Power Analysis for Structural Equation Modeling</a>
-</td>
-<td>
-<span class="listing-categories">R, rshiny, webpower, lavaan, blog, tutorial</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="14" data-categories="R,Github,Rstudio,Workshop" data-listing-date-sort="1650776400000" data-listing-file-modified-sort="1708930997578" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="406" data-listing-title-sort="[Workshop] Creating Academic Blog via R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Apr 24, 2022</span>
-</td>
-<td>
-<a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="title listing-title">[Workshop] Creating Academic Blog via R</a>
-</td>
-<td>
-<span class="listing-categories">R, Github, Rstudio, Workshop</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="15" data-categories="blog,R,health" data-listing-date-sort="1625547600000" data-listing-file-modified-sort="1708930997573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="414" data-listing-title-sort="Health Care Data Analysis with Apple Watch" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Jul 6, 2021</span>
-</td>
-<td>
-<a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="title listing-title">Health Care Data Analysis with Apple Watch</a>
-</td>
-<td>
-<span class="listing-categories">blog, R, health</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="16" data-categories="R" data-listing-date-sort="1612072800000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="231" data-listing-title-sort="[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Jan 31, 2021</span>
-</td>
-<td>
-<a href="./posts/2021-01-31-ppmc-cfa/index.html" class="title listing-title">[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis</a>
-</td>
-<td>
-<span class="listing-categories">R</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="17" data-categories="R" data-listing-date-sort="1590382800000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="453" data-listing-title-sort="Study Notes: gt package and format table" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">May 25, 2020</span>
-</td>
-<td>
-<a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="title listing-title">Study Notes: gt package and format table</a>
-</td>
-<td>
-<span class="listing-categories">R</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="18" data-categories="blog,Network,DCM" data-listing-date-sort="1571547600000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="389" data-listing-title-sort="Introduction to Latent Attribute Network Analysis" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Oct 20, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="title listing-title">Introduction to Latent Attribute Network Analysis</a>
-</td>
-<td>
-<span class="listing-categories">blog, Network, DCM</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="19" data-categories="visualization,blog,ggplot2" data-listing-date-sort="1558328400000" data-listing-file-modified-sort="1708930997560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="721" data-listing-title-sort="Which Country own the most Liberty Nobel Prizes? France? Ireland?" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">May 20, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="title listing-title">Which Country own the most Liberty Nobel Prizes? France? Ireland?</a>
-</td>
-<td>
-<span class="listing-categories">visualization, blog, ggplot2</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
-</tr>
-<tr data-index="20" data-categories="blog" data-listing-date-sort="1555650000000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="346" data-listing-title-sort="Make a Game in R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Apr 19, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="title listing-title">Make a Game in R</a>
-</td>
-<td>
-<span class="listing-categories">blog</span>
-</td>
-<td>
-<span class="listing-author">jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="21" data-categories="R,Tutorial" data-listing-date-sort="1550815200000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164" data-listing-title-sort="Introduce gganimate for Psychometric" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Feb 22, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="title listing-title">Introduce gganimate for Psychometric</a>
-</td>
-<td>
-<span class="listing-categories">R, Tutorial</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="22" data-categories="R,manual" data-listing-date-sort="1550556000000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="433" data-listing-title-sort="Lasso Regression Example using glmnet package in R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Feb 19, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="title listing-title">Lasso Regression Example using glmnet package in R</a>
-</td>
-<td>
-<span class="listing-categories">R, manual</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="23" data-categories="blog" data-listing-date-sort="1547100000000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89" data-listing-title-sort="Visuliaztion of Item Information Curves In R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/information_curve.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Jan 10, 2019</span>
-</td>
-<td>
-<a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="title listing-title">Visuliaztion of Item Information Curves In R</a>
-</td>
-<td>
-<span class="listing-categories">blog</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="24" data-categories="Manual" data-listing-date-sort="1536728400000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="568" data-listing-title-sort="[Manual]Using Jags and R2jags in R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2018-09-12-manual-learn-jags-in-r/index_files/figure-html/unnamed-chunk-12-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Sep 12, 2018</span>
-</td>
-<td>
-<a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="title listing-title">[Manual]Using Jags and R2jags in R</a>
-</td>
-<td>
-<span class="listing-categories">Manual</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="25" data-categories="R" data-listing-date-sort="1536642000000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="240" data-listing-title-sort="Introduce Descrepancy Measures" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Sep 11, 2018</span>
-</td>
-<td>
-<a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="title listing-title">Introduce Descrepancy Measures</a>
-</td>
-<td>
-<span class="listing-categories">R</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="26" data-categories="blog,R,tidyverse" data-listing-date-sort="1536037200000" data-listing-file-modified-sort="1708930997549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="556" data-listing-title-sort="How to do Data Cleaning in R" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Sep 4, 2018</span>
-</td>
-<td>
-<a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="title listing-title">How to do Data Cleaning in R</a>
-</td>
-<td>
-<span class="listing-categories">blog, R, tidyverse</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="27" data-categories="R,Shiny" data-listing-date-sort="1520661600000" data-listing-file-modified-sort="1708930997549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="My New Shiny App Cut Score Consistency" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Mar 10, 2018</span>
-</td>
-<td>
-<a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="title listing-title">My New Shiny App Cut Score Consistency</a>
-</td>
-<td>
-<span class="listing-categories">R, Shiny</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="28" data-categories="R,clustering,latent class" data-listing-date-sort="1511416800000" data-listing-file-modified-sort="1708930997548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1016" data-listing-title-sort="Latent Profile Analysis using MCLUST (in R)" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2017-11-23-Latent-Profile-Analysis/index_files/figure-html/unnamed-chunk-1-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Nov 23, 2017</span>
-</td>
-<td>
-<a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="title listing-title">Latent Profile Analysis using MCLUST (in R)</a>
-</td>
-<td>
-<span class="listing-categories">R, clustering, latent class</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="29" data-categories="R,SEM,lavaan" data-listing-date-sort="1510466400000" data-listing-file-modified-sort="1708930997548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2398" data-listing-title-sort="One Example of Measurement Invariance" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/2017-11-12-MESUREMENT-INVARIANCE/model_compare.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Nov 12, 2017</span>
-</td>
-<td>
-<a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="title listing-title">One Example of Measurement Invariance</a>
-</td>
-<td>
-<span class="listing-categories">R, SEM, lavaan</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">12 min</span>
-</td>
-</tr>
-<tr data-index="30" data-categories="R,mirt,linking" data-listing-date-sort="1510293600000" data-listing-file-modified-sort="1708930997547" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1136" data-listing-title-sort="Simulation Study of Linking Using Mirt" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img data-src="posts/2017-11-10-Linking-simulation/index_files/figure-html/theta-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Nov 10, 2017</span>
-</td>
-<td>
-<a href="./posts/2017-11-10-Linking-simulation/index.html" class="title listing-title">Simulation Study of Linking Using Mirt</a>
-</td>
-<td>
-<span class="listing-categories">R, mirt, linking</span>
-</td>
-<td>
-<span class="listing-author">Jihong Zhang</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="31" data-categories="Manual,R,Lavaan" data-listing-date-sort="1508389200000" data-listing-file-modified-sort="1708930997544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2759" data-listing-title-sort="How to use lavaan package to perform Confirmatory Factor Analysis" data-listing-filename-sort="index.Rmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img data-src="posts/2017-11-08-sem-homework/index_files/figure-html/dist-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Oct 19, 2017</span>
-</td>
-<td>
-<a href="./posts/2017-11-08-sem-homework/index.html" class="title listing-title">How to use lavaan package to perform Confirmatory Factor Analysis</a>
-</td>
-<td>
-<span class="listing-categories">Manual, R, Lavaan</span>
-</td>
-<td>
-<span class="listing-author">Jihong </span>
-</td>
-<td>
-<span class="listing-reading-time">14 min</span>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="shiny,text analysis" data-listing-date-sort="1708408800000" data-listing-file-modified-sort="1708930997807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<div class="thumbnail">
+<p><a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external"></a></p><a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-02-20-Danmu-Analysis-Bilibili/img01.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external">Danmu Cloud for Bilibili</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('shiny'); return false;">
+shiny
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('text analysis'); return false;">
+text analysis
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-02-20-Danmu-Analysis-Bilibili/index.html" class="no-external">
+<div class="listing-date">
+Feb 20, 2024
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="tutorial,theming" data-listing-date-sort="1707544800000" data-listing-file-modified-sort="1709262416181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1645">
+<div class="thumbnail">
+<p><a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external"></a></p><a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-02-10-Customize-Rstudio-Theme/newthemess.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external">Customize font family of Visual Mode in Rstudio and in Zotero</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('theming'); return false;">
+theming
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-02-10-Customize-Rstudio-Theme/index.html" class="no-external">
+<div class="listing-date">
+Feb 10, 2024
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+9 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="tutorial,hpc" data-listing-date-sort="1705212000000" data-listing-file-modified-sort="1709265441795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2478">
+<div class="thumbnail">
+<p><a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external"></a></p><a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-01-14-how-to-use-uark-hpc/login.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external">How to set up High Performance Computing of University of Arkansas</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('hpc'); return false;">
+hpc
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-14-how-to-use-uark-hpc/index.html" class="no-external">
+<div class="listing-date">
+Jan 14, 2024
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+13 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="class" data-listing-date-sort="1705125600000" data-listing-file-modified-sort="1709272430886" data-listing-date-modified-sort="1707285600000" data-listing-reading-time-sort="44" data-listing-word-count-sort="8774">
+<div class="thumbnail">
+<p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external"></a></p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Images/UA_Logo_Horizontal.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">ESRM 6553: Advanced Multivariate Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">Spring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('class'); return false;">
+class
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/index.html" class="no-external">
+<div class="listing-date">
+Jan 13, 2024
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+44 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="blog,ggplot2" data-listing-date-sort="1688446800000" data-listing-file-modified-sort="1709266731079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1177">
+<div class="thumbnail">
+<p><a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external"></a></p><a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external">Data visualization for survey data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-07-04-data-visualization-for-survey-data/index.html" class="no-external">
+<div class="listing-date">
+Jul 4, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="tutorial,package" data-listing-date-sort="1687928400000" data-listing-file-modified-sort="1708930997638" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="265">
+<div class="thumbnail">
+<p><a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external"></a></p><a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-06-28-a-tutorial-for-forester-r-package/intro.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external">A tutorial for forester R package</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('package'); return false;">
+package
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-06-28-a-tutorial-for-forester-r-package/index.html" class="no-external">
+<div class="listing-date">
+Jun 28, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="tutorial,quarto" data-listing-date-sort="1687842000000" data-listing-file-modified-sort="1709271882996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="355">
+<div class="thumbnail">
+<p><a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external"></a></p><a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-06-27-one-template-for-quarto-report/ggplot2.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external">One Template for Quarto Report</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
+quarto
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-06-27-one-template-for-quarto-report/index.html" class="no-external">
+<div class="listing-date">
+Jun 27, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="quarto" data-listing-date-sort="1687669200000" data-listing-file-modified-sort="1709271933450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="658">
+<div class="thumbnail">
+<p><a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external"></a></p><a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-06-26-moving-to-quarto/quarto.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external">Moving My Website to Quarto</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
+quarto
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-06-26-moving-to-quarto/index.html" class="no-external">
+<div class="listing-date">
+Jun 25, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="blog,R,PyTorch,Deep Learning" data-listing-date-sort="1687237200000" data-listing-file-modified-sort="1708930997615" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1532">
+<div class="thumbnail">
+<p><a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external"></a></p><a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/reticulated_python.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external">A Conversation between R and Python on Data Analysis and Machine Learning</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('PyTorch'); return false;">
+PyTorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
+Deep Learning
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-06-20-pytorch-a-conversation-between-r-and-python-on-data-analysis-and-machine-learning/index.html" class="no-external">
+<div class="listing-date">
+Jun 20, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+8 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="blog,LCM,R" data-listing-date-sort="1686373200000" data-listing-file-modified-sort="1708930997614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2127">
+<div class="thumbnail">
+<p><a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external"></a></p><a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/figures/fig1-terminal-mplus.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external">Latent Class Model: Batch Mplus using R on Mac</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('LCM'); return false;">
+LCM
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-06-10-latent-class-model-batch-mplus-using-r-on-mac/index.html" class="no-external">
+<div class="listing-date">
+Jun 10, 2023
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+11 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1666501200000" data-listing-file-modified-sort="1708930997609" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4283">
+<div class="thumbnail">
+<p><a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external"></a></p><a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external">Dissertation Defence</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external">TITLE: A novel method for model selection in Bayesian Diagnostic Classification Modeling</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-10-23-thesis-defense/index.html" class="no-external">
+<div class="listing-date">
+Oct 23, 2022
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+22 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="" data-listing-date-sort="1653067838000" data-listing-file-modified-sort="1708930997603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="434">
+<div class="thumbnail">
+<p><a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external"></a></p><a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external">NSF Grant on Bayesian Cognitive Diagnosis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external">Data visualization using ggplot2</a>
+</div>
+<div class="listing-categories">
+
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-05-20-visualization-for-nsf-grant-on-bayesian-cognitive-diagnosis/index.html" class="no-external">
+<div class="listing-date">
+May 20, 2022
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="blog,Web Scrapping" data-listing-date-sort="1652331600000" data-listing-file-modified-sort="1708930997583" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="618">
+<div class="thumbnail">
+<p><a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external"></a></p><a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-05-12-web-scrapping-grant-fundings-in-r/index_files/figure-html/unnamed-chunk-5-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external">Web Scraping Academia Institute’s Grant Fundings using R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Web Scrapping'); return false;">
+Web Scrapping
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-05-12-web-scrapping-grant-fundings-in-r/index.html" class="no-external">
+<div class="listing-date">
+May 12, 2022
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="R,rshiny,webpower,lavaan,blog,tutorial" data-listing-date-sort="1651208400000" data-listing-file-modified-sort="1708930997579" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1155">
+<div class="thumbnail">
+<p><a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external"></a></p><a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-04-29-power-analysis-for-sem/webpower.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external">Power Analysis for Structural Equation Modeling</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rshiny'); return false;">
+rshiny
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('webpower'); return false;">
+webpower
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lavaan'); return false;">
+lavaan
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-04-29-power-analysis-for-sem/index.html" class="no-external">
+<div class="listing-date">
+Apr 29, 2022
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="R,Github,Rstudio,Workshop" data-listing-date-sort="1650776400000" data-listing-file-modified-sort="1708930997578" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="406">
+<div class="thumbnail">
+<p><a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external"></a></p><a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/img/website_preview.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external">[Workshop] Creating Academic Blog via R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external">This post reviews the procedure of creating Github Pages Website using distill package and Github Pages in a step-to-step way.</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Github'); return false;">
+Github
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Rstudio'); return false;">
+Rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Workshop'); return false;">
+Workshop
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-04-24-tutorial-of-creating-personal-blog-using-distill-package-and-github-pages/index.html" class="no-external">
+<div class="listing-date">
+Apr 24, 2022
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="blog,R,health" data-listing-date-sort="1625547600000" data-listing-file-modified-sort="1708930997573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="414">
+<div class="thumbnail">
+<p><a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external"></a></p><a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external">Health Care Data Analysis with Apple Watch</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('health'); return false;">
+health
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-06-health-care-data-analysis-with-apple-watch/index.html" class="no-external">
+<div class="listing-date">
+Jul 6, 2021
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="R" data-listing-date-sort="1612072800000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="231">
+<div class="thumbnail">
+<p><a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external"></a></p><a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external">[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-01-31-ppmc-cfa/index.html" class="no-external">
+<div class="listing-date">
+Jan 31, 2021
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="R" data-listing-date-sort="1590382800000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="453">
+<div class="thumbnail">
+<p><a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external"></a></p><a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external">Study Notes: gt package and format table</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-05-25-study-notes-gt-package-and-format-table/index.html" class="no-external">
+<div class="listing-date">
+May 25, 2020
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="blog,Network,DCM" data-listing-date-sort="1571547600000" data-listing-file-modified-sort="1708930997572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="389">
+<div class="thumbnail">
+<p><a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external"></a></p><a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external">Introduction to Latent Attribute Network Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Network'); return false;">
+Network
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('DCM'); return false;">
+DCM
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-10-20-introduction-to-latent-attribute-network-analysis/index.html" class="no-external">
+<div class="listing-date">
+Oct 20, 2019
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="visualization,blog,ggplot2" data-listing-date-sort="1558328400000" data-listing-file-modified-sort="1708930997560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="721">
+<div class="thumbnail">
+<p><a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external"></a></p><a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2019-05-20-nobel-prizes-visualization/index_files/figure-html/unnamed-chunk-8-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external">Which Country own the most Liberty Nobel Prizes? France? Ireland?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
+visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-05-20-nobel-prizes-visualization/index.html" class="no-external">
+<div class="listing-date">
+May 20, 2019
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="blog" data-listing-date-sort="1555650000000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="346">
+<div class="thumbnail">
+<p><a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external"></a></p><a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external">Make a Game in R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-04-19-make-a-game-in-r/index.html" class="no-external">
+<div class="listing-date">
+Apr 19, 2019
+</div>
+<div class="listing-author">
+jihong
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="R,Tutorial" data-listing-date-sort="1550815200000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
+<div class="thumbnail">
+<p><a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external"></a></p><a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2019-02-22-Play-With-gganimate/index_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external">Introduce gganimate for Psychometric</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tutorial'); return false;">
+Tutorial
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-02-22-Play-With-gganimate/index.html" class="no-external">
+<div class="listing-date">
+Feb 22, 2019
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="R,manual" data-listing-date-sort="1550556000000" data-listing-file-modified-sort="1708930997559" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="433">
+<div class="thumbnail">
+<p><a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external"></a></p><a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external">Lasso Regression Example using glmnet package in R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('manual'); return false;">
+manual
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-02-19-Lasso-Regression-With-glmnet/index.html" class="no-external">
+<div class="listing-date">
+Feb 19, 2019
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="blog" data-listing-date-sort="1547100000000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
+<div class="thumbnail">
+<p><a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external"></a></p><a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/information_curve.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external">Visuliaztion of Item Information Curves In R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-01-10-visuliaztion-of-item-information-curves-in-r/index.html" class="no-external">
+<div class="listing-date">
+Jan 10, 2019
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="Manual" data-listing-date-sort="1536728400000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="568">
+<div class="thumbnail">
+<p><a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external"></a></p><a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2018-09-12-manual-learn-jags-in-r/index_files/figure-html/unnamed-chunk-12-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external">[Manual]Using Jags and R2jags in R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Manual'); return false;">
+Manual
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2018-09-12-manual-learn-jags-in-r/index.html" class="no-external">
+<div class="listing-date">
+Sep 12, 2018
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-categories="R" data-listing-date-sort="1536642000000" data-listing-file-modified-sort="1708930997557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="240">
+<div class="thumbnail">
+<p><a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external"></a></p><a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external">Introduce Descrepancy Measures</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2018-09-11-model-checking-in-dcm/index.html" class="no-external">
+<div class="listing-date">
+Sep 11, 2018
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-categories="blog,R,tidyverse" data-listing-date-sort="1536037200000" data-listing-file-modified-sort="1708930997549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="556">
+<div class="thumbnail">
+<p><a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external"></a></p><a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external">How to do Data Cleaning in R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
+blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tidyverse'); return false;">
+tidyverse
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2018-09-04-how-to-do-data-cleaning-in-r/index.html" class="no-external">
+<div class="listing-date">
+Sep 4, 2018
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-categories="R,Shiny" data-listing-date-sort="1520661600000" data-listing-file-modified-sort="1708930997549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="13">
+<div class="thumbnail">
+<p><a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external"></a></p><a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external">My New Shiny App Cut Score Consistency</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Shiny'); return false;">
+Shiny
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2018-03-10-my-new-shiny-app-cut-score-consistency/index.html" class="no-external">
+<div class="listing-date">
+Mar 10, 2018
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-categories="R,clustering,latent class" data-listing-date-sort="1511416800000" data-listing-file-modified-sort="1708930997548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1016">
+<div class="thumbnail">
+<p><a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external"></a></p><a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external">
+<p class="card-img-top"><img data-src="posts/2017-11-23-Latent-Profile-Analysis/index_files/figure-html/unnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external">Latent Profile Analysis using MCLUST (in R)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('clustering'); return false;">
+clustering
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('latent class'); return false;">
+latent class
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2017-11-23-Latent-Profile-Analysis/index.html" class="no-external">
+<div class="listing-date">
+Nov 23, 2017
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-categories="R,SEM,lavaan" data-listing-date-sort="1510466400000" data-listing-file-modified-sort="1708930997548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2398">
+<div class="thumbnail">
+<p><a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external"></a></p><a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external">
+<p class="card-img-top"><img data-src="posts/2017-11-12-MESUREMENT-INVARIANCE/model_compare.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external">One Example of Measurement Invariance</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SEM'); return false;">
+SEM
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lavaan'); return false;">
+lavaan
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2017-11-12-MESUREMENT-INVARIANCE/index.html" class="no-external">
+<div class="listing-date">
+Nov 12, 2017
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+12 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-categories="R,mirt,linking" data-listing-date-sort="1510293600000" data-listing-file-modified-sort="1708930997547" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1136">
+<div class="thumbnail">
+<p><a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external"></a></p><a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external">
+<p class="card-img-top"><img data-src="posts/2017-11-10-Linking-simulation/index_files/figure-html/theta-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external">Simulation Study of Linking Using Mirt</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mirt'); return false;">
+mirt
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('linking'); return false;">
+linking
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2017-11-10-Linking-simulation/index.html" class="no-external">
+<div class="listing-date">
+Nov 10, 2017
+</div>
+<div class="listing-author">
+Jihong Zhang
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="31" data-categories="Manual,R,Lavaan" data-listing-date-sort="1508389200000" data-listing-file-modified-sort="1708930997544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2759">
+<div class="thumbnail">
+<p><a href="./posts/2017-11-08-sem-homework/index.html" class="no-external"></a></p><a href="./posts/2017-11-08-sem-homework/index.html" class="no-external">
+<p class="card-img-top"><img data-src="posts/2017-11-08-sem-homework/index_files/figure-html/dist-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2017-11-08-sem-homework/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2017-11-08-sem-homework/index.html" class="no-external">How to use lavaan package to perform Confirmatory Factor Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2017-11-08-sem-homework/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Manual'); return false;">
+Manual
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lavaan'); return false;">
+Lavaan
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2017-11-08-sem-homework/index.html" class="no-external">
+<div class="listing-date">
+Oct 19, 2017
+</div>
+<div class="listing-author">
+Jihong
+</div>
+<div class="listing-reading-time">
+14 min
+</div>
+</a>
+</div>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>

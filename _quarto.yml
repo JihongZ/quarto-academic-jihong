@@ -37,19 +37,19 @@ website:
     pinned: true
     title: "<span class='icon-line'></span>JZ<span class='icon-line'></span>"
     right:
-      - text: "Home<span class='text-line'></span>"
+      - text: "<span class='menutext-home'>Home</span><span class='text-line'></span>"
         icon: 'bi bi-house' # https://icons.getbootstrap.com
         file: index.qmd
-      - text: "Blog<span class='text-line'></span>"     
+      - text: "<span class='menutext-blog'>Blog</span><span class='text-line-blog'></span>"     
         icon: 'bi bi-pencil-square'
         file: posts.qmd 
-      - text: "Dashboard<span class='text-line'></span>"
+      - text: "<span class='menutext-db'>Dashboard</span><span class='text-line-db'></span>"
         icon: "bi bi-speedometer2"
         file: dashboards/template.qmd  
-      - text: "C.V.<span class='text-line'></span>"
+      - text: "<span class='menutext-cv'>C.V.</span><span class='text-line-cv'></span>"
         icon: "bi bi-person" # somehow the file path only works in nav. bar, not link in index
         file: uploads/Curriculum_Vitae.pdf
-      - text: "Projects<span class='text-line'></span>"
+      - text: "<span class='menutext-pj'>Projects</span><span class='text-line-pj'></span>"
         icon: 'bi bi-three-dots'
         file: projects.qmd
     
@@ -60,8 +60,8 @@ format:
       dark: [darkly, assets/rwds-dark.scss]
     css: assets/rwds.css
     highlight-style:
-      light: custom-light.theme
-      dark: custom-dark.theme
+      light: assets/custom-light.theme
+      dark: assets/custom-dark.theme
     grid:
       sidebar-width: 250px
       body-width: 900px
