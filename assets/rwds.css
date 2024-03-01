@@ -1,0 +1,19 @@
+.navbar-title:hover > .icon-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+}
+
+.menu-text:hover > .text-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+  animation-fill-mode: forwards;
+}
+
+@keyframes line-expand {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

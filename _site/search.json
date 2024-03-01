@@ -69,7 +69,7 @@
     "section": "Today’s Lecture Objectives",
     "text": "Today’s Lecture Objectives\n\nIntroduce myself\nSyllabus\nExtra Course Information\nIntroduce Bayesian Analysis\n\nbut, before we begin…",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -81,7 +81,7 @@
     "section": "Introduce myself",
     "text": "Introduce myself\nLet me introduce myself first…\n\n\n\n\n\n\nUniversity if Iowa\n\n\n\n\n\n\n\nHong Kong: Victoria Harbour\n\n\n\n\n\n\n\nChinese University of Hong Kong",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -93,7 +93,7 @@
     "section": "Syllabus",
     "text": "Syllabus\nSyllabus of ESRM 6553",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -105,7 +105,7 @@
     "section": "Course Time",
     "text": "Course Time\n\nMonday 5PM to 7:45PM:\n\n5PM to 6:15PM: First half class\n6:15PM to 6:30PM: 15-min break\n6:30PM to 7:45PM: Second half class",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -117,7 +117,7 @@
     "section": "Office Hours",
     "text": "Office Hours\n\nTuesday 1:30PM to 4:30PM\nYou should be able to find me in GRAD Room 109",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -129,7 +129,7 @@
     "section": "Materials",
     "text": "Materials\n\nI will provide R codes and slides at the weekends before next class. You may download them on Blackboard or My website (jihongzhang.org)",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -141,7 +141,7 @@
     "section": "Quiz: What is Bayesian?",
     "text": "Quiz: What is Bayesian?\n\nHow to Pronounce Bayesian (Real Life Examples!)\n\n“B-Asian” or “Bayes-ian”?\nWhat “Bayesian” mean? Assign probabilities to everything!\n\nFrequentist vs Bayesian\n\nExample: In U.S., more Male Asian Faculty or Female Asian Faculty?\n\nFrequentist: If “Male:Female = 1:1 out of Asian Faculty” is fixed, how is the probability that the data happens?\nBayesian: If I believe Male:Female = 1:2 but the data says 1:1, to what degree I need to update my mind?",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -153,7 +153,7 @@
     "section": "Bayesian Model Components",
     "text": "Bayesian Model Components\n\nWhat we see: Observed Data\nWhat we cannot see: Future Data, Data yet to be collected, Parameters",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -165,7 +165,7 @@
     "section": "Bayesian Analysis: Why It Is Used?",
     "text": "Bayesian Analysis: Why It Is Used?\nThere are at least four main reasons why people use Bayesian Analysis:\n\nMissing data\n\nMultiple imputation\nMore complicated model for certain types of missing data\n\nLack of software capable of handing large sized analyses\n\nHave a zero-inflated Poisson model with 1000 observations and 1000 parameters? No problem in Bayesian!",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -177,7 +177,7 @@
     "section": "Bayesian Analysis: Why It Is Used? (Cont.)",
     "text": "Bayesian Analysis: Why It Is Used? (Cont.)\n\nNew complex models not available in frequentist framework\n\nHave a new model? (A model that estimates the probability students choose the right answers then choose the wrong answers in a multiple choice test?)\n\nEnjoy the Bayesian thinking process\n\nIt is a way of thinking that everything is random and everything can be expressed as probability. It is a way of thinking that we can update our belief as we collect more data. It is a way of thinking that we can use our prior knowledge to help us understand the data.",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -189,7 +189,7 @@
     "section": "Bayesian Analysis: Why It Is Used? (Cont.)",
     "text": "Bayesian Analysis: Why It Is Used? (Cont.)",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -201,7 +201,7 @@
     "section": "Bayesian Analysis: Issues",
     "text": "Bayesian Analysis: Issues\n\nSubjective vs. Objective\n\nPrior distribution is subjective. It is based on your prior knowledge.\nHowever, 1) Scientific judgement is always subjective 2) you can use objective prior distribution to avoid this issue.\n\nComputationally Intensive\n\nIt is not a problem anymore. We have computers.\nBut we still need weeks or months to get results for some complated model and big data\n\nDifficult to understand",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -213,7 +213,7 @@
     "section": "Bayesian Analysis is popular",
     "text": "Bayesian Analysis is popular\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -225,7 +225,7 @@
     "section": "What topics Bayesian Analysis can cover?",
     "text": "What topics Bayesian Analysis can cover?",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -237,7 +237,7 @@
     "section": "What topics Bayesian Analysis can cover?",
     "text": "What topics Bayesian Analysis can cover?\n\nFunding available only for NIH, CDC, FDA, AHRQ, and ACF 2020 Spring. Source: https://report.nih.gov/",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -249,7 +249,7 @@
     "section": "Wrapping Up",
     "text": "Wrapping Up\n\nWe know what is “Bayesian” and its components.\nWhy Bayesian Estimation is different from other estimation, say maximum likelihood\nWe also know that Bayesian analysis is popular in many fields, especially complex data &gt;&gt;&gt;&gt;&gt;&gt;&gt; 6e75efe (update 2024 CV):posts/2024-01-12-syllabus-adv-multivariate-esrm-6554/Lecture01/Lecture01.qmd",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -261,7 +261,7 @@
     "section": "Next Class",
     "text": "Next Class\nWe will talk about how Bayesian methods works in a little bit more technical way.",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -273,7 +273,7 @@
     "section": "Suggestions",
     "text": "Suggestions\nYour opinions are very important to me. Feel free to let me know if you have any suggestions on the course.\n\n\n\n\nhttps://jihongzhang.org/posts/2024-01-12-syllabus-adv-multivariate-esrm-6553",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "ESRM6553-Adv.Multivariate",
       "Lecture 01"
     ]
@@ -2396,7 +2396,7 @@
     "section": "",
     "text": "Email\n  \n  \n    \n     Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     ORCID\n  \n\n      \nI currently hold the position of Assistant Professor in the Educational Statistics and Research Methods (ESRM) Program at the University of Arkansas. Previously, I served as a postdoctoral fellow in the School of Social Science at the Chinese University of Hong Kong. My academic journey includes a rigorous doctoral training in the Educational Measurement and Statistics (EMS) program at the University of Iowa. My primary research focus was on Psychological and Bayesian Network, Bayesian latent variable modeling, Item Response Theory modeling, and other advanced psychometric methodologies.\nMy expertise lies in the application of sophisticated statistical models, including machine learning and Bayesian networks. My research endeavors are primarily aimed at assisting researchers in the social sciences to comprehend their data more effectively, interpret results accurately, and utilize the potent tools of statistics judiciously. My work is characterized by a commitment to enhancing the methodological understanding and application of statistics in educational research and beyond.",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "Homepage"
     ]
   },
@@ -2407,7 +2407,7 @@
     "section": "Teaching",
     "text": "Teaching\n\n\n\n\n\n\n\n\n\n\nESRM 6553: Advanced Multivariate Analysis\n\n\nSpring 2024, Mondays, 5:00-7:45PM, Classroom GRAD 0229\n\n\n\n\n\n\n\n\nJan 13, 2024\n\n\nJihong Zhang\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "Homepage"
     ]
   },
@@ -2418,7 +2418,7 @@
     "section": "Recent posts",
     "text": "Recent posts\n\n\n\n\n\n\n\n\nDanmu Cloud for Bilibili\n\n\n\nFeb 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCustomize font family of Visual Mode in Rstudio and in Zotero\n\n\n\nFeb 10, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up High Performance Computing of University of Arkansas\n\n\n\nJan 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nESRM 6553: Advanced Multivariate Analysis\n\n\n\nJan 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization for survey data\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA tutorial for forester R package\n\n\n\nJun 28, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOne Template for Quarto Report\n\n\n\nJun 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMoving My Website to Quarto\n\n\n\nJun 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nA Conversation between R and Python on Data Analysis and Machine Learning\n\n\n\nJun 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Class Model: Batch Mplus using R on Mac\n\n\n\nJun 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nDissertation Defence\n\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nNSF Grant on Bayesian Cognitive Diagnosis\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Academia Institute’s Grant Fundings using R\n\n\n\nMay 12, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nPower Analysis for Structural Equation Modeling\n\n\n\nApr 29, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n[Workshop] Creating Academic Blog via R\n\n\n\nApr 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nHealth Care Data Analysis with Apple Watch\n\n\n\nJul 6, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n[Pre-print] A Model Comparison Approach to Posterior Predictive Model Checks in Bayesian Confirmatory Factor Analysis\n\n\n\nJan 31, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nStudy Notes: gt package and format table\n\n\n\nMay 25, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Latent Attribute Network Analysis\n\n\n\nOct 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Country own the most Liberty Nobel Prizes? France? Ireland?\n\n\n\nMay 20, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nMake a Game in R\n\n\n\nApr 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce gganimate for Psychometric\n\n\n\nFeb 22, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nLasso Regression Example using glmnet package in R\n\n\n\nFeb 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nVisuliaztion of Item Information Curves In R\n\n\n\nJan 10, 2019\n\n\n\n\n\n\n\n\n\n\n\n\n[Manual]Using Jags and R2jags in R\n\n\n\nSep 12, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduce Descrepancy Measures\n\n\n\nSep 11, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHow to do Data Cleaning in R\n\n\n\nSep 4, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nMy New Shiny App Cut Score Consistency\n\n\n\nMar 10, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nLatent Profile Analysis using MCLUST (in R)\n\n\n\nNov 23, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nOne Example of Measurement Invariance\n\n\n\nNov 12, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Study of Linking Using Mirt\n\n\n\nNov 10, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use lavaan package to perform Confirmatory Factor Analysis\n\n\n\nOct 19, 2017\n\n\n\n\n\n\n\n\nNo matching items\n\n\n  \n\n\nSee all",
     "crumbs": [
-      "Home",
+      "Home<span class='text-line'></span>",
       "Homepage"
     ]
   },

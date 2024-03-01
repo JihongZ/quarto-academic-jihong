@@ -34,34 +34,33 @@ website:
           - posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture04/Lecture04.qmd
           - posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture05/Lecture05.qmd
   navbar:
-    background: '#CEB8A6'
+    #background: '#FFFFFF'
     collapse-below: lg
     pinned: true
-    title: false
+    title: "<span class='icon-line'></span>JZ<span class='icon-line'></span>"
     right:
-      - text: "Home"
+      - text: "Home<span class='text-line'></span>"
         icon: 'bi bi-house' # https://icons.getbootstrap.com
         file: index.qmd
-      - text: "Blog"     
+      - text: "Blog<span class='text-line'></span>"     
         icon: 'bi bi-pencil-square'
         file: posts.qmd 
-      - text: "Dashboard"
+      - text: "Dashboard<span class='text-line'></span>"
         icon: "bi bi-speedometer2"
         file: dashboards/template.qmd  
-      - text: C.V.
+      - text: "C.V.<span class='text-line'></span>"
         icon: "bi bi-person" # somehow the file path only works in nav. bar, not link in index
         file: uploads/Curriculum_Vitae.pdf
-      - text: "More"
+      - text: "Projects<span class='text-line'></span>"
         icon: 'bi bi-three-dots'
-        menu:
-          - projects.qmd
-          - links.qmd
+        file: projects.qmd
     
 format:
   html:
     theme: 
-      light: [cosmo, rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
-      dark: [darkly, rwds-dark.scss]
+      light: [cosmo, assets/rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
+      dark: [darkly, assets/rwds-dark.scss]
+    css: assets/rwds.css
     highlight-style:
       light: custom-light.theme
       dark: custom-dark.theme
@@ -80,7 +79,7 @@ format:
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     mainfont: 'Taub Sans'
-    fontsize: 1em
+    fontsize: 1.1em
     html-math-method: katex
     # code settings
     monofont: 'JetBrains Mono'
