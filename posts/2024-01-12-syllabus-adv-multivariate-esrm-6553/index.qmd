@@ -6,6 +6,9 @@ date: "Jan 13 2024"
 date-modified: "Feb 7 2024"
 categories:
   - class
+format: 
+  html:
+    code-tools: true
 ---
 
 ![](Images/UA_Logo_Horizontal.png){width="2700"}

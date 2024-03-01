@@ -3,7 +3,7 @@ project:
   output-dir: "_site"
     
 website:
-  title: "Dr. Jihong Zhang"
+  title: "Jihong Z. - Play Harder and Learn Harder"
   site-url: "https://www.jihongzhang.org/"
   favicon: "images/icon.png"
   description: "Technical and Statistical but Fun"
@@ -24,8 +24,6 @@ website:
     search: true
     collapse-level: 0
     contents:
-      - text: Homepage
-        href: index.qmd
       - section: ESRM6553-Adv.Multivariate
         contents: 
           - posts/2024-01-12-syllabus-adv-multivariate-esrm-6553/Lecture01/Lecture01.qmd
@@ -87,6 +85,7 @@ format:
     code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/
     code-line-numbers: false
     code-overflow: scroll
+    code-fold: true
     linestretch: 1.5
     # toc
     toc: true

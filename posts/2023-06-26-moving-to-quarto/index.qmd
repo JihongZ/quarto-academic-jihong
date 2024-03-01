@@ -3,6 +3,8 @@ title: "Moving My Website to Quarto"
 author: "Jihong Zhang"
 date: "06/25/2023"
 draft: false
+categories:
+  - quarto
 format:
   html:
     toc: true

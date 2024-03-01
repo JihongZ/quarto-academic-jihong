@@ -43,7 +43,11 @@ $primary:   $green !default;
   margin-top: -1px;
   margin-bottom: -6px;
 }
-
+.menu-text {
+  font-family: "Taub Sans", sans-serif;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+}
 
 h1, h2, h3 {
   color: $lightwhite;

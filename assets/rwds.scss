@@ -45,31 +45,18 @@ $primary:   $pink !default;
   margin-bottom: -6px;
 }
 
-/*-- scss:rules --*/
-//pre code {
-//  display: block;
-//  border: 1px solid $darkteal;
-//  box-shadow: 5px 5px 5px $lightwhite;
-//  padding: 1em;
-//  overflow-x: auto;
-//  line-height: 1.75;
-//}
-
-//code {
-//  display: block;
-//  border: 1px solid $darkteal;
-//  box-shadow: 5px 5px 5px $lightwhite;
-//  padding: 1em;
-//  overflow-x: auto;
-//  line-height: 1.75;
-//}
+.menu-text {
+  font-family: "Taub Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 
 h1, h2, h3 {
   //color: #333333; 
   //font-family: "Ysabeau Office", sans-serif;
   font-family: "Taub Sans", sans-serif;
   letter-spacing: 2px;
-  font-weight: 500;
+  font-weight: 600;
 }
 p { // main font family of post content
   //font-family: 'Ysabeau Office', sans-serif;

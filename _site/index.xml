@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Dr. Jihong Zhang</title>
+<title>Jihong Z. - Play Harder and Learn Harder</title>
 <link>https://www.jihongzhang.org/</link>
 <atom:link href="https://www.jihongzhang.org/index.xml" rel="self" type="application/rss+xml"/>
 <description>Technical and Statistical but Fun</description>
@@ -4564,6 +4564,8 @@ font-style: inherit;">razr72/06:</span>    reimaged razor nodes, 72 hour limit, 
 </ol>
 
 
+<!-- -->
+
 </section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>tutorial</category>
   <category>hpc</category>
@@ -4975,6 +4977,8 @@ font-style: inherit;">razr72/06:</span>    reimaged razor nodes, 72 hour limit, 
 <li><a href="https://vasishth.github.io/bayescogsci/book/">An Introduction to Bayesian Data Analysis for Cognitive Science, by Bruno Nicenboim, Daniel Schad, and Shravan Vasishth)</a></li>
 </ol>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -6898,6 +6902,8 @@ font-style: inherit;">```</span></span></code></pre></div>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>tutorial</category>
+  <category>quarto</category>
   <guid>https://www.jihongzhang.org/posts/2023-06-27-one-template-for-quarto-report/</guid>
   <pubDate>Tue, 27 Jun 2023 05:00:00 GMT</pubDate>
 </item>
@@ -6935,7 +6941,7 @@ font-style: inherit;">```</span></span></code></pre></div>
 <p>Frank Harrel’s blog: R workflow.</p>
 <p><a href="https://www.fharrell.com/post/rflow/"><img src="https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/FrankHarrel.png" width="320" height="200"></a></p>
 </li>
-</ol></section><section id="tricks-of-quarto" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="tricks-of-quarto">
+</ol></section><section id="tricks-of-quarto" class="level2 page-columns page-full" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="tricks-of-quarto">
 <span class="header-section-number">2</span> Tricks of Quarto</h2>
 <section id="code-highlighting" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="code-highlighting">
 <span class="header-section-number">2.1</span> Code highlighting</h3>
@@ -6949,8 +6955,11 @@ font-style: inherit;">(</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">)</span></span>
-<span><span class="fu" style="color: #4758AB;
+font-style: inherit;">)</span></span></code></pre></div>
+</details><div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'kableExtra' was built under R version 4.2.3</code></pre>
+</div>
+<details class="code-fold"><summary>⌘+C</summary><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -7049,56 +7058,56 @@ font-style: inherit;">)</span></span></code></pre></div>
 <p>Note that the code block can be numbered and added with a left border using <code>code-block-bg: true</code> and <code>code-block-border-left: "#31BAE9"</code></p>
 <p>Code block now also can be shown with language <code>#| echo: fenced</code>. As the code chunk shown below, <code>{r}</code> is explicitly presented. I don’t hate <code>#|</code> as the new way of chuck option setup but when I test the code chuck, I found there is a space between <code>#|</code> and option keys. For example, it should be <code>#| echo: fenced</code> rather than <code>#|echo:fenced</code>. Otherwise, quarto will ignore chunk options.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><span class="in" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```{r}</span></span>
-<span id="cb2-2"><span class="in" style="color: #5E5E5E;
+<span id="cb4-2"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#| eval: false</span></span>
-<span id="cb2-3"><span class="in" style="color: #5E5E5E;
+<span id="cb4-3"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#| code-fold: false</span></span>
-<span id="cb2-4"><span class="in" style="color: #5E5E5E;
+<span id="cb4-4"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">kableExtra::kbl(head(iris)) |&gt; </span></span>
-<span id="cb2-5"><span class="in" style="color: #5E5E5E;
+<span id="cb4-5"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">  kableExtra::kable_styling(</span></span>
-<span id="cb2-6"><span class="in" style="color: #5E5E5E;
+<span id="cb4-6"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">    html_font = "Ysabeau Office",</span></span>
-<span id="cb2-7"><span class="in" style="color: #5E5E5E;
+<span id="cb4-7"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">    bootstrap_options = c('striped', 'hover'),</span></span>
-<span id="cb2-8"><span class="in" style="color: #5E5E5E;
+<span id="cb4-8"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">    font_size = 10, full_width = TRUE)</span></span>
-<span id="cb2-9"><span class="in" style="color: #5E5E5E;
+<span id="cb4-9"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </div>
 <div class="cell">
-<details open="" class="code-fold"><summary>⌘+C</summary><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="in" style="color: #5E5E5E;
+<details open="" class="code-fold"><summary>⌘+C</summary><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```{python}</span></span>
-<span id="cb3-2"><span class="in" style="color: #5E5E5E;
+<span id="cb5-2"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#| eval: false</span></span>
-<span id="cb3-3"><span class="in" style="color: #5E5E5E;
+<span id="cb5-3"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#| code-fold: show</span></span>
-<span id="cb3-4"><span class="in" style="color: #5E5E5E;
+<span id="cb5-4"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">import numpy as np</span></span>
-<span id="cb3-5"><span class="in" style="color: #5E5E5E;
+<span id="cb5-5"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">iris = np.array(iris)</span></span>
-<span id="cb3-6"><span class="in" style="color: #5E5E5E;
+<span id="cb5-6"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
 </details>
 </div>
-</section><section id="visual-model" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="visual-model">
+</section><section id="visual-model" class="level3 page-columns page-full" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="visual-model">
 <span class="header-section-number">2.2</span> Visual model</h3>
 <p>Visual model is one of the most appealing feature for Quarto but I am far from a expert in that. It looks like a visual model version of markdown editor (so called WYSIWYM editing, What you see is What you mean) but slightly different. The shortcut of switching between source and visual model is <code>Cmd</code> + <code>Shift</code> + <code>F4</code> (Thanks to Yihui’s <a href="https://yihui.org/en/2023/02/key-buttons/">JS</a> for pretty keyboard styling).</p>
 <p>I list some most frequently used keyboard for visual mode editing:</p>
@@ -7109,16 +7118,14 @@ font-style: inherit;">```</span></span></code></pre></div>
 <li><p>Insert code chunk<sup>2</sup>: <code>Alt</code> +<code>Cmd</code> +<kbd>I</kbd></p></li>
 <li><p>Edit attribute<sup>3</sup>: <code>F4</code></p></li>
 </ol>
-<p>Please also refer to the <a href="https://quarto.org/docs/visual-editor/vscode/">official document</a> for more shortcuts and features. One thing I found very interesting is single quote mark <code>`</code> . First, I’m not sure how to escape this in visual model. Second, if you close quote before typing content, like ``, visual mode will escape both quote marks. However, if you type in left quote mark then content and then close quote (i.e., type in`<code>something</code> first, and type closing quote mark), it can quote content correctly.</p>
+<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;Like this.</p><p><sup>2</sup>&nbsp;By default, it will insert R code chunk. If another language is frequently, use <code>Tools &gt; Modify keyboard shortcuts &gt; filter 'Insert'</code>. There should be a place for setting shortcut for other language.</p><p><sup>3</sup>&nbsp;Click `F4` in any place in the div works.</p></div><p>Please also refer to the <a href="https://quarto.org/docs/visual-editor/vscode/">official document</a> for more shortcuts and features. One thing I found very interesting is single quote mark <code>`</code> . First, I’m not sure how to escape this in visual model. Second, if you close quote before typing content, like ``, visual mode will escape both quote marks. However, if you type in left quote mark then content and then close quote (i.e., type in`<code>something</code> first, and type closing quote mark), it can quote content correctly.</p>
 <p>Last but not least, perhaps just type <code>/</code> in rstudio is a better choice as it will pop up a list of elements to choose.</p>
 
 
-</section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-<ol>
-<li id="fn1"><p>Like this.↩︎</p></li>
-<li id="fn2"><p>By default, it will insert R code chunk. If another language is frequently, use <code>Tools &gt; Modify keyboard shortcuts &gt; filter 'Insert'</code>. There should be a place for setting shortcut for other language.↩︎</p></li>
-<li id="fn3"><p>Click `F4` in any place in the div works.↩︎</p></li>
-</ol></section></div> ]]></description>
+<!-- -->
+
+</section></section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>quarto</category>
   <guid>https://www.jihongzhang.org/posts/2023-06-26-moving-to-quarto/</guid>
   <pubDate>Sun, 25 Jun 2023 05:00:00 GMT</pubDate>
 </item>
