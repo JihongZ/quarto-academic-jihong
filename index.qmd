@@ -8,7 +8,7 @@ sidebar: false
 about:
   id: hero-heading
   template: solana
-  image: profile-2.jpg
+  image: "images/profile-2.JPG"
   image-shape: rounded
   image-width: 20em
   links:

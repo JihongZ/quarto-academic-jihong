@@ -5,7 +5,7 @@ project:
 website:
   title: "Dr. Jihong Zhang"
   site-url: "https://www.jihongzhang.org/"
-  favicon: icon.png
+  favicon: "images/icon.png"
   description: "Technical and Statistical but Fun"
   google-analytics:
     tracking-id: "UA-149871707-1"
