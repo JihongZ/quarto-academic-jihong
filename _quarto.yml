@@ -57,7 +57,7 @@ website:
 format:
   html:
     theme: 
-      light: [cosmo, assets/rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
+      light: [default, assets/rwds.scss] # https://bootswatch.com/5/minty/_variables.scss
       dark: [darkly, assets/rwds-dark.scss]
     css: assets/rwds.css
     highlight-style:
@@ -78,13 +78,14 @@ format:
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     html-math-method: katex
+    lightbox: true # Lightbox Figure
     # code settings
-    fontsize: 1em
+    fontsize: 1.1em
     mainfont: 'Palatino'
     monofont: 'JetBrains Mono'
     code-link: true
     code-summary: '&#8984;+C' # https://symbl.cc/en/collections/special-symbols/
-    code-line-numbers: false
+    code-line-numbers: true
     code-overflow: scroll
     code-fold: true
     linestretch: 1.5

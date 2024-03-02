@@ -28,10 +28,11 @@ format:
     highlight-style: nord
     mermaid:
       theme: neutral
+
 #bibliography: references.bib
 ---
 
-## Last Class
+## Previous Class
 
 1.  We used two simulation data sets to introduce how Stan can be used for factor analysis
 

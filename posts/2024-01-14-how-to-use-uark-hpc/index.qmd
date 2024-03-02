@@ -5,6 +5,9 @@ date: 2024-01-14
 categories: 
   - tutorial
   - hpc
+citation:
+  type: webpage
+  issued: 2024-01-14
 ---
 
 ## General Information
@@ -138,7 +141,7 @@ This command will redirect to cloud72 queue, which includes virtual machines and
 :::
 
 | slurm commands      | compatibility commands   | Meaning                            |
-|---------------------|--------------------------|------------------------------------|
+|-------------------|-----------------------|-------------------------------|
 | sbatch              | qsub                     | submit \<job file\>                |
 | srun                | qsub -I                  | submit interactive job             |
 | squeue              | qstat                    | list all queued jobs               |

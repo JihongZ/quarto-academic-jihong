@@ -13,6 +13,9 @@ categories:
 lastmod: '2022-04-29T16:53:41-05:00'
 bibliography: 'PowerAnalysis.bib'
 toc: true
+citation:
+  type: webpage
+  issued: 2022-04-29
 ---
 
 ```{r setup, include=FALSE}

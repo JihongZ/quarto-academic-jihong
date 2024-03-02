@@ -63,7 +63,7 @@ My expertise lies in the application of sophisticated statistical models, includ
 
 -   **B.S.** \| Applied Psychology \| Soochow University \| [2009 - 2013]{#date style="color:darkgrey;"}
 
--   **B.S.** \| Law \| Soochow University \| [2011 - 2013]{#date style="color:darkgrey;"}
+-   **B.S.** \| Law \| Soochow University \| [2011 - 2013]{style="color:darkgrey;"}
 
 ## Experience
 

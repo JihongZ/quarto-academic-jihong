@@ -42,21 +42,20 @@ p { // main font family of post content
 $darkteal: #008080;
 $lightwhite: #c0c0c0;
 $gray: #64605f;
-$navbar-bg: #000000;
+$navbar-bg: rgb(34, 34, 34);
 $menutext-bg: #FFFFFF;
 
 #quarto-content {
   color: $lightwhite;
-  background-color: black;
+  /*background-color: black;*/
 }
-
 $green:     #00D46A;
 $primary:   $green !default;
 .icon-line {
   display: block;
   background: $primary;
   width: 100%;
-  height: 6px;
+  height: 12px;
   margin: auto;
   display: table;
   margin-top: -6px;
@@ -66,7 +65,7 @@ $primary:   $green !default;
   display: block;
   background: $primary;
   width: 0%;
-  height: 1px;
+  height: 3px;
   margin: auto;
   display: table;
   margin-top: -1px;
