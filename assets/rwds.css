@@ -1,32 +1,56 @@
+@keyframes line-expand {
+  from {width: 0%;}
+  to {width: 90%;}
+}
+
 .navbar-title:hover > .icon-line {
   animation-duration: 600ms;
   animation-name: line-expand;
 }
 
 .menu-text:hover > .text-line {
-  animation-duration: 400ms;
+  animation-duration: 200ms;
   animation-name: line-expand;
   animation-fill-mode: forwards;
 }
 
-
-.menu-text:hover > .menutext-home {
-  animation-duration: 400ms;
-  animation-name: changecolor-home;
-  animation-fill-mode: forwards;
+/* Dissuss: how to switch animation conditional on light or dark theme */
+/* https://github.com/quarto-dev/quarto-cli/discussions/7713 */
+body.quarto-light .menu-text:hover > .menutext-home {
+    animation-duration: 400ms;
+    animation-name: changecolor-home-light;
+    animation-fill-mode: forwards;
 }
-@keyframes changecolor-home {
+body.quarto-dark .menu-text:hover > .menutext-home {
+    animation-duration: 400ms;
+    animation-name: changecolor-home-dark;
+    animation-fill-mode: forwards;
+}
+@keyframes changecolor-home-light {
   from {color: #000000;}
   to {color: #D4006A;}
 }
+@keyframes changecolor-home-dark {
+  from {color: #FFFFFF;}
+  to {color: #D4006A;}
+}
 
-.menu-text:hover > .menutext-blog {
+body.quarto-light .menu-text:hover > .menutext-blog {
   animation-duration: 400ms;
-  animation-name: changecolor-blog;
+  animation-name: changecolor-blog-light;
   animation-fill-mode: forwards;
 }
-@keyframes changecolor-blog {
+body.quarto-dark .menu-text:hover > .menutext-blog {
+  animation-duration: 400ms;
+  animation-name: changecolor-blog-dark;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-blog-light {
   from {color: #000000;}
+  to {color: #6636a9;}
+}
+@keyframes changecolor-blog-dark {
+  from {color: #FFFFFF;}
   to {color: #6636a9;}
 }
 .menu-text:hover > .text-line-blog {
@@ -35,13 +59,25 @@
   animation-fill-mode: forwards;
 }
 
-.menu-text:hover > .menutext-db {
+
+
+/* Color switching for dashboar */
+body.quarto-light .menu-text:hover > .menutext-db {
   animation-duration: 400ms;
-  animation-name: changecolor-db;
+  animation-name: changecolor-db-light;
   animation-fill-mode: forwards;
 }
-@keyframes changecolor-db {
+body.quarto-dark .menu-text:hover > .menutext-db {
+  animation-duration: 400ms;
+  animation-name: changecolor-db-dark;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-db-light {
   from {color: #000000;}
+  to {color: #6ec742;}
+}
+@keyframes changecolor-db-dark {
+  from {color: #FFF;}
   to {color: #6ec742;}
 }
 .menu-text:hover > .text-line-db {
@@ -50,13 +86,25 @@
   animation-fill-mode: forwards;
 }
 
-.menu-text:hover > .menutext-cv {
+
+
+/* Color switching for C.V. */
+body.quarto-light .menu-text:hover > .menutext-cv {
   animation-duration: 400ms;
-  animation-name: changecolor-cv;
+  animation-name: changecolor-cv-light ;
   animation-fill-mode: forwards;
 }
-@keyframes changecolor-cv {
+body.quarto-dark .menu-text:hover > .menutext-cv {
+  animation-duration: 400ms;
+  animation-name: changecolor-cv-dark ;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-cv-light {
   from {color: #000000;}
+  to {color: #4b74a9;}
+}
+@keyframes changecolor-cv-dark {
+  from {color: #FFF;}
   to {color: #4b74a9;}
 }
 .menu-text:hover > .text-line-cv {
@@ -65,13 +113,23 @@
   animation-fill-mode: forwards;
 }
 
-.menu-text:hover > .menutext-pj {
+/* Color switching for Project */
+body.quarto-light .menu-text:hover > .menutext-pj {
   animation-duration: 400ms;
-  animation-name: changecolor-pj;
+  animation-name: changecolor-pj-light;
   animation-fill-mode: forwards;
 }
-@keyframes changecolor-pj {
+body.quarto-dark .menu-text:hover > .menutext-pj {
+  animation-duration: 400ms;
+  animation-name: changecolor-pj-dark;
+  animation-fill-mode: forwards;
+}
+@keyframes changecolor-pj-light {
   from {color: #000000;}
+  to {color: #ffd942;}
+}
+@keyframes changecolor-pj-dark {
+  from {color: #FFF;}
   to {color: #ffd942;}
 }
 .menu-text:hover > .text-line-pj {
@@ -81,11 +139,4 @@
 }
 
 
-@keyframes line-expand {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
+

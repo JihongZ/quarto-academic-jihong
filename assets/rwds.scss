@@ -24,7 +24,7 @@ $web-font-path: "No";
   font-family: "Palatino", sans-serif;
   letter-spacing: 1px;
   font-weight: normal;
-  color: #000000;
+  color: $menutext-bg;
 }
 h1, h2, h3 {
   //color: #333333; 

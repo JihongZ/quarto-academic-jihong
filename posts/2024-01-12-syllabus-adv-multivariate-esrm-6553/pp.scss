@@ -16,10 +16,13 @@ $font-family-sans-serif: "Hina Mincho", "Jost", Palatino, FreeSerif, serif !defa
 $font-family-monospace: 'Ubuntu Mono', 'Inconsolata', monospace !default;
 
 // code chunk
-$code-block-bg: #fdfdfd ;
-$fontcolor: #333;
-$code-block-font-size: 0.53em;
+//$code-block-bg: #fdfdfd ;
+// $fontcolor: #333;
+$code-block-font-size: 0.6em;
 
+table {
+  font-size: .8em
+}
 
 // picture
 .picture {

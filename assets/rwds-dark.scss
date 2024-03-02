@@ -24,7 +24,7 @@ $web-font-path: "No";
   font-family: "Palatino", sans-serif;
   letter-spacing: 1px;
   font-weight: normal;
-  color: #000000;
+  color: $menutext-bg;
 }
 h1, h2, h3 {
   //color: #333333; 
@@ -43,6 +43,7 @@ $darkteal: #008080;
 $lightwhite: #c0c0c0;
 $gray: #64605f;
 $navbar-bg: #000000;
+$menutext-bg: #FFFFFF;
 
 #quarto-content {
   color: $lightwhite;
